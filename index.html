@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <style type="text/css">
+	    
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: 'firasansregular';
+    src: url('fonts/FiraSans-Regular.eot');
+    src: url('fonts/FiraSans-Regular?#iefix') format('embedded-opentype'),
+         url('fonts/FiraSans-Regular.woff2') format('woff2'),
+         url('fonts/FiraSans-Regular.woff') format('woff'),
+         url('fonts/FiraSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'firasansbold';
+    src: url('fonts/FiraSans-Bold.eot');
+    src: url('fonts/FiraSans-Bold?#iefix') format('embedded-opentype'),
+         url('fonts/FiraSans-Bold.woff2') format('woff2'),
+         url('fonts/FiraSans-Bold.woff') format('woff'),
+         url('fonts/FiraSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-size: 16px;
+	line-height: 19px;
+}
+
+h2, h3 {
+	font-size: 1.5625em; /* 50 / 32 */
+	line-height: 1.5789em; /* 60 / 38 */
+}
+
+li, 
+p {
+	font-size: 1.25em; /* 40 / 32 */
+	line-height: 1.263em; /* 48px;	/ 38px; */
+}
+
+body {
+	background-color: #000000;
+	color: #ffffff;
+	background-image: url('images/adobestock.png');
+	background-repeat: repeat-y;
+	background-position: center top;
+	font-family: 'firasansregular';
+}
+
+#logo {
+	margin: 20px auto 0;
+	max-width: 300px;	
+}
+#logo img {
+	width: 100%;
+}
+#calltoaction {
+	max-width: 1234px;
+	padding: 20px;
+	text-align: center;
+}
+#calltoaction a {
+	border: 3px solid white;
+	color: #ffffff;
+	text-decoration: none;
+	padding: 24px 52px;
+	display: block;
+	max-width: 140px;	
+}
+
+#calltoaction, 
+#calltoaction a {
+	margin: 20px auto;
+}
+
+#features {
+	padding: 20px 40px;
+	max-width: 1234px;	
+	text-align: center;
+	margin: 0 auto;
+	background-image: url('images/rocket.svg');
+	background-repeat: no-repeat;
+	text-transform: uppercase;
+	overflow: auto;
+}
+
+#features h2 { 
+	text-align: left;
+	margin-bottom: 20px;
+	width: 250px;
+}
+@media screen and (min-width: 480px) {
+	#features h2 { 
+		width: 400px;
+	}
+}
+#features {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background-position: right top;		
+}
+
+@media screen and (min-width: 1200px) {
+	#features {
+		margin-top: 0;
+		margin-bottom: 0;
+		background-position: center top;		
+	}
+	#features h2 {
+		text-align: center;
+	}
+	#firstFeature {
+		padding-top: 240px;	
+	}
+	#secondFeature,	
+	#thirdFeature,
+	#firstFeature {
+		width: 340px;
+	}
+	#thirdFeature,
+	#firstFeature {
+		margin-left: 52%;
+		float: left;
+	}
+	#secondFeature {
+		margin-right: 52%;
+		float: right;
+	}
+}
+
+
+#additional-features {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	background-image: url('images/astronauts.svg');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#additional-features {
+	text-align: center;
+}
+
+#additional-features li {
+	max-width: 800px;
+	margin: 0 auto 20px;
+}
+
+#aop,
+#configuration,
+#serverless,
+#startup {
+	margin: 0 auto 20px;	
+	clear: both;
+	max-width: 1234px;
+	padding: 20px;	
+	overflow: auto;
+}
+
+#configuration h2,
+#aop h2,
+#serverless h2,
+#startup h2 {
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ffff;
+	margin-bottom: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'firasansbold';	
+}
+
+#configuration h2,
+#serverless h2,
+#startup h2 {
+	margin-top: 20px;
+}
+
+#aop p {
+	margin-bottom: 20px;
+}
+
+#footgraph {
+	max-width: 320px;
+	margin: 0 auto;
+}
+.float-right {	
+	float: right;
+}
+.float-left {	
+	float: left;
+}
+
+#serverless .float-right {	
+	float: none;
+}
+#serverless .float-left {	
+	float: none;
+}
+#footgraph {
+	margin-top: 20px;
+}
+
+#footgraph img {
+	width: 100%;
+}
+
+footer {
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	overflow: auto;
+	background-color: #ffffff;
+}
+
+footer h2 {
+	margin-bottom: 10px;
+	font-family: 'firasansbold';
+}
+
+#blacklogo {
+	max-width: 350px;
+	margin: 30px auto;
+}
+
+#blacklogo img {
+	width: 100%;
+}
+
+.whitecircleborderseparator, 
+.whitecircleseparator {
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 50px;
+}
+.whitecircleborderseparator {
+	background-image: url('images/whiteelipseborder.png');	
+}
+.whitecircleseparator {
+	background-image: url('images/whiteelipse.png');
+}
+
+@media screen and (min-width: 480px) {
+	body {
+		font-size: 24px;
+		line-height: 28px;
+	}
+	#aop,
+	#configuration,
+	#serverless,
+	#startup {
+		margin: 0 auto 100px;
+	}
+	#configuration h2,
+	#serverless h2,
+	#startup h2 {
+		margin-top: 50px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	#aop,
+	#configuration,
+	#serverless,
+	#startup {
+		margin: 0 auto 300px;
+	}
+	#configuration h2,
+	#serverless h2,
+	#startup h2 {
+		margin-top: 100px;
+	}
+	h2 {
+		font-size: 1em;
+		line-height: 1em;
+	}
+	#logo {
+		margin: 100px auto 0;		
+		max-width: 500px;
+	}
+	#calltoaction a {
+		max-width: 240px;
+	}
+	#calltoaction, 
+	#calltoaction a {
+		margin: 70px auto;
+	}
+	#additional-features {
+		margin-top: 100px;
+		margin-bottom: 200px;
+	}
+	#additional-features li {
+		margin: 0 auto 100px;
+	}
+	#aop p {
+		margin-bottom: 70px;
+	}
+	#serverless div {
+		padding-right: 50px;
+	}
+	#serverless div {
+		max-width: 617px;	
+	}
+	#serverless .float-right {	
+		float: right;
+	}
+	#serverless .float-left {	
+		float: left;
+	}
+	#footgraph {
+		margin-top: 120px;
+		width: 500px;
+	}
+	footer h2 {
+		margin-bottom: 40px;
+	}
+	#blacklogo {
+		margin: 120px auto;		
+	}
+	body {
+		font-size: 32px;
+		line-height: 38px;
+	}
+
+	.whitecircleseparator,
+	.whitecircleborderseparator {
+		height: 200px;
+	}
+
+	#additional-features li:last-child {
+		margin-bottom: 300px !important;
+	}
+	#features {
+		margin-bottom: 300px;
+	}
+}
+
+</style>
+  </head>
+  <body>
+	  <div class="container">
+   	  <div id="logo"><img src="images/micronaut.svg" alt="micronaut framework"/></div>
+   	  <div id="calltoaction"><h2>Micronaut is a modern, JVM-based, full stack Micro Services framework designed building modular, easily testable Micro Service applications.</h2>	 
+		  <a href="#form">More Info</a>
+   	  </div>		  
+	  </article>	 
+	  <article id="features">	  
+			  	<h2 id="firstFeature">
+				  	<span>Monumental Leap<bry> in Startup time</span>
+				</h2>
+			  	<h2 id="secondFeature">
+				  	<span>Blasting fast<br/> throughput</span>
+				</h2>
+			  	<h2 id="thirdFeature">
+				  	<span>Staggering Low<br/> Memory Footprint</span>
+				</h2>
+	  </article>
+	  <div class="whitecircleborderseparator"></div>	  	
+	  <article id="additional-features">	  		  
+			<ol>
+				<li>Dependency Injection Inversion of Control</li>
+				<li>Sensible Defaults and Auto Configuration</li>
+				<li>Configuration and Configuration Sharing</li>
+				<li>Http Routing</li>
+				<li>Http Client with Client-Side Load Balancing</li>
+			</ol>
+	  </article>
+	  </div>
+	  <div class="whitecircleborderseparator"></div>
+	  <article id="startup">
+		  <header>
+			  <h2>Fast Startup time. Low Memory Consumption</h2>
+		  </header>
+		  <section>
+			  <p>With micronaut your application startup time and memory consumption is not
+				  bound to the size of your codebase in the same way as a framework that uses reflection. Reflection based IoC frameworks load and cache reflection data for every single field, method, and constructor in your code. Thus as your code grows in size so do your memory requirements, whilst with Micronaut this is not the case.</p>
+				  <img src="images/rocketspaths.svg" alt="Micronaut vs Grails/Spring"/>
+		  </section>
+	  </article>
+	  <div class="whitecircleborderseparator"></div>	  
+  	  <article id="serverless">
+	  	  <div class="float-left">
+		  <header>
+			  <h2>Android DI, Server-less, microservices</h2>
+		  </header>
+		  <section>
+			  <p>Micronaut is designed from the ground up to be suitable to low memory footprint scenarios such as as functions on a Server-less platform, or on Android or as a low memory footprint Micro Service.</p>			 			 
+		  </section>
+	  	  </div>
+    	  	<div id="footgraph" class="float-right">
+  	  	  	  <img src="images/foots.svg" alt="Spring/Grails vs Micronaut Memory Footprint"/>
+	  	  </div>
+	  </article>
+	  <div class="whitecircleborderseparator"></div>	  
+  	  <article id="configuration">
+  	  	  <div class="float-right"><img src="images/satellite.svg" alt="Satellite" width="100"/></div>
+		  <header>
+			  <h2>Fast configuration loading and injection.</h2>
+		  </header>
+		  <section>
+			  <p>Particle  avoids the use of reflection and dynamic parsing so that loading the configuration is an efficient as possible with minimal impact on startup time.</p>
+
+		  </section>
+	  </article>	  
+  	  <article id="aop">
+		  <header>
+			  <h2>Fast, easy to debug AOP.</h2>
+		  </header>
+		  <section>
+</p>Aspect-Oriented Programming (AOP) can be thought of as a way to define cross cutting concerns (logging, transactions, tracing etc.) separate from application code.</p>
+
+</p>The disadvantage of traditional approaches to AOP is the heavy reliance on runtime proxy creation and reflection, which slows application performance, makes debugging harder and increases memory consumption.</p>
+</p>Particle addresses these concerns by providing a simple compile time AOP API that does not use reflection.</p>
+			  <img src="images/aopgraph.svg" alt="aopgraph"/>
+		  </section>
+	  </article>
+	  </div>
+	  <div class="whitecircleseparator"></div>
+	  <footer id="form">		  
+		  <h2>GET FIRST ACCESS</h2>
+		  <p>Notify me as soon as Micronaut is released.</p>
+		  <p id="blacklogo"><img src="images/micronautlogo.svg" alt="Micronaut Logo"/></p>		  	  
+		 
+	  </footer>	  	  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+  </body>
+</html>

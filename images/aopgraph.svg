@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="431 6169 1091 306">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-width: 8px;
+      }
+
+      .cls-3 {
+        font-size: 32px;
+        font-family: HelveticaNeue-Bold, Helvetica Neue;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="aopgraph" transform="translate(0 -733)">
+    <g id="Group_104" data-name="Group 104" transform="translate(-59 1895)">
+      <circle id="Ellipse_28" data-name="Ellipse 28" class="cls-1" cx="18" cy="18" r="18" transform="translate(565 5119)"/>
+      <g id="Ellipse_29" data-name="Ellipse 29" class="cls-2" transform="translate(542 5096)">
+        <circle class="cls-4" cx="41" cy="41" r="41"/>
+        <circle class="cls-5" cx="41" cy="41" r="37"/>
+      </g>
+    </g>
+    <g id="Group_107" data-name="Group 107" transform="translate(383 1806)">
+      <circle id="Ellipse_28-2" data-name="Ellipse 28" class="cls-1" cx="18" cy="18" r="18" transform="translate(565 5119)"/>
+      <g id="Ellipse_29-2" data-name="Ellipse 29" class="cls-2" transform="translate(542 5096)">
+        <circle class="cls-4" cx="41" cy="41" r="41"/>
+        <circle class="cls-5" cx="41" cy="41" r="37"/>
+      </g>
+    </g>
+    <g id="white-circle-with-dot" transform="translate(836 1937)">
+      <circle id="Ellipse_28-3" data-name="Ellipse 28" class="cls-1" cx="18" cy="18" r="18" transform="translate(565 5119)"/>
+      <g id="Ellipse_29-3" data-name="Ellipse 29" class="cls-2" transform="translate(542 5096)">
+        <circle class="cls-4" cx="41" cy="41" r="41"/>
+        <circle class="cls-5" cx="41" cy="41" r="37"/>
+      </g>
+    </g>
+    <text id="Application_Perfomance" data-name="Application
+Perfomance" class="cls-3" transform="translate(524 7120)"><tspan x="-86.16" y="0">Application</tspan><tspan x="-92.72" y="39">Perfomance</tspan></text>
+    <text id="Debugging_Complications" data-name="Debugging
+Complications" class="cls-3" transform="translate(966 7031)"><tspan x="-83.248" y="0">Debugging</tspan><tspan x="-110.144" y="39">Complications</tspan></text>
+    <text id="Memory_Consumption" data-name="Memory
+Consumption" class="cls-3" transform="translate(1419 7162)"><tspan x="-62.496" y="0">Memory</tspan><tspan x="-102.496" y="39">Consumption</tspan></text>
+  </g>
+</svg>

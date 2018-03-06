@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="313.021 2607.593 1409.57 742.407">
+  <defs>
+    <style>
+      .cls-1, .cls-5 {
+        fill: none;
+        stroke-width: 5px;
+      }
+
+      .cls-1 {
+        stroke: #b6434b;
+      }
+
+      .cls-2, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #4cafde;
+      }
+
+      .cls-4 {
+        fill: #b6434b;
+      }
+
+      .cls-5 {
+        stroke: #4cafde;
+      }
+
+      .cls-6 {
+        font-size: 32px;
+        font-family: Helvetica-Bold, Helvetica;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="rocketspaths" transform="translate(0 -733)">
+    <path id="Path_365" data-name="Path 365" class="cls-1" d="M452.9,2718.049c92.008,66.061,514.122,99.6,628.982,212.656s492.053,211.866,580.484,168.7,80.037-121.666-59.624-126.706-205.857,92.082-388,102.115-107.347-156.844-277.87-174.092S703.069,3075.284,556.836,3099.4s-267.467-125.31-181.392-231.734,449.137-64.947,442.275,133.1S400,3228.059,400,3228.059" transform="translate(0 832.926)"/>
+    <g id="Group_121" data-name="Group 121" transform="translate(1521.49 3340.593) rotate(45)">
+      <path id="Path_362" data-name="Path 362" class="cls-2" d="M40.6,101.2,23,131.8H58.3Z"/>
+      <path id="Path_363" data-name="Path 363" class="cls-2" d="M40.6,87.6c15,0,28.2,17.6,35.2,43.8a168.875,168.875,0,0,0,5.4-43.8C81.2,39.2,63,0,40.6,0S0,39.2,0,87.6a173.3,173.3,0,0,0,5.4,43.8C12.5,105.2,25.6,87.6,40.6,87.6Z"/>
+      <circle id="Ellipse_31" data-name="Ellipse 31" class="cls-3" cx="12.8" cy="12.8" r="12.8" transform="translate(27.8 25.6)"/>
+    </g>
+    <g id="redrocket" transform="matrix(0.643, -0.766, 0.766, 0.643, 313.021, 3490.642)">
+      <path id="Path_362-2" data-name="Path 362" class="cls-2" d="M40.6,101.2,23,131.8H58.3Z"/>
+      <path id="Path_363-2" data-name="Path 363" class="cls-2" d="M40.6,87.6c15,0,28.2,17.6,35.2,43.8a168.875,168.875,0,0,0,5.4-43.8C81.2,39.2,63,0,40.6,0S0,39.2,0,87.6a173.3,173.3,0,0,0,5.4,43.8C12.5,105.2,25.6,87.6,40.6,87.6Z"/>
+      <circle id="Ellipse_31-2" data-name="Ellipse 31" class="cls-4" cx="12.8" cy="12.8" r="12.8" transform="translate(27.8 25.6)"/>
+    </g>
+    <path id="Path_364" data-name="Path 364" class="cls-5" d="M1563.1,3077.27C969.078,3431.468,406.513,3369.2,406.513,3369.2" transform="matrix(0.966, -0.259, 0.259, 0.966, -866.511, 907.583)"/>
+    <circle id="Ellipse_32" data-name="Ellipse 32" class="cls-2" cx="27.5" cy="27.5" r="27.5" transform="translate(369 4028)"/>
+    <circle id="Ellipse_33" data-name="Ellipse 33" class="cls-2" cx="13.5" cy="13.5" r="13.5" transform="translate(1422 3949)"/>
+    <text id="Spring_Grails" data-name="Spring/Grails" class="cls-6" transform="translate(479 3475)"><tspan x="0" y="25">Spring/Grails</tspan></text>
+    <text id="Micronaut" class="cls-6" transform="translate(1160 3398)"><tspan x="107.109" y="25">Micronaut</tspan></text>
+  </g>
+</svg>

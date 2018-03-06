@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1550.841 4825.534 141.998 235.212">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="satellite" transform="translate(1750.328 4899.903) rotate(135)">
+    <rect id="Rectangle_9" data-name="Rectangle 9" class="cls-1" width="35.884" height="76.873" transform="translate(103.298 29.803)"/>
+    <path id="Path_294" data-name="Path 294" class="cls-1" d="M256.483,73.042H195.6L210.614,54.8H271.5Z" transform="translate(-48.761 -13.661)"/>
+    <path id="Path_295" data-name="Path 295" class="cls-1" d="M283.283,38.742H222.4L237.414,20.5H298.3Z" transform="translate(-55.442 -5.11)"/>
+    <path id="Path_296" data-name="Path 296" class="cls-1" d="M60.883,134.042H0L15.014,115.8H75.9Z" transform="translate(0 -28.868)"/>
+    <path id="Path_297" data-name="Path 297" class="cls-1" d="M87.683,99.742H26.8L41.814,81.5H102.7Z" transform="translate(-6.681 -20.317)"/>
+    <path id="Path_298" data-name="Path 298" class="cls-1" d="M157.113,22.972,170.325,0H143.9Z" transform="translate(-35.872)"/>
+  </g>
+</svg>
