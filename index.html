@@ -133,14 +133,14 @@ body {
 	padding: 20px 40px;
 	max-width: 1234px;	
 	text-align: center;
-	margin: 0 auto;
+	margin: 0 20px 0 0;
 	background-image: url('images/rocket.svg');
 	background-repeat: no-repeat;
 	text-transform: uppercase;
 	overflow: auto;
 }
 
-#features h2 { 
+#features h3 { 
 	text-align: left;
 	margin-bottom: 20px;
 	width: 250px;
@@ -158,28 +158,27 @@ body {
 
 @media screen and (min-width: 1200px) {
 	#features {
-		margin-top: 0;
-		margin-bottom: 0;
+		margin: 0 auto;
 		background-position: center top;		
 	}
 	#features h3 {
 		text-align: center;
 	}
 	#firstFeature {
-		padding-top: 240px;	
+		padding-top: 470px;	
 	}
 	#secondFeature,	
 	#thirdFeature,
 	#firstFeature {
-		width: 340px;
+		width: 400px;
 	}
 	#thirdFeature,
 	#firstFeature {
-		margin-left: 52%;
+		margin-left: 54%;
 		float: left;
 	}
 	#secondFeature {
-		margin-right: 52%;
+		margin-right: 54%;
 		float: right;
 	}
 }
@@ -442,7 +441,7 @@ footer h2 {
 		  </section>
 	  	  </div>
     	  	<div id="footgraph" class="float-right">
-  	  	  	  <img src="images/footprint.png" alt="Spring/Grails vs Micronaut Memory Footprint"/>
+  	  	  	  <img src="images/foots.svg" alt="Spring/Grails vs Micronaut Memory Footprint"/>
 	  	  </div>
 	  </article>
 	  <div class="whitecircleborderseparator"></div>	  
@@ -452,7 +451,7 @@ footer h2 {
 			  <h2>Fast configuration loading and injection.</h2>
 		  </header>
 		  <section>
-			  <p>Micronaut  avoids the use of reflection and dynamic parsing so that loading the configuration is an efficient as possible with minimal impact on startup time.</p>
+			  <p>Micronaut  avoids the use of reflection and dynamic parsing so that loading the configuration is as efficient as possible with minimal impact on startup time.</p>
 
 		  </section>
 	  </article>	  
@@ -461,10 +460,10 @@ footer h2 {
 			  <h2>Fast, easy to debug AOP.</h2>
 		  </header>
 		  <section>
-</p>Aspect-Oriented Programming (AOP) can be thought of as a way to define cross cutting concerns (logging, transactions, tracing etc.) separate from application code.</p>
+<p>Aspect-Oriented Programming (AOP) can be thought of as a way to define cross cutting concerns (logging, transactions, tracing etc.) separate from application code.</p>
 
-</p>The disadvantage of traditional approaches to AOP is the heavy reliance on runtime proxy creation and reflection, which slows application performance, makes debugging harder and increases memory consumption.</p>
-</p>Micronaut addresses these concerns by providing a simple compile time AOP API that does not use reflection.</p>
+<p>The disadvantage of traditional approaches to AOP is the heavy reliance on runtime proxy creation and reflection, which slows application performance, makes debugging harder and increases memory consumption.</p>
+<p>Micronaut addresses these concerns by providing a simple compile time AOP API that does not use reflection.</p>
 			  <img src="images/aopgraph.svg" alt="aopgraph"/>
 		  </section>
 	  </article>
@@ -473,6 +472,88 @@ footer h2 {
 	  <footer id="form">		  
 		  <h2>GET FIRST ACCESS</h2>
 		  <p>Notify me as soon as Micronaut is released.</p>
+
+
+<!-- MAUTIC -->
+<script type="text/javascript">
+    /** This section is only needed once per page if manually copying **/
+    if (typeof MauticSDKLoaded == 'undefined') {
+        var MauticSDKLoaded = true;
+        var head            = document.getElementsByTagName('head')[0];
+        var script          = document.createElement('script');
+        script.type         = 'text/javascript';
+        script.src          = 'https://mautic.objectcomputing.com/media/js/mautic-form.js';
+        script.onload       = function() {
+            MauticSDK.onLoad();
+        };
+        head.appendChild(script);
+        var MauticDomain = 'https://mautic.objectcomputing.com';
+        var MauticLang   = {
+            'submittingMessage': "Please wait..."
+        }
+    }
+</script>
+<style type="text/css">
+	.mauticform_wrapper {
+		margin: 30px auto 0;
+	}
+	.mauticform-row {
+		margin: 30px auto;		
+	}
+ .mauticform-label { display: block; font-size: 20px; }
+ .mauticform-input { 
+	 width: 90%;
+	 max-width: 500px;
+	 border: none;
+	 border-bottom: 1px solid #000000;
+	 font-size: 20px;
+  }
+  .mauticform-button {
+	  background-color: #ffffff;
+	  padding: 20px 40px;
+	  border: 2px solid #000000; 
+	  font-size: 25px;
+	  text-transform: uppercase;
+  }
+  .mauticform-message {
+	  color: #4CAFDE;
+  }
+</style>	 
+<div id="mauticform_wrapper_micronautreleasenotification" class="mauticform_wrapper">
+    <form autocomplete="false" role="form" method="post" action="https://mautic.objectcomputing.com/form/submit?formId=93" id="mauticform_micronautreleasenotification"  data-mautic-form="micronautreleasenotification" enctype="multipart/form-data">
+        <div class="mauticform-error" id="mauticform_micronautreleasenotification_error"></div>
+        <div class="mauticform-message" id="mauticform_micronautreleasenotification_message"></div>
+        <div class="mauticform-innerform">
+
+            
+          <div class="mauticform-page-wrapper mauticform-page-1" data-mautic-form-page="1">
+
+            <div id="mauticform_micronautreleasenotification_email"  class="mauticform-row mauticform-email mauticform-field-1">
+                <label id="mauticform_label_micronautreleasenotification_email" for="mauticform_input_micronautreleasenotification_email" class="mauticform-label">Email</label>
+                <input id="mauticform_input_micronautreleasenotification_email" name="mauticform[email]" value="" class="mauticform-input" type="email" />
+                <span class="mauticform-errormsg" style="display: none;"></span>
+            </div>
+
+            <div id="mauticform_micronautreleasenotification_f_name"  class="mauticform-row mauticform-text mauticform-field-2">
+                <label id="mauticform_label_micronautreleasenotification_f_name" for="mauticform_input_micronautreleasenotification_f_name" class="mauticform-label">Name</label>
+                <input id="mauticform_input_micronautreleasenotification_f_name" name="mauticform[f_name]" value="" class="mauticform-input" type="text" />
+                <span class="mauticform-errormsg" style="display: none;"></span>
+            </div>
+
+            <div id="mauticform_micronautreleasenotification_submit"  class="mauticform-row mauticform-button-wrapper mauticform-field-3">
+                <button type="submit" name="mauticform[submit]" id="mauticform_input_micronautreleasenotification_submit" name="mauticform[submit]" value="" class="mauticform-button btn btn-default" value="1">Submit</button>
+            </div>
+            </div>
+        </div>
+
+        <input type="hidden" name="mauticform[formId]" id="mauticform_micronautreleasenotification_id" value="93"/>
+        <input type="hidden" name="mauticform[return]" id="mauticform_micronautreleasenotification_return" value=""/>
+        <input type="hidden" name="mauticform[formName]" id="mauticform_micronautreleasenotification_name" value="micronautreleasenotification"/>
+
+        </form>
+</div>
+
+
 		  <p id="blacklogo"><img src="images/micronautlogo.svg" alt="Micronaut Logo"/></p>		  	  
 		 
 	  </footer>	  	  
