@@ -281,7 +281,7 @@ section img,
 	width: 100%;
 }
 
-
+.whiteelipseborder-zero-to-hundred,
 .whiteelipseborder-zero-to-twentyfive,
 .whiteelipseborder-twentyfive-to-fifty,
 .whiteelipseborder-fifty-to-seventyfive,
@@ -413,6 +413,7 @@ section img,
 	background-color: rgba(255,255,255,0.75);
 	color: #000000;
 }
+.whiteelipseborder-zero-to-hundred {background-image: url('images/micronuat_whiterings0-100@2x.png'); }
 .whiteelipseborder-zero-to-twentyfive {background-image: url('images/micronuat_whiterings0-25@2x.png'); }
 .whiteelipseborder-twentyfive-to-fifty { background-image: url('images/micronuat_whiterings25-50@2x.png'); }
 .whiteelipseborder-fifty-to-seventyfive { background-image: url('images/micronuat_whiterings50-75@2x.png'); }
@@ -431,94 +432,39 @@ section img,
 }
 
 </style>
+	  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115754405-1');
+</script>
+
   </head>
   <body>
 	  <div class="container">
    	  <div id="logo"><img src="images/micronaut.svg" alt="micronaut framework"/></div>
    	  <div id="calltoaction"><h2>Micronaut is a modern, JVM-based, full-stack Microservices framework designed for building modular, easily testable applications.</h2>	 
-		  <a href="#form">More Info</a>
+		 
    	  </div>		  
 	  </article>	 
 	  <article id="features">	  
-			  	<h3 id="firstFeature">
-				  	<span>Monumental Leap<bry> in Startup time</span>
-				</h3>
-			  	<h3 id="secondFeature">
+			  	<h5 id="firstFeature">
+				  	<span>Monumental Leap<br/> in Startup time</span>
+				</h5>
+			  	<h5 id="secondFeature">
 				  	<span>Blazing fast<br/> throughput</span>
-				</h3>
-			  	<h3 id="thirdFeature">
+				</h5>
+			  	<h5 id="thirdFeature">
 				  	<span>Minimal<br/> Memory Footprint</span>
-				</h3>
+				</h5>
 	  </article>
-	  <div class="whitecircleborderseparator"></div>	  	
-	  <article id="additional-features">	  		  
-			<ol>
-				<li>Dependency Injection Inversion of Control</li>
-				<li>Sensible Defaults and Auto Configuration</li>
-				<li>Configuration Sharing</li>
-				<li>HTTP Routing</li>
-				<li>HTTP Client with Client-Side Load Balancing</li>
-			</ol>
-	  </article>
-	  </div>
-	  <div class="whitecircleborderseparator"></div>
-	  <article id="startup">
-		  <header>
-			  <h2>Fast Startup time - Low Memory Consumption</h2>
-		  </header>
-		  <section>
-			  <P>Unlike reflection-based IoC frameworks, which load and cache reflection data for every single field, method, and constructor in your code, with Micronaut, your application startup time and memory consumption are not bound to the size of your codebase.</p>
-		  </section>
-	  </article>
-	  <div class="whiteelipseborder-zero-to-twentyfive"></div>	  
-	  <div class="twentyfivewhite">	  
-  	  <article id="serverless">
-	  	  <div class="float-left">
-		  <header>
-			  <h2>Android Dependency Injection, Serverless, microservices</h2>
-		  </header>
-		  <section>
-			  <p>Micronaut is designed to enable a low-memory footprint, making it ideal for powering microservices and running as functions on serverless platforms and Android devices.</p>
-	 			 
-		  </section>
-	  	  </div>
-    	  	<div id="footgraph" class="float-right">
-  	  	  	  <img src="images/foots.svg" alt="Spring/Grails vs Micronaut Memory Footprint"/>
-	  	  </div>
-	  </article>
-</div>	  
-	  <div class="whiteelipseborder-twentyfive-to-fifty"></div>	  
-<div class="fiftywhite">	  
-  	  <article id="configuration">
-  	  	  <div class="float-right" id="satellite"><img src="images/satellite-black.svg" alt="Satellite" /></div>
-		  <header>
-			  <h2>Fast configuration loading and injection</h2>
-		  </header>
-		  <section>
-			  <p>Micronaut  avoids the use of reflection and dynamic parsing so that loading the configuration is as efficient as possible with minimal impact on startup time.</p>
-
-		  </section>
-	  </article>	  
-</div>	  
-<div class="whiteelipseborder-fifty-to-seventyfive"></div>
-<div class="seventyfivewhite">
-	  <article id="aop">
-		  <header>
-			  <h2>Fast, easy to debug AOP</h2>
-		  </header>
-		  <section>
-<p>Aspect-Oriented Programming (AOP) may be used to define cross-cutting concerns (logging, transactions, tracing etc.) separately from application code.</p>
-
-<p>The disadvantage of traditional approaches to AOP is the heavy reliance on runtime proxy creation and reflection, which slows application performance, complicates  debugging, and burns through memory.</p>
-
-<p>Micronaut addresses these concerns by providing a simple compile-time AOP API that does not use reflection.</p>
-			  <img src="images/aopgraph_black.svg" alt="aopgraph"/>
-		  </section>
-	  </article>
-</div>	  
+	  
   	
 	  </div>
-	  <div class="whiteelipseborder-seventyfive-to-hundred"></div>
+	  <div class="whiteelipseborder-zero-to-hundred"></div>
 	  <footer id="form">		  
 		  <h2>GET FIRST ACCESS</h2>
 		  <p>Notify me as soon as Micronaut is released.</p>
@@ -559,10 +505,10 @@ section img,
 	 font-size: 20px;
   }
   .mauticform-button {
-	  background-color: #ffffff;
+	  background-color: #000000;
 	  padding: 20px 40px;
-	  border: 2px solid #000000; 
 	  font-size: 25px;
+	  color: #fff;
 	  text-transform: uppercase;
   }
   .mauticform-message {
