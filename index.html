@@ -74,8 +74,8 @@ table {
 }
 
 body {
-	font-size: 16px;
-	line-height: 19px;
+	font-size: 12px;
+	line-height: 16px;
 }
 
 h2 {
@@ -146,6 +146,11 @@ body {
 	width: 250px;
 }
 @media screen and (min-width: 480px) {
+	body {	
+		font-size: 16px;
+		line-height: 21px;
+	}
+
 	#features h2 { 
 		width: 400px;
 	}
@@ -165,7 +170,7 @@ body {
 		text-align: center;
 	}
 	#firstFeature {
-		padding-top: 470px;	
+		padding-top: 520px;	
 	}
 	#secondFeature,	
 	#thirdFeature,
@@ -174,11 +179,11 @@ body {
 	}
 	#thirdFeature,
 	#firstFeature {
-		margin-left: 54%;
+		margin-left: 55%;
 		float: left;
 	}
 	#secondFeature {
-		margin-right: 54%;
+		margin-right: 55%;
 		float: right;
 	}
 }
@@ -223,11 +228,6 @@ body {
 	font-family: 'firasansbold';	
 }
 
-#configuration h2,
-#serverless h2,
-#startup h2 {
-	margin-top: 20px;
-}
 
 #aop p {
 	margin-bottom: 20px;
@@ -281,12 +281,19 @@ section img,
 	width: 100%;
 }
 
+
+.whiteelipseborder-zero-to-twentyfive,
+.whiteelipseborder-twentyfive-to-fifty,
+.whiteelipseborder-fifty-to-seventyfive,
+.whiteelipseborder-seventyfive-to-hundred,
+.whiteelipseborder-seventyfive,
 .whitecircleborderseparator, 
 .whitecircleseparator {
 	background-repeat: no-repeat;
 	background-position: center top;
 	height: 50px;
 }
+
 .whitecircleborderseparator {
 	background-image: url('images/whiteelipseborder.png');	
 }
@@ -313,17 +320,6 @@ section img,
 }
 
 @media screen and (min-width: 1200px) {
-	#aop,
-	#configuration,
-	#serverless,
-	#startup {
-		margin: 0 auto 300px;
-	}
-	#configuration h2,
-	#serverless h2,
-	#startup h2 {
-		margin-top: 100px;
-	}
 	h2 {
 		font-size: 1em;
 		line-height: 1em;
@@ -338,10 +334,6 @@ section img,
 	#calltoaction, 
 	#calltoaction a {
 		margin: 70px auto;
-	}
-	#additional-features {
-		margin-top: 100px;
-		margin-bottom: 200px;
 	}
 	#additional-features li {
 		margin: 0 auto 100px;
@@ -380,13 +372,60 @@ section img,
 	.whitecircleborderseparator {
 		height: 200px;
 	}
+}
 
-	#additional-features li:last-child {
-		margin-bottom: 300px !important;
+/** WHITE rings **/
+#additional-features,
+#startup,
+#configuration,
+#serverless,
+#aop {
+	margin-bottom: 0;
+	padding-bottom: 50px;
+}
+@media screen and (min-width: 1200px) {
+	#additional-features,
+	#features,
+	#aop,
+	#configuration,
+	#serverless,
+	#startup {
+		margin-bottom: 0;
+		padding-bottom: 150px;
 	}
-	#features {
-		margin-bottom: 300px;
+}
+#configuration h2,
+#aop h2 {
+	border-bottom: 1px solid black;
+}
+
+.twentyfivewhite {
+	background-color: rgba(255,255,255,0.25);
+
+}
+.fiftywhite {
+	background-color: rgba(255,255,255,0.5);
+	color: #000000;
+}
+.seventyfivewhite {
+	background-color: rgba(255,255,255,0.75);
+	color: #000000;
+}
+.whiteelipseborder-zero-to-twentyfive {background-image: url('images/micronuat_whiterings0-25@2x.png'); }
+.whiteelipseborder-twentyfive-to-fifty { background-image: url('images/micronuat_whiterings25-50@2x.png'); }
+.whiteelipseborder-fifty-to-seventyfive { background-image: url('images/micronuat_whiterings50-75@2x.png'); }
+.whiteelipseborder-seventyfive-to-hundred { background-image: url('images/micronuat_whiterings75-100@2x.png');}
+		
+#satellite {
+	max-width: 50px;
+}
+@media screen and (min-width: 1200px) {
+	#satellite {
+		max-width: 100px;
 	}
+}
+#satellite img {
+	width: 100%;
 }
 
 </style>
@@ -394,7 +433,7 @@ section img,
   <body>
 	  <div class="container">
    	  <div id="logo"><img src="images/micronaut.svg" alt="micronaut framework"/></div>
-   	  <div id="calltoaction"><h2>Micronaut is a modern, JVM-based, full stack Microservices framework designed for building modular, easily testable Microservice applications.</h2>	 
+   	  <div id="calltoaction"><h2>Micronaut is a modern, JVM-based, full stack Microservices framework designed for building modular, easily testable applications.</h2>	 
 		  <a href="#form">More Info</a>
    	  </div>		  
 	  </article>	 
@@ -414,9 +453,9 @@ section img,
 			<ol>
 				<li>Dependency Injection Inversion of Control</li>
 				<li>Sensible Defaults and Auto Configuration</li>
-				<li>Configuration and Configuration Sharing</li>
-				<li>Http Routing</li>
-				<li>Http Client with Client-Side Load Balancing</li>
+				<li>Configuration Sharing</li>
+				<li>HTTP Routing</li>
+				<li>HTTP Client with Client-Side Load Balancing</li>
 			</ol>
 	  </article>
 	  </div>
@@ -426,50 +465,60 @@ section img,
 			  <h2>Fast Startup time - Low Memory Consumption</h2>
 		  </header>
 		  <section>
-			  <p>With micronaut your application startup time and memory consumption is not
-				  bound to the size of your codebase in the same way as a framework that uses reflection. Reflection based IoC frameworks load and cache reflection data for every single field, method, and constructor in your code. Thus as your code grows in size so do your memory requirements, whilst with Micronaut this is not the case.</p>
-				  <img src="images/rocketspaths.svg" alt="Micronaut vs Grails/Spring"/>
+			  <P>Unlike reflection-based IoC frameworks, which load and cache reflection data for every single field, method, and constructor in your code, with Micronaut, your application startup time and memory consumption are not bound to the size of your codebase.</p>
+			  <p>Micronaut startup time and memory consumption is not bound to the size of your codebase.</p>
+			  <img src="images/rocketspaths.svg" alt="Micronaut vs Grails/Spring"/>
 		  </section>
 	  </article>
-	  <div class="whitecircleborderseparator"></div>	  
+	  <div class="whiteelipseborder-zero-to-twentyfive"></div>	  
+	  <div class="twentyfivewhite">	  
   	  <article id="serverless">
 	  	  <div class="float-left">
 		  <header>
 			  <h2>Android Dependency Injection, Server-less, microservices</h2>
 		  </header>
 		  <section>
-			  <p>Micronaut is designed from the ground up to be suitable to low memory footprint scenarios such as as functions on a Server-less platform, or on Android or as a low memory footprint Microservice.</p>			 			 
+			  <p>Micronaut is designed from the ground up to be suitable to low memory footprint scenarios such as as functions on a Server-less platform, or on Android or as a low memory footprint Microservice.</p>
+			 			 
 		  </section>
 	  	  </div>
     	  	<div id="footgraph" class="float-right">
   	  	  	  <img src="images/foots.svg" alt="Spring/Grails vs Micronaut Memory Footprint"/>
 	  	  </div>
 	  </article>
-	  <div class="whitecircleborderseparator"></div>	  
+</div>	  
+	  <div class="whiteelipseborder-twentyfive-to-fifty"></div>	  
+<div class="fiftywhite">	  
   	  <article id="configuration">
-  	  	  <div class="float-right"><img src="images/satellite.svg" alt="Satellite" width="100"/></div>
+  	  	  <div class="float-right" id="satellite"><img src="images/satellite-black.svg" alt="Satellite" /></div>
 		  <header>
-			  <h2>Fast configuration loading and injection.</h2>
+			  <h2>Fast configuration loading and injection</h2>
 		  </header>
 		  <section>
 			  <p>Micronaut  avoids the use of reflection and dynamic parsing so that loading the configuration is as efficient as possible with minimal impact on startup time.</p>
 
 		  </section>
 	  </article>	  
-  	  <article id="aop">
+</div>	  
+<div class="whiteelipseborder-fifty-to-seventyfive"></div>
+<div class="seventyfivewhite">
+	  <article id="aop">
 		  <header>
-			  <h2>Fast, easy to debug AOP.</h2>
+			  <h2>Fast, easy to debug AOP</h2>
 		  </header>
 		  <section>
-<p>Aspect-Oriented Programming (AOP) can be thought of as a way to define cross cutting concerns (logging, transactions, tracing etc.) separate from application code.</p>
+<p>Aspect-Oriented Programming (AOP) may be used to define cross-cutting concerns (logging, transactions, tracing etc.) separately from application code.</p>
 
-<p>The disadvantage of traditional approaches to AOP is the heavy reliance on runtime proxy creation and reflection, which slows application performance, makes debugging harder and increases memory consumption.</p>
-<p>Micronaut addresses these concerns by providing a simple compile time AOP API that does not use reflection.</p>
-			  <img src="images/aopgraph.svg" alt="aopgraph"/>
+<p>The disadvantage of traditional approaches to AOP is the heavy reliance on runtime proxy creation and reflection, which slows application performance, complicates  debugging, and burns through memory.</p>
+
+<p>Micronaut addresses these concerns by providing a simple compile-time AOP API that does not use reflection.</p>
+			  <img src="images/aopgraph_black.svg" alt="aopgraph"/>
 		  </section>
 	  </article>
+</div>	  
+  	
 	  </div>
-	  <div class="whitecircleseparator"></div>
+	  <div class="whiteelipseborder-seventyfive-to-hundred"></div>
 	  <footer id="form">		  
 		  <h2>GET FIRST ACCESS</h2>
 		  <p>Notify me as soon as Micronaut is released.</p>
@@ -483,12 +532,12 @@ section img,
         var head            = document.getElementsByTagName('head')[0];
         var script          = document.createElement('script');
         script.type         = 'text/javascript';
-        script.src          = 'https://mautic.objectcomputing.com/media/js/mautic-form.js';
+        script.src          = 'HTTPs://mautic.objectcomputing.com/media/js/mautic-form.js';
         script.onload       = function() {
             MauticSDK.onLoad();
         };
         head.appendChild(script);
-        var MauticDomain = 'https://mautic.objectcomputing.com';
+        var MauticDomain = 'HTTPs://mautic.objectcomputing.com';
         var MauticLang   = {
             'submittingMessage': "Please wait..."
         }
@@ -521,7 +570,7 @@ section img,
   }
 </style>	 
 <div id="mauticform_wrapper_micronautreleasenotification" class="mauticform_wrapper">
-    <form autocomplete="false" role="form" method="post" action="https://mautic.objectcomputing.com/form/submit?formId=93" id="mauticform_micronautreleasenotification"  data-mautic-form="micronautreleasenotification" enctype="multipart/form-data">
+    <form autocomplete="false" role="form" method="post" action="HTTPs://mautic.objectcomputing.com/form/submit?formId=93" id="mauticform_micronautreleasenotification"  data-mautic-form="micronautreleasenotification" enctype="multipart/form-data">
         <div class="mauticform-error" id="mauticform_micronautreleasenotification_error"></div>
         <div class="mauticform-message" id="mauticform_micronautreleasenotification_message"></div>
         <div class="mauticform-innerform">
