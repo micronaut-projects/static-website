@@ -220,7 +220,8 @@ body {
 #aop h2,
 #serverless h2,
 #startup h2 {
-	padding-bottom: 30px;
+  padding-bottom: 30px;
+  padding-top: : 300px;
 	border-bottom: 1px solid #ffff;
 	margin-bottom: 30px;
 	text-align: center;
@@ -452,17 +453,6 @@ section img,
 				  	<span>Minimal<br/> Memory Footprint</span>
 				</h3>
 	  </article>
-	  <!-- <div class="whitecircleborderseparator"></div>
-	  <article id="additional-features">
-			<ol>
-				<li>Dependency Injection Inversion of Control</li>
-				<li>Sensible Defaults and Auto Configuration</li>
-				<li>Configuration Sharing</li>
-				<li>HTTP Routing</li>
-				<li>HTTP Client with Client-Side Load Balancing</li>
-			</ol>
-	  </article>
-	  </div> -->
 	  <div class="whitecircleborderseparator"></div>
 	  <article id="startup">
 		  <header>
@@ -502,25 +492,39 @@ section img,
 		  </section>
 	  </article>
 </div>
+-->
+
+<div class="whitecircleborderseparator"></div>
+<article id="additional-features">
+  <ol>
+    <li>Dependency Injection Inversion of Control</li>
+    <li>Sensible Defaults and Auto Configuration</li>
+    <li>Configuration Sharing</li>
+    <li>HTTP Routing</li>
+    <li>HTTP Client with Client-Side Load Balancing</li>
+  </ol>
+</article>
+</div>
+
+
 <div class="whiteelipseborder-fifty-to-seventyfive"></div>
 <div class="seventyfivewhite">
 	  <article id="aop">
 		  <header>
-			  <h2>Fast, easy to debug AOP</h2>
+			  <h2 style="padding-top:30px;">Fast, easy to debug AOP</h2>
 		  </header>
 		  <section>
-<p>Aspect-Oriented Programming (AOP) may be used to define cross-cutting concerns (logging, transactions, tracing etc.) separately from application code.</p>
+<p>Aspect-Oriented Programming (AOP) may be used to define cross-cutting concerns (logging, transactions, tracing, etc.) separately from application code.</p>
 
 <p>The disadvantage of traditional approaches to AOP is the heavy reliance on runtime proxy creation and reflection, which slows application performance, complicates  debugging, and burns through memory.</p>
 
 <p>Micronaut addresses these concerns by providing a simple compile-time AOP API that does not use reflection.</p>
-			  <img src="images/aopgraph_black.svg" alt="aopgraph"/>
 		  </section>
 	  </article>
-</div> -->
+</div>
 
 	  <!-- </div> -->
-	  <!-- <div class="whiteelipseborder-seventyfive-to-hundred"></div> -->
+	  <div class="whiteelipseborder-zero-to-hundred"></div>
 	  <footer id="form">
 		  <h2>GAIN FIRST ACCESS</h2>
 		  <p>Notify me as soon as Micronaut is released.</p>
@@ -561,10 +565,10 @@ section img,
 	 font-size: 20px;
   }
   .mauticform-button {
-	  background-color: #ffffff;
+	  background-color: #000000;
 	  padding: 20px 40px;
-	  border: 2px solid #000000;
 	  font-size: 25px;
+    color: #fff;
 	  text-transform: uppercase;
   }
   .mauticform-message {
