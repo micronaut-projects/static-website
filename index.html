@@ -104,17 +104,24 @@ body {
 	background-position: center top;
 	font-family: 'firasansregular';
 }
-
+article {
+	padding-left: 60px;
+	padding-right: 60px;	
+}
 #logo {
-	margin: 20px auto 0;
+	margin: 80px auto 0;
 	max-width: 300px;
+}
+@media screen and (min-width: 1200px) {
+	#logo { margin-top: 20px; }
 }
 #logo img {
 	width: 100%;
 }
 #calltoaction {
 	max-width: 1234px;
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;	
 	text-align: center;
 }
 #calltoaction a {
@@ -450,6 +457,7 @@ section img,
   </head>
   <body>
 	  <div class="container">
+	  <article>
    	  <div id="logo"><img src="images/micronaut.svg" alt="micronaut framework"/></div>
    	  <div id="calltoaction"><h2>A modern, JVM-based, full-stack framework for building modular, easily testable microservice applications.</h2>
    	  </div>
@@ -526,12 +534,19 @@ section img,
 	 font-size: 20px;
   }
   .mauticform-button {
-	  background-color: #ffffff;
+	  background-color: #000000;	  
+	  color: #ffffff;
 	  padding: 20px 40px;
 	  border: 2px solid #000000;
 	  font-size: 25px;
+	  margin-bottom: 60px;
 	  text-transform: uppercase;
   }
+  @media screen and (min-width: 1200px) {
+      .mauticform-button {
+          margin-bottom: 0;	      
+      }
+  }  
   .mauticform-message {
 	  color: #4CAFDE;
   }
