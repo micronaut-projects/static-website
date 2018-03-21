@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+	  <title>Micronaut.io</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -257,6 +258,7 @@ article {
 	margin: 0 auto 20px;
 }
 
+.iconsgrid,
 #aop,
 #configuration,
 #serverless,
@@ -266,6 +268,40 @@ article {
 	max-width: 1234px;
 	padding: 20px;
 	overflow: auto;
+}
+.iconsgrid {
+	margin: 0 auto;
+	max-width: 1234px;
+}
+.iconsgrid li  {
+	text-align: center;	
+	margin: 0 auto 50px;
+}
+.iconsgrid li span {
+	text-align: center;
+}
+.iconsgrid li img {
+	max-width: 100px;	
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 10px;
+}
+@media screen and (min-width: 480px) {
+	.iconsgrid li img {
+		max-width: 150px;	
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.iconsgrid li  {
+		float: left;
+		width: 23%;
+		margin: 0 5% 5% 5%;
+	}
+	.iconsgrid li img {
+		max-width: 200px;	
+	}
 }
 
 #configuration h2,
@@ -527,6 +563,37 @@ section img,
 			  <P>Unlike reflection-based IoC frameworks, which load and cache reflection data for every single field, method, and constructor in your code; with Micronaut, your application startup time and memory consumption are not bound to the size of your codebase.</p>
 		  </section>
 	  </article>
+	  <div class="whitecircleborderseparator"></div>
+	  <article>
+		  <ul class="iconsgrid">
+			  <li>
+	  <img src="images/micronuat_dependencyinjection.svg" alt="Micronaut Dependency Injection"/>
+	  <span>Dependency Injection</span>
+			  </li>
+			  <li>
+	  	  <img src="images/micronuat_autoconfig.svg" alt="Micronaut Autoconfiguration"/>
+	  	  	  <span>Auto Configuration</span>
+			  </li>	  	  
+			  <li>			  
+	  	  <img src="images/micronuat_configsharing.svg" alt="Micronaut Configuration Sharing"/>
+	  	  	  <span>Configuration Sharing</span>	  	  
+			  </li>	  	  
+			  <li>			  	  	  
+	  	  <img src="images/micronuat_httprouting.svg" alt="HTTP Routing"/>	 
+	  	  	  <span>HTTP<br/> Routing</span>	  	  
+	  	  	  </li>	  	  
+			  <li>			  
+	  	  <img src="images/micronuat_fastconfig.svg" alt="Fast Config"/>
+	  	  	  <span>Fast Configuration</span>	  	  	  	  
+      		  </li>	  	  
+			  <li>			  
+	  	  <img src="images/micronuat_loadbalancing.svg" alt=""/>	  	  
+	  	  	  <span>Load Balancing</span>	  	  	  	  	  	  
+	  	  	</li>	  	  
+		  </ul>
+	  </article>
+
+
 	  <div class="whiteelipseborder-zero-to-hundred"></div>
 	  <footer id="form">
 		  <h2>GAIN FIRST ACCESS</h2>
