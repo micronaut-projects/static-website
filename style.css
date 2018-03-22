@@ -435,6 +435,7 @@ section img,
 }
 
 /** WHITE rings **/
+.iconsgrid,
 #additional-features,
 #startup,
 #configuration,
@@ -444,6 +445,7 @@ section img,
 	padding-bottom: 50px;
 }
 @media screen and (min-width: 1200px) {
+	.iconsgrid,
 	#additional-features,
 	#aop,
 	#configuration,
