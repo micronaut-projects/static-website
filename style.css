@@ -65,8 +65,8 @@ table {
 }
 
 body {
-	font-size: 16px;
-	line-height: 21px;
+	font-size: 14px;
+	line-height: 18px;
 }
 
 small {
@@ -239,7 +239,7 @@ article {
 }
 .iconsgrid li span {
 	text-align: center;
-	font-size: 0.8em;
+
 }
 .iconsgrid li img {
 	max-width: 100px;	
@@ -253,6 +253,7 @@ article {
 		float: left;
 		width: 40%;
 		margin: 0 5% 5% 5%;
+		font-size: 0.8em;		
 	}
 	.iconsgrid li img {
 		max-width: 150px;	
