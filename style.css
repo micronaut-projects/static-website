@@ -65,8 +65,8 @@ table {
 }
 
 body {
-	font-size: 12px;
-	line-height: 16px;
+	font-size: 16px;
+	line-height: 21px;
 }
 
 small {
@@ -159,11 +159,6 @@ article {
 	width: 250px;
 }
 @media screen and (min-width: 480px) {
-	body {
-		font-size: 16px;
-		line-height: 21px;
-	}
-
 	#features h2 {
 		width: 400px;
 	}
