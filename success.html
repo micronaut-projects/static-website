@@ -1,464 +1,45 @@
 <!doctype html>
 <html lang="en">
   <head>
+	  <title>Micronaut.io</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <style type="text/css">
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-@font-face {
-    font-family: 'firasansregular';
-    src: url('fonts/FiraSans-Regular.eot');
-    src: url('fonts/FiraSans-Regular?#iefix') format('embedded-opentype'),
-         url('fonts/FiraSans-Regular.woff2') format('woff2'),
-         url('fonts/FiraSans-Regular.woff') format('woff'),
-         url('fonts/FiraSans-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'firasansbold';
-    src: url('fonts/FiraSans-Bold.eot');
-    src: url('fonts/FiraSans-Bold?#iefix') format('embedded-opentype'),
-         url('fonts/FiraSans-Bold.woff2') format('woff2'),
-         url('fonts/FiraSans-Bold.woff') format('woff'),
-         url('fonts/FiraSans-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-	font-size: 12px;
-	line-height: 16px;
-}
-
-h2 {
-	font-size: 1.5625em !important; /* 50 / 32 */
-	line-height: 1.5789em !important; /* 60 / 38 */
-}
-
-h3 {
-	font-size: 1.25em; /* 40 / 32 */
-	line-height: 1.263em; /* 48px;	/ 38px; */
-}
-
-label,
-input,
-li,
-p {
-	font-size: 1.25em; /* 40 / 32 */
-	line-height: 1.263em; /* 48px;	/ 38px; */
-}
-
-body {
-	background-color: #000000;
-	color: #ffffff;
-	background-image: url('images/micronaut_vertbk.jpg');
-	background-repeat: repeat;
-	background-position: center top;
-	font-family: 'firasansregular';
-}
-article {
-	padding-left: 60px;
-	padding-right: 60px;	
-}
-#logo {
-	margin: 80px auto 0;
-	max-width: 300px;
-}
-@media screen and (min-width: 1200px) {
-	#logo { margin-top: 20px; }
-}
-#logo img {
-	width: 100%;
-}
-#calltoaction {
-	max-width: 1234px;
-	padding-top: 20px;
-	padding-bottom: 20px;	
-	text-align: center;
-}
-#calltoaction a {
-	border: 3px solid white;
-	color: #ffffff;
-	text-decoration: none;
-	padding: 24px 52px;
-	display: block;
-	max-width: 140px;
-}
-
-#calltoaction,
-#calltoaction a {
-	margin: 20px auto;
-}
-@media screen and (min-width: 800px) {
-	#calltoaction { margin-bottom: 110px }
-}
-
-
-#features {
-	padding: 20px 40px;
-	max-width: 1234px;
-	text-align: center;
-	margin: 0 20px 0 0;
-	background-image: url('images/rocket.svg');
-	background-repeat: no-repeat;
-	text-transform: uppercase;
-	overflow: auto;
-}
-
-#features h3 {
-	text-align: left;
-	margin-bottom: 20px;
-	width: 250px;
-}
-@media screen and (min-width: 480px) {
-	body {
-		font-size: 16px;
-		line-height: 21px;
-	}
-
-	#features h2 {
-		width: 400px;
-	}
-}
-#features {
-	margin-top: 50px;
-	margin-bottom: 50px;
-	background-position: right top;
-}
-
-@media screen and (min-width: 800px) {
-	#features {
-		margin: 0 auto 140px;
-		background-position: center top;
-	}
-	#features h3 {
-		text-align: center;
-	}
-	#firstFeature {
-		padding-top: 320px;
-	}
-	#secondFeature,
-	#thirdFeature,
-	#firstFeature {
-		width: 400px;
-	}
-	#thirdFeature,
-	#firstFeature {
-		margin-left: 55%;
-		float: left;
-	}
-	#secondFeature {
-		margin-right: 55%;
-		float: right;
-	}
-}
-@media screen and (min-width: 1200px) {
-	#firstFeature {
-		padding-top: 520px;
-	}
-}
-
-
-#additional-features {
-	margin-top: 20px;
-	margin-bottom: 40px;
-	background-image: url('images/astronauts.svg');
-	background-repeat: no-repeat;
-	background-position: center top;
-}
-#additional-features {
-	text-align: center;
-}
-
-#additional-features li {
-	max-width: 800px;
-	margin: 0 auto 20px;
-}
-
-#aop,
-#configuration,
-#serverless,
-#startup {
-	margin: 0 auto 20px;
-	clear: both;
-	max-width: 1234px;
-	padding: 20px;
-	overflow: auto;
-}
-
-#configuration h2,
-#aop h2,
-#serverless h2,
-#startup h2 {
-	padding-bottom: 30px;
-	border-bottom: 1px solid #ffff;
-	margin-bottom: 30px;
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'firasansbold';
-}
-
-#startup p,
-#aop p {
-	margin-bottom: 20px;
-}
-
-#footgraph {
-	max-width: 320px;
-	margin: 0 auto;
-}
-.float-right {
-	float: right;
-}
-.float-left {
-	float: left;
-}
-
-#serverless .float-right {
-	float: none;
-}
-#serverless .float-left {
-	float: none;
-}
-#footgraph {
-	margin-top: 20px;
-}
-
-#footgraph img {
-	width: 100%;
-}
-
-footer {
-	padding-top: 50px;
-	width: 100%;
-	color: #000000;
-	text-align: center;
-	overflow: auto;
-	background-color: #ffffff;
-}
-
-footer h2 {
-	margin-bottom: 10px;
-	font-family: 'firasansbold';
-}
-
-#blacklogo {
-	max-width: 350px;
-	margin: 30px auto;
-}
-
-section img,
-#blacklogo img {
-	width: 100%;
-}
-
-
-.whiteelipseborder-zero-to-hundred,
-.whiteelipseborder-zero-to-twentyfive,
-.whiteelipseborder-twentyfive-to-fifty,
-.whiteelipseborder-fifty-to-seventyfive,
-.whiteelipseborder-seventyfive-to-hundred,
-.whiteelipseborder-seventyfive,
-.whitecircleborderseparator,
-.whitecircleseparator {
-	background-repeat: no-repeat;
-	background-position: center top;
-	height: 50px;
-}
-
-.whitecircleborderseparator {
-	background-image: url('images/whiteelipseborder.png');
-}
-.whitecircleseparator {
-	background-image: url('images/whiteelipse.png');
-}
-
-@media screen and (min-width: 480px) {
-	body {
-		font-size: 24px;
-		line-height: 28px;
-	}
-	#aop,
-	#configuration,
-	#serverless,
-	#startup {
-		margin: 0 auto 100px;
-	}
-	#configuration h2,
-	#serverless h2,
-	#startup h2 {
-		margin-top: 50px;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	h2 {
-		font-size: 1em;
-		line-height: 1em;
-	}
-	#logo {
-		margin: 100px auto 0;
-		max-width: 500px;
-	}
-	#calltoaction a {
-		max-width: 240px;
-	}
-	#calltoaction,
-	#calltoaction a {
-		margin: 70px auto;
-	}
-	#additional-features li {
-		margin: 0 auto 100px;
-	}
-	#aop p {
-		margin-bottom: 70px;
-	}
-	#serverless div {
-		padding-right: 50px;
-	}
-	#serverless div {
-		max-width: 617px;
-	}
-	#serverless .float-right {
-		float: right;
-	}
-	#serverless .float-left {
-		float: left;
-	}
-	#footgraph {
-		margin-top: 120px;
-		width: 500px;
-	}
-	footer h2 {
-		margin-bottom: 40px;
-	}
-	#blacklogo {
-		margin: 120px auto;
-	}
-	body {
-		font-size: 32px;
-		line-height: 38px;
-	}
-
-	.whitecircleseparator,
-	.whitecircleborderseparator {
-		height: 200px;
-	}
-}
-
-/** WHITE rings **/
-#additional-features,
-#startup,
-#configuration,
-#serverless,
-#aop {
-	margin-bottom: 0;
-	padding-bottom: 50px;
-}
-@media screen and (min-width: 1200px) {
-	#additional-features,
-	#aop,
-	#configuration,
-	#serverless,
-	#startup {
-		margin-bottom: 0;
-		padding-bottom: 150px;
-	}
-	#features {
-		margin-bottom: 280px;
-	}
-}
-#configuration h2,
-#aop h2 {
-	border-bottom: 1px solid black;
-}
-
-.twentyfivewhite {
-	background-color: rgba(255,255,255,0.25);
-
-}
-.fiftywhite {
-	background-color: rgba(255,255,255,0.5);
-	color: #000000;
-}
-.seventyfivewhite {
-	background-color: rgba(255,255,255,0.75);
-	color: #000000;
-}
-
-
-.whiteelipseborder-zero-to-hundred { background-image: url('images/micronuat_whiterings0-100@2x.png'); }
-.whiteelipseborder-zero-to-twentyfive {background-image: url('images/micronuat_whiterings0-25@2x.png'); }
-.whiteelipseborder-twentyfive-to-fifty { background-image: url('images/micronuat_whiterings25-50@2x.png'); }
-.whiteelipseborder-fifty-to-seventyfive { background-image: url('images/micronuat_whiterings50-75@2x.png'); }
-.whiteelipseborder-seventyfive-to-hundred { background-image: url('images/micronuat_whiterings75-100@2x.png');}
-
-#satellite {
-	max-width: 50px;
-}
-@media screen and (min-width: 1200px) {
-	#satellite {
-		max-width: 100px;
-	}
-}
-#satellite img {
-	width: 100%;
-}
-
-</style>
+    <meta property="og:image" content="http://micronaut.io/images/Micronaut_OG_Logo.png" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:url" content="http://micronaut.io" />	  
+    <meta property="og:title" content="Micronaut: A Modern Microservice Framework for the JVM" />
+    <meta property="og:description" content="A modern, JVM-based, full-stack framework for building modular, easily testable microservice applications." />	  
+    <meta property="og:type" content="website" />
+	  
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/images/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/images/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/images/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/images/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/images/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/images/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/images/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/images/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/images/mstile-310x310.png" />	  
+	  
+	  <link href="style.css" rel="stylesheet" />	  
   </head>
   <body>
 	  <div class="container">
 	  <article>
-   	  <div id="logo"><img src="images/micronaut.svg" alt="micronaut framework"/></div>
+   	  <div id="logo"><a href="http://micronaut.io"><img src="images/micronaut.svg" alt="micronaut framework"/></a></div>
    	  <div id="calltoaction"><h2>A modern, JVM-based, full-stack framework for building modular, easily testable microservice applications.</h2>
    	  </div>
 	  </article>
@@ -490,55 +71,48 @@ section img,
         <h2>Fast Startup time &nbsp;&nbsp;&mdash;&nbsp;&nbsp; Low Memory Consumption</h2>
 		  </header>
 		  <section>
-			  <P>Unlike reflection-based IoC frameworks, which load and cache reflection data for every single field, method, and constructor in your code; with Micronaut, your application startup time and memory consumption are not bound to the size of your codebase.</p>
+			  <p>Unlike reflection-based IoC frameworks, which load and cache reflection data for every single field, method, and constructor in your code; with Micronaut, your application startup time and memory consumption are not bound to the size of your codebase.</p>
 		  </section>
 	  </article>
+	  <div class="whitecircleborderseparator"></div>
+	  <article>
+		  <ul class="iconsgrid">
+			  <li>
+	  <img src="images/micronuat_dependencyinjection.svg" alt="Micronaut Dependency Injection"/>
+	  <span>Dependency Injection</span>
+			  </li>
+			  <li>
+	  	  <img src="images/micronuat_autoconfig.svg" alt="Micronaut Autoconfiguration"/>
+	  	  	  <span>Auto<br/>Configuration</span>
+			  </li>	  	  
+			  <li>			  
+	  	  <img src="images/micronuat_configsharing.svg" alt="Micronaut Configuration Sharing"/>
+	  	  	  <span>Configuration<br/>Sharing</span>	  	  
+			  </li>	  	  
+			  <li>			  	  	  
+	  	  <img src="images/micronuat_httprouting.svg" alt="HTTP Routing"/>	 
+	  	  	  <span>HTTP<br/>Routing</span>	  	  
+	  	  	  </li>	  	  
+			  <li>			  
+	  	  <img src="images/micronuat_fastconfig.svg" alt="Fast Config"/>
+	  	  	  <span>Fast<br/>Configuration</span>	  	  	  	  
+      		  </li>	  	  
+			  <li>			  
+	  	  <img src="images/micronuat_loadbalancing.svg" alt=""/>	  	  
+	  	  	  <span>Load<br/>Balancing</span>	  	  	  	  	  	  
+	  	  	</li>	  	  
+		  </ul>
+	  </article>
+
+
 	  <div class="whiteelipseborder-zero-to-hundred"></div>
 	  <footer id="form">
 		  <h2>GAIN FIRST ACCESS</h2>
 		  <p>Notify me as soon as Micronaut is released.</p>
-		  
-		  <h3 class="mauticform-message">Thanks. We will send you an email as soon as Micronaut is released.</h3>
-<style type="text/css">
-	.mauticform_wrapper {
-		margin: 30px auto 0 !important;
-	}
-	.mauticform-row {
-		margin: 30px auto !important;
-	}
- .mauticform-label { display: block; font-size: 20px;  !important}
- .mauticform-input {
-	 width: 90%;
-	 max-width: 500px;
-	 border: none !important;
-	 border-bottom: 1px solid #000000 !important;
-	 font-size: 20px;
-  }
-  .mauticform-button {
-	  background-color: #000000 !important;	   
-	  color: #ffffff !important;
-	  padding: 20px 40px !important;
-	  border: 2px solid #000000 !important;
-	  font-size: 25px !important;
-	  margin-bottom: 60px !important;
-	  text-transform: uppercase !important;
-  }
-  .mauticform-row.mauticform-required .mauticform-label:after {
-	  content: none !important;
-  }
-  @media screen and (min-width: 1200px) {
-      .mauticform-button {
-          margin-bottom: 0 !important;	      
-      }
-  }  
-  .mauticform-message {
-	  color: #4CAFDE !important;
-  }
-</style>
+	  <h3 class="mauticform-message">Thanks. We will send you an email as soon as Micronaut is released</h3>		  
 <script type="text/javascript" src="//mautic.objectcomputing.com/form/generate.js?id=93"></script>
-
     	  <p id="blacklogo"><img src="images/micronautlogo.svg" alt="Micronaut Logo"/></p>
-    	  <p><small>© 2018, Object Computing, Inc. (OCI). All rights reserved.</small></p>
+    	  <p><a title="Visit OCI Website" href="https://objectcomputing.com"><img src="images/ocilogo.svg" width="200" alt="Object Computing"/></a><br/><small><a href="mailto:info@micronaut.io?subject=Micronaut&amp;body=I%20am%20interested%20in%20Micronaut.">info@micronaut.io</a> <a href="https://twitter.com/micronautfw">@micronautfw</a></small><br/><small>© 2018, Object Computing, Inc. (OCI). All rights reserved.</small></p>
 	  </footer>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
@@ -547,5 +121,6 @@ section img,
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'UA-115754405-1');
-</script></body>
+</script>
+</body>
 </html>

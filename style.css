@@ -1,0 +1,533 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: 'firasansregular';
+    src: url('fonts/FiraSans-Regular.eot');
+    src: url('fonts/FiraSans-Regular?#iefix') format('embedded-opentype'),
+         url('fonts/FiraSans-Regular.woff2') format('woff2'),
+         url('fonts/FiraSans-Regular.woff') format('woff'),
+         url('fonts/FiraSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'firasansbold';
+    src: url('fonts/FiraSans-Bold.eot');
+    src: url('fonts/FiraSans-Bold?#iefix') format('embedded-opentype'),
+         url('fonts/FiraSans-Bold.woff2') format('woff2'),
+         url('fonts/FiraSans-Bold.woff') format('woff'),
+         url('fonts/FiraSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+small {
+	font-size: 0.5em;
+	line-height: 0.6em;	
+}
+footer a,
+footer small {
+	color: #7B7C81;
+}
+
+h2 {
+	font-size: 1.5625em !important; /* 50 / 32 */
+	line-height: 1.5789em !important; /* 60 / 38 */
+}
+
+h3 {
+	font-size: 1.25em; /* 40 / 32 */
+	line-height: 1.263em; /* 48px;	/ 38px; */
+}
+
+label,
+input,
+li,
+p {
+	font-size: 1.25em; /* 40 / 32 */
+	line-height: 1.6em; /* 48px;	/ 38px; */
+}
+
+body {
+	background-color: #000000;
+	color: #ffffff;
+	background-image: url('images/micronaut_vertbk.jpg');
+	background-repeat: repeat;
+	background-position: center top;
+	font-family: 'firasansregular';
+}
+article {
+	padding-left: 60px;
+	padding-right: 60px;	
+}
+#logo {
+	margin: 80px auto 0;
+	max-width: 300px;
+}
+@media screen and (min-width: 1200px) {
+	#logo { margin-top: 20px; }
+}
+#logo img {
+	width: 100%;
+}
+#calltoaction {
+	max-width: 1234px;
+	padding-top: 20px;
+	padding-bottom: 20px;	
+	text-align: center;
+}
+#calltoaction a {
+	border: 3px solid white;
+	color: #ffffff;
+	text-decoration: none;
+	padding: 24px 52px;
+	display: block;
+	max-width: 140px;
+}
+
+#calltoaction,
+#calltoaction a {
+	margin: 20px auto;
+}
+@media screen and (min-width: 800px) {
+	#calltoaction { margin-bottom: 110px }
+}
+
+
+#features {
+	padding: 20px 40px;
+	max-width: 1234px;
+	text-align: center;
+	margin: 0 20px 0 0;
+	background-image: url('images/rocket.svg');
+	background-repeat: no-repeat;
+	text-transform: uppercase;
+	overflow: auto;
+}
+
+#features h3 {
+	text-align: left;
+	margin-bottom: 20px;
+	width: 250px;
+}
+@media screen and (min-width: 480px) {
+	body {
+		font-size: 16px;
+		line-height: 21px;
+	}
+
+	#features h2 {
+		width: 400px;
+	}
+}
+#features {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background-position: right top;
+}
+
+@media screen and (min-width: 800px) {
+	#features {
+		margin: 0 auto 140px;
+		background-position: center top;
+	}
+	#features h3 {
+		text-align: center;
+	}
+	#firstFeature {
+		padding-top: 320px;
+	}
+	#secondFeature,
+	#thirdFeature,
+	#firstFeature {
+		width: 400px;
+	}
+	#thirdFeature,
+	#firstFeature {
+		margin-left: 55%;
+		float: left;
+	}
+	#secondFeature {
+		margin-right: 55%;
+		float: right;
+	}
+}
+@media screen and (min-width: 1200px) {
+	#firstFeature {
+		padding-top: 520px;
+	}
+}
+
+
+#additional-features {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	background-image: url('images/astronauts.svg');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#additional-features {
+	text-align: center;
+}
+
+#additional-features li {
+	max-width: 800px;
+	margin: 0 auto 20px;
+}
+
+.iconsgrid,
+#aop,
+#configuration,
+#serverless,
+#startup {
+	margin: 0 auto 20px;
+	clear: both;
+	max-width: 1234px;
+	padding: 20px;
+	overflow: auto;
+}
+.iconsgrid {
+	margin: 0 auto;
+	max-width: 1234px;
+}
+.iconsgrid li  {
+	text-align: center;	
+	margin: 0 auto 50px;
+}
+.iconsgrid li span {
+	text-align: center;
+	font-size: 0.8em;
+}
+.iconsgrid li img {
+	max-width: 100px;	
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 10px;
+}
+@media screen and (min-width: 480px) {
+	.iconsgrid li  {
+		float: left;
+		width: 40%;
+		margin: 0 5% 5% 5%;
+	}
+	.iconsgrid li img {
+		max-width: 150px;	
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.iconsgrid li  {
+		float: left;
+		width: 23%;
+		margin: 0 5% 5% 5%;
+	}
+	.iconsgrid li img {
+		max-width: 200px;	
+	}
+	.iconsgrid li span {
+		font-size: 1em;
+	}
+}
+
+#configuration h2,
+#aop h2,
+#serverless h2,
+#startup h2 {
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ffff;
+	margin-bottom: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'firasansbold';
+}
+
+#startup p,
+#aop p {
+	margin-bottom: 20px;
+}
+
+#footgraph {
+	max-width: 320px;
+	margin: 0 auto;
+}
+.float-right {
+	float: right;
+}
+.float-left {
+	float: left;
+}
+
+#serverless .float-right {
+	float: none;
+}
+#serverless .float-left {
+	float: none;
+}
+#footgraph {
+	margin-top: 20px;
+}
+
+#footgraph img {
+	width: 100%;
+}
+
+footer {
+	padding-top: 50px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	overflow: auto;
+	background-color: #ffffff;
+}
+
+footer h2 {
+	margin-bottom: 10px;
+	font-family: 'firasansbold';
+}
+
+#blacklogo {
+	max-width: 350px;
+	margin: 30px auto 60px;
+}
+
+section img,
+#blacklogo img {
+	width: 100%;
+}
+
+
+.whiteelipseborder-zero-to-hundred,
+.whiteelipseborder-zero-to-twentyfive,
+.whiteelipseborder-twentyfive-to-fifty,
+.whiteelipseborder-fifty-to-seventyfive,
+.whiteelipseborder-seventyfive-to-hundred,
+.whiteelipseborder-seventyfive,
+.whitecircleborderseparator,
+.whitecircleseparator {
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 50px;
+}
+
+.whitecircleborderseparator {
+	background-image: url('images/whiteelipseborder.png');
+}
+.whitecircleseparator {
+	background-image: url('images/whiteelipse.png');
+}
+
+@media screen and (min-width: 480px) {
+	body {
+		font-size: 24px;
+		line-height: 28px;
+	}
+	#aop,
+	#configuration,
+	#serverless,
+	#startup {
+		margin: 0 auto 100px;
+	}
+	#configuration h2,
+	#serverless h2,
+	#startup h2 {
+		margin-top: 50px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	h2 {
+		font-size: 1em;
+		line-height: 1em;
+	}
+	#logo {
+		margin: 100px auto 0;
+		max-width: 500px;
+	}
+	#calltoaction a {
+		max-width: 240px;
+	}
+	#calltoaction,
+	#calltoaction a {
+		margin: 70px auto;
+	}
+	#additional-features li {
+		margin: 0 auto 100px;
+	}
+	#aop p {
+		margin-bottom: 70px;
+	}
+	#serverless div {
+		padding-right: 50px;
+	}
+	#serverless div {
+		max-width: 617px;
+	}
+	#serverless .float-right {
+		float: right;
+	}
+	#serverless .float-left {
+		float: left;
+	}
+	#footgraph {
+		margin-top: 120px;
+		width: 500px;
+	}
+	footer h2 {
+		margin-bottom: 40px;
+	}
+	#blacklogo {
+		margin: 120px auto;
+	}
+	body {
+		font-size: 32px;
+		line-height: 38px;
+	}
+
+	.whitecircleseparator,
+	.whitecircleborderseparator {
+		height: 200px;
+	}
+}
+
+/** WHITE rings **/
+#additional-features,
+#startup,
+#configuration,
+#serverless,
+#aop {
+	margin-bottom: 0;
+	padding-bottom: 50px;
+}
+@media screen and (min-width: 1200px) {
+	#additional-features,
+	#aop,
+	#configuration,
+	#serverless,
+	#startup {
+		margin-bottom: 0;
+		padding-bottom: 150px;
+	}
+	#features {
+		margin-bottom: 280px;
+	}
+}
+#configuration h2,
+#aop h2 {
+	border-bottom: 1px solid black;
+}
+
+.twentyfivewhite {
+	background-color: rgba(255,255,255,0.25);
+
+}
+.fiftywhite {
+	background-color: rgba(255,255,255,0.5);
+	color: #000000;
+}
+.seventyfivewhite {
+	background-color: rgba(255,255,255,0.75);
+	color: #000000;
+}
+
+
+.whiteelipseborder-zero-to-hundred { background-image: url('images/micronuat_whiterings0-100@2x.png'); }
+.whiteelipseborder-zero-to-twentyfive {background-image: url('images/micronuat_whiterings0-25@2x.png'); }
+.whiteelipseborder-twentyfive-to-fifty { background-image: url('images/micronuat_whiterings25-50@2x.png'); }
+.whiteelipseborder-fifty-to-seventyfive { background-image: url('images/micronuat_whiterings50-75@2x.png'); }
+.whiteelipseborder-seventyfive-to-hundred { background-image: url('images/micronuat_whiterings75-100@2x.png');}
+
+#satellite {
+	max-width: 50px;
+}
+@media screen and (min-width: 1200px) {
+	#satellite {
+		max-width: 100px;
+	}
+}
+#satellite img {
+	width: 100%;
+}
+
+	.mauticform_wrapper {
+		margin: 30px auto 0 !important;
+	}
+	.mauticform-row {
+		margin: 30px auto !important;
+	}
+ .mauticform-label { display: block; font-size: 20px;  !important}
+ .mauticform-input {
+	 width: 90%;
+	 max-width: 500px;
+	 border: none !important;
+	 border-bottom: 1px solid #000000 !important;
+	 font-size: 20px;
+  }
+  .mauticform-button {
+	  background-color: #000000 !important;	   
+	  color: #ffffff !important;
+	  padding: 20px 40px !important;
+	  border: 2px solid #000000 !important;
+	  font-size: 25px !important;
+	  margin-bottom: 60px !important;
+	  text-transform: uppercase !important;
+  }
+  .mauticform-row.mauticform-required .mauticform-label:after {
+	  content: none !important;
+  }
+  @media screen and (min-width: 1200px) {
+      .mauticform-button {
+          margin-bottom: 0 !important;	      
+      }
+  }  
+  .mauticform-message {
+	  color: #4CAFDE !important;
+  }
