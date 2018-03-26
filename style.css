@@ -226,9 +226,18 @@ article {
 	margin: 0 auto 20px;
 	clear: both;
 	max-width: 1234px;
-	padding: 20px;
+	padding: 20px 30px;
 	overflow: auto;
 }
+@media screen and (min-width: 800px) {
+	#aop,
+	#configuration,
+	#serverless,
+	#startup {
+		padding: 20px 100px;
+	}
+}
+
 .iconsgrid {
 	margin: 0 auto;
 	max-width: 1234px;
