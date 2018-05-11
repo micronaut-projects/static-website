@@ -64,6 +64,11 @@ table {
     font-style: normal;
 }
 
+sup {
+    vertical-align: super;
+    font-size: 0.6em;
+}
+
 body {
 	font-size: 14px;
 	line-height: 18px;
