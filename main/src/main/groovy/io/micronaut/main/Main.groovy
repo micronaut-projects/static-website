@@ -15,7 +15,7 @@ class Main {
         List<Guide> guides = GuidesFetcher.fetchGuides()
         List<HtmlPage> pages = SiteMap.PAGES
 
-        pages << new IFramePage('http://docs.micronaut.io/latest/api/', 'api.html', null)
+        pages << new IFramePage('https://micronaut-projects.github.io/micronaut-core/snapshot/api/', 'api.html', null)
 
         String timestamp = WebsiteGenerator.timestamp()
 
