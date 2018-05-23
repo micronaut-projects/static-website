@@ -47,7 +47,7 @@ class AnnouncementPage extends Page {
                             mkp.yieldUnescaped 'Micronaut represents a significant advancement in how a range of application types – with a particular focus on microservices – are built for the JVM.'
                         }
                         p {
-                            mkp.yieldUnescaped 'Micronaut comes to you from <a href="https://objectcomputing.com">OCI</a> and the team that built the <a href="http://grails.org">Grails framework</a> framework. <b>It builds upon over 10 years of experience creating application frameworks for the JVM</b>.'
+                            mkp.yieldUnescaped 'Micronaut comes to you from <a href="https://objectcomputing.com">OCI</a> and the team that built the <a href="http://grails.org">Grails framework</a>. <b>It builds upon over 10 years of experience creating application frameworks for the JVM</b>.'
                         }
                         p {
                             mkp.yieldUnescaped 'By leveraging the lessons learned building the Grails framework, we have built a toolkit that encompasses all the modern features developers have come to expect from a framework, including dependency injection, AOP, configuration management, and more.'
