@@ -1,0 +1,32 @@
+:gradle: http://www.gradle.org
+:markupte: http://docs.groovy-lang.org/latest/html/documentation/markup-template-engine.html
+
+= Micronaut Website
+
+Micronaut is a modern, JVM-based, full-stack framework for building modular, easily testable microservice applications.
+
+== Sources for the Micronaut website
+
+This project builds the Micronaut website. It is using {gradle}[Gradle] and is fully statically generated.
+
+Build is image:https://travis-ci.org/micronaut-projects/static-website.svg?branch=master["Build Status", link="https://travis-ci.org/micronaut-projects/static-website"].
+
+== Generating the MAIN site
+
+http://micronaut.io[http://micronaut.io]
+
+----
+./gradlew :main:runShadow
+----
+
+The output can be found in the `main/build/site` directory.
+
+== Generating the GUIDES site
+
+http://guides.micronaut.io[http://guides.micronaut.io]
+
+----
+./gradlew :guides:runShadow
+----
+
+The output can be found in the `guides/build/site` directory.

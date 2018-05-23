@@ -1,0 +1,120 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:2.0.1"
+    }
+}
+
+apply plugin: "com.github.johnrengelman.shadow"
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+mainClassName = "io.micronaut.main.Main"
+
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+    compile "com.vladsch.flexmark:flexmark-all:$flexmarkVersion"
+    testCompile "org.spockframework:spock-core:$spockVersion"
+    compile project(':micronaut-navigation-core')
+}
+
+task createSiteFolder {
+    doLast {
+        file("${project.buildDir}/site").mkdirs()
+        file("${project.buildDir}/site/profiles").mkdirs()
+        file("${project.buildDir}/site/profiles/web").mkdirs()
+        file("${project.buildDir}/site/profiles/rest-api").mkdirs()
+        file("${project.buildDir}/site/profiles/angularjs").mkdirs()
+        file("${project.buildDir}/site/profiles/angular").mkdirs()
+        file("${project.buildDir}/site/profiles/react").mkdirs()
+        file("${project.buildDir}/site/profiles/vue").mkdirs()
+        file("${project.buildDir}/site/profiles/react-webpack").mkdirs()
+        file("${project.buildDir}/site/profiles/webpack").mkdirs()
+        file("${project.buildDir}/site/profiles/plugin").mkdirs()
+        file("${project.buildDir}/site/profiles/rest-api-plugin").mkdirs()
+        file("${project.buildDir}/site/profiles/web-plugin").mkdirs()
+    }
+}
+
+task copyAssets {
+    doLast {
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/assets/images"
+            into "${project.buildDir}/site/images"
+            include '*.gif'
+            include '*.jpg'
+            include '*.svg'
+            include '*.png'
+            include '*.ico'
+        }
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/assets/images/books"
+            into "${project.buildDir}/site/images/books"
+            include '*.gif'
+            include '*.jpg'
+            include '*.png'
+            include '*.svg'
+            include '*.ico'
+        }
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/assets/images/confs"
+            into "${project.buildDir}/site/images/confs"
+            include '*.gif'
+            include '*.jpg'
+            include '*.png'
+            include '*.svg'
+            include '*.ico'
+        }
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/assets/images/banners"
+            into "${project.buildDir}/site/images/banners"
+            include '*.gif'
+            include '*.jpg'
+            include '*.png'
+            include '*.svg'
+            include '*.ico'
+        }
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/assets/images"
+            into "${project.buildDir}/site/images"
+            include '*.gif'
+            include '*.jpg'
+            include '*.png'
+            include '*.svg'
+            include '*.ico'
+        }
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/assets/stylesheets"
+            into "${project.buildDir}/site/stylesheets"
+            include '*.css'
+        }
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/assets/fonts"
+            into "${project.buildDir}/site/fonts"
+            include '*.eot'
+            include '*.svg'
+            include '*.ttf'
+            include '*.woff'
+            include '*.woff2'
+        }
+
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/assets/javascripts"
+            into "${project.buildDir}/site/javascripts"
+            include '*.js'
+        }
+    }
+}
+
+copyAssets.dependsOn = ['createSiteFolder']
+
+processResources.dependsOn = ['copyAssets']
