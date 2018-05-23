@@ -8,6 +8,13 @@ git config --global user.email "$GIT_EMAIL"
 git config --global credential.helper "store --file=~/.git-credentials"
 echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
 
+./gradlew main:test || EXIT_STATUS=$?
+
+if [[ $EXIT_STATUS -ne 0 ]]; then
+    echo "Main Test failed"
+    exit $EXIT_STATUS
+fi
+
 ./gradlew build || EXIT_STATUS=$?
 
 if [[ $EXIT_STATUS -ne 0 ]]; then
