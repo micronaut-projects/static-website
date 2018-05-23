@@ -37,8 +37,8 @@ class DocumentationPage extends Page {
         new GuideGroup(title: 'Snapshot Documentation',
                 image: "${getImageAssetPreffix()}documentation.svg",
                 items: [
-                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/snapshot/guide/single.html", title: 'Single Page - User Guide'),
-                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/snapshot/", title: 'User Guide'),
+
+                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/snapshot/guide/index.html", title: 'User Guide'),
                         new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/snapshot/api/", title: 'API Reference'),
 
                 ])

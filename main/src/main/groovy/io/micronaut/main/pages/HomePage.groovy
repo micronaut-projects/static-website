@@ -341,6 +341,7 @@ public List<Book> findBooks() {
                             p {
                                 mkp.yieldUnescaped 'Micronaut\'s low overhead compile-time DI and AOP make it perfect for writing functions for serverless environments like '
                                 a(href: 'https://aws.amazon.com/lambda/', 'AWS Lambda')
+                                mkp.yieldUnescaped '.'
                             }
                             pre {
                                 code(class: "language-java") {
