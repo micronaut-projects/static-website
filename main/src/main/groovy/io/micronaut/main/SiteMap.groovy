@@ -71,14 +71,16 @@ class SiteMap {
 ${Page.micronaut()} is an Open Source project licensed under the [Apache License v2](http://www.apache.org/licenses/LICENSE-2.0)."""),
 
             new Question(slug: 'question_learn',title: "What is the best way to get started learning ${Page.micronaut()}?", answer: """
-The definitive guide to developing with ${Page.micronaut()} is the [User Guide](https://micronaut-projects.github.io/micronaut-core/snapshot/guide/index.html). In addition, step-by-step tutorials for solving common scenarios can be found at [Micronaut Guides](http://guides.micronaut.io).
-"""),
+The definitive guide to developing with ${Page.micronaut()} is the [User Guide](https://micronaut-projects.github.io/micronaut-core/snapshot/guide/index.html).
+"""), //TODO  In addition, step-by-step tutorials for solving common scenarios can be found at [Micronaut Guides](http://guides.micronaut.io).
             new Question(slug: 'question_training',title: "Are there training offerings for ${Page.micronaut()}?", answer: """
-[Object Computing, Inc](http://objectcomputing.com) offers [training courses](https://objectcomputing.com/training/catalog/micronaut/) which are developed and delivered by the ${Page.micronaut()} founders and core development team.</p>
+[Object Computing, Inc](http://objectcomputing.com) offers [training courses](https://objectcomputing.com/training/schedule?track=34&instructor=&time=#oci-schedule-filters-form) which are developed and delivered by the ${Page.micronaut()} founders and core development team.</p>
 """),
             new Question(slug: 'question_grails',title: "How does ${Page.micronaut()} relate to Grails/Spring Boot?", answer: """
-The inventors of the [Grails framework](http://grails.org) are developing the ${Page.micronaut()} project, taking many of the lessons learned from Grails into account when designing the new framework. Unlike Grails and other JVM web frameworks, ${Page.micronaut()} is designed to function as both a client and a server framework in a microservice environment. ${Page.micronaut()}'s modularity and lack of external dependencies means that Grails developers can take advantage of many key ${Page.micronaut()} features within their existing Grails applications. Grails integration is a priority of the ${Page.micronaut()} developers, so please stay tuned to the [Micronaut Guides](http://guides.micronaut.io) for future information.
-"""), //TODO:- check out [the Grails/Micronaut guide](http://grails.org) to learn more.
+The inventors of the [Grails framework](http://grails.org) are developing the ${Page.micronaut()} project, taking many of the lessons learned from Grails into account when designing the new framework. Unlike Grails and other JVM web frameworks, ${Page.micronaut()} is designed to function as both a client and a server framework in a microservice environment. ${Page.micronaut()}'s modularity and lack of external dependencies means that Grails developers can take advantage of many key ${Page.micronaut()} features within their existing Grails applications.
+"""),
+            //TODO  Grails integration is a priority of the ${Page.micronaut()} developers, so please stay tuned to the [Micronaut Guides](http://guides.micronaut.io) for future information.
+//TODO:- check out [the Grails/Micronaut guide](http://grails.org) to learn more.
 
             new Question(slug: 'question_usage',title: "Where can I interact with  ${Page.micronaut()} developers and community?", answer: """
 The best place to chat with developers and users of ${Page.micronaut()} is the [Gitter community](https://gitter.im/micronautfw/). Drop in and join our community!
@@ -94,15 +96,15 @@ The ${Page.micronaut()} development team makes a priority of monitoring [Stack O
 We don't have a mailing list. As mentioned above, for technical questions about ${Page.micronaut()}, please post using our official [#micronaut tag](http://stackoverflow.com/questions/tagged/micronaut) on [Stack Overflow](http://stackoverflow.com/questions/tagged/micronaut). For general community interaction, please join our [Gitter Community](https://gitter.im/micronautfw).
 """),
             new Question(slug: 'question_socialmedia',title: "Are you on social media?", answer: """
-Yes! You can get news about ${Page.micronaut()} on [Twitter](http://twitter.com/micronautfw) and [LinkedIn](https://www.linkedin.com/showcase/micronaut/).
-"""),
+Yes! You can get news about ${Page.micronaut()} on [Twitter](http://twitter.com/micronautfw).
+"""), //TODO  and [LinkedIn](https://www.linkedin.com/showcase/micronaut/).
             new Question(slug: 'question_feature',
                    title: "I have a cool idea or feature request for ${Page.micronaut()} - where can I share it?",
                     answer: """
 Glad you asked! Our [Gitter Community](https://gitter.im/micronautfw) is a great place to start a conversation with the ${Page.micronaut()} developers and other ${Page.micronaut()} users. If you would like ot make a formal feature request, please [create an issue](https://github.com/micronaut-projects/micronaut-core/issues/new).
 """),
             new Question(slug: 'question_issue',title: "I think I\'ve found a bug in ${Page.micronaut()}, where can I report it?", answer: """
-The ${Page.micronaut()} project uses [Github issues](https://github.com/micronaut-project/micronaut-core/issues) to report and track issues, feature enhancements, and new features. If you're logged in to your Github account, use this link to [report an issue](https://github.com/micronaut-projects/micronaut-core/issues/new).
+The ${Page.micronaut()} project uses [Github issues](https://github.com/micronaut-projects/micronaut-core/issues) to report and track issues, feature enhancements, and new features. If you're logged in to your Github account, use this link to [report an issue](https://github.com/micronaut-projects/micronaut-core/issues/new).
 """),
             new Question(slug: 'question_docs',title: "Can I contribute to the documentation?", answer: """
 Absolutely! The ${Page.micronaut()} project includes a few forms of documentation:
