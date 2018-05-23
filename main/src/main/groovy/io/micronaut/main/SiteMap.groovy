@@ -101,7 +101,7 @@ Yes! You can get news about ${Page.micronaut()} on [Twitter](http://twitter.com/
             new Question(slug: 'question_feature',
                    title: "I have a cool idea or feature request for ${Page.micronaut()} - where can I share it?",
                     answer: """
-Glad you asked! Our [Gitter Community](https://gitter.im/micronautfw) is a great place to start a conversation with the ${Page.micronaut()} developers and other ${Page.micronaut()} users. If you would like ot make a formal feature request, please [create an issue](https://github.com/micronaut-projects/micronaut-core/issues/new).
+Glad you asked! Our [Gitter community](https://gitter.im/micronautfw) is a great place to start a conversation with the ${Page.micronaut()} developers and other ${Page.micronaut()} users. If you would like ot make a formal feature request, please [create an issue](https://github.com/micronaut-projects/micronaut-core/issues/new).
 """),
             new Question(slug: 'question_issue',title: "I think I\'ve found a bug in ${Page.micronaut()}, where can I report it?", answer: """
 The ${Page.micronaut()} project uses [Github issues](https://github.com/micronaut-projects/micronaut-core/issues) to report and track issues, feature enhancements, and new features. If you're logged in to your Github account, use this link to [report an issue](https://github.com/micronaut-projects/micronaut-core/issues/new).
