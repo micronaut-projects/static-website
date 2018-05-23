@@ -27,7 +27,7 @@ class EventsPage extends Page  implements ReadFileUtils {
     @Override
     List<String> getJavascriptFiles() {
         List<String> jsFiles = super.getJavascriptFiles()
-        jsFiles << ("${guidesUrl()}/javascripts/oci-training.js" as String)
+        jsFiles << ("${micronautUrl()}/javascripts/oci-training.js" as String)
         jsFiles
     }
 
