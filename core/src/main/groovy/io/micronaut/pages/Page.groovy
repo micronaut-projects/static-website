@@ -302,7 +302,7 @@ abstract class Page implements HtmlPage {
     String scriptAtClosingBody() {
         return """
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_TRACKING_CODE}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
