@@ -93,7 +93,7 @@ The ${Page.micronaut()} development team makes a priority of monitoring [Stack O
             new Question(slug: 'question_mailinglist',
                     title: "Do you have a mailing list?",
                     answer: """
-We don't have a mailing list. As mentioned above, for technical questions about ${Page.micronaut()}, please post using our official [#micronaut tag](http://stackoverflow.com/questions/tagged/micronaut) on [Stack Overflow](http://stackoverflow.com/questions/tagged/micronaut). For general community interaction, please join our [Gitter Community](https://gitter.im/micronautfw).
+We don't have a mailing list. As mentioned above, for technical questions about ${Page.micronaut()}, please post using our official [#micronaut tag](http://stackoverflow.com/questions/tagged/micronaut) on [Stack Overflow](http://stackoverflow.com/questions/tagged/micronaut). For general community interaction, please join our [Gitter community](https://gitter.im/micronautfw).
 """),
             new Question(slug: 'question_socialmedia',title: "Are you on social media?", answer: """
 Yes! You can get news about ${Page.micronaut()} on [Twitter](http://twitter.com/micronautfw).
@@ -116,7 +116,7 @@ Absolutely! The ${Page.micronaut()} project includes a few forms of documentatio
 Contributing to the ${Page.micronaut()} documentation is fairly easy. Create a GitHub account or sign in with an existing account, browse to the [Latest Guide](https://micronaut-projects.github.io/micronaut-core/snapshot/guide/index.html) and click the "Improve this doc" button at the top of the section you wish to edit. Please don't hesitate to help us make improvements, fix typos or broken language, clarify complicated sections, add new material, and anything else you feel will be helpful to other ${Page.micronaut()} users. And thank you! 
 """),
             new Question(slug: 'question_code',title: "Can I contribute code to the ${Page.micronaut()} framework?", answer: """
-Yes please! If you are looking to make an initial contribution, just raise your hand on the [Gitter Community](https://gitter.im/micronautfw) and let us know if you have a particular area of interest you'd like to work on, or if you're just looking for a good issue to get started on. The ${Page.micronaut()} development team can provide guidance on how best to tackle a particular problem, collaborate on implementation ideas, and discuss the semantics or scope of the proposed change. Please see the [contributing instructions](https://github.com/micronaut-projects/micronaut-core/blob/master/CONTRIBUTING.md) for more detail.
+Yes please! If you are looking to make an initial contribution, just raise your hand on the [Gitter community](https://gitter.im/micronautfw) and let us know if you have a particular area of interest you'd like to work on, or if you're just looking for a good issue to get started on. The ${Page.micronaut()} development team can provide guidance on how best to tackle a particular problem, collaborate on implementation ideas, and discuss the semantics or scope of the proposed change. Please see the [contributing instructions](https://github.com/micronaut-projects/micronaut-core/blob/master/CONTRIBUTING.md) for more detail.
 
 """),
             new Question(slug: 'question_trademark', title: "I see the ${Page.micronaut()} name is trademarked, does that mean it’s proprietary?", answer: """
