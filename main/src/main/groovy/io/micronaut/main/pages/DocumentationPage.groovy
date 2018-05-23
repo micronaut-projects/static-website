@@ -24,7 +24,7 @@ class DocumentationPage extends Page {
 
     GuideGroup documentationGuideGroup() {
         new GuideGroup(title: 'Latest Version Documentation',
-                description: 'Comming soon!',
+                description: 'Coming soon!',
                 image: "${getImageAssetPreffix()}documentation.svg",
                 items: [
 //                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/latest/guide/single.html", title: 'Single Page - User Guide'),
