@@ -398,7 +398,7 @@ nav li {
 
 @media screen and (min-width: 750px) {
     .main nav li.large {
-        max-width: 239px;
+        max-width: 400px;
     }
     .main nav li.align-right {
         margin-left: 24px;
@@ -411,13 +411,8 @@ nav li {
     .main nav li.align-right:first-child {
         margin-right: 0;
     }
+}
 
-}
-@media screen and (min-width: 1050px) {
-    .main nav li.large {
-        max-width: 400px;
-    }
-}
 
 .main nav li.active a {
     font-family: 'firasansbold', sans-serif;
@@ -488,7 +483,7 @@ div.search {
     margin: 155px auto 0;
     max-width: 300px;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 750px) {
     body.home #logo {
         margin: 275px auto 0;
         max-width: 500px;
