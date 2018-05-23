@@ -58,7 +58,7 @@ class SupportPage extends Page implements ReadFileUtils {
                                 p {
                                     mkp.yield 'OCI offers flexible, customizable open source support services with direct access to the architects and engineers who develop '
                                     mkp.yieldUnescaped(micronaut())
-                                    mkp.yield ' and have spent their careers supporting and maturing other Frameworks such as Grails.'
+                                    mkp.yield ' and have spent their careers supporting and maturing other Frameworks, such as Grails.'
                                 }
                                 p 'The OCI team can assist you with:'
                                 ul {
