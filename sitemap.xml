@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
-    <loc>http://192.168.1.43:8888/index.html</loc>
+    <loc>http://micronaut.io/index.html</loc>
   </url>
   <url>
-    <loc>http://192.168.1.43:8888/download.html</loc>
+    <loc>http://micronaut.io/download.html</loc>
   </url>
   <url>
-    <loc>http://192.168.1.43:8888/faq.html</loc>
+    <loc>http://micronaut.io/faq.html</loc>
   </url>
   <url>
-    <loc>http://192.168.1.43:8888/announcement.html</loc>
+    <loc>http://micronaut.io/announcement.html</loc>
   </url>
   <url>
-    <loc>http://192.168.1.43:8888/support.html</loc>
+    <loc>http://micronaut.io/support.html</loc>
   </url>
   <url>
-    <loc>http://192.168.1.43:8888/documentation.html</loc>
+    <loc>http://micronaut.io/documentation.html</loc>
   </url>
   <url>
-    <loc>http://192.168.1.43:8888/events.html</loc>
+    <loc>http://micronaut.io/events.html</loc>
   </url>
   <url>
-    <loc>http://192.168.1.43:8888/api.html</loc>
+    <loc>http://micronaut.io/api.html</loc>
   </url>
 </urlset>
