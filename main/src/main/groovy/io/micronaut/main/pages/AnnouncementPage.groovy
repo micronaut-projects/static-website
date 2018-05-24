@@ -80,7 +80,10 @@ class AnnouncementPage extends Page {
                 [
                         title: 'Micronaut Announcement at Greach Conference',
                         published: 'Apr 28th, 2018',
-                        paragraphs: ['<div style="width: 560px;margin: 0 auto";><iframe width="560" height="315" src="https://www.youtube.com/embed/56j_f3OCg6E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>']
+                        paragraphs: [
+                                '<div class="desktop", style="width: 560px;margin: 0 auto";><iframe width="560" height="315" src="https://www.youtube.com/embed/56j_f3OCg6E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>',
+                                '<div class="mobile", style="width: 380px;margin: 0 auto";><iframe width="380" height="218" src="https://www.youtube.com/embed/56j_f3OCg6E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>',
+                        ]
                 ]
         ] as List<Map<String, Object>>
     }
