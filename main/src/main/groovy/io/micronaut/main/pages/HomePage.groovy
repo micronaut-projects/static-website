@@ -155,7 +155,7 @@ public class HelloController {
                         }
                         section {
                             p {
-                                mkp.yieldUnescaped 'Declaratively build reactive HTTP clients, which are implemented at compile-time, reducing memory consumption'
+                                mkp.yieldUnescaped 'Declaratively build reactive HTTP clients, which are implemented at compile-time, reducing memory consumption.'
                             }
                             pre {
                                 code(class: "language-java") {
