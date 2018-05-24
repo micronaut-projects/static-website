@@ -241,6 +241,7 @@ abstract class Page implements HtmlPage {
             meta property: 'og:title', content: title()
             meta property: 'og:description', content: summary()
             meta property: 'og:type', content: 'website'
+            link rel: 'mask-icon', href: "${micronautUrl()}/${getImageAssetPreffix()}website_icon.svg"
 
             link rel: 'apple-touch-icon-precomposed', sizes: '57x57', href: "${micronautUrl()}/${getImageAssetPreffix()}apple-touch-icon-57x57.png"
             link rel: 'pple-touch-icon-precomposed', sizes: '114x114', href: "${micronautUrl()}/${getImageAssetPreffix()}apple-touch-icon-114x114.png"
