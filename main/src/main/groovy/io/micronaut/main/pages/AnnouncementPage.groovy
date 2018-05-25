@@ -35,8 +35,12 @@ class AnnouncementPage extends Page {
                 announcements().each { Map announcement ->
                     div(class: 'announcement') {
                         h2 {
-                            span class: 'align-right', announcement.published
-                            b class: 'align-left', announcement.title
+                            span(class: 'align-right') {
+                                mkp.yieldUnescaped announcement.published
+                            }
+                            b(class: 'align-left'){
+                                mkp.yieldUnescaped announcement.title
+                            }
                         }
                         div {
                             announcement.paragraphs.each { paragraph ->
@@ -78,7 +82,7 @@ class AnnouncementPage extends Page {
            'With warm regards, <b>Graeme Rocher</b>']
                 ],
                 [
-                        title: 'Micronaut Announcement at Greach Conference',
+                        title: 'Micronaut Announcement at <a href="http://greachconf.com">Greach</a>',
                         published: 'Apr 28th, 2018',
                         paragraphs: [
                                 '<div class="desktop", style="width: 560px;margin: 0 auto";><iframe width="560" height="315" src="https://www.youtube.com/embed/56j_f3OCg6E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>',

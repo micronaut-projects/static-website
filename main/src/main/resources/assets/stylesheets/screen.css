@@ -1044,6 +1044,10 @@ div.announcement h2 {
     padding: 30px;
     overflow: auto;
 }
+div.announcement h2 a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
 div.announcement h2 .align-left,
 div.announcement h2 .align-right {
     float: none;
@@ -1056,6 +1060,11 @@ div.announcement h2 .align-right {
     }
     div.announcement h2 .align-left {
         float: left;
+    }
+    div.announcement h2 .align-left,
+    div.announcement h2 .align-right {
+        text-align: left;
+        vertical-align: top;
     }
 }
 div.announcement h2 span {
