@@ -1,6 +1,7 @@
 package io.micronaut.guides
 
 import groovy.transform.CompileStatic
+import io.micronaut.GuidesFetcher
 import io.micronaut.WebsiteGenerator
 import io.micronaut.guides.model.Category
 import io.micronaut.Guide
@@ -12,80 +13,7 @@ import io.micronaut.pages.SiteMapPage
 class Main {
 
     static void main(String[] args) {
-        List<Guide> guides = []//GuidesFetcher.fetchGuides()
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'Micronaut CLI',
-                tags: ['cli', 'sdkman'],
-                category: 'Micronaut Apprentice',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'Creating your first Micronaut App',
-                tags: ['netty', 'di'],
-                category: 'Micronaut Apprentice',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'Built-In endpoints',
-                tags: ['endpoint'],
-                category: 'Micronaut Apprentice',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'Compile-Time HTTP Client with @Client',
-                tags: ['client'],
-                category: 'Micronaut Apprentice',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'Consul Discovery Service',
-                tags: ['discover-service', 'consul'],
-                category: 'Cloud Services',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'Zipkin Distributed tracing system',
-                tags: ['zipkin', 'distributed-tracing'],
-                category: 'Cloud Services',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'Circuit Break and Retry',
-                tags: ['circuit-breaker', 'retry'],
-                category: 'Cloud Services',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'Session Based Authentication',
-                tags: ['session'],
-                category: 'Security',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'JWT Authentication - Bearer Token',
-                tags: ['jwt', 'bearer'],
-                category: 'Security',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'JWT Authentication with Cookie',
-                tags: ['cookie'],
-                category: 'Security',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'JWT Authentication in a services federation',
-                tags: ['jwt', 'federation'],
-                category: 'Security',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
-        guides << new Guide(authors: ['Sergio del Amo'],
-                title: 'Basic Authentication',
-                tags: ['basic-auth'],
-                category: 'Security',
-                publicationDate: Date.parse("dd MMM yyyy", "30 April 2018"))
-
+        List<Guide> guides = GuidesFetcher.fetchGuides()
 
         Set<Tag> tags = TagUtils.populateTags(guides)
         List<GuidesPage> pages = []

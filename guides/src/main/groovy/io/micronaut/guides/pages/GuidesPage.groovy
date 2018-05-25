@@ -319,7 +319,7 @@ class GuidesPage extends Page implements ReadFileUtils {
             devops: new Category(name: "Micronaut DevOps", image: 'micronaut_devops.svg'),
             apprentice: new Category(name: "Micronaut Apprentice", image: 'micronautaprrentice.svg'),
             cloudservices: new Category(name: 'Cloud Services', image: 'cloud.svg'),
-            security: new Category(name: 'Security', image: 'security.svg'),
+            security: new Category(name: 'Micronaut Security', image: 'security.svg'),
         ]
     }
 }
