@@ -27,9 +27,8 @@ class DocumentationPage extends Page {
                 description: 'Coming soon!',
                 image: "${getImageAssetPreffix()}documentation.svg",
                 items: [
-//                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/latest/guide/single.html", title: 'Single Page - User Guide'),
-//                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/latest/", title: 'User Guide'),
-//                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/latest/api/", title: 'API Reference'),
+//                        new GuideGroupItem(href: "http://docs.micronaut.io/latest/guide/index.html", title: 'User Guide'),
+//                        new GuideGroupItem(href: "http://docs.micronaut.io/latest/api/", title: 'API Reference'),
                 ])
     }
 
@@ -38,8 +37,8 @@ class DocumentationPage extends Page {
                 image: "${getImageAssetPreffix()}documentation.svg",
                 items: [
 
-                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/snapshot/guide/index.html", title: 'User Guide'),
-                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-core/snapshot/api/", title: 'API Reference'),
+                        new GuideGroupItem(href: "http://docs.micronaut.io/snapshot/guide/index.html", title: 'User Guide'),
+                        new GuideGroupItem(href: "http://docs.micronaut.io/snapshot/api/", title: 'API Reference'),
 
                 ])
     }

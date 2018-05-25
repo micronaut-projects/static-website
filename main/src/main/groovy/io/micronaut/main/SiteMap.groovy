@@ -71,7 +71,7 @@ class SiteMap {
 ${Page.micronaut()} is an Open Source project licensed under the [Apache License v2](http://www.apache.org/licenses/LICENSE-2.0)."""),
 
             new Question(slug: 'question_learn',title: "What is the best way to get started learning ${Page.micronaut()}?", answer: """
-The definitive guide to developing with ${Page.micronaut()} is the [User Guide](https://micronaut-projects.github.io/micronaut-core/snapshot/guide/index.html).
+The definitive guide to developing with ${Page.micronaut()} is the [User Guide](http://docs.micronaut.io/snapshot/guide/index.html).
 """), //TODO  In addition, step-by-step tutorials for solving common scenarios can be found at [Micronaut Guides](http://guides.micronaut.io).
             new Question(slug: 'question_training',title: "Are there training offerings for ${Page.micronaut()}?", answer: """
 [Object Computing, Inc](http://objectcomputing.com) offers [training courses](http://micronauttraining.com) which are developed and delivered by the ${Page.micronaut()} founders and core development team.</p>
@@ -109,11 +109,11 @@ The ${Page.micronaut()} project uses [Github issues](https://github.com/micronau
             new Question(slug: 'question_docs',title: "Can I contribute to the documentation?", answer: """
 Absolutely! The ${Page.micronaut()} project includes a few forms of documentation:
 
-- The [reference documentation](https://micronaut-projects.github.io/micronaut-core/snapshot/guide/index.html) contains language specification, user guides, a getting started tutorial, and more.</li>
-- The [JavaDoc APIs](https://micronaut-projects.github.io/micronaut-core/snapshot/api/) documents the classes of the ${Page.micronaut()} code base</li>
+- The [reference documentation](http://docs.micronaut.io/snapshot/guide/index.html) contains language specification, user guides, a getting started tutorial, and more.</li>
+- The [JavaDoc APIs](http://docs.micronaut.io/snapshot/api/) documents the classes of the ${Page.micronaut()} code base</li>
 - [GitHub](https://github.com/micronaut-projects/static-website) allows users to contribute to this website.</li>
 
-Contributing to the ${Page.micronaut()} documentation is fairly easy. Create a GitHub account or sign in with an existing account, browse to the [Latest Guide](https://micronaut-projects.github.io/micronaut-core/snapshot/guide/index.html) and click the "Improve this doc" button at the top of the section you wish to edit. Please don't hesitate to help us make improvements, fix typos or broken language, clarify complicated sections, add new material, and anything else you feel will be helpful to other ${Page.micronaut()} users. And thank you! 
+Contributing to the ${Page.micronaut()} documentation is fairly easy. Create a GitHub account or sign in with an existing account, browse to the [Latest Guide](http://docs.micronaut.io/snapshot/guide/index.html) and click the "Improve this doc" button at the top of the section you wish to edit. Please don't hesitate to help us make improvements, fix typos or broken language, clarify complicated sections, add new material, and anything else you feel will be helpful to other ${Page.micronaut()} users. And thank you! 
 """),
             new Question(slug: 'question_code',title: "Can I contribute code to the ${Page.micronaut()} framework?", answer: """
 Yes please! If you are looking to make an initial contribution, just raise your hand on the [Gitter community](https://gitter.im/micronautfw) and let us know if you have a particular area of interest you'd like to work on, or if you're just looking for a good issue to get started on. The ${Page.micronaut()} development team can provide guidance on how best to tackle a particular problem, collaborate on implementation ideas, and discuss the semantics or scope of the proposed change. Please see the [contributing instructions](https://github.com/micronaut-projects/micronaut-core/blob/master/CONTRIBUTING.md) for more detail.
