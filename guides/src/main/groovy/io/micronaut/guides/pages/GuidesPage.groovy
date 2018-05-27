@@ -292,7 +292,7 @@ class GuidesPage extends Page implements ReadFileUtils {
                         div(class: 'desktop') {
                             mkp.yieldUnescaped searchBox('query')
                         }
-                        mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides)
+                        mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides, true, "margin-top: ${MARGIN_TOP};")
                         mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, "margin-top: ${MARGIN_TOP};")
                     }
                 }
