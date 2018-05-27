@@ -272,12 +272,7 @@ class GuidesPage extends Page implements ReadFileUtils {
                             mkp.yieldUnescaped('')
                         }
                         mkp.yieldUnescaped latestGuides()
-                        mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides)
-                    }
-                    div(class: 'column') {
-                        div(class: 'desktop') {
-                            mkp.yieldUnescaped searchBox('query')
-                        }
+
                         if ( tag || category ) {
                             mkp.yieldUnescaped sponsoredBy()
                         } else {
@@ -291,23 +286,16 @@ class GuidesPage extends Page implements ReadFileUtils {
                         } else if ( category ) {
                             mkp.yieldUnescaped guideGroupByCategory(category, guides.findAll { it.category == category.name }, false )
 
-                        } else {
-                            mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, "margin-top: ${MARGIN_TOP};")
                         }
                     }
+                    div(class: 'column') {
+                        div(class: 'desktop') {
+                            mkp.yieldUnescaped searchBox('query')
+                        }
+                        mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides)
+                        mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, "margin-top: ${MARGIN_TOP};")
+                    }
                 }
-//                div(class: 'twocolumns') {
-//                    div(class: 'column') {
-//                        if ( !(tag || category) ) {
-//                            mkp.yieldUnescaped guideGroupByCategory(categories().cloudservices, guides, true, "margin-top: ${MARGIN_TOP};")
-//                        }
-//                    }
-//                    div(class: 'column') {
-//                        if ( !(tag || category) ) {
-////                        mkp.yieldUnescaped guideSuggestion()
-//                        }
-//                    }
-//                }
             }
         }
         writer.toString()

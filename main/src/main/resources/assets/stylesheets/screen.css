@@ -326,6 +326,7 @@ nav li {
 @media screen and (min-width: 750px) {
     #navbar {
         height: 200px;
+        overflow: hidden;
     }
     .main nav li.align-right {
         margin: 95px 0 10px 8px;
