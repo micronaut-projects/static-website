@@ -797,6 +797,10 @@ body.guides .columnheader {
     border: 0;
     color: #231F20;
 }
+.guidegroup li span {
+    color: #231F20;
+    font-size: 18px;
+}
 .guidegroup li a {
     display: block;
     text-decoration: underline;
@@ -804,8 +808,12 @@ body.guides .columnheader {
     background-image: url(../images/caret.svg);
     background-repeat: no-repeat;
     background-position: right center;
-    font-family: 'Roboto-Light', "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
     padding-right: 20px;
+}
+.guidegroup li a.lang {
+    background: none;
+    float: right;
+    padding-right: 5px;
 }
 
 .guidegroup li.legend a {

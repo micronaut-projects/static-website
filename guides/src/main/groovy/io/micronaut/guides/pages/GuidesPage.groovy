@@ -3,8 +3,11 @@ package io.micronaut.guides.pages
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
 import groovy.xml.MarkupBuilder
+import io.micronaut.MultiLanguageGuide
 import io.micronaut.Navigation
+import io.micronaut.ProgrammingLanguage
 import io.micronaut.ReadFileUtils
+import io.micronaut.SingleLanguageGuide
 import io.micronaut.guides.model.Category
 import io.micronaut.Guide
 import io.micronaut.guides.model.Tag
@@ -67,10 +70,24 @@ class GuidesPage extends Page implements ReadFileUtils {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
         html.li {
-            a class: 'guide', href: "http://guides.micronaut.io/${guide.name}/guide/index.html", guide.title
-            guide.tags.each { String tag ->
-                span(style: 'display: none', class: 'tag', tag)
+            if ( guide instanceof SingleLanguageGuide) {
+                a class: 'guide', href: "http://guides.micronaut.io/${guide.name}/guide/index.html", guide.title
+                guide.tags.each { String tag ->
+                    span(style: 'display: none', class: 'tag', tag)
+                }
+            } else if (guide instanceof MultiLanguageGuide) {
+                MultiLanguageGuide multiLanguageGuide = ((MultiLanguageGuide) guide)
+                span guide.title
+                for (ProgrammingLanguage lang :  multiLanguageGuide.githubSlugs.keySet())  {
+                    a(class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang]}/guide/index.html") {
+                        mkp.yield(lang.name())
+                    }
+                }
+                guide.tags.each { String tag ->
+                    span(style: 'display: none', class: 'tag', tag)
+                }
             }
+
         }
         writer.toString()
     }

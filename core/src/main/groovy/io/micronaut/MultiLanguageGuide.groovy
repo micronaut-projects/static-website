@@ -1,12 +1,12 @@
 package io.micronaut
 
 import groovy.transform.CompileStatic
-import groovy.transform.ToString
 
 @CompileStatic
-interface Guide {
+class MultiLanguageGuide implements Guide {
     List<String> authors
     String category
+    Map<ProgrammingLanguage, String> githubSlugs
     String name
     String title
     String subtitle

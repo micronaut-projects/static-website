@@ -9,11 +9,13 @@ class TagUtils {
 
     static Set<Tag> populateTags(List<Guide> guides) {
         Map<String, Integer> tagsMap = [:]
-        for ( Guide guide : guides ) {
-            if ( guides.tags ) {
-                for ( String tag : guide.tags ) {
-                    String k = tag.trim().toLowerCase()
-                    tagsMap[k] = tagsMap.containsKey(k) ? ( 1 + tagsMap[k] ) : 1
+        if ( guides ) {
+            for ( Guide guide : guides ) {
+                if ( guide.tags ) {
+                    for ( String tag : guide.tags ) {
+                        String k = tag.trim().toLowerCase()
+                        tagsMap[k] = tagsMap.containsKey(k) ? ( 1 + tagsMap[k] ) : 1
+                    }
                 }
             }
         }
