@@ -77,10 +77,12 @@ class GuidesPage extends Page implements ReadFileUtils {
                 }
             } else if (guide instanceof MultiLanguageGuide) {
                 MultiLanguageGuide multiLanguageGuide = ((MultiLanguageGuide) guide)
-                span guide.title
-                for (ProgrammingLanguage lang :  multiLanguageGuide.githubSlugs.keySet())  {
-                    a(class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang]}/guide/index.html") {
-                        mkp.yield(lang.name())
+                span(class: 'title', guide.title)
+                div {
+                    for (ProgrammingLanguage lang :  multiLanguageGuide.githubSlugs.keySet())  {
+                        a(class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
+                            mkp.yield(lang.name())
+                        }
                     }
                 }
                 guide.tags.each { String tag ->
@@ -243,7 +245,17 @@ class GuidesPage extends Page implements ReadFileUtils {
                             mkp.yield ' - '
                             mkp.yield guide.category
                         }
-                        a href: "http://guides.micronaut.io/${guide.name}/guide/index.html", 'Read More'
+                        if (guide instanceof MultiLanguageGuide) {
+                            MultiLanguageGuide multiLanguageGuide = ((MultiLanguageGuide) guide)
+                            span guide.title
+                            for (ProgrammingLanguage lang : multiLanguageGuide.githubSlugs.keySet()) {
+                                a(style: 'display: inline;', class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
+                                    mkp.yield(lang.name())
+                                }
+                            }
+                        } else {
+                            a href: "http://guides.micronaut.io/${guide.name}/guide/index.html", 'Read More'
+                        }
                     }
                 }
             }

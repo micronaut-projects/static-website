@@ -801,19 +801,25 @@ body.guides .columnheader {
     color: #231F20;
     font-size: 18px;
 }
-.guidegroup li a {
+.guidegroup li span.title {
     display: block;
-    text-decoration: underline;
-    letter-spacing: 1px;
+    border: 1px solid #ffffff;
+}
+.guidegroup li span.title,
+.guidegroup li a.guide {
     background-image: url(../images/caret.svg);
     background-repeat: no-repeat;
     background-position: right center;
     padding-right: 20px;
 }
+.guidegroup li a {
+    display: block;
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
 .guidegroup li a.lang {
-    background: none;
-    float: right;
-    padding-right: 5px;
+    float: left;
+    padding-right: 20px;
 }
 
 .guidegroup li.legend a {
