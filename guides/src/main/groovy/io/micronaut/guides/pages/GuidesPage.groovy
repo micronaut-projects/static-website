@@ -300,15 +300,19 @@ class GuidesPage extends Page implements ReadFileUtils {
                         div(id: 'searchresults') {
                             mkp.yieldUnescaped('')
                         }
-                        mkp.yieldUnescaped latestGuides()
-
-                        if ( tag || category ) {
-                            mkp.yieldUnescaped sponsoredBy()
-                        } else {
-                            mkp.yieldUnescaped sponsoredBy()
+                        if ( !(tag || category) ) {
+                            mkp.yieldUnescaped latestGuides()
+                        }
+                        mkp.yieldUnescaped sponsoredBy()
+                        if ( !(tag || category) ) {
                             mkp.yieldUnescaped tagCloud()
                         }
 
+                    }
+                    div(class: 'column') {
+                        div(class: 'desktop') {
+                            mkp.yieldUnescaped searchBox('query')
+                        }
                         if ( tag ) {
                             mkp.yieldUnescaped guideGroupByTag(tag, guides)
 
@@ -316,13 +320,10 @@ class GuidesPage extends Page implements ReadFileUtils {
                             mkp.yieldUnescaped guideGroupByCategory(category, guides.findAll { it.category == category.name }, false )
 
                         }
-                    }
-                    div(class: 'column') {
-                        div(class: 'desktop') {
-                            mkp.yieldUnescaped searchBox('query')
+                        if ( !(tag || category) ) {
+                            mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides, true, "margin-top: ${MARGIN_TOP};")
+                            mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, "margin-top: ${MARGIN_TOP};")
                         }
-                        mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides, true, "margin-top: ${MARGIN_TOP};")
-                        mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, "margin-top: ${MARGIN_TOP};")
                     }
                 }
             }

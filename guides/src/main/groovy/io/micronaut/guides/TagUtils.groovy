@@ -11,12 +11,13 @@ class TagUtils {
         Map<String, Integer> tagsMap = [:]
         if ( guides ) {
             for ( Guide guide : guides ) {
-                if ( guide.tags ) {
+                if (guide.tags) {
                     for ( String tag : guide.tags ) {
                         String k = tag.trim().toLowerCase()
                         tagsMap[k] = tagsMap.containsKey(k) ? ( 1 + tagsMap[k] ) : 1
                     }
                 }
+
             }
         }
         Set<Tag> tags = []
