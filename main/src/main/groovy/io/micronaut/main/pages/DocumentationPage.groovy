@@ -24,11 +24,10 @@ class DocumentationPage extends Page {
 
     GuideGroup documentationGuideGroup() {
         new GuideGroup(title: 'Latest Version Documentation',
-                description: 'Coming soon!',
                 image: "${getImageAssetPreffix()}documentation.svg",
                 items: [
-//                        new GuideGroupItem(href: "http://docs.micronaut.io/latest/guide/index.html", title: 'User Guide'),
-//                        new GuideGroupItem(href: "http://docs.micronaut.io/latest/api/", title: 'API Reference'),
+                        new GuideGroupItem(href: "http://docs.micronaut.io/latest/guide/index.html", title: 'User Guide'),
+                        new GuideGroupItem(href: "http://docs.micronaut.io/latest/api/", title: 'API Reference'),
                 ])
     }
 
