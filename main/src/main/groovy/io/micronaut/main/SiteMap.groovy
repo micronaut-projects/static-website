@@ -25,7 +25,7 @@ class SiteMap {
     ] as List<HtmlPage>
 
     public final static List<BuildStatus> BUILDS = [
-            new BuildStatus([title: "${Page.micronaut()} Master",
+            new BuildStatus([title: "Micronaut Master",
                              href: "https://travis-ci.org/micronaut-projects/micronaut-core?branch=master", badge: "https://travis-ci.org/micronaut-projects/micronaut-core.svg?branch=master"]),
     ]
 

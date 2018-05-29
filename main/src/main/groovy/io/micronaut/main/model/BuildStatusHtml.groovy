@@ -20,7 +20,7 @@ trait BuildStatusHtml implements PageElement {
         html.tr {
             td title
             td {
-                a(href: href) {
+                a(href: href, class: 'align-right') {
                     img src: badge
                 }
             }
