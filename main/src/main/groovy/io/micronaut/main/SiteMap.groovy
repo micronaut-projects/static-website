@@ -52,7 +52,7 @@ class SiteMap {
     ]
 
     public final static List<String> VERSIONS = [
-            "1.0.0"
+            "1.0.0.M1"
     ]
 
     public final static String LATEST_VERSION = VERSIONS[0]
