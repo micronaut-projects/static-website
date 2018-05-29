@@ -22,8 +22,8 @@ class Navigation {
                 downloadMenuItem(url),
                 documentationMenuItem(url),
                 docsMenuItem(url),
-                desktopBlogMenuItem(url),
-                mobileBlogMenuItem(url),
+                // desktopBlogMenuItem(url),
+                // mobileBlogMenuItem(url),
                 desktopHomeMenuItem(url),
                 mobileHomeMenuItem(url)
         ] as List<MenuItem>)
