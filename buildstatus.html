@@ -1,5 +1,5 @@
 <html><head>
-  <title>Announcement | Micronaut Framework</title>
+  <title>Build Status | Micronaut Framework</title>
   <meta name='description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice applications.' />
   <meta charset='utf-8' />
   <link rel='icon' href='http://micronaut.io/images/favicon.ico' />
@@ -39,7 +39,7 @@
   <script src='javascripts/529083704.navbar_hide_scroll.js'></script>
   <script src='javascripts/529083704.navigation.js'></script>
 </head>
-  <body class='announcement'>
+  <body>
     <div class='main'><nav id='navbar'>
   <ul class='container'>
     <li class='align-right tiny'>
@@ -69,10 +69,10 @@
     <li class='align-right mobile'>
       <a href='http://micronaut.io/documentation.html'>Docs</a>
     </li>
-    <li class='active align-right desktop'>
+    <li class='align-right desktop'>
       <a href='http://micronaut.io/announcement.html'>Announcements</a>
     </li>
-    <li class='active align-right mobile'>
+    <li class='align-right mobile'>
       <a href='http://micronaut.io/announcement.html'>News</a>
     </li>
     <li class='large align-left'>
@@ -82,43 +82,122 @@
       <a href='http://micronaut.io/index.html'><img class='' src='images/micronaut_mini.svg' alt='Micronaut Icon' /></a>
     </li>
   </ul>
-</nav></div><div class='content'>
-  <article class='container'>
-    <h1>
-      <span>Micronaut</span>
-      <b>Announcements</b>
-    </h1>
-    <div class='announcement'>
-      <h2>
-        <span class='align-right'>May 23rd, 2018</span>
-        <b class='align-left'>Micronaut Open Sourced</b>
-      </h2>
-      <div>
-        <p>Today, it is with great pleasure that we <a href="https://github.com/micronaut-projects/micronaut-core">open source Micronaut on Github</a>.</p>
-        <p>Micronaut represents a significant advancement in how a range of application types – with a particular focus on microservices – are built for the JVM.</p>
-        <p>Micronaut comes to you from <a href="https://objectcomputing.com">OCI</a> and the team that built the <a href="http://grails.org">Grails framework</a>. <b>It builds upon over 10 years of experience creating application frameworks for the JVM</b>.</p>
-        <p>By leveraging the lessons learned building the Grails framework, we have built a toolkit that encompasses all the modern features developers have come to expect from a framework, including dependency injection, AOP, configuration management, and more.</p>
-        <p>With Micronaut, however, we’ve greatly reduced the runtime overhead – in terms of memory consumption and startup time – found in traditional frameworks. This is achieved through <b>the use of annotation processors that pre-compile all the necessary metadata and information needed to run your application ahead of time, eliminating the need for reflection and cached reflective metadata at the framework level</b>.</p>
-        <p>Micronaut also features both an HTTP client and an HTTP server built on Netty, plus a range of tools to aid deployment into a cloud environment.</p>
-        <p>Micronaut supports building applications in <b>Groovy, Java, and Kotlin</b>. Its design takes heavy inspiration from Spring and Grails to ensure that it is as simple as possible for developers to become fully proficient with the framework.</p>
-        <p>For more about these features, view the comprehensive <a href='http://micronaut.io/documentation.html'>Snapshot documentation</a>.</p>
-        <p>Next week at <a href="https://gr8conf.eu">Gr8Conf Europe</a> in Denmark, our team will deliver numerous talks and workshops on Micronaut for those interested in getting a head start using the Framework. (Find out where else you can see <a href="https://objectcomputing.com/news/2018/05/10/launching-micro-future-worldwide">Micronaut in action</a>.)</p>
-        <p>We will also be releasing the <b>first milestone of Micronaut 1.0 next week</b>, which will be followed quickly with regular milestone releases and ultimately a <b>GA release later this year</b>.</p>
-        <p>Over the next few months, we will be working diligently to build out the Framework’s features and capabilities, so please stay tuned and feel free to <a href="https://github.com/micronaut-projects/micronaut-core/issues">submit your ideas and suggestions to us</a>.</p>
-        <p>With warm regards, <b>Graeme Rocher</b></p>
-      </div>
+</nav></div><div class='content container'>
+  <h1>
+    <span>Build</span>
+    <b>Status</b>
+  </h1>
+  <div class='twocolumns'>
+    <div class='column'>
+      <section><table style='width: 100%;'>
+  <thead>
+    <tr>
+      <th>Build name</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody><tr>
+  <td>Micronaut Master</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-projects/micronaut-core?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-projects/micronaut-core.svg?branch=master' />
+    </a>
+  </td>
+</tr></tbody>
+</table>
+        <p>Our
+          <a href='http://travis-ci.org/micronaut-projects/micronaut-core'>continuous integration server</a> runs on 
+          <a href='http://www.travis-ci.org/'>Travis CI</a>, and builds Micronaut and Micronaut Guides.
+        </p>
+      </section>
     </div>
-    <div class='announcement'>
-      <h2>
-        <span class='align-right'>Apr 28th, 2018</span>
-        <b class='align-left'>Micronaut Announcement at <a href="http://greachconf.com">Greach</a></b>
-      </h2>
-      <div>
-        <p><div class="desktop", style="width: 560px;margin: 0 auto";><iframe width="560" height="315" src="https://www.youtube.com/embed/56j_f3OCg6E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></p>
-        <p><div class="mobile", style="width: 380px;margin: 0 auto";><iframe width="380" height="218" src="https://www.youtube.com/embed/56j_f3OCg6E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></p>
-      </div>
-    </div>
-  </article>
+    <div class='column'><table style='width: 100%;'>
+  <thead>
+    <tr>
+      <th>Build name</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody><tr>
+  <td>Creating your first Micronaut app JAVA</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/creating-your-first-micronaut-app?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/creating-your-first-micronaut-app.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>Creating your first Micronaut app KOTLIN</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/creating-your-first-micronaut-app-kotlin?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/creating-your-first-micronaut-app-kotlin.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>Creating your first Micronaut app GROOVY</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/creating-your-first-micronaut-app-groovy?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/creating-your-first-micronaut-app-groovy.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>Schedule periodic tasks inside your Micronaut applications</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/micronaut-scheduled?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/micronaut-scheduled.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>Micronaut Basic Auth</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/micronaut-security-basicauth?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/micronaut-security-basicauth.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>Session based authentication</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/micronaut-security-session?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/micronaut-security-session.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>Micronaut JWT Authentication</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/micronaut-security-jwt?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/micronaut-security-jwt.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>Micronaut JWT authentication via Cookies</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/micronaut-security-jwt-cookie?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/micronaut-security-jwt-cookie.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>Micronaut CLI</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/micronaut-cli?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/micronaut-cli.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>Adding Commit Info to your Micronaut Application</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/adding-commit-info?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/adding-commit-info.svg?branch=master' />
+    </a>
+  </td>
+</tr><tr>
+  <td>LDAP and Database authentication providers</td>
+  <td>
+    <a href='https://travis-ci.org/micronaut-guides/micronaut-database-authentication-provider-groovy?branch=master' class='align-right'>
+      <img src='https://travis-ci.org/micronaut-guides/micronaut-database-authentication-provider-groovy.svg?branch=master' />
+    </a>
+  </td>
+</tr></tbody>
+</table></div>
+  </div>
 </div><div id="footercircle" class="full whitecircleborderseparator"></div><footer>
   <div class='container'>
     <div class='mobile'><nav id='footernav'>
@@ -135,7 +214,7 @@
     <li class='align-right '>
       <a href='http://micronaut.io/faq.html'>FAQ</a>
     </li>
-    <li class='active align-right mobile'>
+    <li class='align-right mobile'>
       <a href='http://micronaut.io/announcement.html'>News</a>
     </li>
   </ul>

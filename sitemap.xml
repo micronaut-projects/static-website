@@ -22,6 +22,9 @@
     <loc>http://micronaut.io/events.html</loc>
   </url>
   <url>
+    <loc>http://micronaut.io/buildstatus.html</loc>
+  </url>
+  <url>
     <loc>http://micronaut.io/api.html</loc>
   </url>
 </urlset>
