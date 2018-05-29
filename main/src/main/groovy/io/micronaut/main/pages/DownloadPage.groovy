@@ -28,7 +28,7 @@ class DownloadPage extends Page {
                 items: [
                         new GuideGroupItem(href: "https://github.com/micronaut-projects/micronaut-core/releases/tag/v${latestVersion}", title: 'Release Notes'),
                         new GuideGroupItem(href: "https://github.com/micronaut-projects/micronaut-core/releases/download/v${latestVersion}/micronaut-${latestVersion}.zip", title: 'Binary'),
-                        new GuideGroupItem(href: "https://github.com/micronaut-projects/micronaut-core/releases/download/v${latestVersion}/micronaut-docs-${latestVersion}.zip", title: 'Documentation'),
+                        // new GuideGroupItem(href: "https://github.com/micronaut-projects/micronaut-core/releases/download/v${latestVersion}/micronaut-docs-${latestVersion}.zip", title: 'Documentation'),
                 ])
     }
 
