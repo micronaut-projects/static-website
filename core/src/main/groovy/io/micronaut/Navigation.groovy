@@ -19,7 +19,7 @@ class Navigation {
                 desktopEventsItem(url),
                 mobileEventsItem(url),
                 //downloadMenuItem(url),
-                //guidesMenuItem(guidesUrl),
+                guidesMenuItem(guidesUrl),
                 documentationMenuItem(url),
                 docsMenuItem(url),
                 desktopBlogMenuItem(url),
@@ -33,7 +33,7 @@ class Navigation {
         new Menu(items: [
                 docsMenuItem(url),
                 //downloadMenuItem(url),
-                //guidesMenuItem(guidesUrl),
+                guidesMenuItem(guidesUrl),
                 mobileEventsItem(url),
                 mobileSupportMenuItem(url, 'Support'),
                 questionsMenuItem(url),
