@@ -35,9 +35,9 @@
   <meta name='msapplication-square150x150logo' content='http://micronaut.io/images//mstile-150x150.png' />
   <meta name='msapplication-wide310x150logo' content='http://micronaut.io/images//mstile-310x150.png' />
   <meta name='msapplication-square310x310logo' content='http://micronaut.io/images//mstile-310x310.png' />
-  <link rel='stylesheet' href='stylesheets/529083704.screen.css' />
-  <script src='javascripts/529083704.navbar_hide_scroll.js'></script>
-  <script src='javascripts/529083704.navigation.js'></script>
+  <link rel='stylesheet' href='stylesheets/529200640.screen.css' />
+  <script src='javascripts/529200640.navbar_hide_scroll.js'></script>
+  <script src='javascripts/529200640.navigation.js'></script>
 </head>
   <body class='download'>
     <div class='main'><nav id='navbar'>
@@ -63,6 +63,12 @@
     <li class='align-right mobile'>
       <a href='http://micronaut.io/events.html'>Events</a>
     </li>
+    <li class='align-right '>
+      <a href='http://guides.micronaut.io/index.html'>Guides</a>
+    </li>
+    <li class='active align-right '>
+      <a href='http://micronaut.io/download.html'>Download</a>
+    </li>
     <li class='align-right desktop'>
       <a href='http://micronaut.io/documentation.html'>Documentation</a>
     </li>
@@ -87,13 +93,71 @@
     <span>Download</span>
     <b>Micronaut</b>
   </h1>
-  <h2 />
+  <div class='twocolumns'>
+    <div class='odd column'><div class='guidegroup' style='margin-bottom: 0;margin-top: 0;'>
+  <div class='guidegroupheader'>
+    <img src='images/download.svg' alt='Download &lt;span&gt;Micronaut&lt;/span&gt; 1.0.0.M1' />
+    <h2>Download <span>Micronaut</span> 1.0.0.M1</h2>
+  </div>
+  <ul id=''>
+    <li>
+      <a href='https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.M1'>Release Notes</a>
+    </li>
+    <li>
+      <a href='https://github.com/micronaut-projects/micronaut-core/releases/download/v1.0.0.M1/micronaut-1.0.0.M1.zip'>Binary</a>
+    </li>
+    <li>
+      <a href='https://github.com/micronaut-projects/micronaut-core/releases/download/v1.0.0.M1/micronaut-docs-1.0.0.M1.zip'>Documentation</a>
+    </li>
+  </ul>
+</div>
+      <p style='margin-top: 10px; margin-bottom: 0;'>For historical release notes, refer to 
+        <a href='https://github.com/micronaut-projects/micronaut-core/releases'>Github</a>
+      </p>
+    </div>
+    <div class='column'>
+      <div class='transparent_post'>
+        <p>For a quick and effortless start on Mac OSX, Linux, or Cygwin, you can use 
+          <a href='http://sdkman.io'>SDKMAN! (The Software Development Kit Manager)</a> to download and configure any Micronaut version of your choice. <br/>Windows users can use 
+          <a href='https://github.com/flofreud/posh-gvm'>Posh-GVM</a> (POwerSHell Groovy enVironment Manager), a PowerShell clone of the GVM CLI.
+        </p>
+      </div>
+      <article class='question' style='margin-top: 0;margin-bottom: 50px;'>
+        <h3 class='columnheader'>SDKMAN! (The Software Development Kit Manager)</h3>
+        <p>This tool makes installing Micronaut on any Bash platform (Mac OSX, Linux, Cygwin, Solaris, or FreeBSD) easy.</p>
+        <p>Simply open a new terminal and enter:</p>
+        <div class='code'>
+          <p>$ curl -s get.sdkman.io | bash</p>
+        </div>
+        <p>Follow the on-screen instructions to complete installation.</p>
+        <p>Open a new terminal or type the command:</p>
+        <div class='code'>
+          <p>$ source "$HOME/.sdkman/bin/sdkman-init.sh"</p>
+        </div>
+        <p>Then install the latest stable Micronaut:</p>
+        <div class='code'>
+          <p>$ sdk install micronaut</p>
+        </div>
+        <p>After installation is complete and you've made it your default version, test it with:</p>
+        <div class='code'>
+          <p>$ mn -version</p>
+        </div>
+        <p>That's all there is to it!</p>
+      </article>
+    </div>
+  </div>
 </div><div id="footercircle" class="full whitecircleborderseparator"></div><footer>
   <div class='container'>
     <div class='mobile'><nav id='footernav'>
   <ul class='container'>
     <li class='align-right mobile'>
       <a href='http://micronaut.io/documentation.html'>Docs</a>
+    </li>
+    <li class='align-right '>
+      <a href='http://guides.micronaut.io/index.html'>Guides</a>
+    </li>
+    <li class='active align-right '>
+      <a href='http://micronaut.io/download.html'>Download</a>
     </li>
     <li class='align-right mobile'>
       <a href='http://micronaut.io/events.html'>Events</a>
