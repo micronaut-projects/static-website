@@ -18,8 +18,8 @@ class Navigation {
                 questionsMenuItem(url),
                 desktopEventsItem(url),
                 mobileEventsItem(url),
-                //downloadMenuItem(url),
                 guidesMenuItem(guidesUrl),
+                downloadMenuItem(url),
                 documentationMenuItem(url),
                 docsMenuItem(url),
                 desktopBlogMenuItem(url),
@@ -32,8 +32,8 @@ class Navigation {
     static Menu footerMenu(String url = null, String guidesUrl = null) {
         new Menu(items: [
                 docsMenuItem(url),
-                //downloadMenuItem(url),
                 guidesMenuItem(guidesUrl),
+                downloadMenuItem(url),
                 mobileEventsItem(url),
                 mobileSupportMenuItem(url, 'Support'),
                 questionsMenuItem(url),
