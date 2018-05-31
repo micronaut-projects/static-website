@@ -59,6 +59,13 @@ class AnnouncementPage extends Page {
     List<Map<String, Object>> announcements() {
         [
                 [
+                        title: 'Micronaut 1.0.0.M1 released',
+                        published: 'May 30th, 2018',
+                        paragraphs: [
+                                'First milestone of 1.0.0 for Micronaut. See <a href="http://docs.micronaut.io/latest/guide/index.html">documentation</a>.'
+                        ]
+                ],
+                [
                         title: 'Micronaut Open Sourced',
                         published: 'May 23rd, 2018',
                         paragraphs: ['Today, it is with great pleasure that we <a href="https://github.com/micronaut-projects/micronaut-core">open source Micronaut on Github</a>.',
