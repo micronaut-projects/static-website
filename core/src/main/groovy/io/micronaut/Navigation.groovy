@@ -22,8 +22,8 @@ class Navigation {
                 downloadMenuItem(url),
                 documentationMenuItem(url),
                 docsMenuItem(url),
-                // desktopBlogMenuItem(url),
-                // mobileBlogMenuItem(url),
+                desktopBlogMenuItem(url),
+                mobileBlogMenuItem(url),
                 desktopHomeMenuItem(url),
                 mobileHomeMenuItem(url)
         ] as List<MenuItem>)
@@ -88,7 +88,7 @@ class Navigation {
     }
 
     static TextMenuItem documentationMenuItem(String url = null) {
-        menuItemWithHref('documentation.html', 'Documentation', url, 'desktop')
+        menuItemWithHref('documentation.html', 'Docs', url, 'desktop')
     }
 
     static TextMenuItem downloadMenuItem(String url = null) {
@@ -107,12 +107,12 @@ class Navigation {
         menuItemWithHref('support.html', 'Support', url, 'desktop')
     }
 
-    static TextMenuItem mobileSupportMenuItem(String url = null, String title = 'Help') {
+    static TextMenuItem mobileSupportMenuItem(String url = null, String title = 'Support') {
         menuItemWithHref('support.html', title, url, 'mobile')
     }
 
     static TextMenuItem desktopBlogMenuItem(String url = null) {
-        menuItemWithHref('announcement.html', 'Announcements', url, 'desktop')
+        menuItemWithHref('announcement.html', 'News', url, 'desktop')
     }
 
     static TextMenuItem mobileBlogMenuItem(String url = null, String title = 'News') {
@@ -127,7 +127,7 @@ class Navigation {
     }
 
     static IconMenuItem githubMenuItem() {
-        new IconMenuItem(image: 'github.svg', href: 'https://github.com/micronaut-projects/', alt: 'Github', cssClass: 'align-right icon desktop')
+        new IconMenuItem(image: 'github.svg', href: 'https://github.com/micronaut-projects/', alt: 'Github', cssClass: 'align-right icon')
     }
 
     static TextMenuItem mobileEventsItem(String url = null) {
@@ -139,7 +139,7 @@ class Navigation {
     }
 
     static TextMenuItem desktopEventsItem(String url = null) {
-        menuItemWithHref('events.html', 'Events & Training', url, 'desktop')
+        menuItemWithHref('events.html', 'Events', url, 'desktop')
     }
 
     static TextMenuItem menuItemWithHref(String relativePath, String title, String url, String cssClass = null) {
