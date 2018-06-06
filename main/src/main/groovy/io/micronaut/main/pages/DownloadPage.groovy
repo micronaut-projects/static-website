@@ -76,18 +76,14 @@ class DownloadPage extends Page {
                             mkp.yield 'For a quick and effortless start on Mac OSX, Linux, or Cygwin, you can use '
                             a href: "http://sdkman.io", 'SDKMAN! (The Software Development Kit Manager)'
                             mkp.yield ' to download and configure any Micronaut version of your choice. '
-                            mkp.yieldUnescaped '<br/>'
-                            mkp.yield 'Windows users can use '
-                            a href: "https://github.com/flofreud/posh-gvm", 'Posh-GVM'
-                            mkp.yield ' (POwerSHell Groovy enVironment Manager), a PowerShell clone of the GVM CLI.'
                         }
                     }
                     article(class: "question", style: 'margin-top: 0;margin-bottom: 50px;') {
-                        h3(class: 'columnheader', 'SDKMAN! (The Software Development Kit Manager)')
-                        p('This tool makes installing Micronaut on any Bash platform (Mac OSX, Linux, Cygwin, Solaris, or FreeBSD) easy.')
+                        h3(class: 'columnheader', 'Installing with SDKMAN!')
+                        p('This tool makes installing Micronaut on any Unix based platform (Mac OSX, Linux, Cygwin, Solaris, or FreeBSD) easy.')
                         p( 'Simply open a new terminal and enter:')
                         div(class: 'code') {
-                            p '$ curl -s get.sdkman.io | bash'
+                            p '$ curl -s https://get.sdkman.io | bash'
                         }
                         p('Follow the on-screen instructions to complete installation.')
                         p( 'Open a new terminal or type the command:')
@@ -98,7 +94,7 @@ class DownloadPage extends Page {
                         div(class: 'code') {
                             p '$ sdk install micronaut'
                         }
-                        p 'After installation is complete and you\'ve made it your default version, test it with:'
+                        p 'If prompted, make this your default version. After installation is complete it can be tested with:'
                         div(class: 'code') {
                             p '$ mn -version'
                         }
