@@ -69,7 +69,7 @@ class SiteMap {
     public final static List<Question> QUESTIONS = [
             new Question(slug: 'question_opensource',title: "How is ${Page.micronaut()} licensed?", answer: """
 ${Page.micronaut()} is an Open Source project licensed under the [Apache License v2](http://www.apache.org/licenses/LICENSE-2.0)."""),        
-            new Question(slug: 'eccn', 'title: 'Export Control Classification Number (ECCN) for Micronaut?', answer: 'Micronaut is a standards-based, open source technology, which means it is classified with the general purpose classification of EAR 99.'),
+            new Question(slug: 'eccn', title: 'Export Control Classification Number (ECCN) for Micronaut?', answer: 'Micronaut is a standards-based, open source technology, which means it is classified with the general purpose classification of EAR 99.'),
             new Question(slug: 'question_learn',title: "What is the best way to get started learning ${Page.micronaut()}?", answer: """
 The definitive guide to developing with ${Page.micronaut()} is the [User Guide](http://docs.micronaut.io/snapshot/guide/index.html).
 """), //TODO  In addition, step-by-step tutorials for solving common scenarios can be found at [Micronaut Guides](http://guides.micronaut.io).
