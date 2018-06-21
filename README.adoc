@@ -33,4 +33,4 @@ The output can be found in the `guides/build/site` directory.
 
 == Tests
 
-Functional Tests for the site are at https://travis-ci.org/micronaut-projects/static-website-test
+Functional Tests for the site are at https://github.com/micronaut-projects/static-website-test and are run daily by Travis https://travis-ci.org/micronaut-projects/static-website-test
