@@ -30,3 +30,7 @@ http://guides.micronaut.io[http://guides.micronaut.io]
 ----
 
 The output can be found in the `guides/build/site` directory.
+
+== Tests
+
+Functional Tests for the site are at https://travis-ci.org/micronaut-projects/static-website-test
