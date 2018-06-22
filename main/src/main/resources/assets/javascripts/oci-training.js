@@ -82,8 +82,8 @@ getJSON(pwsurl + '/training?trackId='+ociTrainingTrack, function(err, data) {
     ociTraining.innerHTML = msg;
     showElementsByClassName('training')
 });
-
-getJSON(pwsurl + '/events', function(err, data) {
+var category = 'Micronaut';
+getJSON(pwsurl + '/events?category='+category, function(err, data) {
     var msg = '';
     if (err != null) {
         msg = 'Something went wrong while retrieving OCI Events';
