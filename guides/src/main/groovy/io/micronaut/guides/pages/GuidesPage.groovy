@@ -15,6 +15,8 @@ import io.micronaut.TextMenuItem
 import io.micronaut.Training
 import io.micronaut.pages.Page
 
+import java.text.SimpleDateFormat
+
 @CompileStatic
 class GuidesPage extends Page implements ReadFileUtils {
 
@@ -241,7 +243,8 @@ class GuidesPage extends Page implements ReadFileUtils {
                     li {
                         b guide.title
                         span {
-                            mkp.yield guide.publicationDate.format('MMM dd, yyyy')
+                            mkp.yield new SimpleDateFormat('MMM dd, yyyy').format(guide.publicationDate)
+
                             mkp.yield ' - '
                             mkp.yield guide.category
                         }

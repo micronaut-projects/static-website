@@ -1,6 +1,7 @@
 package io.micronaut
 
 import groovy.json.JsonSlurper
+import groovy.time.TimeCategory
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
 import io.micronaut.Guide
@@ -14,7 +15,7 @@ class GuidesFetcher {
     public static final String GUIDES_JSON = 'https://raw.githubusercontent.com/micronaut-projects/micronaut-guides/gh-pages/guides.json'
 
     @CompileDynamic
-    static List<Guide> fetchGuides() {
+    static List<Guide> fetchGuides(boolean skipFuture = true) {
         URL url = new URL(GUIDES_JSON)
         def jsonArr = new JsonSlurper().parseText(url.text)
         DateFormat dateFormat = new SimpleDateFormat('dd MMM yyyy', Locale.US)
@@ -77,6 +78,9 @@ class GuidesFetcher {
                 guides << guide
             }
         }
+        if(skipFuture) {
+            guides = guides.findAll { it.publicationDate.before(tomorrow()) }
+        }
         guides.sort { Guide a, Guide b ->
             a.publicationDate <=> b.publicationDate
         }
@@ -90,5 +94,15 @@ class GuidesFetcher {
         }
 
         return ProgrammingLanguage.JAVA
+    }
+
+
+    @CompileDynamic
+    static Date tomorrow() {
+        Date tomorrow = new Date()
+        use(TimeCategory) {
+            tomorrow = tomorrow += 1.day
+        }
+        tomorrow
     }
 }
