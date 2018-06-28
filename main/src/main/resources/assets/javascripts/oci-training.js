@@ -54,7 +54,11 @@ function eventsTable(data) {
     msg += '<tbody>';
     for ( var i = 0; i < data.length; i++ ) {
         msg += '<tr>';
-        msg += '<td><a href="'+ data[i].eventHref + '">'+ data[i].eventName + '</a></td>';
+        if (data[i].eventHref) {
+            msg += '<td><a href="'+ data[i].eventHref + '">'+ data[i].eventName + '</a></td>';
+        } else {
+            msg += '<td>'+ data[i].eventName + '</td>';
+        }
         msg += '<td>'+ data[i].eventDate + '</td>';
         msg += '<td>'+ data[i].eventLocation + '</td>';
         msg += '</tr>';
