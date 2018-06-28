@@ -52,6 +52,7 @@ class SiteMap {
     ]
 
     public final static List<String> VERSIONS = [
+            "1.0.0.M2",
             "1.0.0.M1"
     ]
 
