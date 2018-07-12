@@ -60,7 +60,8 @@ class AnnouncementPage extends Page {
                     div(class: 'announcement') {
                         h2 {
                             span(class: 'align-right') {
-                                mkp.yieldUnescaped announcement.publicationDate
+                                Date publicationDate = parsePublicationDate(announcement.publicationDate)
+                                mkp.yieldUnescaped "${new SimpleDateFormat("MMMM").format(publicationDate)} ${new SimpleDateFormat("d").format(publicationDate)}${DATE_SUFFIXES[publicationDate.date - 1]}, ${new SimpleDateFormat("yyyy").format(publicationDate)}".toString()
                             }
                             b(class: 'align-left'){
                                 mkp.yieldUnescaped announcement.title
@@ -100,7 +101,7 @@ class AnnouncementPage extends Page {
         [
                 new BlogPost(
                         title: 'Micronaut Open Sourced',
-                        publicationDate: 'May 23rd, 2018',
+                        publicationDate: 'May 23, 2018',
                         paragraphs: ['Today, it is with great pleasure that we <a href="https://github.com/micronaut-projects/micronaut-core">open source Micronaut on Github</a>.',
          'Micronaut represents a significant advancement in how a range of application types – with a particular focus on microservices – are built for the JVM.',
          'Micronaut comes to you from <a href="https://objectcomputing.com">OCI</a> and the team that built the <a href="http://grails.org">Grails framework</a>. <b>It builds upon over 10 years of experience creating application frameworks for the JVM</b>.',
@@ -123,7 +124,7 @@ class AnnouncementPage extends Page {
                         ),
                 new BlogPost(
                         title: 'Micronaut Announcement at <a href="http://greachconf.com">Greach</a>',
-                        publicationDate: 'Apr 28th, 2018',
+                        publicationDate: 'Apr 28, 2018',
                         paragraphs: [
                                 '<div class="desktop", style="width: 560px;margin: 0 auto";><iframe width="560" height="315" src="https://www.youtube.com/embed/56j_f3OCg6E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>',
                                 '<div class="mobile", style="width: 380px;margin: 0 auto";><iframe width="380" height="218" src="https://www.youtube.com/embed/56j_f3OCg6E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>',
