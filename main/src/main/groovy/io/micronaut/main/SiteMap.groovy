@@ -52,12 +52,6 @@ class SiteMap {
 
     ]
 
-<<<<<<< HEAD
-    public final static List<String> VERSIONS = [
-            "1.0.0.M2",
-            "1.0.0.M1"
-    ]
-=======
     static List<SoftwareVersion> versions() {
         Yaml yaml = new Yaml()
         File f = new File('src/main/resources/releases.yml')
@@ -67,7 +61,6 @@ class SiteMap {
             SoftwareVersion.build(release['version'] as String)
         }.sort()
     }
->>>>>>> Milestone 2 announcement
 
     public final static String LATEST_VERSION = versions()[-1].versionText
     public final static List<String> OLDER_VERSIONS = versions().drop(1).collect { it.versionText }
