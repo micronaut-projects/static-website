@@ -5,6 +5,10 @@
 
 Micronaut is a modern, JVM-based, full-stack framework for building modular, easily testable microservice applications.
 
+== What to change when a new release is published.
+
+Please, modify `main/src/resources/releases.yml`
+
 == Sources for the Micronaut website
 
 This project builds the Micronaut website. It is using {gradle}[Gradle] and is fully statically generated.

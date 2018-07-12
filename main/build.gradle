@@ -25,6 +25,7 @@ dependencies {
     compile "com.vladsch.flexmark:flexmark-all:$flexmarkVersion"
     testCompile "org.spockframework:spock-core:$spockVersion"
     compile project(':micronaut-navigation-core')
+    compile "org.yaml:snakeyaml:$yamlVersion"
 }
 
 task createSiteFolder {

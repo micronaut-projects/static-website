@@ -10,6 +10,7 @@ import io.micronaut.main.pages.*
 import io.micronaut.SoftwareVersion
 import io.micronaut.pages.HtmlPage
 import io.micronaut.pages.Page
+import org.yaml.snakeyaml.Yaml
 
 @CompileStatic
 class SiteMap {
@@ -51,13 +52,25 @@ class SiteMap {
 
     ]
 
+<<<<<<< HEAD
     public final static List<String> VERSIONS = [
             "1.0.0.M2",
             "1.0.0.M1"
     ]
+=======
+    static List<SoftwareVersion> versions() {
+        Yaml yaml = new Yaml()
+        File f = new File('src/main/resources/releases.yml')
+        assert f.exists()
+        Map model = yaml.load(f.newDataInputStream())
+        model['releases'].collect { Map release ->
+            SoftwareVersion.build(release['version'] as String)
+        }.sort()
+    }
+>>>>>>> Milestone 2 announcement
 
-    public final static String LATEST_VERSION = VERSIONS[0]
-    public final static List<String> OLDER_VERSIONS = VERSIONS.drop(1)
+    public final static String LATEST_VERSION = versions()[-1].versionText
+    public final static List<String> OLDER_VERSIONS = versions().drop(1).collect { it.versionText }
     static List<String> olderVersions() {
         List<SoftwareVersion> versionList = OLDER_VERSIONS.collect { String version ->
             SoftwareVersion.build(version)
