@@ -5,3 +5,6 @@ releases:
     -
       version: 1.0.0.M1
       publicationDate: May 30, 2018
+    -
+      version: 1.0.0.M3
+      publicationDate: Jul 19, 2018
