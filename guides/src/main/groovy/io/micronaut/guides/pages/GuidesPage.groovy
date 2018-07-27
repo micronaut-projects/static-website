@@ -325,6 +325,7 @@ class GuidesPage extends Page implements ReadFileUtils {
                         }
                         if ( !(tag || category) ) {
                             mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides, true, "margin-top: ${MARGIN_TOP};")
+                            mkp.yieldUnescaped guideGroupByCategory(categories().cloudservices, guides, true, "margin-top: ${MARGIN_TOP};")
                             mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, "margin-top: ${MARGIN_TOP};")
                         }
                     }
@@ -339,7 +340,7 @@ class GuidesPage extends Page implements ReadFileUtils {
             android: new Category(name: "Micronaut Android", image: 'micronaut_android.svg'),
             devops: new Category(name: "Micronaut DevOps", image: 'micronaut_devops.svg'),
             apprentice: new Category(name: "Micronaut Apprentice", image: 'micronautaprrentice.svg'),
-            cloudservices: new Category(name: 'Cloud Services', image: 'cloud.svg'),
+            cloudservices: new Category(name: 'Cloud Native', image: 'cloud.svg'),
             security: new Category(name: 'Micronaut Security', image: 'security.svg'),
         ]
     }
