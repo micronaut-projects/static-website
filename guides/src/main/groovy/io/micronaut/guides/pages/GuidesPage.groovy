@@ -309,6 +309,7 @@ class GuidesPage extends Page implements ReadFileUtils {
                         mkp.yieldUnescaped sponsoredBy()
                         if ( !(tag || category) ) {
                             mkp.yieldUnescaped tagCloud()
+                            mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, "margin-top: ${MARGIN_TOP};")
                         }
 
                     }
@@ -326,7 +327,7 @@ class GuidesPage extends Page implements ReadFileUtils {
                         if ( !(tag || category) ) {
                             mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides, true, "margin-top: ${MARGIN_TOP};")
                             mkp.yieldUnescaped guideGroupByCategory(categories().cloudservices, guides, true, "margin-top: ${MARGIN_TOP};")
-                            mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, "margin-top: ${MARGIN_TOP};")
+                            mkp.yieldUnescaped guideGroupByCategory(categories().dataaccess, guides, true, "margin-top: ${MARGIN_TOP};")
                         }
                     }
                 }
@@ -342,6 +343,7 @@ class GuidesPage extends Page implements ReadFileUtils {
             apprentice: new Category(name: "Micronaut Apprentice", image: 'micronautaprrentice.svg'),
             cloudservices: new Category(name: 'Cloud Native', image: 'cloud.svg'),
             security: new Category(name: 'Micronaut Security', image: 'security.svg'),
+            dataaccess: new Category(name: 'Data Access', image: 'dataaccess.svg'),
         ]
     }
 }
