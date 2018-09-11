@@ -72,11 +72,11 @@ var ociTrainingTrack = 34;
 getJSON(pwsurl + '/training?trackId='+ociTrainingTrack, function(err, data) {
     var msg = '';
     if (err != null) {
-        msg = 'Something went wrong while retrieving OCI training offerings';
+        msg = '<p class="trainingerror">Something went wrong while retrieving OCI training offerings.</p>';
 
     } else {
         if ( data.length == 0 ) {
-            msg = '<p><b>Currently, we don\'t have any training offerings available</b></p>.';
+            msg = '<p class="trainingvoid">Currently, we don\'t have any training offerings available.</p>';
 
         } else {
             msg = trainingTable(data);

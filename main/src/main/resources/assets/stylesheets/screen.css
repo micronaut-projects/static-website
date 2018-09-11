@@ -1143,3 +1143,9 @@ body.home pre {
         line-height: 1.5em !important;
     }
 }
+
+#ocitraining .trainingerror,
+#ocitraining .trainingvoid {
+    padding: 5px 15px;
+    background-color: #4CAFDE;
+}
