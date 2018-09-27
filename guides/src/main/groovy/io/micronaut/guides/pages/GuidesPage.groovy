@@ -67,7 +67,7 @@ class GuidesPage extends Page implements ReadFileUtils {
     }
 
     @CompileDynamic
-    String renderGuide(Guide guide) {
+    String renderGuide(Guide guide, String query = null) {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
         html.li {
@@ -81,14 +81,17 @@ class GuidesPage extends Page implements ReadFileUtils {
                 div(class: 'multiguide') {
                     span(class: 'title', guide.title)
                     for (ProgrammingLanguage lang :  multiLanguageGuide.githubSlugs.keySet())  {
-                        div(class: 'align-left') {
-                            a(class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
-                                mkp.yield(lang.name())
-                            }
-                            Set<String> tagList = multiLanguageGuide.programmingLanguageTags[lang] as Set<String>
-                            tagList << lang.toString().toLowerCase()
-                            tagList.each { String tag ->
-                                span(style: 'display: none', class: 'tag', tag)
+                        Set<String> tagList = multiLanguageGuide.programmingLanguageTags[lang] as Set<String>
+                        tagList << lang.toString().toLowerCase()
+
+                        if (query == null || titlesMatchesQuery(guide.title, query) || tagsMatchQuery(tagList as List<String>, query)) {
+                            div(class: 'align-left') {
+                                a(class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
+                                    mkp.yield(lang.name())
+                                }
+                                tagList.each { String tag ->
+                                    span(style: 'display: none', class: 'tag', tag)
+                                }
                             }
                         }
                     }
@@ -97,6 +100,13 @@ class GuidesPage extends Page implements ReadFileUtils {
 
         }
         writer.toString()
+    }
+
+    boolean titlesMatchesQuery(String title, String query) {
+        title.indexOf(query) != -1
+    }
+    boolean tagsMatchQuery(List<String> tags, String query) {
+        tags.any { it.indexOf(query) != -1 }
     }
 
 
@@ -183,7 +193,7 @@ class GuidesPage extends Page implements ReadFileUtils {
             }
             ul {
                 List<Guide> tagGuides = guides.findAll { Guide guide -> guide.tags.contains(tag.title) }
-                tagGuides.each { mkp.yieldUnescaped renderGuide(it) }
+                tagGuides.each { mkp.yieldUnescaped renderGuide(it, tag.title) }
             }
         }
         writer.toString()
