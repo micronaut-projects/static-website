@@ -143,7 +143,15 @@ class Navigation {
     }
 
     static TextMenuItem menuItemWithHref(String relativePath, String title, String url, String cssClass = null) {
-        String href = url ?  "${url}/${relativePath}" : relativePath
+        String href = relativePath
+        if (url) {
+            href = url
+            if(relativePath.startsWith("/")) {
+                href += relativePath
+            } else {
+                href += "/${relativePath}"
+            }
+        }
         new TextMenuItem(href: href, title: title, cssClass: cssClass)
     }
 
