@@ -2,6 +2,8 @@ var queryInputFieldId = "query";
 var mobileQueryInputFieldId = "mobilequery";
 var allguides = new Array();
 var guideClassName = "guide";
+var multiguideClassName = "multiguide";
+
 
 var elementsClassNames = new Array();
 elementsClassNames.push('training');
@@ -15,6 +17,12 @@ onload = function () {
     for ( var i = 0; i < elements.length; i++ ) {
         var element = elements[i];
         var guide = { href: element.getAttribute('href'), title: element.text, tags: tagsAtGuide(element.parentNode)  }; /* */
+        allguides.push(guide);
+    }
+    elements = document.getElementsByClassName(multiguideClassName);
+    for ( var i = 0; i < elements.length; i++ ) {
+        var element = elements[i];
+        var guide = { title: titleAtMultiguide(element), languages: languagesAtMultiguide(element)  }; /* */
         allguides.push(guide);
     }
 
@@ -60,10 +68,44 @@ function showElementsByClassName(className) {
     }
 }
 
+function titleAtMultiguide(element) {
+    for (var y = 0; y < element.childNodes.length; y++) {
+        if (element.childNodes[y].className == "title") {
+            return element.childNodes[y].textContent;
+        }
+    }
+    return '';
+}
+
+function languagesAtMultiguide(element) {
+    var languages = [];
+
+    for (var y = 0; y < element.childNodes.length; y++) {
+        if (element.childNodes[y].className === "align-left") {
+            var languageDiv = element.childNodes[y];
+            var langEl;
+            var hrefEl;
+            var tagsArr = [];
+            for (var x = 0; x < languageDiv.childNodes.length; x++) {
+                if (languageDiv.childNodes[x].className === "lang") {
+                    langEl = languageDiv.childNodes[x].textContent
+                    hrefEl = languageDiv.childNodes[x].getAttribute('href');
+                }
+                if (languageDiv.childNodes[x].className === "tag") {
+                    var tag = languageDiv.childNodes[x];
+                    tagsArr.push(tag.textContent);
+                }
+            }
+            languages.push({lang: langEl, href: hrefEl, tags: tagsArr})
+        }
+    }
+    return languages
+}
+
 function tagsAtGuide(element) {
     var tags = new Array();
-    for (var y = 0; y < element.childNodes.length; y++) {
 
+    for (var y = 0; y < element.childNodes.length; y++) {
         if (element.childNodes[y].className == "tag") {
             var tag = element.childNodes[y];
             tags.push(tag.textContent);
@@ -81,7 +123,7 @@ function onQueryChanged() {
         return;
     }
 
-    var matchingGuides = new Array();
+    var matchingGuides = [];
     if ( query !== '' ) {
         for (var i = 0; i < allguides.length; i++) {
             var guide = allguides[i];
@@ -92,7 +134,7 @@ function onQueryChanged() {
     }
     if ( matchingGuides.length > 0 ) {
         hideElementsToDisplaySearchResults();
-        var html = renderGuideGroup(matchingGuides);
+        var html = renderGuideGroup(matchingGuides, query);
         document.getElementById("searchresults").innerHTML = html;
 
     } else {
@@ -100,17 +142,39 @@ function onQueryChanged() {
     }
 }
 
-function doesGuideMatchesQuery(guide, query) {
-    if (guide.title.toLowerCase().indexOf(query.toLowerCase()) !== -1) {
-        return true;
-    }
-
-    for ( var i = 0; i < guide.tags.length; i++) {
-        var tag = guide.tags[i];
+function doesTagsMatchesQuery(tags, query) {
+    for ( var x = 0; x < tags.length; x++) {
+        var tag = tags[x];
         if (tag.toLowerCase().indexOf(query.toLowerCase()) !== -1) {
             return true;
         }
     }
+    return false;
+}
+
+function doesTitleMatchesQuery(title, query) {
+    if (title.toLowerCase().indexOf(query.toLowerCase()) !== -1) {
+        return true;
+    }
+}
+
+function doesGuideMatchesQuery(guide, query) {
+    if (doesTitleMatchesQuery(guide.title, query)) {
+        return true;
+    }
+    if (guide.tags === undefined || guide.tags === null) {
+        for ( var i = 0; i < guide.languages.length; i++) {
+            var language = guide.languages[i];
+            if (doesTagsMatchesQuery(language.tags,query)) {
+                return true;
+            }
+        }
+    } else {
+        if (doesTagsMatchesQuery(guide.tags, query)) {
+            return true;
+        }
+    }
+
     return false;
 }
 
@@ -125,7 +189,7 @@ function queryValue() {
     return value;
 }
 
-function renderGuideGroup(guides) {
+function renderGuideGroup(guides, query) {
     var html = "";
     html += "<div class='guidegroup'>";
     html += "  <div class='guidegroupheader'>";
@@ -133,19 +197,39 @@ function renderGuideGroup(guides) {
     html += "  </div>";
     html += "  <ul>";
     for ( var i = 0; i < guides.length; i++ ) {
-        html += "    " + renderGuideAsHtmlLi(guides[i]);
+        html += "    " + renderGuideAsHtmlLi(guides[i], query);
     }
     html += "  </ul>";
     html += "</div>";
     return html;
 }
 
-function renderGuideAsHtmlLi(guide) {
+function renderGuideAsHtmlLi(guide, query) {
     var html = "<li>";
-    html += "<a class='"+guideClassName+"' href='" + guide.href + "'>" + guide.title + "</a>";
-    for ( var i = 0; i < guide.tags.length; i++ ) {
-        var tag = guide.tags[i];
-        html += "<span style='display: none' class='tag'>"+tag+"</span>";
+    if (guide.tags === undefined || guide.tags === null) {
+        html += "<div class=\"multiguide\">";
+        html += "<span class=\"title\">" + guide.title + "</span>";
+        var titleMatched = doesTitleMatchesQuery(guide.title, query);
+        for (var i = 0; i < guide.languages.length; i++) {
+            var language = guide.languages[i];
+            var tagsMatched = doesTagsMatchesQuery(language.tags, query);
+            if (titleMatched || tagsMatched) {
+                html += "<div class=\"align-left\">";
+                html += "<a class=\"lang\" href=\""+language.href+"\">"+language.lang+"</a>"
+                for (var x = 0; x < language.tags.length; x++) {
+                    var tag = language.tags[x];
+                    html += "<span style='display: none' class='tag'>" + tag + "</span>";
+                }
+                html += "</div>";
+            }
+        }
+        html += "</div>";
+    } else {
+        html += "<a class='" + guideClassName + "' href='" + guide.href + "'>" + guide.title + "</a>";
+        for (var i = 0; i < guide.tags.length; i++) {
+            var tag = guide.tags[i];
+            html += "<span style='display: none' class='tag'>" + tag + "</span>";
+        }
     }
     html += "</li>"
     return html;

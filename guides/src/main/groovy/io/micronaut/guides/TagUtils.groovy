@@ -2,6 +2,7 @@ package io.micronaut.guides
 
 import groovy.transform.CompileStatic
 import io.micronaut.Guide
+import io.micronaut.MultiLanguageGuide
 import io.micronaut.guides.model.Tag
 
 @CompileStatic

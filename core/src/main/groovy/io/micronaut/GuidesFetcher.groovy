@@ -45,10 +45,15 @@ class GuidesFetcher {
                 ((it.githubSlug == "${javaGuide.githubSlug}-groovy") || (it.githubSlug == "${javaGuide.githubSlug}-kotlin"))
             }
             if (groovyKotlinGuides) {
+                Map<ProgrammingLanguage, List<String>> tags = [:]
+                tags[javaGuide.programmingLanguage] = javaGuide.tags
+
                 Map<ProgrammingLanguage, String> githubSlugs = [:]
                 githubSlugs[javaGuide.programmingLanguage] = javaGuide.githubSlug
+
                 for (SingleLanguageGuide guide : groovyKotlinGuides) {
                     githubSlugs[guide.programmingLanguage] = guide.githubSlug
+                    tags[guide.programmingLanguage] = guide.tags
                 }
                 guides << new MultiLanguageGuide(authors: [javaGuide.authors, groovyKotlinGuides*.authors].flatten().unique() as List<String>,
                         category: javaGuide.category,
@@ -56,7 +61,7 @@ class GuidesFetcher {
                         name: javaGuide.name,
                         title: javaGuide.title,
                         subtitle: javaGuide.subtitle,
-                        tags: [javaGuide.tags, groovyKotlinGuides*.tags].flatten().unique() as List<String>,
+                        programmingLanguageTags: tags,
                         publicationDate: javaGuide.publicationDate)
             } else {
                 guides << javaGuide

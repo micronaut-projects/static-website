@@ -78,16 +78,20 @@ class GuidesPage extends Page implements ReadFileUtils {
                 }
             } else if (guide instanceof MultiLanguageGuide) {
                 MultiLanguageGuide multiLanguageGuide = ((MultiLanguageGuide) guide)
-                span(class: 'title', guide.title)
-                div {
+                div(class: 'multiguide') {
+                    span(class: 'title', guide.title)
                     for (ProgrammingLanguage lang :  multiLanguageGuide.githubSlugs.keySet())  {
-                        a(class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
-                            mkp.yield(lang.name())
+                        div(class: 'align-left') {
+                            a(class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
+                                mkp.yield(lang.name())
+                            }
+                            Set<String> tagList = multiLanguageGuide.programmingLanguageTags[lang] as Set<String>
+                            tagList << lang.toString().toLowerCase()
+                            tagList.each { String tag ->
+                                span(style: 'display: none', class: 'tag', tag)
+                            }
                         }
                     }
-                }
-                guide.tags.each { String tag ->
-                    span(style: 'display: none', class: 'tag', tag)
                 }
             }
 
