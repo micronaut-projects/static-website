@@ -10,6 +10,7 @@ import io.micronaut.main.pages.*
 import io.micronaut.SoftwareVersion
 import io.micronaut.pages.HtmlPage
 import io.micronaut.pages.Page
+import io.micronaut.pages.RedirectPage
 import org.yaml.snakeyaml.Yaml
 
 @CompileStatic
@@ -19,7 +20,7 @@ class SiteMap {
             new HomePage(),
             new DownloadPage(),
             new QuestionPage(),
-            new AnnouncementPage(),
+            new RedirectPage('https://objectcomputing.com/news/category/micronaut-blog', 'announcement.html'),
             new SupportPage(),
             new DocumentationPage(),
             new EventsPage(),

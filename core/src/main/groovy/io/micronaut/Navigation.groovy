@@ -112,11 +112,11 @@ class Navigation {
     }
 
     static TextMenuItem desktopBlogMenuItem(String url = null) {
-        menuItemWithHref('announcement.html', 'News', url, 'desktop')
+        menuItemWithHref('/news/category/micronaut-blog', 'News', 'https://objectcomputing.com', 'desktop')
     }
 
     static TextMenuItem mobileBlogMenuItem(String url = null, String title = 'News') {
-        menuItemWithHref('announcement.html', title, url, 'mobile')
+        menuItemWithHref('/news/category/micronaut-blog', title, 'https://objectcomputing.com', 'mobile')
     }
 
     static IconMenuItem mobileHomeMenuItem(String url = null) {
