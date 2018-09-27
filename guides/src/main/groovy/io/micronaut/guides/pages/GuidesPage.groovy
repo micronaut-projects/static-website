@@ -12,7 +12,6 @@ import io.micronaut.guides.model.Category
 import io.micronaut.Guide
 import io.micronaut.guides.model.Tag
 import io.micronaut.TextMenuItem
-import io.micronaut.Training
 import io.micronaut.pages.Page
 
 import java.text.SimpleDateFormat

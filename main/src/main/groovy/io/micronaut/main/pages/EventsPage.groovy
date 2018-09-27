@@ -1,16 +1,13 @@
 package io.micronaut.main.pages
 
+import groovy.json.JsonSlurper
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
 import groovy.xml.MarkupBuilder
-import io.micronaut.Events
 import io.micronaut.GuideGroup
-import io.micronaut.GuideGroupItem
 import io.micronaut.MenuItem
 import io.micronaut.Navigation
 import io.micronaut.ReadFileUtils
-import io.micronaut.Training
-import io.micronaut.main.SiteMap
 import io.micronaut.pages.Page
 
 @CompileStatic
@@ -18,17 +15,12 @@ class EventsPage extends Page  implements ReadFileUtils {
     String title = 'Events'
     String slug = 'events.html'
     String bodyClass = 'events'
-
+    String pwsurl  = 'https://oci-training.cfapps.io'
+    int ociTrainingTrack = 34
+    String category = 'Micronaut'
     @Override
     MenuItem menuItem() {
         Navigation.desktopEventsItem(micronautUrl())
-    }
-
-    @Override
-    List<String> getJavascriptFiles() {
-        List<String> jsFiles = super.getJavascriptFiles()
-        jsFiles << ("${micronautUrl()}/javascripts/oci-training.js" as String)
-        jsFiles
     }
 
     @CompileDynamic
@@ -36,49 +28,68 @@ class EventsPage extends Page  implements ReadFileUtils {
     String mainContent() {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
-        html.div(class:"content container") {
+        html.div(class:"content container", id: 'ocitraining') {
             h1 {
                 span 'Events &'
                 b 'Training'
             }
             div(class: "twocolumns") {
                 div(class: "odd column training") {
-                    mkp.yieldUnescaped trainingGuideGroup().renderAsHtml()
 
+                    String trainigHtml = ''
+                    try {
+                        String json = new URL("${pwsurl}/training?trackId=$ociTrainingTrack").text
+                        def slurper = new JsonSlurper()
+                        def result = slurper.parseText(json)
+                        if (!result) {
+                            trainigHtml += "<p class=\"trainingvoid\">Currently, we don't have any training offerings available.</p>"
+                        } else {
+                            trainigHtml +=  trainingTable(result)
+                        }
+                    } catch(Exception e) {
+                        trainigHtml += '<p class="trainingvoid">Something went wrong while retrieving OCI training offerings.</p>'
+                    }
+                    html.div(class: "guidegroup", style: '') {
+                        div(class: "guidegroupheader") {
+                            img src: "${getImageAssetPreffix()}training.svg", alt: 'Training'
+                            h2 {
+                                html.mkp.yieldUnescaped 'Training'
+                            }
+                        }
+                        html.mkp.yieldUnescaped trainigHtml
+                    }
                     p 'Training and events developed and delivered by the Micronaut founders and core development team.'
 
                     String text = readFileContent('micronautpresentationrequestform.html')
                     if ( text ) {
                         mkp.yieldUnescaped text
                     }
-
-//
-//                    ul(class: "iconsgrid") {
-//                        li(style: 'margin-bottom: 0;') {
-//                            img src: "${imageAssetPreffix}circle_graemerocher.png", alt: "Graeme Rocher"
-//                            span 'Graeme Rocher'
-//                        }
-//                        li(style: 'margin-bottom: 0;') {
-//                            img src: "${imageAssetPreffix}circle_jeffscottbrown.png", alt: "Jeff Scott Brown"
-//                            span 'Jeff Scott Brown'
-//
-//                        }
-//                        li(style: 'margin-bottom: 0;') {
-//                            img src: "${imageAssetPreffix}circle_james.png", alt: "James Kleeh"
-//                            span 'James Kleeh'
-//                        }
-//                        li(style: 'margin-bottom: 0;') {
-//                            img src: "${imageAssetPreffix}circle_ryan.png", alt: "Ryan Vanderwerf"
-//                            span 'Ryan Vanderwerf'
-//                        }
-//                        li(style: 'margin-bottom: 0;') {
-//                            img src: "${imageAssetPreffix}circle_alvarosanchez.png", alt: "Álvaro Sanchez-Mariscal"
-//                            span 'Álvaro Sanchez-Mariscal'
-//                        }
-//                    }
                 }
                 div(class: "column training") {
-                    mkp.yieldUnescaped eventsGuideGroup().renderAsHtml()
+                    String eventsHtml = ''
+                    try {
+                        String json = new URL("${pwsurl}/events?category=$category").text
+                        def slurper = new JsonSlurper()
+                        def result = slurper.parseText(json)
+                        if (!result) {
+                            eventsHtml += "<p class=\"trainingvoid\"><b>Currently, we don\'t have any Micronaut events available.</p>"
+                        } else {
+                            eventsHtml +=  eventsTable(result);
+                        }
+                    } catch(Exception e) {
+                        eventsHtml += '<p class="trainingerror">Something went wrong while retrieving OCI Events.</p>'
+                    }
+
+                    html.div(class: "guidegroup", style: '') {
+                        div(class: "guidegroupheader") {
+                            img src: "${getImageAssetPreffix()}events.svg", alt: 'Events'
+                            h2 {
+                                html.mkp.yieldUnescaped 'Events'
+                            }
+                        }
+                        html.mkp.yieldUnescaped eventsHtml
+                    }
+
 
                 }
             }
@@ -86,17 +97,56 @@ class EventsPage extends Page  implements ReadFileUtils {
         writer.toString()
     }
 
-    GuideGroup eventsGuideGroup() {
-        new GuideGroup(title: 'Events',
-                image: "${getImageAssetPreffix()}events.svg",
-                ulId: 'ocievents',
-                items: [])
+    @CompileDynamic
+    String eventsTable(def data) {
+        String msg = '''\
+<table>
+<thead>
+<tr><th>Name</th><th>Date(s)</th><th>Location</th></tr>
+</thead>
+<tbody>
+'''
+        for ( int i = 0; i < data.size(); i++ ) {
+            msg += '<tr>'
+            if (data[i].eventHref) {
+                msg += "<td><a href=\"${data[i].eventHref}\">${data[i].eventName}</a></td>"
+            } else {
+                msg += "<td>${data[i].eventName}</td>"
+            }
+            msg += "<td>${data[i].eventDate}</td>"
+            msg += "<td>${data[i].eventLocation}</td>"
+            msg += "</tr>"
+        }
+        msg += '</tbody>'
+        msg += '</table>'
+        msg
     }
 
-    GuideGroup trainingGuideGroup() {
-        new GuideGroup(title: 'Training',
-                image: "${getImageAssetPreffix()}training.svg",
-                ulId: 'ocitraining',
-                items: [])
+    @CompileDynamic
+    String trainingTable(def data) {
+        String msg = '''\
+<table>
+    <colgroup>
+       <col>
+       <col>
+       <col>
+       <col>
+    </colgroup>
+    <thead>
+        <tr><th>Course</th><th>Date(s)</th><th>Instructor(s)</th><th>Hour(s)</th></tr>
+    </thead>'
+    <tbody>
+'''
+        for (int i = 0; i < data.size(); i++ ) {
+            msg += """\
+<tr>
+<td><a href=\"${data[i].enrollmentLink}\">${data[i].course}</a></td>
+<td>${data[i].dates}</td><td>${data[i].instructors}</td>
+<td>${data[i].hours}</td>
+</tr>
+"""
+        }
+        msg += '</tbody></table>'
+        msg
     }
 }

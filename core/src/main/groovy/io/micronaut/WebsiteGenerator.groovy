@@ -30,7 +30,6 @@ class WebsiteGenerator {
     static void copyAssetsWithTimestamp(String timestamp) {
         WebsiteGenerator.copyAsset('stylesheets', 'screen.css', timestamp)
         WebsiteGenerator.copyAsset('javascripts', 'navigation.js', timestamp)
-        WebsiteGenerator.copyAsset('javascripts', 'oci-training.js', timestamp)
         WebsiteGenerator.copyAsset('javascripts', 'navbar_hide_scroll.js', timestamp)
         WebsiteGenerator.copyAsset('javascripts', 'search.js', timestamp)
         WebsiteGenerator.copyAsset('stylesheets', 'prismjs.css', timestamp)
