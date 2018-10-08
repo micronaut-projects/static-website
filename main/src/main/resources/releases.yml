@@ -14,3 +14,6 @@ releases:
     -
       version: 1.0.0.RC1
       publicationDate: Sep 30, 2018
+    -
+      version: 1.0.0.RC2
+      publicationDate: Oct 08, 2018
