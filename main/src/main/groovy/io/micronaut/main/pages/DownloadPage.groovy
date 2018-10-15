@@ -96,7 +96,7 @@ class DownloadPage extends Page {
                         }
                         p 'If prompted, make this your default version. After installation is complete it can be tested with:'
                         div(class: 'code') {
-                            p '$ mn -version'
+                            p '$ mn --version'
                         }
                         p 'That\'s all there is to it!'
                     }
