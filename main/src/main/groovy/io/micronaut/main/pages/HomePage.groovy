@@ -50,7 +50,7 @@ class HomePage extends Page {
                 }
             }
             div(id: "calltoaction") {
-                h2 'A modern, JVM-based, full-stack framework for building modular, easily testable microservice applications.'
+                h2 'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
             }
         }
         html.mkp.yieldUnescaped('<div class="starsbgtobrownelipse brownbg whitecircleborderseparator"></div>')
@@ -164,11 +164,11 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.client.Client;
 import io.reactivex.Single;
 
-@Client("/hello") 
+@Client("/hello")
 public interface HelloClient {
 
-    @Get("/") 
-    Single<String> hello(); 
+    @Get("/")
+    Single<String> hello();
 }
 '''
                                 }
@@ -199,19 +199,19 @@ import io.micronaut.runtime.server.EmbeddedServer
 import spock.lang.*
 
 class HelloClientSpec extends Specification {
-    @Shared 
-    @AutoCleanup 
-    EmbeddedServer embeddedServer = 
-        ApplicationContext.run(EmbeddedServer) 
+    @Shared
+    @AutoCleanup
+    EmbeddedServer embeddedServer =
+        ApplicationContext.run(EmbeddedServer)
 
-    @Shared 
+    @Shared
     HelloClient client = embeddedServer
         .applicationContext
-        .getBean(HelloClient) 
+        .getBean(HelloClient)
 
     void "test hello world response"() {
         expect:
-        client.hello().blockingGet() == "Hello World" 
+        client.hello().blockingGet() == "Hello World"
     }
 }
 '''
@@ -240,10 +240,10 @@ class HelloClientSpec extends Specification {
                             pre {
                                 code(class: "language-java") {
                                     mkp.yieldUnescaped """
-@Client( id = "person-service" ) 
-public interface PersonClient {                        
-    public Single&lt;Person&gt; 
-        save(@Body Single&lt;Person&gt;person) 
+@Client( id = "person-service" )
+public interface PersonClient {
+    public Single&lt;Person&gt;
+        save(@Body Single&lt;Person&gt;person)
 }"""
                                 }
                             }
