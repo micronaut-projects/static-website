@@ -63,7 +63,7 @@ class HomePage extends Page {
                     html.article(class: 'feature') {
                         header {
                             h2 {
-                                mkp.yieldUnescaped 'Choose a language'
+                                mkp.yieldUnescaped 'Polyglot Framework'
                             }
                         }
                         p(class: 'align-center language') {
