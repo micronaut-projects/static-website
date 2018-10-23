@@ -20,3 +20,6 @@ releases:
     -
       version: 1.0.0.RC3
       publicationDate: Oct 16, 2018
+    -
+      version: 1.0.0
+      publicationDate: Oct 23, 2018
