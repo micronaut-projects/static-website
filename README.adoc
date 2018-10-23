@@ -3,7 +3,7 @@
 
 = Micronaut Website
 
-Micronaut is a modern, JVM-based, full-stack framework for building modular, easily testable microservice applications.
+Micronaut is a modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.
 
 == What to change when a new release is published.
 

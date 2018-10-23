@@ -110,7 +110,7 @@ abstract class Page implements HtmlPage {
     }
 
     String getMetaDescription() {
-        'A modern, JVM-based, full-stack framework for building modular, easily testable microservice applications.'
+        'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
     }
 
     List<String> getCssFiles() {
@@ -213,7 +213,7 @@ abstract class Page implements HtmlPage {
     }
 
     String summary() {
-        'A modern, JVM-based, full-stack framework for building modular, easily testable microservice applications.'
+        'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
     }
 
     @CompileDynamic
