@@ -14,6 +14,9 @@ import io.micronaut.pages.SiteMapPage
 class Main {
     static void main(String[] args) {
         List<Guide> guides = GuidesFetcher.fetchGuides()
+        guides.each { guide ->
+            println "Version: " + guide.versionNumber
+        }
         List<HtmlPage> pages = SiteMap.PAGES
         pages << new BuildStatusPage(guides)
 

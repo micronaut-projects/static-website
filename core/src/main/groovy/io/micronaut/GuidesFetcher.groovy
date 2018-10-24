@@ -14,13 +14,28 @@ class GuidesFetcher {
 
     public static final String GUIDES_JSON = 'https://raw.githubusercontent.com/micronaut-projects/micronaut-guides/gh-pages/guides.json'
 
+    public static final String MICRONAUTVERSION_NAME = 'micronautVersion'
+
+    static String versionNumber(String githubSlug) {
+        Properties props = new Properties()
+        props.load(new URL("https://raw.githubusercontent.com/${githubSlug}/master/complete/gradle.properties").newInputStream())
+        String value = props.getProperty(MICRONAUTVERSION_NAME)
+        value
+    }
+
     @CompileDynamic
     static List<Guide> fetchGuides(boolean skipFuture = true) {
         URL url = new URL(GUIDES_JSON)
         def jsonArr = new JsonSlurper().parseText(url.text)
-        DateFormat dateFormat = new SimpleDateFormat('dd MMM yyyy', Locale.US)
+
+        DateFormat dateFormat = new SimpleDateFormat('dd MMM yyyy',
+                Locale.US)
         List<SingleLanguageGuide> singleLanguageGuideList = jsonArr.collect {
+
+            String micronautVersion = versionNumber(it.githubSlug)
+
             SingleLanguageGuide guide = new SingleLanguageGuide(authors: it.authors as List,
+                    versionNumber: micronautVersion,
                     category: it.category,
                     githubSlug: it.githubSlug,
                     name: it.name,
@@ -55,7 +70,9 @@ class GuidesFetcher {
                     githubSlugs[guide.programmingLanguage] = guide.githubSlug
                     tags[guide.programmingLanguage] = guide.tags
                 }
-                guides << new MultiLanguageGuide(authors: [javaGuide.authors, groovyKotlinGuides*.authors].flatten().unique() as List<String>,
+                String micronautVersion = versionNumber(javaGuide.githubSlug)
+
+                guides << new MultiLanguageGuide(versionNumber: micronautVersion, authors: [javaGuide.authors, groovyKotlinGuides*.authors].flatten().unique() as List<String>,
                         category: javaGuide.category,
                         githubSlugs: githubSlugs,
                         name: javaGuide.name,

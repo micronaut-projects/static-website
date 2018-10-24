@@ -5,6 +5,7 @@ import groovy.transform.ToString
 
 @CompileStatic
 interface Guide {
+    String getVersionNumber()
     List<String> getAuthors()
     String getCategory()
     String getName()

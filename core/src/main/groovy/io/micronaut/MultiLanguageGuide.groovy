@@ -12,6 +12,7 @@ class MultiLanguageGuide implements Guide {
     String title
     String subtitle
     Date publicationDate
+    String versionNumber
 
     @Override
     List<String> getTags() {

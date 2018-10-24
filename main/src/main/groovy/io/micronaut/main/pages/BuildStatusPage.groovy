@@ -31,19 +31,23 @@ class BuildStatusPage extends Page {
     }
 
     @CompileDynamic
-    String renderBuildStatusListAsTable(List<BuildStatus> buildStatusList) {
+    String renderBuildStatusListAsTable(List<BuildStatus> buildStatusList,
+                                        boolean useVersionColumn = false) {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
         html.table(style: 'width: 100%;') {
             thead {
                 tr {
+                    if (useVersionColumn) {
+                        th 'Version'
+                    }
                     th 'Build name'
                     th 'Status'
                 }
             }
             tbody {
                 for ( BuildStatus buildStatus : buildStatusList ) {
-                    mkp.yieldUnescaped buildStatus.renderAsHtml()
+                    mkp.yieldUnescaped buildStatus.renderAsHtml(useVersionColumn)
                 }
             }
         }
@@ -79,21 +83,26 @@ class BuildStatusPage extends Page {
                         guides.each { Guide guide ->
                             if ( guide instanceof SingleLanguageGuide ) {
                                 SingleLanguageGuide singleGuide = (SingleLanguageGuide) guide
-                                guideBuildStatuses << new BuildStatus([title: guide.title,
-                                                 href : "https://travis-ci.org/${singleGuide.githubSlug}?branch=master",
-                                                 badge: "https://travis-ci.org/${singleGuide.githubSlug}.svg?branch=master"])
+                                guideBuildStatuses << new BuildStatus([
+                                        title: guide.title,
+                                        href : "https://travis-ci.org/${singleGuide.githubSlug}?branch=master",
+                                        badge: "https://travis-ci.org/${singleGuide.githubSlug}.svg?branch=master",
+                                        version: guide.versionNumber,
+                                ])
                             } else if ( guide instanceof MultiLanguageGuide) {
                                 MultiLanguageGuide multiLanguageGuide = (MultiLanguageGuide) guide
                                 multiLanguageGuide.githubSlugs.each { k, v ->
-                                    guideBuildStatuses << new BuildStatus([title: "${guide.title} ${k}",
-                                                     href : "https://travis-ci.org/${v}?branch=master",
-                                                     badge: "https://travis-ci.org/${v}.svg?branch=master"])
+                                    guideBuildStatuses << new BuildStatus([
+                                            title: "${guide.title} ${k}",
+                                            href : "https://travis-ci.org/${v}?branch=master",
+                                            badge: "https://travis-ci.org/${v}.svg?branch=master",
+                                            version: guide.versionNumber,])
                                 }
 
                             }
 
                         }
-                        mkp.yieldUnescaped renderBuildStatusListAsTable(guideBuildStatuses)
+                        mkp.yieldUnescaped renderBuildStatusListAsTable(guideBuildStatuses, true)
                     }
                 }
         }
