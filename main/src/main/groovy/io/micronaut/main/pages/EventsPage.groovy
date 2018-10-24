@@ -24,10 +24,29 @@ class EventsPage extends Page  implements ReadFileUtils {
     }
 
     @CompileDynamic
+    String trainingHtml() {
+        String trainigHtml = ''
+        try {
+            String json = new URL("${pwsurl}/training?trackId=$ociTrainingTrack").text
+            def slurper = new JsonSlurper()
+            def result = slurper.parseText(json)
+            if (!result) {
+                trainigHtml += "<p class=\"trainingvoid\">Currently, we don't have any training offerings available.</p>"
+            } else {
+                trainigHtml +=  trainingTable(result)
+            }
+        } catch(Exception e) {
+            trainigHtml += '<p class="trainingvoid">Something went wrong while retrieving OCI training offerings.</p>'
+        }
+        trainigHtml
+    }
+
+    @CompileDynamic
     @Override
     String mainContent() {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
+        String requestFormText = readFileContent('micronautpresentationrequestform.html')
         html.div(class:"content container", id: 'ocitraining') {
             h1 {
                 span 'Events &'
@@ -35,20 +54,7 @@ class EventsPage extends Page  implements ReadFileUtils {
             }
             div(class: "twocolumns") {
                 div(class: "odd column training") {
-
-                    String trainigHtml = ''
-                    try {
-                        String json = new URL("${pwsurl}/training?trackId=$ociTrainingTrack").text
-                        def slurper = new JsonSlurper()
-                        def result = slurper.parseText(json)
-                        if (!result) {
-                            trainigHtml += "<p class=\"trainingvoid\">Currently, we don't have any training offerings available.</p>"
-                        } else {
-                            trainigHtml +=  trainingTable(result)
-                        }
-                    } catch(Exception e) {
-                        trainigHtml += '<p class="trainingvoid">Something went wrong while retrieving OCI training offerings.</p>'
-                    }
+                    String trainigHtml = trainingHtml()
                     html.div(class: "guidegroup", style: '') {
                         div(class: "guidegroupheader") {
                             img src: "${getImageAssetPreffix()}training.svg", alt: 'Training'
@@ -58,11 +64,10 @@ class EventsPage extends Page  implements ReadFileUtils {
                         }
                         html.mkp.yieldUnescaped trainigHtml
                     }
-                    p 'Training and events developed and delivered by the Micronaut founders and core development team.'
-
-                    String text = readFileContent('micronautpresentationrequestform.html')
-                    if ( text ) {
-                        mkp.yieldUnescaped text
+                    if ( requestFormText ) {
+                        html.div(class: 'desktop') {
+                            mkp.yieldUnescaped requestFormText
+                        }
                     }
                 }
                 div(class: "column training") {
@@ -89,7 +94,11 @@ class EventsPage extends Page  implements ReadFileUtils {
                         }
                         html.mkp.yieldUnescaped eventsHtml
                     }
-
+                    if ( requestFormText ) {
+                        html.div(class: 'mobile') {
+                            mkp.yieldUnescaped requestFormText
+                        }
+                    }
 
                 }
             }
