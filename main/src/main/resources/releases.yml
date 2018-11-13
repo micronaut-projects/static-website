@@ -23,3 +23,6 @@ releases:
     -
       version: 1.0.0
       publicationDate: Oct 23, 2018
+    -
+      version: 1.0.1
+      publicationDate: Nov 13, 2018
