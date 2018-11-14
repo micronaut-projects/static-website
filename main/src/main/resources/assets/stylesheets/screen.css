@@ -120,6 +120,9 @@ body.home .language img {
 body.home .twocolumns .column:last-child {
     margin-top: 100px;
 }
+/*body.home #calltoaction .twocolumns .column:last-child {*/
+    /*margin-top: 30px;*/
+/*}*/
 body.home #rocketlanguages .column:last-child {
     margin-top: 0;
 }
@@ -165,6 +168,11 @@ sup {
 h2 {
     font-size: 1.6em !important;
     line-height: 1.7em !important;
+}
+
+body.home h2 {
+    font-size: 1.3em !important;
+    line-height: 1.6em !important;
 }
 
 h1 {
@@ -502,7 +510,7 @@ div.search {
 @media screen and (min-width: 750px) {
     body.home #logo {
         margin: 275px auto 0;
-        max-width: 500px;
+        max-width: 400px;
     }
 }
 
@@ -525,12 +533,24 @@ body.home section p img {
 #calltoaction {
     margin: 20px auto;
 }
+#calltoaction .column {
+    margin-top: 0 !important;
+}
+#calltoaction iframe {
+    margin-top: 60px;
+    border: 1px solid #000000;
+}
+@media screen and (min-width: 800px) {
+    #calltoaction iframe {
+        margin-top: 17px;
+    }
+}
 @media screen and (min-width: 800px) {
     #calltoaction { margin-bottom: 110px !important; }
 }
 @media screen and (min-width: 1200px) {
     #calltoaction {
-        margin: 70px auto;
+        margin: 70px auto 40px !important;
     }
 }
 /* END - CALL TO ACTION */

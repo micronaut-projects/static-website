@@ -24,7 +24,7 @@ abstract class Page implements HtmlPage {
 
     abstract String getTitle()
 
-    WebsiteEnvironment environment = WebsiteEnvironment.PRODUCTION
+    WebsiteEnvironment environment = WebsiteEnvironment.DEVELOPMENT
 
     public static final String GOOGLE_ANALYTICS_TRACKING_CODE = 'UA-115754405-1'
 
