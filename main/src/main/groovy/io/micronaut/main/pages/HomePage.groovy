@@ -36,10 +36,6 @@ class HomePage extends Page {
     }
 
 
-    String introducingMicronautVideo() {
-        '<iframe width="560" height="315" src="https://www.youtube.com/embed/m0s2ZpafEE0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    }
-
     @Override
     @CompileDynamic
     String mainContent() {
@@ -54,14 +50,7 @@ class HomePage extends Page {
                 }
             }
             div(id: "calltoaction") {
-                div(class: 'twocolumns') {
-                    div(class: 'column') {
-                        h2 'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
-                    }
-                    div(class: 'column') {
-                        mkp.yieldUnescaped(introducingMicronautVideo())
-                    }
-                }
+                h2 'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
             }
         }
         html.mkp.yieldUnescaped('<div class="starsbgtobrownelipse brownbg whitecircleborderseparator"></div>')
