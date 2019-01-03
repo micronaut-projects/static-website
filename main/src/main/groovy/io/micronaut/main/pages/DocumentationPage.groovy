@@ -17,18 +17,42 @@ class DocumentationPage extends Page {
     String slug = 'documentation.html'
     String bodyClass = 'docs'
 
+    List< Map<String, String> > links = [
+            [entry: 'micronauttest', label: 'Micronaut Test', version: 'latest', githubslug: 'micronaut-test'],
+            [entry: 'micronaut-spring', label: 'Micronaut for Spring', version: 'latest', githubslug: 'micronaut-spring'],
+            [entry: 'flyway', label: 'Flyway Database Migration', version: 'latest',githubslug: 'micronaut-configuration-flyway'],
+            [entry: 'liquibase', label: 'Liquibase Database Migration', version: 'latest',githubslug: 'micronaut-configuration-liquibase'],
+            [entry: 'graphql', label: 'Micronaut GraphQL', version: 'snapshot', githubslug: 'micronaut-graphql'],
+            [entry: 'grpc', label: 'GRPC', version: 'snapshot', githubslug: 'micronaut-grpc'],
+
+    ] as List< Map<String, String> >
+
+    List<GuideGroupItem> extraLinksItems() {
+        links.collect { Map<String, String> link ->
+
+            String url = "https://micronaut-projects.github.io/${link.githubslug}/${link.version}/guide/index.html"
+            new GuideGroupItem(href: url, title: "${link.label}${link.version.equalsIgnoreCase('snapshot') ? ' (SNAPSHOT)' : ''}")
+        }
+    } 
+
     @Override
     MenuItem menuItem() {
         Navigation.documentationMenuItem(micronautUrl())
     }
 
-    GuideGroup documentationGuideGroup() {
+    GuideGroup latestDocumentationGuideGroup() {
         new GuideGroup(title: 'Latest Version Documentation',
                 image: "${getImageAssetPreffix()}documentation.svg",
                 items: [
                         new GuideGroupItem(href: "http://docs.micronaut.io/latest/guide/index.html", title: 'User Guide'),
                         new GuideGroupItem(href: "http://docs.micronaut.io/latest/api/", title: 'API Reference'),
                 ])
+    }
+
+    GuideGroup documentationGuideGroup(String title, List<GuideGroupItem> items, String imageName = 'documentation.svg') {
+        new GuideGroup(title: title,
+                image: "${getImageAssetPreffix()}${imageName}",
+                items: items)
     }
 
     GuideGroup snapshotDocumentationGuideGroup() {
@@ -54,10 +78,11 @@ class DocumentationPage extends Page {
             }
             div(class: "twocolumns") {
                 div(class: "odd column") {
+                    mkp.yieldUnescaped latestDocumentationGuideGroup().renderAsHtml()
                     mkp.yieldUnescaped snapshotDocumentationGuideGroup().renderAsHtml()
                 }
                 div(class: "column") {
-                    mkp.yieldUnescaped documentationGuideGroup().renderAsHtml()
+                    mkp.yieldUnescaped documentationGuideGroup('Other Modules', extraLinksItems()).renderAsHtml()
                 }
             }
         }
