@@ -24,6 +24,9 @@ class DocumentationPage extends Page {
             [entry: 'liquibase', label: 'Liquibase Database Migration', version: 'latest',githubslug: 'micronaut-configuration-liquibase'],
             [entry: 'graphql', label: 'Micronaut GraphQL', version: 'snapshot', githubslug: 'micronaut-graphql'],
             [entry: 'grpc', label: 'GRPC', version: 'snapshot', githubslug: 'micronaut-grpc'],
+            [entry: 'micronaut-netflix', label: 'Micronaut Netflix', version: 'latest', githubslug: 'micronaut-netflix'],
+            [entry: 'micronaut-kafka', label: 'Micronaut Kafka', version: 'latest', githubslug: 'micronaut-v'],
+            [entry: 'micronaut-groovy', label: 'Micronaut Groovy', version: 'snapshot', githubslug: 'micronaut-groovy'],
 
     ] as List< Map<String, String> >
 
