@@ -25,8 +25,9 @@ class DocumentationPage extends Page {
             [entry: 'graphql', label: 'Micronaut GraphQL', version: 'snapshot', githubslug: 'micronaut-graphql'],
             [entry: 'grpc', label: 'GRPC', version: 'snapshot', githubslug: 'micronaut-grpc'],
             [entry: 'micronaut-netflix', label: 'Micronaut Netflix', version: 'latest', githubslug: 'micronaut-netflix'],
-            [entry: 'micronaut-kafka', label: 'Micronaut Kafka', version: 'latest', githubslug: 'micronaut-v'],
+            [entry: 'micronaut-kafka', label: 'Micronaut Kafka', version: 'latest', githubslug: 'micronaut-kafka'],
             [entry: 'micronaut-groovy', label: 'Micronaut Groovy', version: 'snapshot', githubslug: 'micronaut-groovy'],
+            [entry: 'micronaut-sql', label: 'Micronaut SQL', version: 'snapshot', githubslug: 'micronaut-sql'],
 
     ] as List< Map<String, String> >
 
