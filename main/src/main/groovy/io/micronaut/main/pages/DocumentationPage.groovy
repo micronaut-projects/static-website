@@ -30,6 +30,8 @@ class DocumentationPage extends Page {
             [entry: 'groovy', label: 'Micronaut Groovy', version: 'snapshot', githubslug: 'micronaut-groovy'],
             [entry: 'sql', label: 'Micronaut SQL', version: 'snapshot', githubslug: 'micronaut-sql'],
             [entry: 'liquibase', label: 'Liquibase Configuration', version: 'latest', githubslug: 'micronaut-configuration-liquibase'],
+            [entry: 'flyway', label: 'Flyway Configuration', version: 'latest', githubslug: 'micronaut-configuration-flyway'],
+       
     ] as List< Map<String, String> >
 
     List<GuideGroupItem> extraLinksItems() {
