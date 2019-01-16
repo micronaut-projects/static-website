@@ -24,12 +24,12 @@ class DocumentationPage extends Page {
             [entry: 'liquibase', label: 'Liquibase Database Migration', version: 'latest',githubslug: 'micronaut-configuration-liquibase'],
             [entry: 'graphql', label: 'Micronaut GraphQL', version: 'snapshot', githubslug: 'micronaut-graphql'],
             [entry: 'grpc', label: 'GRPC', version: 'snapshot', githubslug: 'micronaut-grpc'],
-            [entry: 'micronaut-netflix', label: 'Micronaut Netflix', version: 'latest', githubslug: 'micronaut-netflix'],
-            [entry: 'micronaut-kafka', label: 'Micronaut Kafka', version: 'latest', githubslug: 'micronaut-kafka'],
-            [entry: 'micronaut-micrometer', label: 'Micronaut Micrometer', version: 'latest', githubslug: 'micronaut-micrometer'],        
-            [entry: 'micronaut-groovy', label: 'Micronaut Groovy', version: 'snapshot', githubslug: 'micronaut-groovy'],
-            [entry: 'micronaut-sql', label: 'Micronaut SQL', version: 'snapshot', githubslug: 'micronaut-sql'],
-
+            [entry: 'netflix', label: 'Micronaut Netflix', version: 'latest', githubslug: 'micronaut-netflix'],
+            [entry: 'kafka', label: 'Micronaut Kafka', version: 'latest', githubslug: 'micronaut-kafka'],
+            [entry: 'micrometer', label: 'Micronaut Micrometer', version: 'latest', githubslug: 'micronaut-micrometer'],        
+            [entry: 'groovy', label: 'Micronaut Groovy', version: 'snapshot', githubslug: 'micronaut-groovy'],
+            [entry: 'sql', label: 'Micronaut SQL', version: 'snapshot', githubslug: 'micronaut-sql'],
+            [entry: 'liquibase', label: 'Liquibase Configuration', version: 'latest', githubslug: 'micronaut-configuration-liquibase'],
     ] as List< Map<String, String> >
 
     List<GuideGroupItem> extraLinksItems() {
