@@ -7,9 +7,9 @@ import io.micronaut.GuideGroup
 import io.micronaut.GuideGroupItem
 import io.micronaut.MenuItem
 import io.micronaut.Navigation
-import io.micronaut.TextMenuItem
 import io.micronaut.main.SiteMap
 import io.micronaut.pages.Page
+import org.yaml.snakeyaml.Yaml
 
 @CompileStatic
 class DocumentationPage extends Page {
@@ -17,30 +17,15 @@ class DocumentationPage extends Page {
     String slug = 'documentation.html'
     String bodyClass = 'docs'
 
-    List< Map<String, String> > links = [
-            [entry: 'micronauttest', label: 'Micronaut Test', version: 'latest', githubslug: 'micronaut-test'],
-            [entry: 'mongodb', label: 'Micronaut MongoDB', version: 'latest', githubslug: 'micronaut-mongodb'],
-            [entry: 'redis', label: 'Micronaut Redis', version: 'latest', githubslug: 'micronaut-redis'],        
-            [entry: 'micronaut-spring', label: 'Micronaut for Spring', version: 'latest', githubslug: 'micronaut-spring'],
-            [entry: 'flyway', label: 'Flyway Database Migration', version: 'latest',githubslug: 'micronaut-configuration-flyway'],
-            [entry: 'liquibase', label: 'Liquibase Database Migration', version: 'latest',githubslug: 'micronaut-configuration-liquibase'],
-            [entry: 'graphql', label: 'Micronaut GraphQL', version: 'snapshot', githubslug: 'micronaut-graphql'],
-            [entry: 'grpc', label: 'GRPC', version: 'snapshot', githubslug: 'micronaut-grpc'],
-            [entry: 'netflix', label: 'Micronaut Netflix', version: 'latest', githubslug: 'micronaut-netflix'],
-            [entry: 'kafka', label: 'Micronaut Kafka', version: 'latest', githubslug: 'micronaut-kafka'],
-            [entry: 'micrometer', label: 'Micronaut Micrometer', version: 'latest', githubslug: 'micronaut-micrometer'],        
-            [entry: 'groovy', label: 'Micronaut Groovy', version: 'latest', githubslug: 'micronaut-groovy'],
-            [entry: 'sql', label: 'Micronaut SQL/JDBC', version: 'latest', githubslug: 'micronaut-sql'],
-            [entry: 'liquibase', label: 'Liquibase Configuration', version: 'latest', githubslug: 'micronaut-configuration-liquibase'],
-            [entry: 'flyway', label: 'Flyway Configuration', version: 'latest', githubslug: 'micronaut-configuration-flyway'],
-            [entry: 'elasticsearch', label: 'ElasticSearch Configuration', version: 'latest', githubslug: 'micronaut-configuration-elasticsearch'],            
-    ] as List< Map<String, String> >
-
+    @CompileDynamic
     List<GuideGroupItem> extraLinksItems() {
-        links.collect { Map<String, String> link ->
-
-            String url = "https://micronaut-projects.github.io/${link.githubslug}/${link.version}/guide/index.html"
-            new GuideGroupItem(href: url, title: "${link.label}${link.version.equalsIgnoreCase('snapshot') ? ' (SNAPSHOT)' : ''}")
+        Yaml yaml = new Yaml()
+        File f = new File('src/main/resources/modules.yml')
+        Map model = yaml.load(f.newDataInputStream())
+        model['modules'].collect { k, v ->
+            final String url = "https://micronaut-projects.github.io/${v.githubslug}/${v.version}/guide/index.html"
+            final String title = "${v.label}${v.version.equalsIgnoreCase('snapshot') ? ' (SNAPSHOT)' : ''}"
+            new GuideGroupItem(href: url, title: title, legend: v.legend ?: '')
         }
     } 
 

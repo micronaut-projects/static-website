@@ -6,4 +6,5 @@ import groovy.transform.CompileStatic
 class GuideGroupItem {
     String title
     String href
+    String legend
 }

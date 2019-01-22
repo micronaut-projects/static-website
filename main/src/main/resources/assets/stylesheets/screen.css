@@ -740,6 +740,12 @@ body.guides .columnheader {
     background-color: #F5F5F5;
 }
 
+.guidegroup li p {
+    background-color: transparent;
+    color: #333333;
+    font-size: 0.85em;
+}
+
 .guidegroupheader {
     padding-left: 18px;
     height: 118px;

@@ -1,0 +1,71 @@
+modules:
+  micronauttest:
+    label: 'Micronaut Test'
+    version: 'latest'
+    githubslug: 'micronaut-test'
+    legend: 'Testing framework (Junit5/Spock) extensions for Micronaut'
+  mongodb:
+    label: 'Micronaut MongoDB'
+    version: 'latest'
+    githubslug: 'micronaut-mongodb'
+    legend: 'Integration between Micronaut and MongoDB'
+  redis:
+    label: 'Micronaut Redis'
+    version: 'latest'
+    githubslug: 'micronaut-redis'
+    legend: 'Integration between Micronaut and Redis'
+  micronaut-spring:
+    label: 'Micronaut for Spring'
+    version: 'latest'
+    githubslug: 'micronaut-spring'
+    legend: 'Extensions to integrate Micronaut and Spring'
+  flyway:
+    label: 'Flyway Database Migration'
+    version: 'latest'
+    githubslug: 'micronaut-configuration-flyway'
+    legend: 'Configuration to integrate Micronaut and Flyway'
+  liquibase:
+    label: 'Liquibase Database Migration'
+    version: 'latest'
+    githubslug: 'micronaut-configuration-liquibase'
+    legend: 'Configuration to integrate Micronaut and Liquibase'
+  graphql:
+    label: 'Micronaut GraphQL'
+    version: 'snapshot'
+    githubslug: 'micronaut-graphql'
+    legend: 'Extensions to integrate Micronaut and GraphQL'
+  grpc:
+    label: 'GRPC'
+    version: 'snapshot'
+    githubslug: 'micronaut-grpc'
+    legend: 'Integration between Micronaut and GRPC'
+  netflix:
+    label: 'Micronaut Netflix'
+    version: 'latest'
+    githubslug: 'micronaut-netflix'
+    legend: 'Integration between Micronaut and Netflix OSS'
+  kafka:
+    label: 'Micronaut Kafka'
+    version: 'latest'
+    githubslug: 'micronaut-kafka'
+    legend: 'Integration between Micronaut and Kafka Messaging'
+  micrometer:
+    label: 'Micronaut Micrometer'
+    version: 'latest'
+    githubslug: 'micronaut-micrometer'
+    legend: 'Provides integration between Micronaut and Micrometer'
+  groovy:
+    label: 'Micronaut Groovy'
+    version: 'latest'
+    githubslug: 'micronaut-groovy'
+    legend: 'GORM integartion and projects that enhance the Micronaut and Groovy language experience'
+  sql:
+    label: 'Micronaut SQL/JDBC'
+    version: 'latest'
+    githubslug: 'micronaut-sql'
+    legend: 'Projects (JDBC Hibernate Reactive Postgres ...) to support SQL Database access in Micronaut'
+  elasticsearch:
+    label: 'ElasticSearch Configuration'
+    version: 'latest'
+    githubslug: 'micronaut-configuration-elasticsearch'
+    legend: 'Configuration to integrate Micronaut and Elasticsearch'

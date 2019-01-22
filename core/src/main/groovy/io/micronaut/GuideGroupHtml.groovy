@@ -40,6 +40,9 @@ trait GuideGroupHtml implements PageElement {
                         if ( item.href ) {
                             li {
                                 a href: item.href, item.title
+                                if (item.legend) {
+                                    p(item.legend)
+                                }
                             }
                         } else {
                           li(item.title)
