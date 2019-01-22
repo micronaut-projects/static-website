@@ -64,14 +64,10 @@ class SiteMap {
     }
 
     public final static String LATEST_VERSION = versions()[-1].versionText
-    public final static List<String> OLDER_VERSIONS = versions().drop(1).collect { it.versionText }
     static List<String> olderVersions() {
-        List<SoftwareVersion> versionList = OLDER_VERSIONS.collect { String version ->
-            SoftwareVersion.build(version)
-        }
-        Collections.sort(versionList)
-        versionList = versionList.reverse()
-        versionList.collect { SoftwareVersion version -> version.versionText }
+        (versions().findAll { SoftwareVersion softwareVersion ->
+            !softwareVersion.isSnapshot()
+        } as List<SoftwareVersion>).reverse().drop(1).collect { it.versionText }
     }
 
     public final static List<Question> QUESTIONS = [

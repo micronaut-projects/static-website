@@ -89,6 +89,37 @@ class DocumentationPage extends Page {
                 div(class: "odd column") {
                     mkp.yieldUnescaped latestDocumentationGuideGroup().renderAsHtml()
                     mkp.yieldUnescaped snapshotDocumentationGuideGroup().renderAsHtml()
+                    html.div(class: "guidegroup") {
+                        div(class: "guidegroupheader") {
+                            String title = 'Documentation of older versions'
+                            String image = "${getImageAssetPreffix()}documentation.svg"
+                            img src: image, alt: title
+                            h2 {
+                                html.mkp.yieldUnescaped title
+                            }
+                        }
+                        ul {
+                            li {
+                                span 'User Guide'
+                                select(onchange: "window.location.href='https://docs.micronaut.io/' + this.value + '/guide/index.html'") {
+                                    option 'Select a version'
+                                    for (String version : SiteMap.olderVersions()) {
+                                        option version
+                                    }
+                                }
+                            }
+                            li {
+                                span 'API Reference'
+                                select(onchange: "window.location.href='https://docs.micronaut.io/' + this.value + '/api'") {
+                                    option 'Select a version'
+                                    for (String version : SiteMap.olderVersions()) {
+                                        option version
+                                    }
+
+                                }
+                           }
+                        }
+                    }
                 }
                 div(class: "column") {
                     mkp.yieldUnescaped documentationGuideGroup('Other Modules', extraLinksItems()).renderAsHtml()
