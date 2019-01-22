@@ -19,6 +19,7 @@ class DocumentationPage extends Page {
 
     List< Map<String, String> > links = [
             [entry: 'micronauttest', label: 'Micronaut Test', version: 'latest', githubslug: 'micronaut-test'],
+            [entry: 'mongodb', label: 'Micronaut MongoDB', version: 'latest', githubslug: 'micronaut-mongodb'],
             [entry: 'micronaut-spring', label: 'Micronaut for Spring', version: 'latest', githubslug: 'micronaut-spring'],
             [entry: 'flyway', label: 'Flyway Database Migration', version: 'latest',githubslug: 'micronaut-configuration-flyway'],
             [entry: 'liquibase', label: 'Liquibase Database Migration', version: 'latest',githubslug: 'micronaut-configuration-liquibase'],
