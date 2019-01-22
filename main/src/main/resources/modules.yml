@@ -1,70 +1,84 @@
 modules:
   micronauttest:
+    image: 'test.svg'
     label: 'Micronaut Test'
     version: 'latest'
     githubslug: 'micronaut-test'
     legend: 'Testing framework (Junit5/Spock) extensions for Micronaut'
   mongodb:
+    image: 'mongodb.svg'
     label: 'Micronaut MongoDB'
     version: 'latest'
     githubslug: 'micronaut-mongodb'
     legend: 'Integration between Micronaut and MongoDB'
   redis:
+    image: 'redis.svg'
     label: 'Micronaut Redis'
     version: 'latest'
     githubslug: 'micronaut-redis'
     legend: 'Integration between Micronaut and Redis'
-  micronaut-spring:
+  spring:
+    image: 'spring.svg'
     label: 'Micronaut for Spring'
     version: 'latest'
     githubslug: 'micronaut-spring'
     legend: 'Extensions to integrate Micronaut and Spring'
   flyway:
+    image: 'flyway.png'
     label: 'Flyway Database Migration'
     version: 'latest'
     githubslug: 'micronaut-configuration-flyway'
     legend: 'Configuration to integrate Micronaut and Flyway'
   liquibase:
+    image: 'liquibase.png'
     label: 'Liquibase Database Migration'
     version: 'latest'
     githubslug: 'micronaut-configuration-liquibase'
     legend: 'Configuration to integrate Micronaut and Liquibase'
   graphql:
+    image: 'graphql.svg'
     label: 'Micronaut GraphQL'
     version: 'snapshot'
     githubslug: 'micronaut-graphql'
     legend: 'Extensions to integrate Micronaut and GraphQL'
   grpc:
+    image: 'grpc.png'
     label: 'GRPC'
     version: 'snapshot'
     githubslug: 'micronaut-grpc'
     legend: 'Integration between Micronaut and GRPC'
   netflix:
+    image: 'netflix.svg'
     label: 'Micronaut Netflix'
     version: 'latest'
     githubslug: 'micronaut-netflix'
     legend: 'Integration between Micronaut and Netflix OSS'
   kafka:
+    image: 'kafka.svg'
     label: 'Micronaut Kafka'
     version: 'latest'
     githubslug: 'micronaut-kafka'
     legend: 'Integration between Micronaut and Kafka Messaging'
   micrometer:
+    image: 'micrometer.svg'
     label: 'Micronaut Micrometer'
     version: 'latest'
     githubslug: 'micronaut-micrometer'
     legend: 'Provides integration between Micronaut and Micrometer'
   groovy:
+    image: 'groovy.svg'
     label: 'Micronaut Groovy'
     version: 'latest'
     githubslug: 'micronaut-groovy'
     legend: 'GORM integartion and projects that enhance the Micronaut and Groovy language experience'
   sql:
+    image: 'sql.svg'
     label: 'Micronaut SQL/JDBC'
     version: 'latest'
     githubslug: 'micronaut-sql'
     legend: 'Projects (JDBC Hibernate Reactive Postgres ...) to support SQL Database access in Micronaut'
   elasticsearch:
+    image: 'elasticsearch.svg'
     label: 'ElasticSearch Configuration'
     version: 'latest'
     githubslug: 'micronaut-configuration-elasticsearch'

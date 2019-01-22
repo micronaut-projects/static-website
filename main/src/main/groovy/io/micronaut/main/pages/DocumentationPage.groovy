@@ -25,7 +25,7 @@ class DocumentationPage extends Page {
         model['modules'].collect { k, v ->
             final String url = "https://micronaut-projects.github.io/${v.githubslug}/${v.version}/guide/index.html"
             final String title = "${v.label}${v.version.equalsIgnoreCase('snapshot') ? ' (SNAPSHOT)' : ''}"
-            new GuideGroupItem(href: url, title: title, legend: v.legend ?: '')
+            new GuideGroupItem(href: url, title: title, legend: v.legend ?: '', image: v.image)
         }
     } 
 

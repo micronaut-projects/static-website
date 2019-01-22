@@ -24,6 +24,7 @@ trait GuideGroupHtml implements PageElement {
     String renderAsHtmlWithStyleAttr(String styleAttr) {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
+        final int imageMarginRight = 10
         html.div(class: "guidegroup", style: "${styleAttr ?: ''}") {
             div(class: "guidegroupheader") {
                 img src: image, alt: title
@@ -39,6 +40,9 @@ trait GuideGroupHtml implements PageElement {
                     for ( GuideGroupItem item : items ) {
                         if ( item.href ) {
                             li {
+                                if (item.image) {
+                                    img width: 70, class: 'align-left', style: "margin-right: ${imageMarginRight}px;", src: "/images/${item.image}" as String, alt: item.title
+                                }
                                 a href: item.href, item.title
                                 if (item.legend) {
                                     p(item.legend)
