@@ -27,7 +27,7 @@ class DocumentationPage extends Page {
             [entry: 'netflix', label: 'Micronaut Netflix', version: 'latest', githubslug: 'micronaut-netflix'],
             [entry: 'kafka', label: 'Micronaut Kafka', version: 'latest', githubslug: 'micronaut-kafka'],
             [entry: 'micrometer', label: 'Micronaut Micrometer', version: 'latest', githubslug: 'micronaut-micrometer'],        
-            [entry: 'groovy', label: 'Micronaut Groovy', version: 'snapshot', githubslug: 'micronaut-groovy'],
+            [entry: 'groovy', label: 'Micronaut Groovy', version: 'latest', githubslug: 'micronaut-groovy'],
             [entry: 'sql', label: 'Micronaut SQL', version: 'snapshot', githubslug: 'micronaut-sql'],
             [entry: 'liquibase', label: 'Liquibase Configuration', version: 'latest', githubslug: 'micronaut-configuration-liquibase'],
             [entry: 'flyway', label: 'Flyway Configuration', version: 'latest', githubslug: 'micronaut-configuration-flyway'],
