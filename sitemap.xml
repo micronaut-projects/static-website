@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
-    <loc>http://micronaut.io/index.html</loc>
+    <loc>https://micronaut.io/index.html</loc>
   </url>
   <url>
-    <loc>http://micronaut.io/download.html</loc>
+    <loc>https://micronaut.io/download.html</loc>
   </url>
   <url>
-    <loc>http://micronaut.io/faq.html</loc>
+    <loc>https://micronaut.io/faq.html</loc>
   </url>
   <url>
-    <loc>http://micronaut.io/announcement.html</loc>
+    <loc>https://micronaut.io/announcement.html</loc>
   </url>
   <url>
-    <loc>http://micronaut.io/support.html</loc>
+    <loc>https://micronaut.io/support.html</loc>
   </url>
   <url>
-    <loc>http://micronaut.io/documentation.html</loc>
+    <loc>https://micronaut.io/documentation.html</loc>
   </url>
   <url>
-    <loc>http://micronaut.io/events.html</loc>
+    <loc>https://micronaut.io/events.html</loc>
   </url>
   <url>
-    <loc>http://micronaut.io/buildstatus.html</loc>
+    <loc>https://micronaut.io/buildstatus.html</loc>
   </url>
   <url>
-    <loc>http://micronaut.io/api.html</loc>
+    <loc>https://micronaut.io/api.html</loc>
   </url>
 </urlset>
