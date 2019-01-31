@@ -17,7 +17,7 @@ Build is image:https://travis-ci.org/micronaut-projects/static-website.svg?branc
 
 == Generating the MAIN site
 
-http://micronaut.io[http://micronaut.io]
+https://micronaut.io[https://micronaut.io]
 
 ----
 ./gradlew :main:runShadow

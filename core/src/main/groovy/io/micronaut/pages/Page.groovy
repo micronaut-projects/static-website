@@ -55,7 +55,7 @@ abstract class Page implements HtmlPage {
             case WebsiteEnvironment.STAGING:
                 return 'http://micronaut.sergiodelamo.es'
             case WebsiteEnvironment.PRODUCTION:
-                return 'http://micronaut.io'
+                return 'https://micronaut.io'
         }
     }
 
@@ -237,7 +237,7 @@ abstract class Page implements HtmlPage {
             meta property: 'og:image', content: "${micronautUrl()}/${getImageAssetPreffix()}Micronaut_OG_Logo.png"
             meta property: 'og:image:width', content: '600'
             meta property: 'og:image:height', content: '300'
-            meta property: 'og:url', content: 'http://micronaut.io'
+            meta property: 'og:url', content: 'https://micronaut.io'
             meta property: 'og:title', content: title()
             meta property: 'og:description', content: summary()
             meta property: 'og:type', content: 'website'

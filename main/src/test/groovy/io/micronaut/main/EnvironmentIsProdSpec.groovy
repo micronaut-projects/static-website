@@ -6,10 +6,10 @@ import spock.lang.Specification
 
 class EnvironmentIsProdSpec extends Specification {
 
-    def "checks url is set to http://micronaut.io"() {
+    def "checks url is set to https://micronaut.io"() {
 
         expect:
-        new HomePage().micronautUrl().startsWith('http://micronaut.io')
+        new HomePage().micronautUrl().startsWith('https://micronaut.io')
     }
 
 }
