@@ -83,3 +83,9 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-configuration-elasticsearch'
     legend: 'Configuration to integrate Micronaut and Elasticsearch'
+  aws:
+    image: 'aws.svg'
+    label: 'AWS Configuration'
+    version: 'snapshot'
+    githubslug: 'micronaut-aws'
+    legend: 'Configuration to integrate Micronaut and Amazon Web Services (AWS)'    
