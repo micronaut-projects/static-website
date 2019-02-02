@@ -86,6 +86,6 @@ modules:
   aws:
     image: 'aws.svg'
     label: 'AWS Configuration'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-aws'
     legend: 'Configuration to integrate Micronaut and Amazon Web Services (AWS)'    
