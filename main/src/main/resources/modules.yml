@@ -88,4 +88,10 @@ modules:
     label: 'AWS Configuration'
     version: 'latest'
     githubslug: 'micronaut-aws'
-    legend: 'Configuration to integrate Micronaut and Amazon Web Services (AWS)'    
+    legend: 'Configuration to integrate Micronaut and Amazon Web Services (AWS)'
+  rabbitmq:
+    image: 'rabbitmq.svg'
+    label: 'RabbitMQ Configuration'
+    version: 'snapshot'
+    githubslug: 'micronaut-rabbitmq'
+    legend: 'Configuration to integrate Micronaut and RabbitMQ'
