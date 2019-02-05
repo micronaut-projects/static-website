@@ -27,13 +27,13 @@ modules:
     image: 'flyway.png'
     label: 'Flyway Database Migration'
     version: 'latest'
-    githubslug: 'micronaut-configuration-flyway'
+    githubslug: 'micronaut-flyway'
     legend: 'Configuration to integrate Micronaut and Flyway'
   liquibase:
     image: 'liquibase.png'
     label: 'Liquibase Database Migration'
     version: 'latest'
-    githubslug: 'micronaut-configuration-liquibase'
+    githubslug: 'micronaut-liquibase'
     legend: 'Configuration to integrate Micronaut and Liquibase'
   graphql:
     image: 'graphql.svg'
@@ -81,7 +81,7 @@ modules:
     image: 'elasticsearch.svg'
     label: 'ElasticSearch Configuration'
     version: 'latest'
-    githubslug: 'micronaut-configuration-elasticsearch'
+    githubslug: 'micronaut-elasticsearch'
     legend: 'Configuration to integrate Micronaut and Elasticsearch'
   aws:
     image: 'aws.svg'
