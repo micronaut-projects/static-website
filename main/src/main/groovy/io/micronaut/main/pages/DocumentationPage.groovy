@@ -26,6 +26,8 @@ class DocumentationPage extends Page {
             final String url = "https://micronaut-projects.github.io/${v.githubslug}/${v.version}/guide/index.html"
             final String title = "${v.label}${v.version.equalsIgnoreCase('snapshot') ? ' (SNAPSHOT)' : ''}"
             new GuideGroupItem(href: url, title: title, legend: v.legend ?: '', image: v.image)
+        }.sort { a, b ->
+            a.title.replace("Micronaut", "").replaceAll('^\\s+|\\s+$', "") <=> b.title.replace("Micronaut", "").replaceAll('^\\s+|\\s+$', "")
         }
     } 
 
@@ -73,7 +75,26 @@ class DocumentationPage extends Page {
             div(class: "twocolumns") {
                 div(class: "odd column") {
                     mkp.yieldUnescaped latestDocumentationGuideGroup().renderAsHtml()
+                }
+                div(class: "column") {
                     mkp.yieldUnescaped snapshotDocumentationGuideGroup().renderAsHtml()
+                }
+            }
+            div(class: "twocolumns") {
+                List links = extraLinksItems()
+                div(class: "odd column") {
+                    List oddlinks = links.subList(0, (int) (links.size() / 2))
+                    mkp.yieldUnescaped documentationGuideGroup('Other Modules', oddlinks).renderAsHtml()
+
+                }
+                div(class: "column") {
+                    List evenlinks = links.subList((int) (links.size() / 2), links.size())
+                    mkp.yieldUnescaped documentationGuideGroup('Other Modules', evenlinks).renderAsHtml()
+
+                }
+            }
+            div(class: "twocolumns") {
+                div(class: "odd column") {
                     html.div(class: "guidegroup") {
                         div(class: "guidegroupheader") {
                             String title = 'Documentation of older versions'
@@ -105,9 +126,6 @@ class DocumentationPage extends Page {
                            }
                         }
                     }
-                }
-                div(class: "column") {
-                    mkp.yieldUnescaped documentationGuideGroup('Other Modules', extraLinksItems()).renderAsHtml()
                 }
             }
         }
