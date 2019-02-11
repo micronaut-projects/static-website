@@ -95,3 +95,15 @@ modules:
     version: 'snapshot'
     githubslug: 'micronaut-rabbitmq'
     legend: 'Configuration to integrate Micronaut and RabbitMQ'
+  oauth2:
+    image: 'oauth2.svg'
+    label: 'Oauth 2 Configuration'
+    version: 'snapshot'
+    githubslug: 'micronaut-oauth2'
+    legend: 'Ease integrations between Oauth 2 and OpenID Connect Authorization Server and Micronaut'
+  rss:
+    image: 'rss.svg'
+    label: 'RSS Configuration'
+    version: 'snapshot'
+    githubslug: 'micronaut-rss'
+    legend: 'Ease creation of RSS 2.0 feeds in a Micronaut app'
