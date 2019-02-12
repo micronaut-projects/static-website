@@ -42,7 +42,7 @@ class Main {
         WebsiteGenerator.copyAssetsWithTimestamp(timestamp)
 
         List<String> urls = guides.collect { Guide guide ->
-            "http://guides.micronaut.io/${guide.name}/guide/index.html" as String
+            "https://guides.micronaut.io/${guide.name}/guide/index.html" as String
         }
         urls.add('index.html')
         SiteMapPage siteMapPage = new SiteMapPage(urls)

@@ -27,7 +27,7 @@ The output can be found in the `main/build/site` directory.
 
 == Generating the GUIDES site
 
-http://guides.micronaut.io[http://guides.micronaut.io]
+https://guides.micronaut.io[http://guides.micronaut.io]
 
 ----
 ./gradlew :guides:runShadow

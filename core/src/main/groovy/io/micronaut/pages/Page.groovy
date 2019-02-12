@@ -44,7 +44,7 @@ abstract class Page implements HtmlPage {
             case WebsiteEnvironment.STAGING:
                 return 'http://guides.sergiodelamo.es'
             case WebsiteEnvironment.PRODUCTION:
-                return 'http://guides.micronaut.io'
+                return 'https://guides.micronaut.io'
         }
     }
 

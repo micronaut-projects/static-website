@@ -93,7 +93,7 @@ ${Page.micronaut()} is an Open Source project licensed under the [Apache License
             new Question(slug: 'eccn', title: 'What is the Export Control Classification Number (ECCN) for Micronaut?', answer: 'Micronaut is an open source technology that is not on the Commerce Control List, and is therefore classified with the general purpose classification of EAR 99.'),
             new Question(slug: 'question_learn',title: "What is the best way to get started learning ${Page.micronaut()}?", answer: """
 The definitive guide to developing with ${Page.micronaut()} is the [User Guide](http://docs.micronaut.io/snapshot/guide/index.html).
-"""), //TODO  In addition, step-by-step tutorials for solving common scenarios can be found at [Micronaut Guides](http://guides.micronaut.io).
+"""), //TODO  In addition, step-by-step tutorials for solving common scenarios can be found at [Micronaut Guides](https://guides.micronaut.io).
             new Question(slug: 'question_training',title: "Are there training offerings for ${Page.micronaut()}?", answer: """
 [Object Computing, Inc](http://objectcomputing.com) offers [training courses](http://micronauttraining.com) which are developed and delivered by the ${Page.micronaut()} founders and core development team.</p>
 """),

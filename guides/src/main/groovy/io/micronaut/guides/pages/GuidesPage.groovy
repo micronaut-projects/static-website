@@ -72,7 +72,7 @@ class GuidesPage extends Page implements ReadFileUtils {
         MarkupBuilder html = new MarkupBuilder(writer)
         html.li {
             if ( guide instanceof SingleLanguageGuide) {
-                a class: 'guide', href: "http://guides.micronaut.io/${guide.name}/guide/index.html", guide.title
+                a class: 'guide', href: "https://guides.micronaut.io/${guide.name}/guide/index.html", guide.title
                 guide.tags.each { String tag ->
                     span(style: 'display: none', class: 'tag', tag)
                 }
@@ -86,7 +86,7 @@ class GuidesPage extends Page implements ReadFileUtils {
 
                         if (query == null || titlesMatchesQuery(guide.title, query) || tagsMatchQuery(tagList as List<String>, query)) {
                             div(class: 'align-left') {
-                                a(class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
+                                a(class: 'lang', href: "https://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
                                     mkp.yield(lang.name())
                                 }
                                 tagList.each { String tag ->
@@ -265,12 +265,12 @@ class GuidesPage extends Page implements ReadFileUtils {
                             MultiLanguageGuide multiLanguageGuide = ((MultiLanguageGuide) guide)
                             span guide.title
                             for (ProgrammingLanguage lang : multiLanguageGuide.githubSlugs.keySet()) {
-                                a(style: 'display: inline;', class: 'lang', href: "http://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
+                                a(style: 'display: inline;', class: 'lang', href: "https://guides.micronaut.io/${multiLanguageGuide.githubSlugs[lang].replaceAll('micronaut-guides/', '')}/guide/index.html") {
                                     mkp.yield(lang.name())
                                 }
                             }
                         } else {
-                            a href: "http://guides.micronaut.io/${guide.name}/guide/index.html", 'Read More'
+                            a href: "https://guides.micronaut.io/${guide.name}/guide/index.html", 'Read More'
                         }
                     }
                 }
