@@ -3,10 +3,12 @@ package io.micronaut.main.pages
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
 import groovy.xml.MarkupBuilder
+import io.micronaut.Guide
 import io.micronaut.GuideGroup
 import io.micronaut.GuideGroupItem
 import io.micronaut.MenuItem
 import io.micronaut.Navigation
+import io.micronaut.SoftwareVersion
 import io.micronaut.main.SiteMap
 import io.micronaut.pages.Page
 import org.yaml.snakeyaml.Yaml
@@ -36,8 +38,22 @@ class DocumentationPage extends Page {
         Navigation.documentationMenuItem(micronautUrl())
     }
 
+    GuideGroup milestoneDocumentationGuideGroup() {
+        SoftwareVersion version = SiteMap.latestMilestoneVersion()
+        if (!version) {
+            return null
+        }
+        new GuideGroup(title: "Milestone Version (${version.versionText}) Documentation",
+                image: "${getImageAssetPreffix()}documentation.svg",
+                items: [
+                        new GuideGroupItem(href: "http://docs.micronaut.io/${version.versionText}/guide/index.html", title: 'User Guide'),
+                        new GuideGroupItem(href: "http://docs.micronaut.io/${version.versionText}/api/", title: 'API Reference'),
+                ])
+    }
+
     GuideGroup latestDocumentationGuideGroup() {
-        new GuideGroup(title: 'Latest Version Documentation',
+        SoftwareVersion version = SiteMap.latestVersion()
+        new GuideGroup(title: "Latest Version (${version.versionText}) Documentation",
                 image: "${getImageAssetPreffix()}documentation.svg",
                 items: [
                         new GuideGroupItem(href: "http://docs.micronaut.io/latest/guide/index.html", title: 'User Guide'),
@@ -67,6 +83,8 @@ class DocumentationPage extends Page {
     String mainContent() {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
+
+        GuideGroup milestone = milestoneDocumentationGuideGroup()
         html.div(class:"content container") {
             h1 {
                 span 'Micronaut'
@@ -76,8 +94,10 @@ class DocumentationPage extends Page {
                 div(class: "odd column") {
                     mkp.yieldUnescaped latestDocumentationGuideGroup().renderAsHtml()
                 }
+
                 div(class: "column") {
-                    mkp.yieldUnescaped snapshotDocumentationGuideGroup().renderAsHtml()
+                    GuideGroup guideGroup = shouldDisplayMilestone() ? milestone : snapshotDocumentationGuideGroup()
+                    mkp.yieldUnescaped guideGroup.renderAsHtml()
                 }
             }
             div(class: "twocolumns") {
@@ -127,8 +147,22 @@ class DocumentationPage extends Page {
                         }
                     }
                 }
+
+                if (shouldDisplayMilestone()) {
+                    div(class: "column") {
+                        mkp.yieldUnescaped snapshotDocumentationGuideGroup().renderAsHtml()
+                    }
+                }
             }
         }
         writer.toString()
+    }
+
+    private boolean shouldDisplayMilestone() {
+        SoftwareVersion milestone = SiteMap.latestMilestoneVersion()
+        SoftwareVersion latest = SiteMap.latestVersion()
+        int compare = milestone.compareTo(latest)
+        return milestone && compare > 0
+
     }
 }

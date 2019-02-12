@@ -1,6 +1,7 @@
 package io.micronaut.main
 
 import groovy.transform.CompileStatic
+import io.micronaut.Snapshot
 import io.micronaut.main.model.BuildStatus
 import io.micronaut.main.model.DocumentationGroup
 import io.micronaut.main.model.DocumentationLink
@@ -48,6 +49,11 @@ class SiteMap {
 
     ]
 
+    static SoftwareVersion latestVersion() {
+        List<SoftwareVersion> versions = stableVersions()
+        versions ? versions.get(0) : null
+    }
+
     static List<SoftwareVersion> versions() {
         Yaml yaml = new Yaml()
         File f = new File('src/main/resources/releases.yml')
@@ -59,10 +65,26 @@ class SiteMap {
     }
 
     public final static String LATEST_VERSION = versions()[-1].versionText
-    static List<String> olderVersions() {
+
+    static List<SoftwareVersion> stableVersions() {
         (versions().findAll { SoftwareVersion softwareVersion ->
             !softwareVersion.isSnapshot()
-        } as List<SoftwareVersion>).reverse().drop(1).collect { it.versionText }
+        } as List<SoftwareVersion>).sort { a, b -> b <=> a }
+    }
+
+    static List<String> olderVersions() {
+        stableVersions().reverse().drop(1).collect { it.versionText }
+    }
+
+    static List<SoftwareVersion> milestoneVersions() {
+        versions().findAll() { SoftwareVersion softwareVersion ->
+            softwareVersion.snapshot?.isMilestone()
+        }.sort { a, b -> b <=> a }
+    }
+
+    static SoftwareVersion latestMilestoneVersion() {
+        List<SoftwareVersion> versions = milestoneVersions()
+        versions ? versions.get(0) : null
     }
 
     public final static List<Question> QUESTIONS = [
@@ -130,5 +152,6 @@ In addition, [JFrog](http://www.jfrog.com/) provides the infrastructure for depl
 
 """),
     ]
+
 
 }
