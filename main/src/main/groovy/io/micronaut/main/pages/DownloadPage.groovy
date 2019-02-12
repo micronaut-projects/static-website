@@ -3,6 +3,7 @@ package io.micronaut.main.pages
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
 import groovy.xml.MarkupBuilder
+import io.micronaut.SoftwareVersion
 import io.micronaut.main.SiteMap
 import io.micronaut.GuideGroup
 import io.micronaut.GuideGroupItem
@@ -22,7 +23,8 @@ class DownloadPage extends Page {
     }
 
     GuideGroup downloadGuideGroup() {
-        String latestVersion = SiteMap.LATEST_VERSION
+        SoftwareVersion latest = SiteMap.latestVersion()
+        String latestVersion = latest.versionText
         new GuideGroup(title: "Download ${micronaut()} ${latestVersion}",
                 image: "${getImageAssetPreffix()}download.svg",
                 items: [
