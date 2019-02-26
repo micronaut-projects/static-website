@@ -38,13 +38,13 @@ modules:
   graphql:
     image: 'graphql.svg'
     label: 'Micronaut GraphQL'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-graphql'
     legend: 'Extensions to integrate Micronaut and GraphQL'
   grpc:
     image: 'grpc.png'
     label: 'GRPC'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-grpc'
     legend: 'Integration between Micronaut and GRPC'
   netflix:
@@ -92,7 +92,7 @@ modules:
   rabbitmq:
     image: 'rabbitmq.svg'
     label: 'RabbitMQ Configuration'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-rabbitmq'
     legend: 'Configuration to integrate Micronaut and RabbitMQ'
   oauth2:
