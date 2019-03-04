@@ -108,6 +108,40 @@ class HomePage extends Page {
                     }
                 }
             }
+            html.article(class: 'feature container') {
+                html.div(class: 'twocolumns container') {
+                    div(class: 'column') {
+                        html.article(class: 'feature') {
+                            header {
+                                h2 'Micronaut for GraalVM'
+                            }
+                            section {
+                                p {
+                                    b ' Micronaut apps startup in tens of milliseconds with GraalVM!'
+                                }
+                                p {
+                                    mkp.yield 'Micronaut features a Dependency Injection and Aspect-Oriented Programming runtime that uses no reflection. This makes it easier for '
+                                    a href: 'https://docs.micronaut.io/latest/guide/index.html#graal', 'Micronaut applications to run on GraalVM.'
+
+                                }
+                            }
+                        }
+                    }
+                    div(class: 'column') {
+                        html.article(class: 'feature') {
+                            section {
+                                p {
+                                    img src: "${imageAssetPreffix}graalvm.svg", alt: 'GraalVM', style: 'width: 300px !important;'
+                                }
+                                p {
+                                    a href: 'http://www.graalvm.org', 'GraalVM'
+                                    mkp.yield ' is a new universal virtual machine from Oracle that supports a polyglot runtime environment and the ability to compile Java applications down to native machine code.'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
 
