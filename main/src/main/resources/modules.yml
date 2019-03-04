@@ -108,8 +108,8 @@ modules:
     githubslug: 'micronaut-rss'
     legend: 'Ease creation of RSS 2.0 feeds in a Micronaut app'
   neo4j:
-  image: 'neo4j.svg'
-  label: 'Neo4j Configuration'
-  version: 'latest'
-  githubslug: 'micronaut-neo4j'
-  legend: 'Integration between Micronaut and Neo4j'
+    image: 'neo4j.svg'
+    label: 'Neo4j Configuration'
+    version: 'latest'
+    githubslug: 'micronaut-neo4j'
+    legend: 'Integration between Micronaut and Neo4j'
