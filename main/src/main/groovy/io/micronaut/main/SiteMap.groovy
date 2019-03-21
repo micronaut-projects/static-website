@@ -1,10 +1,6 @@
 package io.micronaut.main
 
 import groovy.transform.CompileStatic
-import io.micronaut.Snapshot
-import io.micronaut.main.model.BuildStatus
-import io.micronaut.main.model.DocumentationGroup
-import io.micronaut.main.model.DocumentationLink
 import io.micronaut.main.model.Event
 import io.micronaut.main.model.Question
 import io.micronaut.main.pages.*
@@ -76,14 +72,14 @@ class SiteMap {
         stableVersions().reverse().drop(1).collect { it.versionText }
     }
 
-    static List<SoftwareVersion> milestoneVersions() {
+    static List<SoftwareVersion> preReleaseVersions() {
         versions().findAll() { SoftwareVersion softwareVersion ->
-            softwareVersion.snapshot?.isMilestone()
+            softwareVersion.snapshot?.isMilestone() || softwareVersion.snapshot?.isReleaseCandidate()
         }.sort { a, b -> b <=> a }
     }
 
-    static SoftwareVersion latestMilestoneVersion() {
-        List<SoftwareVersion> versions = milestoneVersions()
+    static SoftwareVersion latestPreReleaseVersion() {
+        List<SoftwareVersion> versions = preReleaseVersions()
         versions ? versions.get(0) : null
     }
 

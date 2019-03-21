@@ -3,7 +3,6 @@ package io.micronaut.main.pages
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
 import groovy.xml.MarkupBuilder
-import io.micronaut.Guide
 import io.micronaut.GuideGroup
 import io.micronaut.GuideGroupItem
 import io.micronaut.MenuItem
@@ -38,12 +37,12 @@ class DocumentationPage extends Page {
         Navigation.documentationMenuItem(micronautUrl())
     }
 
-    GuideGroup milestoneDocumentationGuideGroup() {
-        SoftwareVersion version = SiteMap.latestMilestoneVersion()
+    GuideGroup preReleaseDocumentationGuideGroup() {
+        SoftwareVersion version = SiteMap.latestPreReleaseVersion()
         if (!version) {
             return null
         }
-        new GuideGroup(title: "Milestone Version (${version.versionText}) Documentation",
+        new GuideGroup(title: "Pre-Release Version (${version.versionText}) Documentation",
                 image: "${getImageAssetPreffix()}documentation.svg",
                 items: [
                         new GuideGroupItem(href: "http://docs.micronaut.io/${version.versionText}/guide/index.html", title: 'User Guide'),
@@ -84,7 +83,7 @@ class DocumentationPage extends Page {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
 
-        GuideGroup milestone = milestoneDocumentationGuideGroup()
+        GuideGroup preRelease = preReleaseDocumentationGuideGroup()
         html.div(class:"content container") {
             h1 {
                 span 'Micronaut'
@@ -96,7 +95,7 @@ class DocumentationPage extends Page {
                 }
 
                 div(class: "column") {
-                    GuideGroup guideGroup = shouldDisplayMilestone() ? milestone : snapshotDocumentationGuideGroup()
+                    GuideGroup guideGroup = shouldDisplayPreRelease() ? preRelease : snapshotDocumentationGuideGroup()
                     mkp.yieldUnescaped guideGroup.renderAsHtml()
                 }
             }
@@ -148,7 +147,7 @@ class DocumentationPage extends Page {
                     }
                 }
 
-                if (shouldDisplayMilestone()) {
+                if (shouldDisplayPreRelease()) {
                     div(class: "column") {
                         mkp.yieldUnescaped snapshotDocumentationGuideGroup().renderAsHtml()
                     }
@@ -158,11 +157,11 @@ class DocumentationPage extends Page {
         writer.toString()
     }
 
-    private boolean shouldDisplayMilestone() {
-        SoftwareVersion milestone = SiteMap.latestMilestoneVersion()
+    private boolean shouldDisplayPreRelease() {
+        SoftwareVersion preRelease = SiteMap.latestPreReleaseVersion()
         SoftwareVersion latest = SiteMap.latestVersion()
-        int compare = milestone.compareTo(latest)
-        return milestone && compare > 0
+        int compare = preRelease.compareTo(latest)
+        return preRelease && compare > 0
 
     }
 }
