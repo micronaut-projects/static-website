@@ -234,7 +234,7 @@ class GuidesPage extends Page implements ReadFileUtils {
         html.div(class: 'sponsoredby', style: 'margin-top: 50px;') {
             h4 'Sponsored by'
             a(href: 'https://objectcomputing.com/products/micronaut/') {
-                img src: "${getImageAssetPreffix()}oci_logo_white.svg", alt: 'Object Computing'
+                img src: "${getImageAssetPreffix()}oci-home-to-micronaut.svg", alt: 'Object Computing', width: '250px'
             }
         }
         writer.toString()

@@ -39,7 +39,7 @@ class SupportPage extends Page implements ReadFileUtils {
                                     mkp.yield " development is sponsored by: "
                                 }
                                 a(href: "https://objectcomputing.com/products/micronaut/") {
-                                    img src: "images/oci_logo_white.svg", width: "90%", alt: "Object Computing"
+                                    img src: "images/oci-home-to-micronaut.svg", width: "90%", alt: "Object Computing"
                                 }
                             }
                             div {
