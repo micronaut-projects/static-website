@@ -113,3 +113,9 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-neo4j'
     legend: 'Integration between Micronaut and Neo4j'
+  kubernetes:
+    image: 'kubernetes.svg'
+    label: 'Kubernetes'
+    version: 'snapshot'
+    githubslug: 'micronaut-kubernetes'
+    legend: 'Integration between Micronaut and Kubernetes'
