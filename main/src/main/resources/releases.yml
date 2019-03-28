@@ -47,3 +47,6 @@ releases:
     -
       version: 1.0.5
       publicationDate: Mar 27, 2019
+    -
+      version: 1.1.0.RC2
+      publicationDate: Mar 28, 2019
