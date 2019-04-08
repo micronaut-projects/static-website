@@ -194,7 +194,7 @@ abstract class Page implements HtmlPage {
                     div(class: 'column', style: 'margin-top: 10px;') {
                         p {
                             a(title: "Visit OCI Website", href: "https://objectcomputing.com") {
-                                img(src: "${getImageAssetPreffix()}${bodyClass == 'home' ? 'oci-home-to-micronaut': 'oci_logo'}.svg", alt: "Object Computing")
+                                img(src: "${getImageAssetPreffix()}${bodyClass == 'home' ? 'oci-home-to-micronaut': 'oci_logo'}.svg", alt: "Object Computing", style: 'max-width: 300px')
                             }
                         }
                     }
