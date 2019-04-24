@@ -65,6 +65,12 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-micrometer'
     legend: 'Provides integration between Micronaut and Micrometer'
+  security:
+    image: 'security.svg'
+    label: 'Micronaut Security'
+    version: 'latest'
+    githubslug: 'micronaut-security'
+    legend: 'Built-in security features. Authentication providers and strategies, Token Propagation...'
   groovy:
     image: 'groovy.svg'
     label: 'Micronaut Groovy'
