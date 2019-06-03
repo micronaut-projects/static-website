@@ -125,3 +125,9 @@ modules:
     version: 'snapshot'
     githubslug: 'micronaut-views'
     legend: 'Integrates Micronaut and Server Side Views Rendering'
+  views:
+    image: 'openapi.svg'
+    label: 'Open API'
+    version: 'snapshot'
+    githubslug: 'micronaut-openapi'
+    legend: 'Configuration to integrate Micronaut and OpenAPI/Swagger'
