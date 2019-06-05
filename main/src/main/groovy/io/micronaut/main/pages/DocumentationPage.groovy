@@ -45,7 +45,8 @@ class DocumentationPage extends Page {
         new GuideGroup(title: "Pre-Release Version (${version.versionText}) Documentation",
                 image: "${getImageAssetPreffix()}documentation.svg",
                 items: [
-                        new GuideGroupItem(href: "http://docs.micronaut.io/${version.versionText}/guide/index.html", title: 'User Guide'),
+                        new GuideGroupItem(href: "http://docs.micronaut.io/${version.versionText}/guide/index.html", title: 'User Guide (Single page)'),
+                        new GuideGroupItem(href: "http://docs.micronaut.io/${version.versionText}/guide/introduction.html", title: 'User Guide (Multi-page)'),
                         new GuideGroupItem(href: "http://docs.micronaut.io/${version.versionText}/api/", title: 'API Reference'),
                 ])
     }
