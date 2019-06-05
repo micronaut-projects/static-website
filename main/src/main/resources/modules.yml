@@ -125,7 +125,7 @@ modules:
     version: 'snapshot'
     githubslug: 'micronaut-views'
     legend: 'Integrates Micronaut and Server Side Views Rendering'
-  views:
+  openapi:
     image: 'openapi.svg'
     label: 'Open API'
     version: 'latest'
