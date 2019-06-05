@@ -104,7 +104,7 @@ modules:
   rss:
     image: 'rss.svg'
     label: 'RSS Configuration'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-rss'
     legend: 'Ease creation of RSS 2.0 feeds in a Micronaut app'
   neo4j:
