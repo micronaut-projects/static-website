@@ -339,6 +339,7 @@ class GuidesPage extends Page implements ReadFileUtils {
                         }
                         if ( !(tag || category) ) {
                             mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides, true, "margin-top: ${MARGIN_TOP};")
+                            mkp.yieldUnescaped guideGroupByCategory(categories().azure, guides, true, "margin-top: ${MARGIN_TOP};")
                             mkp.yieldUnescaped guideGroupByCategory(categories().googlecloud, guides, true, "margin-top: ${MARGIN_TOP};")
                             mkp.yieldUnescaped guideGroupByCategory(categories().cloudservices, guides, true, "margin-top: ${MARGIN_TOP};")
                             mkp.yieldUnescaped guideGroupByCategory(categories().dataaccess, guides, true, "margin-top: ${MARGIN_TOP};")
@@ -352,6 +353,7 @@ class GuidesPage extends Page implements ReadFileUtils {
 
     static Map<String, Category> categories() {
         [
+                azure: new Category(name: "Micronaut + Microsoft Azure", image: 'azure.svg'),
                 googlecloud: new Category(name: "Micronaut + Google Cloud", image: 'googlecloud.svg'),
             android: new Category(name: "Micronaut Android", image: 'micronaut_android.svg'),
             devops: new Category(name: "Micronaut DevOps", image: 'micronaut_devops.svg'),
