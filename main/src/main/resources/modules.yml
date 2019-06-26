@@ -76,7 +76,7 @@ modules:
     label: 'Micronaut Groovy'
     version: 'latest'
     githubslug: 'micronaut-groovy'
-    legend: 'GORM integartion and projects that enhance the Micronaut and Groovy language experience'
+    legend: 'GORM integration and projects that enhance the Micronaut and Groovy language experience'
   sql:
     image: 'sql.svg'
     label: 'Micronaut SQL/JDBC'
