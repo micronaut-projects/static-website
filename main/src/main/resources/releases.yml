@@ -74,3 +74,6 @@ releases:
     -
       version: 1.1.4
       publicationDate: Jul 04, 2019
+    -
+      version: 1.2.0.RC2
+      publicationDate: Jul 08, 2019
