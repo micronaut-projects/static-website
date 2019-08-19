@@ -1,4 +1,10 @@
 modules:
+  micronautdata:
+    image: 'dataaccess.svg'
+    label: 'Micronaut Data'
+    version: 'latest'
+    githubslug: 'micronaut-data'
+    legend: 'Data Repository Support for Micronaut'
   micronauttest:
     image: 'test.svg'
     label: 'Micronaut Test'
