@@ -131,7 +131,7 @@ class BuildStatusPage extends Page {
     }
 
     List<BuildStatus> coreBuilds() {
-        ['master', '1.0.x'].collect { String branch ->
+        ['master', '1.1.x', '1.0.x'].collect { String branch ->
             String title = 'Micronaut Core'
             String githubRepo = 'micronaut-core'
             String githubSlug = "${GITHUB_ORG}/${githubRepo}"

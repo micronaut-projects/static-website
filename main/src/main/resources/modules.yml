@@ -1,4 +1,10 @@
 modules:
+  micronautdata:
+    image: 'dataaccess.svg'
+    label: 'Micronaut Data'
+    version: 'latest'
+    githubslug: 'micronaut-data'
+    legend: 'Data Repository Support for Micronaut'
   micronauttest:
     image: 'test.svg'
     label: 'Micronaut Test'
@@ -65,6 +71,12 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-micrometer'
     legend: 'Provides integration between Micronaut and Micrometer'
+  security:
+    image: 'security.svg'
+    label: 'Micronaut Security'
+    version: 'latest'
+    githubslug: 'micronaut-security'
+    legend: 'Built-in security features. Authentication providers and strategies, Token Propagation...'
   groovy:
     image: 'groovy.svg'
     label: 'Micronaut Groovy'
@@ -95,15 +107,33 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-rabbitmq'
     legend: 'Configuration to integrate Micronaut and RabbitMQ'
-  oauth2:
-    image: 'oauth2.svg'
-    label: 'Oauth 2 Configuration'
-    version: 'snapshot'
-    githubslug: 'micronaut-oauth2'
-    legend: 'Ease integrations between Oauth 2 and OpenID Connect Authorization Server and Micronaut'
   rss:
     image: 'rss.svg'
     label: 'RSS Configuration'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-rss'
     legend: 'Ease creation of RSS 2.0 feeds in a Micronaut app'
+  neo4j:
+    image: 'neo4j.svg'
+    label: 'Neo4j Configuration'
+    version: 'latest'
+    githubslug: 'micronaut-neo4j'
+    legend: 'Integration between Micronaut and Neo4j'
+  kubernetes:
+    image: 'kubernetes.svg'
+    label: 'Kubernetes'
+    version: 'snapshot'
+    githubslug: 'micronaut-kubernetes'
+    legend: 'Integration between Micronaut and Kubernetes'
+  views:
+    image: 'views.svg'
+    label: 'Views'
+    version: 'snapshot'
+    githubslug: 'micronaut-views'
+    legend: 'Integrates Micronaut and Server Side Views Rendering'
+  openapi:
+    image: 'openapi.svg'
+    label: 'Open API'
+    version: 'latest'
+    githubslug: 'micronaut-openapi'
+    legend: 'Configuration to integrate Micronaut and OpenAPI/Swagger'

@@ -189,12 +189,12 @@ abstract class Page implements HtmlPage {
                             mkp.yieldUnescaped renderMenuItems(socialMediaMenu(), "socialnetworknav")
                         }
 
-                        p { small '© 2018, Object Computing, Inc. (OCI). All rights reserved' }
+                        p { small '© 2019, Object Computing, Inc. (OCI). All rights reserved' }
                     }
                     div(class: 'column', style: 'margin-top: 10px;') {
                         p {
                             a(title: "Visit OCI Website", href: "https://objectcomputing.com") {
-                                img(src: "${getImageAssetPreffix()}oci_logo${bodyClass == 'home' ? '_white' : ''}.svg", alt: "Object Computing")
+                                img(src: "${getImageAssetPreffix()}${bodyClass == 'home' ? 'oci-home-to-micronaut': 'oci_logo'}.svg", alt: "Object Computing", style: 'max-width: 300px')
                             }
                         }
                     }
