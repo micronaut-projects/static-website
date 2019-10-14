@@ -89,3 +89,6 @@ releases:
     -
       version: 1.2.3
       publicationDate: Sep 27, 2019
+    -
+      version: 1.2.4
+      publicationDate: Oct 14, 2019
