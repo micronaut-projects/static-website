@@ -122,13 +122,13 @@ modules:
   kubernetes:
     image: 'kubernetes.svg'
     label: 'Kubernetes'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-kubernetes'
     legend: 'Integration between Micronaut and Kubernetes'
   views:
     image: 'views.svg'
     label: 'Views'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-views'
     legend: 'Integrates Micronaut and Server Side Views Rendering'
   openapi:
