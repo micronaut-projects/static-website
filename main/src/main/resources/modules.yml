@@ -137,3 +137,9 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-openapi'
     legend: 'Configuration to integrate Micronaut and OpenAPI/Swagger'
+  cache:
+    image: 'cache.svg'
+    label: 'Cache'
+    version: 'latest'
+    githubslug: 'micronaut-cache'
+    legend: 'Additional cache implementations (Redis, Hazelcast...).'
