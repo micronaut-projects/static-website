@@ -189,7 +189,7 @@ abstract class Page implements HtmlPage {
                             mkp.yieldUnescaped renderMenuItems(socialMediaMenu(), "socialnetworknav")
                         }
 
-                        p { small '© 2019, Object Computing, Inc. (OCI). All rights reserved' }
+                        p { small '© 2020, Object Computing, Inc. (OCI). All rights reserved' }
                     }
                     div(class: 'column', style: 'margin-top: 10px;') {
                         p {
