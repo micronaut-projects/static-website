@@ -167,3 +167,10 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-cache'
     legend: 'Additional cache implementations (Redis, Hazelcast...).'
+  ratelimiter:
+    category: 'Analytics'
+    image: 'ratelimiter.svg'
+    label: 'Rate Limiter'
+    version: 'snapshot'
+    githubslug: 'micronaut-ratelimiter'
+    legend: 'Integrations with rate limiting libraries (e.g. Resilience4j)'
