@@ -26,7 +26,7 @@ class DocumentationPage extends Page {
         model['modules'].collect { k, v ->
             final String url = "https://micronaut-projects.github.io/${v.githubslug}/${v.version}/guide/index.html"
             final String title = "${v.label}${v.version.equalsIgnoreCase('snapshot') ? ' (SNAPSHOT)' : ''}"
-            new GuideGroupItem(href: url, title: title, legend: v.legend ?: '', image: v.image)
+            new GuideGroupItem(href: url, title: title, legend: v.legend ?: '', image: v.image, category: v.category)
         }.sort { a, b ->
             a.title.replace("Micronaut", "").replaceAll('^\\s+|\\s+$', "") <=> b.title.replace("Micronaut", "").replaceAll('^\\s+|\\s+$', "")
         }
@@ -100,61 +100,65 @@ class DocumentationPage extends Page {
                 }
             }
             div(class: "twocolumns") {
-                List links = extraLinksItems()
+                List<GuideGroupItem> links = extraLinksItems()
                 div(class: "odd column") {
-                    List oddlinks = links.subList(0, (int) (links.size() / 2))
-                    mkp.yieldUnescaped documentationGuideGroup('Other Modules', oddlinks).renderAsHtml()
+                    mkp.yieldUnescaped documentationGuideGroup('Misc', links.findAll { it.category == 'Misc' }, 'micronautaprrentice.svg').renderAsHtml()
+                    mkp.yieldUnescaped documentationGuideGroup('Messaging', links.findAll { it.category == 'Messaging' }, "messaging.svg").renderAsHtml()
+                    mkp.yieldUnescaped documentationGuideGroup('Cloud', links.findAll { it.category == 'Cloud' }, "cloud.svg").renderAsHtml()
+                    mkp.yieldUnescaped documentationGuideGroup('API', links.findAll { it.category == 'API' }, 'api.svg').renderAsHtml()
+
+                    olderVersionBlock(html)
 
                 }
                 div(class: "column") {
-                    List evenlinks = links.subList((int) (links.size() / 2), links.size())
-                    mkp.yieldUnescaped documentationGuideGroup('Other Modules', evenlinks).renderAsHtml()
+                    mkp.yieldUnescaped documentationGuideGroup('Data Access', links.findAll { it.category == 'Data Access' }, 'dataaccess.svg').renderAsHtml()
+
+                    mkp.yieldUnescaped documentationGuideGroup('Database Migration', links.findAll { it.category == 'Database Migration' }, 'databasemigration.svg').renderAsHtml()
+                    mkp.yieldUnescaped documentationGuideGroup('Analytics', links.findAll { it.category == 'Analytics' }, 'analytics.svg').renderAsHtml()
+
+                    mkp.yieldUnescaped documentationGuideGroup('Views', links.findAll { it.category == 'Views' }, 'views.svg').renderAsHtml()
+                    mkp.yieldUnescaped documentationGuideGroup('Languages', links.findAll { it.category == 'Languages' }, 'languages.svg').renderAsHtml()
 
                 }
             }
-            div(class: "twocolumns") {
-                div(class: "odd column") {
-                    html.div(class: "guidegroup") {
-                        div(class: "guidegroupheader") {
-                            String title = 'Documentation of older versions'
-                            String image = "${getImageAssetPreffix()}documentation.svg"
-                            img src: image, alt: title
-                            h2 {
-                                html.mkp.yieldUnescaped title
-                            }
-                        }
-                        ul {
-                            li {
-                                span 'User Guide'
-                                select(onchange: "window.location.href='https://docs.micronaut.io/' + this.value + '/guide/index.html'") {
-                                    option 'Select a version'
-                                    for (String version : SiteMap.olderVersions()) {
-                                        option version
-                                    }
-                                }
-                            }
-                            li {
-                                span 'API Reference'
-                                select(onchange: "window.location.href='https://docs.micronaut.io/' + this.value + '/api'") {
-                                    option 'Select a version'
-                                    for (String version : SiteMap.olderVersions()) {
-                                        option version
-                                    }
 
-                                }
-                           }
+        }
+        writer.toString()
+    }
+
+    @CompileDynamic
+    void olderVersionBlock(MarkupBuilder html) {
+        html.div(class: "guidegroup") {
+            div(class: "guidegroupheader") {
+                String title = 'Documentation of older versions'
+                String image = "${getImageAssetPreffix()}documentation.svg"
+                img src: image, alt: title
+                h2 {
+                    html.mkp.yieldUnescaped title
+                }
+            }
+            ul {
+                li {
+                    span 'User Guide'
+                    select(onchange: "window.location.href='https://docs.micronaut.io/' + this.value + '/guide/index.html'") {
+                        option 'Select a version'
+                        for (String version : SiteMap.olderVersions()) {
+                            option version
                         }
                     }
                 }
+                li {
+                    span 'API Reference'
+                    select(onchange: "window.location.href='https://docs.micronaut.io/' + this.value + '/api'") {
+                        option 'Select a version'
+                        for (String version : SiteMap.olderVersions()) {
+                            option version
+                        }
 
-                if (shouldDisplayPreRelease()) {
-                    div(class: "column") {
-                        mkp.yieldUnescaped snapshotDocumentationGuideGroup().renderAsHtml()
                     }
                 }
             }
         }
-        writer.toString()
     }
 
     private boolean shouldDisplayPreRelease() {

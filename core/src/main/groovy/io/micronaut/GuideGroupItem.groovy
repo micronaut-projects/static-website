@@ -8,4 +8,5 @@ class GuideGroupItem {
     String href
     String legend
     String image
+    String category
 }
