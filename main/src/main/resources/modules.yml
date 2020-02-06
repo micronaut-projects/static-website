@@ -189,7 +189,7 @@ modules:
     githubslug: 'micronaut-openapi'
     legend: 'Configuration to integrate Micronaut and OpenAPI/Swagger'
   cache:
-    category: 'Data Access'
+    category: 'Misc'
     image: 'cache.svg'
     label: 'Cache'
     version: 'latest'
