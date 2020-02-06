@@ -27,6 +27,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-redis'
     legend: 'Integration between Micronaut and Redis'
+  cassandra:
+    category: 'Data Access'
+    image: 'cassandra.svg'
+    label: 'Micronaut for Cassandra'
+    version: 'latest'
+    githubslug: 'micronaut-cassandra'
+    legend: 'Integration between Micronaut and Cassandra'
   spring:
     category: 'API'
     image: 'spring.svg'
