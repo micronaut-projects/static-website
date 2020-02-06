@@ -62,6 +62,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-grpc'
     legend: 'Integration between Micronaut and GRPC'
+  gcp:
+    category: 'Cloud'
+    image: 'gcp.png'
+    label: 'Micronaut GCP'
+    version: 'latest'
+    githubslug: 'micronaut-gcp'
+    legend: 'Integration between Micronaut and Google Cloud Platform (GCP)'
   netflix:
     category: 'Cloud'
     image: 'netflix.svg'
