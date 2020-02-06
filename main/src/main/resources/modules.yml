@@ -90,6 +90,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-security'
     legend: 'Built-in security features. Authentication providers and strategies, Token Propagation...'
+  kotlin:
+    category: 'Languages'
+    image: 'kotlin.svg'
+    label: 'Micronaut Kotlin'
+    version: 'latest'
+    githubslug: 'micronaut-kotlin'
+    legend: 'Integrations between Micronaut and Kotlin and Ktor.'
   groovy:
     category: 'Languages'
     image: 'groovy.svg'
