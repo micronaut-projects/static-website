@@ -28,7 +28,7 @@ modules:
     githubslug: 'micronaut-redis'
     legend: 'Integration between Micronaut and Redis'
   spring:
-    category: 'Misc'
+    category: 'API'
     image: 'spring.svg'
     label: 'Micronaut for Spring'
     version: 'latest'
