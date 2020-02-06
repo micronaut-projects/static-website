@@ -195,6 +195,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-jaxrs'
     legend: 'Support for using JAX-RS annotations and types in a Micronaut application'
+  jacksonxml:
+    category: 'API'
+    image: 'jacksonxml.svg'
+    label: 'Jackson XML'
+    version: 'latest'
+    githubslug: 'micronaut-jackson-xml'
+    legend: 'Create the beans necessary to allow for the serialization and deserialization of XML'
   openapi:
     category: 'API'
     image: 'openapi.svg'
