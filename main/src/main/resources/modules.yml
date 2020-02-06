@@ -56,7 +56,7 @@ modules:
     githubslug: 'micronaut-graphql'
     legend: 'Extensions to integrate Micronaut and GraphQL'
   grpc:
-    category: 'Cloud'
+    category: 'API'
     image: 'grpc.png'
     label: 'GRPC'
     version: 'latest'
