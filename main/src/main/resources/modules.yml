@@ -27,6 +27,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-redis'
     legend: 'Integration between Micronaut and Redis'
+  hibernatevalidator:
+    category: 'Misc'
+    image: 'hibernate.svg'
+    label: 'Micronaut Hibernate Validator'
+    version: 'latest'
+    githubslug: 'micronaut-hibernate-validator'
+    legend: 'Support for validating Micronaut beans with Hibernate Validator.'
   cassandra:
     category: 'Data Access'
     image: 'cassandra.svg'
