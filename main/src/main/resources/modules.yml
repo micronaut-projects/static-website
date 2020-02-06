@@ -111,6 +111,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-sql'
     legend: 'Projects (JDBC Hibernate Reactive Postgres ...) to support SQL Database access in Micronaut'
+  jmx:
+    category: 'Analytics'
+    image: 'jmx.svg'
+    label: 'Micronaut JMX Configuration'
+    version: 'latest'
+    githubslug: 'micronaut-jmx'
+    legend: 'Provides JMX support for Micronaut services'
   elasticsearch:
     category: 'Analytics'
     image: 'elasticsearch.svg'
