@@ -9,6 +9,9 @@ import io.micronaut.TextMenuItem
 @CompileStatic
 class Navigation {
 
+
+    public static final String OCI_WEBSITE = 'https://objectcomputing.com'
+
     static Menu mainMenu(String url = null, String guidesUrl = null) {
         new Menu(items: [
                 footerNavTextItem(),
@@ -112,11 +115,11 @@ class Navigation {
     }
 
     static TextMenuItem desktopBlogMenuItem(String url = null) {
-        menuItemWithHref('/news/category/micronaut-blog', 'News', 'https://objectcomputing.com', 'desktop')
+        menuItemWithHref('/news/category/micronaut-blog', 'News', OCI_WEBSITE, 'desktop')
     }
 
     static TextMenuItem mobileBlogMenuItem(String url = null, String title = 'News') {
-        menuItemWithHref('/news/category/micronaut-blog', title, 'https://objectcomputing.com', 'mobile')
+        menuItemWithHref('/news/category/micronaut-blog', title, OCI_WEBSITE, 'mobile')
     }
 
     static IconMenuItem mobileHomeMenuItem(String url = null) {
