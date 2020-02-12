@@ -21,6 +21,8 @@ class Navigation {
                 questionsMenuItem(url),
                 desktopEventsItem(url),
                 mobileEventsItem(url),
+                webinarMenuItem(),
+                trainingMenuItem(),
                 guidesMenuItem(guidesUrl),
                 downloadMenuItem(url),
                 documentationMenuItem(url),
@@ -35,8 +37,10 @@ class Navigation {
     static Menu footerMenu(String url = null, String guidesUrl = null) {
         new Menu(items: [
                 docsMenuItem(url),
-                guidesMenuItem(guidesUrl),
                 downloadMenuItem(url),
+                guidesMenuItem(guidesUrl),
+                webinarMenuItem(),
+                trainingMenuItem(),
                 mobileEventsItem(url),
                 mobileSupportMenuItem(url, 'Support'),
                 questionsMenuItem(url),
@@ -112,6 +116,19 @@ class Navigation {
 
     static TextMenuItem mobileSupportMenuItem(String url = null, String title = 'Support') {
         menuItemWithHref('support.html', title, url, 'mobile')
+    }
+
+
+    static String WEBINAR_PATH = '/products/micronaut/resources#on-demand'
+
+    static String TRAINING_PATH = '/services/training/catalog/micronaut-training#catalog'
+
+    static TextMenuItem webinarMenuItem() {
+        menuItemWithHref(WEBINAR_PATH, 'Webinars', OCI_WEBSITE)
+    }
+
+    static TextMenuItem trainingMenuItem() {
+        menuItemWithHref(TRAINING_PATH, 'Training', OCI_WEBSITE)
     }
 
     static TextMenuItem desktopBlogMenuItem(String url = null) {

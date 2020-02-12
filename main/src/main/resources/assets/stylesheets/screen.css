@@ -409,19 +409,30 @@ nav li {
 
 @media screen and (min-width: 750px) {
     .main nav li.large {
-        max-width: 300px;
+        max-width: 150px;
     }
     .main nav li.align-right {
         margin-left: 24px;
     }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 970px) {
+    .main nav li.large {
+        max-width: 220px;
+
+    }
+}
+@media screen and (min-width: 1112px) {
+    .main nav li.large {
+        max-width: 360px;
+    }
+}
+@media screen and (min-width: 1336px) {
     .main nav li.large {
         max-width: 400px;
     }
 }
 .main nav li:first-child {
-    margin-right: 5px;
+    margin-right: 0px;
 }
 @media screen and (min-width: 961px) {
     .main nav li.align-right:first-child {
