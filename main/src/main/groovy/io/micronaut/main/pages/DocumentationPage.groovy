@@ -89,14 +89,23 @@ class DocumentationPage extends Page {
                 span 'Micronaut'
                 b 'Documentation'
             }
-            div(class: "twocolumns") {
+            div(class: "twocolumns mobile") {
                 div(class: "odd column") {
                     mkp.yieldUnescaped latestDocumentationGuideGroup().renderAsHtml()
                 }
-
                 div(class: "column") {
                     GuideGroup guideGroup = shouldDisplayPreRelease() ? preRelease : snapshotDocumentationGuideGroup()
                     mkp.yieldUnescaped guideGroup.renderAsHtml()
+                }
+            }
+            div(class: "twocolumns desktop") {
+                div(class: "odd column") {
+                    GuideGroup guideGroup = shouldDisplayPreRelease() ? preRelease : snapshotDocumentationGuideGroup()
+                    mkp.yieldUnescaped guideGroup.renderAsHtml()
+                }
+
+                div(class: "column") {
+                    mkp.yieldUnescaped latestDocumentationGuideGroup().renderAsHtml()
                 }
             }
             div(class: "twocolumns") {
