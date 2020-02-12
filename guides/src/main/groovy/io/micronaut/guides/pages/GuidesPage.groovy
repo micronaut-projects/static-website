@@ -308,6 +308,7 @@ class GuidesPage extends Page implements ReadFileUtils {
                 }
                 setOmitEmptyAttributes(true)
                 setOmitNullAttributes(true)
+                String guideGroupCss = "margin-top: ${MARGIN_TOP};"
                 div(class: 'twocolumns') {
                     div(class: 'column') {
                         div(class: 'mobile', style: 'margin-bottom: 50px;') {
@@ -322,7 +323,9 @@ class GuidesPage extends Page implements ReadFileUtils {
                         mkp.yieldUnescaped sponsoredBy()
                         if ( !(tag || category) ) {
                             mkp.yieldUnescaped tagCloud()
-                            mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, "margin-top: ${MARGIN_TOP};")
+                            mkp.yieldUnescaped guideGroupByCategory(categories().cache, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(categories().messaging, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(categories().security, guides, true, guideGroupCss)
                         }
 
                     }
@@ -338,11 +341,15 @@ class GuidesPage extends Page implements ReadFileUtils {
 
                         }
                         if ( !(tag || category) ) {
-                            mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides, true, "margin-top: ${MARGIN_TOP};")
-                            mkp.yieldUnescaped guideGroupByCategory(categories().azure, guides, true, "margin-top: ${MARGIN_TOP};")
-                            mkp.yieldUnescaped guideGroupByCategory(categories().googlecloud, guides, true, "margin-top: ${MARGIN_TOP};")
-                            mkp.yieldUnescaped guideGroupByCategory(categories().cloudservices, guides, true, "margin-top: ${MARGIN_TOP};")
-                            mkp.yieldUnescaped guideGroupByCategory(categories().dataaccess, guides, true, "margin-top: ${MARGIN_TOP};")
+                            mkp.yieldUnescaped guideGroupByCategory(categories().apprentice, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(categories().aws, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(categories().azure, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(categories().googlecloud, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(categories().tracing, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(categories().servicediscovery, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(categories().cloudservices, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(categories().dataaccess, guides, true, guideGroupCss)
+
                         }
                     }
                 }
@@ -353,14 +360,19 @@ class GuidesPage extends Page implements ReadFileUtils {
 
     static Map<String, Category> categories() {
         [
+                servicediscovery: new Category(name: "Service Discovery", image: 'service-discovery.svg'),
+                tracing: new Category(name: "Distributed Tracing", image: 'tracing.svg'),
+                messaging: new Category(name: "Messaging", image: 'messaging.svg'),
+                aws: new Category(name: "Micronaut + AWS", image: 'aws.svg'),
                 azure: new Category(name: "Micronaut + Microsoft Azure", image: 'azure.svg'),
                 googlecloud: new Category(name: "Micronaut + Google Cloud", image: 'googlecloud.svg'),
-            android: new Category(name: "Micronaut Android", image: 'micronaut_android.svg'),
-            devops: new Category(name: "Micronaut DevOps", image: 'micronaut_devops.svg'),
-            apprentice: new Category(name: "Micronaut Apprentice", image: 'micronautaprrentice.svg'),
-            cloudservices: new Category(name: 'Cloud Native', image: 'cloud.svg'),
-            security: new Category(name: 'Micronaut Security', image: 'security.svg'),
-            dataaccess: new Category(name: 'Data Access', image: 'dataaccess.svg'),
+                android: new Category(name: "Micronaut Android", image: 'micronaut_android.svg'),
+                devops: new Category(name: "Micronaut DevOps", image: 'micronaut_devops.svg'),
+                apprentice: new Category(name: "Micronaut Apprentice", image: 'micronautaprrentice.svg'),
+                cloudservices: new Category(name: 'Cloud Native', image: 'cloud.svg'),
+                security: new Category(name: 'Micronaut Security', image: 'security.svg'),
+                dataaccess: new Category(name: 'Data Access', image: 'dataaccess.svg'),
+                cache: new Category(name: 'Cache', image: 'cache.svg'),
         ]
     }
 }

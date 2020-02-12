@@ -29,7 +29,7 @@ abstract class Page implements HtmlPage {
     public static final String GOOGLE_ANALYTICS_TRACKING_CODE = 'UA-115754405-1'
 
     String developmentServer() {
-        'http://localhost:8090'
+        'http://localhost:8890'
     }
 
     @Override
