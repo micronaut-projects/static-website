@@ -35,9 +35,11 @@
   <meta name='msapplication-square150x150logo' content='https://micronaut.io/images//mstile-150x150.png' />
   <meta name='msapplication-wide310x150logo' content='https://micronaut.io/images//mstile-310x150.png' />
   <meta name='msapplication-square310x310logo' content='https://micronaut.io/images//mstile-310x310.png' />
-  <link rel='stylesheet' href='stylesheets/212185524.screen.css' />
-  <script src='javascripts/212185524.navbar_hide_scroll.js'></script>
-  <script src='javascripts/212185524.navigation.js'></script>
+  <link rel='stylesheet' href='stylesheets/213002134.screen.css' />
+  <link rel='stylesheet' href='stylesheets/213002134.prismjs.css' />
+  <script src='javascripts/213002134.navbar_hide_scroll.js'></script>
+  <script src='javascripts/213002134.navigation.js'></script>
+  <script src='/javascripts/213002134.prismjs.js'></script>
 </head>
   <body class='download'>
     <div class='main'><nav id='navbar'>
@@ -100,7 +102,40 @@
     <b>Micronaut</b>
   </h1>
   <div class='twocolumns'>
-    <div class='odd column'><div class='guidegroup' style='margin-bottom: 0;margin-top: 0;'>
+    <div class='odd column'>
+      <div class='transparent_post desktop'>
+        <p>For a quick and effortless start on Mac OSX, Linux, or Cygwin, you can use 
+          <a href='http://sdkman.io'>SDKMAN! (The Software Development Kit Manager)</a> to download and configure any Micronaut version of your choice. 
+        </p>
+      </div>
+      <article class='question desktop' style='margin-top: 0;margin-bottom: 50px;'>
+        <h3 class='columnheader'>Installing with SDKMAN!</h3>
+        <p>This tool makes installing Micronaut on any Unix based platform (Mac OSX, Linux, Cygwin, Solaris, or FreeBSD) easy.</p>
+        <p>Simply open a new terminal and enter:</p>
+        <pre class='language-shell'>
+          <code></code>
+          <code>$ curl -s https://get.sdkman.io | bash</code>
+        </pre>
+        <p>Follow the on-screen instructions to complete installation.</p>
+        <p>Open a new terminal or type the command:</p>
+        <pre class='language-shell'>
+          <code></code>
+          <code>$ source "$HOME/.sdkman/bin/sdkman-init.sh"</code>
+        </pre>
+        <p>Then install the latest stable Micronaut:</p>
+        <pre class='language-shell'>
+          <code></code>
+          <code>$ sdk install micronaut</code>
+        </pre>
+        <p>If prompted, make this your default version. After installation is complete it can be tested with:</p>
+        <pre class='language-shell'>
+          <code></code>
+          <code>$ mn --version</code>
+        </pre>
+        <p>That's all there is to it!</p>
+      </article>
+    </div>
+    <div class='column'><div class='guidegroup' style='margin-bottom: 0;margin-top: 0;'>
   <div class='guidegroupheader'>
     <img src='images/download.svg' alt='Download &lt;span&gt;Micronaut&lt;/span&gt; 1.3.0' />
     <h2>Download <span>Micronaut</span> 1.3.0</h2>
@@ -115,37 +150,30 @@
   </ul>
 </div>
       <p style='margin-top: 10px; margin-bottom: 0;'>For historical release notes, refer to 
-        <a href='https://github.com/micronaut-projects/micronaut-core/releases'>Github</a>
+        <a href='https://github.com/micronaut-projects/micronaut-core/releases'>Github</a><div class='guidegroup' style='margin-bottom: 0;margin-top: 30px;'>
+  <div class='guidegroupheader'>
+    <img src='images/download.svg' alt='Install' />
+    <h2>Install</h2>
+  </div>
+  <ul id=''>
+    <li>
+      <a href='https://docs.micronaut.io/latest/guide/index.html#installSdkman'>Install with SDKman</a>
+    </li>
+    <li>
+      <a href='https://docs.micronaut.io/latest/guide/index.html#installHomebrew'>Install with Homebrew</a>
+    </li>
+    <li>
+      <a href='https://docs.micronaut.io/latest/guide/index.html#installMacPorts'>Install with MacPorts</a>
+    </li>
+    <li>
+      <a href='https://docs.micronaut.io/latest/guide/index.html#installWindows'>Install through Binary on Windows</a>
+    </li>
+    <li>
+      <a href='https://docs.micronaut.io/latest/guide/index.html#buildSource'>Building from Source</a>
+    </li>
+  </ul>
+</div>
       </p>
-    </div>
-    <div class='column'>
-      <div class='transparent_post'>
-        <p>For a quick and effortless start on Mac OSX, Linux, or Cygwin, you can use 
-          <a href='http://sdkman.io'>SDKMAN! (The Software Development Kit Manager)</a> to download and configure any Micronaut version of your choice. 
-        </p>
-      </div>
-      <article class='question' style='margin-top: 0;margin-bottom: 50px;'>
-        <h3 class='columnheader'>Installing with SDKMAN!</h3>
-        <p>This tool makes installing Micronaut on any Unix based platform (Mac OSX, Linux, Cygwin, Solaris, or FreeBSD) easy.</p>
-        <p>Simply open a new terminal and enter:</p>
-        <div class='code'>
-          <p>$ curl -s https://get.sdkman.io | bash</p>
-        </div>
-        <p>Follow the on-screen instructions to complete installation.</p>
-        <p>Open a new terminal or type the command:</p>
-        <div class='code'>
-          <p>$ source "$HOME/.sdkman/bin/sdkman-init.sh"</p>
-        </div>
-        <p>Then install the latest stable Micronaut:</p>
-        <div class='code'>
-          <p>$ sdk install micronaut</p>
-        </div>
-        <p>If prompted, make this your default version. After installation is complete it can be tested with:</p>
-        <div class='code'>
-          <p>$ mn --version</p>
-        </div>
-        <p>That's all there is to it!</p>
-      </article>
     </div>
   </div>
 </div><div id="footercircle" class="full whitecircleborderseparator"></div><footer>
