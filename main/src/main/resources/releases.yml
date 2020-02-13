@@ -122,3 +122,6 @@ releases:
     -
       version: 1.3.0
       publicationDate: Feb 04, 2020
+    -
+      version: 1.3.1
+      publicationDate: Feb 13, 2020
