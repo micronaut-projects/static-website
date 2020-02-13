@@ -8,31 +8,14 @@ import io.micronaut.MenuItem
 import io.micronaut.pages.Page
 
 @CompileStatic
-class HomePage extends Page {
+class HomePage extends PageWithSyntaxHighlight {
     String slug = 'index.html'
     String bodyClass = 'home'
     String title = null
 
-
-    @Override
-    List<String> getCssFiles() {
-        List<String> l = super.getCssFiles()
-        String prismjs = "stylesheets/${timestamp ? (timestamp + '.') : ''}prismjs.css" as String
-        l << prismjs
-        l
-    }
-
     @Override
     MenuItem menuItem() {
         Navigation.mobileHomeMenuItem(micronautUrl())
-    }
-
-    @Override
-    List<String> getJavascriptFiles() {
-        List<String> jsFiles = super.getJavascriptFiles()
-        String prismjs = "/javascripts/${timestamp ? (timestamp + '.') : ''}prismjs.js".toString()
-        jsFiles << prismjs
-        jsFiles
     }
 
 
