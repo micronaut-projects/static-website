@@ -225,7 +225,7 @@ modules:
     legend: 'Integrations with rate limiting libraries (e.g. Resilience4j)'
   picocli:
     category: 'Misc'
-    image: 'test.svg'
+    image: 'cli.svg'
     label: 'Picocli'
     version: 'latest'
     githubslug: 'micronaut-picocli'
