@@ -223,3 +223,10 @@ modules:
     version: 'snapshot'
     githubslug: 'micronaut-ratelimiter'
     legend: 'Integrations with rate limiting libraries (e.g. Resilience4j)'
+  picocli:
+    category: 'Misc'
+    image: 'test.svg'
+    label: 'Picocli'
+    version: 'latest'
+    githubslug: 'micronaut-picocli'
+    legend: 'Provides integration between Micronaut and Picocli'    
