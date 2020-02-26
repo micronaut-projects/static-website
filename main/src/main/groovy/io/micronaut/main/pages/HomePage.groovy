@@ -212,19 +212,16 @@ public interface HelloClient {
                     pre {
                         code(class: "language-java") {
                             mkp.yieldUnescaped '''
-import io.micronaut.runtime.server.EmbeddedServer
-import spock.lang.*
+import io.micronaut.test.annotation.MicronautTest
+import spock.lang.Specification
 
+import javax.inject.Inject
+
+@MicronautTest
 class HelloClientSpec extends Specification {
-    @Shared
-    @AutoCleanup
-    EmbeddedServer embeddedServer =
-        ApplicationContext.run(EmbeddedServer)
 
-    @Shared
-    HelloClient client = embeddedServer
-        .applicationContext
-        .getBean(HelloClient)
+    @Inject
+    HelloClient client
 
     void "test hello world response"() {
         expect:
