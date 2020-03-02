@@ -209,6 +209,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-openapi'
     legend: 'Configuration to integrate Micronaut and OpenAPI/Swagger'
+  servlet:
+    category: 'API'
+    image: 'openapi.svg'
+    label: 'Servlet'
+    version: 'snapshot'
+    githubslug: 'micronaut-servlet'
+    legend: 'Integration between micronaut and Servlet containers'    
   cache:
     category: 'Misc'
     image: 'cache.svg'
