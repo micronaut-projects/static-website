@@ -213,7 +213,7 @@ modules:
     category: 'API'
     image: 'servlet.svg'
     label: 'Servlet'
-    version: 'snapshot'
+    version: '1.0.x'
     githubslug: 'micronaut-servlet'
     legend: 'Integration between micronaut and Servlet containers'    
   cache:
