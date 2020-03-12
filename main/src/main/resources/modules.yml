@@ -1,7 +1,7 @@
 modules:
   micronautdata:
     category: 'Data Access'
-    image: 'dataaccess.svg'
+    image: 'dataaccess-micronautdata.svg'
     label: 'Micronaut Data'
     version: 'latest'
     githubslug: 'micronaut-data'
