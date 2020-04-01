@@ -24,7 +24,7 @@ class DocumentationPage extends Page {
         File f = new File('src/main/resources/modules.yml')
         Map model = yaml.load(f.newDataInputStream())
         model['modules'].collect { k, v ->
-            final String url = "https://micronaut-projects.github.io/${v.githubslug}/${v.version}/guide/index.html"
+            final String url = "https://micronaut-projects.github.io/${v.githubslug}/${v.version}${v.githubslug == 'micronaut-maven-plugin' ? '' : '/guide'}/index.html"
             final String title = "${v.label}${v.version.equalsIgnoreCase('snapshot') ? ' (SNAPSHOT)' : ''}"
             new GuideGroupItem(href: url, title: title, legend: v.legend ?: '', image: v.image, category: v.category)
         }.sort { a, b ->

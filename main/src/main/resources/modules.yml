@@ -223,6 +223,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-cache'
     legend: 'Additional cache implementations (Redis, Hazelcast...).'
+  mavenplugin:
+    category: 'Misc'
+    image: 'maven.svg'
+    label: 'Micronaut Maven Plugin'
+    version: 'latest'
+    githubslug: 'micronaut-maven-plugin'
+    legend: 'Maven plugin to execute and package Micronaut applications.'
   ratelimiter:
     category: 'Analytics'
     image: 'ratelimiter.svg'
