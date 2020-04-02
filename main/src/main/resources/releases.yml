@@ -137,3 +137,6 @@ releases:
     -
       version: 2.0.0.M1
       publicationDate: Mar 20, 2020
+    -
+      version: 2.0.0.M2
+      publicationDate: Apr 02, 2020
