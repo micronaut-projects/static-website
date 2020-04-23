@@ -273,7 +273,7 @@ class App extends Component {
                     onChange={this.handleChange}
                   >
                     <option value="junit">JUnit</option>
-                    <option value="spoke">Spock</option>
+                    <option value="spock">Spock</option>
                     <option value="kotlintest">Kotlintest</option>
                   </Select>
                 </Col>
