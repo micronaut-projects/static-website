@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ececec03;
+  position: relative;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+label, span {
+  color: black !important;
+}
+
+[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after {
+  background-color: #000000;
+}
+
+[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:before, [type="radio"].with-gap:checked + span:after {
+  border: 2px solid #000000;
+}
+
+.modal {
+    width: 35%;
+}
+
+.mn-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.mn-logo {
+  margin-top: 40px;
+}
+
+.mn-footer-logos {
+  float: right;
+  margin-left: 10px;
+}
+
+.mn-feature-selection:hover {
+  background-color: black !important;
+}
+
+.mn-feature-selection:hover > div.card-content > span.card-title {
+  color: white !important;
+}
+
+.mn-container {
+  margin-top: 5rem;
+}
+
+.mn-input:focus {
+  border-bottom: 1px solid #000000 !important;
+  box-shadow: 0 1px 0 0 #000000 !important;
+}
+
+.progress {
+  background-color: #dfdfdf;
+}
+
+.progress .indeterminate {
+  background-color: #040404bd;
+}
+
+.spinner-blue, .spinner-blue-only {
+  border-color: #000000;
+}
