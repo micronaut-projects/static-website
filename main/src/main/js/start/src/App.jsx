@@ -6,7 +6,7 @@ import Modal from "react-materialize/lib/Modal";
 import Preloader from "react-materialize/lib/Preloader";
 import Row from "react-materialize/lib/Row";
 import TextInput from "react-materialize/lib/TextInput";
-import { API_URL, JAVA_VERSIONS } from './constants';
+import { API_URL, JAVA_VERSIONS, DEFAULT_JAVA_VERSION, DEFAULT_LANG, DEFAULT_BUILD, DEFAULT_TEST_FW } from './constants';
 import logo from "./micronaut.png";
 import "./style.css";
 
@@ -18,10 +18,10 @@ class App extends Component {
       package: "",
       types: [],
       type: "DEFAULT",
-      lang: "java",
-      build: "gradle",
-      testFw: "junit",
-      javaVersion: 11,
+      lang: DEFAULT_LANG,
+      build: DEFAULT_BUILD,
+      testFw: DEFAULT_TEST_FW,
+      javaVersion: DEFAULT_JAVA_VERSION,
       loadingFeatures: false,
       features: [],
       featureSearch: "",
@@ -391,7 +391,7 @@ class App extends Component {
           >
             <p>
               Micronaut Starter is a web application that allows you to create Micronaut projects through an interface instead of using the console CLI.
-              You can set the application type, the project name, the language (Java, Kotlin, Groovy), the build tool (Maven, Gradle)
+              You can set the application type, the project name, the language (Java, Kotlin, Groovy), the build tool (Maven, Gradle), the Java version
               and the features you need to develop your software.
             </p>
           </Modal>

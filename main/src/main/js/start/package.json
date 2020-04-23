@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://micronaut.io/start",
   "dependencies": {
     "materialize-css": "^1.0.0",
     "react": "^16.8.6",
