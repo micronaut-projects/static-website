@@ -6,16 +6,22 @@ import Modal from "react-materialize/lib/Modal";
 import Preloader from "react-materialize/lib/Preloader";
 import Row from "react-materialize/lib/Row";
 import TextInput from "react-materialize/lib/TextInput";
+import TreeView from '@material-ui/lab/TreeView';
+import TreeItem from '@material-ui/lab/TreeItem';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+//import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { API_URL, JAVA_VERSIONS, DEFAULT_JAVA_VERSION, DEFAULT_LANG, DEFAULT_BUILD, DEFAULT_TEST_FW } from './constants';
 import logo from "./micronaut.png";
 import "./style.css";
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      package: "",
+      name: "demo",
+      package: "com.example",
       types: [],
       type: "DEFAULT",
       lang: DEFAULT_LANG,
@@ -190,7 +196,96 @@ class App extends Component {
     }
   };
 
+  loadPreview = () => {
+    let features = ""
+
+    this.state.featuresSelected.forEach((feature) => {
+      features += "features=" + feature[0] + "&"
+    })
+
+    let FETCH_URL =
+        API_URL + "/preview/" + this.state.type + "/" +
+        this.state.package + "." + this.state.name + "/?" +
+        features +
+        "lang=" +
+        this.state.lang +
+        "&build=" +
+        this.state.build +
+        "&test=" +
+        this.state.testFw +
+        "&javaVersion=" +
+        "JDK_" + this.state.javaVersion;
+
+    fetch(FETCH_URL, {
+      method: "GET"
+    })
+        .then(response => response.json())
+        .then(json => {
+          let nodes = {};
+          let obj = json.contents;
+          let node = nodes;
+          let keys = Object.keys(obj);
+          for (let k = 0; k < keys.length; k++) {
+            let key = keys[k];
+            let folders = key.split("/");
+            let rootNode = node;
+            for (let i = 0; i < folders.length; i++) {
+              if (i === (folders.length - 1)) {
+                node[folders[i]] = obj[key];
+              } else {
+                node[folders[i]] = node[folders[i]] || {};
+                node = node[folders[i]];
+              }
+            }
+            node = rootNode;
+          }
+          this.setState({preview: nodes});
+        });
+
+  };
+
+  clearPreview = () => {
+    this.setState({preview: {}, currentFile: null, currentFileLanguage: null});
+  }
+
+
+  handleFileSelection = (key, contents) => {
+    if (typeof contents === "string") {
+      let idx = key.lastIndexOf(".");
+      let language;
+      if (idx > -1) {
+        language = key.substring(idx + 1);
+        if (language === "gradle") {
+          language = "groovy";
+        }
+        if (language === "bat") {
+          language = "batch";
+        }
+        if (language === "kt") {
+          language = "kotlin";
+        }
+      } else {
+        language = "bash"
+      }
+      this.setState({currentFile: contents, currentFileLanguage: language});
+    }
+  }
+
+
   render() {
+    const renderTree = (nodes) => {
+      if (nodes instanceof Object) {
+        return Object.keys(nodes).map(key => {
+          let children = nodes[key];
+          return (
+              <TreeItem nodeId={key} label={key} onClick={() => this.handleFileSelection(key, children)}>
+                {renderTree(children)}
+              </TreeItem>
+          );
+        });
+      }
+    };
+
     return (
       <Fragment>
         <div className="container">
@@ -368,6 +463,48 @@ class App extends Component {
                     <Icon left>add</Icon>
                     Generate project
                   </Button>
+                </Col>
+                <Col s={3}>
+                  <Modal
+                      header="Preview"
+                      className="wide"
+                      options={{
+                        onOpenStart: this.loadPreview,
+                        onCloseStart: this.clearPreview
+                      }}
+                      trigger={
+                        <Button
+                            disabled={this.state.downloading || !this.state.name || !this.state.package || this.state.loadingFeatures}
+                            waves="light"
+                            style={{ marginRight: "5px", backgroundColor: "black" }}
+                        >
+                          <Icon left>search</Icon>
+                          Preview
+                        </Button>
+                      }
+                  >
+
+                    <Row>
+                      <Col s={3}>
+                        <TreeView
+                            defaultCollapseIcon={<Icon>folder_open</Icon>}
+                            defaultExpandIcon={<Icon>folder</Icon>}
+                            defaultEndIcon={<Icon>insert_drive_file</Icon>}
+                            defaultExpanded={['src', 'main']}
+                        >
+                          {renderTree(this.state.preview)}
+                        </TreeView>
+                      </Col>
+                      <Col s={9} >
+
+                        {this.state.currentFile ?
+                          <SyntaxHighlighter language={this.state.currentFileLanguage} style={prism} showLineNumbers={true} >
+                          {this.state.currentFile}
+                          </SyntaxHighlighter> : ""
+                        }
+                      </Col>
+                    </Row>
+                  </Modal>
                 </Col>
               </Row>
             </form>

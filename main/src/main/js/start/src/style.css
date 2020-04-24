@@ -10,10 +10,6 @@ body {
   min-height: 100%;
 }
 
-label, span {
-  color: black !important;
-}
-
 [type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after {
   background-color: #000000;
 }
@@ -23,7 +19,11 @@ label, span {
 }
 
 .modal {
-    width: 35%;
+  width: 35%;
+}
+
+.modal.wide {
+  width: 75%;
 }
 
 .mn-footer {
