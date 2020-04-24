@@ -16,6 +16,7 @@ span {
 }
 
 [type="radio"]:checked + span:after,
+[type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:after {
   background-color: #000000;
 }
@@ -60,6 +61,10 @@ span {
 .mn-header .icon-wrapper {
   display: flex;
   justify-content: flex-end;
+}
+
+.modal.wide {
+  width: 75%;
 }
 
 .mn-footer {
@@ -108,6 +113,11 @@ span {
 .generate-project-row {
   display: flex;
   align-items: flex-end;
+}
+
+.generate-project-row .col {
+  flex: 1;
+  background: orange;
 }
 
 .progress {

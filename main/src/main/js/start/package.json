@@ -4,11 +4,14 @@
   "private": true,
   "homepage": "https://micronaut.io/start",
   "dependencies": {
+    "@material-ui/core": "^4.9.11",
+    "@material-ui/lab": "^4.0.0-alpha.50",
     "materialize-css": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-materialize": "^3.3.3",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "react-syntax-highlighter": "^12.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
