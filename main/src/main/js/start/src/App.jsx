@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from "react";
-import { Button, Card, ProgressBar, Select } from "react-materialize";
+import { Button, ProgressBar, Select } from "react-materialize";
 import Col from "react-materialize/lib/Col";
 import Icon from "react-materialize/lib/Icon";
 import Modal from "react-materialize/lib/Modal";
-import Preloader from "react-materialize/lib/Preloader";
 import Row from "react-materialize/lib/Row";
 import TextInput from "react-materialize/lib/TextInput";
 import FeatureSelector from "./components/FeatureSelector";
@@ -25,7 +24,6 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 //import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import logo from "./micronaut.png";
 import "./style.css";
 
 class App extends Component {
@@ -251,24 +249,25 @@ class App extends Component {
     }
   };
 
-  render() {
-    const renderTree = (nodes) => {
-      if (nodes instanceof Object) {
-        return Object.keys(nodes).map((key) => {
-          let children = nodes[key];
-          return (
-            <TreeItem
-              nodeId={key}
-              label={key}
-              onClick={() => this.handleFileSelection(key, children)}
-            >
-              {renderTree(children)}
-            </TreeItem>
-          );
-        });
-      }
-    };
+  renderTree = (nodes) => {
+    if (nodes instanceof Object) {
+      return Object.keys(nodes).map((key) => {
+        let children = nodes[key];
+        return (
+          <TreeItem
+            key={key}
+            nodeId={key}
+            label={key}
+            onClick={() => this.handleFileSelection(key, children)}
+          >
+            {this.renderTree(children)}
+          </TreeItem>
+        );
+      });
+    }
+  };
 
+  render() {
     return (
       <Fragment>
         <div className="mn-main-container sticky">
@@ -363,13 +362,13 @@ class App extends Component {
                     <Select
                       s={12}
                       label="Java Version"
-                      value={this.state.javaVersion}
+                      value={this.state.javaVersion.toString()}
                       name="javaVersion"
                       onChange={this.handleChange}
                     >
                       {JAVA_VERSIONS.map((version, i) => {
                         return (
-                          <option key={i} value={version}>
+                          <option key={i} value={version.toString()}>
                             {version}
                           </option>
                         );
@@ -429,7 +428,7 @@ class App extends Component {
                             defaultEndIcon={<Icon>insert_drive_file</Icon>}
                             defaultExpanded={["src", "main"]}
                           >
-                            {renderTree(this.state.preview)}
+                            {this.renderTree(this.state.preview)}
                           </TreeView>
                         </Col>
                         <Col s={9}>

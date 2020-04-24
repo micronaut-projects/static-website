@@ -1,6 +1,5 @@
 // FeatureSelector.js
-import React, { useState, useMemo, useRef, useEffect } from "react";
-import ReactDOM from "react-dom";
+import React, { useState, useMemo } from "react";
 
 import { Button, Card } from "react-materialize";
 import Col from "react-materialize/lib/Col";
@@ -11,14 +10,6 @@ import Row from "react-materialize/lib/Row";
 import TextInput from "../TextInput";
 import "./feature-selector.css";
 
-const measureElement = (element) => {
-    const DOMNode = ReactDOM.findDOMNode(element);
-    return {
-        width: DOMNode && DOMNode.offsetWidth,
-        height: DOMNode && DOMNode.offsetHeight,
-    };
-};
-
 const FeatureSelector = ({
     features,
     selectedFeatures,
@@ -28,12 +19,6 @@ const FeatureSelector = ({
 }) => {
     const [search, setSearch] = useState("");
     const selectedFeatureValues = Object.values(selectedFeatures).reverse();
-    const container = useRef();
-
-    useEffect(() => {
-        const size = measureElement(container.current);
-        console.log({ size });
-    }, [container, loading]);
 
     const availableFeatures = useMemo(() => {
         const selectedFeatureKeys = Object.keys(selectedFeatures);
@@ -95,7 +80,7 @@ const FeatureSelector = ({
                         <p className="grey-text">No features selected.</p>
                     )}
                 </Row>
-                <Row ref={container} className="selected-features-items">
+                <Row className="selected-features-items">
                     {selectedFeatureValues.map((feature, i) => (
                         <div className="white selected-item-row" key={i}>
                             <h6 className="grey-text">{feature.name}</h6>
