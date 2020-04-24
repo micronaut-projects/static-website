@@ -1,0 +1,54 @@
+.mn-feature-container {
+    min-height: 1vh;
+}
+
+.mn-feature-container .available-features {
+    min-height: 50vh;
+}
+
+.mn-feature-container .selected-features {
+    flex: 0 0 350px;
+    position: sticky;
+    top: 300px;
+}
+
+.mn-feature-container .selected-features-items {
+    max-height: 50vh;
+    overflow: scroll;
+    padding-bottom: 5em;
+}
+
+.mn-feature-selection:hover {
+    background-color: black !important;
+}
+
+.mn-feature-selection:hover > div.card-content > span.card-title {
+    color: white !important;
+}
+
+.mn-feature-container .card .card-content p {
+    word-break: break-word;
+}
+
+.mn-feature-container .card .card-title {
+    font-size: 1.5em;
+}
+.mn-feature-container .selected-item-row {
+    position: relative;
+}
+
+.mn-feature-container .selected-item-row:hover .grey-text {
+    color: black !important;
+}
+
+.mn-feature-container .selected-item-row .remove-button {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.selected-item-row:hover .remove-button {
+    opacity: 1;
+}

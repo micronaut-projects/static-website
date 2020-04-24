@@ -7,27 +7,63 @@ body {
   background-color: #ececec03;
   position: relative;
   padding-bottom: 6rem;
-  min-height: 100%;
+  height: 100%;
 }
 
-label, span {
+label,
+span {
   color: black !important;
 }
 
-[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after {
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
   background-color: #000000;
 }
 
-[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:before, [type="radio"].with-gap:checked + span:after {
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
   border: 2px solid #000000;
 }
 
+.d-flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex {
+  flex: 1;
+}
+
 .modal {
-    width: 35%;
+  width: 35%;
+  min-width: 350px;
+}
+
+.mn-header {
+  display: flex;
+  padding-top: 1em;
+}
+
+.mn-header .mn-logo-wrapper {
+  flex: 1;
+}
+
+.mn-header .header-icon {
+  margin-left: 1em;
+}
+
+.mn-header .icon-wrapper {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .mn-footer {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
@@ -35,7 +71,7 @@ label, span {
 }
 
 .mn-logo {
-  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .mn-footer-logos {
@@ -43,21 +79,35 @@ label, span {
   margin-left: 10px;
 }
 
-.mn-feature-selection:hover {
-  background-color: black !important;
-}
-
-.mn-feature-selection:hover > div.card-content > span.card-title {
-  color: white !important;
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -8rem;
+  background: #fff;
+  z-index: 1001;
 }
 
 .mn-container {
-  margin-top: 5rem;
+  margin-top: 2rem;
+}
+
+.mn-main-container {
+  padding-bottom: 1em;
+  background: linear-gradient(to bottom, white 95%, transparent);
+}
+
+.mn-feature-container {
+  min-height: 1vh;
 }
 
 .mn-input:focus {
   border-bottom: 1px solid #000000 !important;
   box-shadow: 0 1px 0 0 #000000 !important;
+}
+
+.generate-project-row {
+  display: flex;
+  align-items: flex-end;
 }
 
 .progress {
@@ -68,6 +118,13 @@ label, span {
   background-color: #040404bd;
 }
 
-.spinner-blue, .spinner-blue-only {
+.spinner-blue,
+.spinner-blue-only {
   border-color: #000000;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal {
+    width: 60%;
+  }
 }
