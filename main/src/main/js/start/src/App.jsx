@@ -20,6 +20,8 @@ import {
 
 import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
+import { Grid } from "@material-ui/core";
+
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 //import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -227,6 +229,11 @@ class App extends Component {
     });
   };
 
+  capitalize = (s) => {
+    if (typeof s !== "string") return "";
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  };
+
   handleFileSelection = (key, contents) => {
     if (typeof contents === "string") {
       let idx = key.lastIndexOf(".");
@@ -249,25 +256,38 @@ class App extends Component {
     }
   };
 
-  renderTree = (nodes) => {
-    if (nodes instanceof Object) {
-      return Object.keys(nodes).map((key) => {
-        let children = nodes[key];
-        return (
-          <TreeItem
-            key={key}
-            nodeId={key}
-            label={key}
-            onClick={() => this.handleFileSelection(key, children)}
-          >
-            {this.renderTree(children)}
-          </TreeItem>
-        );
-      });
-    }
-  };
-
   render() {
+    const renderTree = (nodes) => {
+      if (nodes instanceof Object) {
+        return Object.keys(nodes)
+          .sort(function order(key1, key2) {
+            let key1Object = typeof nodes[key1] === "object";
+            let key2Object = typeof nodes[key2] === "object";
+            if (key1Object && !key2Object) {
+              return -1;
+            } else if (!key1Object && key2Object) {
+              return 1;
+            } else {
+              if (key1 < key2) return -1;
+              else if (key1 > key2) return +1;
+              else return 0;
+            }
+          })
+          .map((key) => {
+            let children = nodes[key];
+            return (
+              <TreeItem
+                nodeId={key}
+                label={key}
+                onClick={() => this.handleFileSelection(key, children)}
+              >
+                {renderTree(children)}
+              </TreeItem>
+            );
+          });
+      }
+    };
+
     return (
       <Fragment>
         <div className="mn-main-container sticky">
@@ -395,11 +415,19 @@ class App extends Component {
                   </Col>
                   <Col s={3}>
                     <Modal
-                      header="Preview"
-                      className="wide"
+                      header={
+                        "Previewing a " +
+                        this.capitalize(this.state.lang) +
+                        " application using " +
+                        this.capitalize(this.state.build)
+                      }
+                      className="preview"
+                      fixedFooter
                       options={{
                         onOpenStart: this.loadPreview,
                         onCloseStart: this.clearPreview,
+                        startingTop: "5%",
+                        endingTop: "5%",
                       }}
                       trigger={
                         <Button
@@ -420,20 +448,29 @@ class App extends Component {
                         </Button>
                       }
                     >
-                      <Row>
-                        <Col s={3}>
+                      <Grid container className="grid-container">
+                        <Grid
+                          item
+                          xs={3}
+                          className={"grid-column"}
+                          style={{ "border-right": "1px solid" }}
+                        >
                           <TreeView
                             defaultCollapseIcon={<Icon>folder_open</Icon>}
                             defaultExpandIcon={<Icon>folder</Icon>}
-                            defaultEndIcon={<Icon>insert_drive_file</Icon>}
+                            defaultEndIcon={<Icon>description</Icon>}
                             defaultExpanded={["src", "main"]}
                           >
-                            {this.renderTree(this.state.preview)}
+                            {renderTree(this.state.preview)}
                           </TreeView>
-                        </Col>
-                        <Col s={9}>
+                        </Grid>
+                        <Grid item xs={9} className={"grid-column"}>
                           {this.state.currentFile ? (
                             <SyntaxHighlighter
+                              className="codePreview"
+                              lineNumberContainerProps={{
+                                className: "lineNumbers",
+                              }}
                               language={this.state.currentFileLanguage}
                               style={prism}
                               showLineNumbers={true}
@@ -443,8 +480,8 @@ class App extends Component {
                           ) : (
                             ""
                           )}
-                        </Col>
-                      </Row>
+                        </Grid>
+                      </Grid>
                     </Modal>
                   </Col>
                 </Row>
