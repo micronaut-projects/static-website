@@ -239,6 +239,7 @@ class App extends Component {
             }
             node = rootNode;
           }
+
           this.setState({preview: nodes});
         });
 
@@ -248,6 +249,10 @@ class App extends Component {
     this.setState({preview: {}, currentFile: null, currentFileLanguage: null});
   }
 
+  capitalize = (s) => {
+    if (typeof s !== 'string') return '';
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
 
   handleFileSelection = (key, contents) => {
     if (typeof contents === "string") {
@@ -275,7 +280,21 @@ class App extends Component {
   render() {
     const renderTree = (nodes) => {
       if (nodes instanceof Object) {
-        return Object.keys(nodes).map(key => {
+        return Object.keys(nodes)
+          .sort(function order(key1, key2) {
+            let key1Object = (typeof nodes[key1] === "object");
+            let key2Object = (typeof nodes[key2] === "object");
+            if (key1Object && !key2Object) {
+              return -1;
+            } else if (!key1Object && key2Object) {
+              return 1;
+            } else {
+              if (key1 < key2) return -1;
+              else if (key1 > key2) return +1;
+              else return 0;
+            }
+          })
+          .map(key => {
           let children = nodes[key];
           return (
               <TreeItem nodeId={key} label={key} onClick={() => this.handleFileSelection(key, children)}>
@@ -460,17 +479,20 @@ class App extends Component {
                     waves="light"
                     style={{ marginRight: "5px", backgroundColor: "black" }}
                   >
-                    <Icon left>add</Icon>
+                    <Icon left>get_app</Icon>
                     Generate project
                   </Button>
                 </Col>
                 <Col s={3}>
                   <Modal
-                      header="Preview"
-                      className="wide"
+                      header={"Previewing a " + this.capitalize(this.state.lang) + " application using " + this.capitalize(this.state.build)}
+                      className="preview"
+                      fixedFooter
                       options={{
                         onOpenStart: this.loadPreview,
-                        onCloseStart: this.clearPreview
+                        onCloseStart: this.clearPreview,
+                        startingTop: '5%',
+                        endingTop: '5%'
                       }}
                       trigger={
                         <Button
@@ -483,22 +505,21 @@ class App extends Component {
                         </Button>
                       }
                   >
-
-                    <Row>
-                      <Col s={3}>
+                    <Row className="flexRow">
+                      <Col s={3} style={{"border-right": "1px solid black", "padding-top": "10px"}}>
                         <TreeView
                             defaultCollapseIcon={<Icon>folder_open</Icon>}
                             defaultExpandIcon={<Icon>folder</Icon>}
-                            defaultEndIcon={<Icon>insert_drive_file</Icon>}
+                            defaultEndIcon={<Icon>description</Icon>}
                             defaultExpanded={['src', 'main']}
                         >
                           {renderTree(this.state.preview)}
                         </TreeView>
                       </Col>
-                      <Col s={9} >
+                      <Col s={9} style={{"padding-top": "10px"}}>
 
                         {this.state.currentFile ?
-                          <SyntaxHighlighter language={this.state.currentFileLanguage} style={prism} showLineNumbers={true} >
+                            <SyntaxHighlighter className="codePreview" lineNumberContainerProps={{className: "lineNumbers"}} language={this.state.currentFileLanguage} style={prism} showLineNumbers={true} >
                           {this.state.currentFile}
                           </SyntaxHighlighter> : ""
                         }
