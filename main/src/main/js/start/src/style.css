@@ -10,16 +10,11 @@ body {
   min-height: 100%;
 }
 
-.flexRow {
-  display: flex;
-  flex-wrap: wrap;
-  height: 90%;
-}
-
 .codePreview {
-  height: 100%;
+  min-height: 100%;
   margin: 0 !important;
   padding: 0 !important;
+  overflow: unset !important;
 }
 
 .lineNumbers {
@@ -30,10 +25,23 @@ body {
   min-width: 24px;
 }
 
+.grid-container {
+  padding-top: 48px;
+  height: 100%;
+}
+
+.grid-column {
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-top: 1px solid;
+}
+
 .modal-content h4 {
   padding-bottom: 10px;
   margin-bottom: 0;
-  border-bottom: 1px solid;
+  position: fixed;
 }
 
 [type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after {

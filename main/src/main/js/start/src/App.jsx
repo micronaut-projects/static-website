@@ -8,6 +8,8 @@ import Row from "react-materialize/lib/Row";
 import TextInput from "react-materialize/lib/TextInput";
 import TreeView from '@material-ui/lab/TreeView';
 import TreeItem from '@material-ui/lab/TreeItem';
+import { Grid } from "@material-ui/core";
+
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 //import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -505,8 +507,13 @@ class App extends Component {
                         </Button>
                       }
                   >
-                    <Row className="flexRow">
-                      <Col s={3} style={{"border-right": "1px solid black", "padding-top": "10px"}}>
+                    <Grid container className="grid-container">
+                      <Grid
+                          item
+                          xs={3}
+                          className={"grid-column"}
+                          style={{"border-right": "1px solid"}}
+                      >
                         <TreeView
                             defaultCollapseIcon={<Icon>folder_open</Icon>}
                             defaultExpandIcon={<Icon>folder</Icon>}
@@ -515,16 +522,19 @@ class App extends Component {
                         >
                           {renderTree(this.state.preview)}
                         </TreeView>
-                      </Col>
-                      <Col s={9} style={{"padding-top": "10px"}}>
-
+                      </Grid>
+                      <Grid
+                          item
+                          xs={9}
+                          className={"grid-column"}
+                      >
                         {this.state.currentFile ?
                             <SyntaxHighlighter className="codePreview" lineNumberContainerProps={{className: "lineNumbers"}} language={this.state.currentFileLanguage} style={prism} showLineNumbers={true} >
-                          {this.state.currentFile}
-                          </SyntaxHighlighter> : ""
+                              {this.state.currentFile}
+                            </SyntaxHighlighter> : ""
                         }
-                      </Col>
-                    </Row>
+                      </Grid>
+                    </Grid>
                   </Modal>
                 </Col>
               </Row>
