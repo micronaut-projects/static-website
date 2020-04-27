@@ -424,6 +424,7 @@ class App extends Component {
                 </Row>
 
                 <Row>
+                  <Col s={6} />
                   <Col s={3}>
                     <Button
                       disabled={
