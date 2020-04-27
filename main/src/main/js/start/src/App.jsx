@@ -6,6 +6,7 @@ import Modal from "react-materialize/lib/Modal";
 import Row from "react-materialize/lib/Row";
 import TextInput from "react-materialize/lib/TextInput";
 import FeatureSelector from "./components/FeatureSelector";
+import CodePreview from "./components/CodePreview";
 
 import {
   API_URL,
@@ -16,13 +17,7 @@ import {
   DEFAULT_TEST_FW,
 } from "./constants";
 
-import TreeView from "@material-ui/lab/TreeView";
-import TreeItem from "@material-ui/lab/TreeItem";
-import { Grid } from "@material-ui/core";
-
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { makeNodeTree } from "./utility";
 
 import logoLight from "./micronaut.png";
 import logoDark from "./micronaut-white.png";
@@ -102,7 +97,11 @@ class App extends Component {
         });
       })
       .catch((error) => {
-        this.setState({ error: true, loadingFeatures: false, errorMessage: error.message });
+        this.setState({
+          error: true,
+          loadingFeatures: false,
+          errorMessage: error.message,
+        });
       });
   };
 
@@ -125,28 +124,7 @@ class App extends Component {
     e.preventDefault();
     this.setState({ error: false, downloading: true });
 
-    const features = this.buildFeaturesQuery();
-
-    let FETCH_URL =
-      API_URL +
-      "/create/" +
-      this.state.type +
-      "/" +
-      this.state.package +
-      "." +
-      this.state.name +
-      "/?" +
-      features +
-      "&lang=" +
-      this.state.lang +
-      "&build=" +
-      this.state.build +
-      "&test=" +
-      this.state.testFw +
-      "&javaVersion=" +
-      "JDK_" +
-      this.state.javaVersion;
-
+    const FETCH_URL = this.buildFetchUrl("create");
     fetch(FETCH_URL, {
       method: "GET",
     })
@@ -179,105 +157,59 @@ class App extends Component {
       .join("&");
   };
 
-  loadPreview = (e) => {
-    this.setState({error: false});
-    e.preventDefault();
+  buildFetchUrl = (prefix) => {
+    if (!prefix) {
+      console.error(
+        "A prefix is required, should be either 'preview' or 'create'"
+      );
+    }
+    const { type, name, lang, build, testFw, javaVersion } = this.state;
     const features = this.buildFeaturesQuery();
+    const base = `${API_URL}/${prefix}/${type}/${this.state.package}.${name}`;
+    const query = [
+      `lang=${lang}`,
+      `build=${build}`,
+      `test=${testFw}`,
+      `javaVersion=JDK_${javaVersion}`,
+    ];
+    if (features) {
+      query.push(features);
+    }
+    return `${base}?${query.join("&")}`;
+  };
 
-    let FETCH_URL =
-      API_URL +
-      "/preview/" +
-      this.state.type +
-      "/" +
-      this.state.package +
-      "." +
-      this.state.name +
-      "/?" +
-      features +
-      "&lang=" +
-      this.state.lang +
-      "&build=" +
-      this.state.build +
-      "&test=" +
-      this.state.testFw +
-      "&javaVersion=" +
-      "JDK_" +
-      this.state.javaVersion;
+  loadPreview = (e) => {
+    this.setState({ error: false });
+    e.preventDefault();
+    let FETCH_URL = this.buildFetchUrl("preview");
 
     fetch(FETCH_URL, {
       method: "GET",
     })
       .then((response) => {
         if (response.ok) {
-          return response.json()
+          return response.json();
         } else {
           throw response;
         }
       })
       .then((json) => {
-        let nodes = {};
-        let obj = json.contents;
-        let node = nodes;
-        let keys = Object.keys(obj);
-        for (let k = 0; k < keys.length; k++) {
-          let key = keys[k];
-          let folders = key.split("/");
-          let rootNode = node;
-          for (let i = 0; i < folders.length; i++) {
-            if (i === folders.length - 1) {
-              node[folders[i]] = obj[key];
-            } else {
-              node[folders[i]] = node[folders[i]] || {};
-              node = node[folders[i]];
-            }
-          }
-          node = rootNode;
-        }
+        const nodes = makeNodeTree(json.contents);
         this.setState({ preview: nodes, downloading: false });
-        console.log(this.modalButton);
         this.modalButton.props.onClick();
       })
-      .catch(response => {
+      .catch((response) => {
         console.log(response);
-        response.json().then(body => {
-          this.setState({error: true, errorMessage: body.message});
-        })
+        response.json().then((body) => {
+          this.setState({ error: true, errorMessage: body.message });
+        });
       });
   };
 
   clearPreview = () => {
     this.setState({
       preview: {},
-      currentFile: null,
-      currentFileLanguage: null,
     });
-  };
-
-  capitalize = (s) => {
-    if (typeof s !== "string") return "";
-    return s.charAt(0).toUpperCase() + s.slice(1);
-  };
-
-  handleFileSelection = (key, contents) => {
-    if (typeof contents === "string") {
-      let idx = key.lastIndexOf(".");
-      let language;
-      if (idx > -1) {
-        language = key.substring(idx + 1);
-        if (language === "gradle") {
-          language = "groovy";
-        }
-        if (language === "bat") {
-          language = "batch";
-        }
-        if (language === "kt") {
-          language = "kotlin";
-        }
-      } else {
-        language = "bash";
-      }
-      this.setState({ currentFile: contents, currentFileLanguage: language });
-    }
   };
 
   getStyleMode() {
@@ -291,38 +223,8 @@ class App extends Component {
   }
 
   render() {
-    document.body.className = this.getStyleMode();
-
-    const renderTree = (nodes) => {
-      if (nodes instanceof Object) {
-        return Object.keys(nodes)
-          .sort(function order(key1, key2) {
-            let key1Object = typeof nodes[key1] === "object";
-            let key2Object = typeof nodes[key2] === "object";
-            if (key1Object && !key2Object) {
-              return -1;
-            } else if (!key1Object && key2Object) {
-              return 1;
-            } else {
-              if (key1 < key2) return -1;
-              else if (key1 > key2) return +1;
-              else return 0;
-            }
-          })
-          .map((key) => {
-            let children = nodes[key];
-            return (
-              <TreeItem
-                nodeId={key}
-                label={key}
-                onClick={() => this.handleFileSelection(key, children)}
-              >
-                {renderTree(children)}
-              </TreeItem>
-            );
-          });
-      }
-    };
+    const theme = this.getStyleMode();
+    document.body.className = theme;
 
     return (
       <Fragment>
@@ -336,7 +238,7 @@ class App extends Component {
             />
             <div className="mn-container">
               {this.state.error ? (
-                  <h5 style={{ color: "red" }}>{this.state.errorMessage}</h5>
+                <h5 style={{ color: "red" }}>{this.state.errorMessage}</h5>
               ) : null}
               <form onSubmit={this.generateProject} autoComplete="off">
                 <Row>
@@ -445,12 +347,29 @@ class App extends Component {
                 <Row>
                   <Col s={6}>
                     <TextInput
-                        className="mn-input"
-                        s={12}
-                        label="Features"
-                        placeholder="ex: cassandra"
-                        name="search"
-                        onChange={this.handleChange}
+                      className="mn-input"
+                      s={12}
+                      label="Features"
+                      placeholder="ex: cassandra"
+                      name="search"
+                      onChange={this.handleChange}
+                    />
+                  </Col>
+                  <Col s={3}>
+                    <CodePreview
+                      ref={(button) => (this.modalButton = button)}
+                      preview={this.state.preview}
+                      lang={this.state.lang}
+                      build={this.state.build}
+                      theme={theme}
+                      onLoad={this.loadPreview}
+                      onClose={this.clearPreview}
+                      disabled={
+                        this.state.downloading ||
+                        !this.state.name ||
+                        !this.state.package ||
+                        this.state.loadingFeatures
+                      }
                     />
                   </Col>
                   <Col s={3}>
@@ -468,80 +387,6 @@ class App extends Component {
                       <Icon left>get_app</Icon>
                       Generate project
                     </Button>
-                  </Col>
-                  <Col s={3}>
-                    <Button
-                        disabled={
-                          this.state.downloading ||
-                          !this.state.name ||
-                          !this.state.package ||
-                          this.state.loadingFeatures
-                        }
-                        waves="light"
-                        className={this.getStyleMode()}
-                        style={{ marginRight: "5px" }}
-                        onClick={this.loadPreview}
-                    >
-                      <Icon left>search</Icon>
-                      Preview
-                    </Button>
-                    <Modal
-                      header={
-                        "Previewing a " +
-                        this.capitalize(this.state.lang) +
-                        " application using " +
-                        this.capitalize(this.state.build)
-                      }
-                      className={"preview " + this.getStyleMode()}
-                      fixedFooter
-                      options={{
-                        onCloseStart: this.clearPreview,
-                        startingTop: "5%",
-                        endingTop: "5%",
-                      }}
-                      trigger={
-                        <Button style={{ display: 'none' }} ref={button => this.modalButton = button}>MODAL</Button>
-                      }
-                    >
-                      <Grid container className="grid-container">
-                        <Grid
-                          item
-                          xs={3}
-                          className={"grid-column"}
-                          style={{ borderRight: "1px solid" }}
-                        >
-                          <TreeView
-                            defaultCollapseIcon={<Icon>folder_open</Icon>}
-                            defaultExpandIcon={<Icon>folder</Icon>}
-                            defaultEndIcon={<Icon>description</Icon>}
-                            defaultExpanded={["src", "main"]}
-                          >
-                            {renderTree(this.state.preview)}
-                          </TreeView>
-                        </Grid>
-                        <Grid item xs={9} className={"grid-column"}>
-                          {this.state.currentFile ? (
-                            <SyntaxHighlighter
-                              className="codePreview"
-                              lineNumberContainerProps={{
-                                className: "lineNumbers",
-                              }}
-                              language={this.state.currentFileLanguage}
-                              style={
-                                this.getStyleMode() === "light"
-                                  ? prism
-                                  : darcula
-                              }
-                              showLineNumbers={true}
-                            >
-                              {this.state.currentFile}
-                            </SyntaxHighlighter>
-                          ) : (
-                            ""
-                          )}
-                        </Grid>
-                      </Grid>
-                    </Modal>
                   </Col>
                 </Row>
               </form>
@@ -588,6 +433,7 @@ class App extends Component {
               floating
               className={this.getStyleMode()}
               onClick={() => this.toggleStyleMode()}
+              style={{ marginLeft: "5px" }}
             >
               <Icon>brightness_medium</Icon>
             </Button>
