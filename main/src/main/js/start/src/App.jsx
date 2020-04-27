@@ -23,8 +23,15 @@ import TreeItem from "@material-ui/lab/TreeItem";
 import { Grid } from "@material-ui/core";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-//import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+import logoLight from "./micronaut.png";
+import logoDark from "./micronaut-white.png";
+import githubLight from "./github.png";
+import githubDark from "./github-white.png";
+import twitterLight from "./twitter.png";
+import twitterDark from "./twitter-white.png";
 
 import "./style.css";
 
@@ -46,6 +53,7 @@ class App extends Component {
       downloading: false,
       info: false,
       error: false,
+      styleMode: window.localStorage.getItem("styleMode") || "light",
     };
   }
 
@@ -217,7 +225,7 @@ class App extends Component {
           }
           node = rootNode;
         }
-        this.setState({ preview: nodes });
+        this.setState({ preview: nodes, downloading: false });
       });
   };
 
@@ -256,7 +264,19 @@ class App extends Component {
     }
   };
 
+  getStyleMode() {
+    return this.state.styleMode;
+  }
+
+  toggleStyleMode() {
+    let style = this.getStyleMode() === "light" ? "dark" : "light";
+    this.setState({ styleMode: style });
+    window.localStorage.setItem("styleMode", style);
+  }
+
   render() {
+    document.body.className = this.getStyleMode();
+
     const renderTree = (nodes) => {
       if (nodes instanceof Object) {
         return Object.keys(nodes)
@@ -292,13 +312,19 @@ class App extends Component {
       <Fragment>
         <div className="mn-main-container sticky">
           <div className="container">
-            <Header />
+            <img
+              src={this.getStyleMode() === "light" ? logoLight : logoDark}
+              width="50%"
+              alt="Micronaut"
+              className="mn-logo"
+            />
             <div className="mn-container">
               <form onSubmit={this.generateProject} autoComplete="off">
                 <Row>
                   <Col s={4}>
                     <Select
                       s={12}
+                      className="mn-input"
                       label="Application Type"
                       value={this.state.type}
                       name="type"
@@ -407,9 +433,10 @@ class App extends Component {
                         this.state.loadingFeatures
                       }
                       waves="light"
-                      style={{ marginRight: "5px", backgroundColor: "black" }}
+                      className={this.getStyleMode()}
+                      style={{ marginRight: "5px" }}
                     >
-                      <Icon left>add</Icon>
+                      <Icon left>get_app</Icon>
                       Generate project
                     </Button>
                   </Col>
@@ -421,7 +448,7 @@ class App extends Component {
                         " application using " +
                         this.capitalize(this.state.build)
                       }
-                      className="preview"
+                      className={"preview " + this.getStyleMode()}
                       fixedFooter
                       options={{
                         onOpenStart: this.loadPreview,
@@ -438,10 +465,8 @@ class App extends Component {
                             this.state.loadingFeatures
                           }
                           waves="light"
-                          style={{
-                            marginRight: "5px",
-                            backgroundColor: "black",
-                          }}
+                          className={this.getStyleMode()}
+                          style={{ marginRight: "5px" }}
                         >
                           <Icon left>search</Icon>
                           Preview
@@ -472,7 +497,11 @@ class App extends Component {
                                 className: "lineNumbers",
                               }}
                               language={this.state.currentFileLanguage}
-                              style={prism}
+                              style={
+                                this.getStyleMode() === "light"
+                                  ? prism
+                                  : darcula
+                              }
                               showLineNumbers={true}
                             >
                               {this.state.currentFile}
@@ -503,9 +532,69 @@ class App extends Component {
               onRemoveFeature={this.removeFeature}
             />
           </Row>
+          <div className="mn-footer">
+            <Modal
+              open={this.state.info}
+              header="What's this?"
+              className={this.getStyleMode()}
+              trigger={
+                <Button
+                  floating
+                  className={this.getStyleMode()}
+                  onClick={() => this.setState({ info: true })}
+                >
+                  <Icon>info</Icon>
+                </Button>
+              }
+            >
+              <p>
+                Micronaut Starter is a web application that allows you to create
+                Micronaut projects through an interface instead of using the
+                console CLI. You can set the application type, the project name,
+                the language (Java, Kotlin, Groovy), the build tool (Maven,
+                Gradle), the Java version and the features you need to develop
+                your software.
+              </p>
+            </Modal>
+            <Button
+              floating
+              className={this.getStyleMode()}
+              onClick={() => this.toggleStyleMode()}
+            >
+              <Icon>brightness_medium</Icon>
+            </Button>
+            <a
+              href="https://twitter.com/micronautfw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mn-footer-logos"
+            >
+              <img
+                src={
+                  this.getStyleMode() === "light" ? twitterLight : twitterDark
+                }
+                alt="Twitter"
+                rel="noopener noreferrer"
+                height="30px"
+                weight="30px"
+              />
+            </a>
+            <a
+              href="https://github.com/micronaut-projects"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mn-footer-logos"
+            >
+              <img
+                src={this.getStyleMode() === "light" ? githubLight : githubDark}
+                alt="GitHub"
+                rel="noopener noreferrer"
+                height="30px"
+                weight="30px"
+              />
+            </a>
+          </div>
         </div>
-
-        <Footer />
       </Fragment>
     );
   }

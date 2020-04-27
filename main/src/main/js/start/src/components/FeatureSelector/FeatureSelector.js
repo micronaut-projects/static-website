@@ -53,7 +53,7 @@ const FeatureSelector = ({
                     {searchResults.map((feature, i) => (
                         <Col s={12} key={i}>
                             <Card
-                                className="white mn-feature-selection"
+                                className="mn-feature-selection"
                                 title={feature.name}
                                 onClick={() => onAddFeature(feature)}
                             >
@@ -82,7 +82,7 @@ const FeatureSelector = ({
                 </Row>
                 <Row className="selected-features-items">
                     {selectedFeatureValues.map((feature, i) => (
-                        <div className="white selected-item-row" key={i}>
+                        <div className="selected-item-row" key={i}>
                             <h6 className="grey-text">{feature.name}</h6>
                             <small className="grey-text">
                                 {feature.description}
