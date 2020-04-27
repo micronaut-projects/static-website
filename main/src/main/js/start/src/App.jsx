@@ -2,11 +2,11 @@ import React, { Component, Fragment } from "react";
 import { Button, ProgressBar, Select } from "react-materialize";
 import Col from "react-materialize/lib/Col";
 import Icon from "react-materialize/lib/Icon";
-import Modal from "react-materialize/lib/Modal";
 import Row from "react-materialize/lib/Row";
 import TextInput from "react-materialize/lib/TextInput";
 import FeatureSelector from "./components/FeatureSelector";
 import CodePreview from "./components/CodePreview";
+import Footer from "./components/Footer";
 
 import {
   API_URL,
@@ -21,10 +21,6 @@ import { makeNodeTree } from "./utility";
 
 import logoLight from "./micronaut.png";
 import logoDark from "./micronaut-white.png";
-import githubLight from "./github.png";
-import githubDark from "./github-white.png";
-import twitterLight from "./twitter.png";
-import twitterDark from "./twitter-white.png";
 
 import "./style.css";
 
@@ -44,7 +40,6 @@ class App extends Component {
       featuresToSelect: [],
       featuresSelected: {},
       downloading: false,
-      info: false,
       error: false,
       errorMessage: "",
       styleMode: window.localStorage.getItem("styleMode") || "light",
@@ -405,69 +400,7 @@ class App extends Component {
               onRemoveFeature={this.removeFeature}
             />
           </Row>
-          <div className="mn-footer">
-            <Modal
-              open={this.state.info}
-              header="What's this?"
-              className={this.getStyleMode()}
-              trigger={
-                <Button
-                  floating
-                  className={this.getStyleMode()}
-                  onClick={() => this.setState({ info: true })}
-                >
-                  <Icon>info</Icon>
-                </Button>
-              }
-            >
-              <p>
-                Micronaut Starter is a web application that allows you to create
-                Micronaut projects through an interface instead of using the
-                console CLI. You can set the application type, the project name,
-                the language (Java, Kotlin, Groovy), the build tool (Maven,
-                Gradle), the Java version and the features you need to develop
-                your software.
-              </p>
-            </Modal>
-            <Button
-              floating
-              className={this.getStyleMode()}
-              onClick={() => this.toggleStyleMode()}
-              style={{ marginLeft: "5px" }}
-            >
-              <Icon>brightness_medium</Icon>
-            </Button>
-            <a
-              href="https://twitter.com/micronautfw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mn-footer-logos"
-            >
-              <img
-                src={
-                  this.getStyleMode() === "light" ? twitterLight : twitterDark
-                }
-                alt="Twitter"
-                rel="noopener noreferrer"
-                height="30px"
-                weight="30px"
-              />
-            </a>
-            <a
-              href="https://github.com/micronaut-projects"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mn-footer-logos"
-            >
-              <img
-                src={this.getStyleMode() === "light" ? githubLight : githubDark}
-                alt="GitHub"
-                rel="noopener noreferrer"
-                height="30px"
-                weight="30px"
-              />
-            </a>
-          </div>
+          <Footer theme={theme} onToggleTheme={() => this.toggleStyleMode()} />
         </div>
       </Fragment>
     );

@@ -1,7 +1,12 @@
 // TwitterLink.js
 import React from "react";
 
-export const TwitterLink = ({ className }) => {
+import twitterLight from "../twitter.png";
+import twitterDark from "../twitter-white.png";
+
+export const TwitterLink = ({ className, theme }) => {
+    const src = theme === "dark" ? twitterDark : twitterLight;
+
     return (
         <a
             href="https://twitter.com/micronautfw"
@@ -10,7 +15,7 @@ export const TwitterLink = ({ className }) => {
             className={className}
         >
             <img
-                src="https://image.flaticon.com/icons/png/512/23/23931.png"
+                src={src}
                 alt="Twitter"
                 rel="noopener noreferrer"
                 height="30px"
