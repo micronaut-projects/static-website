@@ -7,8 +7,8 @@ body {
   position: relative;
   padding-bottom: 6rem;
   height: 100%;
-  --theme-dark: #f3f3f3;
-  --theme-light: #2d2d2d;
+  --theme-dark: #2d2d2d;
+  --theme-light: #f3f3f3;
 }
 
 .codePreview {
@@ -129,11 +129,19 @@ body {
 
 .mn-main-container {
   padding-bottom: 1em;
-  background: linear-gradient(to bottom, var(--theme-dark) 95%, transparent);
+  background: linear-gradient(
+    to bottom,
+    var(--theme-light) 95%,
+    rgba(242, 242, 242, 0)
+  );
 }
 
 .dark .mn-main-container {
-  background: linear-gradient(to bottom, var(--theme-light) 95%, transparent);
+  background: linear-gradient(
+    to bottom,
+    var(--theme-dark) 95%,
+    rgba(45, 45, 45, 0)
+  );
 }
 
 .mn-feature-container {
@@ -145,22 +153,22 @@ body {
 }
 
 body.light {
-  background-color: var(--theme-dark);
-  color: var(--theme-light);
-}
-.bg-light {
-  background-color: var(--theme-dark) !important;
-  color: var(--theme-light) !important;
-}
-
-body.dark {
   background-color: var(--theme-light);
   color: var(--theme-dark);
 }
-
-.bg-dark {
+.bg-light {
   background-color: var(--theme-light) !important;
   color: var(--theme-dark) !important;
+}
+
+body.dark {
+  background-color: var(--theme-dark);
+  color: var(--theme-light);
+}
+
+.bg-dark {
+  background-color: var(--theme-dark) !important;
+  color: var(--theme-light) !important;
 }
 
 body.dark .btn-flat,
@@ -174,12 +182,12 @@ body.light .mn-footer-logos {
 }
 
 button.light {
-  background-color: var(--theme-light);
+  background-color: var(--theme-dark);
   color: #fff;
 }
 
 button.dark {
-  background-color: var(--theme-dark);
+  background-color: var(--theme-light);
   color: #000;
 }
 
@@ -199,12 +207,12 @@ button.dark:focus {
 
 .modal.dark,
 .modal.dark .modal-footer {
-  background-color: var(--theme-light);
+  background-color: var(--theme-dark);
 }
 
 .modal.light,
 .modal.light .modal-footer {
-  background-color: var(--theme-dark);
+  background-color: var(--theme-light);
 }
 
 .grey-text {
@@ -279,7 +287,7 @@ body.dark .dropdown-content li > span {
 
 body.dark .dropdown-content li > a:hover,
 body.dark .dropdown-content li > span:hover {
-  background-color: var(--theme-light);
+  background-color: var(--theme-dark);
 }
 
 .generate-project-row {

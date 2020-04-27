@@ -23,7 +23,7 @@ body.dark .mn-feature-selection {
     background-color: #3a3a3a;
 }
 body.dark .mn-feature-selection:hover {
-    background-color: var(--theme-light) !important;
+    background-color: var(--theme-dark) !important;
 }
 
 .mn-feature-container .selected-features-mobile {
