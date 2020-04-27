@@ -11,10 +11,15 @@ import TreeItem from '@material-ui/lab/TreeItem';
 import { Grid } from "@material-ui/core";
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-//import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { API_URL, JAVA_VERSIONS, DEFAULT_JAVA_VERSION, DEFAULT_LANG, DEFAULT_BUILD, DEFAULT_TEST_FW } from './constants';
-import logo from "./micronaut.png";
+import logoLight from "./micronaut.png";
+import logoDark from "./micronaut-white.png";
+import githubLight from "./github.png";
+import githubDark from "./github-white.png";
+import twitterLight from "./twitter.png";
+import twitterDark from "./twitter-white.png";
 import "./style.css";
 
 class App extends Component {
@@ -38,7 +43,8 @@ class App extends Component {
       featuresSelected: Object.entries({}),
       downloading: false,
       info: false,
-      error: false
+      error: false,
+      styleMode: window.localStorage.getItem("styleMode") || "light"
     };
   }
 
@@ -199,6 +205,8 @@ class App extends Component {
   };
 
   loadPreview = () => {
+    this.setState({ downloading: true });
+
     let features = ""
 
     this.state.featuresSelected.forEach((feature) => {
@@ -242,7 +250,7 @@ class App extends Component {
             node = rootNode;
           }
 
-          this.setState({preview: nodes});
+          this.setState({preview: nodes, downloading: false});
         });
 
   };
@@ -278,8 +286,19 @@ class App extends Component {
     }
   }
 
+  getStyleMode() {
+    return this.state.styleMode;
+  }
+
+  toggleStyleMode() {
+    let style = this.getStyleMode() === "light" ? "dark" : "light";
+    this.setState({styleMode: style})
+    window.localStorage.setItem("styleMode", style);
+  }
 
   render() {
+    document.body.className = this.getStyleMode();
+
     const renderTree = (nodes) => {
       if (nodes instanceof Object) {
         return Object.keys(nodes)
@@ -310,13 +329,14 @@ class App extends Component {
     return (
       <Fragment>
         <div className="container">
-          <img src={logo} width="50%" alt="Micronaut" className="mn-logo" />
+          <img src={this.getStyleMode() === "light" ? logoLight : logoDark} width="50%" alt="Micronaut" className="mn-logo" />
           <div className="mn-container">
             <form onSubmit={this.generateProject} autoComplete="off">
               <Row>
                 <Col s={4}>
                     <Select
                       s={12}
+                      className="mn-input"
                       label="Application Type"
                       value={this.state.type}
                       name="type"
@@ -437,7 +457,7 @@ class App extends Component {
                   {this.state.featureSearchResults.map((feature, i) => (
                     <Col s={12} key={i}>
                       <Card
-                        className="white mn-feature-selection"
+                        className="mn-feature-selection"
                         title={feature[0]}
                         onClick={() => this.addFeature(feature)}
                       >
@@ -453,7 +473,7 @@ class App extends Component {
                   ) : null}
                   <Row>
                     {this.state.featuresSelected.map((feature, i) => (
-                      <Card className="white" title={feature[0]} key={i}>
+                      <Card className="mn-feature-selection" title={feature[0]} key={i}>
                         <Row>
                           <Col s={11}>
                             <p className="grey-text">{feature[1]}</p>
@@ -479,7 +499,8 @@ class App extends Component {
                   <Button
                     disabled={this.state.downloading || !this.state.name || !this.state.package || this.state.loadingFeatures}
                     waves="light"
-                    style={{ marginRight: "5px", backgroundColor: "black" }}
+                    className={this.getStyleMode()}
+                    style={{ marginRight: "5px" }}
                   >
                     <Icon left>get_app</Icon>
                     Generate project
@@ -488,7 +509,7 @@ class App extends Component {
                 <Col s={3}>
                   <Modal
                       header={"Previewing a " + this.capitalize(this.state.lang) + " application using " + this.capitalize(this.state.build)}
-                      className="preview"
+                      className={"preview " + this.getStyleMode()}
                       fixedFooter
                       options={{
                         onOpenStart: this.loadPreview,
@@ -500,7 +521,8 @@ class App extends Component {
                         <Button
                             disabled={this.state.downloading || !this.state.name || !this.state.package || this.state.loadingFeatures}
                             waves="light"
-                            style={{ marginRight: "5px", backgroundColor: "black" }}
+                            className={this.getStyleMode()}
+                            style={{ marginRight: "5px" }}
                         >
                           <Icon left>search</Icon>
                           Preview
@@ -529,7 +551,7 @@ class App extends Component {
                           className={"grid-column"}
                       >
                         {this.state.currentFile ?
-                            <SyntaxHighlighter className="codePreview" lineNumberContainerProps={{className: "lineNumbers"}} language={this.state.currentFileLanguage} style={prism} showLineNumbers={true} >
+                            <SyntaxHighlighter className="codePreview" lineNumberContainerProps={{className: "lineNumbers"}} language={this.state.currentFileLanguage} style={this.getStyleMode() === "light" ? prism : darcula} showLineNumbers={true} >
                               {this.state.currentFile}
                             </SyntaxHighlighter> : ""
                         }
@@ -550,7 +572,7 @@ class App extends Component {
             trigger={
               <Button
                 floating
-                className="black"
+                className={this.getStyleMode()}
                 onClick={() => this.setState({ info: true })}
               >
                 <Icon>info</Icon>
@@ -563,6 +585,12 @@ class App extends Component {
               and the features you need to develop your software.
             </p>
           </Modal>
+          <Button
+              floating
+              className={this.getStyleMode()}
+              onClick={() => this.toggleStyleMode()}>
+            <Icon>brightness_medium</Icon>
+          </Button>
           <a
             href="https://twitter.com/micronautfw"
             target="_blank"
@@ -570,7 +598,7 @@ class App extends Component {
             className="mn-footer-logos"
           >
             <img
-              src="https://image.flaticon.com/icons/png/512/23/23931.png"
+                src={this.getStyleMode() === "light" ? twitterLight : twitterDark}
               alt="Twitter"
               rel="noopener noreferrer"
               height="30px"
@@ -584,7 +612,7 @@ class App extends Component {
             className="mn-footer-logos"
           >
             <img
-              src="https://image.flaticon.com/icons/svg/25/25231.svg"
+              src={this.getStyleMode() === "light" ? githubLight : githubDark}
               alt="GitHub"
               rel="noopener noreferrer"
               height="30px"
