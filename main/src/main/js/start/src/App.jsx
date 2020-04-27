@@ -569,6 +569,7 @@ class App extends Component {
           <Modal
             open={this.state.info}
             header="What's this?"
+            className={this.getStyleMode()}
             trigger={
               <Button
                 floating
