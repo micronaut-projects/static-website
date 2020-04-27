@@ -25,6 +25,16 @@ const CodePreview = (
     language: null,
   });
 
+  const onModalClose = () => {
+    setCurrentFile({
+      contents: null,
+      language: null,
+    });
+    if (onClose instanceof Function) {
+      onClose();
+    }
+  };
+
   const handleFileSelection = (key, contents) => {
     if (typeof contents === "string") {
       let idx = key.lastIndexOf(".");
@@ -101,10 +111,15 @@ const CodePreview = (
         className={"preview " + theme}
         fixedFooter
         options={{
-          onCloseStart: onClose,
+          onCloseStart: onModalClose,
           startingTop: "5%",
           endingTop: "5%",
         }}
+        actions={
+          <Button waves="light" modal="close" flat>
+            Close
+          </Button>
+        }
         trigger={
           <Button
             ref={ref}

@@ -59,6 +59,12 @@ body.light .mn-feature-selection.selected {
 .mn-feature-container .card .card-title {
     font-size: 1.2em;
 }
+
+body.dark .mn-feature-container .selected-item-row .title,
+body.dark .mn-feature-container .card .card-title {
+    color: white !important;
+}
+
 .mn-feature-container .selected-item-row {
     position: relative;
 }

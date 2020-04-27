@@ -11,6 +11,11 @@ const InfoButton = ({ className = "", theme }) => {
       open={modal === "info"}
       header="What's this?"
       className={theme}
+      actions={
+        <Button waves="light" modal="close" flat>
+          Close
+        </Button>
+      }
       trigger={
         <Button floating className={theme} onClick={() => setModal("info")}>
           <Icon>info</Icon>
@@ -29,4 +34,3 @@ const InfoButton = ({ className = "", theme }) => {
 };
 
 export default InfoButton;
-

@@ -90,7 +90,7 @@ const FeatureSelector = ({
                 <Row className="selected-features-items">
                     {selectedFeatureValues.map((feature, i) => (
                         <div className="selected-item-row" key={i}>
-                            <h6 className="grey-text">{feature.name}</h6>
+                            <h6 className="grey-text title">{feature.name}</h6>
                             <small className="grey-text">
                                 {feature.description}
                             </small>
