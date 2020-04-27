@@ -6,8 +6,6 @@ import Modal from "react-materialize/lib/Modal";
 import Row from "react-materialize/lib/Row";
 import TextInput from "react-materialize/lib/TextInput";
 import FeatureSelector from "./components/FeatureSelector";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 
 import {
   API_URL,
