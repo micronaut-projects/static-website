@@ -7,6 +7,7 @@ import TextInput from "react-materialize/lib/TextInput";
 import FeatureSelector from "./components/FeatureSelector";
 import CodePreview from "./components/CodePreview";
 import Footer from "./components/Footer";
+import StarterForm from "./components/StarterForm";
 
 import {
   API_URL,
@@ -236,108 +237,11 @@ class App extends Component {
                 <h5 style={{ color: "red" }}>{this.state.errorMessage}</h5>
               ) : null}
               <form onSubmit={this.generateProject} autoComplete="off">
-                <Row>
-                  <Col s={4}>
-                    <Select
-                      s={12}
-                      className="mn-input"
-                      label="Application Type"
-                      value={this.state.type}
-                      name="type"
-                      onChange={this.handleChange}
-                    >
-                      {this.state.types.map((type, i) => {
-                        return (
-                          <option key={i} value={type.name}>
-                            {type.title}
-                          </option>
-                        );
-                      })}
-                    </Select>
-                  </Col>
-
-                  <Col s={4}>
-                    <TextInput
-                      required
-                      s={12}
-                      className="mn-input"
-                      label="Name"
-                      name="name"
-                      placeholder="ex: myapp"
-                      value={this.state.name}
-                      onChange={this.handleChange}
-                    />
-                  </Col>
-                  <Col s={4}>
-                    <TextInput
-                      required
-                      s={12}
-                      className="mn-input"
-                      label="Base Package"
-                      name="package"
-                      placeholder="ex: com.mycompany"
-                      value={this.state.package}
-                      onChange={this.handleChange}
-                    />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col s={3}>
-                    <Select
-                      s={12}
-                      label="Language"
-                      value={this.state.lang}
-                      name="lang"
-                      onChange={this.handleChange}
-                    >
-                      <option value="java">Java</option>
-                      <option value="kotlin">Kotlin</option>
-                      <option value="groovy">Groovy</option>
-                    </Select>
-                  </Col>
-                  <Col s={3}>
-                    <Select
-                      s={12}
-                      label="Build"
-                      value={this.state.build}
-                      name="build"
-                      onChange={this.handleChange}
-                    >
-                      <option value="gradle">Gradle</option>
-                      <option value="maven">Maven</option>
-                    </Select>
-                  </Col>
-                  <Col s={3}>
-                    <Select
-                      s={12}
-                      label="Test Framework"
-                      value={this.state.testFw}
-                      name="testFw"
-                      onChange={this.handleChange}
-                    >
-                      <option value="junit">JUnit</option>
-                      <option value="spock">Spock</option>
-                      <option value="kotlintest">Kotlintest</option>
-                    </Select>
-                  </Col>
-                  <Col s={3}>
-                    <Select
-                      s={12}
-                      label="Java Version"
-                      value={this.state.javaVersion.toString()}
-                      name="javaVersion"
-                      onChange={this.handleChange}
-                    >
-                      {JAVA_VERSIONS.map((version, i) => {
-                        return (
-                          <option key={i} value={version.toString()}>
-                            {version}
-                          </option>
-                        );
-                      })}
-                    </Select>
-                  </Col>
-                </Row>
+                <StarterForm
+                  theme={theme}
+                  handleChange={this.handleChange}
+                  {...this.state}
+                />
 
                 <Row>
                   <Col s={6}>
@@ -353,10 +257,10 @@ class App extends Component {
                   <Col s={3}>
                     <CodePreview
                       ref={(button) => (this.modalButton = button)}
+                      theme={theme}
                       preview={this.state.preview}
                       lang={this.state.lang}
                       build={this.state.build}
-                      theme={theme}
                       onLoad={this.loadPreview}
                       onClose={this.clearPreview}
                       disabled={
