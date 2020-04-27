@@ -1,5 +1,5 @@
 // FeatureSelector.js
-import React, { useState, useMemo } from "react";
+import React, { useMemo } from "react";
 
 import { Button, Card } from "react-materialize";
 import Col from "react-materialize/lib/Col";
@@ -7,17 +7,17 @@ import Icon from "react-materialize/lib/Icon";
 
 import Preloader from "react-materialize/lib/Preloader";
 import Row from "react-materialize/lib/Row";
-import TextInput from "../TextInput";
 import "./feature-selector.css";
 
 const FeatureSelector = ({
     features,
     selectedFeatures,
     loading,
+    search,
     onAddFeature,
     onRemoveFeature,
 }) => {
-    const [search, setSearch] = useState("");
+
     const selectedFeatureValues = Object.values(selectedFeatures).reverse();
 
     const availableFeatures = useMemo(() => {
@@ -67,14 +67,6 @@ const FeatureSelector = ({
             )}
             <Col className="selected-features" s={6}>
                 <Row className="sticky">
-                    <TextInput
-                        className="mn-input"
-                        s={12}
-                        label="Features"
-                        placeholder="ex: cassandra"
-                        value={search}
-                        onChangeText={setSearch}
-                    />
                     <b>Selected features ({selectedFeatureValues.length})</b>
                     {selectedFeatureValues.length === 0 && (
                         <p className="grey-text">No features selected.</p>

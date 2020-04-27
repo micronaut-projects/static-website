@@ -51,8 +51,11 @@ class App extends Component {
       downloading: false,
       info: false,
       error: false,
+      errorMessage: "",
       styleMode: window.localStorage.getItem("styleMode") || "light",
+      search: "",
     };
+    this.modalButton = null;
   }
 
   componentDidMount() {
@@ -66,7 +69,7 @@ class App extends Component {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error("Error when checking micronaut versions on GitHub");
+          throw new Error("Failed to load the application types");
         }
       })
       .then((data) => {
@@ -78,19 +81,18 @@ class App extends Component {
         this.setState({ types });
       })
       .catch((error) => {
-        this.setState({ error: true });
+        this.setState({ error: true, errorMessage: error.message });
       });
   };
 
   loadFeatures = (appType) => {
-    console.log("Loading features of ", appType);
     this.setState({ loadingFeatures: true });
     fetch(API_URL + "/application-types/" + appType + "/features")
       .then((response) => {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error("Error when checking micronaut versions on GitHub");
+          throw new Error("Failed to load the available features");
         }
       })
       .then((data) => {
@@ -100,7 +102,7 @@ class App extends Component {
         });
       })
       .catch((error) => {
-        this.setState({ error: true, loadingFeatures: false });
+        this.setState({ error: true, loadingFeatures: false, errorMessage: error.message });
       });
   };
 
@@ -121,7 +123,7 @@ class App extends Component {
 
   generateProject = (e) => {
     e.preventDefault();
-    this.setState({ downloading: true });
+    this.setState({ error: false, downloading: true });
 
     const features = this.buildFeaturesQuery();
 
@@ -177,7 +179,9 @@ class App extends Component {
       .join("&");
   };
 
-  loadPreview = () => {
+  loadPreview = (e) => {
+    this.setState({error: false});
+    e.preventDefault();
     const features = this.buildFeaturesQuery();
 
     let FETCH_URL =
@@ -203,7 +207,13 @@ class App extends Component {
     fetch(FETCH_URL, {
       method: "GET",
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw response;
+        }
+      })
       .then((json) => {
         let nodes = {};
         let obj = json.contents;
@@ -224,6 +234,14 @@ class App extends Component {
           node = rootNode;
         }
         this.setState({ preview: nodes, downloading: false });
+        console.log(this.modalButton);
+        this.modalButton.props.onClick();
+      })
+      .catch(response => {
+        console.log(response);
+        response.json().then(body => {
+          this.setState({error: true, errorMessage: body.message});
+        })
       });
   };
 
@@ -317,6 +335,9 @@ class App extends Component {
               className="mn-logo"
             />
             <div className="mn-container">
+              {this.state.error ? (
+                  <h5 style={{ color: "red" }}>{this.state.errorMessage}</h5>
+              ) : null}
               <form onSubmit={this.generateProject} autoComplete="off">
                 <Row>
                   <Col s={4}>
@@ -422,7 +443,16 @@ class App extends Component {
                 </Row>
 
                 <Row>
-                  <Col s={6} />
+                  <Col s={6}>
+                    <TextInput
+                        className="mn-input"
+                        s={12}
+                        label="Features"
+                        placeholder="ex: cassandra"
+                        name="search"
+                        onChange={this.handleChange}
+                    />
+                  </Col>
                   <Col s={3}>
                     <Button
                       disabled={
@@ -440,6 +470,21 @@ class App extends Component {
                     </Button>
                   </Col>
                   <Col s={3}>
+                    <Button
+                        disabled={
+                          this.state.downloading ||
+                          !this.state.name ||
+                          !this.state.package ||
+                          this.state.loadingFeatures
+                        }
+                        waves="light"
+                        className={this.getStyleMode()}
+                        style={{ marginRight: "5px" }}
+                        onClick={this.loadPreview}
+                    >
+                      <Icon left>search</Icon>
+                      Preview
+                    </Button>
                     <Modal
                       header={
                         "Previewing a " +
@@ -450,26 +495,12 @@ class App extends Component {
                       className={"preview " + this.getStyleMode()}
                       fixedFooter
                       options={{
-                        onOpenStart: this.loadPreview,
                         onCloseStart: this.clearPreview,
                         startingTop: "5%",
                         endingTop: "5%",
                       }}
                       trigger={
-                        <Button
-                          disabled={
-                            this.state.downloading ||
-                            !this.state.name ||
-                            !this.state.package ||
-                            this.state.loadingFeatures
-                          }
-                          waves="light"
-                          className={this.getStyleMode()}
-                          style={{ marginRight: "5px" }}
-                        >
-                          <Icon left>search</Icon>
-                          Preview
-                        </Button>
+                        <Button style={{ display: 'none' }} ref={button => this.modalButton = button}>MODAL</Button>
                       }
                     >
                       <Grid container className="grid-container">
@@ -477,7 +508,7 @@ class App extends Component {
                           item
                           xs={3}
                           className={"grid-column"}
-                          style={{ "border-right": "1px solid" }}
+                          style={{ borderRight: "1px solid" }}
                         >
                           <TreeView
                             defaultCollapseIcon={<Icon>folder_open</Icon>}
@@ -515,9 +546,6 @@ class App extends Component {
                 </Row>
               </form>
               {this.state.downloading ? <ProgressBar /> : null}
-              {this.state.error ? (
-                <h5 style={{ color: "red" }}>Oops. An error has ocurred.</h5>
-              ) : null}
             </div>
           </div>
         </div>
@@ -527,6 +555,7 @@ class App extends Component {
               features={this.state.featuresToSelect}
               selectedFeatures={this.state.featuresSelected}
               loading={this.state.loadingFeatures}
+              search={this.state.search}
               onAddFeature={this.addFeature}
               onRemoveFeature={this.removeFeature}
             />

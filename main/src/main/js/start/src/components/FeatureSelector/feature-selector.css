@@ -9,12 +9,13 @@
 .mn-feature-container .selected-features {
     flex: 0 0 350px;
     position: sticky;
-    top: 320px;
+    top: 416px;
 }
 
 .mn-feature-container .selected-features-items {
     max-height: 50vh;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
     padding-bottom: 5em;
 }
 
