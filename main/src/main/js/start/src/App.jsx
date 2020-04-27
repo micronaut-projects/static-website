@@ -150,7 +150,13 @@ class App extends Component {
     fetch(FETCH_URL, {
       method: "GET",
     })
-      .then((response) => response.blob())
+      .then((response) => {
+        if (response.ok) {
+          return response.blob()
+        } else {
+          throw response;
+        }
+      })
       .then((blob) => {
         var url = window.URL.createObjectURL(blob);
         var a = document.createElement("a");
@@ -160,6 +166,12 @@ class App extends Component {
         a.click();
         a.remove(); //afterwards we remove the element again
         this.setState({ downloading: false });
+      })
+      .catch(response => {
+        console.log(response);
+        response.json().then(body => {
+          this.setState({error: true, errorMessage: body.message, downloading: false});
+        })
       });
   };
 
@@ -336,7 +348,7 @@ class App extends Component {
             />
             <div className="mn-container">
               {this.state.error ? (
-                  <h5 style={{ color: "red" }}>{this.state.errorMessage}</h5>
+                  <h5 style={{ color: "red", paddingLeft: "20px" }}>Something went wrong: {this.state.errorMessage}</h5>
               ) : null}
               <form onSubmit={this.generateProject} autoComplete="off">
                 <Row>
