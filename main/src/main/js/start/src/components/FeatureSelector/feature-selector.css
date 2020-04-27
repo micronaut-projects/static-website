@@ -9,7 +9,7 @@
 .mn-feature-container .selected-features {
     flex: 0 0 350px;
     position: sticky;
-    top: 416px;
+    top: 375px;
 }
 
 .mn-feature-container .selected-features-items {
@@ -17,6 +17,30 @@
     overflow-x: hidden;
     overflow-y: auto;
     padding-bottom: 5em;
+}
+
+body.dark .mn-feature-selection {
+    background-color: #3a3a3a;
+}
+body.dark .mn-feature-selection:hover {
+    background-color: #2d2d2d !important;
+}
+
+.mn-feature-container .selected-features-mobile {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    width: 100%;
+    padding: 10px;
+    padding-left: 2em;
+    padding-right: 1em;
+}
+
+body.dark .mn-feature-selection.selected {
+    background: black !important;
+}
+body.light .mn-feature-selection.selected {
+    background: lightgrey !important;
 }
 
 .mn-feature-container .card {

@@ -86,6 +86,10 @@ body {
   justify-content: flex-end;
 }
 
+.mn-footer {
+  z-index: 1001;
+}
+
 .modal.preview {
   width: 75%;
   max-height: 90%;
@@ -101,7 +105,8 @@ body {
 }
 
 .mn-logo {
-  margin-bottom: 40px;
+  padding-top: 5px;
+  padding-bottom: 35px;
 }
 
 .mn-footer-logos {
@@ -112,7 +117,7 @@ body {
 .sticky {
   position: -webkit-sticky;
   position: sticky;
-  top: -8rem;
+  top: -7rem;
   z-index: 1001;
 }
 
@@ -133,14 +138,27 @@ body {
   min-height: 1vh;
 }
 
+.mn-starter-form-main .input-field .helper-text {
+  min-height: 1px;
+}
+
 body.light {
   background-color: #f3f3f3;
   color: #2d2d2d;
+}
+.bg-light {
+  background-color: #f3f3f3 !important;
+  color: #2d2d2d !important;
 }
 
 body.dark {
   background-color: #2d2d2d;
   color: #f3f3f3;
+}
+
+.bg-dark {
+  background-color: #2d2d2d !important;
+  color: #f3f3f3 !important;
 }
 
 body.dark .btn-flat,
@@ -185,26 +203,6 @@ button.dark:focus {
 .modal.light,
 .modal.light .modal-footer {
   background-color: #f3f3f3;
-}
-
-body.dark .mn-feature-selection {
-  background-color: #3a3a3a;
-}
-
-body.light .mn-feature-selection:hover {
-  background-color: black !important;
-}
-
-body.dark .mn-feature-selection:hover {
-  background-color: #2d2d2d !important;
-}
-
-.mn-feature-selection:hover > div.card-content > span.card-title {
-  color: white;
-}
-
-.dark .mn-feature-selection:hover > div.card-content > span.card-title {
-  color: white;
 }
 
 .grey-text {
@@ -308,5 +306,14 @@ body.dark .dropdown-content li > span:hover {
 @media only screen and (max-width: 768px) {
   .modal {
     width: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mn-feature-container .selected-features,
+  .sticky {
+    position: relative !important;
+    top: 0;
+    overflow-y: scroll;
   }
 }

@@ -16,14 +16,17 @@ const FeatureSelector = ({
     search,
     onAddFeature,
     onRemoveFeature,
+    theme = "light",
 }) => {
-
     const selectedFeatureValues = Object.values(selectedFeatures).reverse();
 
     const availableFeatures = useMemo(() => {
         const selectedFeatureKeys = Object.keys(selectedFeatures);
-        return features.filter((feature) => {
-            return !selectedFeatureKeys.includes(feature.name);
+        return features.map((feature) => {
+            return {
+                ...feature,
+                selected: selectedFeatureKeys.includes(feature.name),
+            };
         });
     }, [features, selectedFeatures]);
 
@@ -41,21 +44,33 @@ const FeatureSelector = ({
         });
     }, [search, availableFeatures]);
 
+    const toggleFeatures = (event, feature) => {
+        feature.selected
+            ? onRemoveFeature(event, feature)
+            : onAddFeature(feature);
+    };
+
     return (
         <React.Fragment>
+            <Col
+                className={`selected-features-mobile hide-on-med-and-up bg-${theme}`}
+            >
+                <b>Selected features ({selectedFeatureValues.length})</b>
+            </Col>
             {loading ? (
-                <Col s={6}>
+                <Col s={12} m={6}>
                     <Preloader active flashing={false} size="big" />
                 </Col>
             ) : (
-                <Col className="available-features" s={6}>
+                <Col className="available-features" s={12} m={6}>
                     {searchResults.length === 0 && <p>No matching features</p>}
                     {searchResults.map((feature, i) => (
                         <Col s={12} key={i}>
                             <Card
-                                className="mn-feature-selection"
+                                className={`mn-feature-selection hoverable ${feature.selected &&
+                                    "selected"}`}
                                 title={feature.name}
-                                onClick={() => onAddFeature(feature)}
+                                onClick={(e) => toggleFeatures(e, feature)}
                             >
                                 <p className="grey-text">
                                     {feature.description}
@@ -65,7 +80,7 @@ const FeatureSelector = ({
                     ))}
                 </Col>
             )}
-            <Col className="selected-features" s={6}>
+            <Col className="selected-features hide-on-small-only" s={12} m={6}>
                 <Row className="sticky">
                     <b>Selected features ({selectedFeatureValues.length})</b>
                     {selectedFeatureValues.length === 0 && (

@@ -227,7 +227,7 @@ class App extends Component {
         <div className="mn-main-container sticky">
           <div className="container">
             <img
-              src={this.getStyleMode() === "light" ? logoLight : logoDark}
+              src={theme === "light" ? logoLight : logoDark}
               width="50%"
               alt="Micronaut"
               className="mn-logo"
@@ -280,8 +280,8 @@ class App extends Component {
                         this.state.loadingFeatures
                       }
                       waves="light"
-                      className={this.getStyleMode()}
-                      style={{ marginRight: "5px" }}
+                      className={theme}
+                      style={{ marginRight: "5px", width: "100%" }}
                     >
                       <Icon left>get_app</Icon>
                       Generate project
@@ -296,6 +296,7 @@ class App extends Component {
         <div className="container mn-feature-container">
           <Row>
             <FeatureSelector
+              theme={theme}
               features={this.state.featuresToSelect}
               selectedFeatures={this.state.featuresSelected}
               loading={this.state.loadingFeatures}
@@ -304,8 +305,8 @@ class App extends Component {
               onRemoveFeature={this.removeFeature}
             />
           </Row>
-          <Footer theme={theme} onToggleTheme={() => this.toggleStyleMode()} />
         </div>
+        <Footer theme={theme} onToggleTheme={() => this.toggleStyleMode()} />
       </Fragment>
     );
   }
