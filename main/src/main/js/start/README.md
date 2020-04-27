@@ -1,4 +1,4 @@
-# Micronaut Inizializr APP
+# Micronaut Starter APP
 
 Frontend module of Micronaut Starter. Developed with React.js .
 
