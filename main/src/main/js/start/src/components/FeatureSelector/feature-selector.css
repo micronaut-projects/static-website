@@ -9,7 +9,7 @@
 .mn-feature-container .selected-features {
     flex: 0 0 350px;
     position: sticky;
-    top: 375px;
+    top: 416px;
 }
 
 .mn-feature-container .selected-features-items {
@@ -20,7 +20,7 @@
 }
 
 body.dark .mn-feature-selection {
-    background-color: var(--theme-light);
+    background-color: #3a3a3a;
 }
 body.dark .mn-feature-selection:hover {
     background-color: var(--theme-light) !important;
