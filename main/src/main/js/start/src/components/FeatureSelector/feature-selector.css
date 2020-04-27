@@ -18,12 +18,16 @@
     padding-bottom: 5em;
 }
 
+.mn-feature-container .card {
+    cursor: cell;
+}
+
 .mn-feature-container .card .card-content p {
     word-break: break-word;
 }
 
 .mn-feature-container .card .card-title {
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 .mn-feature-container .selected-item-row {
     position: relative;
