@@ -7,6 +7,8 @@ body {
   position: relative;
   padding-bottom: 6rem;
   height: 100%;
+  --theme-dark: #f3f3f3;
+  --theme-light: #2d2d2d;
 }
 
 .codePreview {
@@ -127,11 +129,11 @@ body {
 
 .mn-main-container {
   padding-bottom: 1em;
-  background: linear-gradient(to bottom, #f3f3f3 95%, transparent);
+  background: linear-gradient(to bottom, var(--theme-dark) 95%, transparent);
 }
 
 .dark .mn-main-container {
-  background: linear-gradient(to bottom, #2d2d2d 95%, transparent);
+  background: linear-gradient(to bottom, var(--theme-light) 95%, transparent);
 }
 
 .mn-feature-container {
@@ -143,22 +145,22 @@ body {
 }
 
 body.light {
-  background-color: #f3f3f3;
-  color: #2d2d2d;
+  background-color: var(--theme-dark);
+  color: var(--theme-light);
 }
 .bg-light {
-  background-color: #f3f3f3 !important;
-  color: #2d2d2d !important;
+  background-color: var(--theme-dark) !important;
+  color: var(--theme-light) !important;
 }
 
 body.dark {
-  background-color: #2d2d2d;
-  color: #f3f3f3;
+  background-color: var(--theme-light);
+  color: var(--theme-dark);
 }
 
 .bg-dark {
-  background-color: #2d2d2d !important;
-  color: #f3f3f3 !important;
+  background-color: var(--theme-light) !important;
+  color: var(--theme-dark) !important;
 }
 
 body.dark .btn-flat,
@@ -172,12 +174,12 @@ body.light .mn-footer-logos {
 }
 
 button.light {
-  background-color: #2d2d2d;
+  background-color: var(--theme-light);
   color: #fff;
 }
 
 button.dark {
-  background-color: #f3f3f3;
+  background-color: var(--theme-dark);
   color: #000;
 }
 
@@ -197,12 +199,12 @@ button.dark:focus {
 
 .modal.dark,
 .modal.dark .modal-footer {
-  background-color: #2d2d2d;
+  background-color: var(--theme-light);
 }
 
 .modal.light,
 .modal.light .modal-footer {
-  background-color: #f3f3f3;
+  background-color: var(--theme-dark);
 }
 
 .grey-text {
@@ -277,7 +279,7 @@ body.dark .dropdown-content li > span {
 
 body.dark .dropdown-content li > a:hover,
 body.dark .dropdown-content li > span:hover {
-  background-color: #2d2d2d;
+  background-color: var(--theme-light);
 }
 
 .generate-project-row {

@@ -20,10 +20,10 @@
 }
 
 body.dark .mn-feature-selection {
-    background-color: #3a3a3a;
+    background-color: var(--theme-light);
 }
 body.dark .mn-feature-selection:hover {
-    background-color: #2d2d2d !important;
+    background-color: var(--theme-light) !important;
 }
 
 .mn-feature-container .selected-features-mobile {
@@ -45,6 +45,11 @@ body.light .mn-feature-selection.selected {
 
 .mn-feature-container .card {
     cursor: cell;
+    user-select: none;
+}
+
+.mn-feature-selection.hoverable.selected.card {
+    cursor: pointer;
 }
 
 .mn-feature-container .card .card-content p {

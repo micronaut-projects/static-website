@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button, ProgressBar, Select } from "react-materialize";
+import { Button, ProgressBar } from "react-materialize";
 import Col from "react-materialize/lib/Col";
 import Icon from "react-materialize/lib/Icon";
 import Row from "react-materialize/lib/Row";
@@ -11,7 +11,6 @@ import StarterForm from "./components/StarterForm";
 
 import {
   API_URL,
-  JAVA_VERSIONS,
   DEFAULT_JAVA_VERSION,
   DEFAULT_LANG,
   DEFAULT_BUILD,

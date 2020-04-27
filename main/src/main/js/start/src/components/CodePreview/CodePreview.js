@@ -1,5 +1,5 @@
 // CodePreview.js
-import React, { useEffect, useState, forwardRef } from "react";
+import React, { useState, forwardRef } from "react";
 
 import { Button } from "react-materialize";
 
