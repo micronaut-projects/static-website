@@ -1,34 +1,83 @@
 // FeatureSelector.js
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 
-import { Button, Card } from "react-materialize";
-import Col from "react-materialize/lib/Col";
+import Modal from "react-materialize/lib/Modal";
+import { Button } from "react-materialize";
 import Icon from "react-materialize/lib/Icon";
-
+import Col from "react-materialize/lib/Col";
 import Preloader from "react-materialize/lib/Preloader";
 import Row from "react-materialize/lib/Row";
+import FeatureAvailable from "./FeatureAvailable";
+import FeatureSelected from "./FeatureSelected";
+import TextInput from "../TextInput";
+
 import "./feature-selector.css";
 
-const FeatureSelector = ({
+const FeatureAvailableGroup = ({ category, entities, toggleFeatures }) => {
+    return (
+        <Row>
+            <Col s={12}>
+                <h6>{category}</h6>
+            </Col>
+            {entities.map((feature, i) => (
+                <Col s={12} key={i}>
+                    <FeatureAvailable
+                        feature={feature}
+                        toggleFeatures={toggleFeatures}
+                    />
+                </Col>
+            ))}
+        </Row>
+    );
+};
+
+export const FeatureSelectedList = ({ selectedFeatures, onRemoveFeature }) => {
+    const selectedFeatureValues = Object.values(selectedFeatures).sort(
+        (a, b) => {
+            return a.name > b.name ? 1 : -1;
+        }
+    );
+
+    const sRows = useMemo(
+        () =>
+            selectedFeatureValues.map((f, idx) => (
+                <FeatureSelected
+                    key={`${f.name}-${idx}`}
+                    feature={f}
+                    onRemoveFeature={() => onRemoveFeature(f)}
+                />
+            )),
+        [selectedFeatureValues, onRemoveFeature]
+    );
+
+    return (
+        <div className="col s12">
+            <h6>Included Features ({selectedFeatureValues.length})</h6>
+            {sRows}
+            <div style={{ height: 100, minHeight: 100 }} />
+        </div>
+    );
+};
+
+export const FeatureSelectorModal = ({
     features,
     selectedFeatures,
     loading,
-    search,
     onAddFeature,
     onRemoveFeature,
+    onRemoveAllFeatures,
     theme = "light",
 }) => {
-    const selectedFeatureValues = Object.values(selectedFeatures).reverse();
-
+    const [search, setSearch] = useState("");
+    const selectedFeatureKeys = Object.keys(selectedFeatures);
     const availableFeatures = useMemo(() => {
-        const selectedFeatureKeys = Object.keys(selectedFeatures);
         return features.map((feature) => {
             return {
                 ...feature,
                 selected: selectedFeatureKeys.includes(feature.name),
             };
         });
-    }, [features, selectedFeatures]);
+    }, [features, selectedFeatureKeys]);
 
     const searchResults = useMemo(() => {
         if (!search.length) {
@@ -36,78 +85,104 @@ const FeatureSelector = ({
         }
         const lcSearch = search.toLowerCase();
         return availableFeatures.filter((feature) => {
-            const { name, description } = feature;
+            const { name, description, category } = feature;
             return (
                 name.toLowerCase().includes(lcSearch) ||
-                description.toLowerCase().includes(lcSearch)
+                description.toLowerCase().includes(lcSearch) ||
+                category.toLowerCase().includes(lcSearch)
             );
         });
     }, [search, availableFeatures]);
 
+    const groupedResults = useMemo(() => {
+        return searchResults.reduce((map, result) => {
+            if (!map[result.category]) {
+                map[result.category] = [result];
+            } else {
+                map[result.category].push(result);
+            }
+            return map;
+        }, {});
+    }, [searchResults]);
+
     const toggleFeatures = (event, feature) => {
-        feature.selected
-            ? onRemoveFeature(event, feature)
-            : onAddFeature(feature);
+        if (event && event.preventDefault) {
+            event.preventDefault();
+        }
+        feature.selected ? onRemoveFeature(feature) : onAddFeature(feature);
+    };
+
+    const removeAll = (event) => {
+        event.preventDefault();
+        onRemoveAllFeatures();
+    };
+
+    const onModalClose = (event) => {
+        const { firstElementChild } = event;
+        firstElementChild.scrollTop = 0;
     };
 
     return (
-        <React.Fragment>
-            <Col
-                className={`selected-features-mobile hide-on-med-and-up bg-${theme}`}
+        <div id="feature-selector-wrapper" style={{ marginBottom: 0 }}>
+            <Modal
+                className={`mn-feature-modal modal-lg ${theme}`}
+                fixedFooter
+                actions={[
+                    <Button waves="light" onClick={removeAll} flat>
+                        Remove All ({selectedFeatureKeys.length})
+                    </Button>,
+                    <Button waves="light" modal="close" flat>
+                        Done
+                    </Button>,
+                ]}
+                options={{
+                    onCloseStart: onModalClose,
+                    startingTop: "5%",
+                    endingTop: "5%",
+                }}
+                trigger={
+                    <Button waves="light" className={theme}>
+                        <Icon left>add</Icon>
+                        Features
+                    </Button>
+                }
             >
-                <b>Selected features ({selectedFeatureValues.length})</b>
-            </Col>
-            {loading ? (
-                <Col s={12} m={6}>
-                    <Preloader active flashing={false} size="big" />
-                </Col>
-            ) : (
-                <Col className="available-features" s={12} m={6}>
-                    {searchResults.length === 0 && <p>No matching features</p>}
-                    {searchResults.map((feature, i) => (
-                        <Col s={12} key={i}>
-                            <Card
-                                className={`mn-feature-selection hoverable ${feature.selected &&
-                                    "selected"}`}
-                                title={feature.name}
-                                onClick={(e) => toggleFeatures(e, feature)}
-                            >
-                                <p className="grey-text">
-                                    {feature.description}
-                                </p>
-                            </Card>
-                        </Col>
-                    ))}
-                </Col>
-            )}
-            <Col className="selected-features hide-on-small-only" s={12} m={6}>
-                <Row className="sticky">
-                    <b>Selected features ({selectedFeatureValues.length})</b>
-                    {selectedFeatureValues.length === 0 && (
-                        <p className="grey-text">No features selected.</p>
-                    )}
-                </Row>
-                <Row className="selected-features-items">
-                    {selectedFeatureValues.map((feature, i) => (
-                        <div className="selected-item-row" key={i}>
-                            <h6 className="grey-text title">{feature.name}</h6>
-                            <small className="grey-text">
-                                {feature.description}
-                            </small>
-                            <Button
-                                floating
-                                small
-                                className="black remove-button"
-                                onClick={(e) => onRemoveFeature(e, feature, i)}
-                            >
-                                <Icon>close</Icon>
-                            </Button>
-                        </div>
-                    ))}
-                </Row>
-            </Col>
-        </React.Fragment>
+                <h4>
+                    <div className="modal-header">
+                        <TextInput
+                            className="mn-input"
+                            s={12}
+                            label="Search Features"
+                            placeholder="ex: cassandra"
+                            name="search"
+                            value={search}
+                            autoComplete="off"
+                            onChangeText={setSearch}
+                        />
+                    </div>
+                </h4>
+                {loading ? (
+                    <Preloader />
+                ) : (
+                    <Col s={12}>
+                        {searchResults.length === 0 && (
+                            <p>No matching features</p>
+                        )}
+                        {Object.keys(groupedResults).map((key, index) => {
+                            return (
+                                <FeatureAvailableGroup
+                                    key={key}
+                                    category={key}
+                                    entities={groupedResults[key]}
+                                    toggleFeatures={toggleFeatures}
+                                />
+                            );
+                        })}
+                    </Col>
+                )}
+            </Modal>
+        </div>
     );
 };
 
-export default FeatureSelector;
+export default FeatureSelectorModal;

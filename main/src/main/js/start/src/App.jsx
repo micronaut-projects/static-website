@@ -3,8 +3,10 @@ import { Button, ProgressBar } from "react-materialize";
 import Col from "react-materialize/lib/Col";
 import Icon from "react-materialize/lib/Icon";
 import Row from "react-materialize/lib/Row";
-import TextInput from "react-materialize/lib/TextInput";
-import FeatureSelector from "./components/FeatureSelector";
+import {
+  FeatureSelectorModal,
+  FeatureSelectedList,
+} from "./components/FeatureSelector";
 import CodePreview from "./components/CodePreview";
 import Footer from "./components/Footer";
 import StarterForm from "./components/StarterForm";
@@ -43,7 +45,6 @@ class App extends Component {
       error: false,
       errorMessage: "",
       styleMode: window.localStorage.getItem("styleMode") || "light",
-      search: "",
     };
     this.modalButton = null;
   }
@@ -108,8 +109,11 @@ class App extends Component {
     });
   };
 
-  removeFeature = (e, feature, index) => {
-    e.preventDefault();
+  removeAllFeatures = () => {
+    this.setState({ featuresSelected: {} });
+  };
+
+  removeFeature = (feature) => {
     let featuresSelected = { ...this.state.featuresSelected };
     delete featuresSelected[feature.name];
     this.setState({ featuresSelected });
@@ -239,7 +243,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        <div className="mn-main-container sticky">
+        <div id="mn-main-container" className="mn-main-container sticky">
           <div className="container">
             <img
               src={theme === "light" ? logoLight : logoDark}
@@ -262,13 +266,14 @@ class App extends Component {
 
                 <Row>
                   <Col s={6}>
-                    <TextInput
-                      className="mn-input"
-                      s={12}
-                      label="Features"
-                      placeholder="ex: cassandra"
-                      name="search"
-                      onChange={this.handleChange}
+                    <FeatureSelectorModal
+                      theme={theme}
+                      loading={this.state.loadingFeatures}
+                      features={this.state.featuresToSelect}
+                      selectedFeatures={this.state.featuresSelected}
+                      onAddFeature={this.addFeature}
+                      onRemoveFeature={this.removeFeature}
+                      onRemoveAllFeatures={this.removeAllFeatures}
                     />
                   </Col>
                   <Col s={3}>
@@ -312,13 +317,9 @@ class App extends Component {
         </div>
         <div className="container mn-feature-container">
           <Row>
-            <FeatureSelector
+            <FeatureSelectedList
               theme={theme}
-              features={this.state.featuresToSelect}
               selectedFeatures={this.state.featuresSelected}
-              loading={this.state.loadingFeatures}
-              search={this.state.search}
-              onAddFeature={this.addFeature}
               onRemoveFeature={this.removeFeature}
             />
           </Row>

@@ -1,22 +1,29 @@
-.mn-feature-container {
-    min-height: 1vh;
+.mn-feature-modal .modal-content h4 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    padding: 0px 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.mn-feature-container .available-features {
-    min-height: 50vh;
+.mn-feature-modal .modal-content h4 .helper-text {
+    display: none;
 }
 
-.mn-feature-container .selected-features {
-    flex: 0 0 350px;
-    position: sticky;
-    top: 416px;
+.mn-feature-modal .modal-content {
+    padding-top: 6em;
 }
 
-.mn-feature-container .selected-features-items {
-    max-height: 50vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding-bottom: 5em;
+body.dark .mn-feature-modal .modal-content,
+body.dark .mn-feature-modal .modal-content h4 {
+    background-color: var(--theme-dark) !important;
+}
+
+body.light .mn-feature-modal .modal-content,
+body.light .mn-feature-modal .modal-content h4 {
+    background-color: var(--theme-light) !important;
 }
 
 body.dark .mn-feature-selection {
@@ -26,7 +33,7 @@ body.dark .mn-feature-selection:hover {
     background-color: var(--theme-dark) !important;
 }
 
-.mn-feature-container .selected-features-mobile {
+.selected-features-mobile {
     position: sticky;
     top: 0;
     z-index: 1001;
@@ -44,7 +51,7 @@ body.light .mn-feature-selection.selected {
 }
 
 .mn-feature-container .card {
-    cursor: cell;
+    cursor: pointer;
     user-select: none;
 }
 
@@ -60,9 +67,18 @@ body.light .mn-feature-selection.selected {
     font-size: 1.2em;
 }
 
+.mn-feature-container .selected-item-row .title {
+    font-size: 1.4em;
+}
+
 body.dark .mn-feature-container .selected-item-row .title,
 body.dark .mn-feature-container .card .card-title {
     color: white !important;
+}
+
+body.light .mn-feature-container .selected-item-row .title,
+body.light .mn-feature-container .card .card-title {
+    color: black !important;
 }
 
 .mn-feature-container .selected-item-row {
@@ -70,13 +86,30 @@ body.dark .mn-feature-container .card .card-title {
 }
 
 .mn-feature-container .selected-item-row .remove-button {
+    color: red;
     opacity: 0;
     transition: opacity 0.3s ease;
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
-.selected-item-row:hover .remove-button {
+.mn-feature-container .selected-item-row:hover .remove-button {
     opacity: 1;
+}
+
+@media screen and (max-width: 400px) {
+    .mn-feature-container h6 {
+        font-size: 1.4em;
+    }
+
+    .mn-feature-container .selected-item-row {
+        font-size: 1.2em;
+    }
+
+    .modal.mn-feature-modal {
+        height: 100% !important;
+        max-height: 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        top: 0% !important;
+        font-size: 14px;
+    }
 }

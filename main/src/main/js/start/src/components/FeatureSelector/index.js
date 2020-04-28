@@ -1,3 +1,3 @@
-import FeatureSelector from "./FeatureSelector";
+import { FeatureSelectorModal, FeatureSelectedList } from "./FeatureSelector";
 
-export default FeatureSelector;
+export { FeatureSelectorModal, FeatureSelectedList };
