@@ -127,6 +127,7 @@ class DocumentationPage extends Page {
 
                     mkp.yieldUnescaped documentationGuideGroup('Views', links.findAll { it.category == 'Views' }, 'views.svg').renderAsHtml()
                     mkp.yieldUnescaped documentationGuideGroup('Languages', links.findAll { it.category == 'Languages' }, 'languages.svg').renderAsHtml()
+                    mkp.yieldUnescaped documentationGuideGroup('Reactive', links.findAll { it.category == 'Reactive' }, 'reactive.svg').renderAsHtml()
 
                 }
             }
