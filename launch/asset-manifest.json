@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/launch/static/css/main.f995ac49.chunk.css",
+    "main.js": "/launch/static/js/main.10856d05.chunk.js",
+    "main.js.map": "/launch/static/js/main.10856d05.chunk.js.map",
+    "runtime-main.js": "/launch/static/js/runtime-main.ac23779b.js",
+    "runtime-main.js.map": "/launch/static/js/runtime-main.ac23779b.js.map",
+    "static/js/2.36116c37.chunk.js": "/launch/static/js/2.36116c37.chunk.js",
+    "static/js/2.36116c37.chunk.js.map": "/launch/static/js/2.36116c37.chunk.js.map",
+    "index.html": "/launch/index.html",
+    "precache-manifest.061b4814879185f962439c34029c3dcd.js": "/launch/precache-manifest.061b4814879185f962439c34029c3dcd.js",
+    "service-worker.js": "/launch/service-worker.js",
+    "static/css/main.f995ac49.chunk.css.map": "/launch/static/css/main.f995ac49.chunk.css.map",
+    "static/js/2.36116c37.chunk.js.LICENSE.txt": "/launch/static/js/2.36116c37.chunk.js.LICENSE.txt",
+    "static/media/micronaut-white-icon.png": "/launch/static/media/micronaut-white-icon.6d5a6522.png",
+    "static/media/micronaut-white.png": "/launch/static/media/micronaut-white.c5a41bad.png",
+    "static/media/micronaut.png": "/launch/static/media/micronaut.17218b32.png",
+    "static/media/twitter.png": "/launch/static/media/twitter.ea9a049f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac23779b.js",
+    "static/js/2.36116c37.chunk.js",
+    "static/css/main.f995ac49.chunk.css",
+    "static/js/main.10856d05.chunk.js"
+  ]
+}
