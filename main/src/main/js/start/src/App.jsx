@@ -10,6 +10,7 @@ import {
 import CodePreview from "./components/CodePreview";
 import Footer from "./components/Footer";
 import StarterForm from "./components/StarterForm";
+import ErrorView from "./components/ErrorView";
 
 import {
   API_URL,
@@ -119,45 +120,12 @@ class App extends Component {
     this.setState({ featuresSelected });
   };
 
-  generateProject = (e) => {
-    e.preventDefault();
-    this.setState({ error: false, downloading: true });
-
-    const FETCH_URL = this.buildFetchUrl("create");
-    fetch(FETCH_URL, {
-      method: "GET",
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.blob();
-        } else {
-          throw response;
-        }
-      })
-      .then((blob) => {
-        var url = window.URL.createObjectURL(blob);
-        var a = document.createElement("a");
-        a.href = url;
-        a.download = this.state.name + ".zip";
-        document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
-        a.click();
-        a.remove(); //afterwards we remove the element again
-        this.setState({ downloading: false });
-      })
-      .catch((response) => {
-        console.log(response);
-        response.json().then((body) => {
-          this.setState({
-            error: true,
-            errorMessage: body.message,
-            downloading: false,
-          });
-        });
-      });
-  };
-
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    // Strip out any non alphanumeric characters (or .) from the input.
+    const value = event.target.value.replace(/[^a-z0-9.]/gi, "");
+    this.setState({
+      [event.target.name]: value,
+    });
     if (event.target.name === "type") {
       this.loadFeatures(event.target.value);
     }
@@ -180,7 +148,8 @@ class App extends Component {
     }
     const { type, name, lang, build, testFw, javaVersion } = this.state;
     const features = this.buildFeaturesQuery();
-    const base = `${API_URL}/${prefix}/${type}/${this.state.package}.${name}`;
+    const fqpkg = `${this.state.package}.${name}`;
+    const base = `${API_URL}/${prefix}/${type}/${fqpkg}`;
     const query = [
       `lang=${lang}`,
       `build=${build}`,
@@ -190,35 +159,91 @@ class App extends Component {
     if (features) {
       query.push(features);
     }
-    return `${base}?${query.join("&")}`;
+    return encodeURI(`${base}?${query.join("&")}`);
   };
 
-  loadPreview = (e) => {
-    this.setState({ error: false });
-    e.preventDefault();
-    let FETCH_URL = this.buildFetchUrl("preview");
+  handleResponseError = (response) => {
+    let defaultError = {
+      error: true,
+      downloading: false,
+      errorMessage: "something went wrong.",
+    };
+    if (!response.json instanceof Function) {
+      this.setState(defaultError);
+      return;
+    }
+    try {
+      response.json().then((body) => {
+        this.setState({
+          ...defaultError,
+          errorMessage: body.message,
+        });
+      });
+    } catch (e) {
+      this.setState(defaultError);
+    }
+  };
 
+  responseHandler = (type = "json") => (response) => {
+    if (!response.ok) {
+      throw response;
+    }
+    return response[type]();
+  };
+
+  debounceResponse = (start, atLeast = 700) => (response) => {
+    const end = Date.now();
+    const diff = end - start;
+    return new Promise((r) => {
+      setTimeout(() => {
+        r(response);
+      }, Math.max(atLeast - diff, 0));
+    });
+  };
+
+  generateProject = (e) => {
+    e.preventDefault();
+    this.setState({ error: false, downloading: true });
+
+    const FETCH_URL = this.buildFetchUrl("create");
+    // Debounce the download event so the UI is not jumpy
+    const debounced = this.debounceResponse(Date.now());
     fetch(FETCH_URL, {
       method: "GET",
     })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw response;
-        }
+      .then(debounced)
+      .then(this.responseHandler("blob"))
+      .then((blob) => {
+        var url = window.URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = this.state.name + ".zip";
+        document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
+        a.click();
+        a.remove(); //afterwards we remove the element again
+        this.setState({ downloading: false });
       })
+      .catch(this.handleResponseError);
+  };
+
+  loadPreview = (e) => {
+    e.preventDefault();
+    this.setState({ error: false, downloading: true });
+    let FETCH_URL = this.buildFetchUrl("preview");
+
+    // Debounce the preview gen event so the UI is not jumpy
+    const debounced = this.debounceResponse(Date.now());
+    fetch(FETCH_URL, {
+      method: "GET",
+    })
+      .then(debounced)
+      .then(this.responseHandler("json"))
       .then((json) => {
         const nodes = makeNodeTree(json.contents);
         this.setState({ preview: nodes, downloading: false });
         this.modalButton.props.onClick();
       })
-      .catch((response) => {
-        console.log(response);
-        response.json().then((body) => {
-          this.setState({ error: true, errorMessage: body.message });
-        });
-      });
+      .catch(this.handleResponseError);
   };
 
   clearPreview = () => {
@@ -240,6 +265,11 @@ class App extends Component {
   render() {
     const theme = this.getStyleMode();
     document.body.className = theme;
+    const disabled =
+      this.state.downloading ||
+      !this.state.name ||
+      !this.state.package ||
+      this.state.loadingFeatures;
 
     return (
       <Fragment>
@@ -252,11 +282,6 @@ class App extends Component {
               className="mn-logo"
             />
             <div className="mn-container">
-              {this.state.error ? (
-                <h5 style={{ color: "red", paddingLeft: "20px" }}>
-                  Something went wrong: {this.state.errorMessage}
-                </h5>
-              ) : null}
               <form onSubmit={this.generateProject} autoComplete="off">
                 <StarterForm
                   theme={theme}
@@ -285,22 +310,12 @@ class App extends Component {
                       build={this.state.build}
                       onLoad={this.loadPreview}
                       onClose={this.clearPreview}
-                      disabled={
-                        this.state.downloading ||
-                        !this.state.name ||
-                        !this.state.package ||
-                        this.state.loadingFeatures
-                      }
+                      disabled={disabled}
                     />
                   </Col>
                   <Col s={3}>
                     <Button
-                      disabled={
-                        this.state.downloading ||
-                        !this.state.name ||
-                        !this.state.package ||
-                        this.state.loadingFeatures
-                      }
+                      disabled={disabled}
                       waves="light"
                       className={theme}
                       style={{ marginRight: "5px", width: "100%" }}
@@ -311,7 +326,11 @@ class App extends Component {
                   </Col>
                 </Row>
               </form>
-              {this.state.downloading ? <ProgressBar /> : null}
+              {this.state.downloading ? (
+                <ProgressBar />
+              ) : (
+                <div style={{ minHeight: "18px", height: "18px" }} />
+              )}
             </div>
           </div>
         </div>
@@ -325,6 +344,11 @@ class App extends Component {
           </Row>
         </div>
         <Footer theme={theme} onToggleTheme={() => this.toggleStyleMode()} />
+        <ErrorView
+          error={this.state.error}
+          errorMessage={this.state.errorMessage}
+          onClose={() => this.setState({ error: false, errorMessage: "" })}
+        />
       </Fragment>
     );
   }
