@@ -249,7 +249,6 @@ class App extends Component {
       })
       .catch((response) => {
         console.log(response);
-        alert(response)
         response.json().then((body) => {
           this.setState({ error: true, errorMessage: body.message });
         });
