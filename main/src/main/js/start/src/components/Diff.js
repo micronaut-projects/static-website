@@ -25,7 +25,7 @@ const Diff = (
         disabled={disabled}
         waves="light"
         className={theme}
-        style={{ marginRight: "5px", width: "80%" }}
+        style={{ marginRight: "5px", width: "100%" }}
         onClick={onLoad}
       >
         <Icon left>compare_arrows</Icon>
