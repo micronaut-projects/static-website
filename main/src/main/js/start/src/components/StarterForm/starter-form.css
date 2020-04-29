@@ -6,12 +6,21 @@
     margin-bottom: 5px;
 }
 
-/* Media */
 .mn-starter-form-main .mn-radio label.input-field {
     display: block;
     margin-bottom: 5px;
 }
 
+/* Theme */
+body.light .mn-starter-form-main .mn-radio .radio-label {
+    color: black;
+}
+
+body.dark .mn-starter-form-main .mn-radio .radio-label {
+    color: white;
+}
+
+/* Media */
 @media screen and (max-width: 600px) {
     .mn-starter-form-main .mn-radio .radio-label {
         margin-right: 10px;

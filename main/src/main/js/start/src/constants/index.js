@@ -1,7 +1,7 @@
 export const API_URL = "https://micronaut-starter-staging-ucxwqnh6ka-uc.a.run.app";
 export const JAVA_VERSIONS = [8, 9, 10, 11, 12, 13, 14];
 export const LANG_OPTS = [
-    { label: "JAVA", value: "java" },
+    { label: "Java", value: "java" },
     { label: "Kotlin", value: "kotlin" },
     { label: "Groovy", value: "groovy" },
 ];
