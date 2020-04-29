@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/start/static/css/main.42e2f50e.chunk.css",
-    "main.js": "/start/static/js/main.6169fcc7.chunk.js",
-    "main.js.map": "/start/static/js/main.6169fcc7.chunk.js.map",
+    "main.css": "/start/static/css/main.f995ac49.chunk.css",
+    "main.js": "/start/static/js/main.7362e752.chunk.js",
+    "main.js.map": "/start/static/js/main.7362e752.chunk.js.map",
     "runtime-main.js": "/start/static/js/runtime-main.65fefded.js",
     "runtime-main.js.map": "/start/static/js/runtime-main.65fefded.js.map",
     "static/js/2.36116c37.chunk.js": "/start/static/js/2.36116c37.chunk.js",
     "static/js/2.36116c37.chunk.js.map": "/start/static/js/2.36116c37.chunk.js.map",
     "index.html": "/start/index.html",
-    "precache-manifest.6d0a2b8a2a28aacfec366a4a72437a1f.js": "/start/precache-manifest.6d0a2b8a2a28aacfec366a4a72437a1f.js",
+    "precache-manifest.45ef36c1c9ddf5e21b0f7afa21c84189.js": "/start/precache-manifest.45ef36c1c9ddf5e21b0f7afa21c84189.js",
     "service-worker.js": "/start/service-worker.js",
-    "static/css/main.42e2f50e.chunk.css.map": "/start/static/css/main.42e2f50e.chunk.css.map",
+    "static/css/main.f995ac49.chunk.css.map": "/start/static/css/main.f995ac49.chunk.css.map",
     "static/js/2.36116c37.chunk.js.LICENSE.txt": "/start/static/js/2.36116c37.chunk.js.LICENSE.txt",
     "static/media/micronaut-white-icon.png": "/start/static/media/micronaut-white-icon.6d5a6522.png",
     "static/media/micronaut-white.png": "/start/static/media/micronaut-white.08a3902d.png",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.65fefded.js",
     "static/js/2.36116c37.chunk.js",
-    "static/css/main.42e2f50e.chunk.css",
-    "static/js/main.6169fcc7.chunk.js"
+    "static/css/main.f995ac49.chunk.css",
+    "static/js/main.7362e752.chunk.js"
   ]
 }
