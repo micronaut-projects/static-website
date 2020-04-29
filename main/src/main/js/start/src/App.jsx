@@ -121,7 +121,11 @@ class App extends Component {
   };
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    // Strip out any non alphanumeric characters (or .) from the input.
+    const value = event.target.value.replace(/[^a-z0-9.]/gi, "");
+    this.setState({
+      [event.target.name]: value,
+    });
     if (event.target.name === "type") {
       this.loadFeatures(event.target.value);
     }
@@ -144,7 +148,8 @@ class App extends Component {
     }
     const { type, name, lang, build, testFw, javaVersion } = this.state;
     const features = this.buildFeaturesQuery();
-    const base = `${API_URL}/${prefix}/${type}/${this.state.package}.${name}`;
+    const fqpkg = `${this.state.package}.${name}`;
+    const base = `${API_URL}/${prefix}/${type}/${fqpkg}`;
     const query = [
       `lang=${lang}`,
       `build=${build}`,
@@ -154,24 +159,29 @@ class App extends Component {
     if (features) {
       query.push(features);
     }
-    return `${base}?${query.join("&")}`;
+    return encodeURI(`${base}?${query.join("&")}`);
   };
 
   handleResponseError = (response) => {
-    let merge = {
+    let defaultError = {
       error: true,
       downloading: false,
+      errorMessage: "something went wrong.",
     };
     if (!response.json instanceof Function) {
-      this.setState({ ...merge, errorMessage: "something went wrong." });
+      this.setState(defaultError);
       return;
     }
-    response.json().then((body) => {
-      this.setState({
-        ...merge,
-        errorMessage: body.message,
+    try {
+      response.json().then((body) => {
+        this.setState({
+          ...defaultError,
+          errorMessage: body.message,
+        });
       });
-    });
+    } catch (e) {
+      this.setState(defaultError);
+    }
   };
 
   responseHandler = (type = "json") => (response) => {
