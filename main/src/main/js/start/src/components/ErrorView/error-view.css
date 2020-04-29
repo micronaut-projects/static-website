@@ -3,6 +3,11 @@
     color: white;
 }
 
+.MuiSnackbar-root .MuiAlert-standardError .MuiAlert-message {
+    display: flex;
+    align-items: center;
+}
+
 .MuiSnackbar-root.error-view.MuiSnackbar-anchorOriginTopCenter {
     top: 24px;
     left: 50%;

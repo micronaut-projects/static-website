@@ -256,28 +256,20 @@ class App extends Component {
     fetch(FETCH_URL, {
       method: "GET",
     })
-      .then((response) => {
-        if (response.ok) {
-          return response.text();
-        } else {
-          throw response;
-        }
-      })
+      .then(this.responseHandler("text"))
       .then((text) => {
-        if (text === '') {
-          this.setState({ diff: "There are no differences. Try selecting some features.", downloading: false });
+        if (text === "") {
+          this.setState({
+            diff: "There are no differences. Try selecting some features.",
+            downloading: false,
+          });
         } else {
           this.setState({ diff: text, downloading: false });
         }
-        
+
         this.diffButton.props.onClick();
       })
-      .catch((response) => {
-        console.log(response);
-        response.json().then((body) => {
-          this.setState({ error: true, errorMessage: body.message });
-        });
-      });
+      .catch(this.handleResponseError);
   };
 
   clearDiff = () => {
@@ -342,6 +334,23 @@ class App extends Component {
                     />
                   </Col>
                   <Col s={3}>
+                    <Diff
+                      ref={(button) => (this.diffButton = button)}
+                      theme={theme}
+                      diff={this.state.diff}
+                      lang={this.state.lang}
+                      build={this.state.build}
+                      onLoad={this.loadDiff}
+                      onClose={this.clearDiff}
+                      disabled={
+                        this.state.downloading ||
+                        !this.state.name ||
+                        !this.state.package ||
+                        this.state.loadingFeatures
+                      }
+                    />
+                  </Col>
+                  <Col s={3}>
                     <CodePreview
                       ref={(button) => (this.previewButton = button)}
                       theme={theme}
@@ -352,23 +361,6 @@ class App extends Component {
                       onClose={this.clearPreview}
                       disabled={disabled}
                     />
-                  </Col>
-                  <Col s={3}>
-                    <Diff
-                        ref={(button) => (this.diffButton = button)}
-                        theme={theme}
-                        diff={this.state.diff}
-                        lang={this.state.lang}
-                        build={this.state.build}
-                        onLoad={this.loadDiff}
-                        onClose={this.clearDiff}
-                        disabled={
-                          this.state.downloading ||
-                          !this.state.name ||
-                          !this.state.package ||
-                          this.state.loadingFeatures
-                        }
-                      />
                   </Col>
                   <Col s={3}>
                     <Button
@@ -392,17 +384,13 @@ class App extends Component {
           </div>
         </div>
         <div className="container mn-feature-container">
-          
           <Row>
-            
             <FeatureSelectedList
               theme={theme}
               selectedFeatures={this.state.featuresSelected}
               onRemoveFeature={this.removeFeature}
             />
           </Row>
-
-
         </div>
         <Footer theme={theme} onToggleTheme={() => this.toggleStyleMode()} />
         <ErrorView

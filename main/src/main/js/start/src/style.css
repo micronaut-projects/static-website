@@ -129,8 +129,8 @@ body {
 }
 
 .mn-logo {
-  padding-top: 5px;
-  padding-bottom: 35px;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .mn-footer-logos {
@@ -313,6 +313,10 @@ body.dark .mn-input:focus + label {
   color: #fff !important;
 }
 
+body.dark .mn-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
 body.dark .dropdown-content li > a,
 body.dark .dropdown-content li > span {
   color: #fff;
@@ -347,9 +351,24 @@ body.dark .dropdown-content li > span:hover {
   border-color: #000000;
 }
 
+@media only screen and (max-width: 700px) {
+  .modal .modal-content h4 {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .modal .modal-content h4 {
+    font-size: 1.3em;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .modal {
     width: 60%;
+  }
+  .modal .modal-content h4 {
+    font-size: 1.7em;
   }
 }
 
