@@ -95,7 +95,7 @@ const CodePreview = (
         disabled={disabled}
         waves="light"
         className={theme}
-        style={{ marginRight: "5px", width: "100%" }}
+        style={{ marginRight: "5px", width: "80%" }}
         onClick={onLoad}
       >
         <Icon left>search</Icon>
