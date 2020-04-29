@@ -25,6 +25,12 @@ https://micronaut.io[https://micronaut.io]
 
 The output can be found in the `main/build/site` directory.
 
+To speed up development, execute:
+
+----
+./gradlew :main:runShadow -x :main:buildStarter -x :main:linkchecker
+----
+
 == Generating the GUIDES site
 
 https://guides.micronaut.io[http://guides.micronaut.io]
