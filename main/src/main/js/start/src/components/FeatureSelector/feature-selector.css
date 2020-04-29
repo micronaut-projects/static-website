@@ -1,4 +1,5 @@
-.mn-feature-modal .modal-content h4 {
+/* Modal */
+.mn-feature-container .mn-feature-modal .modal-content h4 {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,14 +9,33 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.mn-feature-modal .modal-content h4 .helper-text {
+.mn-feature-container .mn-feature-modal .modal-content h4 .helper-text {
     display: none;
 }
 
-.mn-feature-modal .modal-content {
+.mn-feature-container .mn-feature-modal .modal-content {
     padding-top: 6em;
 }
 
+.mn-feature-modal .input-field > label:not(.label-icon).active {
+    font-size: 0.8em;
+    left: 0;
+}
+/* Modal Cards */
+.mn-feature-container .card {
+    cursor: pointer;
+    user-select: none;
+}
+
+.mn-feature-container .card .card-content p {
+    word-break: break-word;
+}
+
+.mn-feature-container .card .card-title {
+    font-size: 1.2em;
+}
+
+/* Theming */
 body.dark .mn-feature-modal .modal-content,
 body.dark .mn-feature-modal .modal-content h4 {
     background-color: var(--theme-dark) !important;
@@ -33,42 +53,11 @@ body.dark .mn-feature-selection:hover {
     background-color: var(--theme-dark) !important;
 }
 
-.selected-features-mobile {
-    position: sticky;
-    top: 0;
-    z-index: 1001;
-    width: 100%;
-    padding: 10px;
-    padding-left: 2em;
-    padding-right: 1em;
-}
-
 body.dark .mn-feature-selection.selected {
     background: black !important;
 }
 body.light .mn-feature-selection.selected {
     background: lightgrey !important;
-}
-
-.mn-feature-container .card {
-    cursor: pointer;
-    user-select: none;
-}
-
-.mn-feature-selection.hoverable.selected.card {
-    cursor: pointer;
-}
-
-.mn-feature-container .card .card-content p {
-    word-break: break-word;
-}
-
-.mn-feature-container .card .card-title {
-    font-size: 1.2em;
-}
-
-.mn-feature-container .selected-item-row .title {
-    font-size: 1.4em;
 }
 
 body.dark .mn-feature-container .selected-item-row .title,
@@ -81,29 +70,8 @@ body.light .mn-feature-container .card .card-title {
     color: black !important;
 }
 
-.mn-feature-container .selected-item-row {
-    position: relative;
-}
-
-.mn-feature-container .selected-item-row .remove-button {
-    color: red;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.mn-feature-container .selected-item-row:hover .remove-button {
-    opacity: 1;
-}
-
-@media screen and (max-width: 400px) {
-    .mn-feature-container h6 {
-        font-size: 1.4em;
-    }
-
-    .mn-feature-container .selected-item-row {
-        font-size: 1.2em;
-    }
-
+/* Media */
+@media screen and (max-width: 600px) {
     .modal.mn-feature-modal {
         height: 100% !important;
         max-height: 100% !important;
