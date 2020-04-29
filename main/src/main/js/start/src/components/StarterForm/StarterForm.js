@@ -1,16 +1,21 @@
 // StarterForm.js
 import React from "react";
-import { Select } from "react-materialize";
+import { Select, TextInput } from "react-materialize";
 import Col from "react-materialize/lib/Col";
 import Row from "react-materialize/lib/Row";
-import TextInput from "react-materialize/lib/TextInput";
+import RadioGroup from "../RadioGroup";
 
-import { JAVA_VERSIONS } from "../constants";
+import {
+    JAVA_VERSIONS,
+    LANG_OPTS,
+    BUILD_OPTS,
+    TEST_OPTS,
+} from "../../constants";
 
 const StarterForm = ({ handleChange, ...props }) => {
     return (
         <Row className="mn-starter-form-main">
-            <Col m={4} s={12}>
+            <Col l={5} m={6} s={12}>
                 <Select
                     s={12}
                     className="mn-input"
@@ -29,7 +34,7 @@ const StarterForm = ({ handleChange, ...props }) => {
                 </Select>
             </Col>
 
-            <Col m={4} s={6}>
+            <Col s={6} m={3} l={3}>
                 <TextInput
                     required
                     s={12}
@@ -41,7 +46,7 @@ const StarterForm = ({ handleChange, ...props }) => {
                     onChange={handleChange}
                 />
             </Col>
-            <Col m={4} s={6}>
+            <Col s={6} m={3} l={4}>
                 <TextInput
                     required
                     s={12}
@@ -53,45 +58,37 @@ const StarterForm = ({ handleChange, ...props }) => {
                     onChange={handleChange}
                 />
             </Col>
-            <Col m={3} s={6}>
-                <Select
-                    s={12}
+            <Col m={3} s={12} className="mn-radio">
+                <RadioGroup
                     label="Language"
-                    value={props.lang}
+                    id="lang"
                     name="lang"
+                    value={props.lang}
                     onChange={handleChange}
-                >
-                    <option value="java">Java</option>
-                    <option value="kotlin">Kotlin</option>
-                    <option value="groovy">Groovy</option>
-                </Select>
+                    options={LANG_OPTS}
+                />
             </Col>
-            <Col m={3} s={6}>
-                <Select
-                    s={12}
+            <Col m={3} s={12} className="mn-radio">
+                <RadioGroup
                     label="Build"
-                    value={props.build}
+                    id="build"
                     name="build"
+                    value={props.build}
                     onChange={handleChange}
-                >
-                    <option value="gradle">Gradle</option>
-                    <option value="maven">Maven</option>
-                </Select>
+                    options={BUILD_OPTS}
+                />
             </Col>
-            <Col m={3} s={6}>
-                <Select
-                    s={12}
+            <Col m={3} s={12} className="mn-radio">
+                <RadioGroup
                     label="Test Framework"
-                    value={props.testFw}
+                    id="testFw"
                     name="testFw"
+                    value={props.testFw}
                     onChange={handleChange}
-                >
-                    <option value="junit">JUnit</option>
-                    <option value="spock">Spock</option>
-                    <option value="kotlintest">Kotlintest</option>
-                </Select>
+                    options={TEST_OPTS}
+                />
             </Col>
-            <Col m={3} s={6}>
+            <Col m={3} s={12} className="mn-radio">
                 <Select
                     s={12}
                     label="Java Version"
