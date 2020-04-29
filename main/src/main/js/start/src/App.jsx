@@ -123,8 +123,8 @@ class App extends Component {
   };
 
   handleChange = (event) => {
-    // Strip out any non alphanumeric characters (or .) from the input.
-    const value = event.target.value.replace(/[^a-z0-9.]/gi, "");
+    // Strip out any non alphanumeric characters (or ".","-","_") from the input.
+    const value = event.target.value.replace(/[^a-z\d.\-_]/gi, "");
     this.setState({
       [event.target.name]: value,
     });
