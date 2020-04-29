@@ -18,11 +18,6 @@ const Diff = (
   { diff, lang, build, theme = "light", disabled, onLoad, onClose },
   ref
 ) => {
-  const onModalClose = () => {
-    if (onClose instanceof Function) {
-      onClose();
-    }
-  };
 
   return (
     <React.Fragment>
@@ -46,7 +41,7 @@ const Diff = (
         className={"diff " + theme}
         fixedFooter
         options={{
-          onCloseStart: onModalClose,
+          onCloseStart: onClose,
           startingTop: "5%",
           endingTop: "5%",
         }}
