@@ -67,7 +67,15 @@ body {
 
 .modal {
   width: 35%;
-  min-width: 350px;
+  min-width: 320px;
+}
+
+.modal.modal-lg {
+  width: 65%;
+}
+
+.modal.modal-xl {
+  width: 90%;
 }
 
 .mn-header {
@@ -92,6 +100,7 @@ body {
   z-index: 1001;
 }
 
+.modal.mn-feature-modal,
 .modal.preview {
   width: 75%;
   max-height: 90%;
@@ -128,7 +137,6 @@ body {
 }
 
 .mn-main-container {
-  padding-bottom: 1em;
   background: linear-gradient(
     to bottom,
     var(--theme-light) 95%,
@@ -171,6 +179,15 @@ body.dark {
   color: var(--theme-light) !important;
 }
 
+.mn-footer {
+  pointer-events: none;
+}
+
+.mn-footer a,
+.mn-footer button {
+  pointer-events: all;
+}
+
 body.dark .btn-flat,
 body.dark .mn-footer-logos {
   color: #fff;
@@ -203,6 +220,10 @@ button.dark:focus {
 
 .btn-floating i {
   color: inherit;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .modal.dark,
