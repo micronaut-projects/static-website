@@ -239,7 +239,7 @@ class App extends Component {
         }
       })
       .then((text) => {
-        if (text == '') {
+        if (text === '') {
           this.setState({ diff: "There are no differences. Try selecting some features.", downloading: false });
         } else {
           this.setState({ diff: text, downloading: false });
