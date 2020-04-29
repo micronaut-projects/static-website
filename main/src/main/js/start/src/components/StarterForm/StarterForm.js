@@ -34,18 +34,6 @@ const StarterForm = ({ handleChange, ...props }) => {
                 </Select>
             </Col>
 
-            <Col s={6} m={3} l={3}>
-                <TextInput
-                    required
-                    s={12}
-                    className="mn-input"
-                    label="Name"
-                    name="name"
-                    placeholder="ex: myapp"
-                    value={props.name}
-                    onChange={handleChange}
-                />
-            </Col>
             <Col s={6} m={3} l={4}>
                 <TextInput
                     required
@@ -55,6 +43,18 @@ const StarterForm = ({ handleChange, ...props }) => {
                     name="package"
                     placeholder="ex: com.mycompany"
                     value={props.package}
+                    onChange={handleChange}
+                />
+            </Col>
+            <Col s={6} m={3} l={3}>
+                <TextInput
+                    required
+                    s={12}
+                    className="mn-input"
+                    label="Name"
+                    name="name"
+                    placeholder="ex: myapp"
+                    value={props.name}
                     onChange={handleChange}
                 />
             </Col>
