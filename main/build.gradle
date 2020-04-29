@@ -41,12 +41,12 @@ apply plugin: "com.github.node-gradle.node"
 
 node {
     // Set the work directory where node_modules should be located
-    nodeModulesDir = file("${rootProject.projectDir}/main/src/main/js/start")
+    nodeModulesDir = file("${rootProject.projectDir}/main/src/main/js/launch")
 }
 
 task buildStarter(type: NpmTask) {
     dependsOn npmInstall
-    workingDir = file("${rootProject.projectDir}/main/src/main/js/start")
+    workingDir = file("${rootProject.projectDir}/main/src/main/js/launch")
     args = ['run', 'build']
 }
 
@@ -136,8 +136,13 @@ task copyAssets {
             include '*.js'
         }
         copy {
-            from "${rootProject.projectDir}/main/src/main/js/start/build"
+            from "${rootProject.projectDir}/main/src/main/js/launch/build"
+            into "${project.buildDir}/${siteDir}/launch"
+        }
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/start"
             into "${project.buildDir}/${siteDir}/start"
+            include '*.html'
         }
     }
 }
