@@ -58,48 +58,54 @@
 	
 </style>
 
-<div id="mauticform_wrapper_micronauttalkinvitation" class="mauticform_wrapper">
-    <form autocomplete="false" role="form" method="post" action="https://mautic.objectcomputing.com/form/submit?formId=118" id="mauticform_micronauttalkinvitation"  data-mautic-form="micronauttalkinvitation" enctype="multipart/form-data">
-        
+<div id="mauticform_wrapper_micronautspeakerrequest" class="mauticform_wrapper">
+    <form autocomplete="false" role="form" method="post" action="https://mautic.objectcomputing.com/form/submit?formId=255" id="mauticform_micronautspeakerrequest"  data-mautic-form="micronautspeakerrequest" enctype="multipart/form-data">
+        <div class="mauticform-error" id="mauticform_micronautspeakerrequest_error"></div>
+        <div class="mauticform-message" id="mauticform_micronautspeakerrequest_message"></div>
         <div class="mauticform-innerform">
-		
-		<div>
-			<h2>Invite a member of the Micronaut team to speak at your event</h2>
-		</div>
 
-            <div id="mauticform_micronauttalkinvitation_first_name"  data-validate="first_name" data-validation-type="text" class="mauticform-row mauticform-text mauticform-field-1 mauticform-required">
-                <input id="mauticform_input_micronauttalkinvitation_first_name" name="mauticform[first_name]" value="" placeholder="First Name *" class="mauticform-input" type="text" />
+            
+          <div class="mauticform-page-wrapper mauticform-page-1" data-mautic-form-page="1">
+
+            <div id="mauticform_micronautspeakerrequest_header"  class="mauticform-row mauticform-freehtml mauticform-field-1">
+                <div id="mauticform_input_micronautspeakerrequest_header" name="mauticform[header]" value="" class="mauticform-freehtml">
+                    <h2>Invite a Member of the Micronaut Team to Speak at Your Event</h2>
+                </div>
+            </div>
+
+            <div id="mauticform_micronautspeakerrequest_first_name"  data-validate="first_name" data-validation-type="text" class="mauticform-row mauticform-text mauticform-field-2 mauticform-required">
+                <label id="mauticform_label_micronautspeakerrequest_first_name" for="mauticform_input_micronautspeakerrequest_first_name" class="mauticform-label">First Name</label>
+                <input id="mauticform_input_micronautspeakerrequest_first_name" name="mauticform[first_name]" value="" class="mauticform-input" type="text" />
                 <span class="mauticform-errormsg" style="display: none;">Please enter your first name.</span>
             </div>
 
-            <div id="mauticform_micronauttalkinvitation_last_name"  data-validate="last_name" data-validation-type="text" class="mauticform-row mauticform-text mauticform-field-2 mauticform-required">
-                <input id="mauticform_input_micronauttalkinvitation_last_name" name="mauticform[last_name]" value="" placeholder="Last Name *" class="mauticform-input" type="text" />
+            <div id="mauticform_micronautspeakerrequest_last_name"  data-validate="last_name" data-validation-type="text" class="mauticform-row mauticform-text mauticform-field-3 mauticform-required">
+                <label id="mauticform_label_micronautspeakerrequest_last_name" for="mauticform_input_micronautspeakerrequest_last_name" class="mauticform-label">Last Name</label>
+                <input id="mauticform_input_micronautspeakerrequest_last_name" name="mauticform[last_name]" value="" class="mauticform-input" type="text" />
                 <span class="mauticform-errormsg" style="display: none;">Please enter your last name.</span>
             </div>
 
-            <div id="mauticform_micronauttalkinvitation_email"  data-validate="email" data-validation-type="email" class="mauticform-row mauticform-email mauticform-field-3 mauticform-required">
-                <input id="mauticform_input_micronauttalkinvitation_email" name="mauticform[email]" value="" placeholder="Email Address *" class="mauticform-input" type="email" />
+            <div id="mauticform_micronautspeakerrequest_email_address"  data-validate="email_address" data-validation-type="email" class="mauticform-row mauticform-email mauticform-field-4 mauticform-required">
+                <label id="mauticform_label_micronautspeakerrequest_email_address" for="mauticform_input_micronautspeakerrequest_email_address" class="mauticform-label">Email Address</label>
+                <input id="mauticform_input_micronautspeakerrequest_email_address" name="mauticform[email_address]" value="" class="mauticform-input" type="email" />
                 <span class="mauticform-errormsg" style="display: none;">Please enter your email address.</span>
             </div>
 
-            <div id="mauticform_micronauttalkinvitation_request"  class="mauticform-row mauticform-text mauticform-field-4">
-                <textarea id="mauticform_input_micronauttalkinvitation_request" name="mauticform[request]" placeholder="Tell us a little about your group or event." class="mauticform-textarea"></textarea>
+            <div id="mauticform_micronautspeakerrequest_message_optional"  class="mauticform-row mauticform-text mauticform-field-5">
+                <label id="mauticform_label_micronautspeakerrequest_message_optional" for="mauticform_input_micronautspeakerrequest_message_optional" class="mauticform-label">Message (optional)</label>
+                <textarea id="mauticform_input_micronautspeakerrequest_message_optional" name="mauticform[message_optional]" placeholder="Please tell us a little about your group or event." class="mauticform-textarea"></textarea>
                 <span class="mauticform-errormsg" style="display: none;"></span>
             </div>
 
-            <div id="mauticform_micronauttalkinvitation_submit"  class="mauticform-row mauticform-button-wrapper mauticform-field-5">
-                <button type="submit" name="mauticform[submit]" id="mauticform_input_micronauttalkinvitation_submit" name="mauticform[submit]" value="" class="mauticform-button btn btn-default" value="1">Submit</button>
+            <div id="mauticform_micronautspeakerrequest_submit_my_request"  class="mauticform-row mauticform-button-wrapper mauticform-field-6">
+                <button type="submit" name="mauticform[submit_my_request]" id="mauticform_input_micronautspeakerrequest_submit_my_request" name="mauticform[submit_my_request]" value="" class="mauticform-button btn btn-default" value="1">Submit My Request</button>
             </div>
-           
+            </div>
         </div>
 
-        <input type="hidden" name="mauticform[formId]" id="mauticform_micronauttalkinvitation_id" value="118"/>
-        <input type="hidden" name="mauticform[return]" id="mauticform_micronauttalkinvitation_return" value=""/>
-        <input type="hidden" name="mauticform[formName]" id="mauticform_micronauttalkinvitation_name" value="micronauttalkinvitation"/>
+        <input type="hidden" name="mauticform[formId]" id="mauticform_micronautspeakerrequest_id" value="255"/>
+        <input type="hidden" name="mauticform[return]" id="mauticform_micronautspeakerrequest_return" value=""/>
+        <input type="hidden" name="mauticform[formName]" id="mauticform_micronautspeakerrequest_name" value="micronautspeakerrequest"/>
 
         </form>
-		
-		<div class="mauticform-error" id="mauticform_micronauttalkinvitation_error"></div>
-        <div class="mauticform-message" id="mauticform_micronauttalkinvitation_message"></div>
-		
 </div>
