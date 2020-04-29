@@ -8,6 +8,7 @@ import Modal from "react-materialize/lib/Modal";
 
 import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
+
 import { Grid } from "@material-ui/core";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -15,6 +16,8 @@ import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { capitalize } from "../../utility";
+import messages from "../../constants/messages.json";
+import TooltipButton from "../TooltipButton";
 
 const CodePreview = (
   { preview, lang, build, theme = "light", disabled, onLoad, onClose },
@@ -91,7 +94,8 @@ const CodePreview = (
 
   return (
     <React.Fragment>
-      <Button
+      <TooltipButton
+        tooltip={messages.tooltips.preview}
         disabled={disabled}
         waves="light"
         className={theme}
@@ -100,7 +104,7 @@ const CodePreview = (
       >
         <Icon left>search</Icon>
         Preview
-      </Button>
+      </TooltipButton>
       <Modal
         header={
           "Previewing a " +

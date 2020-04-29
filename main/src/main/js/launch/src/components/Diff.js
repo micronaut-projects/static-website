@@ -12,16 +12,18 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+import TooltipButton from "./TooltipButton";
+import messages from "../constants/messages.json";
 import { capitalize } from "../utility";
 
 const Diff = (
   { diff, lang, build, theme = "light", disabled, onLoad, onClose },
   ref
 ) => {
-
   return (
     <React.Fragment>
-      <Button
+      <TooltipButton
+        tooltip={messages.tooltips.diff}
         disabled={disabled}
         waves="light"
         className={theme}
@@ -30,7 +32,7 @@ const Diff = (
       >
         <Icon left>compare_arrows</Icon>
         Diff
-      </Button>      
+      </TooltipButton>
       <Modal
         header={
           "Showing Diff for a " +
