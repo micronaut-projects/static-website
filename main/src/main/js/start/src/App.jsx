@@ -315,14 +315,12 @@ class App extends Component {
       <Fragment>
         <div id="mn-main-container" className="mn-main-container sticky">
           <div className="container">
-            <div className="mn-header">
-              <img
-                src={theme === "light" ? logoLight : logoDark}
-                width="50%"
-                alt="Micronaut"
-                className="mn-logo"
-              />
-            </div>
+            <img
+              src={theme === "light" ? logoLight : logoDark}
+              width="50%"
+              alt="Micronaut"
+              className="mn-logo"
+            />
             <div className="mn-container">
               <form onSubmit={this.generateProject} autoComplete="off">
                 <StarterForm

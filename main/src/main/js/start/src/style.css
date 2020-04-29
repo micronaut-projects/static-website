@@ -129,8 +129,8 @@ body {
 }
 
 .mn-logo {
-  padding-top: 5px;
-  padding-bottom: 35px;
+  padding-top: 1em;
+  padding-bottom: 2em;
 }
 
 .mn-footer-logos {
@@ -349,6 +349,10 @@ body.dark .dropdown-content li > span:hover {
 .spinner-blue,
 .spinner-blue-only {
   border-color: #000000;
+}
+
+.modal .modal-content h4 {
+  font-size: 2em;
 }
 
 @media only screen and (max-width: 768px) {
