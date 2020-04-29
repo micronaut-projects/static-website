@@ -301,6 +301,10 @@ body.dark .mn-input:focus + label {
   color: #fff !important;
 }
 
+body.dark .mn-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
 body.dark .dropdown-content li > a,
 body.dark .dropdown-content li > span {
   color: #fff;
