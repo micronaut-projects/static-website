@@ -361,7 +361,7 @@ class App extends Component {
                       }
                       waves="light"
                       className={theme}
-                      style={{ marginRight: "5px", width: "100%" }}
+                      style={{ marginRight: "5px", width: "80%" }}
                     >
                       <Icon left>get_app</Icon>
                       Generate project

@@ -30,10 +30,10 @@ const Diff = (
         disabled={disabled}
         waves="light"
         className={theme}
-        style={{ marginRight: "5px", width: "100%" }}
+        style={{ marginRight: "5px", width: "80%" }}
         onClick={onLoad}
       >
-        <Icon left>search</Icon>
+        <Icon left>compare_arrows</Icon>
         Diff
       </Button>      
       <Modal
@@ -43,7 +43,7 @@ const Diff = (
           " application using " +
           capitalize(build)
         }
-        className={"preview " + theme}
+        className={"diff " + theme}
         fixedFooter
         options={{
           onCloseStart: onModalClose,
@@ -64,13 +64,13 @@ const Diff = (
             style={{ display: "none" }}
             onClick={onLoad}
           >
-            <Icon left>search</Icon>
+            <Icon left>compare_arrows</Icon>
             Diff
           </Button>
         }
       >
         <Grid container className="grid-container">
-          <Grid item xs={9} className={"grid-column"}>
+          <Grid item xs={12} className={"grid-column"}>
             {diff && (
               <SyntaxHighlighter
                 className="codePreview"
