@@ -1,20 +1,21 @@
 /* Modal */
-.mn-feature-container .mn-feature-modal .modal-content h4 {
+.mn-feature-modal .modal-content h4 {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1001;
-    padding: 0px 1em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0px 0.8em;
+    padding-top: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.mn-feature-container .mn-feature-modal .modal-content h4 .helper-text {
+.mn-feature-modal .modal-content {
+    padding-top: 7em;
+}
+
+.mn-feature-modal .modal-content h4 .helper-text {
     display: none;
-}
-
-.mn-feature-container .mn-feature-modal .modal-content {
-    padding-top: 6em;
 }
 
 .mn-feature-modal .input-field > label:not(.label-icon).active {
