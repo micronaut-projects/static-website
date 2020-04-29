@@ -8,6 +8,7 @@ import {
   FeatureSelectedList,
 } from "./components/FeatureSelector";
 import CodePreview from "./components/CodePreview";
+import Diff from "./components/Diff";
 import Footer from "./components/Footer";
 import StarterForm from "./components/StarterForm";
 
@@ -46,7 +47,8 @@ class App extends Component {
       errorMessage: "",
       styleMode: window.localStorage.getItem("styleMode") || "light",
     };
-    this.modalButton = null;
+    this.previewButton = null;
+    this.diffButton = null;
   }
 
   componentDidMount() {
@@ -175,7 +177,7 @@ class App extends Component {
   buildFetchUrl = (prefix) => {
     if (!prefix) {
       console.error(
-        "A prefix is required, should be either 'preview' or 'create'"
+        "A prefix is required, should be one of 'diff', 'preview' or 'create'"
       );
     }
     const { type, name, lang, build, testFw, javaVersion } = this.state;
@@ -211,7 +213,7 @@ class App extends Component {
       .then((json) => {
         const nodes = makeNodeTree(json.contents);
         this.setState({ preview: nodes, downloading: false });
-        this.modalButton.props.onClick();
+        this.previewButton.props.onClick();
       })
       .catch((response) => {
         console.log(response);
@@ -219,6 +221,45 @@ class App extends Component {
           this.setState({ error: true, errorMessage: body.message });
         });
       });
+  };
+
+  loadDiff = (e) => {
+    this.setState({ error: false });
+    e.preventDefault();
+    let FETCH_URL = this.buildFetchUrl("diff");
+
+    fetch(FETCH_URL, {
+      method: "GET",
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw response;
+        }
+      })
+      .then((text) => {
+        if (text == '') {
+          this.setState({ diff: "There are no differences. Try selecting some features.", downloading: false });
+        } else {
+          this.setState({ diff: text, downloading: false });
+        }
+        
+        this.diffButton.props.onClick();
+      })
+      .catch((response) => {
+        console.log(response);
+        alert(response)
+        response.json().then((body) => {
+          this.setState({ error: true, errorMessage: body.message });
+        });
+      });
+  };
+
+  clearDiff = () => {
+    this.setState({
+      diff: null,
+    });
   };
 
   clearPreview = () => {
@@ -265,7 +306,7 @@ class App extends Component {
                 />
 
                 <Row>
-                  <Col s={6}>
+                  <Col s={3}>
                     <FeatureSelectorModal
                       theme={theme}
                       loading={this.state.loadingFeatures}
@@ -278,7 +319,7 @@ class App extends Component {
                   </Col>
                   <Col s={3}>
                     <CodePreview
-                      ref={(button) => (this.modalButton = button)}
+                      ref={(button) => (this.previewButton = button)}
                       theme={theme}
                       preview={this.state.preview}
                       lang={this.state.lang}
@@ -292,6 +333,23 @@ class App extends Component {
                         this.state.loadingFeatures
                       }
                     />
+                  </Col>
+                  <Col s={3}>
+                    <Diff
+                        ref={(button) => (this.diffButton = button)}
+                        theme={theme}
+                        diff={this.state.diff}
+                        lang={this.state.lang}
+                        build={this.state.build}
+                        onLoad={this.loadDiff}
+                        onClose={this.clearDiff}
+                        disabled={
+                          this.state.downloading ||
+                          !this.state.name ||
+                          !this.state.package ||
+                          this.state.loadingFeatures
+                        }
+                      />
                   </Col>
                   <Col s={3}>
                     <Button
@@ -316,13 +374,17 @@ class App extends Component {
           </div>
         </div>
         <div className="container mn-feature-container">
+          
           <Row>
+            
             <FeatureSelectedList
               theme={theme}
               selectedFeatures={this.state.featuresSelected}
               onRemoveFeature={this.removeFeature}
             />
           </Row>
+
+
         </div>
         <Footer theme={theme} onToggleTheme={() => this.toggleStyleMode()} />
       </Fragment>
