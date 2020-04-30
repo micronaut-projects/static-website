@@ -6,8 +6,7 @@ import InfoButton from "../InfoButton";
 import { Button } from "react-materialize";
 import Icon from "react-materialize/lib/Icon";
 
-import logoLight from "../../images/micronaut.png";
-import logoDark from "../../images/micronaut-white.png";
+import MicronautLaunchLogo from "../MicronautLaunchLogo";
 
 const Header = ({ info, theme, onToggleTheme, onShowInfo }) => {
     const [active, setActive] = useState(false);
@@ -29,11 +28,7 @@ const Header = ({ info, theme, onToggleTheme, onShowInfo }) => {
         <div className="mn-header d-flex">
             <div className="logo-wrapper">
                 <a href="https://micronaut.io">
-                    <img
-                        src={theme === "light" ? logoLight : logoDark}
-                        alt="Micronaut"
-                        className="mn-logo"
-                    />
+                    <MicronautLaunchLogo />
                 </a>
             </div>
             <span className={`icon-wrapper ${active && "active"}`}>
