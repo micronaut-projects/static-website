@@ -42,18 +42,6 @@ body {
   border-top: 1px solid;
 }
 
-.modal.preview h4 {
-  padding-bottom: 10px;
-  margin-bottom: 0;
-  position: fixed;
-}
-
-.modal.diff h4 {
-  padding-bottom: 10px;
-  margin-bottom: 0;
-  position: fixed;
-}
-
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:before,
 [type="radio"].with-gap:checked + span:after {
@@ -71,32 +59,6 @@ body {
 }
 .flex {
   flex: 1;
-}
-
-.modal {
-  width: 35%;
-  min-width: 320px;
-}
-
-.modal.modal-lg {
-  width: 65%;
-}
-
-.modal.modal-xl {
-  width: 90%;
-}
-
-.modal.mn-feature-modal,
-.modal.preview {
-  width: 75%;
-  max-height: 90%;
-  height: 90%;
-}
-
-.modal.diff {
-  width: 75%;
-  max-height: 90%;
-  height: 90%;
 }
 
 .mn-footer {
@@ -211,16 +173,6 @@ button.dark:focus {
   cursor: pointer;
 }
 
-.modal.dark,
-.modal.dark .modal-footer {
-  background-color: var(--theme-dark);
-}
-
-.modal.light,
-.modal.light .modal-footer {
-  background-color: var(--theme-light);
-}
-
 .grey-text {
   color: var(--label-grey) !important;
 }
@@ -323,40 +275,6 @@ body.dark .dropdown-content li > span:hover {
   border-color: #000000;
 }
 
-/* Modal Media */
-
-@media only screen and (max-width: 768px) {
-  .modal {
-    width: 60%;
-  }
-  .modal .modal-content h4 {
-    font-size: 1.7em;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .modal .modal-content h4 {
-    font-size: 1.5em;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .modal {
-    height: 100% !important;
-    max-height: 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    top: 0% !important;
-    font-size: 14px;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .modal .modal-content h4 {
-    font-size: 1.3em;
-  }
-}
-
 /* Media */
 @media only screen and (max-width: 600px) {
   .mn-feature-container .selected-features,
@@ -364,14 +282,6 @@ body.dark .dropdown-content li > span:hover {
     position: relative !important;
     top: 0;
     overflow-y: scroll;
-  }
-  .modal {
-    height: 100% !important;
-    max-height: 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    top: 0% !important;
-    font-size: 14px;
   }
 }
 
