@@ -32,6 +32,11 @@
   border-bottom: 1px solid black !important;
 }
 
+body.light .MuiPaper-root.MuiMenu-paper.MuiPopover-paper {
+  background-color: var(--theme-light);
+  color: #000;
+}
+
 body.dark .MuiInput-underline:after {
   border-bottom: 1px solid white !important;
 }
@@ -54,9 +59,16 @@ body.dark .MuiFormControl-root .MuiFormLabel-root.Mui-focused {
 }
 
 body.dark .MuiPaper-root.MuiMenu-paper.MuiPopover-paper {
-  background-color: var(--theme-dark);
-  color: var(--theme-light);
+  background-color: #3a3a3a;
+  color: #fff;
 }
+
+body.dark .MuiListItem-root:hover,
+body.dark .MuiListItem-root.Mui-selected,
+body.dark .MuiListItem-root.Mui-selected:hover {
+  background-color: var(--theme-dark);
+}
+
 
 body.dark .MuiInput-underline,
 body.dark .MuiInput-underline:after {
