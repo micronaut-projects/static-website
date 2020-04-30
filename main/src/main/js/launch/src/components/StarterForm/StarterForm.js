@@ -11,6 +11,7 @@ import {
     LANG_OPTS,
     BUILD_OPTS,
     TEST_OPTS,
+    MICRONAUT_VERSIONS
 } from "../../constants";
 
 const JAVA_OPTS = JAVA_VERSIONS.map((v) => ({
@@ -69,6 +70,16 @@ const StarterForm = ({ handleChange, ...props }) => {
                     onChange={handleChange}
                 />
             </Col>
+            <Col m={3} s={12} className="mn-radio">
+                <RadioGroup
+                    label="Micronaut Version"
+                    id="version"
+                    name="version"
+                    value="2.0.0.M3"
+                    // onChange={handleChange}
+                    options={MICRONAUT_VERSIONS}
+                />
+            </Col>            
             <Col m={3} s={12} className="mn-radio">
                 <RadioGroup
                     label="Language"
