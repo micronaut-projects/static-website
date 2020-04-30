@@ -9,11 +9,24 @@
     height: 120px
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 840px) {
+    .mn-header .logo-wrapper {
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .mn-header .logo-wrapper {
+        height: 80px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
     .mn-header .logo-wrapper {
         height: 60px;
     }
 }
+
 
 .mn-header .logo-wrapper .mn-logo {
     height: 100%;
