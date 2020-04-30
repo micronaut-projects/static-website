@@ -9,7 +9,6 @@ import {
 } from "./components/FeatureSelector";
 import CodePreview from "./components/CodePreview";
 import Diff from "./components/Diff";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import StarterForm from "./components/StarterForm";
 import ErrorView from "./components/ErrorView";
@@ -25,9 +24,6 @@ import {
 import messages from "./constants/messages.json";
 
 import { makeNodeTree } from "./utility";
-
-import logoLight from "./micronaut.png";
-import logoDark from "./micronaut-white.png";
 
 import "./style.css";
 
@@ -311,7 +307,6 @@ class App extends Component {
         <div id="mn-main-container" className="mn-main-container sticky">
           <div className="container">
             <Header
-              theme={theme}
               theme={theme}
               onToggleTheme={() => this.toggleStyleMode()}
             />

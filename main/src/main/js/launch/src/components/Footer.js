@@ -1,8 +1,6 @@
 // Footer.js
 import React from "react";
 import InfoButton from "./InfoButton";
-import GitHubLink from "./GitHubLink";
-import TwitterLink from "./TwitterLink";
 
 import { Button } from "react-materialize";
 import Icon from "react-materialize/lib/Icon";
