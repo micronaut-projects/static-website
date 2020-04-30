@@ -328,17 +328,7 @@ body.dark .dropdown-content li > span:hover {
   border-color: #000000;
 }
 
-@media only screen and (max-width: 700px) {
-  .modal .modal-content h4 {
-    font-size: 1.5em;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .modal .modal-content h4 {
-    font-size: 1.3em;
-  }
-}
+/* Modal Media */
 
 @media only screen and (max-width: 768px) {
   .modal {
@@ -349,13 +339,41 @@ body.dark .dropdown-content li > span:hover {
   }
 }
 
-/* Media */
-.xs-only {
-  display: none;
+@media only screen and (max-width: 700px) {
+  .modal .modal-content h4 {
+    font-size: 1.5em;
+  }
 }
+
+@media only screen and (max-width: 600px) {
+  .modal {
+    height: 100% !important;
+    max-height: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    top: 0% !important;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .modal .modal-content h4 {
+    font-size: 1.3em;
+  }
+}
+
+/* Media */
 @media only screen and (max-width: 400px) {
-  .xs-only {
-    display: initial;
+  .row .col.xs6 {
+    width: 50%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    padding-bottom: 5px;
+  }
+  .button-row .btn {
+    font-size: 0.7em;
+    padding: 0 10px;
   }
 }
 
@@ -380,9 +398,20 @@ body.dark .dropdown-content li > span:hover {
   }
 }
 
-@media only screen and (max-width: 400px) {
-  .button-row .btn {
-    font-size: 0.8em;
-    padding: 0 16px;
+.action-button-icon {
+  display: block;
+}
+
+@media only screen and (max-width: 788px) {
+  .action-button-icon {
+    display: none;
+    background-color: orange;
   }
 }
+
+/*@media only screen and (max-width: 400px) {
+  .action-button-icon {
+    display: block;
+    background-color: red;
+  }
+}*/

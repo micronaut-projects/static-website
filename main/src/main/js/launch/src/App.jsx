@@ -320,7 +320,7 @@ class App extends Component {
                 />
 
                 <Row className="button-row">
-                  <Col s={3}>
+                  <Col s={3} className="xs6">
                     <FeatureSelectorModal
                       theme={theme}
                       loading={this.state.loadingFeatures}
@@ -331,7 +331,7 @@ class App extends Component {
                       onRemoveAllFeatures={this.removeAllFeatures}
                     />
                   </Col>
-                  <Col s={3}>
+                  <Col s={3} className="xs6">
                     <Diff
                       ref={(button) => (this.diffButton = button)}
                       theme={theme}
@@ -348,7 +348,7 @@ class App extends Component {
                       }
                     />
                   </Col>
-                  <Col s={3}>
+                  <Col s={3} className="xs6">
                     <CodePreview
                       ref={(button) => (this.previewButton = button)}
                       theme={theme}
@@ -360,7 +360,7 @@ class App extends Component {
                       disabled={disabled}
                     />
                   </Col>
-                  <Col s={3}>
+                  <Col s={3} className="xs6">
                     <TooltipButton
                       tooltip={messages.tooltips.generate}
                       disabled={disabled}
@@ -368,7 +368,7 @@ class App extends Component {
                       className={theme}
                       style={{ marginRight: "5px", width: "100%" }}
                     >
-                      <Icon className="xs-only" left>
+                      <Icon className="action-button-icon" left>
                         get_app
                       </Icon>
                       Generate project

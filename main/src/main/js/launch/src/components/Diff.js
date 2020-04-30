@@ -30,7 +30,7 @@ const Diff = (
         style={{ marginRight: "5px", width: "100%" }}
         onClick={onLoad}
       >
-        <Icon className="xs-only" left>
+        <Icon className="action-button-icon" left>
           compare_arrows
         </Icon>
         Diff
