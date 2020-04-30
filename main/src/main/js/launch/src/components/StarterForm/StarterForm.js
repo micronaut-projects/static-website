@@ -15,7 +15,7 @@ import {
 const StarterForm = ({ handleChange, ...props }) => {
     return (
         <Row className="mn-starter-form-main">
-            <Col l={5} m={6} s={12}>
+            <Col l={4} m={8} s={8}>
                 <Select
                     s={12}
                     className="mn-input"
@@ -33,8 +33,24 @@ const StarterForm = ({ handleChange, ...props }) => {
                     })}
                 </Select>
             </Col>
-
-            <Col s={6} m={3} l={4}>
+            <Col l={2} m={4} s={4} className="mn-radio">
+                <Select
+                    s={12}
+                    label="Java Version"
+                    value={props.javaVersion.toString()}
+                    name="javaVersion"
+                    onChange={handleChange}
+                >
+                    {JAVA_VERSIONS.map((version, i) => {
+                        return (
+                            <option key={i} value={version.toString()}>
+                                {version}
+                            </option>
+                        );
+                    })}
+                </Select>
+            </Col>
+            <Col s={8} m={6} l={3}>
                 <TextInput
                     required
                     s={12}
@@ -46,7 +62,7 @@ const StarterForm = ({ handleChange, ...props }) => {
                     onChange={handleChange}
                 />
             </Col>
-            <Col s={6} m={3} l={3}>
+            <Col s={4} m={6} l={3}>
                 <TextInput
                     required
                     s={12}
@@ -87,23 +103,6 @@ const StarterForm = ({ handleChange, ...props }) => {
                     onChange={handleChange}
                     options={TEST_OPTS}
                 />
-            </Col>
-            <Col m={3} s={12} className="mn-radio">
-                <Select
-                    s={12}
-                    label="Java Version"
-                    value={props.javaVersion.toString()}
-                    name="javaVersion"
-                    onChange={handleChange}
-                >
-                    {JAVA_VERSIONS.map((version, i) => {
-                        return (
-                            <option key={i} value={version.toString()}>
-                                {version}
-                            </option>
-                        );
-                    })}
-                </Select>
             </Col>
         </Row>
     );

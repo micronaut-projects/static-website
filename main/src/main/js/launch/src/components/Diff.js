@@ -18,7 +18,6 @@ const Diff = (
   { diff, lang, build, theme = "light", disabled, onLoad, onClose },
   ref
 ) => {
-
   return (
     <React.Fragment>
       <Button
@@ -30,7 +29,7 @@ const Diff = (
       >
         <Icon left>compare_arrows</Icon>
         Diff
-      </Button>      
+      </Button>
       <Modal
         header={
           "Showing Diff for a " +

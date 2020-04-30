@@ -141,7 +141,11 @@ export const FeatureSelectorModal = ({
                     endingTop: "5%",
                 }}
                 trigger={
-                    <Button waves="light" className={theme} style={{ marginRight: "5px", width: "100%" }}>
+                    <Button
+                        waves="light"
+                        className={theme}
+                        style={{ marginRight: "5px", width: "100%" }}
+                    >
                         <Icon left>add</Icon>
                         Features
                     </Button>

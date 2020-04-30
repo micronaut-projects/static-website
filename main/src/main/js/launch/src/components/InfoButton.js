@@ -4,7 +4,7 @@ import { Button } from "react-materialize";
 import Modal from "react-materialize/lib/Modal";
 import Icon from "react-materialize/lib/Icon";
 
-const InfoButton = ({ className = "", theme }) => {
+const InfoButton = ({ className = "", theme, style }) => {
   const [modal, setModal] = useState(null);
   return (
     <Modal
@@ -17,7 +17,12 @@ const InfoButton = ({ className = "", theme }) => {
         </Button>
       }
       trigger={
-        <Button floating className={theme} onClick={() => setModal("info")}>
+        <Button
+          style={style}
+          floating
+          className={`${theme} ${className}`}
+          onClick={() => setModal("info")}
+        >
           <Icon>info</Icon>
         </Button>
       }

@@ -10,6 +10,7 @@ import {
 import CodePreview from "./components/CodePreview";
 import Diff from "./components/Diff";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 import StarterForm from "./components/StarterForm";
 import ErrorView from "./components/ErrorView";
 
@@ -307,12 +308,12 @@ class App extends Component {
       <Fragment>
         <div id="mn-main-container" className="mn-main-container sticky">
           <div className="container">
-            <img
-              src={theme === "light" ? logoLight : logoDark}
-              width="50%"
-              alt="Micronaut"
-              className="mn-logo"
+            <Header
+              theme={theme}
+              theme={theme}
+              onToggleTheme={() => this.toggleStyleMode()}
             />
+
             <div className="mn-container">
               <form onSubmit={this.generateProject} autoComplete="off">
                 <StarterForm
@@ -321,7 +322,7 @@ class App extends Component {
                   {...this.state}
                 />
 
-                <Row>
+                <Row className="button-row">
                   <Col s={3}>
                     <FeatureSelectorModal
                       theme={theme}
@@ -384,15 +385,12 @@ class App extends Component {
           </div>
         </div>
         <div className="container mn-feature-container">
-          <Row>
-            <FeatureSelectedList
-              theme={theme}
-              selectedFeatures={this.state.featuresSelected}
-              onRemoveFeature={this.removeFeature}
-            />
-          </Row>
+          <FeatureSelectedList
+            theme={theme}
+            selectedFeatures={this.state.featuresSelected}
+            onRemoveFeature={this.removeFeature}
+          />
         </div>
-        <Footer theme={theme} onToggleTheme={() => this.toggleStyleMode()} />
         <ErrorView
           error={this.state.error}
           errorMessage={this.state.errorMessage}
