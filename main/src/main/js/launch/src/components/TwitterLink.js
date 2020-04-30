@@ -7,7 +7,7 @@ import Avatar from "@material-ui/core/Avatar";
 export const TwitterLink = ({ className, theme }) => {
     const backgroundColor =
         theme === "dark" ? "var(--theme-light)" : "var(--theme-dark)";
-    const color = theme === "dark" ? "var(--theme-dark)" : "var(--theme-light)";
+    const color = theme === "dark" ? "var(--theme-dark)" : "white";
     const size = 32;
 
     return (
