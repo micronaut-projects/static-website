@@ -9,7 +9,7 @@ import {
 } from "./components/FeatureSelector";
 import CodePreview from "./components/CodePreview";
 import Diff from "./components/Diff";
-import Footer from "./components/Footer";
+import Header from "./components/Header";
 import StarterForm from "./components/StarterForm";
 import ErrorView from "./components/ErrorView";
 import TooltipButton from "./components/TooltipButton";
@@ -24,9 +24,6 @@ import {
 import messages from "./constants/messages.json";
 
 import { makeNodeTree } from "./utility";
-
-import logoLight from "./micronaut.png";
-import logoDark from "./micronaut-white.png";
 
 import "./style.css";
 
@@ -310,12 +307,11 @@ class App extends Component {
       <Fragment>
         <div id="mn-main-container" className="mn-main-container sticky">
           <div className="container">
-            <img
-              src={theme === "light" ? logoLight : logoDark}
-              width="50%"
-              alt="Micronaut"
-              className="mn-logo"
+            <Header
+              theme={theme}
+              onToggleTheme={() => this.toggleStyleMode()}
             />
+
             <div className="mn-container">
               <form onSubmit={this.generateProject} autoComplete="off">
                 <StarterForm
@@ -324,8 +320,8 @@ class App extends Component {
                   {...this.state}
                 />
 
-                <Row>
-                  <Col s={3}>
+                <Row className="button-row">
+                  <Col s={3} className="xs6">
                     <FeatureSelectorModal
                       theme={theme}
                       loading={this.state.loadingFeatures}
@@ -336,7 +332,7 @@ class App extends Component {
                       onRemoveAllFeatures={this.removeAllFeatures}
                     />
                   </Col>
-                  <Col s={3}>
+                  <Col s={3} className="xs6">
                     <Diff
                       ref={(button) => (this.diffButton = button)}
                       theme={theme}
@@ -353,7 +349,7 @@ class App extends Component {
                       }
                     />
                   </Col>
-                  <Col s={3}>
+                  <Col s={3} className="xs6">
                     <CodePreview
                       ref={(button) => (this.previewButton = button)}
                       theme={theme}
@@ -365,7 +361,7 @@ class App extends Component {
                       disabled={disabled}
                     />
                   </Col>
-                  <Col s={3}>
+                  <Col s={3} className="xs6">
                     <TooltipButton
                       tooltip={messages.tooltips.generate}
                       disabled={disabled}
@@ -373,7 +369,9 @@ class App extends Component {
                       className={theme}
                       style={{ marginRight: "5px", width: "100%" }}
                     >
-                      <Icon left>get_app</Icon>
+                      <Icon className="action-button-icon" left>
+                        get_app
+                      </Icon>
                       Generate project
                     </TooltipButton>
                   </Col>
@@ -388,15 +386,12 @@ class App extends Component {
           </div>
         </div>
         <div className="container mn-feature-container">
-          <Row>
-            <FeatureSelectedList
-              theme={theme}
-              selectedFeatures={this.state.featuresSelected}
-              onRemoveFeature={this.removeFeature}
-            />
-          </Row>
+          <FeatureSelectedList
+            theme={theme}
+            selectedFeatures={this.state.featuresSelected}
+            onRemoveFeature={this.removeFeature}
+          />
         </div>
-        <Footer theme={theme} onToggleTheme={() => this.toggleStyleMode()} />
         <ErrorView
           error={this.state.error}
           errorMessage={this.state.errorMessage}

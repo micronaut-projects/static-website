@@ -1,14 +1,12 @@
 // Footer.js
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "react-materialize";
 import Modal from "react-materialize/lib/Modal";
 import Icon from "react-materialize/lib/Icon";
 
-const InfoButton = ({ className = "", theme }) => {
-  const [modal, setModal] = useState(null);
+const InfoButton = ({ className = "", theme, style }) => {
   return (
     <Modal
-      open={modal === "info"}
       header="What's this?"
       className={theme}
       actions={
@@ -17,7 +15,7 @@ const InfoButton = ({ className = "", theme }) => {
         </Button>
       }
       trigger={
-        <Button floating className={theme} onClick={() => setModal("info")}>
+        <Button style={style} floating className={`${theme} ${className}`}>
           <Icon>info</Icon>
         </Button>
       }

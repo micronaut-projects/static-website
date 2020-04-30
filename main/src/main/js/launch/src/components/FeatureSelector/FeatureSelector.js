@@ -150,7 +150,9 @@ export const FeatureSelectorModal = ({
                         className={theme}
                         style={{ marginRight: "5px", width: "100%" }}
                     >
-                        <Icon left>add</Icon>
+                        <Icon className="action-button-icon" left>
+                            add
+                        </Icon>
                         Features
                     </TooltipButton>
                 }
