@@ -378,11 +378,9 @@ class App extends Component {
                   </Col>
                 </Row>
               </form>
-              {this.state.downloading ? (
-                <ProgressBar />
-              ) : (
-                <div style={{ minHeight: "18px", height: "18px" }} />
-              )}
+              <div className="progress-container">
+                {this.state.downloading && <ProgressBar />}
+              </div>
             </div>
           </div>
         </div>
