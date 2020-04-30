@@ -1,9 +1,12 @@
 export const API_URL =
     "https://launch.micronaut.io";
 export const JAVA_VERSIONS = [8, 9, 10, 11, 12, 13, 14];
-export const MICRONAUT_VERSIONS = [
-    {label:"2.0.0.M3", value:"2.0.0.M3"}
-];
+
+export const JAVA_OPTS = JAVA_VERSIONS.map((v) => ({
+    label: v.toString(),
+    value: v.toString(),
+}));
+
 export const LANG_OPTS = [
     { label: "Java", value: "java" },
     { label: "Kotlin", value: "kotlin" },

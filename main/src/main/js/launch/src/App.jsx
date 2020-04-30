@@ -43,6 +43,8 @@ class App extends Component {
       build: DEFAULT_BUILD,
       testFw: DEFAULT_TEST_FW,
       javaVersion: DEFAULT_JAVA_VERSION,
+      micronautVersion: null,
+      micronautVersions: [],
       loadingFeatures: false,
       featuresToSelect: [],
       featuresSelected: {},
@@ -57,52 +59,49 @@ class App extends Component {
 
   componentDidMount() {
     this.loadAppTypes();
+    this.loadVersions();
     this.loadFeatures(this.state.type);
   }
 
   loadAppTypes = () => {
     fetch(API_URL + "/application-types")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Failed to load the application types");
-        }
-      })
+      .then(this.responseHandler("json"))
       .then((data) => {
         const types = data.types.map((t) => {
           return { name: t.name.toUpperCase(), title: t.title };
         });
         this.setState({ types });
       })
-      .catch((error) => {
-        this.setState({ error: true, errorMessage: error.message });
-      });
+      .catch(this.handleResponseError);
+  };
+
+  loadVersions = () => {
+    fetch(API_URL + "/versions")
+      .then(this.responseHandler("json"))
+      .then((json) => {
+        const micronautVersion = json.versions["micronaut.version"];
+
+        // In the future a seperate request should be made
+        // to populate all of the supported versions.
+        const micronautVersions = [
+          { label: micronautVersion, value: micronautVersion },
+        ];
+        this.setState({ micronautVersion, micronautVersions });
+      })
+      .catch(this.handleResponseError);
   };
 
   loadFeatures = (appType) => {
     this.setState({ loadingFeatures: true });
     fetch(API_URL + "/application-types/" + appType + "/features")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Failed to load the available features");
-        }
-      })
+      .then(this.responseHandler("json"))
       .then((data) => {
         this.setState({
           featuresToSelect: data.features,
           loadingFeatures: false,
         });
       })
-      .catch((error) => {
-        this.setState({
-          error: true,
-          loadingFeatures: false,
-          errorMessage: error.message,
-        });
-      });
+      .catch(this.handleResponseError);
   };
 
   addFeature = (feature) => {
