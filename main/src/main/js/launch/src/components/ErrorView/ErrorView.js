@@ -4,7 +4,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import Avatar from "@material-ui/core/Avatar";
 
 import Alert from "@material-ui/lab/Alert";
-import logo from "../../micronaut-white-icon.png";
+import logo from "../../images/micronaut-white-icon.png";
 const ErrorView = ({ error, errorMessage, onClose }) => {
     const open = Boolean(errorMessage && error);
 

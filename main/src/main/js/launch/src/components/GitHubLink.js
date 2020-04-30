@@ -1,11 +1,8 @@
 // GitHubLink.js
 import React from "react";
-import githubLight from "../github.png";
-import githubDark from "../github-white.png";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 export const GitHubLink = ({ className, theme }) => {
-    const src = theme === "dark" ? githubDark : githubLight;
-
     return (
         <a
             href="https://github.com/micronaut-projects"
@@ -13,13 +10,7 @@ export const GitHubLink = ({ className, theme }) => {
             rel="noopener noreferrer"
             className={className}
         >
-            <img
-                src={src}
-                alt="GitHub"
-                rel="noopener noreferrer"
-                height="30px"
-                weight="30px"
-            />
+            <GitHubIcon style={{ fontSize: 32 }} />
         </a>
     );
 };

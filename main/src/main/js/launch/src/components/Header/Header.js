@@ -6,8 +6,8 @@ import InfoButton from "../InfoButton";
 import { Button } from "react-materialize";
 import Icon from "react-materialize/lib/Icon";
 
-import logoLight from "../../micronaut.png";
-import logoDark from "../../micronaut-white.png";
+import logoLight from "../../images/micronaut.png";
+import logoDark from "../../images/micronaut-white.png";
 
 const Header = ({ info, theme, onToggleTheme, onShowInfo }) => {
     const [active, setActive] = useState(false);

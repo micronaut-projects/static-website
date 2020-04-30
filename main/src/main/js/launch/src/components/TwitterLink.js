@@ -1,11 +1,14 @@
 // TwitterLink.js
 import React from "react";
 
-import twitterLight from "../twitter.png";
-import twitterDark from "../twitter-white.png";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import Avatar from "@material-ui/core/Avatar";
 
 export const TwitterLink = ({ className, theme }) => {
-    const src = theme === "dark" ? twitterDark : twitterLight;
+    const backgroundColor =
+        theme === "dark" ? "var(--theme-light)" : "var(--theme-dark)";
+    const color = theme === "dark" ? "var(--theme-dark)" : "var(--theme-light)";
+    const size = 32;
 
     return (
         <a
@@ -14,13 +17,9 @@ export const TwitterLink = ({ className, theme }) => {
             rel="noopener noreferrer"
             className={className}
         >
-            <img
-                src={src}
-                alt="Twitter"
-                rel="noopener noreferrer"
-                height="30px"
-                weight="30px"
-            />
+            <Avatar style={{ height: size, width: size, backgroundColor }}>
+                <TwitterIcon style={{ color }} />
+            </Avatar>
         </a>
     );
 };
