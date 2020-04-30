@@ -6,7 +6,13 @@
 
 .mn-header .logo-wrapper {
     flex: 0;
-    height: 60px;
+    height: 120px
+}
+
+@media only screen and (max-width: 600px) {
+    .mn-header .logo-wrapper {
+        height: 60px;
+    }
 }
 
 .mn-header .logo-wrapper .mn-logo {
