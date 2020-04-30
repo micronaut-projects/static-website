@@ -27,6 +27,8 @@ import { makeNodeTree } from "./utility";
 
 import "./style.css";
 import "./styles/button-row.css";
+import "./styles/modal-overrides.css";
+import "./styles/utility.css";
 
 class App extends Component {
   constructor(props) {
@@ -34,7 +36,7 @@ class App extends Component {
     this.state = {
       name: "demo",
       package: "com.example",
-      types: [],
+      types: [{ name: "DEFAULT", title: "" }],
       type: "DEFAULT",
       lang: DEFAULT_LANG,
       build: DEFAULT_BUILD,
@@ -67,10 +69,8 @@ class App extends Component {
         }
       })
       .then((data) => {
-        console.log("data", data);
-        const types = [];
-        data.types.forEach((t) => {
-          types.push({ name: t.name.toUpperCase(), title: t.title });
+        const types = data.types.map((t) => {
+          return { name: t.name.toUpperCase(), title: t.title };
         });
         this.setState({ types });
       })
@@ -261,14 +261,14 @@ class App extends Component {
         if (text === "") {
           this.setState({
             error: true,
-            errorMessage: "No features have been selected. Please choose one or more features and try again.",
+            errorMessage:
+              "No features have been selected. Please choose one or more features and try again.",
             downloading: false,
           });
         } else {
           this.setState({ diff: text, downloading: false });
           this.diffButton.props.onClick();
         }
-
       })
       .catch(this.handleResponseError);
   };
@@ -378,11 +378,9 @@ class App extends Component {
                   </Col>
                 </Row>
               </form>
-              {this.state.downloading ? (
-                <ProgressBar />
-              ) : (
-                <div style={{ minHeight: "18px", height: "18px" }} />
-              )}
+              <div className="progress-container">
+                {this.state.downloading && <ProgressBar />}
+              </div>
             </div>
           </div>
         </div>
