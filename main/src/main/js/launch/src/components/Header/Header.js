@@ -15,7 +15,6 @@ const Header = ({ info, theme, onToggleTheme, onShowInfo }) => {
         e.preventDefault();
         e.stopPropagation();
         setActive((a) => !a);
-        return false;
     };
 
     useEffect(() => {
