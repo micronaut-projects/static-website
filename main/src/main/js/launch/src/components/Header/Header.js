@@ -19,11 +19,13 @@ const Header = ({ info, theme, onToggleTheme, onShowInfo }) => {
     return (
         <div className="mn-header d-flex">
             <div className="logo-wrapper">
-                <img
-                    src={theme === "light" ? logoLight : logoDark}
-                    alt="Micronaut"
-                    className="mn-logo"
-                />
+                <a href="https://micronaut.io">
+                    <img
+                        src={theme === "light" ? logoLight : logoDark}
+                        alt="Micronaut"
+                        className="mn-logo"
+                    />
+                </a>
             </div>
             <span className={`icon-wrapper ${active && "active"}`}>
                 <div
