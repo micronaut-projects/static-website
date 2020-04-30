@@ -1,5 +1,5 @@
 // Header.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GitHub from "../GitHubLink";
 import Twitter from "../TwitterLink";
 import InfoButton from "../InfoButton";
@@ -13,8 +13,18 @@ const Header = ({ info, theme, onToggleTheme, onShowInfo }) => {
     const [active, setActive] = useState(false);
     const toggle = (e) => {
         e.preventDefault();
+        e.stopPropagation();
         setActive((a) => !a);
+        return false;
     };
+
+    useEffect(() => {
+        const listener = (e) => {
+            setActive(false);
+        };
+        window.addEventListener("click", listener);
+        return () => window.removeEventListener("click", listener);
+    }, []);
 
     return (
         <div className="mn-header d-flex">
@@ -30,7 +40,7 @@ const Header = ({ info, theme, onToggleTheme, onShowInfo }) => {
             <span className={`icon-wrapper ${active && "active"}`}>
                 <div
                     className="mobile-icon-control"
-                    style={{ zIndex: 2 }}
+                    style={{ zIndex: 4000 }}
                     onClick={toggle}
                 >
                     <Button
