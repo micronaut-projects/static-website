@@ -13,6 +13,25 @@ body {
   --label-grey: var(--label-grey);
 }
 
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.mn-main-container {
+  flex: 1;
+}
+.mn-feature-container {
+  flex: 0;
+  padding-bottom: 50px;
+}
+.mn-footer-container {
+  flex: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+}
+
 .grid-container {
   padding-top: 48px;
   height: 100%;
@@ -32,25 +51,14 @@ body {
   border: 2px solid #000000;
 }
 
-.mn-footer {
+footer.mn-footer-container {
   z-index: 1001;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  padding-right: 44px;
-  pointer-events: none;
+  padding-right: 2em;
+  padding-bottom: 1em;
 }
 
-.mn-footer-logos {
-  float: right;
-  margin-left: 10px;
-}
-
-.mn-footer button.dark {
-  color: var(--theme-dark);
-  background-color: var(--theme-light);
+.oci-logo {
+  width: auto;
 }
 
 .mn-container .sticky {
@@ -230,6 +238,14 @@ body.dark .dropdown-content li > span:hover {
   background-color: var(--theme-dark);
 }
 
+body.light svg.oci-logo path {
+  fill: var(--theme-dark);
+}
+
+body.dark svg.oci-logo path {
+  fill: var(--theme-light);
+}
+
 /*Theme Explicit*/
 .bg-light {
   background-color: var(--theme-light) !important;
@@ -241,7 +257,19 @@ body.dark .dropdown-content li > span:hover {
 }
 
 /* Media */
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 85%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
+  footer.container.mn-footer-container {
+    /*align-items: center;*/
+    justify-content: center;
+  }
+
   .mn-feature-container .selected-features,
   .mn-container .sticky {
     position: relative !important;
