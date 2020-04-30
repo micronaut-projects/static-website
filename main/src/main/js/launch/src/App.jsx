@@ -28,6 +28,7 @@ import { makeNodeTree } from "./utility";
 import "./style.css";
 import "./styles/button-row.css";
 import "./styles/modal-overrides.css";
+import "./styles/utility.css";
 
 class App extends Component {
   constructor(props) {

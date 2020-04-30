@@ -48,19 +48,6 @@ body {
   border: 2px solid #000000;
 }
 
-.d-flex {
-  display: flex;
-}
-.flex-row {
-  flex-direction: row;
-}
-.flex-col {
-  flex-direction: column;
-}
-.flex {
-  flex: 1;
-}
-
 .mn-footer {
   z-index: 1001;
   position: fixed;
@@ -82,11 +69,8 @@ body {
   background-color: var(--theme-light);
 }
 
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
+.mn-container .sticky {
   top: -7rem;
-  z-index: 1001;
 }
 
 .mn-container {
@@ -167,10 +151,6 @@ button.dark:focus {
 
 .btn-floating i {
   color: inherit;
-}
-
-.clickable {
-  cursor: pointer;
 }
 
 .grey-text {
@@ -278,7 +258,7 @@ body.dark .dropdown-content li > span:hover {
 /* Media */
 @media only screen and (max-width: 600px) {
   .mn-feature-container .selected-features,
-  .sticky {
+  .mn-container .sticky {
     position: relative !important;
     top: 0;
     overflow-y: scroll;
