@@ -13,7 +13,7 @@ export const GitHubLink = ({ className, theme }) => {
             className={className}
             style={{ backgroundColor }}
         >
-            <GitHubIcon style={{ fontSize: 32 }} />
+            <GitHubIcon />
         </a>
     );
 };

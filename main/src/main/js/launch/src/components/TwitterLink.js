@@ -2,24 +2,23 @@
 import React from "react";
 
 import TwitterIcon from "@material-ui/icons/Twitter";
-import Avatar from "@material-ui/core/Avatar";
 
 export const TwitterLink = ({ className, theme }) => {
     const backgroundColor =
         theme === "dark" ? "var(--theme-light)" : "var(--theme-dark)";
     const color = theme === "dark" ? "var(--theme-dark)" : "white";
-    const size = 32;
 
     return (
         <a
             href="https://twitter.com/micronautfw"
             target="_blank"
             rel="noopener noreferrer"
+            style={{
+                backgroundColor,
+            }}
             className={className}
         >
-            <Avatar style={{ height: size, width: size, backgroundColor }}>
-                <TwitterIcon style={{ color }} />
-            </Avatar>
+            <TwitterIcon className="twitter" style={{ color }} />
         </a>
     );
 };
