@@ -11,13 +11,15 @@ import {
     LANG_OPTS,
     BUILD_OPTS,
     TEST_OPTS,
-    MICRONAUT_VERSIONS
+    MICRONAUT_VERSIONS,
 } from "../../constants";
 
 const JAVA_OPTS = JAVA_VERSIONS.map((v) => ({
     label: v.toString(),
     value: v.toString(),
 }));
+
+const FAKE_ChangeHandler = () => {};
 
 const StarterForm = ({ handleChange, ...props }) => {
     return (
@@ -76,10 +78,10 @@ const StarterForm = ({ handleChange, ...props }) => {
                     id="version"
                     name="version"
                     value="2.0.0.M3"
-                    // onChange={handleChange}
+                    onChange={FAKE_ChangeHandler}
                     options={MICRONAUT_VERSIONS}
                 />
-            </Col>            
+            </Col>
             <Col m={3} s={12} className="mn-radio">
                 <RadioGroup
                     label="Language"
