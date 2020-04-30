@@ -21,7 +21,7 @@ const InfoButton = ({ className = "", theme, style }) => {
       }
     >
       <p>
-        Micronaut Starter is a web application that allows you to create
+        Micronaut Launch is a web application that allows you to create
         Micronaut projects through an interface instead of using the console
         CLI. You can set the application type, the project name, the language
         (Java, Kotlin, Groovy), the build tool (Maven, Gradle), the Java version
