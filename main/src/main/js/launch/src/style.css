@@ -9,7 +9,7 @@ body {
   height: 100%;
   --theme-dark: #2d2d2d;
   --theme-light: #f3f3f3;
-  --theme-danger: rgb(220, 36, 14);
+  --theme-danger: rgb(148, 16, 0);
   --label-grey: var(--label-grey);
 }
 

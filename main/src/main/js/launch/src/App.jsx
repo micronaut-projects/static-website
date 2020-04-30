@@ -251,7 +251,7 @@ class App extends Component {
   };
 
   loadDiff = (e) => {
-    this.setState({ error: false });
+    this.setState({ error: false, downloading: true });
     e.preventDefault();
     let FETCH_URL = this.buildFetchUrl("diff");
 
@@ -262,14 +262,15 @@ class App extends Component {
       .then((text) => {
         if (text === "") {
           this.setState({
-            diff: "There are no differences. Try selecting some features.",
+            error: true,
+            errorMessage: "No features have been selected. Please choose one or more features and try again.",
             downloading: false,
           });
         } else {
           this.setState({ diff: text, downloading: false });
+          this.diffButton.props.onClick();
         }
 
-        this.diffButton.props.onClick();
       })
       .catch(this.handleResponseError);
   };
