@@ -143,3 +143,6 @@ releases:
     -
       version: 1.3.4
       publicationDate: Apr 03, 2020
+    -
+      version: 2.0.0.M3
+      publicationDate: Apr 30, 2020
