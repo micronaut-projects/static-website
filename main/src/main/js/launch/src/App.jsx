@@ -26,6 +26,7 @@ import messages from "./constants/messages.json";
 import { makeNodeTree } from "./utility";
 
 import "./style.css";
+import "./styles/button-row.css";
 
 class App extends Component {
   constructor(props) {
