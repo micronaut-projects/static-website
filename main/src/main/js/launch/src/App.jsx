@@ -373,7 +373,9 @@ class App extends Component {
                       className={theme}
                       style={{ marginRight: "5px", width: "100%" }}
                     >
-                      <Icon left>get_app</Icon>
+                      <Icon className="xs-only" left>
+                        get_app
+                      </Icon>
                       Generate project
                     </TooltipButton>
                   </Col>

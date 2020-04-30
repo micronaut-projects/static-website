@@ -102,7 +102,9 @@ const CodePreview = (
         style={{ marginRight: "5px", width: "100%" }}
         onClick={onLoad}
       >
-        <Icon left>search</Icon>
+        <Icon className="xs-only" left>
+          search
+        </Icon>
         Preview
       </TooltipButton>
       <Modal

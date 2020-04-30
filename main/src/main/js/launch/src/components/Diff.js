@@ -30,7 +30,9 @@ const Diff = (
         style={{ marginRight: "5px", width: "100%" }}
         onClick={onLoad}
       >
-        <Icon left>compare_arrows</Icon>
+        <Icon className="xs-only" left>
+          compare_arrows
+        </Icon>
         Diff
       </TooltipButton>
 
