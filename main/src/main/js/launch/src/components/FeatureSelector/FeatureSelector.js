@@ -11,6 +11,9 @@ import FeatureAvailable from "./FeatureAvailable";
 import FeatureSelected from "./FeatureSelected";
 import TextInput from "../TextInput";
 
+import messages from "../../constants/messages.json";
+import TooltipButton from "../TooltipButton";
+
 import "./feature-selector.css";
 
 const FeatureAvailableGroup = ({ category, entities, toggleFeatures }) => {
@@ -141,14 +144,15 @@ export const FeatureSelectorModal = ({
                     endingTop: "5%",
                 }}
                 trigger={
-                    <Button
+                    <TooltipButton
+                        tooltip={messages.tooltips.features}
                         waves="light"
                         className={theme}
                         style={{ marginRight: "5px", width: "100%" }}
                     >
                         <Icon left>add</Icon>
                         Features
-                    </Button>
+                    </TooltipButton>
                 }
             >
                 <h4>

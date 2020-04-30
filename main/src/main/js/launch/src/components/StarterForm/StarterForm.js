@@ -1,9 +1,10 @@
 // StarterForm.js
 import React from "react";
-import { Select, TextInput } from "react-materialize";
+import { TextInput } from "react-materialize";
 import Col from "react-materialize/lib/Col";
 import Row from "react-materialize/lib/Row";
 import RadioGroup from "../RadioGroup";
+import Select from "../Select";
 
 import {
     JAVA_VERSIONS,
@@ -11,6 +12,11 @@ import {
     BUILD_OPTS,
     TEST_OPTS,
 } from "../../constants";
+
+const JAVA_OPTS = JAVA_VERSIONS.map((v) => ({
+    label: v.toString(),
+    value: v.toString(),
+}));
 
 const StarterForm = ({ handleChange, ...props }) => {
     return (
@@ -22,16 +28,12 @@ const StarterForm = ({ handleChange, ...props }) => {
                     label="Application Type"
                     value={props.type}
                     name="type"
+                    options={props.types.map((t) => ({
+                        value: t.name,
+                        label: t.title,
+                    }))}
                     onChange={handleChange}
-                >
-                    {props.types.map((type, i) => {
-                        return (
-                            <option key={i} value={type.name}>
-                                {type.title}
-                            </option>
-                        );
-                    })}
-                </Select>
+                ></Select>
             </Col>
             <Col l={2} m={4} s={4} className="mn-radio">
                 <Select
@@ -40,15 +42,8 @@ const StarterForm = ({ handleChange, ...props }) => {
                     value={props.javaVersion.toString()}
                     name="javaVersion"
                     onChange={handleChange}
-                >
-                    {JAVA_VERSIONS.map((version, i) => {
-                        return (
-                            <option key={i} value={version.toString()}>
-                                {version}
-                            </option>
-                        );
-                    })}
-                </Select>
+                    options={JAVA_OPTS}
+                ></Select>
             </Col>
             <Col s={8} m={6} l={3}>
                 <TextInput

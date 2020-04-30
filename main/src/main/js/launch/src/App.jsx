@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button, ProgressBar } from "react-materialize";
+import { ProgressBar } from "react-materialize";
 import Col from "react-materialize/lib/Col";
 import Icon from "react-materialize/lib/Icon";
 import Row from "react-materialize/lib/Row";
@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import StarterForm from "./components/StarterForm";
 import ErrorView from "./components/ErrorView";
+import TooltipButton from "./components/TooltipButton";
 
 import {
   API_URL,
@@ -21,6 +22,7 @@ import {
   DEFAULT_BUILD,
   DEFAULT_TEST_FW,
 } from "./constants";
+import messages from "./constants/messages.json";
 
 import { makeNodeTree } from "./utility";
 
@@ -364,7 +366,8 @@ class App extends Component {
                     />
                   </Col>
                   <Col s={3}>
-                    <Button
+                    <TooltipButton
+                      tooltip={messages.tooltips.generate}
                       disabled={disabled}
                       waves="light"
                       className={theme}
@@ -372,7 +375,7 @@ class App extends Component {
                     >
                       <Icon left>get_app</Icon>
                       Generate project
-                    </Button>
+                    </TooltipButton>
                   </Col>
                 </Row>
               </form>

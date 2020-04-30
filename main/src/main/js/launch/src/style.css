@@ -10,6 +10,7 @@ body {
   --theme-dark: #2d2d2d;
   --theme-light: #f3f3f3;
   --theme-danger: rgb(220, 36, 14);
+  --label-grey: var(--label-grey);
 }
 
 .codePreview {
@@ -226,11 +227,11 @@ button.dark:focus {
 }
 
 .grey-text {
-  color: #9e9e9e !important;
+  color: var(--label-grey) !important;
 }
 
 .input-field > label {
-  color: #9e9e9e;
+  color: var(--label-grey);
 }
 
 body.light [type="radio"]:checked + span:after,
