@@ -1,5 +1,5 @@
 // StarterForm.js
-import React from "react";
+import React, { useMemo } from "react";
 import { TextInput } from "react-materialize";
 import Col from "react-materialize/lib/Col";
 import Row from "react-materialize/lib/Row";
@@ -22,23 +22,26 @@ const JAVA_OPTS = JAVA_VERSIONS.map((v) => ({
 const FAKE_ChangeHandler = () => {};
 
 const StarterForm = ({ handleChange, ...props }) => {
+    const applicationTypeOpts = useMemo(() => {
+        return props.types.map((t) => ({
+            value: t.name,
+            label: t.title.replace("Micronaut ", ""),
+        }));
+    }, [props.types]);
+
     return (
         <Row className="mn-starter-form-main">
-            <Col l={4} m={8} s={8}>
+            <Col s={8} m={6} l={3}>
                 <Select
-                    s={12}
                     className="mn-input"
                     label="Application Type"
                     value={props.type}
                     name="type"
-                    options={props.types.map((t) => ({
-                        value: t.name,
-                        label: t.title,
-                    }))}
+                    options={applicationTypeOpts}
                     onChange={handleChange}
                 ></Select>
             </Col>
-            <Col l={2} m={4} s={4} className="mn-radio">
+            <Col s={4} m={6} l={3} className="mn-radio">
                 <Select
                     label="Java Version"
                     value={props.javaVersion.toString()}
