@@ -10,15 +10,20 @@ import Row from "react-materialize/lib/Row";
 import FeatureAvailable from "./FeatureAvailable";
 import FeatureSelected from "./FeatureSelected";
 import TextInput from "../TextInput";
-
-import messages from "../../constants/messages.json";
 import TooltipButton from "../TooltipButton";
+import messages from "../../constants/messages.json";
+import { ModalKeyboardHandler } from "../../helpers/ModalKeyboardHandler";
 
 import "./feature-selector.css";
+
+const keyboardEventHandler = new ModalKeyboardHandler({
+    sectionKey: "modal-group",
+});
 
 const featureSorter = (a, b) => {
     return a.category < b.category ? -1 : a.name < b.name ? -1 : 1;
 };
+
 const featureCategoryReducer = (map, result) => {
     if (!map[result.category]) {
         map[result.category] = [result];
@@ -30,7 +35,7 @@ const featureCategoryReducer = (map, result) => {
 
 const FeatureAvailableGroup = ({ category, entities, toggleFeatures }) => {
     return (
-        <Row>
+        <Row className={`modal-group category ${category}`}>
             <Col s={12}>
                 <h6>{category}</h6>
             </Col>
@@ -145,6 +150,8 @@ export const FeatureSelectorModal = ({
                     </Button>,
                 ]}
                 options={{
+                    onOpenEnd: keyboardEventHandler.onOpenEnd,
+                    onCloseEnd: keyboardEventHandler.onCloseEnd,
                     onCloseStart: onModalClose,
                     startingTop: "5%",
                     endingTop: "5%",
