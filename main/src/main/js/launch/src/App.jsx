@@ -16,11 +16,12 @@ import TooltipButton from "./components/TooltipButton";
 import OciHomeOfMicronaut from "./components/OciHomeOfMicronaut";
 
 import {
-  API_URL,
   DEFAULT_JAVA_VERSION,
   DEFAULT_LANG,
   DEFAULT_BUILD,
   DEFAULT_TEST_FW,
+  DEFAULT_MICRONAUT_VERSION,
+  MICRONAUT_VERSIONS,
 } from "./constants";
 import messages from "./constants/messages.json";
 
@@ -43,8 +44,7 @@ class App extends Component {
       build: DEFAULT_BUILD,
       testFw: DEFAULT_TEST_FW,
       javaVersion: DEFAULT_JAVA_VERSION,
-      micronautVersion: null,
-      micronautVersions: [],
+      micronautVersion: DEFAULT_MICRONAUT_VERSION,
       loadingFeatures: false,
       featuresToSelect: [],
       featuresSelected: {},
@@ -59,12 +59,17 @@ class App extends Component {
 
   componentDidMount() {
     this.loadAppTypes();
-    this.loadVersions();
     this.loadFeatures(this.state.type);
   }
 
+  getApiUrl = () => {
+    return MICRONAUT_VERSIONS.find((v) => {
+      return this.state.micronautVersion === v.value;
+    }).api;
+  };
+
   loadAppTypes = () => {
-    fetch(API_URL + "/application-types")
+    fetch(this.getApiUrl() + "/application-types")
       .then(this.responseHandler("json"))
       .then((data) => {
         const types = data.types.map((t) => {
@@ -75,25 +80,11 @@ class App extends Component {
       .catch(this.handleResponseError);
   };
 
-  loadVersions = () => {
-    fetch(API_URL + "/versions")
-      .then(this.responseHandler("json"))
-      .then((json) => {
-        const micronautVersion = json.versions["micronaut.version"];
-
-        // In the future a seperate request should be made
-        // to populate all of the supported versions.
-        const micronautVersions = [
-          { label: micronautVersion, value: micronautVersion },
-        ];
-        this.setState({ micronautVersion, micronautVersions });
-      })
-      .catch(this.handleResponseError);
-  };
-
   loadFeatures = (appType) => {
     this.setState({ loadingFeatures: true });
-    fetch(API_URL + "/application-types/" + appType + "/features")
+    return fetch(
+      this.getApiUrl() + "/application-types/" + appType + "/features"
+    )
       .then(this.responseHandler("json"))
       .then((data) => {
         this.setState({
@@ -124,13 +115,27 @@ class App extends Component {
 
   handleChange = (event) => {
     // Strip out any non alphanumeric characters (or ".","-","_") from the input.
-    const value = event.target.value.replace(/[^a-z\d.\-_]/gi, "");
+    const { name, value: rawValue } = event.target;
+    const value = rawValue.replace(/[^a-z\d.\-_]/gi, "");
+    const previous = this.state[name];
+
     this.setState({
-      [event.target.name]: value,
+      [name]: value,
     });
-    if (event.target.name === "type") {
-      this.loadFeatures(event.target.value);
+
+    if (name === "type") {
+      this.loadFeatures(value);
     }
+
+    setTimeout(() => {
+      if (name === "micronautVersion") {
+        // reload the available features since it's possible
+        // the different apis support different features
+        this.loadFeatures(this.state.type).catch(() => {
+          this.setState({ [name]: previous });
+        });
+      }
+    }, 0);
   };
 
   buildFeaturesQuery = () => {
@@ -148,10 +153,11 @@ class App extends Component {
         "A prefix is required, should be one of 'diff', 'preview' or 'create'"
       );
     }
+
     const { type, name, lang, build, testFw, javaVersion } = this.state;
     const features = this.buildFeaturesQuery();
     const fqpkg = `${this.state.package}.${name}`;
-    const base = `${API_URL}/${prefix}/${type}/${fqpkg}`;
+    const base = `${this.getApiUrl()}/${prefix}/${type}/${fqpkg}`;
     const query = [
       `lang=${lang}`,
       `build=${build}`,
@@ -165,10 +171,13 @@ class App extends Component {
   };
 
   handleResponseError = (response) => {
+    console.log(response, response.status);
+
     let defaultError = {
       error: true,
       downloading: false,
-      errorMessage: "something went wrong.",
+      loadingFeatures: false,
+      errorMessage: response.message || "Something went wrong.",
     };
     if (!response.json instanceof Function) {
       this.setState(defaultError);
@@ -183,6 +192,7 @@ class App extends Component {
       });
     } catch (e) {
       this.setState(defaultError);
+      throw e;
     }
   };
 

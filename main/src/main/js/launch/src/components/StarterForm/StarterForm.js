@@ -6,7 +6,13 @@ import Row from "react-materialize/lib/Row";
 import RadioGroup from "../RadioGroup";
 import Select from "../Select";
 
-import { JAVA_OPTS, LANG_OPTS, BUILD_OPTS, TEST_OPTS } from "../../constants";
+import {
+    JAVA_OPTS,
+    LANG_OPTS,
+    BUILD_OPTS,
+    TEST_OPTS,
+    MICRONAUT_VERSIONS,
+} from "../../constants";
 
 const StarterForm = ({ handleChange, ...props }) => {
     return (
@@ -66,7 +72,7 @@ const StarterForm = ({ handleChange, ...props }) => {
                     name="micronautVersion"
                     value={props.micronautVersion}
                     onChange={handleChange}
-                    options={props.micronautVersions}
+                    options={MICRONAUT_VERSIONS}
                 />
             </Col>
             <Col m={3} s={12} className="mn-radio">

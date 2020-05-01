@@ -1,11 +1,24 @@
 export const API_URL =
-    "https://launch.micronaut.io";
+    process.env.REACT_APP_API_URL || "https://launch.micronaut.io";
+
+export const SNAPSHOT_API_URL =
+    process.env.REACT_APP_SNAPSHOT_API_URL ||
+    "https://micronaut-starter-staging-ucxwqnh6ka-uc.a.run.app";
+
 export const JAVA_VERSIONS = [8, 9, 10, 11, 12, 13, 14];
 
-export const JAVA_OPTS = JAVA_VERSIONS.map((v) => ({
-    label: v.toString(),
-    value: v.toString(),
-}));
+export const MICRONAUT_VERSIONS = [
+    {
+        label: "2.0.0.M3",
+        value: "2.0.0.M3",
+        api: API_URL,
+    },
+    {
+        label: "2.0.0.BUILD-SNAPSHOT",
+        value: "BUILD-SNAPSHOT",
+        api: SNAPSHOT_API_URL,
+    },
+];
 
 export const LANG_OPTS = [
     { label: "Java", value: "java" },
@@ -24,7 +37,14 @@ export const TEST_OPTS = [
     { value: "kotlintest", label: "Kotlintest" },
 ];
 
+export const JAVA_OPTS = JAVA_VERSIONS.map((v) => ({
+    label: v.toString(),
+    value: v.toString(),
+}));
+
+// Defaults
 export const DEFAULT_JAVA_VERSION = 11;
-export const DEFAULT_LANG = "java";
-export const DEFAULT_BUILD = "gradle";
-export const DEFAULT_TEST_FW = "junit";
+export const DEFAULT_MICRONAUT_VERSION = MICRONAUT_VERSIONS[0].value;
+export const DEFAULT_LANG = LANG_OPTS[0].value;
+export const DEFAULT_BUILD = BUILD_OPTS[0].value;
+export const DEFAULT_TEST_FW = TEST_OPTS[0].value;
