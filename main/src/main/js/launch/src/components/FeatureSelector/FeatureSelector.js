@@ -16,6 +16,18 @@ import TooltipButton from "../TooltipButton";
 
 import "./feature-selector.css";
 
+const featureSorter = (a, b) => {
+    return a.category < b.category ? -1 : a.name < b.name ? -1 : 1;
+};
+const featureCategoryReducer = (map, result) => {
+    if (!map[result.category]) {
+        map[result.category] = [result];
+    } else {
+        map[result.category].push(result);
+    }
+    return map;
+};
+
 const FeatureAvailableGroup = ({ category, entities, toggleFeatures }) => {
     return (
         <Row>
@@ -97,14 +109,9 @@ export const FeatureSelectorModal = ({
     }, [search, availableFeatures]);
 
     const groupedResults = useMemo(() => {
-        return searchResults.reduce((map, result) => {
-            if (!map[result.category]) {
-                map[result.category] = [result];
-            } else {
-                map[result.category].push(result);
-            }
-            return map;
-        }, {});
+        return searchResults
+            .sort(featureSorter)
+            .reduce(featureCategoryReducer, {});
     }, [searchResults]);
 
     const toggleFeatures = (event, feature) => {
