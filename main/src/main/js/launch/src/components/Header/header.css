@@ -17,7 +17,7 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    padding-top: 1.3em;
+    padding-top: 1em;
 }
 
 .mn-header .header-icon {
@@ -78,6 +78,7 @@ body.light .mn-header a.header-icon {
 }
 
 @media only screen and (max-width: 840px) {
+    .mn-footer-container .oci-logo,
     .mn-header .logo-wrapper {
         height: 100px;
     }
@@ -87,6 +88,7 @@ body.light .mn-header a.header-icon {
 }
 
 @media only screen and (max-width: 750px) {
+    .mn-footer-container .oci-logo,
     .mn-header .logo-wrapper {
         height: 80px;
     }
@@ -96,6 +98,7 @@ body.light .mn-header a.header-icon {
 }
 
 @media only screen and (max-width: 650px) {
+    .mn-footer-container .oci-logo,
     .mn-header .logo-wrapper {
         height: 60px;
     }

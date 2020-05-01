@@ -57,7 +57,6 @@ export const FeatureSelectedList = ({ selectedFeatures, onRemoveFeature }) => {
         <div className="col s12">
             <h6>Included Features ({selectedFeatureValues.length})</h6>
             {sRows}
-            <div style={{ height: 100, minHeight: 100 }} />
         </div>
     );
 };

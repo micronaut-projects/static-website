@@ -17,7 +17,6 @@
   }
 }
 
-
 .MuiFormControl-root {
   width: 100%;
 }
@@ -62,7 +61,7 @@ body.dark .MuiFormControl-root .MuiFormLabel-root {
 }
 
 body.dark .MuiFormControl-root .MuiFormLabel-root.Mui-focused {
-  color: var(--label-grey);
+  color: #fff;
 }
 
 body.dark .MuiPaper-root.MuiMenu-paper.MuiPopover-paper {
@@ -75,7 +74,6 @@ body.dark .MuiListItem-root.Mui-selected,
 body.dark .MuiListItem-root.Mui-selected:hover {
   background-color: var(--theme-dark);
 }
-
 
 body.dark .MuiInput-underline,
 body.dark .MuiInput-underline:after {
