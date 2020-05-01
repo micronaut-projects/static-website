@@ -18,6 +18,7 @@ import "./feature-selector.css";
 
 const keyboardEventHandler = new ModalKeyboardHandler({
     sectionKey: "modal-group",
+    headerHeight: 24,
 });
 
 const featureSorter = (a, b) => {
