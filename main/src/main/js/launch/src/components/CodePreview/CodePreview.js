@@ -78,11 +78,15 @@ const CodePreview = (
         })
         .map((key) => {
           let children = nodes[key];
+          const className =
+            children && typeof children === "string" ? "file" : "folder";
+
           return (
             <TreeItem
               key={key}
               nodeId={key}
               label={key}
+              className={className}
               onClick={() => handleFileSelection(key, children)}
             >
               {renderTree(children)}
@@ -143,9 +147,10 @@ const CodePreview = (
         <Grid container className="grid-container">
           <Grid
             item
-            xs={3}
-            className={"grid-column"}
-            style={{ borderRight: "1px solid" }}
+            xs={12}
+            sm={3}
+            className={"grid-column file-select"}
+            tabIndex="0"
           >
             <TreeView
               defaultCollapseIcon={<Icon>folder_open</Icon>}
@@ -156,7 +161,7 @@ const CodePreview = (
               {renderTree(preview)}
             </TreeView>
           </Grid>
-          <Grid item xs={9} className={"grid-column"}>
+          <Grid tabIndex="0" item xs={12} sm={9} className={"grid-column"}>
             {currentFile.contents && (
               <SyntaxHighlighter
                 className="codePreview"
