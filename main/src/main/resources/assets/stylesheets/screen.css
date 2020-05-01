@@ -541,7 +541,7 @@ body.home section p img {
 }
 @media screen and (min-width: 1200px) {
     #calltoaction {
-        margin: 70px auto;
+        margin: 10px auto 70px;
     }
 }
 /* END - CALL TO ACTION */
@@ -1165,4 +1165,41 @@ body.home pre {
 #ocitraining .trainingvoid {
     padding: 5px 15px;
     background-color: #4CAFDE;
+}
+
+#calltoactionbuttons {
+    text-align: center;
+    margin: 50px auto 0;
+    overflow: auto;
+    width: 289px;
+}
+#calltoactionbuttons a {
+    display: block;
+    padding: 10px 30px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 45px;
+    text-decoration: none;
+    max-width: 210px;
+    margin: 20px 0;
+}
+#calltoactionbuttons a:first-child,
+#calltoactionbuttons a:last-child {
+    margin: 0;
+}
+#calltoactionbuttons a:hover {
+    text-decoration: underline;
+}
+@media screen and (min-width: 961px) {
+    #calltoactionbuttons {
+        width: 865px;
+    }
+    #calltoactionbuttons a {
+        width: 210px;
+        float: left;
+        margin-top: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
 }
