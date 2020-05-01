@@ -1,8 +1,21 @@
 .mn-starter-form-main {
 }
 
+.mn-starter-form-main .input-field .helper-text {
+    min-height: 1px;
+}
+
+.mn-starter-form-main .input-field.col {
+    padding: 0 0;
+    width: 100%;
+}
+
+.mn-starter-form-main .input-field.col label {
+    left: 0;
+}
+
 .mn-starter-form-main .mn-radio .radio-group {
-    padding-left: 12px;
+    padding-left: 0;
     margin-bottom: 5px;
 }
 

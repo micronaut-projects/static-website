@@ -40,7 +40,6 @@ const StarterForm = ({ handleChange, ...props }) => {
             </Col>
             <Col l={2} m={4} s={4} className="mn-radio">
                 <Select
-                    s={12}
                     label="Java Version"
                     value={props.javaVersion.toString()}
                     name="javaVersion"
@@ -51,7 +50,6 @@ const StarterForm = ({ handleChange, ...props }) => {
             <Col s={8} m={6} l={3}>
                 <TextInput
                     required
-                    s={12}
                     className="mn-input"
                     label="Base Package"
                     name="package"
@@ -63,7 +61,6 @@ const StarterForm = ({ handleChange, ...props }) => {
             <Col s={4} m={6} l={3}>
                 <TextInput
                     required
-                    s={12}
                     className="mn-input"
                     label="Name"
                     name="name"

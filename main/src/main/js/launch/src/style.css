@@ -18,18 +18,35 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.mn-container {
+  margin-top: 1rem;
+}
+
 .mn-main-container {
   flex: 1;
+  background: linear-gradient(
+    to bottom,
+    var(--theme-light) 95%,
+    rgba(242, 242, 242, 0)
+  );
 }
+
 .mn-feature-container {
   flex: 0;
   padding-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 .mn-footer-container {
   flex: 1;
   align-items: flex-end;
   justify-content: flex-end;
   display: flex;
+  z-index: 1001;
+  padding-bottom: 1em;
+  padding-right: 12px;
 }
 
 .grid-container {
@@ -51,30 +68,8 @@ body {
   border: 2px solid #000000;
 }
 
-footer.mn-footer-container {
-  z-index: 1001;
-  padding-right: 2em;
-  padding-bottom: 1em;
-}
-
 .oci-logo {
   width: auto;
-}
-
-.mn-container .sticky {
-  top: -7rem;
-}
-
-.mn-container {
-  margin-top: 1rem;
-}
-
-.mn-main-container {
-  background: linear-gradient(
-    to bottom,
-    var(--theme-light) 95%,
-    rgba(242, 242, 242, 0)
-  );
 }
 
 .dark .mn-main-container {
@@ -83,15 +78,6 @@ footer.mn-footer-container {
     var(--theme-dark) 95%,
     rgba(45, 45, 45, 0)
   );
-}
-
-.mn-feature-container {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.mn-starter-form-main .input-field .helper-text {
-  min-height: 1px;
 }
 
 .btn-floating i {

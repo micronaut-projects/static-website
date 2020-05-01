@@ -1,5 +1,6 @@
 .mn-header {
-    padding: 20px 1em;
+    padding: 20px 0;
+    padding-right: 5px;
     display: flex;
     align-items: flex-start;
 }
@@ -111,7 +112,6 @@ body.light .mn-header a.header-icon {
     .mn-header .icon-wrapper > div {
         position: absolute;
         top: 20px;
-        right: 3em;
         transition: top 0.3s ease;
     }
 
@@ -135,11 +135,5 @@ body.light .mn-header a.header-icon {
     }
     .mn-header .icon-wrapper.active > div:nth-child(5) {
         top: 164px;
-    }
-}
-
-@media only screen and (max-width: 414px) {
-    .mn-header .icon-wrapper > div {
-        right: 12px;
     }
 }
