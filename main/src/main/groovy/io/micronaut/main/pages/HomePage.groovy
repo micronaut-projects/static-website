@@ -35,7 +35,7 @@ class HomePage extends PageWithSyntaxHighlight {
             div(id: "calltoactionbuttons") {
                 a(href: 'https://micronaut.io/launch/', 'Generate a Project')
                 a(href: 'https://micronaut.io/download.html', 'Download the Framework')
-                a(href: 'https://micronaut.io/download.html', 'Read the Documentation')
+                a(href: 'https://micronaut.io/documentation.html', 'Read the Documentation')
             }
             div(id: "calltoaction") {
                 h2 'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
