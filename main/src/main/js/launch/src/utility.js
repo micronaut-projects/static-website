@@ -12,6 +12,16 @@ export const downloadBlob = (blob, name = "file.txt") => {
     a.click();
 };
 
+export const debounceResponse = (start, atLeast = 700) => (response) => {
+    const end = Date.now();
+    const diff = end - start;
+    return new Promise((r) => {
+        setTimeout(() => {
+            r(response);
+        }, Math.max(atLeast - diff, 0));
+    });
+};
+
 export const makeNodeTree = (data) => {
     let nodes = {};
     let obj = data;
@@ -34,30 +44,9 @@ export const makeNodeTree = (data) => {
     return nodes;
 };
 
-export const getTheme = () => {
-    const mode = window.localStorage.getItem("theme");
-    switch (mode) {
-        case "light":
-        case "dark":
-            return mode;
-        default:
-            return "light";
-    }
-};
-
 export const responseHandler = (type = "json") => (response) => {
     if (!response.ok) {
         throw response;
     }
     return response[type]();
-};
-
-export const debounceResponse = (start, atLeast = 700) => (response) => {
-    const end = Date.now();
-    const diff = end - start;
-    return new Promise((r) => {
-        setTimeout(() => {
-            r(response);
-        }, Math.max(atLeast - diff, 0));
-    });
 };

@@ -24,6 +24,8 @@ import {
 } from "./constants";
 import messages from "./constants/messages.json";
 
+import useAppTheme from "./hooks/useAppTheme";
+
 import {
   downloadBlob,
   makeNodeTree,
@@ -35,17 +37,6 @@ import "./style.css";
 import "./styles/button-row.css";
 import "./styles/modal-overrides.css";
 import "./styles/utility.css";
-
-const getTheme = () => {
-  const mode = window.localStorage.getItem("theme");
-  switch (mode) {
-    case "light":
-    case "dark":
-      return mode;
-    default:
-      return "light";
-  }
-};
 
 export default function App() {
   const [form, setForm] = useState({
@@ -65,13 +56,15 @@ export default function App() {
   const [loadingFeatures, setLoadingFeatures] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [theme, setTheme] = useState(getTheme());
   const [preview, setPreview] = useState({});
   const [diff, setDiff] = useState(null);
 
+  const [theme, toggleTheme] = useAppTheme();
   const previewButton = useRef();
   const diffButton = useRef();
 
+  const disabled =
+    downloading || loadingFeatures || !form.name || !form.package;
   const hasError = Boolean(errorMessage);
   const appType = form.type;
 
@@ -113,11 +106,6 @@ export default function App() {
     };
     loadFeatures();
   }, [appType]);
-
-  useEffect(() => {
-    window.localStorage.setItem("theme", theme);
-    document.body.className = theme;
-  }, [theme]);
 
   const buildFeaturesQuery = () => {
     return Object.keys(featuresSelected)
@@ -161,37 +149,37 @@ export default function App() {
       return;
     }
     try {
-      const body = await response.json();
-      setErrorMessage(body.message || defaultError);
+      const json = await response.json();
+      setErrorMessage(json.message || defaultError);
     } catch (e) {
       setErrorMessage(defaultError);
     }
   };
 
   const addFeature = (feature) => {
-    let update = { ...featuresSelected };
-    update[feature.name] = feature;
-    setFeaturesSelected(update);
+    setFeaturesSelected(({ ...draft }) => {
+      draft[feature.name] = feature;
+      return draft;
+    });
+  };
+
+  const removeFeature = (feature) => {
+    setFeaturesSelected(({ ...draft }) => {
+      delete draft[feature.name];
+      return draft;
+    });
   };
 
   const removeAllFeatures = () => {
     setFeaturesSelected({});
   };
 
-  const removeFeature = (feature) => {
-    let update = { ...featuresSelected };
-    delete update[feature.name];
-    setFeaturesSelected(update);
-  };
-
   const handleChange = (event) => {
     // Strip out any non alphanumeric characters (or ".","-","_") from the input.
-    const { name: key } = event.target;
-    const value = event.target.value.replace(/[^a-z\d.\-_]/gi, "");
-
-    setForm((update) => ({
-      ...update,
-      [key]: value,
+    const { name: key, value } = event.target;
+    setForm((draft) => ({
+      ...draft,
+      [key]: value.replace(/[^a-z\d.\-_]/gi, ""),
     }));
   };
 
@@ -271,14 +259,6 @@ export default function App() {
   const clearPreview = () => {
     setPreview({});
   };
-
-  const toggleTheme = () => {
-    const update = theme === "light" ? "dark" : "light";
-    setTheme(update);
-  };
-
-  const disabled =
-    downloading || loadingFeatures || !form.name || !form.package;
 
   return (
     <Fragment>
