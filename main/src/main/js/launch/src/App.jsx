@@ -13,7 +13,7 @@ import Header from "./components/Header";
 import StarterForm from "./components/StarterForm";
 import ErrorView from "./components/ErrorView";
 import TooltipButton from "./components/TooltipButton";
-import OciHomeOfMicronaut from "./components/OciHomeOfMicronaut";
+import Footer from "./components/Footer";
 
 import {
   API_URL,
@@ -340,9 +340,7 @@ export default function App() {
           onRemoveFeature={removeFeature}
         />
       </div>
-      <footer className="container mn-footer-container">
-        <OciHomeOfMicronaut />
-      </footer>
+      <Footer />
       <ErrorView
         error={hasError}
         errorMessage={errorMessage}

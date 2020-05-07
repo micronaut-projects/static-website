@@ -41,9 +41,6 @@ body {
 
 .mn-footer-container {
   flex: 1;
-  align-items: flex-end;
-  justify-content: flex-end;
-  display: flex;
   z-index: 1001;
   padding-bottom: 1em;
   padding-right: 12px;
@@ -66,10 +63,6 @@ body {
 [type="radio"].with-gap:checked + span:before,
 [type="radio"].with-gap:checked + span:after {
   border: 2px solid #000000;
-}
-
-.oci-logo {
-  width: auto;
 }
 
 .dark .mn-main-container {
@@ -233,12 +226,14 @@ body.dark .dropdown-content li > span:hover {
 }
 
 body.light svg.mn-logo path,
-body.light svg.oci-logo path {
+body.light svg.oci-logo path,
+body.light svg.google-logo path {
   fill: var(--theme-dark);
 }
 
 body.dark svg.mn-logo path,
-body.dark svg.oci-logo path {
+body.dark svg.oci-logo path,
+body.dark svg.google-logo path {
   fill: var(--theme-light);
 }
 
@@ -262,8 +257,6 @@ body.dark svg.oci-logo path {
 
 @media only screen and (max-width: 600px) {
   footer.container.mn-footer-container {
-    /*align-items: center;*/
-    justify-content: center;
     padding-right: 0;
     padding-left: 0;
   }
