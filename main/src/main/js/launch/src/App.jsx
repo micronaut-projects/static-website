@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 import { ProgressBar } from "react-materialize";
 import Col from "react-materialize/lib/Col";
 import Icon from "react-materialize/lib/Icon";
@@ -13,7 +13,7 @@ import Header from "./components/Header";
 import StarterForm from "./components/StarterForm";
 import ErrorView from "./components/ErrorView";
 import TooltipButton from "./components/TooltipButton";
-import OciHomeOfMicronaut from "./components/OciHomeOfMicronaut";
+import Footer from "./components/Footer";
 
 import {
   API_URL,
@@ -24,118 +24,91 @@ import {
 } from "./constants";
 import messages from "./constants/messages.json";
 
-import { makeNodeTree } from "./utility";
+import useAppTheme from "./hooks/useAppTheme";
+
+import {
+  downloadBlob,
+  makeNodeTree,
+  responseHandler,
+  debounceResponse,
+} from "./utility";
 
 import "./style.css";
 import "./styles/button-row.css";
 import "./styles/modal-overrides.css";
 import "./styles/utility.css";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "demo",
-      package: "com.example",
-      types: [{ name: "DEFAULT", title: "" }],
-      type: "DEFAULT",
-      lang: DEFAULT_LANG,
-      build: DEFAULT_BUILD,
-      testFw: DEFAULT_TEST_FW,
-      javaVersion: DEFAULT_JAVA_VERSION,
-      loadingFeatures: false,
-      featuresToSelect: [],
-      featuresSelected: {},
-      downloading: false,
-      error: false,
-      errorMessage: "",
-      styleMode: window.localStorage.getItem("styleMode") || "light",
-    };
-    this.previewButton = null;
-    this.diffButton = null;
-  }
+export default function App() {
+  const [form, setForm] = useState({
+    name: "demo",
+    package: "com.example",
+    type: "DEFAULT",
+    lang: DEFAULT_LANG,
+    build: DEFAULT_BUILD,
+    testFw: DEFAULT_TEST_FW,
+    javaVersion: DEFAULT_JAVA_VERSION,
+  });
 
-  componentDidMount() {
-    this.loadAppTypes();
-    this.loadFeatures(this.state.type);
-  }
+  const [types, setTypes] = useState([{ name: "DEFAULT", title: "" }]);
+  const [featuresAvailable, setFeaturesAvailable] = useState([]);
+  const [featuresSelected, setFeaturesSelected] = useState({});
 
-  loadAppTypes = () => {
-    fetch(API_URL + "/application-types")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Failed to load the application types");
-        }
-      })
-      .then((data) => {
+  const [loadingFeatures, setLoadingFeatures] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [preview, setPreview] = useState({});
+  const [diff, setDiff] = useState(null);
+
+  const [theme, toggleTheme] = useAppTheme();
+  const previewButton = useRef();
+  const diffButton = useRef();
+
+  const disabled =
+    downloading || loadingFeatures || !form.name || !form.package;
+  const hasError = Boolean(errorMessage);
+  const appType = form.type;
+
+  useEffect(() => {
+    const load = async () => {
+      setDownloading(true);
+      try {
+        const data = await fetch(API_URL + "/application-types").then(
+          responseHandler("json")
+        );
         const types = data.types.map((t) => {
           return { name: t.name.toUpperCase(), title: t.title };
         });
-        this.setState({ types });
-      })
-      .catch((error) => {
-        this.setState({ error: true, errorMessage: error.message });
-      });
-  };
+        setTypes(types);
+      } catch (error) {
+        await handleResponseError(error);
+      } finally {
+        setDownloading(false);
+      }
+    };
+    load();
+  }, []);
 
-  loadFeatures = (appType) => {
-    this.setState({ loadingFeatures: true });
-    fetch(API_URL + "/application-types/" + appType + "/features")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Failed to load the available features");
-        }
-      })
-      .then((data) => {
-        this.setState({
-          featuresToSelect: data.features,
-          loadingFeatures: false,
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          error: true,
-          loadingFeatures: false,
-          errorMessage: error.message,
-        });
-      });
-  };
+  useEffect(() => {
+    const loadFeatures = async () => {
+      setLoadingFeatures(true);
+      setErrorMessage("");
+      try {
+        const data = await fetch(
+          API_URL + "/application-types/" + appType + "/features"
+        ).then(responseHandler("json"));
 
-  addFeature = (feature) => {
-    let featuresSelected = { ...this.state.featuresSelected };
-    featuresSelected[feature.name] = feature;
-    this.setState({
-      featuresSelected,
-    });
-  };
+        setFeaturesAvailable(data.features);
+      } catch (error) {
+        setErrorMessage(error.messages);
+      } finally {
+        setLoadingFeatures(false);
+      }
+    };
+    loadFeatures();
+  }, [appType]);
 
-  removeAllFeatures = () => {
-    this.setState({ featuresSelected: {} });
-  };
-
-  removeFeature = (feature) => {
-    let featuresSelected = { ...this.state.featuresSelected };
-    delete featuresSelected[feature.name];
-    this.setState({ featuresSelected });
-  };
-
-  handleChange = (event) => {
-    // Strip out any non alphanumeric characters (or ".","-","_") from the input.
-    const value = event.target.value.replace(/[^a-z\d.\-_]/gi, "");
-    this.setState({
-      [event.target.name]: value,
-    });
-    if (event.target.name === "type") {
-      this.loadFeatures(event.target.value);
-    }
-  };
-
-  buildFeaturesQuery = () => {
-    return Object.keys(this.state.featuresSelected)
+  const buildFeaturesQuery = () => {
+    return Object.keys(featuresSelected)
       .reduce((array, feature) => {
         array.push(`features=${feature}`);
         return array;
@@ -143,15 +116,15 @@ class App extends Component {
       .join("&");
   };
 
-  buildFetchUrl = (prefix) => {
+  const buildFetchUrl = (prefix, form) => {
     if (!prefix) {
       console.error(
         "A prefix is required, should be one of 'diff', 'preview' or 'create'"
       );
     }
-    const { type, name, lang, build, testFw, javaVersion } = this.state;
-    const features = this.buildFeaturesQuery();
-    const fqpkg = `${this.state.package}.${name}`;
+    const { type, name, lang, build, testFw, javaVersion, package: pkg } = form;
+    const features = buildFeaturesQuery();
+    const fqpkg = `${pkg}.${name}`;
     const base = `${API_URL}/${prefix}/${type}/${fqpkg}`;
     const query = [
       `lang=${lang}`,
@@ -165,243 +138,214 @@ class App extends Component {
     return encodeURI(`${base}?${query.join("&")}`);
   };
 
-  handleResponseError = (response) => {
-    let defaultError = {
-      error: true,
-      downloading: false,
-      errorMessage: "something went wrong.",
-    };
+  const handleResponseError = async (response) => {
+    if (response instanceof Error) {
+      return setErrorMessage(response.message);
+    }
+
+    let defaultError = "something went wrong.";
     if (!response.json instanceof Function) {
-      this.setState(defaultError);
+      setErrorMessage(defaultError);
       return;
     }
     try {
-      response.json().then((body) => {
-        this.setState({
-          ...defaultError,
-          errorMessage: body.message,
-        });
-      });
+      const json = await response.json();
+      setErrorMessage(json.message || defaultError);
     } catch (e) {
-      this.setState(defaultError);
+      setErrorMessage(defaultError);
     }
   };
 
-  responseHandler = (type = "json") => (response) => {
-    if (!response.ok) {
-      throw response;
-    }
-    return response[type]();
-  };
-
-  debounceResponse = (start, atLeast = 700) => (response) => {
-    const end = Date.now();
-    const diff = end - start;
-    return new Promise((r) => {
-      setTimeout(() => {
-        r(response);
-      }, Math.max(atLeast - diff, 0));
+  const addFeature = (feature) => {
+    setFeaturesSelected(({ ...draft }) => {
+      draft[feature.name] = feature;
+      return draft;
     });
   };
 
-  generateProject = (e) => {
-    e.preventDefault();
-    this.setState({ error: false, downloading: true });
+  const removeFeature = (feature) => {
+    setFeaturesSelected(({ ...draft }) => {
+      delete draft[feature.name];
+      return draft;
+    });
+  };
 
-    const FETCH_URL = this.buildFetchUrl("create");
+  const removeAllFeatures = () => {
+    setFeaturesSelected({});
+  };
+
+  const handleChange = (event) => {
+    // Strip out any non alphanumeric characters (or ".","-","_") from the input.
+    const { name: key, value } = event.target;
+    setForm((draft) => ({
+      ...draft,
+      [key]: value.replace(/[^a-z\d.\-_]/gi, ""),
+    }));
+  };
+
+  const requestPrep = (event) => {
+    if (event && event.preventDefault instanceof Function) {
+      event.preventDefault();
+    }
+    setErrorMessage("");
+    setDownloading(true);
+  };
+
+  const generateProject = async (e) => {
+    requestPrep(e);
+    const url = buildFetchUrl("create", form);
     // Debounce the download event so the UI is not jumpy
-    const debounced = this.debounceResponse(Date.now());
-    fetch(FETCH_URL, {
-      method: "GET",
-    })
-      .then(debounced)
-      .then(this.responseHandler("blob"))
-      .then((blob) => {
-        var url = window.URL.createObjectURL(blob);
-        var a = document.createElement("a");
-        a.href = url;
-        a.download = this.state.name + ".zip";
-        document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
-        a.click();
-        a.remove(); //afterwards we remove the element again
-        this.setState({ downloading: false });
-      })
-      .catch(this.handleResponseError);
+    const debounced = debounceResponse(Date.now());
+    try {
+      const blob = await fetch(url)
+        .then(debounced)
+        .then(responseHandler("blob"));
+
+      downloadBlob(blob, `${form.name}.zip`);
+    } catch (error) {
+      await handleResponseError(error);
+    } finally {
+      setDownloading(false);
+    }
   };
 
-  loadPreview = (e) => {
-    e.preventDefault();
-    this.setState({ error: false, downloading: true });
-    let FETCH_URL = this.buildFetchUrl("preview");
+  const loadPreview = async (e) => {
+    requestPrep(e);
+    try {
+      let url = buildFetchUrl("preview", form);
+      // Debounce the preview gen event so the UI is not jumpy
+      const debounced = debounceResponse(Date.now());
+      const json = await fetch(url)
+        .then(debounced)
+        .then(responseHandler("json"));
 
-    // Debounce the preview gen event so the UI is not jumpy
-    const debounced = this.debounceResponse(Date.now());
-    fetch(FETCH_URL, {
-      method: "GET",
-    })
-      .then(debounced)
-      .then(this.responseHandler("json"))
-      .then((json) => {
-        const nodes = makeNodeTree(json.contents);
-        this.setState({ preview: nodes, downloading: false });
-        this.previewButton.props.onClick();
-      })
-      .catch(this.handleResponseError);
+      const nodes = makeNodeTree(json.contents);
+      setPreview(nodes);
+      previewButton.current.props.onClick();
+    } catch (error) {
+      await handleResponseError(error);
+    } finally {
+      setDownloading(false);
+    }
   };
 
-  loadDiff = (e) => {
-    this.setState({ error: false, downloading: true });
-    e.preventDefault();
-    let FETCH_URL = this.buildFetchUrl("diff");
-
-    fetch(FETCH_URL, {
-      method: "GET",
-    })
-      .then(this.responseHandler("text"))
-      .then((text) => {
-        if (text === "") {
-          this.setState({
-            error: true,
-            errorMessage:
-              "No features have been selected. Please choose one or more features and try again.",
-            downloading: false,
-          });
-        } else {
-          this.setState({ diff: text, downloading: false });
-          this.diffButton.props.onClick();
-        }
-      })
-      .catch(this.handleResponseError);
+  const loadDiff = async (e) => {
+    requestPrep(e);
+    try {
+      let url = buildFetchUrl("diff", form);
+      // Debounce the preview gen event so the UI is not jumpy
+      const debounced = debounceResponse(Date.now());
+      const text = await fetch(url)
+        .then(debounced)
+        .then(responseHandler("text"));
+      if (text === "") {
+        throw new Error(
+          "No features have been selected. Please choose one or more features and try again."
+        );
+      }
+      setDiff(text);
+      diffButton.current.props.onClick();
+    } catch (error) {
+      await handleResponseError(error);
+    } finally {
+      setDownloading(false);
+    }
   };
 
-  clearDiff = () => {
-    this.setState({
-      diff: null,
-    });
+  const clearDiff = () => {
+    setDiff(null);
   };
 
-  clearPreview = () => {
-    this.setState({
-      preview: {},
-    });
+  const clearPreview = () => {
+    setPreview({});
   };
 
-  getStyleMode() {
-    return this.state.styleMode;
-  }
+  return (
+    <Fragment>
+      <div id="mn-main-container" className="mn-main-container sticky">
+        <div className="container">
+          <Header theme={theme} onToggleTheme={toggleTheme} />
 
-  toggleStyleMode() {
-    let style = this.getStyleMode() === "light" ? "dark" : "light";
-    this.setState({ styleMode: style });
-    window.localStorage.setItem("styleMode", style);
-  }
+          <div className="mn-container">
+            <form onSubmit={generateProject} autoComplete="off">
+              <StarterForm
+                theme={theme}
+                handleChange={handleChange}
+                types={types}
+                {...form}
+              />
 
-  render() {
-    const theme = this.getStyleMode();
-    document.body.className = theme;
-    const disabled =
-      this.state.downloading ||
-      !this.state.name ||
-      !this.state.package ||
-      this.state.loadingFeatures;
-
-    return (
-      <Fragment>
-        <div id="mn-main-container" className="mn-main-container sticky">
-          <div className="container">
-            <Header
-              theme={theme}
-              onToggleTheme={() => this.toggleStyleMode()}
-            />
-
-            <div className="mn-container">
-              <form onSubmit={this.generateProject} autoComplete="off">
-                <StarterForm
-                  theme={theme}
-                  handleChange={this.handleChange}
-                  {...this.state}
-                />
-
-                <Row className="button-row">
-                  <Col s={3} className="xs6">
-                    <FeatureSelectorModal
-                      theme={theme}
-                      loading={this.state.loadingFeatures}
-                      features={this.state.featuresToSelect}
-                      selectedFeatures={this.state.featuresSelected}
-                      onAddFeature={this.addFeature}
-                      onRemoveFeature={this.removeFeature}
-                      onRemoveAllFeatures={this.removeAllFeatures}
-                    />
-                  </Col>
-                  <Col s={3} className="xs6">
-                    <Diff
-                      ref={(button) => (this.diffButton = button)}
-                      theme={theme}
-                      diff={this.state.diff}
-                      lang={this.state.lang}
-                      build={this.state.build}
-                      onLoad={this.loadDiff}
-                      onClose={this.clearDiff}
-                      disabled={
-                        this.state.downloading ||
-                        !this.state.name ||
-                        !this.state.package ||
-                        this.state.loadingFeatures
-                      }
-                    />
-                  </Col>
-                  <Col s={3} className="xs6">
-                    <CodePreview
-                      ref={(button) => (this.previewButton = button)}
-                      theme={theme}
-                      preview={this.state.preview}
-                      lang={this.state.lang}
-                      build={this.state.build}
-                      onLoad={this.loadPreview}
-                      onClose={this.clearPreview}
-                      disabled={disabled}
-                    />
-                  </Col>
-                  <Col s={3} className="xs6">
-                    <TooltipButton
-                      tooltip={messages.tooltips.generate}
-                      disabled={disabled}
-                      waves="light"
-                      className={theme}
-                      style={{ marginRight: "5px", width: "100%" }}
-                    >
-                      <Icon className="action-button-icon" left>
-                        get_app
-                      </Icon>
-                      Generate project
-                    </TooltipButton>
-                  </Col>
-                </Row>
-              </form>
-              <div className="progress-container">
-                {this.state.downloading && <ProgressBar />}
-              </div>
+              <Row className="button-row">
+                <Col s={3} className="xs6">
+                  <FeatureSelectorModal
+                    theme={theme}
+                    loading={loadingFeatures}
+                    features={featuresAvailable}
+                    selectedFeatures={featuresSelected}
+                    onAddFeature={addFeature}
+                    onRemoveFeature={removeFeature}
+                    onRemoveAllFeatures={removeAllFeatures}
+                  />
+                </Col>
+                <Col s={3} className="xs6">
+                  <Diff
+                    ref={diffButton}
+                    theme={theme}
+                    diff={diff}
+                    lang={form.lang}
+                    build={form.build}
+                    onLoad={loadDiff}
+                    onClose={clearDiff}
+                    disabled={disabled}
+                  />
+                </Col>
+                <Col s={3} className="xs6">
+                  <CodePreview
+                    ref={previewButton}
+                    theme={theme}
+                    preview={preview}
+                    lang={form.lang}
+                    build={form.build}
+                    onLoad={loadPreview}
+                    onClose={clearPreview}
+                    disabled={disabled}
+                  />
+                </Col>
+                <Col s={3} className="xs6">
+                  <TooltipButton
+                    tooltip={messages.tooltips.generate}
+                    disabled={disabled}
+                    waves="light"
+                    className={theme}
+                    style={{ marginRight: "5px", width: "100%" }}
+                  >
+                    <Icon className="action-button-icon" left>
+                      get_app
+                    </Icon>
+                    Generate project
+                  </TooltipButton>
+                </Col>
+              </Row>
+            </form>
+            <div className="progress-container">
+              {downloading && <ProgressBar />}
             </div>
           </div>
         </div>
-        <div className="container mn-feature-container">
-          <FeatureSelectedList
-            theme={theme}
-            selectedFeatures={this.state.featuresSelected}
-            onRemoveFeature={this.removeFeature}
-          />
-        </div>
-        <footer className="container mn-footer-container">
-          <OciHomeOfMicronaut />
-        </footer>
-        <ErrorView
-          error={this.state.error}
-          errorMessage={this.state.errorMessage}
-          onClose={() => this.setState({ error: false, errorMessage: "" })}
+      </div>
+      <div className="container mn-feature-container">
+        <FeatureSelectedList
+          theme={theme}
+          selectedFeatures={featuresSelected}
+          onRemoveFeature={removeFeature}
         />
-      </Fragment>
-    );
-  }
+      </div>
+      <Footer />
+      <ErrorView
+        error={hasError}
+        errorMessage={errorMessage}
+        onClose={() => setErrorMessage("")}
+      />
+    </Fragment>
+  );
 }
-export default App;

@@ -3,6 +3,25 @@ export const capitalize = (s) => {
     return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
+export const downloadBlob = (blob, name = "file.txt") => {
+    var url = window.URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
+    a.click();
+};
+
+export const debounceResponse = (start, atLeast = 700) => (response) => {
+    const end = Date.now();
+    const diff = end - start;
+    return new Promise((r) => {
+        setTimeout(() => {
+            r(response);
+        }, Math.max(atLeast - diff, 0));
+    });
+};
+
 export const makeNodeTree = (data) => {
     let nodes = {};
     let obj = data;
@@ -23,4 +42,11 @@ export const makeNodeTree = (data) => {
         node = rootNode;
     }
     return nodes;
+};
+
+export const responseHandler = (type = "json") => (response) => {
+    if (!response.ok) {
+        throw response;
+    }
+    return response[type]();
 };
