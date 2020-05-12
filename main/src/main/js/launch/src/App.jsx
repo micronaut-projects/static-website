@@ -16,11 +16,12 @@ import TooltipButton from "./components/TooltipButton";
 import Footer from "./components/Footer";
 
 import {
-  API_URL,
   DEFAULT_JAVA_VERSION,
   DEFAULT_LANG,
   DEFAULT_BUILD,
   DEFAULT_TEST_FW,
+  DEFAULT_MICRONAUT_VERSION,
+  MICRONAUT_VERSIONS,
 } from "./constants";
 import messages from "./constants/messages.json";
 
@@ -32,6 +33,7 @@ import {
   responseHandler,
   debounceResponse,
 } from "./utility";
+import Cache from "./helpers/Cache";
 
 import "./style.css";
 import "./styles/button-row.css";
@@ -47,6 +49,7 @@ export default function App() {
     build: DEFAULT_BUILD,
     testFw: DEFAULT_TEST_FW,
     javaVersion: DEFAULT_JAVA_VERSION,
+    micronautVersion: DEFAULT_MICRONAUT_VERSION,
   });
 
   const [types, setTypes] = useState([{ name: "DEFAULT", title: "" }]);
@@ -68,12 +71,16 @@ export default function App() {
   const hasError = Boolean(errorMessage);
   const appType = form.type;
 
+  // creates a watchable primitive to include in the useEffect deps
+  const { micronautVersion } = form;
+
   useEffect(() => {
     const load = async () => {
       setDownloading(true);
       try {
-        const data = await fetch(API_URL + "/application-types").then(
-          responseHandler("json")
+        const url = `${getApiUrl(micronautVersion)}/application-types`;
+        const data = await Cache.cache(url, () =>
+          fetch(url).then(responseHandler("json"))
         );
         const types = data.types.map((t) => {
           return { name: t.name.toUpperCase(), title: t.title };
@@ -86,17 +93,19 @@ export default function App() {
       }
     };
     load();
-  }, []);
+  }, [micronautVersion]);
 
   useEffect(() => {
     const loadFeatures = async () => {
       setLoadingFeatures(true);
       setErrorMessage("");
       try {
-        const data = await fetch(
-          API_URL + "/application-types/" + appType + "/features"
-        ).then(responseHandler("json"));
-
+        const url = `${getApiUrl(
+          micronautVersion
+        )}/application-types/${appType}/features`;
+        const data = await Cache.cache(url, () =>
+          fetch(url).then(responseHandler("json"))
+        );
         setFeaturesAvailable(data.features);
       } catch (error) {
         setErrorMessage(error.messages);
@@ -105,7 +114,13 @@ export default function App() {
       }
     };
     loadFeatures();
-  }, [appType]);
+  }, [appType, micronautVersion]);
+
+  const getApiUrl = (version) => {
+    return MICRONAUT_VERSIONS.find((v) => {
+      return version === v.value;
+    }).api;
+  };
 
   const buildFeaturesQuery = () => {
     return Object.keys(featuresSelected)
@@ -122,10 +137,19 @@ export default function App() {
         "A prefix is required, should be one of 'diff', 'preview' or 'create'"
       );
     }
-    const { type, name, lang, build, testFw, javaVersion, package: pkg } = form;
+    const {
+      micronautVersion,
+      type,
+      name,
+      lang,
+      build,
+      testFw,
+      javaVersion,
+      package: pkg,
+    } = form;
     const features = buildFeaturesQuery();
     const fqpkg = `${pkg}.${name}`;
-    const base = `${API_URL}/${prefix}/${type}/${fqpkg}`;
+    const base = `${getApiUrl(micronautVersion)}/${prefix}/${type}/${fqpkg}`;
     const query = [
       `lang=${lang}`,
       `build=${build}`,
