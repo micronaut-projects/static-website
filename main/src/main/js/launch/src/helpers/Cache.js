@@ -54,11 +54,6 @@ export class CacheApi {
   }
 
   async cache(KEY, callback, ttl = CACHE_EXPIRATION_DEFAULT) {
-    if (ttl instanceof Function) {
-      callback = ttl;
-      ttl = CACHE_EXPIRATION_DEFAULT;
-    }
-
     const item = this._adapter.getItem(KEY);
     if (item) {
       const { value: cached, expiration } = item;
