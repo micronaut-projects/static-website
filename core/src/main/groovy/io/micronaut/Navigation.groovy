@@ -28,7 +28,7 @@ class Navigation {
                 downloadMenuItem(url),
                 documentationMenuItem(url),
                 docsMenuItem(url),
-                launchMenuItem(),
+                launchMenuItem(url),
                 desktopHomeMenuItem(url),
                 mobileHomeMenuItem(url)
         ] as List<MenuItem>)
@@ -36,7 +36,7 @@ class Navigation {
 
     static Menu footerMenu(String url = null, String guidesUrl = null) {
         new Menu(items: [
-                launchMenuItem(),
+                launchMenuItem(url),
                 docsMenuItem(url),
                 downloadMenuItem(url),
                 guidesMenuItem(guidesUrl),

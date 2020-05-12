@@ -7,7 +7,7 @@ export const GitHubLink = ({ className, theme }) => {
 
     return (
         <a
-            href="https://github.com/micronaut-projects"
+            href="https://github.com/micronaut-projects/micronaut-starter"
             target="_blank"
             rel="noopener noreferrer"
             className={className}

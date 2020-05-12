@@ -2,8 +2,7 @@ export const API_URL =
     process.env.REACT_APP_API_URL || "https://launch.micronaut.io";
 
 export const SNAPSHOT_API_URL =
-    process.env.REACT_APP_SNAPSHOT_API_URL ||
-    "https://micronaut-starter-staging-ucxwqnh6ka-uc.a.run.app";
+    process.env.REACT_APP_SNAPSHOT_API_URL || "https://snapshot.micronaut.io";
 
 export const JAVA_VERSIONS = [8, 9, 10, 11, 12, 13, 14];
 

@@ -76,6 +76,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-grpc'
     legend: 'Integration between Micronaut and GRPC'
+  azure:
+    category: 'Cloud'
+    image: 'azure.svg'
+    label: 'Micronaut Azure'
+    version: 'snapshot'
+    githubslug: 'micronaut-azure'
+    legend: 'Integration between Micronaut and Microsoft Azure'   
   gcp:
     category: 'Cloud'
     image: 'gcp.png'
