@@ -33,6 +33,7 @@ import {
   responseHandler,
   debounceResponse,
 } from "./utility";
+import Cache from "./helpers/Cache";
 
 import "./style.css";
 import "./styles/button-row.css";
@@ -69,14 +70,18 @@ export default function App() {
     downloading || loadingFeatures || !form.name || !form.package;
   const hasError = Boolean(errorMessage);
   const appType = form.type;
-  const { micronautVersion } = form; // creates a watchable primitive to include in the useEffect deps
+
+  // creates a watchable primitive to include in the useEffect deps
+  const { micronautVersion } = form;
 
   useEffect(() => {
     const load = async () => {
       setDownloading(true);
       try {
         const url = `${getApiUrl(micronautVersion)}/application-types`;
-        const data = await fetch(url).then(responseHandler("json"));
+        const data = await Cache.cache(url, () =>
+          fetch(url).then(responseHandler("json"))
+        );
         const types = data.types.map((t) => {
           return { name: t.name.toUpperCase(), title: t.title };
         });
@@ -98,7 +103,9 @@ export default function App() {
         const url = `${getApiUrl(
           micronautVersion
         )}/application-types/${appType}/features`;
-        const data = await fetch(url).then(responseHandler("json"));
+        const data = await Cache.cache(url, () =>
+          fetch(url).then(responseHandler("json"))
+        );
         setFeaturesAvailable(data.features);
       } catch (error) {
         setErrorMessage(error.messages);
