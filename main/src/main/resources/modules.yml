@@ -169,7 +169,7 @@ modules:
     legend: 'Configuration to integrate Micronaut and RabbitMQ'    
   natsio:
     category: 'Messaging'
-    image: 'nats.svg'
+    image: 'nats.png'
     label: 'Micronaut Nats'
     version: 'latest'
     githubslug: 'micronaut-nats'
