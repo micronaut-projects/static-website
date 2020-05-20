@@ -166,7 +166,14 @@ modules:
     label: 'Micronaut RabbitMQ'
     version: 'latest'
     githubslug: 'micronaut-rabbitmq'
-    legend: 'Configuration to integrate Micronaut and RabbitMQ'
+    legend: 'Configuration to integrate Micronaut and RabbitMQ'    
+  natsio:
+    category: 'Messaging'
+    image: 'nats.svg'
+    label: 'Micronaut Nats'
+    version: 'latest'
+    githubslug: 'micronaut-nats'
+    legend: 'Integration between Micronaut and nats.io'
   rss:
     category: 'Views'
     image: 'rss.svg'
