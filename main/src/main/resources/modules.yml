@@ -272,6 +272,13 @@ modules:
     version: 'snapshot'
     githubslug: 'micronaut-rxjava3'
     legend: 'Converters and Instrumentation for RxJava 3 types. RxJava 3 compatible HTTP Client.'
+  acme:
+    category: 'Acme'
+    image: 'acme.svg'
+    label: 'Micronaut Acme'
+    version: 'snapshot'
+    githubslug: 'micronaut-acme'
+    legend: 'Ordering, renewing and automatically installing certificates via Automatic Certificate Management Environment (ACME).'
   reactor:
     category: 'Reactive'
     image: 'reactor.png'
