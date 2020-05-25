@@ -273,7 +273,7 @@ modules:
     githubslug: 'micronaut-rxjava3'
     legend: 'Converters and Instrumentation for RxJava 3 types. RxJava 3 compatible HTTP Client.'
   acme:
-    category: 'Acme'
+    category: 'Misc'
     image: 'acme.svg'
     label: 'Micronaut Acme'
     version: 'snapshot'
