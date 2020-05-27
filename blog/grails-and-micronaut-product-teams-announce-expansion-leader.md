@@ -1,5 +1,6 @@
 title: Grails and Micronaut Product Teams Announce Expansion of Leadership.  
-date: Apr 16, 2020.  
+date: Apr 16, 2020. 
+image: a7db6755d8fad72f68398f43fa53cab1_f4719.png	
 description: Grails and Micronaut Product Teams announce expansion of leadership team. Puneet Behl is now Grails Product Development Lead, and James Kleeh is now Micronaut Development Lead.  
 ---
 
