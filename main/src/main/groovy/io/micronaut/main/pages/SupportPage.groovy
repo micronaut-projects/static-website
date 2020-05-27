@@ -39,11 +39,10 @@ class SupportPage extends Page implements ReadFileUtils {
                                     mkp.yield " development is sponsored by: "
                                 }
                                 a(href: "https://objectcomputing.com/products/micronaut/") {
-                                    img src: "images/oci-home-to-micronaut.svg", width: "90%", alt: "Object Computing"
+                                    img src: "images/oci-home-to-micronaut.svg", width: "80%", alt: "Object Computing"
                                 }
                             }
                             div {
-                                h3 class: "columnheader", 'Request Free Consultation', style: 'padding-left: 0; margin-top: 50px;margin-bottom: 0 !important;'
                                 String text = readFileContent('freeconsultationform.html')
                                 if ( text ) {
                                     mkp.yieldUnescaped text
