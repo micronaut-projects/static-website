@@ -4,13 +4,12 @@ Our blog posts use MultiMardown. A typically structure looks like:
 title: 
 date: May 27, 2020  
 description: 
-author: 
-author title: 
+author:  
 ---
 
 # [%title]
 
-**By [%author]**, [%author title]
+**By [%author]**
 
 [%date] 
 
