@@ -1,5 +1,5 @@
 title: Micronaut 1.0.0.M1 Released
-date: May 5, 2018  
+date: May 30, 2018  
 description: Announcing the release of Micronaut 1.0.0.M1
 author: Sergio Del Amo Caballero 
 ---
