@@ -28,11 +28,13 @@ Following are the stats that were produced during the recording of this screenca
 
 ![Summary of Results](2020-04-07-img02.jpeg)
 
+----
 ###### UPDATE
 
 The response from the Spring team was to use [wrk](https://github.com/wg/wrk) or [vegata](https://github.com/tsenart/vegeta) to benchmark instead. Quarkus appears to be the winner at higher concurrency when testing with wrk whilst Micronaut appears to be the winner with vegata. This proves once again do your own benchmarking with a variety of tools!
 
 ###### END UPDATE
+----
 
 As you can see, as of today, if you are looking at performance, Quarkus is marginally ahead on time to first response (around 70ms), while the only metric Spring Boot wins is compilation time due to not doing any compilation-time processing.
 
