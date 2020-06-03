@@ -84,17 +84,19 @@ Micronaut Data is able to achieve such a significant performance jump for a vari
 
 Take a look at the difference in Stack Trace size when using Micronaut Data compared to the alternatives:
 
+#### Micronaut Data JDBC
 ![Micronaut Data JDBC](./2019-07-18-img01.png)
-Micronaut Data JDBC
 
+
+#### Micronaut Data JPA
 ![Micronaut Data JPA](./2019-07-18-img02.png)
-Micronaut Data JPA
 
+#### Spring Data JPA
 ![Spring Data JPA](./2019-07-18-img03.png)
-Spring Data JPA
 
+#### GORM
 ![GORM](./2019-07-18-img04.png)
-GORM
+
 
 Micronaut Data JDBC produces only 15 stack frames until your query is actually executed, while Micronaut Data JPA produces 30 (mainly Hibernate frames), compared to 50+ stack frames for Spring Data or GORM, all thanks to Micronaut's reflection-free AOP layer.
 
