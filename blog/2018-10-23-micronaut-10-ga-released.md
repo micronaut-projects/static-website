@@ -12,7 +12,7 @@ author: Graeme Rocher
 
 It is with great excitement that the [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) announces the [release of Micronaut 1.0 GA](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0) today.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/m0s2ZpafEE0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+[![Learn more about Micronaut!](./2018-10-23 img01.gif)](http://www.youtube.com/watch?v=m0s2ZpafEE0 "")
 
 Over a year in the making, Micronaut 1.0 represents a major leap forward in our mission to enable developers to create efficient, low-memory-footprint microservices and serverless apps for the JVM.
 
