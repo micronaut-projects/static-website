@@ -35,12 +35,21 @@ We are, of course, a bit biased towards our framework, so we would like to invit
 
 ## Test Hardware
 
-- HP ZBook Laptop
-- Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
-- 16GB of RAM
-- Fedora Linux 30
+*   HP ZBook Laptop
+*   Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
+*   16GB of RAM
+*   OpenJDK Runtime Environment (build 1.8.0_252-b09)
+*   Fedora Linux 31
 
 ## Performance Measurements
+
+----
+###### UPDATE 05/29/2020 
+
+A community member [pointed out](https://github.com/micronaut-projects/micronaut-comparisons/issues/1) that the configurations for the Spring Boot JHipster Sample application and the Micronaut JHipster Sample application differed in two ways, which put Spring Boot at a disadvantage. First, the Spring Boot application had a logging level of DEBUG, causing a lot more messages to be logged. Second, the Spring Boot application was writing audit records to the database in addition to the records being created as part of the load test. We have [changed the configurations](https://github.com/micronaut-projects/micronaut-comparisons/pull/2) and, as expected, observed an improvement in the performance of the Spring Boot application. This blog post has been updated to reflect these observations. Thank you for your feedback Christian!
+
+###### END UPDATE
+-----
 
 For this comparison, we investigated application start-up time, time to first response, and throughput and memory consumption of an application under load.
 
@@ -59,9 +68,9 @@ Micronaut and Spring Boot both report start-up time after initialization, and we
 
 |Spring Boot 2.2.6| Micronaut 1.3.4 | Micronaut 2.0.0 M2 |
 |:--- |:--- |:---|
-|2099 ms | 1073 ms | **863 ms** |
+|1997 ms | 955 ms | **813 ms** |
 
-As you can see, Micronaut 1.3.4 started up in a little over half the time of the comparable Spring Boot application, and Micronaut 2.0.0 M2 showed a nearly 20% improvement over 1.3.4!
+As you can see, Micronaut 1.3.4 started up in a little under half the time of the comparable Spring Boot application, and Micronaut 2.0.0 M2 showed a nearly 15% improvement over 1.3.4!
 
 ## Time to First Response
 
@@ -71,9 +80,9 @@ To measure time to first response, we included a Node script that started a prov
 
 | Spring Boot 2.2.6 | Micronaut 1.3.4 |  Micronaut 2.0.0 M2 |
 | :--- | :--- | :--- |
-| 2,895 ms | 1,718 ms | **1,413 ms** |
+| 2,741 ms | 1,496 ms | **1,295 ms** |
 
-Here we see similar results to the start-up time test. Micronaut 1.3.4 saved about 40% of the time required by Spring Boot, and Micronaut 2.0.0 M2 shaved another 300 milliseconds off that!
+Here we see similar results to the start-up time test. Micronaut 1.3.4 saved about 45% of the time required by Spring Boot, and Micronaut 2.0.0 M2 shaved another 200 milliseconds off that!
 
 ## Application Performance Under Load
 
@@ -95,12 +104,12 @@ For each application, we recorded the number of requests completed during the 60
 
 |  | Spring Boot 2.2.5 | Micronaut 1.3.4 | Micronaut 2.0.0 M2 |
 | :--- | :--- |  :--- |  :--- | 
-| Total Requests in 60s | 65,367 | 127,031 | **137,464** |
-| Mean Response Time | 758 ms | 391 ms |  **360 ms** |
-| Mean Requests/Second | 1188.491 |  2309.655 |  **2499.345** | 
-| RSS Memory After Load Test | 490.892 MB | 441.856 MB | **439.208 MB** |
+| Total Requests in 60s | 111,137 | 132,391 | **153,557** |
+| Mean Response Time | 444 ms | 375 ms |  **323 ms** |
+| Mean Requests/Second | 2020.673 |  2407.109 |  **2791.945** | 
+| RSS Memory After Load Test | 473.328 MB | 435.092 MB | **424.560 MB** |
 
-As you can see, under load, Micronaut 1.3.4 was able to process nearly double the requests as the Spring Boot application, responding faster and processing more requests, while utilizing less memory. Micronaut 2.0.0 M2 improved on this further by shaving an additional 30 milliseconds off of the mean response time while consuming slightly less memory than the Micronaut 1.3.4 application.
+As you can see, under load, Micronaut 1.3.4 was able to process over 20,000 additional requests as the Spring Boot application while utilizing less memory. Micronaut 2.0.0 M2 improved on this further by shaving an additional 50 milliseconds off of the mean response time while consuming less memory than the Micronaut 1.3.4 application.
 
 ## Summary
 
