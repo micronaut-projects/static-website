@@ -16,7 +16,7 @@ Micronaut for Spring adds the ability to use the long-established Spring annotat
 
 The provided [example application](https://github.com/micronaut-projects/micronaut-spring/tree/master/examples/greeting-service) is at the source level a Spring Boot application. Using ahead-of-time (AOT) compilation, Micronaut is able to compute and interpret the Spring annotation programming model and produce a valid Micronaut application without adding any runtime overhead. The Micronaut application is then executable on GraalVM:
 
-[![Micronaut for Spring](./2018-11-13-img01.gif)](https://www.youtube.com/embed/JvzD2SEw0-E "Micronaut for Spring")
+[![Micronaut for Spring](./2018-11-13-img01.gif)](https://youtu.be/JvzD2SEw0-E "Micronaut for Spring")
 
 The way this works is fairly simple.
 
