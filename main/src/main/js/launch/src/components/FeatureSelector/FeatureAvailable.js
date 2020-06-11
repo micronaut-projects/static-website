@@ -10,7 +10,7 @@ const FeatureAvailable = ({ feature, toggleFeatures }) => {
             id={`mn-feature-${feature.name}`}
             className={`mn-feature-selection hoverable ${feature.selected &&
                 "selected"}`}
-            title={feature.name}
+            title={feature.preview != null && feature.preview ? feature.name + " (preview)" : feature.name}
             onClick={(e) => toggleFeatures(e, feature)}
         >
             <p className="grey-text">{feature.description}</p>
