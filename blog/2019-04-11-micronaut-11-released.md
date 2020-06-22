@@ -2,6 +2,7 @@ title: Micronaut 1.1 Released
 date: April 11, 2019  
 description: Micronaut 1.1 Release Announcement
 author: Graeme Rocher
+image: 2019-04-11.png
 ---
 
 # [%title]
