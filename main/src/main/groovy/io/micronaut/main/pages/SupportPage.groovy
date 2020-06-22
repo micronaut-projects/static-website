@@ -39,7 +39,7 @@ class SupportPage extends Page implements ReadFileUtils {
                                     mkp.yield " development is sponsored by: "
                                 }
                                 a(href: "https://objectcomputing.com/products/micronaut/") {
-                                    img src: "images/oci-home-to-micronaut.svg", width: "80%", alt: "Object Computing"
+                                    img src: "images/oci-home-to-micronaut.svg", width: "60%", alt: "Object Computing, Inc."
                                 }
                             }
                             div {
@@ -55,7 +55,7 @@ class SupportPage extends Page implements ReadFileUtils {
                         div(class: "post") {
                             section {
                                 p {
-                                    mkp.yield 'OCI offers flexible, customizable open source support services with direct access to the architects and engineers who develop '
+                                    mkp.yield 'Object Computing, Inc. (OCI) offers flexible, customizable open source support services with direct access to the architects and engineers who develop '
                                     mkp.yieldUnescaped(micronaut())
                                     mkp.yield ' and have spent their careers supporting and maturing other Frameworks, such as Grails.'
                                 }
