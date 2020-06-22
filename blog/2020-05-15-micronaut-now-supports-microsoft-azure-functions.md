@@ -2,7 +2,7 @@ title: Micronaut now supports Microsoft Azure Functions
 date: May 15, 2020
 description: The Micronaut team at Object Computing is pleased to announce that Micronaut 2.0.0.M3 now features support for developing serverless applications with Azure Functions.
 author: Sergio del Amo
-image: 609885d3f9272851a7d34831e21f36c2_f4769.png
+image: 2020-05-15.png
 
 ---
 
