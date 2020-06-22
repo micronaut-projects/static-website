@@ -2,6 +2,7 @@ title: Micronaut 1.0.4 Released with Improved Modularity
 date: January 29, 2019 
 description: Release announcement for Micronaut 1.0.4
 author: Graeme Rocher
+image: 2019-01-29.png
 ---
 
 # [%title]
