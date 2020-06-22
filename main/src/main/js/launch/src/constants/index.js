@@ -8,8 +8,8 @@ export const JAVA_VERSIONS = [8, 9, 10, 11, 12, 13, 14];
 
 export const MICRONAUT_VERSIONS = [
     {
-        label: "2.0.0.RC1",
-        value: "2.0.0.RC1",
+        label: "2.0.0.RC2",
+        value: "2.0.0.RC2",
         api: API_URL,
     },
     {
