@@ -2,6 +2,7 @@ title: Micronaut 1.2 Released
 date: August 6, 2019  
 description: Micronaut 1.2 release announcement
 author: Graeme Rocher
+image: 2019-08-06.png
 ---
 
 # [%title]
