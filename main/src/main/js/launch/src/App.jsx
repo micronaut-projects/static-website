@@ -16,12 +16,12 @@ import TooltipButton from "./components/TooltipButton";
 import Footer from "./components/Footer";
 
 import {
+  API_URL,
   DEFAULT_JAVA_VERSION,
   DEFAULT_LANG,
   DEFAULT_BUILD,
   DEFAULT_TEST_FW,
-  DEFAULT_MICRONAUT_VERSION,
-  MICRONAUT_VERSIONS,
+  SNAPSHOT_API_URL,
 } from "./constants";
 import messages from "./constants/messages.json";
 
@@ -41,7 +41,7 @@ import "./styles/modal-overrides.css";
 import "./styles/utility.css";
 
 export default function App() {
-  const [form, setForm] = useState({
+  const initialForm = {
     name: "demo",
     package: "com.example",
     type: "DEFAULT",
@@ -49,12 +49,17 @@ export default function App() {
     build: DEFAULT_BUILD,
     testFw: DEFAULT_TEST_FW,
     javaVersion: DEFAULT_JAVA_VERSION,
-    micronautVersion: DEFAULT_MICRONAUT_VERSION,
-  });
+    micronautVersion: false,
+  };
 
+  const emptyVersions = [];
+  const [form, setForm] = useState(initialForm);
+
+  const [availableVersions, setAvailableVersions] = useState(emptyVersions);
   const [types, setTypes] = useState([{ name: "DEFAULT", title: "" }]);
   const [featuresAvailable, setFeaturesAvailable] = useState([]);
   const [featuresSelected, setFeaturesSelected] = useState({});
+  const [initializationAttempted, setInitializationAttempted] = useState(false);
 
   const [loadingFeatures, setLoadingFeatures] = useState(false);
   const [downloading, setDownloading] = useState(false);
@@ -67,18 +72,68 @@ export default function App() {
   const diffButton = useRef();
 
   const disabled =
-    downloading || loadingFeatures || !form.name || !form.package;
+    !initializationAttempted || downloading || loadingFeatures || !form.name || !form.package;
   const hasError = Boolean(errorMessage);
   const appType = form.type;
 
   // creates a watchable primitive to include in the useEffect deps
   const { micronautVersion } = form;
 
+  const getApiUrl = (versions, desiredVersion) => {
+    return versions.find((v) => {
+      return desiredVersion === v.value;
+    }).api;
+  };
+
+  useEffect(() => {
+    const retrieveVersion = async (baseUrl) => {
+      const url = `${baseUrl}/versions`;
+      const result = await Cache.cache(url, () =>
+        fetch(url).then(responseHandler("json"))
+      );
+
+      const ver = result.versions['micronaut.version'];
+
+      return {
+        label: ver,
+        value: ver,
+        api: baseUrl
+      };
+    };
+
+    const initializeForm = async () => {
+      setDownloading(true);
+      try {
+        const versions = await Promise.all([retrieveVersion(API_URL), retrieveVersion(SNAPSHOT_API_URL)]);
+        setAvailableVersions(versions ? versions : emptyVersions);
+        const defaultVer = versions && versions.length > 0 ? versions[0].value : false;
+        setForm({
+          ...initialForm,
+          micronautVersion: defaultVer
+        });
+      } catch (error) {
+        await handleResponseError(error);
+        setForm({
+          ...initialForm,
+          micronautVersion: false
+        });
+      } finally {
+        setInitializationAttempted(true);
+        setDownloading(false);
+      }
+    };
+
+    if (!initializationAttempted && !downloading) {
+      initializeForm();
+    }
+
+  }, [initialForm, emptyVersions, initializationAttempted, downloading]);
+
   useEffect(() => {
     const load = async () => {
       setDownloading(true);
       try {
-        const url = `${getApiUrl(micronautVersion)}/application-types`;
+        const url = `${getApiUrl(availableVersions, micronautVersion)}/application-types`;
         const data = await Cache.cache(url, () =>
           fetch(url).then(responseHandler("json"))
         );
@@ -92,8 +147,10 @@ export default function App() {
         setDownloading(false);
       }
     };
-    load();
-  }, [micronautVersion]);
+    if (initializationAttempted && micronautVersion) {
+      load();
+    }
+  }, [micronautVersion, availableVersions, initializationAttempted]);
 
   useEffect(() => {
     const loadFeatures = async () => {
@@ -101,6 +158,7 @@ export default function App() {
       setErrorMessage("");
       try {
         const url = `${getApiUrl(
+          availableVersions,
           micronautVersion
         )}/application-types/${appType}/features`;
         const data = await Cache.cache(url, () =>
@@ -113,14 +171,10 @@ export default function App() {
         setLoadingFeatures(false);
       }
     };
-    loadFeatures();
-  }, [appType, micronautVersion]);
-
-  const getApiUrl = (version) => {
-    return MICRONAUT_VERSIONS.find((v) => {
-      return version === v.value;
-    }).api;
-  };
+    if (initializationAttempted && micronautVersion) {
+      loadFeatures();
+    }
+  }, [appType, micronautVersion, availableVersions, initializationAttempted]);
 
   const buildFeaturesQuery = () => {
     return Object.keys(featuresSelected)
@@ -296,6 +350,7 @@ export default function App() {
                 theme={theme}
                 handleChange={handleChange}
                 types={types}
+                versions={availableVersions}
                 {...form}
               />
 

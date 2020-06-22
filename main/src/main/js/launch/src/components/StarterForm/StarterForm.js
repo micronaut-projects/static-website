@@ -11,7 +11,6 @@ import {
     LANG_OPTS,
     BUILD_OPTS,
     TEST_OPTS,
-    MICRONAUT_VERSIONS,
 } from "../../constants";
 
 const StarterForm = ({ handleChange, ...props }) => {
@@ -72,7 +71,7 @@ const StarterForm = ({ handleChange, ...props }) => {
                     name="micronautVersion"
                     value={props.micronautVersion}
                     onChange={handleChange}
-                    options={MICRONAUT_VERSIONS}
+                    options={props.versions}
                 />
             </Col>
             <Col m={3} s={12} className="mn-radio">
