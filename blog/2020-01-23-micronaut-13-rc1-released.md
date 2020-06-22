@@ -2,6 +2,7 @@ title: Micronaut 1.3 RC1 Released
 date: January 23, 2019  
 description: Micronaut 1.3 RC1 release announcement
 author: Graeme Rocher
+image: 2020-01-23.png
 ---
 
 # [%title]
