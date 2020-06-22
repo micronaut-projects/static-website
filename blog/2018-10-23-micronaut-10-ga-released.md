@@ -1,7 +1,8 @@
 title: Micronaut 1.0 GA Released
 date: October 23, 2018  
 description: Micronaut 1.0 release announcement
-author: Graeme Rocher 
+author: Graeme Rocher
+image: 2018-10-23.png
 ---
 
 # [%title]
