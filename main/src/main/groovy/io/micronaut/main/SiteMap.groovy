@@ -91,7 +91,7 @@ ${Page.micronaut()} is an Open Source project licensed under the [Apache License
 The definitive guide to developing with ${Page.micronaut()} is the [User Guide](http://docs.micronaut.io/snapshot/guide/index.html).
 """), //TODO  In addition, step-by-step tutorials for solving common scenarios can be found at [Micronaut Guides](https://guides.micronaut.io).
             new Question(slug: 'question_training',title: "Are there training offerings for ${Page.micronaut()}?", answer: """
-[Object Computing, Inc](http://objectcomputing.com) offers [training courses](http://micronauttraining.com) which are developed and delivered by the ${Page.micronaut()} founders and core development team.</p>
+[Object Computing, Inc](http://objectcomputing.com) offers [training courses](https://objectcomputing.com/services/training/catalog/micronaut-training) which are developed and delivered by the ${Page.micronaut()} founders and core development team.</p>
 """),
             new Question(slug: 'question_grails',title: "How does ${Page.micronaut()} relate to Grails/Spring Boot?", answer: """
 The inventors of the [Grails framework](http://grails.org) are developing the ${Page.micronaut()} project, taking many of the lessons learned from Grails into account when designing the new framework. Unlike Grails and other JVM web frameworks, ${Page.micronaut()} is designed to function as both a client and a server framework in a microservice environment. ${Page.micronaut()}'s modularity and lack of external dependencies means that Grails developers can take advantage of many key ${Page.micronaut()} features within their existing Grails applications.
