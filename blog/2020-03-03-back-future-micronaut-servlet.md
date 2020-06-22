@@ -2,6 +2,7 @@ title: Back to the Future with Micronaut Servlet
 date: March 3, 2020  
 description: Micronaut Servlet Announcement
 author: Graeme Rocher
+image: 2020-03-03.png
 ---
 
 # [%title]
