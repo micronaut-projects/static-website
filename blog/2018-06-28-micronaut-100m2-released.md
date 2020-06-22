@@ -2,7 +2,7 @@ title: Micronaut 1.0.0.M2 Released
 date: June 28, 2018 
 description: Announcing the release of Micronaut 1.0.0.M2
 author: Sergio Del Amo Caballero
-image: 2018-06-28
+image: 2018-06-28.png
 ---
 
 # [%title]
