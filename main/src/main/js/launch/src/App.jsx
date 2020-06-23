@@ -203,7 +203,7 @@ export default function App() {
     } = form;
     const features = buildFeaturesQuery();
     const fqpkg = `${pkg}.${name}`;
-    const base = `${getApiUrl(micronautVersion)}/${prefix}/${type}/${fqpkg}`;
+    const base = `${getApiUrl(availableVersions, micronautVersion)}/${prefix}/${type}/${fqpkg}`;
     const query = [
       `lang=${lang}`,
       `build=${build}`,
