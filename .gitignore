@@ -9,6 +9,7 @@ atlassian-ide-plugin.xml
 .DS_Store
 out
 node_modules
+pages/guides.html
 pages/download.html
 pages/documentation.html
 pages/faq.html
