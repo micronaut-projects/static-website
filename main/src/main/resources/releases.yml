@@ -161,3 +161,6 @@ releases:
     -
       version: 2.0.0.RC2
       publicationDate: Jun 22, 2020
+    -
+      version: 2.0.0
+      publicationDate: Jun 26, 2020
