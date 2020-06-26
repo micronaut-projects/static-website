@@ -14,17 +14,22 @@ class EventsTask extends DefaultTask {
     static final String PAGE_NAME_EVENTS = 'events.html'
 
     @OutputDirectory
-    final Property<File> pages = project.objects.property(File)
+    final Property<File> output = project.objects.property(File)
 
     @Input
     final Property<String> url = project.objects.property(String)
 
     @TaskAction
     void renderDownloadPage() {
-        File output = new File(pages.get().getAbsolutePath() + "/" + PAGE_NAME_EVENTS)
-        output.createNewFile()
+        File build = output.get()
+        File temp = new File(build.absolutePath + "/" + DocumentationTask.TEMP)
+        temp.mkdir()
+
         ClassLoader classLoader = this.getClass().getClassLoader()
-        output.text = "body: events\n---\n" +
+
+        File outputFile = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_EVENTS)
+        outputFile.createNewFile()
+        outputFile.text = "body: events\n---\n" +
                 EventsPage.mainContent(url.get(), classLoader)
     }
 }

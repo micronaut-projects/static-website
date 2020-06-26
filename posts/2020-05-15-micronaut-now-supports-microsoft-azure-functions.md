@@ -15,7 +15,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 #azure #serverless 
 
-The [Micronaut team](https://objectcomputing.com/products/2gm-team) at Object Computing is pleased to announce that [Micronaut 2.0.0.M3](https://objectcomputing.com/news/2020/04/30/micronaut-20-m3-big-boost-serverless-and-micronaut-launch) now features support for developing serverless applications with [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). If you want to develop [Azure Functions with Java](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java), you'll find that you can dramatically improve your productivity and build incredibly fast and lightweight applications with the Micronaut framework.  
+The [Micronaut team](https://objectcomputing.com/products/2gm-team) at Object Computing is pleased to announce that [Micronaut 2.0.0.M3](/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html) now features support for developing serverless applications with [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). If you want to develop [Azure Functions with Java](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java), you'll find that you can dramatically improve your productivity and build incredibly fast and lightweight applications with the Micronaut framework.  
 
 Micronaut's Azure-friendly features include support for using [dependency injection](https://docs.micronaut.io/latest/guide/index.html#ioc), validation, and [AOP annotations](https://docs.micronaut.io/latest/guide/index.html#aop) within your serverless code. 
 

@@ -17,7 +17,7 @@ image: 2019-07-26.png
 
 * * *
 
-The Object Computing team is very proud of our [recently announced data access toolkit](https://objectcomputing.com/news/2019/07/18/unleashing-predator-precomputed-data-repositories). The innovations included in the technology are game changers and represent our commitment to open source technology and helping folks be successful with their technology.
+The Object Computing team is very proud of our [recently announced data access toolkit](/blog/2019-07-18-unleashing-predator-precomputed-data-repositories.html). The innovations included in the technology are game changers and represent our commitment to open source technology and helping folks be successful with their technology.
 
 We have heard feedback from the community that the word Predator is a source of anxiety for some.
 

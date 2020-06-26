@@ -13,7 +13,7 @@ image: 2020-04-02.png
 
 [%date] Just two weeks since the last milestone, the [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce [Micronaut 2.0 Milestone 2](https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.M2).
 
-Beyond the features [already introduced in Milestone 1](https://objectcomputing.com/news/2020/03/20/micronaut-20-milestone-1-released), the second milestone features the following three additional themes.
+Beyond the features [already introduced in Milestone 1](/blog/2020-03-20-micronaut-20-milestone-1-released.html), the second milestone features the following three additional themes.
 
 ## A Love Letter to Maven Users
 

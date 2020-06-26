@@ -18,9 +18,9 @@ Have you taken a look at the Micronaut 2.0 pre-releases yet?
 The [Micronaut Team](https://objectcomputing.com/products/2gm-team) at [Object Computing](https://objectcomputing.com/") has been putting a lot of hard work into making Micronaut even better with a number of exciting features and improvements including:
 
 - JDK 14 support
-- [Servlet](https://objectcomputing.com/news/2020/03/03/back-future-micronaut-servlet) container support
+- [Servlet](/blog/2020-03-03-back-future-micronaut-servlet.html) container support
 - [HTTP/2 support](https://docs.micronaut.io/2.0.x/guide/index.html#http2Server)
-- A [new Maven plugin](https://objectcomputing.com/news/2020/04/02/micronaut-20-milestone-2-massive-maven-improvements)
+- A [new Maven plugin](/blog/2020-04-02-micronaut-20-milestone-2-massive-maven-improvements.html)
 - An improved threading model
 - … [and much more](https://docs.micronaut.io/2.0.x/guide/index.html#whatsNew)
 

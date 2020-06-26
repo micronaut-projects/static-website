@@ -13,7 +13,7 @@ class DownloadTask extends DefaultTask {
     static final String PAGE_NAME_DOWNLOAD = "download.html"
 
     @OutputDirectory
-    final Property<File> pages = project.objects.property(File)
+    final Property<File> output = project.objects.property(File)
 
     @Input
     final Property<File> releases = project.objects.property(File)
@@ -23,9 +23,13 @@ class DownloadTask extends DefaultTask {
 
     @TaskAction
     void renderDownloadPage() {
-        File output = new File(pages.get().getAbsolutePath() + "/" + PAGE_NAME_DOWNLOAD)
-        output.createNewFile()
-        output.text = "body: download\n---\n" +
+        File build = output.get()
+        File temp = new File(build.absolutePath + "/" + DocumentationTask.TEMP)
+        temp.mkdir()
+
+        File outputFile = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_DOWNLOAD)
+        outputFile.createNewFile()
+        outputFile.text = "body: download\n---\n" +
                 DownloadPage.mainContent(releases.get(), url.get())
     }
 }

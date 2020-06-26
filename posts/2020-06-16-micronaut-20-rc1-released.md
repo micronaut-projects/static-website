@@ -16,9 +16,9 @@ The Micronaut team at Object Computing (OCI) is super excited to announce [the f
 
 Micronaut 2.0 includes so many great new features, some of which have been detailed in the blog posts for each of the milestone releases:
 
-- [Micronaut 2.0 M1 - Support for HTTP/2 and Servlets](https://objectcomputing.com/news/2020/03/20/micronaut-20-milestone-1-released)
-- [Micronaut 2.0 M2 - Massive Maven Improvements](https://objectcomputing.com/news/2020/04/02/micronaut-20-milestone-2-massive-maven-improvements)
-- [Micronaut 2.0 M3 - A Big Boost for Serverless and Micronaut Launch](https://objectcomputing.com/news/2020/04/30/micronaut-20-m3-big-boost-serverless-and-micronaut-launch)
+- [Micronaut 2.0 M1 - Support for HTTP/2 and Servlets](/blog/2020-03-20-micronaut-20-milestone-1-released.html)
+- [Micronaut 2.0 M2 - Massive Maven Improvements](/blog/2020-04-02-micronaut-20-milestone-2-massive-maven-improvements.html)
+- [Micronaut 2.0 M3 - A Big Boost for Serverless and Micronaut Launch](/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html)
 
 For more information about all the new features, see the "What's New" guide.
 
@@ -28,7 +28,7 @@ Here are some of the highlights of Micronaut 2.0:
 
 In Micronaut 2.0, we have completely rewritten the Micronaut CLI using Micronaut itself and simultaneously launched [Micronaut Launch](https://micronaut.io/launch/), a new tool for creating Micronaut applications that is built on the new CLI.
 
-The new website and CLI are so cool, we wrote [a whole blog post](https://objectcomputing.com/news/2020/04/30/introducing-micronaut-launch) to introduce them!
+The new website and CLI are so cool, we wrote [a whole blog post](/blog/2020-04-30-introducing-micronaut-launch.html) to introduce them!
 
 ## JDK 14, Groovy 3
 

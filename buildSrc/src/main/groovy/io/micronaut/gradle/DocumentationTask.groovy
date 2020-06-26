@@ -5,7 +5,6 @@ import groovy.transform.Internal
 import io.micronaut.documentation.DocumentationPage;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.provider.Property
-import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction;
@@ -14,6 +13,7 @@ import org.gradle.api.tasks.TaskAction;
 class DocumentationTask extends DefaultTask {
 
     static final String PAGE_NAME_DOCS = "documentation.html"
+    public static final String TEMP = "temp"
 
     @Input
     final Property<File> modules = project.objects.property(File)
@@ -25,11 +25,15 @@ class DocumentationTask extends DefaultTask {
     final Property<String> url = project.objects.property(String)
 
     @OutputDirectory
-    final Property<File> pages = project.objects.property(File)
+    final Property<File> output = project.objects.property(File)
 
     @TaskAction
     void renderDocsPage() {
-        File output = new File(pages.get().getAbsolutePath() + "/" + PAGE_NAME_DOCS)
+        File build = output.get()
+        File temp = new File(build.absolutePath + "/" + TEMP)
+        temp.mkdir()
+
+        File output = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_DOCS)
         output.createNewFile()
         output.text = "body: docs\n---\n" +
                 DocumentationPage.mainContent(releases.get(), modules.get(), url.get())

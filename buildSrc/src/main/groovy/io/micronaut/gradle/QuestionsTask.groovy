@@ -17,11 +17,15 @@ class QuestionsTask extends DefaultTask {
     final Property<File> questions = project.objects.property(File)
 
     @OutputDirectory
-    final Property<File> pages = project.objects.property(File)
+    final Property<File> output = project.objects.property(File)
 
     @TaskAction
     void renderDocsPage() {
-        File output = new File(pages.get().getAbsolutePath() + "/" + PAGE_NAME_QUESTIONS)
+        File build = output.get()
+        File temp = new File(build.absolutePath + "/" + DocumentationTask.TEMP)
+        temp.mkdir()
+
+        File output = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_QUESTIONS)
         output.createNewFile()
         output.text = "body: faq\n---\n" +
                 QuestionsPage.mainContent(questions.get())

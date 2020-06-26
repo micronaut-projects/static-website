@@ -19,10 +19,12 @@ import java.text.SimpleDateFormat
 
 @CompileStatic
 class RenderSiteTask extends DefaultTask {
+
     static final SimpleDateFormat MMM_D_YYYY = new SimpleDateFormat("MMM d, yyyy")
 
     static final String COLON = ":"
     static final String SEPARATOR = "---"
+    public static final String DIST = "dist"
 
     @InputDirectory
     final Property<File> pages = project.objects.property(File)
@@ -59,7 +61,9 @@ class RenderSiteTask extends DefaultTask {
         File o = output.get()
         Map<String, String> m = siteMeta(title.get(), about.get(), url.get(), keywords.get() as List<String>, robots.get())
         List<Page> listOfPages = parsePages(pages.get())
-        renderPages(m, listOfPages, o, templateText)
+        listOfPages.addAll(parsePages(new File(o.absolutePath + "/" + DocumentationTask.TEMP)))
+        File dist = new File(o.absolutePath + "/" + DIST)
+        renderPages(m, listOfPages, dist, templateText)
     }
 
     static Map<String, String> siteMeta(String title,

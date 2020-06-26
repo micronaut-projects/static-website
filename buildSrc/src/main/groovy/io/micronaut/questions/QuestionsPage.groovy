@@ -21,8 +21,8 @@ class QuestionsPage {
                 span 'Frequently Asked'
                 b 'Questions'
             }
-            div(class: 'darkmodeoff') {
-                article {
+            div(class: 'light') {
+                article(class: 'padded') {
                     for( Question question : questionList) {
                         mkp.yieldUnescaped question.renderAsHtml()
                     }
