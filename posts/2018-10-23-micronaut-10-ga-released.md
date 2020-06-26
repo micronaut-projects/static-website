@@ -27,7 +27,7 @@ Micronaut includes [all the tools a modern developer needs](https://docs.microna
 *   Integrated HTTP client and server-based Netty
 *   Sensible defaults and auto configuration
 
-For insight into the design and development of Micronaut 1.0, check out InfoQ's ["Road to Micronaut 1.0"](https://www.infoq.com/news/2018/10/the-road-to-micronaut-1.0) article and my previous posts on ["The Power of Ahead of Time Compilation."](https://objectcomputing.com/news/2018/10/08/micronaut-10-rc2)
+For insight into the design and development of Micronaut 1.0, check out InfoQ's ["Road to Micronaut 1.0"](https://www.infoq.com/news/2018/10/the-road-to-micronaut-1.0) article and my previous posts on ["The Power of Ahead of Time Compilation."](/blog/2018-10-08-micronaut-10-rc2.html)
 
 To find out more about Micronaut in person, come to [my presentation on Thursday](https://oracle.rainfocus.com/widget/oracle/oow18/catalogcodeone18?search=Micronaut) at [Oracle CodeOne 2018](https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018), or alternatively next week [at Voxxed Days](https://voxxeddays.com/microservices/2018/10/05/graeme-rocher-on-micronaut/) in Paris.
 

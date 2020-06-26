@@ -15,9 +15,6 @@ import static groovy.io.FileType.FILES
 class SitemapTask extends DefaultTask {
     static final String FILE_SITEMAP = 'sitemap.xml'
 
-    @InputDirectory
-    final Property<File> input = project.objects.property(File)
-
     @OutputDirectory
     final Property<File> output = project.objects.property(File)
 
@@ -27,7 +24,7 @@ class SitemapTask extends DefaultTask {
     @TaskAction
     void renderSitemap() {
         String websiteUrl = url.get()
-        File inputFile = input.get()
+        File inputFile = new File(output.get().absolutePath + "/" + RenderSiteTask.DIST)
 
         List<String> urls = []
         inputFile.eachFileRecurse(FILES) {
@@ -35,7 +32,7 @@ class SitemapTask extends DefaultTask {
                 urls << "${websiteUrl}${it.absolutePath.replace(inputFile.absolutePath, "")}".toString()
             }
         }
-        File outputFile = new File(output.get().absolutePath + "/" + FILE_SITEMAP)
+        File outputFile = new File(inputFile.absolutePath + "/" + FILE_SITEMAP)
         outputFile.createNewFile()
         outputFile.text = sitemapContent(urls)
 

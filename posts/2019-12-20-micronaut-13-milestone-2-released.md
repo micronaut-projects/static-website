@@ -15,7 +15,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 #release
 
-The [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is excited to announce the release of [Micronaut 1.3 M2](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0.M2). In addition to the [new features included in M1](https://objectcomputing.com/news/2019/11/21/micronaut-13-milestone-1-released) this milestone includes the following additions:
+The [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is excited to announce the release of [Micronaut 1.3 M2](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0.M2). In addition to the [new features included in M1](/blog/2019-11-21-micronaut-13-milestone-1-released.html) this milestone includes the following additions:
 
 *   Initial support for Kotlin Coroutines
 *   GraalVM 19.3 Support

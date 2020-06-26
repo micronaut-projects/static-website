@@ -8,11 +8,13 @@ import groovy.xml.MarkupBuilder
 class TagCloud {
 
     @CompileDynamic
-    static String tagCloud(String url, Set<Tag> tags) {
+    static String tagCloud(String url, Set<Tag> tags, boolean includeHeader = true) {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
         html.div(class: 'tagsbytopic') {
-            h3 class: 'columnheader', 'Guides by Tag'
+            if (includeHeader) {
+                h3 class: 'columnheader', 'Guides by Tag'
+            }
             ul(class: 'tagcloud') {
                 tags.sort { Tag a, Tag b -> a.slug <=> b.slug }.each { Tag t ->
                     li(class: "tag${t.ocurrence}") {

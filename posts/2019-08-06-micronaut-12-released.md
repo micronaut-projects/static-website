@@ -29,7 +29,7 @@ Thanks to all those who contributed to the release, and we hope you enjoy Micron
 
 Looking to the future, we now shift focus to Micronaut 1.3 which will include the following enhancements:
 
-*   Integration with the GA release of [Micronaut Data](https://objectcomputing.com/news/2019/07/18/unleashing-predator-precomputed-data-repositories "Micronaut Data (formerly Predator)") (formerly Predator)
+*   Integration with the GA release of [Micronaut Data](/blog/2019-07-18-unleashing-predator-precomputed-data-repositories.html)
 *   Improved caching APIs
 *   Improvements to bean introspections (static factory-method support, interface and enum support, etc.)
 *   Bean import support to allow importing beans from existing libraries annotated with `javax.inject` annotations.

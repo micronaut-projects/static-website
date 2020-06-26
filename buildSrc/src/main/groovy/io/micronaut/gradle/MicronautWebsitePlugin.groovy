@@ -28,6 +28,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
     public static final String TASK_COPY_ASSETS = "copyAssets"
     public static final String BUILD_GUIDES = "buildGuides"
     public static final String GROUP_MICRONAUT = 'micronaut'
+    public static final String TASK_RENDER_BLOG = 'renderBlog'
 
     @Override
     void apply(Project project) {
@@ -39,7 +40,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 SiteExtension siteExtension = ((SiteExtension) extension)
                 task.setProperty("modules", siteExtension.modules)
                 task.setProperty("releases", siteExtension.releases)
-                task.setProperty("pages", siteExtension.pages)
+                task.setProperty("output", siteExtension.output)
                 task.setProperty("url", siteExtension.url)
             }
             task.setGroup(GROUP_MICRONAUT)
@@ -48,19 +49,33 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             Object extension = project.getExtensions().findByName(EXTENSION_NAME)
             if (extension instanceof SiteExtension) {
                 SiteExtension siteExtension = ((SiteExtension) extension)
-                task.setProperty("input", siteExtension.output)
                 task.setProperty("output", siteExtension.output)
                 task.setProperty("url", siteExtension.url)
             }
             task.setGroup(GROUP_MICRONAUT)
         })
-
+        project.tasks.register(TASK_RENDER_BLOG, BlogTask, { task ->
+            Object extension = project.getExtensions().findByName(EXTENSION_NAME)
+            if (extension instanceof SiteExtension) {
+                SiteExtension siteExtension = ((SiteExtension) extension)
+                task.setProperty("url", siteExtension.url)
+                task.setProperty("title", siteExtension.title)
+                task.setProperty("about", siteExtension.description)
+                task.setProperty("keywords", siteExtension.keywords)
+                task.setProperty("robots", siteExtension.robots)
+                task.setProperty("template", siteExtension.template)
+                task.setProperty("output", siteExtension.output)
+                task.setProperty("posts", siteExtension.posts)
+                task.setProperty("assets", siteExtension.assets)
+            }
+            task.setGroup(GROUP_MICRONAUT)
+        })
         project.tasks.register(TASK_GEN_FAQ, QuestionsTask, { task ->
             Object extension = project.getExtensions().findByName(EXTENSION_NAME)
             if (extension instanceof SiteExtension) {
                 SiteExtension siteExtension = ((SiteExtension) extension)
                 task.setProperty("questions", siteExtension.questions)
-                task.setProperty("pages", siteExtension.pages)
+                task.setProperty("output", siteExtension.output)
             }
             task.setGroup(GROUP_MICRONAUT)
         })
@@ -69,7 +84,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             if (extension instanceof SiteExtension) {
                 SiteExtension siteExtension = ((SiteExtension) extension)
                 task.setProperty("url", siteExtension.url)
-                task.setProperty("pages", siteExtension.pages)
+                task.setProperty("output", siteExtension.output)
             }
             task.setGroup(GROUP_MICRONAUT)
         })
@@ -85,7 +100,6 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 task.setProperty("robots", siteExtension.robots)
                 task.setProperty("template", siteExtension.template)
                 task.setProperty("output", siteExtension.output)
-                task.setProperty("pages", siteExtension.pages)
             }
             task.setGroup(GROUP_MICRONAUT)
         })
@@ -95,7 +109,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 SiteExtension siteExtension = ((SiteExtension) extension)
                 task.setProperty("releases", siteExtension.releases)
                 task.setProperty("url", siteExtension.url)
-                task.setProperty("pages", siteExtension.pages)
+                task.setProperty("output", siteExtension.output)
             }
             task.setGroup(GROUP_MICRONAUT)
         })
@@ -135,6 +149,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             task.dependsOn(TASK_GEN_FAQ)
             task.dependsOn(TASK_GEN_DOWNLOAD)
             task.dependsOn(TASK_GEN_EVENTS)
+            task.finalizedBy(TASK_RENDER_BLOG)
             task.finalizedBy(TASK_GEN_SITEMAP)
         })
         project.tasks.register(TASK_CLEAN_GUIDES, { task ->

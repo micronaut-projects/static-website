@@ -25,7 +25,7 @@ The big news with this announcement is the rearchitecture of Micronaut's venerab
 
 In Micronaut 2.0, we have completely rewritten the CLI in Micronaut itself and simultaneously launched [Micronaut Launch](https://micronaut.io/launch/), a new tool for creating Micronaut applications that is built on the new CLI.
 
-The new website and CLI are so cool, we wrote a [whole blog post](https://objectcomputing.com/news/2020/04/30/introducing-micronaut-launch) to introduce them!
+The new website and CLI are so cool, we wrote a [whole blog post](/blog/2020-04-30-introducing-micronaut-launch.html) to introduce them!
 
 ## Google Cloud Function Support
 

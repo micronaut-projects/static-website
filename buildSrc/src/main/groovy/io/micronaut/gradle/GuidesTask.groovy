@@ -31,9 +31,6 @@ class GuidesTask extends DefaultTask {
     @OutputDirectory
     final Property<File> output = project.objects.property(File)
 
-    @OutputDirectory
-    final Property<File> pages = project.objects.property(File)
-
     @Input
     final Property<String> title = project.objects.property(String)
 
@@ -55,11 +52,13 @@ class GuidesTask extends DefaultTask {
 
     @TaskAction
     void renderGuides() {
-        File pagesDir = pages.get()
+        File pagesDir = new File(output.get().absolutePath + "/" + DocumentationTask.TEMP)
+        pagesDir.mkdir()
         generateGuidesPages(pagesDir, url.get())
         File template = document.get()
         final String templateText = template.text
-        File o = output.get()
+        File o = new File(output.get().absolutePath + "/" + RenderSiteTask.DIST)
+        o.mkdir()
         Map<String, String> m = RenderSiteTask.siteMeta(title.get(), about.get(), url.get(), keywords.get() as List<String>, robots.get())
 
         File f = new File(pagesDir.absolutePath + "/" + GuidesTask.PAGE_NAME_GUIDES)
