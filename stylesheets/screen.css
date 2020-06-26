@@ -81,6 +81,14 @@ body {
     font-size: 14px;
     line-height: 18px;
 }
+
+.darkmodeoff {
+    background-color: #FFFFFF;
+    overflow: auto;
+    color: #231F20;
+    padding: 20px;
+}
+
 body.home {
     color: #231F20;
     background: #000000 url('../images/home_micronaut_vertbk.jpg') repeat-x center top;
@@ -88,7 +96,122 @@ body.home {
 body.home #calltoaction {
     color: #FFFFFF;
 }
-b {
+body.post .largegoldenratio img {
+    width: 100%;
+}
+.smallgoldenratio h1,
+.largegoldenratio h1 {
+    font-weight: bold;
+    font-family: 'firasansbold', serif;
+    text-transform: uppercase;
+}
+.smallgoldenratio h2,
+.largegoldenratio h2 {
+    font-family: 'firasansbold', serif;
+    text-transform: uppercase;
+}
+.smallgoldenratio h3,
+.largegoldenratio h3 {
+    font-family: 'firasansregular', serif;
+    text-transform: uppercase;
+}
+.largegoldenratio code {
+    font-family: "Courier New", monospace;
+}
+.largegoldenratio .date,
+.largegoldenratio .author {
+    text-transform: uppercase;
+    font-family: 'firasanslight', serif;
+}
+.largegoldenratio .date {
+    border-top: 3px solid #000000;
+    padding-top: 20px;
+    margin: 20px 0;
+    display: block;
+    width: 150px;
+}
+.largegoldenratio h1 {
+    font-size: 2em !important;
+    line-height: 1.5em !important;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.blogcard {
+    width: 50vw;
+    max-width: 338px;
+    height: 50vw;
+    max-height: 338px;
+    background-size: cover;
+    background-color: #000000;
+    margin: 55px 55px 0 55px;
+    padding-left: 44px;
+    padding-right: 44px;
+    padding-top: 57px;
+    display: block;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    float: left;
+}
+.blogcard:after {
+    content: "";
+    display: block;
+    padding-bottom: 28%;
+}
+.blogcard:nth-child(2n+1) {
+    margin-right: 0;
+}
+
+.blogcard:last-child {
+    margin-bottom: 55px;
+}
+
+.person {
+    overflow: auto;
+    margin-bottom: 20px;
+}
+.person img {
+    max-width: 75px;
+    float: left;
+    margin-right: 10px;
+}
+
+.person .name {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    line-height: 1.7em;
+    display: block;
+}
+
+.blogcard h2 {
+    font-weight: bold;
+    font-family: 'firasansbold', serif;
+}
+.blogcard h3 {
+    margin-bottom: 50px;
+}
+@media screen and (min-width: 960px) {
+    .blogcard h3 {
+        margin-bottom: 100px;
+    }
+}
+@media screen and (min-width: 960px) {
+    .blogcard h2 {
+        font-size: 2em !important;
+        line-height: 1.5em !important;
+    }
+}
+.blogcard a, .blogcard a:visited, .blogcard a:hover {
+    color: #FFFFFF;
+}
+.blogcard a, .blogcard a:visited {
+    text-decoration: none !important;
+}
+.blogcard a:hover {
+    text-decoration: underline !important;
+}
+
+strong, b {
     font-weight: bold;
     font-family: 'firasansbold', serif;
 }
@@ -167,11 +290,18 @@ h2 {
     line-height: 1.7em !important;
 }
 
-h1 {
-    margin-top: 225px; /* 75 fixed navigation + 50px (margin bottom) */
-    margin-bottom: 40px;
+.content > h1 {
+    margin-top: 100px;
     font-size: 35px;
     line-height: 45px;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 960px) {
+    .content > h1 {
+        margin-top: 180px; /* 130 fixed navigation + 50px (margin bottom) */
+        margin-bottom: 0;
+    }
 }
 @media screen and (min-width: 600px) {
     h1 {
@@ -182,8 +312,8 @@ h1 {
 body.faq h1 {
     margin-bottom: 25px;
 }
-body.docs h1 {
-    margin-bottom: 45px;
+body > article h1 {
+    margin-bottom: 45px !important;
 }
 h1 span {
     font-family: 'firasanslight', serif;
@@ -207,6 +337,10 @@ p {
     line-height: 1.6em; /* 48px;	/ 38px; */
 }
 
+li p {
+    font-size: 1em;
+}
+
 p, pre {
     margin-bottom: 20px;
 }
@@ -224,17 +358,20 @@ small {
 a {
     color: #4CAFDE
 }
-
-article {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 th {
     background-color: #4CAFDE;
     color: #ffffff;
 }
-
+.hs-error-msgs label {
+    font-weight: bold;
+    color: #ffffff !important;
+}
+.form {
+    margin-top: 50px;
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 25px;
+}
 table {
     border-collapse: collapse;
     margin-bottom: 20px;
@@ -303,7 +440,7 @@ nav li {
     line-height: 18px !important;
 }
 .main nav li.align-left {
-    margin: 0 0 0 5px;
+    margin: 15px 0 0 5px;
 }
 
 @media screen and (min-width: 480px) {
@@ -350,30 +487,42 @@ nav li {
         width: 35px;
     }
     #navbar {
-        height: 200px;
+        height: 130px;
         overflow: hidden;
     }
     .main nav li.align-right {
-        margin: 95px 0 10px 24px;
+        margin: 55px 0 10px 24px;
     }
     .main nav li.align-right.icon {
-        margin-top: 85px;
+        margin-top: 55px;
+    }
+    .main nav li.align-left {
+        margin-top: 48px;
     }
     .main nav li.large {
         max-width: 150px;
     }
 }
 @media screen and (min-width: 1037px) {
+    .main nav li.align-left {
+        margin-top: 40px;
+    }
     .main nav li.large {
         max-width: 220px;
     }
 }
 @media screen and (min-width: 1180px) {
+    .main nav li.align-left {
+        margin-top: 21px;
+    }
     .main nav li.large {
         max-width: 360px;
     }
 }
 @media screen and (min-width: 1336px) {
+    .main nav li.align-left {
+        margin-top: 19px;
+    }
     .main nav li.large {
         max-width: 400px;
     }
@@ -423,6 +572,20 @@ nav li {
     .twocolumns .column.odd,
     .twocolumns .column:first-child {
         margin-left: 5.34618756%;
+    }
+
+    .twocolumns .column.secondary {
+        width: 21.782%;
+    }
+    .twocolumns .column.primary {
+        width: 78.218%;
+    }
+    .largegoldenratio {
+        width: 56.8033989%;
+        margin-right: 5%;
+    }
+    .smallgoldenratio {
+        width: 38.19666011%;
     }
 }
 /* START - SEARCH */
@@ -680,7 +843,7 @@ body.guides .columnheader {
     padding-top: 12px;
     margin: 0 0 50px 0;
     padding-bottom: 12px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .guidegroup p {

@@ -1,103 +1,91 @@
-<html><head>
-  <title>Documentation | Micronaut Framework</title>
-  <meta name='description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.' />
-  <meta charset='utf-8' />
-  <link rel='icon' href='https://micronaut.io/images/favicon.ico' />
-  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
-  <meta name='twitter:card' content='summary_large_image' />
-  <meta name='twitter:site' content='@micronautfw' />
-  <meta name='twitter:creator' content='@micronautfw' />
-  <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png' />
-  <meta property='og:image:width' content='600' />
-  <meta property='og:image:height' content='300' />
-  <meta property='og:url' content='https://micronaut.io' />
-  <meta property='og:title' content='Micronaut: A Modern Microservice Framework for the JVM' />
-  <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.' />
-  <meta property='og:type' content='website' />
-  <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg' />
-  <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png' />
-  <link rel='pple-touch-icon-precomposed' sizes='114x114' href='https://micronaut.io/images/apple-touch-icon-114x114.png' />
-  <link rel='apple-touch-icon-precomposed' sizes='72x72' href='https://micronaut.io/images/apple-touch-icon-72x72.png' />
-  <link rel='pple-touch-icon-precomposed' sizes='144x144' href='https://micronaut.io/images/apple-touch-icon-144x144.png' />
-  <link rel='apple-touch-icon-precomposed' sizes='60x60' href='https://micronaut.io/images/apple-touch-icon-60x60.png' />
-  <link rel='pple-touch-icon-precomposed' sizes='120x120' href='https://micronaut.io/images/apple-touch-icon-120x120.png' />
-  <link rel='apple-touch-icon-precomposed' sizes='76x76' href='https://micronaut.io/images/apple-touch-icon-76x76.png' />
-  <link rel='pple-touch-icon-precomposed' sizes='152x152' href='https://micronaut.io/images/apple-touch-icon-152x152.png' />
-  <link rel='icon" type="image/png' href='https://micronaut.io/images//favicon-196x196.png' sizes='196x196' />
-  <link rel='con" type="image/png' href='https://micronaut.io/images//favicon-96x96.png' sizes='96x96' />
-  <link rel='icon" type="image/png' href='https://micronaut.io/images//favicon-32x32.png' sizes='32x32' />
-  <link rel='con" type="image/png' href='https://micronaut.io/images//favicon-16x16.png' sizes='16x16' />
-  <link rel='icon" type="image/png' href='https://micronaut.io/images//favicon-128.png' sizes='128x128' />
-  <meta name='application-name' content='&amp;nbsp;' />
-  <meta name='msapplication-TileColor' content='#FFFFFF' />
-  <meta name='msapplication-TileImage' content='https://micronaut.io/images//mstile-144x144.png' />
-  <meta name='msapplication-square70x70logo' content='https://micronaut.io/images//mstile-70x70.png' />
-  <meta name='msapplication-square150x150logo' content='https://micronaut.io/images//mstile-150x150.png' />
-  <meta name='msapplication-wide310x150logo' content='https://micronaut.io/images//mstile-310x150.png' />
-  <meta name='msapplication-square310x310logo' content='https://micronaut.io/images//mstile-310x310.png' />
-  <link rel='stylesheet' href='stylesheets/626200140.screen.css' />
-  <script src='javascripts/626200140.navbar_hide_scroll.js'></script>
-  <script src='javascripts/626200140.navigation.js'></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Micronaut Framework</title>
+    <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
+    <meta name="description" content="A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications." />
+    <meta name="date" content="Jun 26, 2020" />
+    <meta name="robots" content="all"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
+    <meta charset='utf-8'/>
+    <link rel='icon' href='https://micronaut.io/images/favicon.ico'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+    <meta name='twitter:card' content='summary_large_image'/>
+    <meta name='twitter:site' content='@micronautfw'/>
+    <meta name='twitter:creator' content='@micronautfw'/>
+    <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
+    <meta property='og:image:width' content='600'/>
+    <meta property='og:image:height' content='300'/>
+    <meta property='og:url' content='https://micronaut.io'/>
+    <meta property='og:title' content='Micronaut: A Modern Microservice Framework for the JVM'/>
+    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
+    <meta property='og:type' content='website'/>
+    <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
+    <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='114x114' href='https://micronaut.io/images/apple-touch-icon-114x114.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='72x72' href='https://micronaut.io/images/apple-touch-icon-72x72.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='144x144' href='https://micronaut.io/images/apple-touch-icon-144x144.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='60x60' href='https://micronaut.io/images/apple-touch-icon-60x60.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='120x120' href='https://micronaut.io/images/apple-touch-icon-120x120.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='76x76' href='https://micronaut.io/images/apple-touch-icon-76x76.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='152x152' href='https://micronaut.io/images/apple-touch-icon-152x152.png'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-196x196.png' sizes='196x196'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-96x96.png' sizes='96x96'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-32x32.png' sizes='32x32'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-16x16.png' sizes='16x16'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-128.png' sizes='128x128'/>
+    <meta name='application-name' content='&amp;nbsp;'/>
+    <meta name='msapplication-TileColor' content='#FFFFFF'/>
+    <meta name='msapplication-TileImage' content='https://micronaut.io/images/mstile-144x144.png'/>
+    <meta name='msapplication-square70x70logo' content='https://micronaut.io/images/mstile-70x70.png'/>
+    <meta name='msapplication-square150x150logo' content='https://micronaut.io/images/mstile-150x150.png'/>
+    <meta name='msapplication-wide310x150logo' content='https://micronaut.io/images/mstile-310x150.png'/>
+    <meta name='msapplication-square310x310logo' content='https://micronaut.io/images/mstile-310x310.png'/>
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/screen.css'/>
+    <script src='https://micronaut.io/javascripts/navbar_hide_scroll.js'></script>
+    <script src='https://micronaut.io/javascripts/navigation.js'></script>
+    
+    
+    
 </head>
-  <body class='docs'>
-    <div class='main'><nav id='navbar'>
-  <ul class='container'>
-    <li class='align-right tiny'>
-      <a href='#footercircle'>Menu</a>
-    </li>
-    <li class='align-right icon'>
-      <a href='https://github.com/micronaut-projects/'><img class='' src='images/github.svg' alt='Github' /></a>
-    </li>
-    <li class='align-right desktop'>
-      <a href='https://micronaut.io/support.html'>Support</a>
-    </li>
-    <li class='align-right mobile'>
-      <a href='https://micronaut.io/support.html'>Support</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://micronaut.io/faq.html'>FAQ</a>
-    </li>
-    <li class='align-right desktop'>
-      <a href='https://micronaut.io/events.html'>Events</a>
-    </li>
-    <li class='align-right mobile'>
-      <a href='https://micronaut.io/events.html'>Events</a>
-    </li>
-    <li class='align-right desktop'>
-      <a href='https://objectcomputing.com/news/category/micronaut-blog'>News</a>
-    </li>
-    <li class='align-right mobile'>
-      <a href='https://objectcomputing.com/news/category/micronaut-blog'>News</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://guides.micronaut.io/index.html'>Guides</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://micronaut.io/download.html'>Download</a>
-    </li>
-    <li class='active align-right desktop'>
-      <a href='https://micronaut.io/documentation.html'>Docs</a>
-    </li>
-    <li class='active align-right mobile'>
-      <a href='https://micronaut.io/documentation.html'>Docs</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://micronaut.io/launch/'>Launch</a>
-    </li>
-    <li class='large align-left'>
-      <a href='https://micronaut.io/index.html'><img class='' src='images/micronaut_mini_copy_tm.svg' alt='Micronaut Icon' /></a>
-    </li>
-    <li class='small align-left'>
-      <a href='https://micronaut.io/index.html'><img class='' src='images/micronaut_mini.svg' alt='Micronaut Icon' /></a>
-    </li>
-  </ul>
-</nav></div><div class='content container'>
+<body class='docs'>
+<div class='main'>
+    <nav id='navbar'>
+        <ul class='container'>
+            <li class='align-right tiny'>
+                <a href='#footercircle'>Menu</a>
+            </li>
+            <li class='align-right icon'>
+                <iframe src="https://ghbtns.com/github-btn.html?user=micronaut-projects&repo=micronaut-core&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+            </li>
+            <li class='align-right desktop'><a href='https://micronaut.io/support.html'>Support</a></li>
+            <li class='align-right mobile'><a href='https://micronaut.io/support.html'>Support</a></li>
+            <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+            <li class='align-right desktop'><a href='https://micronaut.io/events.html'>Events</a></li>
+            <li class='align-right mobile'><a href='https://micronaut.io/events.html'>Events</a></li>
+            <li class='align-right desktop'><a href='https://objectcomputing.com/news/category/micronaut-blog'>News</a></li>
+            <li class='align-right mobile'><a href='https://objectcomputing.com/news/category/micronaut-blog'>News</a></li>
+            <li class='align-right '><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+            <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+            <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+            <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+            <li class='active align-right desktop'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+            <li class='active align-right mobile'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+            <li class='align-right '><a href='https://micronaut.io/launch/'>Launch</a></li>
+            <li class='large align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini_copy_tm.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+            <li class='small align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<article><div class='content container'>
   <h1>
     <span>Micronaut</span>
     <b>Documentation</b>
@@ -105,7 +93,7 @@
   <div class='twocolumns mobile'>
     <div class='odd column'><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/documentation.svg' alt='Latest Version (2.0.0) Documentation' />
+    <img src='https://micronaut.io/images/documentation.svg' alt='Latest Version (2.0.0) Documentation' />
     <h2>Latest Version (2.0.0) Documentation</h2>
   </div>
   <ul id=''>
@@ -119,7 +107,7 @@
 </div></div>
     <div class='column'><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/documentation.svg' alt='Snapshot Documentation' />
+    <img src='https://micronaut.io/images/documentation.svg' alt='Snapshot Documentation' />
     <h2>Snapshot Documentation</h2>
   </div>
   <ul id=''>
@@ -135,7 +123,7 @@
   <div class='twocolumns desktop'>
     <div class='odd column'><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/documentation.svg' alt='Snapshot Documentation' />
+    <img src='https://micronaut.io/images/documentation.svg' alt='Snapshot Documentation' />
     <h2>Snapshot Documentation</h2>
   </div>
   <ul id=''>
@@ -149,7 +137,7 @@
 </div></div>
     <div class='column'><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/documentation.svg' alt='Latest Version (2.0.0) Documentation' />
+    <img src='https://micronaut.io/images/documentation.svg' alt='Latest Version (2.0.0) Documentation' />
     <h2>Latest Version (2.0.0) Documentation</h2>
   </div>
   <ul id=''>
@@ -165,138 +153,138 @@
   <div class='twocolumns'>
     <div class='odd column'><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/micronautaprrentice.svg' alt='Misc' />
+    <img src='https://micronaut.io/images/micronautaprrentice.svg' alt='Misc' />
     <h2>Misc</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/acme.svg' alt='Micronaut Acme' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/acme.svg' alt='Micronaut Acme' />
       <a href='https://micronaut-projects.github.io/micronaut-acme/latest/guide/index.html'>Micronaut Acme</a>
       <p>Ordering, renewing and automatically installing certificates via Automatic Certificate Management Environment (ACME).</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/cache.svg' alt='Micronaut Cache' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/cache.svg' alt='Micronaut Cache' />
       <a href='https://micronaut-projects.github.io/micronaut-cache/latest/guide/index.html'>Micronaut Cache</a>
       <p>Additional cache implementations (Redis, Hazelcast...).</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/hibernate.svg' alt='Micronaut Hibernate Validator' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/hibernate.svg' alt='Micronaut Hibernate Validator' />
       <a href='https://micronaut-projects.github.io/micronaut-hibernate-validator/latest/guide/index.html'>Micronaut Hibernate Validator</a>
       <p>Support for validating Micronaut beans with Hibernate Validator.</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/maven.svg' alt='Micronaut Maven Plugin' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/maven.svg' alt='Micronaut Maven Plugin' />
       <a href='https://micronaut-projects.github.io/micronaut-maven-plugin/latest/index.html'>Micronaut Maven Plugin</a>
       <p>Maven plugin to execute and package Micronaut applications.</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/cli.svg' alt='Micronaut Picocli' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/cli.svg' alt='Micronaut Picocli' />
       <a href='https://micronaut-projects.github.io/micronaut-picocli/latest/guide/index.html'>Micronaut Picocli</a>
       <p>Provides integration between Micronaut and Picocli</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/security.svg' alt='Micronaut Security' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/security.svg' alt='Micronaut Security' />
       <a href='https://micronaut-projects.github.io/micronaut-security/latest/guide/index.html'>Micronaut Security</a>
       <p>Built-in security features. Authentication providers and strategies, Token Propagation...</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/test.svg' alt='Micronaut Test' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/test.svg' alt='Micronaut Test' />
       <a href='https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html'>Micronaut Test</a>
       <p>Testing framework (Junit5/Spock) extensions for Micronaut</p>
     </li>
   </ul>
 </div><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/messaging.svg' alt='Messaging' />
+    <img src='https://micronaut.io/images/messaging.svg' alt='Messaging' />
     <h2>Messaging</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/kafka.svg' alt='Micronaut Kafka' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/kafka.svg' alt='Micronaut Kafka' />
       <a href='https://micronaut-projects.github.io/micronaut-kafka/latest/guide/index.html'>Micronaut Kafka</a>
       <p>Integration between Micronaut and Kafka Messaging</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/nats.png' alt='Micronaut Nats' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/nats.png' alt='Micronaut Nats' />
       <a href='https://micronaut-projects.github.io/micronaut-nats/latest/guide/index.html'>Micronaut Nats</a>
       <p>Integration between Micronaut and nats.io</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/rabbitmq.svg' alt='Micronaut RabbitMQ' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/rabbitmq.svg' alt='Micronaut RabbitMQ' />
       <a href='https://micronaut-projects.github.io/micronaut-rabbitmq/latest/guide/index.html'>Micronaut RabbitMQ</a>
       <p>Configuration to integrate Micronaut and RabbitMQ</p>
     </li>
   </ul>
 </div><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/cloud.svg' alt='Cloud' />
+    <img src='https://micronaut.io/images/cloud.svg' alt='Cloud' />
     <h2>Cloud</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/aws.svg' alt='Micronaut AWS' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/aws.svg' alt='Micronaut AWS' />
       <a href='https://micronaut-projects.github.io/micronaut-aws/latest/guide/index.html'>Micronaut AWS</a>
       <p>Configuration to integrate Micronaut and Amazon Web Services (AWS)</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/azure.svg' alt='Micronaut Azure' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/azure.svg' alt='Micronaut Azure' />
       <a href='https://micronaut-projects.github.io/micronaut-azure/latest/guide/index.html'>Micronaut Azure</a>
       <p>Integration between Micronaut and Microsoft Azure</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/gcp.png' alt='Micronaut GCP' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/gcp.png' alt='Micronaut GCP' />
       <a href='https://micronaut-projects.github.io/micronaut-gcp/latest/guide/index.html'>Micronaut GCP</a>
       <p>Integration between Micronaut and Google Cloud Platform (GCP)</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/kubernetes.svg' alt='Micronaut Kubernetes' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/kubernetes.svg' alt='Micronaut Kubernetes' />
       <a href='https://micronaut-projects.github.io/micronaut-kubernetes/latest/guide/index.html'>Micronaut Kubernetes</a>
       <p>Integration between Micronaut and Kubernetes</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/netflix.svg' alt='Micronaut Netflix' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/netflix.svg' alt='Micronaut Netflix' />
       <a href='https://micronaut-projects.github.io/micronaut-netflix/latest/guide/index.html'>Micronaut Netflix</a>
       <p>Integration between Micronaut and Netflix OSS</p>
     </li>
   </ul>
 </div><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/api.svg' alt='API' />
+    <img src='https://micronaut.io/images/api.svg' alt='API' />
     <h2>API</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/grpc.png' alt='GRPC' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/grpc.png' alt='GRPC' />
       <a href='https://micronaut-projects.github.io/micronaut-grpc/latest/guide/index.html'>GRPC</a>
       <p>Integration between Micronaut and GRPC</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/graphql.svg' alt='Micronaut GraphQL' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/graphql.svg' alt='Micronaut GraphQL' />
       <a href='https://micronaut-projects.github.io/micronaut-graphql/latest/guide/index.html'>Micronaut GraphQL</a>
       <p>Extensions to integrate Micronaut and GraphQL</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/jaxrs.svg' alt='Micronaut JAX-RS' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/jaxrs.svg' alt='Micronaut JAX-RS' />
       <a href='https://micronaut-projects.github.io/micronaut-jaxrs/latest/guide/index.html'>Micronaut JAX-RS</a>
       <p>Support for using JAX-RS annotations and types in a Micronaut application</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/jacksonxml.svg' alt='Micronaut Jackson XML' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/jacksonxml.svg' alt='Micronaut Jackson XML' />
       <a href='https://micronaut-projects.github.io/micronaut-jackson-xml/latest/guide/index.html'>Micronaut Jackson XML</a>
       <p>Create the beans necessary to allow for the serialization and deserialization of XML</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/openapi.svg' alt='Micronaut Open API' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/openapi.svg' alt='Micronaut Open API' />
       <a href='https://micronaut-projects.github.io/micronaut-openapi/latest/guide/index.html'>Micronaut Open API</a>
       <p>Configuration to integrate Micronaut and OpenAPI/Swagger</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/servlet.svg' alt='Micronaut Servlet' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/servlet.svg' alt='Micronaut Servlet' />
       <a href='https://micronaut-projects.github.io/micronaut-servlet/1.0.x/guide/index.html'>Micronaut Servlet</a>
       <p>Integration between micronaut and Servlet containers</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/spring.svg' alt='Micronaut for Spring' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/spring.svg' alt='Micronaut for Spring' />
       <a href='https://micronaut-projects.github.io/micronaut-spring/latest/guide/index.html'>Micronaut for Spring</a>
       <p>Extensions to integrate Micronaut and Spring</p>
     </li>
@@ -304,7 +292,7 @@
 </div>
       <div class='guidegroup'>
         <div class='guidegroupheader'>
-          <img src='images/documentation.svg' alt='Documentation of older versions' />
+          <img src='https://micronaut.io/images/documentation.svg' alt='Documentation of older versions' />
           <h2>Documentation of older versions</h2>
         </div>
         <ul>
@@ -387,232 +375,236 @@
     </div>
     <div class='column'><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/dataaccess.svg' alt='Data Access' />
+    <img src='https://micronaut.io/images/dataaccess.svg' alt='Data Access' />
     <h2>Data Access</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/dataaccess-micronautdata.svg' alt='Micronaut Data' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/dataaccess-micronautdata.svg' alt='Micronaut Data' />
       <a href='https://micronaut-projects.github.io/micronaut-data/latest/guide/index.html'>Micronaut Data</a>
       <p>Data Repository Support for Micronaut</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/mongodb.svg' alt='Micronaut MongoDB' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/mongodb.svg' alt='Micronaut MongoDB' />
       <a href='https://micronaut-projects.github.io/micronaut-mongodb/latest/guide/index.html'>Micronaut MongoDB</a>
       <p>Integration between Micronaut and MongoDB</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/neo4j.svg' alt='Micronaut Neo4j' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/neo4j.svg' alt='Micronaut Neo4j' />
       <a href='https://micronaut-projects.github.io/micronaut-neo4j/latest/guide/index.html'>Micronaut Neo4j</a>
       <p>Integration between Micronaut and Neo4j</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/redis.svg' alt='Micronaut Redis' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/redis.svg' alt='Micronaut Redis' />
       <a href='https://micronaut-projects.github.io/micronaut-redis/latest/guide/index.html'>Micronaut Redis</a>
       <p>Integration between Micronaut and Redis</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/sql.svg' alt='Micronaut SQL/JDBC' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/sql.svg' alt='Micronaut SQL/JDBC' />
       <a href='https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html'>Micronaut SQL/JDBC</a>
       <p>Projects (JDBC Hibernate Reactive Postgres ...) to support SQL Database access in Micronaut</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/cassandra.svg' alt='Micronaut for Cassandra' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/cassandra.svg' alt='Micronaut for Cassandra' />
       <a href='https://micronaut-projects.github.io/micronaut-cassandra/latest/guide/index.html'>Micronaut for Cassandra</a>
       <p>Integration between Micronaut and Cassandra</p>
     </li>
   </ul>
 </div><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/databasemigration.svg' alt='Database Migration' />
+    <img src='https://micronaut.io/images/databasemigration.svg' alt='Database Migration' />
     <h2>Database Migration</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/flyway.png' alt='Micronaut Flyway' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/flyway.png' alt='Micronaut Flyway' />
       <a href='https://micronaut-projects.github.io/micronaut-flyway/latest/guide/index.html'>Micronaut Flyway</a>
       <p>Configuration to integrate Micronaut and Flyway</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/liquibase.png' alt='Micronaut Liquibase' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/liquibase.png' alt='Micronaut Liquibase' />
       <a href='https://micronaut-projects.github.io/micronaut-liquibase/latest/guide/index.html'>Micronaut Liquibase</a>
       <p>Configuration to integrate Micronaut and Liquibase</p>
     </li>
   </ul>
 </div><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/analytics.svg' alt='Analytics' />
+    <img src='https://micronaut.io/images/analytics.svg' alt='Analytics' />
     <h2>Analytics</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/elasticsearch.svg' alt='Micronaut ElasticSearch' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/elasticsearch.svg' alt='Micronaut ElasticSearch' />
       <a href='https://micronaut-projects.github.io/micronaut-elasticsearch/latest/guide/index.html'>Micronaut ElasticSearch</a>
       <p>Configuration to integrate Micronaut and Elasticsearch</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/jmx.svg' alt='Micronaut JMX' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/jmx.svg' alt='Micronaut JMX' />
       <a href='https://micronaut-projects.github.io/micronaut-jmx/latest/guide/index.html'>Micronaut JMX</a>
       <p>Provides JMX support for Micronaut services</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/micrometer.svg' alt='Micronaut Micrometer' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/micrometer.svg' alt='Micronaut Micrometer' />
       <a href='https://micronaut-projects.github.io/micronaut-micrometer/latest/guide/index.html'>Micronaut Micrometer</a>
       <p>Provides integration between Micronaut and Micrometer</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/ratelimiter.svg' alt='Micronaut Rate Limiter (SNAPSHOT)' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/ratelimiter.svg' alt='Micronaut Rate Limiter (SNAPSHOT)' />
       <a href='https://micronaut-projects.github.io/micronaut-ratelimiter/snapshot/guide/index.html'>Micronaut Rate Limiter (SNAPSHOT)</a>
       <p>Integrations with rate limiting libraries (e.g. Resilience4j)</p>
     </li>
   </ul>
 </div><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/views.svg' alt='Views' />
+    <img src='https://micronaut.io/images/views.svg' alt='Views' />
     <h2>Views</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/rss.svg' alt='Micronaut RSS' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/rss.svg' alt='Micronaut RSS' />
       <a href='https://micronaut-projects.github.io/micronaut-rss/latest/guide/index.html'>Micronaut RSS</a>
       <p>Ease creation of RSS 2.0 feeds in a Micronaut app</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/views.svg' alt='Micronaut Views' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/views.svg' alt='Micronaut Views' />
       <a href='https://micronaut-projects.github.io/micronaut-views/latest/guide/index.html'>Micronaut Views</a>
       <p>Integrates Micronaut and Server Side Views Rendering</p>
     </li>
   </ul>
 </div><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/languages.svg' alt='Languages' />
+    <img src='https://micronaut.io/images/languages.svg' alt='Languages' />
     <h2>Languages</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/groovy.svg' alt='Micronaut Groovy' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/groovy.svg' alt='Micronaut Groovy' />
       <a href='https://micronaut-projects.github.io/micronaut-groovy/latest/guide/index.html'>Micronaut Groovy</a>
       <p>GORM integration and projects that enhance the Micronaut and Groovy language experience</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/kotlin.svg' alt='Micronaut Kotlin' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/kotlin.svg' alt='Micronaut Kotlin' />
       <a href='https://micronaut-projects.github.io/micronaut-kotlin/latest/guide/index.html'>Micronaut Kotlin</a>
       <p>Integrations between Micronaut and Kotlin and Ktor.</p>
     </li>
   </ul>
 </div><div class='guidegroup' style=''>
   <div class='guidegroupheader'>
-    <img src='images/reactive.svg' alt='Reactive' />
+    <img src='https://micronaut.io/images/reactive.svg' alt='Reactive' />
     <h2>Reactive</h2>
   </div>
   <ul id=''>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/reactor.png' alt='Micronaut Reactor' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/reactor.png' alt='Micronaut Reactor' />
       <a href='https://micronaut-projects.github.io/micronaut-reactor/latest/guide/index.html'>Micronaut Reactor</a>
       <p>Project Reactor compatible HTTP Client. Converters and Instrumentation for Project Reactor types. </p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/rxjava.svg' alt='Micronaut RxJava 1' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/rxjava.svg' alt='Micronaut RxJava 1' />
       <a href='https://micronaut-projects.github.io/micronaut-rxjava1/latest/guide/index.html'>Micronaut RxJava 1</a>
       <p>Converters and Instrumentation for RxJava 1 types</p>
     </li>
     <li>
-      <img width='70' class='align-left' style='margin-right: 10px;' src='/images/rxjava.svg' alt='Micronaut RxJava 3' />
+      <img width='70' class='align-left' style='margin-right: 10px;' src='https://micronaut.io/images/rxjava.svg' alt='Micronaut RxJava 3' />
       <a href='https://micronaut-projects.github.io/micronaut-rxjava3/latest/guide/index.html'>Micronaut RxJava 3</a>
       <p>Converters and Instrumentation for RxJava 3 types. RxJava 3 compatible HTTP Client.</p>
     </li>
   </ul>
 </div></div>
   </div>
-</div><div id="footercircle" class="full whitecircleborderseparator"></div><footer>
-  <div class='container'>
-    <div class='mobile'><nav id='footernav'>
-  <ul class='container'>
-    <li class='align-right '>
-      <a href='https://micronaut.io/launch/'>Launch</a>
-    </li>
-    <li class='active align-right mobile'>
-      <a href='https://micronaut.io/documentation.html'>Docs</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://micronaut.io/download.html'>Download</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://guides.micronaut.io/index.html'>Guides</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a>
-    </li>
-    <li class='align-right mobile'>
-      <a href='https://micronaut.io/events.html'>Events</a>
-    </li>
-    <li class='align-right mobile'>
-      <a href='https://micronaut.io/support.html'>Support</a>
-    </li>
-    <li class='align-right '>
-      <a href='https://micronaut.io/faq.html'>FAQ</a>
-    </li>
-    <li class='align-right mobile'>
-      <a href='https://objectcomputing.com/news/category/micronaut-blog'>News</a>
-    </li>
-  </ul>
-</nav></div>
-    <p id='blacklogo'>
-      <img src='images/micronautlogo.svg' alt='Micronaut Logo' />
-    </p>
-    <div class='twocolumns'>
-      <div class='column'><nav id='socialnetworknav'>
-  <ul class='container'>
-    <li>
-      <a href='https://gitter.im/micronautfw/'><img class='' src='images/gitter.svg' alt='Gitter Icon' /></a>
-    </li>
-    <li>
-      <a href='https://www.youtube.com/watch?v=56j_f3OCg6E&amp;list=PLI74De5M9T71c2dUQYy0nCdKUgZE2rrVD'><img class='' src='images/youtube.svg' alt='Youtube Icon' /></a>
-    </li>
-    <li>
-      <a href='https://github.com/micronaut-projects/'><img class='' src='images/github.svg' alt='Github Icon' /></a>
-    </li>
-    <li>
-      <a href='https://twitter.com/micronautfw'><img class='' src='images/twitter.svg' alt='Twitter Icon' /></a>
-    </li>
-    <li>
-      <a href='mailto:info@micronaut.io?subject=Micronaut&amp;amp;body=I%20am%20interested%20in%20Micronaut.'><img class='' src='images/mail.svg' alt='Mail Icon' /></a>
-    </li>
-  </ul>
-</nav>
-        <p>
-          <small>© 2020, Object Computing, Inc. (OCI). All rights reserved</small>
+</div>&nbsp;</article>
+<div id="footercircle" class="full whitecircleborderseparator"></div>
+<footer>
+    <div class='container'>
+        <div class='mobile'>
+            <nav id='footernav'>
+                <ul class='container'>
+                    <li class='align-right'><a href='https://micronaut.io/launch/'>Launch</a></li>
+                    <li class='active align-right mobile'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+                    <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/events.html'>Events</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/support.html'>Support</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+                    <li class='align-right mobile'><a href='https://objectcomputing.com/news/category/micronaut-blog'>News</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p id='blacklogo'>
+            <img src='https://micronaut.io/images/micronautlogo.svg' alt='Micronaut Logo'/>
         </p>
-      </div>
-      <div class='column' style='margin-top: 10px;'>
-        <p>
-          <a title='Visit OCI Website' href='https://objectcomputing.com'>
-            <img src='images/oci_logo.svg' alt='Object Computing' style='max-width: 300px' />
-          </a>
-        </p>
-      </div>
+        <div class='twocolumns'>
+            <div class='column'>
+                <nav id='socialnetworknav'>
+                    <ul class='container'>
+                        <li>
+                            <a href='https://gitter.im/micronautfw/'>
+                                <img class='' src='https://micronaut.io/images/gitter.svg' alt='Gitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.youtube.com/watch?v=56j_f3OCg6E&amp;list=PLI74De5M9T71c2dUQYy0nCdKUgZE2rrVD'>
+                                <img class='' src='https://micronaut.io/images/youtube.svg' alt='Youtube Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://github.com/micronaut-projects/'>
+                                <img class='' src='https://micronaut.io/images/github.svg' alt='Github Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://twitter.com/micronautfw'>
+                                <img class='' src='https://micronaut.io/images/twitter.svg' alt='Twitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='mailto:info@micronaut.io?subject=Micronaut&amp;amp;body=I%20am%20interested%20in%20Micronaut.'>
+                                <img class='' src='https://micronaut.io/images/mail.svg' alt='Mail Icon'/>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p>
+                    <small>© 2020, Object Computing, Inc. (OCI). All rights reserved</small>
+                </p>
+            </div>
+            <div class='column' style='margin-top: 10px;'>
+                <p>
+                    <a title='Visit OCI Website' href='https://objectcomputing.com'>
+                        <img src='https://micronaut.io/images/oci_logo.svg' alt='Object Computing' style='max-width: 300px'/>
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-115754405-1');
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-115754405-1');
 </script>
 <script type="text/javascript">
     adroll_adv_id = "J4NA4XCFDNFHDGNFUAVMQD";
     adroll_pix_id = "J4XYMNCOQNBCXJJ4GP744N";
 
-    (function () {
-        var _onload = function(){
-            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
-            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+    (function() {
+        var _onload = function() {
+            if (document.readyState && !/loaded|complete/.test(document.readyState)) {
+                setTimeout(_onload, 10);
+                return
+            }
+            if (!window.__adroll_loaded) {
+                __adroll_loaded = true;
+                setTimeout(_onload, 50);
+                return
+            }
             var scr = document.createElement("script");
             var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
             scr.setAttribute('async', 'true');
@@ -621,10 +613,13 @@
             ((document.getElementsByTagName('head') || [null])[0] ||
                 document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
         };
-        if (window.addEventListener) {window.addEventListener('load', _onload, false);}
-        else {window.attachEvent('onload', _onload)}
+        if (window.addEventListener) {
+            window.addEventListener('load', _onload, false);
+        }
+        else {
+            window.attachEvent('onload', _onload)
+        }
     }());
 </script>
-
-  </body>
+</body>
 </html>
