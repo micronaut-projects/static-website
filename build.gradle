@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.github.node-gradle:gradle-node-plugin:2.2.3"
+    }
+}
+
+import io.micronaut.gradle.MicronautWebsitePlugin
+
+apply plugin: MicronautWebsitePlugin
+
+micronaut {
+    assets = file("main/src/main/resources/assets")
+    modules = file("main/src/main/resources/modules.yml")
+    releases = file("main/src/main/resources/releases.yml")
+    questions = file("questions.yml")
+    posts = file("posts")
+    pages = file("pages")
+    template = file("templates/Micronaut.iatemplate")
+    output = project.buildDir
+    title = 'Micronaut Framework'
+    url = System.getenv('TRAVIS') != null ? 'https://micronaut.io' : 'http://localhost:8890'
+    description = 'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
+    keywords = ['microanut','jvm','framework','groovy','java','kotlin','microservices','graalvm','serverless']
+    robots = 'all'
+}
+
+apply plugin: "com.github.node-gradle.node"
+
+node {
+    // Set the work directory where node_modules should be located
+    nodeModulesDir = file("${rootProject.projectDir}/main/src/main/js/launch")
+}
+
+task buildStarter(type: NpmTask) {
+    dependsOn npmInstall
+    workingDir = file("${rootProject.projectDir}/main/src/main/js/launch")
+    args = ['run', 'build']
+}
+
+task copyLaunchAssets {
+    doLast {
+        copy {
+            from "${rootProject.projectDir}/main/src/main/js/launch/build"
+            into "${project.buildDir}/launch"
+        }
+        copy {
+            from "${rootProject.projectDir}/main/src/main/resources/start"
+            into "${project.buildDir}/start"
+            include '*.html'
+        }
+    }
+    dependsOn('buildStarter')
+}

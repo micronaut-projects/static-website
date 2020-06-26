@@ -9,3 +9,9 @@ atlassian-ide-plugin.xml
 .DS_Store
 out
 node_modules
+pages/download.html
+pages/documentation.html
+pages/faq.html
+pages/events.html
+pages/categories/*.html
+pages/tags/*.html

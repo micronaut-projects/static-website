@@ -1,6 +1,0 @@
-include 'main'
-include 'core'
-include 'guides'
-
-findProject(':core').name = 'micronaut-navigation-core'
-rootProject.name = 'micronaut-static-website'
