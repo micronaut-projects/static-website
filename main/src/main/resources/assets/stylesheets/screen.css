@@ -91,7 +91,7 @@ body {
 
 body.home {
     color: #231F20;
-    background: #000000 url('../images/home_micronaut_vertbk.jpg') repeat-x center top;
+    background: #000000 url('../images/homemicronautvertbk.jpg') repeat-x center top;
 }
 body.home #calltoaction {
     color: #FFFFFF;
@@ -421,10 +421,10 @@ nav li {
     list-style-type: none;
 }
 .main nav {
-   background-color: #ffffff;
-   margin: 0 auto;
-   border-bottom: 1px solid rgba(214,214,214,0.1);
-   overflow: auto;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(214,214,214,0.1);
+    overflow: auto;
 }
 #navbar {
     position: fixed;
@@ -472,13 +472,12 @@ nav li {
 }
 
 @media screen and (min-width: 956px) {
-    .main nav li.large,
+
     .main nav li.align-right.icon,
     .main nav li.align-right {
         display: block;
     }
     .main nav li.align-right.desktop,
-    .main nav li.small,
     .main nav li.align-right.tiny {
         display: none;
     }
@@ -491,7 +490,7 @@ nav li {
         overflow: hidden;
     }
     .main nav li.align-right {
-        margin: 55px 0 10px 24px;
+        margin: 55px 0 10px 14px;
     }
     .main nav li.align-right.icon {
         margin-top: 55px;
@@ -499,11 +498,19 @@ nav li {
     .main nav li.align-left {
         margin-top: 48px;
     }
+
     .main nav li.large {
         max-width: 150px;
     }
 }
-@media screen and (min-width: 1037px) {
+@media screen and (min-width: 1150px) {
+
+    .main nav li.small {
+        display: none;
+    }
+    .main nav li.large {
+        display: block;
+    }
     .main nav li.align-left {
         margin-top: 40px;
     }
@@ -511,20 +518,17 @@ nav li {
         max-width: 220px;
     }
 }
-@media screen and (min-width: 1180px) {
-    .main nav li.align-left {
-        margin-top: 21px;
-    }
-    .main nav li.large {
-        max-width: 360px;
+@media screen and (min-width: 1276px) {
+    .main nav li.align-right {
+        margin: 55px 0 10px 24px;
     }
 }
-@media screen and (min-width: 1336px) {
+@media screen and (min-width: 1388px) {
     .main nav li.align-left {
         margin-top: 19px;
     }
     .main nav li.large {
-        max-width: 400px;
+        max-width: 360px;
     }
 }
 
@@ -1024,18 +1028,18 @@ body.guides .columnheader {
 .sponsoredby img {
     width: 100%;
 }
-.mauticform_wrapper {
+.mauticformwrapper {
     margin-top: 50px !important;
     padding: 0 !important;
 }
-footer .mauticform_wrapper {
+footer .mauticformwrapper {
     margin: 30px auto 0 !important;
 }
 .mauticform-row {
     margin: 30px auto !important;
 }
 .mauticform-label { display: block; font-size: 20px;  !important}
-.mauticform_wrapper textarea,
+.mauticformwrapper textarea,
 .mauticform-input {
     width: 90%;
     max-width: 500px;
@@ -1043,7 +1047,7 @@ footer .mauticform_wrapper {
     border-bottom: 1px solid #231F20 !important;
     font-size: 12px !important;
 }
-.mauticform_wrapper textarea {
+.mauticformwrapper textarea {
     width: 95%;
 }
 .mauticform-button {
