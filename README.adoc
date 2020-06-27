@@ -31,3 +31,7 @@ https://guides.micronaut.io[http://guides.micronaut.io]
 ----
 
 The output can be found in the `build` directory.
+
+== Generate Micronaut Launch Front end
+
+Checkout in `launch` branch.
