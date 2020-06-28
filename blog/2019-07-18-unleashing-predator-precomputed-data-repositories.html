@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Announcing Micronaut Data</title>
+    <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
+    <meta name="description" content="Today, the Micronaut team at Object Computing, Inc. unveiled Micronaut Data, a brand new Open Source project that aims to dramatically improve the runtime and memory performance of data access repository logic for the microservice and serverless era, while also maintaining the productivity benefits of tools like GORM and Spring Data." />
+    <meta name="date" content="July 18, 2019" />
+    <meta name="robots" content="all"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
+    <meta charset='utf-8'/>
+    <link rel='icon' href='https://micronaut.io/images/favicon.ico'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+    <meta name='twitter:card' content='summary_large_image'/>
+    <meta name='twitter:site' content='@micronautfw'/>
+    <meta name='twitter:creator' content='@micronautfw'/>
+    <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
+    <meta property='og:image:width' content='600'/>
+    <meta property='og:image:height' content='300'/>
+    <meta property='og:url' content='https://micronaut.io'/>
+    <meta property='og:title' content='Micronaut: A Modern Microservice Framework for the JVM'/>
+    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
+    <meta property='og:type' content='website'/>
+    <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
+    <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='114x114' href='https://micronaut.io/images/apple-touch-icon-114x114.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='72x72' href='https://micronaut.io/images/apple-touch-icon-72x72.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='144x144' href='https://micronaut.io/images/apple-touch-icon-144x144.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='60x60' href='https://micronaut.io/images/apple-touch-icon-60x60.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='120x120' href='https://micronaut.io/images/apple-touch-icon-120x120.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='76x76' href='https://micronaut.io/images/apple-touch-icon-76x76.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='152x152' href='https://micronaut.io/images/apple-touch-icon-152x152.png'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-196x196.png' sizes='196x196'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-96x96.png' sizes='96x96'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-32x32.png' sizes='32x32'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-16x16.png' sizes='16x16'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-128.png' sizes='128x128'/>
+    <meta name='application-name' content='&amp;nbsp;'/>
+    <meta name='msapplication-TileColor' content='#FFFFFF'/>
+    <meta name='msapplication-TileImage' content='https://micronaut.io/images/mstile-144x144.png'/>
+    <meta name='msapplication-square70x70logo' content='https://micronaut.io/images/mstile-70x70.png'/>
+    <meta name='msapplication-square150x150logo' content='https://micronaut.io/images/mstile-150x150.png'/>
+    <meta name='msapplication-wide310x150logo' content='https://micronaut.io/images/mstile-310x150.png'/>
+    <meta name='msapplication-square310x310logo' content='https://micronaut.io/images/mstile-310x310.png'/>
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/screen.css'/>
+    <script src='https://micronaut.io/javascripts/navbar_hide_scroll.js'></script>
+    <script src='https://micronaut.io/javascripts/navigation.js'></script>
+    
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
+    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+</head>
+<body class='post'>
+<div class='main'>
+    <nav id='navbar'>
+        <ul class='container'>
+            <li class='align-right tiny'>
+                <a href='#footercircle'>Menu</a>
+            </li>
+            <li class='align-right icon'>
+                <iframe src="https://ghbtns.com/github-btn.html?user=micronaut-projects&repo=micronaut-core&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+            </li>
+            <li class='align-right'><a href='https://micronaut.io/support.html'>Support</a></li>
+            <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+            <li class='align-right'><a href='https://micronaut.io/events.html'>Events</a></li>
+            <li class='align-right'><a href='https://micronaut.io/blog/index.html'>News</a></li>
+            <li class='align-right'><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+            <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+            <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+            <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+            <li class='align-right'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+            <li class='align-right'><a href='https://micronaut.io/launch/'>Launch</a></li>
+            <li class='large align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini_copy_tm.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+            <li class='small align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<article><div class='content container'>
+  <h1>
+    <a href='https://micronaut.io/blog/index.html'>
+      <span>Micronaut</span>
+      <b>Blog</b>
+    </a>
+  </h1>
+  <div class='light'>
+    <div class='largegoldenratio align-left'>
+      <div class='padded'><h1>Announcing Micronaut Data</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">July 18, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/data.html"><span class="hashtag">#data</span></a></p>
+<p>Today, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) unveiled <a href="https://github.com/micronaut-projects/micronaut-data">Micronaut Data</a> (previously known as Predator), a brand new Open Source project that aims to dramatically improve the runtime and memory performance of data access repository logic for the microservice and serverless era, while also maintaining the productivity benefits of tools like <a href="https://gorm.grails.org">GORM</a> and <a href="https://spring.io/projects/spring-data">Spring Data</a>.</p>
+<h2>History of Data Access Toolkits</h2>
+<p>The data repository pattern can be traced back to 2004, when Ruby on Rails debuted with a feature called ActiveRecord — an API that revolutionized data access from a productivity perspective.</p>
+<p>In 2007, the Grails team brought an ActiveRecord-like API to the JVM for the first time with the creation of GORM (part of Grails). GORM relied on the dynamic nature of the Groovy language to implement finder methods on top of Hibernate and provided the same productivity benefits for JVM users.</p>
+<p>Due to GORM's reliance on the Groovy language, Spring Data was created in 2011 to address the need for Java users, allowing finder methods like <code>findByTitle</code> to be defined in an interface and the query logic to be implemented automatically at runtime.</p>
+<h2>How Data Access Toolkits Work</h2>
+<p>All of these implementations use the same general pattern, which is to construct a meta-model of the entities in a project <em>at runtime</em> that models the relationships between your entity classes. In Spring Data, this is the <a href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/mapping/context/MappingContext.html">MappingContext</a>, and in GORM, this is also called the <a href="http://gorm.grails.org/latest/api/org/grails/datastore/mapping/model/MappingContext.html">MappingContext</a>. They are constructed by scanning entity classes and analyzing the classes via reflection. (The naming similarity here is no coincidence. In 2010, I worked with the Spring Data team to try and fork GORM into something for Java, a project which eventually evolved into what is Spring Data today.)</p>
+<p>This meta-model is then used to translate a finder expression like <code>bookRepository.findByTitle(&quot;The Stand&quot;)</code> into an abstract Query model at runtime using a combination of regular expression pattern matching and custom logic. The abstract Query model is needed, since the target query dialect differs for each database (SQL, JPA-QL, Cypher, Bson etc.).</p>
+<h2>Data Repository Support and Micronaut</h2>
+<p>Since we launched Micronaut just over a year ago, the number one feature users have asked us for is &quot;GORM for Java&quot; or Spring Data Support. So many developers love the productivity experience that these toolkits provide, as well as the ease of simply defining an interface that the framework implements. I would go so far as to say a big part of Grails' and Spring Boot's success can be attributed to GORM and Spring Data respectively.</p>
+<p>For Groovy users of Micronaut, we have had GORM support from day one, which left Java and Kotlin users needing to roll their own repository implementations.</p>
+<p>It would have been technically possible, and frankly easier, to simply add a Micronaut module that configured Spring Data. However, by going down that path, we would have introduced a feature that is implemented in a manner using all the techniques Micronaut has tried to avoid: extensive use of runtime proxies, reflection, and high memory consumption.</p>
+<h2>Introducing Micronaut Data</h2>
+<p>Micronaut Data uses Micronaut's ahead-of-time (AoT) compilation APIs to move the entity meta-model into your compiler and translate a finder expression like <code>findByTitle</code> into the appropriate SQL or JPA-QL query <em>at compilation time</em>. A very thin runtime layer that uses Micronaut's reflection-free compilation-time AOP then only has to execute the query and return the results.</p>
+<p>The result is staggering ... significantly reduced cold starts, astonishingly lean memory consumption, and dramatically improved performance.</p>
+<p>Today, we are open sourcing Micronaut Data under the Apache license, and it comes with two initial implementations (with more planned for the future) for JPA (using Hibernate) and for SQL with JDBC.</p>
+<p>The JDBC implementation is the one I am most excited about, as it completely eliminates reflection, runtime proxies, and dynamic classloading for your persistence layer and results in massive performance gains. The runtime layer is so light that even an equivalent repository method written by hand would not execute faster.</p>
+<h2>Micronaut Data Performance</h2>
+<p>Since Micronaut Data does not have to do any query translation at runtime, the performance gain is significant. In a world of utility cloud computing, where billing models are changing such that you pay for the amount of time your application is running or the execution time of an individual function, developers often overlook the performance of their data access toolkits.</p>
+<p>The following table summarizes the performance difference you can expect for a finder expression, such as <code>findByTitle</code>, when compared to other implementations. All benchmarks were carried out using test hardware of an 8-core Xeon iMac Pro under the same conditions, are Open Source, and can be <a href="https://github.com/micronaut-projects/micronaut-data">found in the repository</a>:</p>
+<p>|Implementation|Operations per Second|
+|Micronaut Data JDBC|225K ops/sec|
+|Micronaut Data JPA|130K ops/sec|
+|Spring Data JPA|90K ops/sec|
+|GORM JPA|50K ops/sec|
+|Spring Data JDBC|Finders Not Supported|</p>
+<p>Yes, you read that right. With Micronaut Data JDBC, you can expect nearly 4X the performance of GORM and 2.5X the performance of Spring Data.</p>
+<p>If you go with Micronaut Data JPA, even then, you can expect more than 2X the performance of GORM and up to 40% better performance than Spring Data JPA.</p>
+<hr />
+<h6>UPDATE SEPTEMBER 2, 2019</h6>
+<p>Since this post was written both Micronaut Data and Spring Data have been further optimized and the latest result data on the same test hardware is as follows (Note the Spring Data JDBC numbers use a hard coded query):</p>
+<p>|Implementation|Operations per Second|
+|Micronaut Data JDBC|430K ops/sec|
+|Micronaut Data JPA|145K ops/sec|
+|Spring Data JPA|140K ops/sec|
+|GORM JPA|50K ops/sec|
+|Spring Data JDBC|275K ops/sec|</p>
+<h6>END UPDATE</h6>
+<hr />
+<p>Micronaut Data is able to achieve such a significant performance jump for a variety of reasons, from the elimination of reflection to the much thinner runtime component. One reason, however, is pretty simple to identify: Stack Traces.</p>
+<p>Take a look at the difference in Stack Trace size when using Micronaut Data compared to the alternatives:</p>
+<h4>Micronaut Data JDBC</h4>
+<p><img src="2019-07-18-img01.png" alt="Micronaut Data JDBC" /></p>
+<h4>Micronaut Data JPA</h4>
+<p><img src="2019-07-18-img02.png" alt="Micronaut Data JPA" /></p>
+<h4>Spring Data JPA</h4>
+<p><img src="2019-07-18-img03.png" alt="Spring Data JPA" /></p>
+<h4>GORM</h4>
+<p><img src="2019-07-18-img04.png" alt="GORM" /></p>
+<p>Micronaut Data JDBC produces only 15 stack frames until your query is actually executed, while Micronaut Data JPA produces 30 (mainly Hibernate frames), compared to 50+ stack frames for Spring Data or GORM, all thanks to Micronaut's reflection-free AOP layer.</p>
+<p>Shorter stack traces also result in easier-to-debug applications. One of the benefits of doing most of the work at compile time is that errors can be detected at compile time, greatly improving the developer experience by providing immediate compilation errors instead of runtime errors for many common mistakes.</p>
+<h2>Micronaut Data Compile-Time Checking</h2>
+<p>Most repository implementations rely exclusively on doing all the computation at runtime. This means that if the user makes any mistakes when defining the repository interface, they are not caught until the application is actually running.</p>
+<p>This removes some of the type checking benefits of Java and provides a poor developer experience. With Micronaut Data, that is not the case. Consider the following example:</p>
+<pre><code class="language-java">@JdbcRepository(dialect = Dialect.H2)
+public interface BookRepository extends CrudRepository&lt;Book, Long&gt; {
+    ==Book findByTile(String t);==
+}
+</code></pre>
+<p>Here the <code>BookRepository</code> is attempting a query on an entity called <code>Book</code> that has a property called <code>title</code>. Unfortunately, the finder has a typo, in that it is <code>findByTile</code> instead of <code>findByTitle</code>. Instead of waiting until runtime to inform the user of this fact, Micronaut Data will fail at compilation time with an informative error message:</p>
+<pre><code class="language-text">Error:(9, 10) java: Unable to implement Repository method: 
+BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-existent property path: tile
+</code></pre>
+<p>Many aspects of Micronaut Data are compilation-time checked whenever possible to ensure that if an error does occur at runtime, it is not due to a typo in a repository definition.</p>
+<h2>Micronaut Data JDBC and GraalVM Substrate</h2>
+<p>Another reason to be excited about Micronaut Data JDBC is that it is compatible out-of-the-box with GraalVM Substrate native images without needing complex, byte-code-mutating build-time enhancement solutions, like those required to get Hibernate operational on GraalVM.</p>
+<p>By completely eliminating all reflection and dynamic proxies from the persistence layer, Micronaut Data hugely simplifies getting applications that access data running on GraalVM.</p>
+<p>The Micronaut Data JDBC example application included in the repository runs without problem in Substrate and produces a significantly smaller native image (25MB smaller!) than what is required to pull in Hibernate, thanks to the much thinner runtime layer.</p>
+<p>We saw the same result when we implemented compilation time computation of bean validation rules for Micronaut 1.2. The native image size dropped by 10MB by removing the dependency on Hibernate Validator and the JAR file size by 2MB.</p>
+<p>The advantage here is clear: By doing more work during compilation and creating leaner runtimes, you produce smaller native images and JAR files, which results in smaller and easier-to-deploy microservices when deployed via Docker images. The future of frameworks for Java is more powerful compilers and smaller, lighter runtimes!</p>
+<h2>Micronaut Data and the Future</h2>
+<p>We are just getting started with Micronaut Data, and we are crazy-excited about the possibilities it opens up.</p>
+<p>Initially, we are launching with support for JPA and SQL, but you can expect support for MongoDB, Neo4j, Reactive SQL, and other databases in the future. Thankfully, doing this work is a lot simpler because much of Micronaut Data is actually based on a fork of the GORM source code, and we will be able to reuse logic from GORM for Neo4j and GORM for MongoDB to get those implementations ready sooner than you may expect.</p>
+<p>Micronaut Data is the culmination of putting together various building blocks in Micronaut Core that made it possible, from the AoT APIs, which are also used to <a href="https://github.com/micronaut-projects/micronaut-openapi">generate Swagger documentation</a>, to the relatively new <a href="https://docs.micronaut.io/latest/guide/index.html#introspection">Bean Introspection support</a>, which allows introspection of beans at runtime without using reflection.</p>
+<p>Micronaut provides the building blocks to do some amazing things. Micronaut Data is one those things, and we are just getting started on delivering on some of the promising foundations delivered in Micronaut 1.0.</p></div>
+    </div>
+    <div class='smallgoldenratio align-right'><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-02-04.png)'>
+  <a href='https://micronaut.io/blog/2020-02-04-micronaut-13-and-micronaut-data-10-ga-released.html'>
+    <h3>February 4, 2020</h3>
+    <h2>Micronaut 1.3 and Micronaut Data 1.0 GA Released</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2019-08-14.png)'>
+  <a href='https://micronaut.io/blog/2019-08-14-micronaut-data-10-milestone-1-released.html'>
+    <h3>August 14, 2019</h3>
+    <h2>Micronaut Data 1.0 Milestone 1 Released</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2019-07-26.png)'>
+  <a href='https://micronaut.io/blog/2019-07-26-micronaut-predator-renamed-micronaut-data.html'>
+    <h3>July 26, 2019</h3>
+    <h2>Micronaut Predator Renamed Micronaut Data</h2>
+  </a>
+</article></div>
+  </div>
+</div>&nbsp;</article>
+<div id="footercircle" class="full whitecircleborderseparator"></div>
+<footer>
+    <div class='container'>
+        <div class='mobile'>
+            <nav id='footernav'>
+                <ul class='container'>
+                    <li class='align-right'><a href='https://micronaut.io/launch/'>Launch</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+                    <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/events.html'>Events</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/support.html'>Support</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/blog/index.html'>News</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p id='blacklogo'>
+            <img src='https://micronaut.io/images/micronautlogo.svg' alt='Micronaut Logo'/>
+        </p>
+        <div class='twocolumns'>
+            <div class='column'>
+                <nav id='socialnetworknav'>
+                    <ul class='container'>
+                        <li>
+                            <a href='https://gitter.im/micronautfw/'>
+                                <img class='' src='https://micronaut.io/images/gitter.svg' alt='Gitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.youtube.com/watch?v=56j_f3OCg6E&amp;list=PLI74De5M9T71c2dUQYy0nCdKUgZE2rrVD'>
+                                <img class='' src='https://micronaut.io/images/youtube.svg' alt='Youtube Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://github.com/micronaut-projects/'>
+                                <img class='' src='https://micronaut.io/images/github.svg' alt='Github Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://twitter.com/micronautfw'>
+                                <img class='' src='https://micronaut.io/images/twitter.svg' alt='Twitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='mailto:info@micronaut.io?subject=Micronaut&amp;amp;body=I%20am%20interested%20in%20Micronaut.'>
+                                <img class='' src='https://micronaut.io/images/mail.svg' alt='Mail Icon'/>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p>
+                    <small>© 2020, Object Computing, Inc. (OCI). All rights reserved</small>
+                </p>
+            </div>
+            <div class='column' style='margin-top: 10px;'>
+                <p>
+                    <a title='Visit OCI Website' href='https://objectcomputing.com'>
+                        <img src='https://micronaut.io/images/oci_logo.svg' alt='Object Computing' style='max-width: 300px'/>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-115754405-1');
+</script>
+<script type="text/javascript">
+    adroll_adv_id = "J4NA4XCFDNFHDGNFUAVMQD";
+    adroll_pix_id = "J4XYMNCOQNBCXJJ4GP744N";
+
+    (function() {
+        var _onload = function() {
+            if (document.readyState && !/loaded|complete/.test(document.readyState)) {
+                setTimeout(_onload, 10);
+                return
+            }
+            if (!window.__adroll_loaded) {
+                __adroll_loaded = true;
+                setTimeout(_onload, 50);
+                return
+            }
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {
+            window.addEventListener('load', _onload, false);
+        }
+        else {
+            window.attachEvent('onload', _onload)
+        }
+    }());
+</script>
+</body>
+</html>

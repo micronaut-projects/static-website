@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Introducing Micronaut 2.0 Launch</title>
+    <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
+    <meta name="description" content="Micronaut Launch announcement" />
+    <meta name="date" content="Apr 30, 2020" />
+    <meta name="robots" content="all"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
+    <meta charset='utf-8'/>
+    <link rel='icon' href='https://micronaut.io/images/favicon.ico'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+    <meta name='twitter:card' content='summary_large_image'/>
+    <meta name='twitter:site' content='@micronautfw'/>
+    <meta name='twitter:creator' content='@micronautfw'/>
+    <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
+    <meta property='og:image:width' content='600'/>
+    <meta property='og:image:height' content='300'/>
+    <meta property='og:url' content='https://micronaut.io'/>
+    <meta property='og:title' content='Micronaut: A Modern Microservice Framework for the JVM'/>
+    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
+    <meta property='og:type' content='website'/>
+    <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
+    <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='114x114' href='https://micronaut.io/images/apple-touch-icon-114x114.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='72x72' href='https://micronaut.io/images/apple-touch-icon-72x72.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='144x144' href='https://micronaut.io/images/apple-touch-icon-144x144.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='60x60' href='https://micronaut.io/images/apple-touch-icon-60x60.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='120x120' href='https://micronaut.io/images/apple-touch-icon-120x120.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='76x76' href='https://micronaut.io/images/apple-touch-icon-76x76.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='152x152' href='https://micronaut.io/images/apple-touch-icon-152x152.png'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-196x196.png' sizes='196x196'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-96x96.png' sizes='96x96'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-32x32.png' sizes='32x32'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-16x16.png' sizes='16x16'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-128.png' sizes='128x128'/>
+    <meta name='application-name' content='&amp;nbsp;'/>
+    <meta name='msapplication-TileColor' content='#FFFFFF'/>
+    <meta name='msapplication-TileImage' content='https://micronaut.io/images/mstile-144x144.png'/>
+    <meta name='msapplication-square70x70logo' content='https://micronaut.io/images/mstile-70x70.png'/>
+    <meta name='msapplication-square150x150logo' content='https://micronaut.io/images/mstile-150x150.png'/>
+    <meta name='msapplication-wide310x150logo' content='https://micronaut.io/images/mstile-310x150.png'/>
+    <meta name='msapplication-square310x310logo' content='https://micronaut.io/images/mstile-310x310.png'/>
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/screen.css'/>
+    <script src='https://micronaut.io/javascripts/navbar_hide_scroll.js'></script>
+    <script src='https://micronaut.io/javascripts/navigation.js'></script>
+    
+    
+    
+</head>
+<body class='post'>
+<div class='main'>
+    <nav id='navbar'>
+        <ul class='container'>
+            <li class='align-right tiny'>
+                <a href='#footercircle'>Menu</a>
+            </li>
+            <li class='align-right icon'>
+                <iframe src="https://ghbtns.com/github-btn.html?user=micronaut-projects&repo=micronaut-core&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+            </li>
+            <li class='align-right'><a href='https://micronaut.io/support.html'>Support</a></li>
+            <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+            <li class='align-right'><a href='https://micronaut.io/events.html'>Events</a></li>
+            <li class='align-right'><a href='https://micronaut.io/blog/index.html'>News</a></li>
+            <li class='align-right'><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+            <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+            <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+            <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+            <li class='align-right'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+            <li class='align-right'><a href='https://micronaut.io/launch/'>Launch</a></li>
+            <li class='large align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini_copy_tm.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+            <li class='small align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<article><div class='content container'>
+  <h1>
+    <a href='https://micronaut.io/blog/index.html'>
+      <span>Micronaut</span>
+      <b>Blog</b>
+    </a>
+  </h1>
+  <div class='light'>
+    <div class='largegoldenratio align-left'>
+      <div class='padded'><h1>Introducing Micronaut 2.0 Launch</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)<br/> James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)</span></p>
+<p><span class="date">Apr 30, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/launch.html"><span class="hashtag">#launch</span></a></p>
+<p>With the release of <a href="/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html">Micronaut 2.0 M3</a>, we have gone live with a brand new implementation of the Micronaut command line interface (CLI) and <a href="https://micronaut.io/launch/">Micronaut Launch</a>, an online tool for creating Micronaut applications.</p>
+<h2>A CLI History</h2>
+<p>When Micronaut was first being developed, we knew we needed a tool to generate applications that allowed users to get up and running writing code without having to worry about how to configure their builds and what the dependency coordinates are. Because Micronaut relies on compile-time processing, the build setup can be slightly more complicated than a simple Java application.</p>
+<p>Grails has a CLI that allows users to do just that, so we decided to fork it and copy the code into the Micronaut project. This allowed us to create a CLI with only a small amount of time required on our end to get working.</p>
+<p>Over time, we discovered that the forked CLI could not meet Micronaut's needs. The Grails CLI was designed to create Groovy applications built with Gradle and tested with the Spock testing framework. Because Micronaut currently supports all combinations of Java/Groovy/Kotlin, Junit/Spock/KotlinTest, and Maven/Gradle, the number of combinations is significantly greater than what the original CLI was designed to handle.</p>
+<p>In addition, the old CLI had several other shortcomings that we wanted to address:</p>
+<ul>
+<li>Difficult to test</li>
+<li>Problematic to embed</li>
+<li>Hard to produce a GraalVM native image</li>
+<li>Hard to customize</li>
+</ul>
+<h2>Leveling Up the CLI</h2>
+<p>For Micronaut 2.0, we decided it was time to rewrite the CLI in Micronaut itself (eating your own dog food, if you like) using <a href="https://picocli.info/">PicoCLI</a>. We also wanted to make it possible for the CLI to be deployed to more environments than just the user's terminal.</p>
+<p>So with that, we created <a href="https://github.com/micronaut-projects/micronaut-starter">Micronaut Launch</a>, which is now one of the coolest projects in the Micronaut ecosystem.</p>
+<p>Micronaut Launch features a <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-core">core written in Micronaut itself</a> and a <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-cli">micronaut-cli module that targets the user's command line</a> and uses PicoCLI.</p>
+<p>The <code>micronaut-cli</code> module uses <a href="https://www.graalvm.org/docs/reference-manual/native-image/">GraalVM Native Image</a> to allow us to produce distributions of the CLI that target <a href="https://github.com/micronaut-projects/micronaut-starter/releases/tag/v2.0.0.M3">Linux, MacOS, and Windows natively</a>.</p>
+<p>Using the new CLI, you can create Micronaut applications offline or in areas of limited connectivity using a distribution that suits your platform, and thanks to GraalVM Native Image, it is lightning fast.</p>
+<p><img src="2020-04-30-img01.png" alt="" /></p>
+<p>The new CLI features more or less the same commands as Micronaut's old CLI, but is much more optimized and fully operable offline. We have also added a few new features, with one of the coolest being the ability to display a diff of the changes required to add a new feature to an existing application:</p>
+<p><img src="2020-04-30-img02.png" alt="" /></p>
+<h2>The Micronaut Launch API</h2>
+<p>To allow users to create Micronaut applications via the web without installing the CLI, a <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-api">starter-api module</a> was created that <a href="https://launch.micronaut.io/swagger/views/swagger-ui/index.html">defines the API</a> and uses <a href="https://github.com/micronaut-projects/micronaut-openapi/">Micronaut's compilation-time OpenAPI (Swagger) specification generation</a>.</p>
+<p>The <code>starter-api</code> module is then used in a number of different subprojects to allow running the API on different environments, including:</p>
+<ul>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-web-netty">starter-web-netty</a>. A Netty module that is computed into a GraalVM native image and <a href="https://github.com/micronaut-projects/micronaut-starter/actions?query=workflow%3A%22Snapshot+Analytics+to+GCR%22">continuously deployed by Github Actions</a> to  <a href="https://cloud.google.com/run&quot;">Google Cloud Run</a> and powers <a href="https://launch.micronaut.io">https://launch.micronaut.io</a> as a serverless application</p>
+</li>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-aws-lambda">starter-aws-lambda</a> A <a href="https://cn58jiuova.execute-api.us-east-1.amazonaws.com/staging/application-types">Lambda version of the API</a> that is <a href="https://github.com/micronaut-projects/micronaut-starter/actions?query=workflow%3A%22Snapshot+to+AWS+Lambda%22">continuously deployed</a> to <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> and runs as a GraalVM native image using a custom runtime</p>
+</li>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-gcp-function">starter-gcp-function</a> A <a href="https://us-central1-micronaut-projects.cloudfunctions.net/micronaut-starter-staging/application-types">Cloud Function version of the API</a> that is <a href="https://github.com/micronaut-projects/micronaut-starter/actions?query=workflow%3A%22Snapshot+to+GCF%22">continuously deployed</a> to <a href="https://cloud.google.com/functions">Google Cloud Function</a> as a serverless application using <a href="https://micronaut-projects.github.io/micronaut-gcp/2.0.x/guide/#cloudFunction">Micronaut 2.0's new support for Cloud Function</a></p>
+</li>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-azure-function">starter-azure-function</a> An <a href="https://micronaut-starter.azurewebsites.net/api/application-types">Azure Function version of the API</a> that is <a href="https://github.com/micronaut-projects/micronaut-starter/actions?query=workflow%3A%22Snapshot+to+Azure+Function%22">continuously deployed</a> to <a href="https://azure.microsoft.com/en-us/services/functions/">Microsoft Azure Function</a> as a serverless application using <a href="https://micronaut-projects.github.io/micronaut-azure/1.0.x/guide/#azureFunction">Micronaut 2.0's new support for Azure Function</a></p>
+</li>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-web-servlet">starter-web-servlet</a> A version of the API that can be built into a WAR file and deployed on your favorite Servlet 4+ container using <a href="https://micronaut-projects.github.io/micronaut-servlet/1.0.x/guide/">Micronaut 2.0's new support for Servlet containers</a>.</p>
+</li>
+</ul>
+<p>It is a testament to Micronaut 2.0's flexibility that you can take the same application and run it across serverless platforms (Lambda, Azure, Cloud Function, Cloud Run) and also build a regular Netty or Servlet application from the same codebase.</p>
+<p>It also provides users maximum flexibility if they wish to run their own version of Micronaut Launch for internal teams since you can now choose whichever platform (Serverless or not) that suits your needs to deploy Micronaut Launch to.</p>
+<p>Using GraalVM Native Image, we were able to achieve average response times for a cold start of around 1.5s on Lambda and Cloud Run (billed duration of +/- 600ms for a cold start on Lambda and under a 100ms once warm), which is pretty awesome by Serverless standards.</p>
+<p>The API is also accessible via CURL using <a href="https://launch.micronaut.io">https://launch.micronaut.io</a></p>
+<p><img src="2020-04-30-img03.png" alt="" /></p>
+<h2>The Micronaut Launch UI</h2>
+<p>The Micronaut Launch UI is written in <a href="https://github.com/micronaut-projects/static-website/tree/master/main/src/main/js/start">React</a></a> and demonstrates the power of the Micronaut community. Our thanks go out to <a href="https://twitter.com/franvallano">Francisco Javier Delgado Vallano</a>, and <a href="https://twitter.com/maq_dev">Miguel Ángel Quintanilla</a> from <a href="https://profile.es&quot;">Profile</a> in Spain, who built the first version of the UI based on the <a href="https://launch.micronaut.io/swagger/views/swagger-ui/index.html">OpenAPI specification</a> we provided:</p>
+<p>![](./2020-04-30-img04.png]</p>
+<p>The Micronaut Launch UI includes some awesome features such as:</p>
+<ul>
+<li>Support for generating Micronaut applications, functions, CLI applications, and gRPC applications</li>
+<li>The ability to preview the application that will be generated</li>
+<li>The ability to show a diff for a given feature to see what changes are made to an application when a feature is applied</li>
+<li>And of course, Dark Mode!</li>
+</ul>
+<p><img src="2020-04-30-img05.png" alt="" /></p>
+<p><img src="2020-04-30-img06.png" alt="" /></p>
+<h2>Summary</h2>
+<p>Micronaut Launch is a fantastic example of modern application development using Micronaut. The application leverages GraalVM Native Image to optimize both the CLI for each platform and the API in order to fully take advantage of GraalVM's outstanding cold start performance for CLI applications and Serverless.</p>
+<p>Micronaut Launch also utilizes several of the great features we are building in Micronaut 2.0 including improved support for Serverless platforms such as AWS Lambda, Google Cloud Function, and Azure Function.</p>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/issues">Let us know what you think</a>!</p></div>
+    </div>
+    <div class='smallgoldenratio align-right'><article class='blogcard' style=''>
+  <a href='https://micronaut.io/blog/2020-06-26-announcing-micronaut-20.html'>
+    <h3>June 26, 2020</h3>
+    <h2>Announcing Micronaut 2.0</h2>
+  </a>
+</article><article class='blogcard' style=''>
+  <a href='https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html'>
+    <h3>June 16, 2020</h3>
+    <h2>Micronaut 2.0 RC1 Released</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-05-15.png)'>
+  <a href='https://micronaut.io/blog/2020-05-15-micronaut-now-supports-microsoft-azure-functions.html'>
+    <h3>May 15, 2020</h3>
+    <h2>Micronaut now supports Microsoft Azure Functions</h2>
+  </a>
+</article></div>
+  </div>
+</div>&nbsp;</article>
+<div id="footercircle" class="full whitecircleborderseparator"></div>
+<footer>
+    <div class='container'>
+        <div class='mobile'>
+            <nav id='footernav'>
+                <ul class='container'>
+                    <li class='align-right'><a href='https://micronaut.io/launch/'>Launch</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+                    <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/events.html'>Events</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/support.html'>Support</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/blog/index.html'>News</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p id='blacklogo'>
+            <img src='https://micronaut.io/images/micronautlogo.svg' alt='Micronaut Logo'/>
+        </p>
+        <div class='twocolumns'>
+            <div class='column'>
+                <nav id='socialnetworknav'>
+                    <ul class='container'>
+                        <li>
+                            <a href='https://gitter.im/micronautfw/'>
+                                <img class='' src='https://micronaut.io/images/gitter.svg' alt='Gitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.youtube.com/watch?v=56j_f3OCg6E&amp;list=PLI74De5M9T71c2dUQYy0nCdKUgZE2rrVD'>
+                                <img class='' src='https://micronaut.io/images/youtube.svg' alt='Youtube Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://github.com/micronaut-projects/'>
+                                <img class='' src='https://micronaut.io/images/github.svg' alt='Github Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://twitter.com/micronautfw'>
+                                <img class='' src='https://micronaut.io/images/twitter.svg' alt='Twitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='mailto:info@micronaut.io?subject=Micronaut&amp;amp;body=I%20am%20interested%20in%20Micronaut.'>
+                                <img class='' src='https://micronaut.io/images/mail.svg' alt='Mail Icon'/>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p>
+                    <small>© 2020, Object Computing, Inc. (OCI). All rights reserved</small>
+                </p>
+            </div>
+            <div class='column' style='margin-top: 10px;'>
+                <p>
+                    <a title='Visit OCI Website' href='https://objectcomputing.com'>
+                        <img src='https://micronaut.io/images/oci_logo.svg' alt='Object Computing' style='max-width: 300px'/>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-115754405-1');
+</script>
+<script type="text/javascript">
+    adroll_adv_id = "J4NA4XCFDNFHDGNFUAVMQD";
+    adroll_pix_id = "J4XYMNCOQNBCXJJ4GP744N";
+
+    (function() {
+        var _onload = function() {
+            if (document.readyState && !/loaded|complete/.test(document.readyState)) {
+                setTimeout(_onload, 10);
+                return
+            }
+            if (!window.__adroll_loaded) {
+                __adroll_loaded = true;
+                setTimeout(_onload, 50);
+                return
+            }
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {
+            window.addEventListener('load', _onload, false);
+        }
+        else {
+            window.attachEvent('onload', _onload)
+        }
+    }());
+</script>
+</body>
+</html>

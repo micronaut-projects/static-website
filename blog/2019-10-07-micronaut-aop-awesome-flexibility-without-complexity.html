@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Micronaut AOP: Awesome Flexibility Without the Complexity</title>
+    <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
+    <meta name="description" content="Learn more about Micronaut's AOP system and how easy it is to use compared to competitors" />
+    <meta name="date" content="October 7, 2019" />
+    <meta name="robots" content="all"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
+    <meta charset='utf-8'/>
+    <link rel='icon' href='https://micronaut.io/images/favicon.ico'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+    <meta name='twitter:card' content='summary_large_image'/>
+    <meta name='twitter:site' content='@micronautfw'/>
+    <meta name='twitter:creator' content='@micronautfw'/>
+    <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
+    <meta property='og:image:width' content='600'/>
+    <meta property='og:image:height' content='300'/>
+    <meta property='og:url' content='https://micronaut.io'/>
+    <meta property='og:title' content='Micronaut: A Modern Microservice Framework for the JVM'/>
+    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
+    <meta property='og:type' content='website'/>
+    <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
+    <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='114x114' href='https://micronaut.io/images/apple-touch-icon-114x114.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='72x72' href='https://micronaut.io/images/apple-touch-icon-72x72.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='144x144' href='https://micronaut.io/images/apple-touch-icon-144x144.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='60x60' href='https://micronaut.io/images/apple-touch-icon-60x60.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='120x120' href='https://micronaut.io/images/apple-touch-icon-120x120.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='76x76' href='https://micronaut.io/images/apple-touch-icon-76x76.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='152x152' href='https://micronaut.io/images/apple-touch-icon-152x152.png'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-196x196.png' sizes='196x196'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-96x96.png' sizes='96x96'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-32x32.png' sizes='32x32'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-16x16.png' sizes='16x16'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-128.png' sizes='128x128'/>
+    <meta name='application-name' content='&amp;nbsp;'/>
+    <meta name='msapplication-TileColor' content='#FFFFFF'/>
+    <meta name='msapplication-TileImage' content='https://micronaut.io/images/mstile-144x144.png'/>
+    <meta name='msapplication-square70x70logo' content='https://micronaut.io/images/mstile-70x70.png'/>
+    <meta name='msapplication-square150x150logo' content='https://micronaut.io/images/mstile-150x150.png'/>
+    <meta name='msapplication-wide310x150logo' content='https://micronaut.io/images/mstile-310x150.png'/>
+    <meta name='msapplication-square310x310logo' content='https://micronaut.io/images/mstile-310x310.png'/>
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/screen.css'/>
+    <script src='https://micronaut.io/javascripts/navbar_hide_scroll.js'></script>
+    <script src='https://micronaut.io/javascripts/navigation.js'></script>
+    
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
+    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+</head>
+<body class='post'>
+<div class='main'>
+    <nav id='navbar'>
+        <ul class='container'>
+            <li class='align-right tiny'>
+                <a href='#footercircle'>Menu</a>
+            </li>
+            <li class='align-right icon'>
+                <iframe src="https://ghbtns.com/github-btn.html?user=micronaut-projects&repo=micronaut-core&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+            </li>
+            <li class='align-right'><a href='https://micronaut.io/support.html'>Support</a></li>
+            <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+            <li class='align-right'><a href='https://micronaut.io/events.html'>Events</a></li>
+            <li class='align-right'><a href='https://micronaut.io/blog/index.html'>News</a></li>
+            <li class='align-right'><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+            <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+            <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+            <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+            <li class='align-right'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+            <li class='align-right'><a href='https://micronaut.io/launch/'>Launch</a></li>
+            <li class='large align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini_copy_tm.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+            <li class='small align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<article><div class='content container'>
+  <h1>
+    <a href='https://micronaut.io/blog/index.html'>
+      <span>Micronaut</span>
+      <b>Blog</b>
+    </a>
+  </h1>
+  <div class='light'>
+    <div class='largegoldenratio align-left'>
+      <div class='padded'><h1>Micronaut AOP: Awesome Flexibility Without the Complexity</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">October 7, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/aop.html"><span class="hashtag">#aop</span></a></p>
+<p>With the recent release of <a href="https://github.com/micronaut-projects/micronaut-data/releases/tag/v1.0.0.M2">Micronaut Data 1.0 M3</a>, I got to work on a couple of features for Micronaut Data that really highlighted to me what we have achieved with <a href="https://docs.micronaut.io/latest/guide/index.html#aop">Micronaut's aspect-oriented programming (AOP) API</a> and the fantastic simplifications it offers, while at the same time ensuring optimal performance. I thought I would take the time to do a write-up of how Micronaut AOP works and why it is one of my favorite Micronaut features compared to the competitors.</p>
+<h2>Introduction to AOP</h2>
+<p>For those unfamiliar, AOP has a long history in the Java community, with a variety of different implementations, including a custom Java language extension called <a href="https://www.eclipse.org/aspectj/">AspectJ</a>. The basic idea is that in a Java application, you often want to apply cross-cutting logic to a method invocation. The way you apply this cross-cutting logic could be expressed in a custom language like AspectJ; however most developers are exposed to AOP via annotations, where you explicitly apply AOP &quot;advice&quot; to a method.</p>
+<p>The most famous example of this in the Java community is probably Spring's <code>@Transactional</code> annotation, which allows you to demarcate a method as running within the context of a declared transaction. This is what is known as &quot;Around Advice,&quot; where you decorate a method invocation with new behavior that implements a cross-cutting concern.</p>
+<p>Around Advice is just one type of AOP Advice supported by Micronaut. The following advice types are supported:</p>
+<ul>
+<li><strong><a href="https://docs.micronaut.io/latest/guide/index.html#aroundAdvice">Around Advice</a>.</strong> As described previously, you decorate an existing method with new behavior.</li>
+<li><strong><a href="https://docs.micronaut.io/latest/guide/index.html#introductionAdvice">Introduction Advice</a>.</strong> Introduction Advice differs, in that it allows you to introduce new behavior to an existing class. A great example of this is, in fact, Micronaut Data (and Spring Data), which allows you to declare an interface that the compiler implements for you by introducing new behavior.</li>
+<li><strong><a href="https://docs.micronaut.io/latest/guide/index.html#adapterAdvice">Adapter Advice</a>.</strong> Adapter Advice is, I believe, unique to Micronaut in that it allows you to introduce a new bean that implements SAM type, an interface with a single abstract method, and delegates to any method definition. This may sound confusing, but shortly I will present a concrete example of this in action.</li>
+</ul>
+<p>So why does Micronaut implement its own AOP mechanism, rather than rely on something already out there?</p>
+<p>Existing implementations for both Java/Jakarta EE and Spring rely heavily on a mixture of runtime reflection, JDK proxies, and byte code generation with something like CGLib or Bytebuddy (even Quarkus currently only implements reflection-free DI and not AOP).</p>
+<p>Micronaut dependency injection is completely reflection free, so it made sense for Micronaut's AOP mechanism to be reflection free as well.</p>
+<h2>Micronaut AOP Setup</h2>
+<p>Micronaut AOP is incredibly simple to use when compared to other implementations out there. It is literally just a compiler feature. There is no need to set up complex ProxyFactoryBean implementations or rely on a runtime container. The minimum set of requirements to get going with Micronaut AOP is to add the Micronaut annotation processors and declare a dependency on micronaut-aop in your build.</p>
+<p>The following is the Gradle configuration required:</p>
+<pre><code class="language-groovy">dependencies {
+     annotationProcessor &quot;io.micronaut:micronaut-inject-java:&amp;#36;micronautVersion&quot;
+     compile &quot;io.micronaut:micronaut-aop:&amp;#36;micronautVersion&quot;
+}
+</code></pre>
+<p>And the equivalent Maven config:</p>
+<pre><code class="language-xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.micronaut&lt;/groupId&gt;
+      &lt;artifactId&gt;micronaut-aop&lt;/artifactId&gt;
+      &lt;scope&gt;compile&lt;/scope&gt;
+      &lt;version&gt;&amp;#36;{micronaut.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+....
+    &lt;pluginManagement&gt;
+      &lt;plugins&gt;
+        &lt;plugin&gt;
+          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+          &lt;version&gt;3.7.0&lt;/version&gt;
+          &lt;configuration&gt;
+            &lt;source&gt;&amp;#36;{jdk.version}&lt;/source&gt;
+            &lt;target&gt;&amp;#36;{jdk.version}&lt;/target&gt;
+            &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+            &lt;compilerArgs&gt;
+              &lt;arg&gt;-parameters&lt;/arg&gt;
+            &lt;/compilerArgs&gt;
+            &lt;annotationProcessorPaths&gt;
+                  &lt;path&gt;
+                    &lt;groupId&gt;io.micronaut&lt;/groupId&gt;
+                    &lt;artifactId&gt;micronaut-inject-java&lt;/artifactId&gt;
+                    &lt;version&gt;&amp;#36;{micronaut.version}&lt;/version&gt;
+                  &lt;/path&gt;
+            &lt;/annotationProcessorPaths&gt;
+</code></pre>
+<p>The Maven configuration requires you declare the micronaut-inject-java dependency in your annotation processors paths from the Maven compiler plugin.</p>
+<h2>Micronaut Around Advice Put to Use</h2>
+<p>So as mentioned at the beginning of the article, I got to use some of the Micronaut AOP features with Micronaut Data, since we wanted to support transaction management, as well as transactional events, without the need to pull in Spring, which adds overhead by introducing an additional 4mb of dependencies, makes extensive use of reflection and runtime proxies, which impact memory consumption, and negatively impacts GraalVM native support.</p>
+<p>The first step was to add support for <code>javax.transaction.Transactional</code> so you could use the standard Java annotation to declare transaction boundaries. To achieve this, I created a new annotation called <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/interceptor/annotation/TransactionalAdvice.java">TransactionalAdvice</a>, which I declared as a meta-annotation (an annotation that can be used only on other annotations):</p>
+<pre><code class="language-java">@Target(ElementType.ANNOTATION_TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Around
+@Type(TransactionalInterceptor.class)
+@Internal
+public @interface TransactionalAdvice {
+    /**
+     * Alias for {@link #transactionManager}.
+     *
+     * @return The transaction manager
+     * @see #transactionManager
+     */
+    String value() default &quot;&quot;;
+    
+    // Remaining members omitted for clarity 
+
+}
+</code></pre>
+<p>The <code>TransactionalAdvice</code> annotation is itself annotated with <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/Around.html">@Around</a> and <code>@Type(TransactionalInterceptor.class)</code>, which indicate the interceptor type that will handle the method invocation.</p>
+<p>To make it possible to activate the <code>TransactionAdvice</code> behavior every time someone uses <code>javax.transaction.Transactional</code>, I then added a <code>AnnotationMapper</code> that the compiler will use to map the <code>javax.transaction.Transactional</code> annotation to the <code>TransactionAdvice</code> annotation:</p>
+<pre><code class="language-java">public class JtaTransactionalMapper implements NamedAnnotationMapper {
+    @NonNull
+    @Override
+    public String getName() {
+        return &quot;javax.transaction.Transactional&quot;;
+    }
+
+    @Override
+    public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;Annotation&gt; annotation, VisitorContext visitorContext) {
+       
+        AnnotationValueBuilder&lt;Annotation&gt; builder =
+                AnnotationValue.builder(&quot;io.micronaut.transaction.interceptor.annotation.TransactionalAdvice&quot;);
+
+        // Member processing omitted for brevity....
+
+        return Collections.singletonList(
+                builder.build()
+        );
+    }
+}
+</code></pre>
+<p>The above annotation mapper will be triggered every time a <code>@Transactional</code> annotation is declared in code. The map method returns the meta annotation that the annotation maps to.</p>
+<p>The motivation to use a meta-annotation and map existing annotations is that you can support any annotation type, including Spring's. Additionally, if one day <code>javax.transaction</code> is renamed to <code>jakarta.transaction</code>, we just add a new mapper that has zero runtime overhead. It allows Micronaut to completely decouple itself from the source code annotation DSL used.</p>
+<p>So what about the <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/interceptor/TransactionalInterceptor.java">TransactionInterceptor</a> implementation?</p>
+<p>Micronaut AOP defines an interface called <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/MethodInterceptor.html">MethodInterceptor</a> that features a single method called <code>intercept</code> that all interceptors need to implement. The intercept method receives a reference to the <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/MethodInvocationContext.html">MethodInvocationContext</a> that holds a reference to the <a href="https://docs.micronaut.io/latest/api/io/micronaut/inject/ExecutableMethod.html">ExecutableMethod</a> that you can use to proceed and invoke the original implementation.</p>
+<p>The received <code>ExecutableMethod</code> is a compile-time-produced handle that allows you to invoke the original method without using reflection. It also contains a reference to the <a href="https://docs.micronaut.io/latest/api/io/micronaut/core/annotation/AnnotationMetadata.html">AnnotationMetadata</a>, which allows you to inspect and retrieve annotation values and stereotypes without using reflection. The benefits of this include massively reduced stack trace sizes, improved performance, and reduced memory consumption.</p>
+<p>The following is the implementation taken from the <code>TransactionInterceptor</code>:</p>
+<pre><code class="language-php">public Object intercept(MethodInvocationContext&lt;Object, Object&gt; context) {
+    final TransactionInvocation transactionInvocation = transactionInvocationMap
+            .computeIfAbsent(context.getExecutableMethod(), executableMethod -&gt; {
+        final String qualifier = executableMethod.stringValue(TransactionalAdvice.class).orElse(null);
+        SynchronousTransactionManager transactionManager =
+                beanLocator.getBean(SynchronousTransactionManager.class, qualifier != null ? Qualifiers.byName(qualifier) : null);
+        final TransactionAttribute transactionAttribute = resolveTransactionDefinition(executableMethod);
+
+        return new TransactionInvocation(transactionManager, transactionAttribute);
+    });
+    final TransactionAttribute definition = transactionInvocation.definition;
+    final SynchronousTransactionManager transactionManager = transactionInvocation.transactionManager;
+    final TransactionInfo transactionInfo = createTransactionIfNecessary(
+            transactionManager,
+            definition,
+            definition.getName());
+    Object retVal;
+    try {
+        retVal = context.proceed();
+    } catch (Throwable ex) {
+        completeTransactionAfterThrowing(transactionInfo, ex);
+        throw ex;
+    } finally {
+        cleanupTransactionInfo(transactionInfo);
+    }
+    commitTransactionAfterReturning(transactionInfo);
+    return retVal;
+}
+</code></pre>
+<p>The important aspects start on line 4, where the annotation metadata is inspected to figure out which transaction manager to look up to apply transaction management.</p>
+<p>On line 13, a transaction is created. We then proceed within the method invocation on line 19 and finally return the value on line 27. The code here is largely based on the equivalent code in Spring's <code>TransactionAspectSupport</code>, but without needing all of the runtime proxy and reflection complexity.</p>
+<p>And with that, whenever you declare <code>@Transactional</code> in your code, you get automatic transaction management. Nothing else to configure. How simple is that?</p>
+<h2>Micronaut Introduction Advice Put to Use</h2>
+<p>Another feature requested by Micronaut users is the ability get a reference to a <code>java.sql.Connection</code> that is aware of the currently executing transaction. The solution for this in Spring is <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/datasource/TransactionAwareDataSourceProxy.html">TransactionAwareDataSourceProxy</a>, which proxies your entire <code>java.sql.DataSource</code>, making sure whenever you retrieve a connection, it is associated with the current transaction. But this adds the overhead of runtime reflection and proxying to all methods of the <code>DataSource</code> interface.</p>
+<p>To support this use case without proxying the <code>DataSource</code>, with Micronaut Data we decided to allow users to inject a transaction-aware <code>java.sql.Connection</code> in a similar way you can inject a transaction-aware <code>EntityManager</code> in JPA that uses Hibernate's <code>getCurrentSession()</code> feature.</p>
+<p>This turned out to be really simple with Micronaut AOP. The first step was to define an interface that extended <code>java.sql.Connection</code>, which I called <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/jdbc/TransactionalConnection.java">TransactionalConnection</a>:</p>
+<pre><code class="language-java">package io.micronaut.transaction.jdbc;
+
+import io.micronaut.context.annotation.EachBean;
+import javax.sql.DataSource;
+import java.sql.Connection;
+
+@EachBean(DataSource.class)
+@ConnectionAdvice
+public interface TransactionalConnection extends Connection {
+}
+</code></pre>
+<p>The interface is annotated on line 7 with another of my favorite Micronaut features, the <a href="https://docs.micronaut.io/latest/api/io/micronaut/context/annotation/EachBean.html">@EachBean</a> annotation, which says that for every <code>DataSource</code> bean configured in the application, create an associated <code>TransactionalConnection</code> bean. This effectively means if you have multiple data sources, you get a <code>TransactionalConnection</code> bean configured for each one automatically and use a <code>javax.inject.Named</code> qualifier to inject the one you want.</p>
+<p>The Introduction Advice is then defined on line 8 using a new annotation called <code>@ConnectionAdvice</code>, which is a package private internal annotation and looks like the following:</p>
+<pre><code class="language-php">@Retention(RUNTIME)
+@Introduction
+@Type(ConnectionInterceptor.class)
+@Internal
+@interface ConnectionAdvice {
+}
+</code></pre>
+<p>On line 3, we define the annotation as <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/Introduction.html">@Introduction</a> Advice, which means it can implement abstract behavior.</p>
+<p>On line 4, we define the interceptor that is going to provide the implementation at runtime, which in this case is <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/jdbc/ConnectionInterceptor.java">ConnectionInterceptor</a>, which is shown below and is really simple:</p>
+<pre><code class="language-php">public final class ConnectionInterceptor implements MethodInterceptor&lt;Connection, Object&gt; {
+
+    private final DataSource dataSource;
+
+    ConnectionInterceptor(BeanContext beanContext, Qualifier&lt;DataSource&gt; qualifier) {
+        this.dataSource = beanContext.getBean(DataSource.class, qualifier);
+    }
+
+    public Object intercept(MethodInvocationContext&lt;Connection, Object&gt; context) {
+        Connection connection;
+        try {
+            connection = DataSourceUtils.getConnection(dataSource, false);
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new NoTransactionException(&quot;No current transaction present. Consider declaring @Transactional on the surrounding method&quot;, e);
+        }
+        return context.getExecutableMethod().invoke(connection, context.getParameterValues());
+    }
+}
+</code></pre>
+<p>On line 6 we used the injected qualifier for the interceptor instance to look up the associated <code>DataSource</code>. Then on line 12 we look up the connection associated with the current transaction. If no connection is present, we throw <code>NoTransactionException</code> on line 14. Otherwise we proceed and invoke the method on the connection on line 16.</p>
+<p>With that in place, all a user has to do is inject a Connection instance and use it directly, rather than having to manually look up the connection associated with the current transaction, which simplifies the code quite nicely:</p>
+<pre><code class="language-java">@Inject
+Connection connection;
+
+@Transactional
+void insertWithTransaction() throws Exception {
+    try (PreparedStatement ps = connection
+            .prepareStatement(&quot;insert into book (pages, title) values(100, 'The Stand')&quot;)) {
+        ps.execute();
+    }
+}
+</code></pre>
+<p>The underlying connection is managed by the transaction and cleaned up and closed after the transaction commits, so there is no need to close it manually. If one were to remove the <code>@Transactional</code> definition, a <code>NoTransactionException</code> would occur.</p>
+<h2>Micronaut Adapter Advice Put to Use</h2>
+<p>Both Micronaut and Spring allow the publication of events that can be consumed by either synchronous or asynchronous event listeners.</p>
+<p>One missing feature from Micronaut, which users have been asking for a lot, is the ability to define transactional event listeners. That is, event listeners that are only triggered when a particular transaction phase completes (typically users are most interested in triggering behavior after a successful commit). The use cases here are things like sending an email or publishing a Kafka message only if a transaction commits successfully.</p>
+<p>Making this work in Micronaut was actually remarkably simple thanks to <a href="https://docs.micronaut.io/latest/guide/index.html#adapterAdvice">Adapter advice</a>.</p>
+<p>The first step was defining a <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/annotation/TransactionalEventListener.java">@TransactionalEventListener</a> annotation:</p>
+<pre><code class="language-java">@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Adapter(ApplicationEventListener.class) 
+@TransactionalEventAdvice
+public @interface TransactionalEventListener {
+    TransactionPhase value() default TransactionPhase.AFTER_COMMIT;
+}
+</code></pre>
+<p>The first important part is the definition in the <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/Adapter.html">@Adapter</a> annotation on line 4, which takes the interface we want to adapt, in this case <a href="https://docs.micronaut.io/latest/api/io/micronaut/context/event/ApplicationEventListener.html">ApplicationEventListener</a>.</p>
+<p>Interfaces passed to the <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/Adapter.html">@Adapter</a> annotation have to contain a Single Abstract Method (often called SAM types). At compilation time, Micronaut will create an additional bean that implements the interface and delegates to the method that declares the annotation. So in this case a new <code>ApplicationEventListener</code> bean will be created that invokes the method that <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/annotation/TransactionalEventListener.java">@TransactionalEventListener</a> is declared on.</p>
+<p>The nice thing is that if you try to declare <code>@TransactionalEventListener</code> on a method that doesn't conform to the signature of the <code>ApplicationEventListener</code> interface, you will get a compilation error. This is part of Micronaut's nice ability to compile time check what you are doing with the framework is correct.</p>
+<p>In addition to the Adapter advice, the <code>@TransactionalEventListener</code> annotation also declares an <code>@Around</code> advice implementation on line 5 called <code>@TransactionalEventAdvice</code>, which looks like:</p>
+<pre><code class="language-java">@Around
+@Type(TransactionalEventInterceptor.class)
+@Internal
+public @interface TransactionalEventAdvice {
+}
+</code></pre>
+<p>As you can see, on line 1, the <code>@TransactionEventAdvice</code> is declared as <code>@Around</code> advice (which remember allows decorating existing behavior), and on line 3, the type of advice is defined as <code>TransactionalEventInterceptor</code>.</p>
+<p>The implementation of the <code>TransactionalEventInterceptor</code> is also really simple and intercepts the invocation of the event listener:</p>
+<pre><code class="language-java">public Object intercept(MethodInvocationContext&lt;Object, Object&gt; context) {
+    final TransactionalEventListener.TransactionPhase phase = context
+            .enumValue(TransactionalEventListener.class, TransactionalEventListener.TransactionPhase.class)
+            .orElse(TransactionalEventListener.TransactionPhase.AFTER_COMMIT);
+    if (TransactionSynchronizationManager.isSynchronizationActive() &amp;&amp;
+            TransactionSynchronizationManager.isActualTransactionActive()) {
+        TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronizationAdapter() {
+
+            @Override
+            public void beforeCommit(boolean readOnly) {
+                if (phase == TransactionalEventListener.TransactionPhase.BEFORE_COMMIT) {
+                    context.proceed();
+                }
+            }
+
+            @Override
+            public void afterCompletion(@NonNull Status status) {
+                switch (status) {
+                    case ROLLED_BACK:
+                        if (phase == TransactionalEventListener.TransactionPhase.AFTER_ROLLBACK) {
+                            context.proceed();
+                        }
+                    break;
+                    case COMMITTED:
+                        if (phase == TransactionalEventListener.TransactionPhase.AFTER_COMMIT) {
+                            context.proceed();
+                        }
+                    break;
+                    default:
+                        if (phase == TransactionalEventListener.TransactionPhase.AFTER_COMPLETION) {
+                            context.proceed();
+                        }
+                }
+            }
+        });
+    } else {
+        if (LOG.isDebugEnabled()) {
+            LOG.debug(&quot;No active transaction, skipping event {}&quot;, context.getParameterValues()[0]);
+        }
+    }
+    return null;
+}
+</code></pre>
+<p>On line 2, the transaction phase the event applies to is looked up from the annotation metadata. Then on line 5, the interceptors checks if there is an active transaction. If there is no active transaction, the event listener is skipped on line 38. Otherwise on line 7, a new transaction synchronization is registered. Depending on the phase, the listener is only invoked via the proceed method when the appropriate transaction event occurs. For example, on transaction commit, the method will be invoked on line 26.</p>
+<p>And with that we have working transactional events!</p>
+<p>The following shows an example in action:</p>
+<pre><code class="language-java">@Singleton
+public class BookManager {
+    private final BookRepository bookRepository;
+    private final ApplicationEventPublisher eventPublisher;
+
+    public BookManager(BookRepository bookRepository, ApplicationEventPublisher eventPublisher) {
+        this.bookRepository = bookRepository;
+        this.eventPublisher = eventPublisher;
+    }
+
+    @Transactional
+    void saveBook(String title, int pages) {
+        final Book book = new Book(title, pages);
+        bookRepository.save(book);
+        eventPublisher.publishEvent(new NewBookEvent(book)); 
+    }
+
+    @TransactionalEventListener
+    void onNewBook(NewBookEvent event) {
+        System.out.println(&quot;book = &quot; + event.book);
+    }
+
+}
+</code></pre>
+<p>First, on line 6, the constructor of the class gets a reference to the <a href="https://docs.micronaut.io/latest/api/index.html">ApplicationEventPublisher</a>. The method on line 11 is declared as transactional, saving an object and then publishing the event.</p>
+<p>The method on line 17 is declared with <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/annotation/TransactionalEventListener.java">@TransactionalEventListener</a> and for the moment just prints out the event. If the transaction fails for whatever reason, however, the event will never be received and the output never printed.</p>
+<h2>Summary</h2>
+<p>There is a definite lack of information on how compelling the Micronaut AOP implementation is, and I hope this blog post goes some way to resolving that. Micronaut AOP has some really nice features and makes it really simple to define AOP advice without the need to involve complex runtime bytecode generation solutions that create enormous stack traces and place additional memory strain on your application.</p>
+<p>My recent experience using Micronaut AOP to build Micronaut Data further highlighted to me the advances we have made in this area, pushing developers to avoid the use of reflection, which optimizes memory consumption and makes it so much easier to go native with GraalVM substrate.</p></div>
+    </div>
+    <div class='smallgoldenratio align-right'><article class='blogcard' style=''>
+  <a href='https://micronaut.io/blog/2020-06-26-announcing-micronaut-20.html'>
+    <h3>June 26, 2020</h3>
+    <h2>Announcing Micronaut 2.0</h2>
+  </a>
+</article><article class='blogcard' style=''>
+  <a href='https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html'>
+    <h3>June 16, 2020</h3>
+    <h2>Micronaut 2.0 RC1 Released</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-05-15.png)'>
+  <a href='https://micronaut.io/blog/2020-05-15-micronaut-now-supports-microsoft-azure-functions.html'>
+    <h3>May 15, 2020</h3>
+    <h2>Micronaut now supports Microsoft Azure Functions</h2>
+  </a>
+</article></div>
+  </div>
+</div>&nbsp;</article>
+<div id="footercircle" class="full whitecircleborderseparator"></div>
+<footer>
+    <div class='container'>
+        <div class='mobile'>
+            <nav id='footernav'>
+                <ul class='container'>
+                    <li class='align-right'><a href='https://micronaut.io/launch/'>Launch</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+                    <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/events.html'>Events</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/support.html'>Support</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/blog/index.html'>News</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p id='blacklogo'>
+            <img src='https://micronaut.io/images/micronautlogo.svg' alt='Micronaut Logo'/>
+        </p>
+        <div class='twocolumns'>
+            <div class='column'>
+                <nav id='socialnetworknav'>
+                    <ul class='container'>
+                        <li>
+                            <a href='https://gitter.im/micronautfw/'>
+                                <img class='' src='https://micronaut.io/images/gitter.svg' alt='Gitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.youtube.com/watch?v=56j_f3OCg6E&amp;list=PLI74De5M9T71c2dUQYy0nCdKUgZE2rrVD'>
+                                <img class='' src='https://micronaut.io/images/youtube.svg' alt='Youtube Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://github.com/micronaut-projects/'>
+                                <img class='' src='https://micronaut.io/images/github.svg' alt='Github Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://twitter.com/micronautfw'>
+                                <img class='' src='https://micronaut.io/images/twitter.svg' alt='Twitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='mailto:info@micronaut.io?subject=Micronaut&amp;amp;body=I%20am%20interested%20in%20Micronaut.'>
+                                <img class='' src='https://micronaut.io/images/mail.svg' alt='Mail Icon'/>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p>
+                    <small>© 2020, Object Computing, Inc. (OCI). All rights reserved</small>
+                </p>
+            </div>
+            <div class='column' style='margin-top: 10px;'>
+                <p>
+                    <a title='Visit OCI Website' href='https://objectcomputing.com'>
+                        <img src='https://micronaut.io/images/oci_logo.svg' alt='Object Computing' style='max-width: 300px'/>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-115754405-1');
+</script>
+<script type="text/javascript">
+    adroll_adv_id = "J4NA4XCFDNFHDGNFUAVMQD";
+    adroll_pix_id = "J4XYMNCOQNBCXJJ4GP744N";
+
+    (function() {
+        var _onload = function() {
+            if (document.readyState && !/loaded|complete/.test(document.readyState)) {
+                setTimeout(_onload, 10);
+                return
+            }
+            if (!window.__adroll_loaded) {
+                __adroll_loaded = true;
+                setTimeout(_onload, 50);
+                return
+            }
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {
+            window.addEventListener('load', _onload, false);
+        }
+        else {
+            window.attachEvent('onload', _onload)
+        }
+    }());
+</script>
+</body>
+</html>

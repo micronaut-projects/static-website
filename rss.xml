@@ -1,0 +1,1500 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Sun, 28 Jun 2020 22:23:56 GMT</pubDate><item><title>Announcing Micronaut 2.0</title><link>https://micronaut.io/blog/2020-06-26-announcing-micronaut-20.html</link><description><![CDATA[<h1>Announcing Micronaut 2.0</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)<br/> James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)</span></p>
+<p><span class="date">June 26, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>Today, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/products/micronaut">Object Computing, Inc. (OCI)</a> is proud to announce the general <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0">release</a> of Micronaut 2.0!</p>
+<p>This release reflects the culmination of more than 6 months of extraordinary work from the Micronaut community. We have expanded our native image support, increased the reactive library support modules, <a href="https://objectcomputing.com/resources/publications/sett/june-2020-micronaut-2-dont-let-event-loops-own-you&quot;">improved our threading model</a>, and added features that give you more service deployment options. With Micronaut 2, you can deploy nearly anywhere. From <a href="/blog/2020-03-20-micronaut-20-milestone-1-released.html">Servlet</a> to <a href="/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html">Serverless</a>, and practically anything in-between.</p>
+<p>There's a lot to discover in Micronaut 2.0.  For a full list of the new features, please see the <a href="https://docs.micronaut.io/2.0.0/guide/index.html#whatsNew"><em>What's New</em> guide</a></p>
+<p>Here are some highlights of what's new in Micronaut 2.</p>
+<h2>MICRONAUT LAUNCH</h2>
+<p>In Micronaut 2.0, we have completely rewritten the Micronaut CLI using Micronaut itself and simultaneously launched <a href="https://micronaut.io/launch/">Micronaut Launch</a>, a new tool for creating Micronaut applications that is built on the new CLI.</p>
+<p>The new website and CLI are so cool, we wrote <a href="https://micronaut.io/launch/">a whole blog post</a> to introduce them!</p>
+<h2>JDK 14, GROOVY 3</h2>
+<p>Micronaut 2.0 now supports Java 14 and also adds support for Groovy 3.</p>
+<h2>PERFORMANCE IMPROVEMENTS</h2>
+<p>Micronaut is intensely focused on performance, and we are always looking to improve startup time, memory consumption, and other performance metrics. Micronaut 2.0 comes with improvements in all metrics, with startup times improving by 20% on average.</p>
+<h2>IMPROVED SERVERLESS SUPPORT</h2>
+<p>Micronaut 2.0 introduces support for writing applications that can be deployed to Google's upcoming <a href="https://micronaut.io/launch/">Cloud Function</a> support for Java.</p>
+<p>In addition to Google Cloud Function, we have also added support for <a href="https://azure.microsoft.com/en-us/services/functions/">Azure Function</a> using the same approach. Check out the <a href="https://micronaut-projects.github.io/micronaut-azure/1.0.x/guide/#azureFunction">Micronaut Azure Function</a> documentation for more information.</p>
+<p>Micronaut 2.0's AWS module has also received a significant upgrade with GraalVM Native Image support for AWS SDK 2 and more.</p>
+<h2>MICRONAUT MAVEN PLUGIN</h2>
+<p>Micronaut 2.0 features a <a href="https://micronaut-projects.github.io/micronaut-maven-plugin/latest/">brand new Maven plugin</a>.</p>
+<h2>SUPPORT FOR HTTP/2</h2>
+<p><a href="https://docs.micronaut.io/2.0.x/guide/index.html#http2Server">Support for HTTP/2</a> has been added and can be optionally enabled in both the Netty-based HTTP server and client.</p>
+<h2>SERVLET SUPPORT</h2>
+<p>Micronaut can now go places that weren't possible before, including your favorite Servlet container! <a href="https://github.com/micronaut-projects/micronaut-servlet">Embedded servers for Jetty, Tomcat, and Undertow</a> are included.</p>
+<h2>GRAALVM IMPROVEMENTS</h2>
+<p>We are continually improving our support for the very popular project, GraalVM. In Micronaut 2.0, we have introduced support for automatic configuration for static resources, JDBC drivers, Hibernate, Flyway, AWS SDK 2, and other areas.</p>
+<h2>GRADLE IMPROVEMENTS</h2>
+<p>Micronaut 2.0 has been upgraded to Gradle 6.5 and further improved our compile-time processors to be more compatible with incremental annotation processing. Java and Kotlin users should experience faster build times.</p>
+<h2>SECURITY MODULE IMPROVEMENTS</h2>
+<p>The Micronaut Security module has <a href="https://micronaut-projects.github.io/micronaut-security/2.0.x/guide/#whatsNew">undergone significant changes</a> to improve the extensibility of the API, as well as to provide new features.</p>
+<h2>UPGRADING</h2>
+<p>For those upgrading from Micronaut 1, see the <a title="Breaking changes" href="https://docs.micronaut.io/2.0.x/guide/index.html#upgrading" target="_blank">upgrading to Micronaut 2.0 section</a> in our documentation to understand what has changed and how it may impact your application. There are several key changes that everyone upgrading should understand. The most impactful is the change to the default thread selection strategy. We have written a <a href="https://objectcomputing.com/resources/publications/sett/june-2020-micronaut-2-dont-let-event-loops-own-you">blog post</a> that goes into detail about that change.</p>
+<h2>The Road To MICRONAUT 2</h2>
+<p>Working toward today's release, we published 3 milestones, each including a substantial portion of Micronaut 2's features.  We invite you to revisit the path we took here by reviewing our milestone announcements:</p>
+<ul>
+<li><a href="/blog/2020-03-20-micronaut-20-milestone-1-released.html">Micronaut 2.0 M1 - Support for HTTP/2 and Servlets</a></li>
+<li><a href="/blog/2020-04-02-micronaut-20-milestone-2-massive-maven-improvements.html">Micronaut 2.0 M2</a> - Massive Maven Improvements</li>
+<li><a href="/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html">Micronaut 2.0 M3</a> - A Big Boost for Serverless and Micronaut Launch</li>
+</ul>
+<h2>The Future</h2>
+<p>The items listed above certainly are not the entirety of the new features, improvements, and bug fixes included in this release. For a more detailed description of what you can do with Micronaut 2, please see our <a title="Micronaut Documentation" href="https://micronaut.io/documentation.html" target="_blank">documentation</a>.</p>
+<p>If you haven't given <a href="https://micronaut.io/index.html">Micronaut</a> a try yet, now is a great time to <a href="https://micronaut.io/launch/">get started</a>! We can't wait to see what you build.</p>
+<p>Please report any issues or ideas for improvement to our [https://github.com/micronaut-projects/micronaut-core/issues](Github issue tracker). We are very excited for Micronaut 2 and the future of Micronaut!</p>
+<p>Special thanks to all the tireless contributors to Micronaut who made this release happen and the excellent feedback from the community.</p>]]></description><guid>2020-06-26-announcing-micronaut-20</guid><pubDate>Fri, 26 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 2.0 RC1 Released</title><link>https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html</link><description><![CDATA[<h1>Micronaut 2.0 RC1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)<br/> James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)</span></p>
+<p><span class="date">June 16, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The Micronaut team at Object Computing (OCI) is super excited to announce <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.RC1">the first release candidate</a> on our journey to Micronaut 2.0.</p>
+<p>Micronaut 2.0 includes so many great new features, some of which have been detailed in the blog posts for each of the milestone releases:</p>
+<ul>
+<li><a href="/blog/2020-03-20-micronaut-20-milestone-1-released.html">Micronaut 2.0 M1 - Support for HTTP/2 and Servlets</a></li>
+<li><a href="/blog/2020-04-02-micronaut-20-milestone-2-massive-maven-improvements.html">Micronaut 2.0 M2 - Massive Maven Improvements</a></li>
+<li><a href="/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html">Micronaut 2.0 M3 - A Big Boost for Serverless and Micronaut Launch</a></li>
+</ul>
+<p>For more information about all the new features, see the &quot;What's New&quot; guide.</p>
+<p>Here are some of the highlights of Micronaut 2.0:</p>
+<h2>Micronaut Launch</h2>
+<p>In Micronaut 2.0, we have completely rewritten the Micronaut CLI using Micronaut itself and simultaneously launched <a href="https://micronaut.io/launch/">Micronaut Launch</a>, a new tool for creating Micronaut applications that is built on the new CLI.</p>
+<p>The new website and CLI are so cool, we wrote <a href="/blog/2020-04-30-introducing-micronaut-launch.html">a whole blog post</a> to introduce them!</p>
+<h2>JDK 14, Groovy 3</h2>
+<p>Micronaut 2.0 now supports Java 14 and also adds support for Groovy 3.</p>
+<h2>Performance Improvements</h2>
+<p>Micronaut is intensely focused on performance, and we are always looking to improve startup time, memory consumption, and other performance metrics. Micronaut 2.0 comes with improvements in all metrics, with startup times improving by 20% on average.</p>
+<h2>Improved Serverless Support</h2>
+<p>Micronaut 2.0 introduces support for writing applications that can be deployed to Google's upcoming <a href="https://cloud.google.com/functions">Cloud Function</a> support for Java.</p>
+<p>In addition to Google Cloud Function, we have also added support for <a href="https://azure.microsoft.com/en-us/services/functions/">Azure Function</a> using the same approach. Check out the <a href="https://micronaut-projects.github.io/micronaut-azure/1.0.x/guide/#azureFunction">Micronaut Azure Function</a> documentation for more information.</p>
+<p>Micronaut 2.0's AWS module has also received a significant upgrade with GraalVM Native Image support for AWS SDK 2 and more.</p>
+<h2>Micronaut Maven Plugin</h2>
+<p>Micronaut 2.0 features a <a href="https://micronaut-projects.github.io/micronaut-maven-plugin/latest/">brand new Maven plugin</a>.</p>
+<h2>Support for HTTP/2</h2>
+<p><a href="https://docs.micronaut.io/2.0.x/guide/index.html#http2Server">Support for HTTP/2</a> has been added and can be optionally enabled in both the Netty-based HTTP server and client.</p>
+<h2>Servlet Support</h2>
+<p>Micronaut can now go places that weren't possible before, including your favorite Servlet container! <a href="https://github.com/micronaut-projects/micronaut-servlet">Embedded servers for Jetty, Tomcat, and Undertow</a> are included.</p>
+<h2>GraalVM Improvements</h2>
+<p>We are continually improving our support for the very popular project, GraalVM. In Micronaut 2.0, we have introduced support for automatic configuration for static resources, JDBC drivers, Hibernate, Flyway, AWS SDK 2, and other areas.</p>
+<h2>Gradle Improvements</h2>
+<p>Micronaut 2.0 has been upgraded to Gradle 6.5 and further improved our compile-time processors to be more compatible with incremental annotation processing. Java and Kotlin users should experience faster build times.</p>
+<h2>Security Module Improvements</h2>
+<p>The Micronaut Security module has <a href="https://micronaut-projects.github.io/micronaut-security/2.0.x/guide/#whatsNew">undergone significant changes</a> to improve the extensibility of the API, as well as to provide new features.</p>
+<h2>Upgrading</h2>
+<p>For those upgrading from Micronaut 1, see the <a href="https://docs.micronaut.io/2.0.x/guide/index.html#upgrading">upgrading to Micronaut 2.0 section</a> in our documentation to understand what has changed and how it may impact your application. There are several key changes that everyone upgrading should understand. The most impactful is the change to the default thread selection strategy. We have written a <a href="https://objectcomputing.com/resources/publications/sett/june-2020-micronaut-2-dont-let-event-loops-own-you">blog post</a> that goes into detail about that change.</p>
+<h2>Micronaut 2 GA</h2>
+<p>The items listed above certainly are not the entirety of the new features, improvements, and bug fixes included in this release. For a more detailed description of what's new, see our <a href="https://docs.micronaut.io/2.0.0.RC1/guide/index.html#whatsNew">documentation</a>.</p>
+<p>With the first release candidate behind us, we look forward to the release of Micronaut 2. This release candidate marks a significant milestone in the progress we have made over the last 6 months. We hope you give this release candidate a try.</p>
+<p>Please report any issues or ideas for improvement to our <a href="https://github.com/micronaut-projects/micronaut-core/issues">Github issue tracker</a>. We are very excited for Micronaut 2 and the future of Micronaut!</p>]]></description><guid>2020-06-16-micronaut-20-rc1-released</guid><pubDate>Tue, 16 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut now supports Microsoft Azure Functions</title><link>https://micronaut.io/blog/2020-05-15-micronaut-now-supports-microsoft-azure-functions.html</link><description><![CDATA[<h1>Micronaut now supports Microsoft Azure Functions</h1>
+<p><span class="author">By Sergio del Amo (Object Computing Grails &amp; Micronaut Team)</span></p>
+<p><span class="date">May 15, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/azure.html"><span class="hashtag">#azure</span></a> <a href="https://micronaut.io/blog/tag/serverless.html"><span class="hashtag">#serverless</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at Object Computing is pleased to announce that <a href="/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html">Micronaut 2.0.0.M3</a> now features support for developing serverless applications with <a href="https://azure.microsoft.com/en-us/services/functions/">Azure Functions</a>. If you want to develop <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java">Azure Functions with Java</a>, you'll find that you can dramatically improve your productivity and build incredibly fast and lightweight applications with the Micronaut framework.</p>
+<p>Micronaut's Azure-friendly features include support for using <a href="https://docs.micronaut.io/latest/guide/index.html#ioc">dependency injection</a>, validation, and <a href="https://docs.micronaut.io/latest/guide/index.html#aop">AOP annotations</a> within your serverless code.</p>
+<h2>Two Micronaut Azure Modules</h2>
+<p>Micronaut offers two modules to help you with the development of Azure Functions:</p>
+<ul>
+<li><strong>Simple Azure Functions</strong>.<a href="https://micronaut-projects.github.io/micronaut-azure/snapshot/guide/index.html#simpleAzureFunctions">io.micronaut.azure:micronaut-azure-function</a></li>
+<li><strong>Azure HTTP Functions</strong>. <a href="https://micronaut-projects.github.io/micronaut-azure/snapshot/guide/index.html#azureHttpFunctions">io.micronaut.azure:micronaut-azure-function-http</a></li>
+</ul>
+<h3>Micronaut Simple Azure Functions</h3>
+<p><a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings">Azure Functions support many triggers</a> beyond HTTP, including Queue, Timer, and Blob storage. Simple Azure Functions are for these non-HTTP triggers.</p>
+<p>Moreover, if your function only needs to bind to a single HTTP endpoint, you may choose Simple Azure Functions as well.</p>
+<p>You can use dependency injection and validation within your functions as illustrated below:</p>
+<pre><code class="language-java">public interface NameTransformer {
+   @NonNull
+   String transform(@NonNull @NotBlank String name);
+}
+ 
+@Singleton
+public CapitalizeNameTransformer implements NameTransformer {
+  @Override
+  @NonNull
+  public String transform(@NonNull @NotBlank String name) {
+      return StringUtils.capitalize(name);
+  } 
+}
+ 
+public class NameTransformFunction extends AzureFunction {
+    @Inject // 1️⃣
+    NameTransformer nameTransformer
+ 
+    public String echo(
+          @HttpTrigger(name = &quot;req&quot;, 
+                       methods = HttpMethod.GET, 
+                       authLevel = AuthorizationLevel.ANONYMOUS) 
+           HttpRequestMessage&lt;Optional&lt;String&gt;&gt; request, 
+           ExecutionContext context) {
+        try {
+            String name = request.getQueryParameters().get(&quot;name&quot;);
+            return nameTransformer.transform(name);
+        } catch(ConstraintViolationException e) { // 2️⃣
+            return &quot;The supplied name must be not blank&quot;; 
+        }
+    }
+}
+</code></pre>
+<p>1️⃣ User can dependency inject fields with <code>@Inject</code>.<br />
+2️⃣ <code>Name::transformer</code> parameter constraints are enforced.</p>
+<h3>Micronaut Azure Http Functions</h3>
+<p>If your function needs to respond to multiple HTTP endpoints, or if you want to write regular Micronaut controllers and have them executed using an Azure Function, you can choose Azure HTTP Functions.</p>
+<p>With the Micronaut Azure HTTP Functions module, for the previous example, instead of NameTransformFunction, you will have a controller:</p>
+<pre><code class="language-java">@Controller(&quot;/&quot;)
+public NameController {
+ 
+    private final NameTransformer transformer;
+ 
+    public NameController(NameTransformer transformer) { // 1️⃣
+        this.transformer = transformer;
+    }
+ 
+    @Produces(MediaType.TEXT_PLAIN)
+    @Get
+    public String index(@Nullable String name) {
+        try {
+            return transformer.transform(name);
+        } catch(ConstraintViolationException e) {
+            return &quot;The supplied name must be not blank&quot;; 
+        }
+    }
+}
+</code></pre>
+<p>1️⃣ Micronaut supports constructor based injection as well.</p>
+<p>In addition, testing Micronaut Azure Functions is easy. The next test shows how to test the previous controller:</p>
+<pre><code class="language-java">public class NameControllerTest {
+ 
+    @Test
+    public void testNameSupplied() throws Exception {
+        try (Function function = new Function()) {
+            HttpRequestMessageBuilder.AzureHttpResponseMessage response =
+                function.request(HttpMethod.GET, &quot;/&quot;)
+                        .parameter(&quot;name&quot;, &quot;sergio&quot;)
+                        .invoke();
+            assertEquals(HttpStatus.OK, response.getStatus());
+            assertEquals(&quot;Sergio&quot;, response.getBodyAsString());
+        }
+    }
+}
+</code></pre>
+<h2>Next Steps</h2>
+<ul>
+<li>Read <a href="https://micronaut-projects.github.io/micronaut-azure/snapshot/guide/index.html">Micronaut Azure Module</a> documentation.</li>
+<li>Try it out at <a href="https://micronaut.io/launch">Micronaut Launch</a> by choosing the azure-function feature!</li>
+<li>Check <a href="https://github.com/Azure/azure-functions-java-library">Azure Functions Library</a> documentation. This library is included when you select azure-function while generating a Micronaut application with <a href="https://micronaut.io/launch">Micronaut Launch</a></li>
+<li>Micronaut is build-tool agnostic. You can write apps with Maven or Gradle. If you write Micronaut Azure Functions with Gradle, you will need to learn how to use the <a href="https://plugins.gradle.org/plugin/com.microsoft.azure.azurefunctions">Azure Gradle Plugin</a>.</li>
+</ul>
+<p>As you'll quickly see, by combining Micronaut and Azure, you don't have to give up the software paradigms that make you productive and keep your code robust when coding Java serverless functions.</p>]]></description><guid>2020-05-15-micronaut-now-supports-microsoft-azure-functions</guid><pubDate>Fri, 15 May 2020 00:00:00 GMT</pubDate></item><item><title>Introducing Micronaut 2.0 Launch</title><link>https://micronaut.io/blog/2020-04-30-introducing-micronaut-launch.html</link><description><![CDATA[<h1>Introducing Micronaut 2.0 Launch</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)<br/> James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)</span></p>
+<p><span class="date">Apr 30, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/launch.html"><span class="hashtag">#launch</span></a></p>
+<p>With the release of <a href="/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html">Micronaut 2.0 M3</a>, we have gone live with a brand new implementation of the Micronaut command line interface (CLI) and <a href="https://micronaut.io/launch/">Micronaut Launch</a>, an online tool for creating Micronaut applications.</p>
+<h2>A CLI History</h2>
+<p>When Micronaut was first being developed, we knew we needed a tool to generate applications that allowed users to get up and running writing code without having to worry about how to configure their builds and what the dependency coordinates are. Because Micronaut relies on compile-time processing, the build setup can be slightly more complicated than a simple Java application.</p>
+<p>Grails has a CLI that allows users to do just that, so we decided to fork it and copy the code into the Micronaut project. This allowed us to create a CLI with only a small amount of time required on our end to get working.</p>
+<p>Over time, we discovered that the forked CLI could not meet Micronaut's needs. The Grails CLI was designed to create Groovy applications built with Gradle and tested with the Spock testing framework. Because Micronaut currently supports all combinations of Java/Groovy/Kotlin, Junit/Spock/KotlinTest, and Maven/Gradle, the number of combinations is significantly greater than what the original CLI was designed to handle.</p>
+<p>In addition, the old CLI had several other shortcomings that we wanted to address:</p>
+<ul>
+<li>Difficult to test</li>
+<li>Problematic to embed</li>
+<li>Hard to produce a GraalVM native image</li>
+<li>Hard to customize</li>
+</ul>
+<h2>Leveling Up the CLI</h2>
+<p>For Micronaut 2.0, we decided it was time to rewrite the CLI in Micronaut itself (eating your own dog food, if you like) using <a href="https://picocli.info/">PicoCLI</a>. We also wanted to make it possible for the CLI to be deployed to more environments than just the user's terminal.</p>
+<p>So with that, we created <a href="https://github.com/micronaut-projects/micronaut-starter">Micronaut Launch</a>, which is now one of the coolest projects in the Micronaut ecosystem.</p>
+<p>Micronaut Launch features a <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-core">core written in Micronaut itself</a> and a <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-cli">micronaut-cli module that targets the user's command line</a> and uses PicoCLI.</p>
+<p>The <code>micronaut-cli</code> module uses <a href="https://www.graalvm.org/docs/reference-manual/native-image/">GraalVM Native Image</a> to allow us to produce distributions of the CLI that target <a href="https://github.com/micronaut-projects/micronaut-starter/releases/tag/v2.0.0.M3">Linux, MacOS, and Windows natively</a>.</p>
+<p>Using the new CLI, you can create Micronaut applications offline or in areas of limited connectivity using a distribution that suits your platform, and thanks to GraalVM Native Image, it is lightning fast.</p>
+<p><img src="2020-04-30-img01.png" alt="" /></p>
+<p>The new CLI features more or less the same commands as Micronaut's old CLI, but is much more optimized and fully operable offline. We have also added a few new features, with one of the coolest being the ability to display a diff of the changes required to add a new feature to an existing application:</p>
+<p><img src="2020-04-30-img02.png" alt="" /></p>
+<h2>The Micronaut Launch API</h2>
+<p>To allow users to create Micronaut applications via the web without installing the CLI, a <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-api">starter-api module</a> was created that <a href="https://launch.micronaut.io/swagger/views/swagger-ui/index.html">defines the API</a> and uses <a href="https://github.com/micronaut-projects/micronaut-openapi/">Micronaut's compilation-time OpenAPI (Swagger) specification generation</a>.</p>
+<p>The <code>starter-api</code> module is then used in a number of different subprojects to allow running the API on different environments, including:</p>
+<ul>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-web-netty">starter-web-netty</a>. A Netty module that is computed into a GraalVM native image and <a href="https://github.com/micronaut-projects/micronaut-starter/actions?query=workflow%3A%22Snapshot+Analytics+to+GCR%22">continuously deployed by Github Actions</a> to  <a href="https://cloud.google.com/run&quot;">Google Cloud Run</a> and powers <a href="https://launch.micronaut.io">https://launch.micronaut.io</a> as a serverless application</p>
+</li>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-aws-lambda">starter-aws-lambda</a> A <a href="https://cn58jiuova.execute-api.us-east-1.amazonaws.com/staging/application-types">Lambda version of the API</a> that is <a href="https://github.com/micronaut-projects/micronaut-starter/actions?query=workflow%3A%22Snapshot+to+AWS+Lambda%22">continuously deployed</a> to <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> and runs as a GraalVM native image using a custom runtime</p>
+</li>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-gcp-function">starter-gcp-function</a> A <a href="https://us-central1-micronaut-projects.cloudfunctions.net/micronaut-starter-staging/application-types">Cloud Function version of the API</a> that is <a href="https://github.com/micronaut-projects/micronaut-starter/actions?query=workflow%3A%22Snapshot+to+GCF%22">continuously deployed</a> to <a href="https://cloud.google.com/functions">Google Cloud Function</a> as a serverless application using <a href="https://micronaut-projects.github.io/micronaut-gcp/2.0.x/guide/#cloudFunction">Micronaut 2.0's new support for Cloud Function</a></p>
+</li>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-azure-function">starter-azure-function</a> An <a href="https://micronaut-starter.azurewebsites.net/api/application-types">Azure Function version of the API</a> that is <a href="https://github.com/micronaut-projects/micronaut-starter/actions?query=workflow%3A%22Snapshot+to+Azure+Function%22">continuously deployed</a> to <a href="https://azure.microsoft.com/en-us/services/functions/">Microsoft Azure Function</a> as a serverless application using <a href="https://micronaut-projects.github.io/micronaut-azure/1.0.x/guide/#azureFunction">Micronaut 2.0's new support for Azure Function</a></p>
+</li>
+<li>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-web-servlet">starter-web-servlet</a> A version of the API that can be built into a WAR file and deployed on your favorite Servlet 4+ container using <a href="https://micronaut-projects.github.io/micronaut-servlet/1.0.x/guide/">Micronaut 2.0's new support for Servlet containers</a>.</p>
+</li>
+</ul>
+<p>It is a testament to Micronaut 2.0's flexibility that you can take the same application and run it across serverless platforms (Lambda, Azure, Cloud Function, Cloud Run) and also build a regular Netty or Servlet application from the same codebase.</p>
+<p>It also provides users maximum flexibility if they wish to run their own version of Micronaut Launch for internal teams since you can now choose whichever platform (Serverless or not) that suits your needs to deploy Micronaut Launch to.</p>
+<p>Using GraalVM Native Image, we were able to achieve average response times for a cold start of around 1.5s on Lambda and Cloud Run (billed duration of +/- 600ms for a cold start on Lambda and under a 100ms once warm), which is pretty awesome by Serverless standards.</p>
+<p>The API is also accessible via CURL using <a href="https://launch.micronaut.io">https://launch.micronaut.io</a></p>
+<p><img src="2020-04-30-img03.png" alt="" /></p>
+<h2>The Micronaut Launch UI</h2>
+<p>The Micronaut Launch UI is written in <a href="https://github.com/micronaut-projects/static-website/tree/master/main/src/main/js/start">React</a></a> and demonstrates the power of the Micronaut community. Our thanks go out to <a href="https://twitter.com/franvallano">Francisco Javier Delgado Vallano</a>, and <a href="https://twitter.com/maq_dev">Miguel Ángel Quintanilla</a> from <a href="https://profile.es&quot;">Profile</a> in Spain, who built the first version of the UI based on the <a href="https://launch.micronaut.io/swagger/views/swagger-ui/index.html">OpenAPI specification</a> we provided:</p>
+<p>![](./2020-04-30-img04.png]</p>
+<p>The Micronaut Launch UI includes some awesome features such as:</p>
+<ul>
+<li>Support for generating Micronaut applications, functions, CLI applications, and gRPC applications</li>
+<li>The ability to preview the application that will be generated</li>
+<li>The ability to show a diff for a given feature to see what changes are made to an application when a feature is applied</li>
+<li>And of course, Dark Mode!</li>
+</ul>
+<p><img src="2020-04-30-img05.png" alt="" /></p>
+<p><img src="2020-04-30-img06.png" alt="" /></p>
+<h2>Summary</h2>
+<p>Micronaut Launch is a fantastic example of modern application development using Micronaut. The application leverages GraalVM Native Image to optimize both the CLI for each platform and the API in order to fully take advantage of GraalVM's outstanding cold start performance for CLI applications and Serverless.</p>
+<p>Micronaut Launch also utilizes several of the great features we are building in Micronaut 2.0 including improved support for Serverless platforms such as AWS Lambda, Google Cloud Function, and Azure Function.</p>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/issues">Let us know what you think</a>!</p>]]></description><guid>2020-04-30-introducing-micronaut-launch</guid><pubDate>Thu, 30 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 2.0 M3: A Big Boost for Serverless and Micronaut Launch</title><link>https://micronaut.io/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html</link><description><![CDATA[<h1>Micronaut 2.0 M3: A Big Boost for Serverless and Micronaut Launch</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">Apr 30, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/gcp.html"><span class="hashtag">#gcp</span></a> <a href="https://micronaut.io/blog/tag/azure.html"><span class="hashtag">#azure</span></a> <a href="https://micronaut.io/blog/tag/serverless.html"><span class="hashtag">#serverless</span></a> <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The Micronaut team at Object Computing is super excited to announce the <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.M2">final milestone</a> on our journey to Micronaut 2.0.</p>
+<p>This milestone focuses on two important areas of the framework: the command line interface (CLI) and serverless support.</p>
+<p>For more information about all the new features, see the <a href="https://docs.micronaut.io/2.0.0.M3/guide/index.html#whatsNew">&quot;What's New&quot; guide</a>.</p>
+<h2>Introducing Micronaut Launch</h2>
+<p>The big news with this announcement is the rearchitecture of Micronaut's venerable <code>mn</code> CLI for generating new applications from terminal, which is receiving a big upgrade.</p>
+<p>In Micronaut 2.0, we have completely rewritten the CLI in Micronaut itself and simultaneously launched <a href="https://micronaut.io/launch/">Micronaut Launch</a>, a new tool for creating Micronaut applications that is built on the new CLI.</p>
+<p>The new website and CLI are so cool, we wrote a <a href="/blog/2020-04-30-introducing-micronaut-launch.html">whole blog post</a> to introduce them!</p>
+<h2>Google Cloud Function Support</h2>
+<p>Micronaut 2.0 introduces support for writing applications that can be deployed to Google's upcoming <a href="https://cloud.google.com/functions">Cloud Function</a> support for Java.</p>
+<p>You can either write <a href="https://micronaut-projects.github.io/micronaut-gcp/2.0.x/guide/#simpleFunctions">simple functions</a> directly or write regular Micronaut controllers and have Micronaut's function support <a href="https://micronaut-projects.github.io/micronaut-gcp/2.0.x/guide/#httpFunctions">route requests to these controllers</a>. This latter approach allows you to use the regular HTTP server and also deploy the same application to Cloud Function.</p>
+<p>Try it out at <a href="https://micronaut.io/launch/">Micronaut Launch</a> by choosing the <code>google-cloud-function</code> feature!</p>
+<h2>Microsoft Azure Function Support</h2>
+<p>In addition to Google Cloud Function, we have also added support for <a href="https://azure.microsoft.com/en-us/services/functions/">Azure Function</a> using the same approach. You can either write simple functions that directly use Azure's native annotations, or you can write controllers and have Micronaut route requests from the Azure function trigger.</p>
+<p>Check out the documentation for <a href="https://micronaut-projects.github.io/micronaut-azure/1.0.x/guide/#azureFunction">Micronaut Azure Function</a> for more information.</p>
+<p>Try it out at Micronaut Launch by choosing the &quot;azure-function&quot; feature!</p>
+<h2>The Road Ahead</h2>
+<p>Micronaut 2.0 M3 is the final milestone, and we will soon start issuing release candidates, so try it out now and let us know what you think!</p>
+<p>Thanks to the community for your great contributions so far; your input helped make this release happen. Enjoy!</p>]]></description><guid>2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch</guid><pubDate>Thu, 30 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Practical performance comparison of Spring Boot, Micronaut 1.3, Micronaut 2.0</title><link>https://micronaut.io/blog/2020-04-28-performance-comparison-spring-boot-micronaut.html</link><description><![CDATA[<h1>Practical performance comparison of Spring Boot, Micronaut 1.3, Micronaut 2.0</h1>
+<p><span class="author">By Jason Schindler (OCI Partner and Practice Manager of Grails and Micronaut)</span></p>
+<p><span class="date">Apr 28, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/springboot.html"><span class="hashtag">#springboot</span></a></p>
+<p>Have you taken a look at the Micronaut 2.0 pre-releases yet?</p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut Team</a> at <a href="https://objectcomputing.com/&quot;">Object Computing</a> has been putting a lot of hard work into making Micronaut even better with a number of exciting features and improvements including:</p>
+<ul>
+<li>JDK 14 support</li>
+<li><a href="/blog/2020-03-03-back-future-micronaut-servlet.html">Servlet</a> container support</li>
+<li><a href="https://docs.micronaut.io/2.0.x/guide/index.html#http2Server">HTTP/2 support</a></li>
+<li>A <a href="/blog/2020-04-02-micronaut-20-milestone-2-massive-maven-improvements.html">new Maven plugin</a></li>
+<li>An improved threading model</li>
+<li>… <a href="https://docs.micronaut.io/2.0.x/guide/index.html#whatsNew">and much more</a></li>
+</ul>
+<p>We haven’t put the final bow on Micronaut 2.0.0 yet. Stay tuned in the coming weeks for additional feature announcements and enhancements.</p>
+<h2>Performance Improvements</h2>
+<p>Performance has been a critical consideration of the <a href="https://micronaut.io/">Micronaut Framework</a> since its inception. Micronaut out-performs traditional Java frameworks like Spring Boot by leaps and bounds. Still, we are always looking for ways to improve Micronaut's start-up time, memory consumption, and performance.</p>
+<p>Whether your application is deployed on a resource-constrained edge device, or you're looking for ways to process more requests with fewer cloud resources, modern application frameworks have to take performance seriously in order to stay competitive. Micronaut 2.0 includes some significant performance improvements over the 1.3 release, and we'd like to share some data with you comparing the performance of Micronaut 1.3.4, Micronaut 2.0.0 M2, and Spring Boot 2.2.</p>
+<h2>Source Code and Instructions</h2>
+<p>We are, of course, a bit biased towards our framework, so we would like to invite you to try these tests out yourself. Source code and instructions for building the projects and gathering your own results are available <a href="https://github.com/micronaut-projects/micronaut-comparisons/">here</a>.</p>
+<h2>Test Hardware</h2>
+<ul>
+<li>HP ZBook Laptop</li>
+<li>Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz</li>
+<li>16GB of RAM</li>
+<li>OpenJDK Runtime Environment (build 1.8.0_252-b09)</li>
+<li>Fedora Linux 31</li>
+</ul>
+<h2>Performance Measurements</h2>
+<h6>UPDATE 05/29/2020</h6>
+<p>A community member <a href="https://github.com/micronaut-projects/micronaut-comparisons/issues/1">pointed out</a> that the configurations for the Spring Boot JHipster Sample application and the Micronaut JHipster Sample application differed in two ways, which put Spring Boot at a disadvantage. First, the Spring Boot application had a logging level of DEBUG, causing a lot more messages to be logged. Second, the Spring Boot application was writing audit records to the database in addition to the records being created as part of the load test. We have <a href="https://github.com/micronaut-projects/micronaut-comparisons/pull/2">changed the configurations</a> and, as expected, observed an improvement in the performance of the Spring Boot application. This blog post has been updated to reflect these observations. Thank you for your feedback Christian!</p>
+<h6>END UPDATE</h6>
+<p>For this comparison, we investigated application start-up time, time to first response, and throughput and memory consumption of an application under load.</p>
+<p>Start-up time and time to first response were measured using a simple “Hello World” REST application.</p>
+<p>For the throughput and memory consumption measurements, we wanted to use a more substantial application than a basic Hello World, so we reached for the sample projects available through the <a href="https://www.jhipster.tech/">JHipster</a> project. These applications include authentication and authorization, input validation, database interactions, and a number of other configurations that place them closer to the feature set of an application that you might encounter in a production environment.</p>
+<p>All code was tested by executing a pre-built jar file and setting the maximum heap allocation to 128m. While Micronaut 2.0 supports JDK 14, all tests were run using OpenJDK 1.8.0_242.</p>
+<h2>Start-Up Time</h2>
+<p>To measure start-up time, we created three simple “Hello World” REST services using Spring Boot 2.2.6, Micronaut 1.3.4, and Micronaut 2.0.0 M2.</p>
+<p>Micronaut and Spring Boot both report start-up time after initialization, and we used the numbers reported by the frameworks for this measurement. We started each service five times in sequence and recorded the best time for each.</p>
+<p>| foo | bar |
+| baz | bim |</p>
+<p>|Spring Boot 2.2.6| Micronaut 1.3.4 | Micronaut 2.0.0 M2 |
+|1997 ms | 955 ms | <strong>813 ms</strong> |</p>
+<p>As you can see, Micronaut 1.3.4 started up in a little under half the time of the comparable Spring Boot application, and Micronaut 2.0.0 M2 showed a nearly 15% improvement over 1.3.4!</p>
+<h2>Time to First Response</h2>
+<p>Once an application has started, it isn’t always ready to start serving requests. The time to first response includes start-up time and any other time required to get the application ready to respond to requests.</p>
+<p>To measure time to first response, we included a Node script that started a provided jar file and began issuing HTTP requests to a Hello World endpoint until one succeeded. Just as we did for start-up time, we performed this test against each service five times and recorded the best result.</p>
+<p>| Spring Boot 2.2.6 | Micronaut 1.3.4 |  Micronaut 2.0.0 M2 |
+| 2,741 ms | 1,496 ms | <strong>1,295 ms</strong> |</p>
+<p>Here we see similar results to the start-up time test. Micronaut 1.3.4 saved about 45% of the time required by Spring Boot, and Micronaut 2.0.0 M2 shaved another 200 milliseconds off that!</p>
+<h2>Application Performance Under Load</h2>
+<p>Start-up time is important, but load testing is much more fun. As mentioned above, rather than load test simple bare bones applications, we felt this comparison would be much more relevant if we tested applications that perform some work that a production app would do – things like performing database calls and validating input.</p>
+<p>Luckily, the JHipster project includes sample applications with various configurations. For this comparison, we used the <a href="https://github.com/jhipster/jhipster-sample-app-micronaut">JHipster Micronaut Sample Application</a> and the <a href="https://github.com/jhipster/jhipster-sample-app">JHipster Spring Boot Sample Application</a>. Additionally, we included a version of the Micronaut JHipster Sample Application that had been upgraded to Micronaut 2.0.0 M2.</p>
+<p>We did modify the JHipster sample applications in a significant way for this test. We replaced the code performing bcrypt encoding and verification with a no-op implementation.</p>
+<p>Bcrypt, by design, is a computationally expensive calculation. That's a good thing when it comes to hashing user passwords for storage and verifying that current hashes match provided input. When it comes to measuring performance of a framework under load, it makes the results a bit less interesting.</p>
+<p>To simulate load on our sample applications, we created a <a href="https://gatling.io/">Gatling</a> test suite project that simulates 1,000 users over a fixed period of 60 seconds. The scenario includes:</p>
+<ul>
+<li>Performing a health check</li>
+<li>Retrieving user account information</li>
+<li>Creating a new bank account record in the database</li>
+</ul>
+<p>For each application, we recorded the number of requests completed during the 60 second test, the mean response time of all requests, and the mean requests per second that the application handled. After the load tests were completed, we recorded the amount of RSS memory consumed by the Java process running the application under load.</p>
+<p>|  | Spring Boot 2.2.5 | Micronaut 1.3.4 | Micronaut 2.0.0 M2 |
+| Total Requests in 60s | 111,137 | 132,391 | <strong>153,557</strong> |
+| Mean Response Time | 444 ms | 375 ms |  <strong>323 ms</strong> |
+| Mean Requests/Second | 2020.673 |  2407.109 |  <strong>2791.945</strong> |
+| RSS Memory After Load Test | 473.328 MB | 435.092 MB | <strong>424.560 MB</strong> |</p>
+<p>As you can see, under load, Micronaut 1.3.4 was able to process over 20,000 additional requests as the Spring Boot application while utilizing less memory. Micronaut 2.0.0 M2 improved on this further by shaving an additional 50 milliseconds off of the mean response time while consuming less memory than the Micronaut 1.3.4 application.</p>
+<h2>Summary</h2>
+<p>This is an exciting time to be a developer in the Java ecosystem. Modern Java frameworks are challenging each other to keep pushing features and performance into previously inconceivable areas.</p>
+<p>The Micronaut Team at Object Computing, works every day to improve Micronaut. We are dedicated to creating a framework that can perform under pressure and provide developers with the features and functionality they need to create fast, reliable, well-tested, and integrated applications. If you haven’t taken a look at Micronaut 2.0 yet, now is a great time to investigate what’s new in your favorite framework.</p>]]></description><guid>2020-04-28-performance-comparison-spring-boot-micronaut</guid><pubDate>Tue, 28 Apr 2020 00:00:00 GMT</pubDate></item><item><title>5 Reasons You'll ❤️ Using Micronaut and IntelliJ IDEA to Boost Your Productivity</title><link>https://micronaut.io/blog/2020-04-16-5-reasons-to-use-micronaut-and-intellij-idea-together.html</link><description><![CDATA[<h1>5 Reasons You'll ❤️ Using Micronaut and IntelliJ IDEA to Boost Your Productivity</h1>
+<p><span class="author">By Iván López</span></p>
+<p><span class="date">April 16, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/intellijidea.html"><span class="hashtag">#intellijidea</span></a></p>
+<p>I have been using IntelliJ IDEA for the last six or seven years, and I am always eager to experiment with new features when updated versions are released. When I heard a couple of months ago that JetBrains had introduced Micronaut support in IntelliJ IDEA 2020.1 EAP, I didn't think twice; I downloaded it and started using it in my current project.</p>
+<p>In this blog post, I'll share the five features I like most and how they can help you improve your productivity when building Micronaut applications with IntelliJ IDEA.</p>
+<h2>1. Configuration Auto-Completion</h2>
+<p>Micronaut has published files containing the meta information for the configuration properties since 1.0. This file is generated automatically at compile time for any class annotated with <code>@ConfigurationProperties</code> or <code>@EachProperty</code>.</p>
+<p>With this feature, you get auto-completion of the configuration properties in <code>application.yml</code>.</p>
+<p>This works not only for Micronaut itself, but for any configuration that you define in your own application.</p>
+<p>For example, with the following <a href="https://docs.micronaut.io/latest/guide/index.html#immutableConfig">immutable configuration</a> in your project ...</p>
+<pre><code class="language-java">@ConfigurationProperties(&quot;my.engine&quot;)
+public interface EngineConfig {
+
+    /**
+     * @return The manufacturer name.
+     */
+    @Bindable(defaultValue = &quot;Ford&quot;)
+    @NotBlank
+    String getManufacturer();
+
+    @Min(1L)
+    int getCylinders();
+
+    @NotNull
+    CrankShaft getCrankShaft();
+
+    @ConfigurationProperties(&quot;crank-shaft&quot;)
+    interface CrankShaft {
+        Optional&lt;Double&gt; getRodLength();
+    }
+}
+</code></pre>
+<p>… you get these auto-completions.</p>
+<p>Even the default values for the properties and the javadoc comments are displayed.</p>
+<p><img src="2020-04-16-img01.png" alt="configuration auto-completion" /></p>
+<h2>2. Endpoints Discovery</h2>
+<p>You're likely to find it really helpful to have a clear picture of all the endpoints in your application. You can click on the “Endpoint” button at the bottom of the screen to activate it. </p>
+<p>There are a few configuration options to display exactly what you would like to see. These options include showing the endpoints from the framework (like management endpoints if you have them), grouping by client/server, and much more! </p>
+<p>Additionally, if you double-click on an endpoint, the controller method is opened in the editor.</p>
+<p><img src="2020-04-16-img02.png" alt="Endpoints Discovery" /></p>
+<h2>3. Controllers and HTTP Requests</h2>
+<p>When interacting with our Micronaut applications, sometimes we use tools like <code>curl</code> to send HTTP requests. This is fine, but it means we must go &quot;out&quot; of our IDE, and we lose some of the features and shortcuts we're used to.</p>
+<p>Let's imagine we have an encryption-service that receives some text and encrypts it. To make things simple, the encryption logic in the <code>EncryptionService</code> just reverses the string:</p>
+<p><img src="2020-04-16-img03.png" alt="Controllers and HTTP Requests" /></p>
+<p>If we click on the icon in the gutter, IntelliJ IDEA automatically generates an &quot;http-requests&quot; file with the endpoint set and ready to send a test request:</p>
+<p><img src="2020-04-16-img04.png" alt="HTTP Requests File" /></p>
+<p>Take a look at the examples to see how to customize the requests, define authentication, and other useful tasks.</p>
+<h2>4. Event Publishing and Listeners</h2>
+<p>Sometimes we publish an event in our applications when something happens, and then we subscribe for that event in other parts of the code. But you may find it tricky to know exactly when that happens.</p>
+<p>Not anymore! </p>
+<p>Clicking on this new icon in the gutter navigates to the listener:</p>
+<p><img src="2020-04-16-img05.png" alt="Event Publishing and Listeners Image 1" /></p>
+<p><img src="2020-04-16-img06.png" alt="Event Publishing and Listeners Image 2" /></p>
+<h2>5. Miscellaneous</h2>
+<p>Besides the things I've already highlighted, other new features include new icons in the gutter, navigation to services injected as constructor arguments, and more.</p>
+<h2>Looking Ahead</h2>
+<p>The Micronaut team has been extremely pleased with the superb efforts JetBrains has made in incorporating support for Micronaut into IntelliJ IDEA.</p>
+<p>I'm really looking forward to <a href="https://youtrack.jetbrains.com/issue/IDEA-222224">support for Micronaut Data</a> in a future IntelliJ IDEA release.</p>]]></description><guid>2020-04-16-5-reasons-to-use-micronaut-and-intellij-idea-together</guid><pubDate>Thu, 16 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Grails and Micronaut Product Teams Announce Expansion of Leadership.</title><link>https://micronaut.io/blog/2020-04-16-grails-and-micronaut-product-teams-announce-expansion-leader.html</link><description><![CDATA[<h1>Grails and Micronaut Product Teams Announce Expansion of Leadership.</h1>
+<p><span class="author">By Nicki Powers</span></p>
+<p><span class="date">Apr 16, 2020.</span></p>
+<p>At Object Computing, Inc. (OCI), we believe in the power of open source software and the infinite possibilities
+that the open source model enables. We are all incredibly happy and proud of the growth and evolution of the Grails and Micronaut frameworks, thanks to the vision and leadership of <strong>Graeme Rocher</strong> and <strong>Jeff Brown</strong>, <a href="https://objectcomputing.com/products/2gm-team">an amazing product team</a>, and a highly dedicated and engaged product community. Today, these frameworks empower developers from all over the globe to quickly build quality software solutions on a solid and battle-hardened foundation.</p>
+<p>We are pleased to announce today that, in an effort to further optimize our development efforts and improve the efficiency of our development team, we are promoting two of our team members to key leadership positions within our product teams. <a href="https://objectcomputing.com/products/2gm-team#behl">Puneet Behl</a> is now our Grails Product Development Lead, and <a href="https://objectcomputing.com/products/2gm-team#kleeh">James Kleeh</a> is our Micronaut Development Lead. Graeme Rocher continues in his role as Technical Lead for both frameworks.</p>
+<p>Both James and Puneet have long been involved in the development and advancement of these frameworks and, in many ways, have been performing these roles for some time. They have earned the respect and trust of our community and peers. We are ecstatic about this announcement and have great hope for the continued evolution, adoption, and success of Micronaut and Grails under the leadership of Graeme, James, and Puneet.</p>
+<p>Congratulations James and Puneet!</p>]]></description><guid>2020-04-16-grails-and-micronaut-product-teams-announce-expansion-leader</guid><pubDate>Thu, 16 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut Is Now Certified to Run on Amazon Corretto</title><link>https://micronaut.io/blog/2020-04-09-micronaut-now-certified-run-amazon-corretto.html</link><description><![CDATA[<h1>Micronaut Is Now Certified to Run on Amazon Corretto</h1>
+<p><span class="author">By Álvaro Sánchez-Mariscal</span></p>
+<p><span class="date">April 9, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a> <a href="https://micronaut.io/blog/tag/correto.html"><span class="hashtag">#correto</span></a></p>
+<p>One practice used by the <a href="https://objectcomputing.com/products/2gm-team" title="Groovy, Grails, and Micronaut Team">Micronaut development team</a> is continuous integration (CI). In support of this, the <a href="https://micronaut.io/" title="Learn more about the Micronaut Framework">Micronaut framework</a>'s core has an extensive test suite executed via <a href="https://github.com/features/actions">GitHub Actions</a>, and since the beginning of 2020, tests have also been executed with <a href="https://aws.amazon.com/corretto/">Amazon Corretto</a> 8 and 11.</p>
+<p>Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.</p>
+<p>Amazon Corretto is an OpenJDK distribution that provides free, long-term support with no pay-gated features or restrictions on how it's used in production. Corretto is used by thousands of Amazon workloads; for example, it's the JDK used by the <a href="https://aws.amazon.com/blogs/compute/java-11-runtime-now-available-in-aws-lambda/">AWS Lambda <code>java11</code> runtime</a>, which provides insights Amazon uses to push improvements upstream.</p>
+<p>Since Micronaut offers <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide">first-class support for AWS</a>, particularly for Lambda functions, we thought it prudent to include a specific workflow to run Micronaut core tests with Corretto. We are also making sure that tests are run within an Amazon Linux 2 base image, which is the environment users will find in a java11 runtime-based Lambda.</p>
+<p>To enable the Micronaut team to continuously test and support Micronaut running on Corretto, we use the official <code>amazoncorretto:8</code> and <code>amazoncorreto:11</code> Docker images, which are built on top of <code>amazonlinux:2</code>.</p>
+<p>With the exception of some environment variables (which may be specific to the use case of running within GitHub Actions and within a Docker image), Corretto has proven to be a drop-in replacement for other OpenJDK distributions. It has not produced any difference compared to the main CI workflow, which is run with GitHub Actions' default Zulu Community distribution of OpenJDK. You can check the whole workflow file <a href="https://github.com/micronaut-projects/micronaut-core/blob/master/.github/workflows/corretto.yml">here</a>.</p>
+<h2>Choosing Corretto</h2>
+<p>If you wish to use Corretto locally as your OpenJDK distribution, you can download it from <a href="https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html">Amazon's downloads page</a>. Alternatively, installation can be greatly simplified using <a href="https://sdkman.io/">SDKMAN!</a>, which makes the process of switching between Java distributions and versions a piece of cake.</p>
+<p>Once you have SDKMAN! Installed, you can install and use Corretto 11 by simply typing:</p>
+<pre><code>&amp;#36; sdk install java 11.0.6-amzn
+&amp;#36; sdk use java 11.0.6-amzn
+</code></pre>
+<p>Then, check the version used:</p>
+<pre><code>&amp;#36; java -version
+openjdk version &quot;11.0.6&quot; 2020-01-14 LTS
+OpenJDK Runtime Environment Corretto-11.0.6.10.1 (build 11.0.6+10-LTS)
+OpenJDK 64-Bit Server VM Corretto-11.0.6.10.1 (build 11.0.6+10-LTS, mixed mode)
+</code></pre>
+<p>And you’re done!</p>
+<h2>Looking Ahead</h2>
+<p>The Micronaut team is continually looking at ways to improve and validate the Micronaut framework against production cloud environments like Amazon Web Services.</p>
+<p>While Amazon Corretto is not strictly a user-facing feature, users can forge ahead with Micronaut and AWS with the assurance that the technologies are certified to work together.</p>
+<h3>Explore Further</h3>
+<p>Stefano Buliani (Amazon Web Services) and Sergio del Amo (Object Computing) recently hosted a webinar and demonstrated how the Micronaut Framework's built-in features enable seamless integration with AWS services. </p>
+<p><a href="https://objectcomputing.com/products/micronaut/resources/micronaut-and-aws" title="Combining Micronaut and AWS to Superpower Your Apps">View Webinar</a></p>
+<h3>Expand Your Expertise</h3>
+<p>The team regularly publishes <a href="https://guides.micronaut.io/" title="Micronaut Guides">Micronaut Guides</a>, tutorials that enable developers to take their skills to the next level and get the most out of the framework.</p>
+<h3>Relevant Guides</h3>
+<p><a href="https://guides.micronaut.io/micronaut-function-graalvm-aws-lambda-gateway/guide/index.html">Micronaut Functions in GraalVM Native Images Deployed to AWS Lambda</a></p>
+<p><a href="https://guides.micronaut.io/micronaut-elasticbeanstalk/guide/index.html">Deploy to AWS ElasticBeanstalk</a></p>
+<p><a href="https://guides.micronaut.io/micronaut-function-aws-lambda/guide/index.html">Micronaut Functions Deployed in AWS Lambda</a></p>]]></description><guid>2020-04-09-micronaut-now-certified-run-amazon-corretto</guid><pubDate>Thu, 09 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut vs Quarkus vs Spring Boot Performance on JDK 14</title><link>https://micronaut.io/blog/2020-04-07-micronaut-vs-quarkus-vs-spring-boot-performance-jdk-14.html</link><description><![CDATA[<h1>Micronaut vs Quarkus vs Spring Boot Performance on JDK 14</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">April 7, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/springboot.html"><span class="hashtag">#springboot</span></a> <a href="https://micronaut.io/blog/tag/quarkus.html"><span class="hashtag">#quarkus</span></a> <a href="https://micronaut.io/blog/tag/jdk14.html"><span class="hashtag">#jdk14</span></a></p>
+<p>After the recent releases of Micronaut 2.0 M2 and JDK 14, I decided it would be a good time to see what the state of play is performance wise between Micronaut, Quarkus, and Spring Boot on JDK 14 in 2020.</p>
+<p>Historically, we have encouraged users to make their own judgments, but recently some incorrect or distorted information has been published, and I think it's important that I clarify some points that may be confusing or misleading. For example, if you search for &quot;Micronaut vs Quarkus&quot; on Google, the first result it serves up is <a href="https://simply-how.com/quarkus-vs-micronaut">a blog post</a> that contains benchmarking data that none of the Micronaut team has been able to replicate with any recent version of Micronaut on a variety of systems.</p>
+<p>So to ensure there is more accurate information out there, and also to show users how to compare these frameworks in an &quot;apples-to-apples&quot; manner (since each framework's default configuration is different), I decided to take for a spin the latest versions of the three most-hyped frameworks among Java developers today: Micronaut, Quarkus and Spring Boot.</p>
+<p>Before getting started, we acknowledged that this cannot help but be a somewhat biased analysis, given that Object Computing is the home of Micronaut. To mitigate this bias, we attempted to make the comparison as transparent as possible by performing tests that users can replicate at home, and to conduct them live in a completely unedited screencast. You can watch that screencast here:</p>
+<p><a href="https://youtu.be/rJFgdFIs_k8" title="Micronaut vs Quarkus vs Spring Boot Performance on JDK 14"><img src="2020-04-07-img01.gif" alt="Micronaut vs Quarkus vs Spring Boot Performance on JDK 14" /></a></p>
+<p>For reference, the source code for the examples built during the recording of this screencast can be <a href="https://github.com/graemerocher/framework-comparison-2020">found on Github</a>.</p>
+<h2>Summary of Results</h2>
+<p>Following are the stats that were produced during the recording of this screencast for the different metrics we tested (winner in red), taking the averages over 10 runs:</p>
+<p><img src="2020-04-07-img02.jpeg" alt="Summary of Results" /></p>
+<h6>UPDATE</h6>
+<p>The response from the Spring team was to use <a href="https://github.com/wg/wrk">wrk</a> or <a href="https://github.com/tsenart/vegeta">vegata</a> to benchmark instead. Quarkus appears to be the winner at higher concurrency when testing with wrk whilst Micronaut appears to be the winner with vegata. This proves once again do your own benchmarking with a variety of tools!</p>
+<h6>END UPDATE</h6>
+<p>As you can see, as of today, if you are looking at performance, Quarkus is marginally ahead on time to first response (around 70ms), while the only metric Spring Boot wins is compilation time due to not doing any compilation-time processing.</p>
+<p>With regard to Spring Boot, we were unable to extract reliable request-per-second data because Spring's Netty implementation bizarrely doesn't seem to support keep-alive connections correctly. Of course this may be something that we are doing wrong on our side, so please feel free to leave a comment on the video if any Spring users know the solution.</p>
+<p>The Quarkus team has made bold claims about the memory efficiency of Quarkus, so it was surprising to see such a disparity when actual tests were conducted that seem to disprove these claims. The Micronaut team and I are disappointed that we had to take it upon ourselves to perform these tests and publish the results, not as a simple opportunity to help others improve their processes and applications, but to respond to misinformation that could, theoretically, do the opposite. </p>
+<p>We are all extremely proud of Micronaut, and we know users have been happy with its powerful capabilities. We listen to feedback and work every day on making improvements that we hope will help even more people enhance their productivity and build faster, better apps. That said, I encourage all users to do their own testing and make their own judgments regarding which JVM framework they prefer.</p>]]></description><guid>2020-04-07-micronaut-vs-quarkus-vs-spring-boot-performance-jdk-14</guid><pubDate>Tue, 07 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 2.0 Milestone 2: Massive Maven Improvements</title><link>https://micronaut.io/blog/2020-04-02-micronaut-20-milestone-2-massive-maven-improvements.html</link><description><![CDATA[<h1>Micronaut 2.0 Milestone 2: Massive Maven Improvements</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><a href="https://micronaut.io/blog/tag/maven.html"><span class="hashtag">#maven</span></a></p>
+<p><span class="date">April 2, 2020</span> Just two weeks since the last milestone, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.M2">Micronaut 2.0 Milestone 2</a>.</p>
+<p>Beyond the features <a href="/blog/2020-03-20-micronaut-20-milestone-1-released.html">already introduced in Milestone 1</a>, the second milestone features the following three additional themes.</p>
+<h2>A Love Letter to Maven Users</h2>
+<p>The Micronaut team loves Gradle; hence it's the default build system for new Micronaut projects. However, Maven usage is huge, and Maven is great too, so we wanted to make sure Maven users have a great experience with Micronaut, as well.</p>
+<p>We have always supported building with Maven by using <code>mn create-app myapp --build maven</code> to create your application. Now however, thanks to the great work of Alvaro Sanchez-Mariscal of the Micronaut team, we are happy to introduce the <a href="https://micronaut-projects.github.io/micronaut-maven-plugin/latest/">Micronaut Maven Plugin</a>, as well as new parent POMs for Maven projects.</p>
+<p>With the Micronaut Maven plugin, you can run your Micronaut application and have changes instantaneously reloaded:</p>
+<p><img src="2020-04-02-img01.jpg" alt="" /></p>
+<p>In addition to this awesomeness, a new <code>micronaut-parent</code> POM is published that users can include as a parent to any <code>pom.xml</code> file. This will automatically configure the Micronaut Maven plugin.</p>
+<h2>New Reactive Modules</h2>
+<p>Thanks to the Reactive Streams specification, there are a whole bunch of reactive libraries out there that work well with Micronaut. In addition, newer libraries are coming out all the time, including <a href="https://github.com/ReactiveX/RxJava/wiki/What%27s-different-in-3.0">RxJava 3</a>.</p>
+<p>Micronaut 2.0 comes with new <a href="https://docs.micronaut.io/2.0.x/guide/index.html#reactiveConfigs">reactive modules</a> that you can add to your classpath that allow you to choose between RxJava 1, RxJava 2, RxJava 3, and Reactor.</p>
+<h2>Significant Startup Improvements</h2>
+<p>We have continued to make improvements that make Micronaut more and more useful for serverless use cases. For example, you now have the ability to eagerly initialize beans on AWS Lambda, and we've improved Micronaut's overall startup time by between 20% and 30% over Micronaut 1.x</p>
+<h2>More to Come</h2>
+<p>Micronaut 2.0 Milestone 2 follows hot in the heels of M1, and we're not done yet! Expect big improvements to Micronaut's serverless support in the next milestone before we start with the RC stage.</p>
+<p>Thanks to the community for your great contributions so far; your input helped make this release happen. Enjoy!</p>]]></description><guid>2020-04-02-micronaut-20-milestone-2-massive-maven-improvements</guid><pubDate>Thu, 02 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 2.0 Milestone 1 Released</title><link>https://micronaut.io/blog/2020-03-20-micronaut-20-milestone-1-released.html</link><description><![CDATA[<h1>Micronaut 2.0 Milestone 1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">March 20, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team" title="Groovy, Grails, and Micronaut Team">Micronaut Team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.M1">first milestone of Micronaut 2.0</a>!</p>
+<p>Micronaut 2.0 represents the next evolution of Micronaut and focuses on the following key new features:</p>
+<h2>Support for HTTP/2</h2>
+<p>Support for HTTP/2 has been added and can be optionally enabled in both the Netty-based HTTP server and client.</p>
+<p>Getting started with HTTP/2 support is as simple as enabling it in your application configuration:</p>
+<pre><code class="language-bash"># application.yml
+micronaut:
+  server:
+      http-version: 2.0
+</code></pre>
+<h2>Servlet Support</h2>
+<p>Micronaut can now go places that weren't possible before, including your favorite servlet container! <a href="https://github.com/micronaut-projects/micronaut-servlet">Embedded servers for Jetty, Tomcat, and Undertow</a> are included and can be activated via the command line:</p>
+<pre><code class="language-bash">&amp;#36; mn create-app myapp --features jetty-server
+</code></pre>
+<p>Using Micronaut's support for GraalVM, you can generate a native image of any Tomcat or Jetty application!</p>
+<h2>Threading Model Improvements</h2>
+<p>A big change from Micronaut 1.x are the improvements to the threading model, including the ability to explicitly configure and share Netty EventLoopGroup instances and more effectively take advantage of the EventLoop programming model.</p>
+<p>The improvements to the threading model allow Micronaut to more effectively conserve resources in environments where resources are limited, such as IoT devices.</p>
+<h2>Server-Side Content Negotiation Improvements</h2>
+<p>Micronaut's support for server-side content negotiation has been greatly improved, allowing users to more effectively support both XML and JSON responses.</p>
+<h2>And Lots More</h2>
+<p>There are many more improvements in this release, from support for <a href="https://jdbi.org/">Jdbi</a> to improved support for Cloud Foundry. We recommend you checkout the <a href="https://docs.micronaut.io/2.0.x/guide/index.html#whatsNew">release notes in full</a> for all the details.</p>
+<h2>More to Come</h2>
+<p>Micronaut 2.0 Milestone 1 is just the first milestone on Micronaut's journey towards 2.0. It gives users the opportunity to take important new features like HTTP/2 support out for spin and provide feedback to make the GA release as solid as possible.</p>
+<p>Thanks to the community for your great contributions so far; your input helped make this release happen. Enjoy!</p>]]></description><guid>2020-03-20-micronaut-20-milestone-1-released</guid><pubDate>Fri, 20 Mar 2020 00:00:00 GMT</pubDate></item><item><title>Back to the Future with Micronaut Servlet</title><link>https://micronaut.io/blog/2020-03-03-back-future-micronaut-servlet.html</link><description><![CDATA[<h1>Back to the Future with Micronaut Servlet</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">March 3, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/servlet.html"><span class="hashtag">#servlet</span></a> <a href="https://micronaut.io/blog/tag/jetty.html"><span class="hashtag">#jetty</span></a> <a href="https://micronaut.io/blog/tag/undertow.html"><span class="hashtag">#undertow</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team" title="Groovy, Grails, and Micronaut Team">Micronaut Team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the first milestone of <a href="https://github.com/micronaut-projects/micronaut-servlet">Micronaut Servlet</a>, a new implementation of Micronaut that runs on traditional Java servlet containers.</p>
+<p>Micronaut Servlet provides support for replacing the Netty-based HTTP server that comes with Micronaut with either <a href="https://www.eclipse.org/jetty/">Jetty</a>, <a href="http://tomcat.apache.org/">Tomcat</a>, or <a href="http://undertow.io">Undertow</a>, which may be of interest to those who are already familiar with the thread-per-request model of traditional servlet containers and have an existing large investment in the servlet ecosystem.</p>
+<p>Additionally, the <a href="https://micronaut-projects.github.io/micronaut-servlet/1.0.x/guide/#jetty">Jetty</a> and <a href="https://micronaut-projects.github.io/micronaut-servlet/1.0.x/guide/#tomcat">Tomcat</a> implementations can be used with <a href="https://www.graalvm.org/">GraalVM native image</a> to produce native servlet applications that start in milliseconds and consume very little memory.</p>
+<p><a href="https://grails.org/">Grails</a> users also stand to benefit in the future by allowing Micronaut to run side-by-side, embedded within an existing Grails servlet-based application.</p>
+<p>See the <a href="https://micronaut-projects.github.io/micronaut-servlet/1.0.x/guide/#introduction">documentation for Micronaut Servlet</a> for more information.</p>]]></description><guid>2020-03-03-back-future-micronaut-servlet</guid><pubDate>Tue, 03 Mar 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.3 and Micronaut Data 1.0 GA Released</title><link>https://micronaut.io/blog/2020-02-04-micronaut-13-and-micronaut-data-10-ga-released.html</link><description><![CDATA[<h1>Micronaut 1.3 and Micronaut Data 1.0 GA Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">February 4, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/data.html"><span class="hashtag">#data</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is thrilled to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0">Micronaut 1.3 GA</a>, which includes the 1.0 GA release of Micronaut Data for JDBC and Hibernate/JPA in addition to the following new features:</p>
+<ul>
+<li><a href="https://docs.micronaut.io/1.3.x/guide/index.html#immutableConfig">Immutable configuration properties</a></li>
+<li><a href="https://micronaut-projects.github.io/micronaut-cache/1.0.x/guide/#introduction">Cache support</a> for Ehache, Hazelcast, Infinispan, and more</li>
+<li>Initial support for <a href="https://docs.micronaut.io/1.3.x/guide/index.html#coroutines">Kotlin co-routines and Flow</a></li>
+<li>GraalVM 19.3 support</li>
+<li>Support for XML serialization/deserialization with Jackson XML</li>
+<li>Improvements to performance and memory consumption</li>
+</ul>
+<p>See the <a href="https://docs.micronaut.io/1.3.x/guide/index.html#whatsNew">release notes</a> for further information.</p>
+<p>Thanks to all those who contributed to first major Micronaut release of 2020. The Micronaut team will now be shifting focus to Micronaut 2.0, which will include many planned improvements including:</p>
+<ul>
+<li>Reactive Micronaut Data for SQL, Neo4j and MongoDB</li>
+<li>HTTP/2 support</li>
+<li>Improvements to serverless support</li>
+<li>New build plugins for Maven and Gradle</li>
+<li>Further performance refinements</li>
+</ul>]]></description><guid>2020-02-04-micronaut-13-and-micronaut-data-10-ga-released</guid><pubDate>Tue, 04 Feb 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.3 Milestone 2 Released</title><link>https://micronaut.io/blog/2019-12-20-micronaut-13-milestone-2-released.html</link><description><![CDATA[<h1>Micronaut 1.3 Milestone 2 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">December 20, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is excited to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0.M2">Micronaut 1.3 M2</a>. In addition to the <a href="/blog/2019-11-21-micronaut-13-milestone-1-released.html">new features included in M1</a> this milestone includes the following additions:</p>
+<ul>
+<li>Initial support for Kotlin Coroutines</li>
+<li>GraalVM 19.3 Support</li>
+<li>Support for XML serialization/deserialization with Jackson XML</li>
+<li>Improvements to performance and memory consumption</li>
+</ul>
+<p>See the <a href="https://docs.micronaut.io/1.3.0.M2/guide/index.html#whatsNew">release notes</a> for further information.</p>
+<p>Thanks to all those who contributed to the release, and we look forward to your feedback as we progress Micronaut 1.3 toward a GA release.</p>]]></description><guid>2019-12-20-micronaut-13-milestone-2-released</guid><pubDate>Fri, 20 Dec 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.3 Milestone 1 Released</title><link>https://micronaut.io/blog/2019-11-21-micronaut-13-milestone-1-released.html</link><description><![CDATA[<h1>Micronaut 1.3 Milestone 1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">November 21, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is excited to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0.M1">Micronaut 1.3 M1</a>. This is the first milestone of Micronaut's 1.3 line, and it includes a number of significant new features, including:</p>
+<ul>
+<li>Integrated support for <a href="https://micronaut-projects.github.io/micronaut-data/latest/guide/">Micronaut Data</a></li>
+<li>Immutable configuration properties</li>
+<li>Cache support for Ehcache and Hazelcast</li>
+<li>Enhancements and updates to the Kafka, Views, GRPC, SQL, and OpenAPI modules</li>
+</ul>
+<p>The most significant new feature in this first milestone is the integration of Micronaut Data, so you can easily set up projects that include Micronaut Data using the CLI.</p>
+<p>See the <a href="https://docs.micronaut.io/1.3.0.M1/guide/index.html#whatsNew">release notes</a> for further information.</p>
+<p>Thanks to all those who contributed to the release, and we look forward to your feedback as we progress Micronaut 1.3 toward a GA release.</p>]]></description><guid>2019-11-21-micronaut-13-milestone-1-released</guid><pubDate>Thu, 21 Nov 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut AOP: Awesome Flexibility Without the Complexity</title><link>https://micronaut.io/blog/2019-10-07-micronaut-aop-awesome-flexibility-without-complexity.html</link><description><![CDATA[<h1>Micronaut AOP: Awesome Flexibility Without the Complexity</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">October 7, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/aop.html"><span class="hashtag">#aop</span></a></p>
+<p>With the recent release of <a href="https://github.com/micronaut-projects/micronaut-data/releases/tag/v1.0.0.M2">Micronaut Data 1.0 M3</a>, I got to work on a couple of features for Micronaut Data that really highlighted to me what we have achieved with <a href="https://docs.micronaut.io/latest/guide/index.html#aop">Micronaut's aspect-oriented programming (AOP) API</a> and the fantastic simplifications it offers, while at the same time ensuring optimal performance. I thought I would take the time to do a write-up of how Micronaut AOP works and why it is one of my favorite Micronaut features compared to the competitors.</p>
+<h2>Introduction to AOP</h2>
+<p>For those unfamiliar, AOP has a long history in the Java community, with a variety of different implementations, including a custom Java language extension called <a href="https://www.eclipse.org/aspectj/">AspectJ</a>. The basic idea is that in a Java application, you often want to apply cross-cutting logic to a method invocation. The way you apply this cross-cutting logic could be expressed in a custom language like AspectJ; however most developers are exposed to AOP via annotations, where you explicitly apply AOP &quot;advice&quot; to a method.</p>
+<p>The most famous example of this in the Java community is probably Spring's <code>@Transactional</code> annotation, which allows you to demarcate a method as running within the context of a declared transaction. This is what is known as &quot;Around Advice,&quot; where you decorate a method invocation with new behavior that implements a cross-cutting concern.</p>
+<p>Around Advice is just one type of AOP Advice supported by Micronaut. The following advice types are supported:</p>
+<ul>
+<li><strong><a href="https://docs.micronaut.io/latest/guide/index.html#aroundAdvice">Around Advice</a>.</strong> As described previously, you decorate an existing method with new behavior.</li>
+<li><strong><a href="https://docs.micronaut.io/latest/guide/index.html#introductionAdvice">Introduction Advice</a>.</strong> Introduction Advice differs, in that it allows you to introduce new behavior to an existing class. A great example of this is, in fact, Micronaut Data (and Spring Data), which allows you to declare an interface that the compiler implements for you by introducing new behavior.</li>
+<li><strong><a href="https://docs.micronaut.io/latest/guide/index.html#adapterAdvice">Adapter Advice</a>.</strong> Adapter Advice is, I believe, unique to Micronaut in that it allows you to introduce a new bean that implements SAM type, an interface with a single abstract method, and delegates to any method definition. This may sound confusing, but shortly I will present a concrete example of this in action.</li>
+</ul>
+<p>So why does Micronaut implement its own AOP mechanism, rather than rely on something already out there?</p>
+<p>Existing implementations for both Java/Jakarta EE and Spring rely heavily on a mixture of runtime reflection, JDK proxies, and byte code generation with something like CGLib or Bytebuddy (even Quarkus currently only implements reflection-free DI and not AOP).</p>
+<p>Micronaut dependency injection is completely reflection free, so it made sense for Micronaut's AOP mechanism to be reflection free as well.</p>
+<h2>Micronaut AOP Setup</h2>
+<p>Micronaut AOP is incredibly simple to use when compared to other implementations out there. It is literally just a compiler feature. There is no need to set up complex ProxyFactoryBean implementations or rely on a runtime container. The minimum set of requirements to get going with Micronaut AOP is to add the Micronaut annotation processors and declare a dependency on micronaut-aop in your build.</p>
+<p>The following is the Gradle configuration required:</p>
+<pre><code class="language-groovy">dependencies {
+     annotationProcessor &quot;io.micronaut:micronaut-inject-java:&amp;#36;micronautVersion&quot;
+     compile &quot;io.micronaut:micronaut-aop:&amp;#36;micronautVersion&quot;
+}
+</code></pre>
+<p>And the equivalent Maven config:</p>
+<pre><code class="language-xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.micronaut&lt;/groupId&gt;
+      &lt;artifactId&gt;micronaut-aop&lt;/artifactId&gt;
+      &lt;scope&gt;compile&lt;/scope&gt;
+      &lt;version&gt;&amp;#36;{micronaut.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+....
+    &lt;pluginManagement&gt;
+      &lt;plugins&gt;
+        &lt;plugin&gt;
+          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+          &lt;version&gt;3.7.0&lt;/version&gt;
+          &lt;configuration&gt;
+            &lt;source&gt;&amp;#36;{jdk.version}&lt;/source&gt;
+            &lt;target&gt;&amp;#36;{jdk.version}&lt;/target&gt;
+            &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+            &lt;compilerArgs&gt;
+              &lt;arg&gt;-parameters&lt;/arg&gt;
+            &lt;/compilerArgs&gt;
+            &lt;annotationProcessorPaths&gt;
+                  &lt;path&gt;
+                    &lt;groupId&gt;io.micronaut&lt;/groupId&gt;
+                    &lt;artifactId&gt;micronaut-inject-java&lt;/artifactId&gt;
+                    &lt;version&gt;&amp;#36;{micronaut.version}&lt;/version&gt;
+                  &lt;/path&gt;
+            &lt;/annotationProcessorPaths&gt;
+</code></pre>
+<p>The Maven configuration requires you declare the micronaut-inject-java dependency in your annotation processors paths from the Maven compiler plugin.</p>
+<h2>Micronaut Around Advice Put to Use</h2>
+<p>So as mentioned at the beginning of the article, I got to use some of the Micronaut AOP features with Micronaut Data, since we wanted to support transaction management, as well as transactional events, without the need to pull in Spring, which adds overhead by introducing an additional 4mb of dependencies, makes extensive use of reflection and runtime proxies, which impact memory consumption, and negatively impacts GraalVM native support.</p>
+<p>The first step was to add support for <code>javax.transaction.Transactional</code> so you could use the standard Java annotation to declare transaction boundaries. To achieve this, I created a new annotation called <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/interceptor/annotation/TransactionalAdvice.java">TransactionalAdvice</a>, which I declared as a meta-annotation (an annotation that can be used only on other annotations):</p>
+<pre><code class="language-java">@Target(ElementType.ANNOTATION_TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Around
+@Type(TransactionalInterceptor.class)
+@Internal
+public @interface TransactionalAdvice {
+    /**
+     * Alias for {@link #transactionManager}.
+     *
+     * @return The transaction manager
+     * @see #transactionManager
+     */
+    String value() default &quot;&quot;;
+    
+    // Remaining members omitted for clarity 
+
+}
+</code></pre>
+<p>The <code>TransactionalAdvice</code> annotation is itself annotated with <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/Around.html">@Around</a> and <code>@Type(TransactionalInterceptor.class)</code>, which indicate the interceptor type that will handle the method invocation.</p>
+<p>To make it possible to activate the <code>TransactionAdvice</code> behavior every time someone uses <code>javax.transaction.Transactional</code>, I then added a <code>AnnotationMapper</code> that the compiler will use to map the <code>javax.transaction.Transactional</code> annotation to the <code>TransactionAdvice</code> annotation:</p>
+<pre><code class="language-java">public class JtaTransactionalMapper implements NamedAnnotationMapper {
+    @NonNull
+    @Override
+    public String getName() {
+        return &quot;javax.transaction.Transactional&quot;;
+    }
+
+    @Override
+    public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;Annotation&gt; annotation, VisitorContext visitorContext) {
+       
+        AnnotationValueBuilder&lt;Annotation&gt; builder =
+                AnnotationValue.builder(&quot;io.micronaut.transaction.interceptor.annotation.TransactionalAdvice&quot;);
+
+        // Member processing omitted for brevity....
+
+        return Collections.singletonList(
+                builder.build()
+        );
+    }
+}
+</code></pre>
+<p>The above annotation mapper will be triggered every time a <code>@Transactional</code> annotation is declared in code. The map method returns the meta annotation that the annotation maps to.</p>
+<p>The motivation to use a meta-annotation and map existing annotations is that you can support any annotation type, including Spring's. Additionally, if one day <code>javax.transaction</code> is renamed to <code>jakarta.transaction</code>, we just add a new mapper that has zero runtime overhead. It allows Micronaut to completely decouple itself from the source code annotation DSL used.</p>
+<p>So what about the <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/interceptor/TransactionalInterceptor.java">TransactionInterceptor</a> implementation?</p>
+<p>Micronaut AOP defines an interface called <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/MethodInterceptor.html">MethodInterceptor</a> that features a single method called <code>intercept</code> that all interceptors need to implement. The intercept method receives a reference to the <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/MethodInvocationContext.html">MethodInvocationContext</a> that holds a reference to the <a href="https://docs.micronaut.io/latest/api/io/micronaut/inject/ExecutableMethod.html">ExecutableMethod</a> that you can use to proceed and invoke the original implementation.</p>
+<p>The received <code>ExecutableMethod</code> is a compile-time-produced handle that allows you to invoke the original method without using reflection. It also contains a reference to the <a href="https://docs.micronaut.io/latest/api/io/micronaut/core/annotation/AnnotationMetadata.html">AnnotationMetadata</a>, which allows you to inspect and retrieve annotation values and stereotypes without using reflection. The benefits of this include massively reduced stack trace sizes, improved performance, and reduced memory consumption.</p>
+<p>The following is the implementation taken from the <code>TransactionInterceptor</code>:</p>
+<pre><code class="language-php">public Object intercept(MethodInvocationContext&lt;Object, Object&gt; context) {
+    final TransactionInvocation transactionInvocation = transactionInvocationMap
+            .computeIfAbsent(context.getExecutableMethod(), executableMethod -&gt; {
+        final String qualifier = executableMethod.stringValue(TransactionalAdvice.class).orElse(null);
+        SynchronousTransactionManager transactionManager =
+                beanLocator.getBean(SynchronousTransactionManager.class, qualifier != null ? Qualifiers.byName(qualifier) : null);
+        final TransactionAttribute transactionAttribute = resolveTransactionDefinition(executableMethod);
+
+        return new TransactionInvocation(transactionManager, transactionAttribute);
+    });
+    final TransactionAttribute definition = transactionInvocation.definition;
+    final SynchronousTransactionManager transactionManager = transactionInvocation.transactionManager;
+    final TransactionInfo transactionInfo = createTransactionIfNecessary(
+            transactionManager,
+            definition,
+            definition.getName());
+    Object retVal;
+    try {
+        retVal = context.proceed();
+    } catch (Throwable ex) {
+        completeTransactionAfterThrowing(transactionInfo, ex);
+        throw ex;
+    } finally {
+        cleanupTransactionInfo(transactionInfo);
+    }
+    commitTransactionAfterReturning(transactionInfo);
+    return retVal;
+}
+</code></pre>
+<p>The important aspects start on line 4, where the annotation metadata is inspected to figure out which transaction manager to look up to apply transaction management.</p>
+<p>On line 13, a transaction is created. We then proceed within the method invocation on line 19 and finally return the value on line 27. The code here is largely based on the equivalent code in Spring's <code>TransactionAspectSupport</code>, but without needing all of the runtime proxy and reflection complexity.</p>
+<p>And with that, whenever you declare <code>@Transactional</code> in your code, you get automatic transaction management. Nothing else to configure. How simple is that?</p>
+<h2>Micronaut Introduction Advice Put to Use</h2>
+<p>Another feature requested by Micronaut users is the ability get a reference to a <code>java.sql.Connection</code> that is aware of the currently executing transaction. The solution for this in Spring is <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/datasource/TransactionAwareDataSourceProxy.html">TransactionAwareDataSourceProxy</a>, which proxies your entire <code>java.sql.DataSource</code>, making sure whenever you retrieve a connection, it is associated with the current transaction. But this adds the overhead of runtime reflection and proxying to all methods of the <code>DataSource</code> interface.</p>
+<p>To support this use case without proxying the <code>DataSource</code>, with Micronaut Data we decided to allow users to inject a transaction-aware <code>java.sql.Connection</code> in a similar way you can inject a transaction-aware <code>EntityManager</code> in JPA that uses Hibernate's <code>getCurrentSession()</code> feature.</p>
+<p>This turned out to be really simple with Micronaut AOP. The first step was to define an interface that extended <code>java.sql.Connection</code>, which I called <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/jdbc/TransactionalConnection.java">TransactionalConnection</a>:</p>
+<pre><code class="language-java">package io.micronaut.transaction.jdbc;
+
+import io.micronaut.context.annotation.EachBean;
+import javax.sql.DataSource;
+import java.sql.Connection;
+
+@EachBean(DataSource.class)
+@ConnectionAdvice
+public interface TransactionalConnection extends Connection {
+}
+</code></pre>
+<p>The interface is annotated on line 7 with another of my favorite Micronaut features, the <a href="https://docs.micronaut.io/latest/api/io/micronaut/context/annotation/EachBean.html">@EachBean</a> annotation, which says that for every <code>DataSource</code> bean configured in the application, create an associated <code>TransactionalConnection</code> bean. This effectively means if you have multiple data sources, you get a <code>TransactionalConnection</code> bean configured for each one automatically and use a <code>javax.inject.Named</code> qualifier to inject the one you want.</p>
+<p>The Introduction Advice is then defined on line 8 using a new annotation called <code>@ConnectionAdvice</code>, which is a package private internal annotation and looks like the following:</p>
+<pre><code class="language-php">@Retention(RUNTIME)
+@Introduction
+@Type(ConnectionInterceptor.class)
+@Internal
+@interface ConnectionAdvice {
+}
+</code></pre>
+<p>On line 3, we define the annotation as <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/Introduction.html">@Introduction</a> Advice, which means it can implement abstract behavior.</p>
+<p>On line 4, we define the interceptor that is going to provide the implementation at runtime, which in this case is <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/jdbc/ConnectionInterceptor.java">ConnectionInterceptor</a>, which is shown below and is really simple:</p>
+<pre><code class="language-php">public final class ConnectionInterceptor implements MethodInterceptor&lt;Connection, Object&gt; {
+
+    private final DataSource dataSource;
+
+    ConnectionInterceptor(BeanContext beanContext, Qualifier&lt;DataSource&gt; qualifier) {
+        this.dataSource = beanContext.getBean(DataSource.class, qualifier);
+    }
+
+    public Object intercept(MethodInvocationContext&lt;Connection, Object&gt; context) {
+        Connection connection;
+        try {
+            connection = DataSourceUtils.getConnection(dataSource, false);
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new NoTransactionException(&quot;No current transaction present. Consider declaring @Transactional on the surrounding method&quot;, e);
+        }
+        return context.getExecutableMethod().invoke(connection, context.getParameterValues());
+    }
+}
+</code></pre>
+<p>On line 6 we used the injected qualifier for the interceptor instance to look up the associated <code>DataSource</code>. Then on line 12 we look up the connection associated with the current transaction. If no connection is present, we throw <code>NoTransactionException</code> on line 14. Otherwise we proceed and invoke the method on the connection on line 16.</p>
+<p>With that in place, all a user has to do is inject a Connection instance and use it directly, rather than having to manually look up the connection associated with the current transaction, which simplifies the code quite nicely:</p>
+<pre><code class="language-java">@Inject
+Connection connection;
+
+@Transactional
+void insertWithTransaction() throws Exception {
+    try (PreparedStatement ps = connection
+            .prepareStatement(&quot;insert into book (pages, title) values(100, 'The Stand')&quot;)) {
+        ps.execute();
+    }
+}
+</code></pre>
+<p>The underlying connection is managed by the transaction and cleaned up and closed after the transaction commits, so there is no need to close it manually. If one were to remove the <code>@Transactional</code> definition, a <code>NoTransactionException</code> would occur.</p>
+<h2>Micronaut Adapter Advice Put to Use</h2>
+<p>Both Micronaut and Spring allow the publication of events that can be consumed by either synchronous or asynchronous event listeners.</p>
+<p>One missing feature from Micronaut, which users have been asking for a lot, is the ability to define transactional event listeners. That is, event listeners that are only triggered when a particular transaction phase completes (typically users are most interested in triggering behavior after a successful commit). The use cases here are things like sending an email or publishing a Kafka message only if a transaction commits successfully.</p>
+<p>Making this work in Micronaut was actually remarkably simple thanks to <a href="https://docs.micronaut.io/latest/guide/index.html#adapterAdvice">Adapter advice</a>.</p>
+<p>The first step was defining a <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/annotation/TransactionalEventListener.java">@TransactionalEventListener</a> annotation:</p>
+<pre><code class="language-java">@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Adapter(ApplicationEventListener.class) 
+@TransactionalEventAdvice
+public @interface TransactionalEventListener {
+    TransactionPhase value() default TransactionPhase.AFTER_COMMIT;
+}
+</code></pre>
+<p>The first important part is the definition in the <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/Adapter.html">@Adapter</a> annotation on line 4, which takes the interface we want to adapt, in this case <a href="https://docs.micronaut.io/latest/api/io/micronaut/context/event/ApplicationEventListener.html">ApplicationEventListener</a>.</p>
+<p>Interfaces passed to the <a href="https://docs.micronaut.io/latest/api/io/micronaut/aop/Adapter.html">@Adapter</a> annotation have to contain a Single Abstract Method (often called SAM types). At compilation time, Micronaut will create an additional bean that implements the interface and delegates to the method that declares the annotation. So in this case a new <code>ApplicationEventListener</code> bean will be created that invokes the method that <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/annotation/TransactionalEventListener.java">@TransactionalEventListener</a> is declared on.</p>
+<p>The nice thing is that if you try to declare <code>@TransactionalEventListener</code> on a method that doesn't conform to the signature of the <code>ApplicationEventListener</code> interface, you will get a compilation error. This is part of Micronaut's nice ability to compile time check what you are doing with the framework is correct.</p>
+<p>In addition to the Adapter advice, the <code>@TransactionalEventListener</code> annotation also declares an <code>@Around</code> advice implementation on line 5 called <code>@TransactionalEventAdvice</code>, which looks like:</p>
+<pre><code class="language-java">@Around
+@Type(TransactionalEventInterceptor.class)
+@Internal
+public @interface TransactionalEventAdvice {
+}
+</code></pre>
+<p>As you can see, on line 1, the <code>@TransactionEventAdvice</code> is declared as <code>@Around</code> advice (which remember allows decorating existing behavior), and on line 3, the type of advice is defined as <code>TransactionalEventInterceptor</code>.</p>
+<p>The implementation of the <code>TransactionalEventInterceptor</code> is also really simple and intercepts the invocation of the event listener:</p>
+<pre><code class="language-java">public Object intercept(MethodInvocationContext&lt;Object, Object&gt; context) {
+    final TransactionalEventListener.TransactionPhase phase = context
+            .enumValue(TransactionalEventListener.class, TransactionalEventListener.TransactionPhase.class)
+            .orElse(TransactionalEventListener.TransactionPhase.AFTER_COMMIT);
+    if (TransactionSynchronizationManager.isSynchronizationActive() &amp;&amp;
+            TransactionSynchronizationManager.isActualTransactionActive()) {
+        TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronizationAdapter() {
+
+            @Override
+            public void beforeCommit(boolean readOnly) {
+                if (phase == TransactionalEventListener.TransactionPhase.BEFORE_COMMIT) {
+                    context.proceed();
+                }
+            }
+
+            @Override
+            public void afterCompletion(@NonNull Status status) {
+                switch (status) {
+                    case ROLLED_BACK:
+                        if (phase == TransactionalEventListener.TransactionPhase.AFTER_ROLLBACK) {
+                            context.proceed();
+                        }
+                    break;
+                    case COMMITTED:
+                        if (phase == TransactionalEventListener.TransactionPhase.AFTER_COMMIT) {
+                            context.proceed();
+                        }
+                    break;
+                    default:
+                        if (phase == TransactionalEventListener.TransactionPhase.AFTER_COMPLETION) {
+                            context.proceed();
+                        }
+                }
+            }
+        });
+    } else {
+        if (LOG.isDebugEnabled()) {
+            LOG.debug(&quot;No active transaction, skipping event {}&quot;, context.getParameterValues()[0]);
+        }
+    }
+    return null;
+}
+</code></pre>
+<p>On line 2, the transaction phase the event applies to is looked up from the annotation metadata. Then on line 5, the interceptors checks if there is an active transaction. If there is no active transaction, the event listener is skipped on line 38. Otherwise on line 7, a new transaction synchronization is registered. Depending on the phase, the listener is only invoked via the proceed method when the appropriate transaction event occurs. For example, on transaction commit, the method will be invoked on line 26.</p>
+<p>And with that we have working transactional events!</p>
+<p>The following shows an example in action:</p>
+<pre><code class="language-java">@Singleton
+public class BookManager {
+    private final BookRepository bookRepository;
+    private final ApplicationEventPublisher eventPublisher;
+
+    public BookManager(BookRepository bookRepository, ApplicationEventPublisher eventPublisher) {
+        this.bookRepository = bookRepository;
+        this.eventPublisher = eventPublisher;
+    }
+
+    @Transactional
+    void saveBook(String title, int pages) {
+        final Book book = new Book(title, pages);
+        bookRepository.save(book);
+        eventPublisher.publishEvent(new NewBookEvent(book)); 
+    }
+
+    @TransactionalEventListener
+    void onNewBook(NewBookEvent event) {
+        System.out.println(&quot;book = &quot; + event.book);
+    }
+
+}
+</code></pre>
+<p>First, on line 6, the constructor of the class gets a reference to the <a href="https://docs.micronaut.io/latest/api/index.html">ApplicationEventPublisher</a>. The method on line 11 is declared as transactional, saving an object and then publishing the event.</p>
+<p>The method on line 17 is declared with <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/annotation/TransactionalEventListener.java">@TransactionalEventListener</a> and for the moment just prints out the event. If the transaction fails for whatever reason, however, the event will never be received and the output never printed.</p>
+<h2>Summary</h2>
+<p>There is a definite lack of information on how compelling the Micronaut AOP implementation is, and I hope this blog post goes some way to resolving that. Micronaut AOP has some really nice features and makes it really simple to define AOP advice without the need to involve complex runtime bytecode generation solutions that create enormous stack traces and place additional memory strain on your application.</p>
+<p>My recent experience using Micronaut AOP to build Micronaut Data further highlighted to me the advances we have made in this area, pushing developers to avoid the use of reflection, which optimizes memory consumption and makes it so much easier to go native with GraalVM substrate.</p>]]></description><guid>2019-10-07-micronaut-aop-awesome-flexibility-without-complexity</guid><pubDate>Mon, 07 Oct 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut Data 1.0 Milestone 1 Released</title><link>https://micronaut.io/blog/2019-08-14-micronaut-data-10-milestone-1-released.html</link><description><![CDATA[<h1>Micronaut Data 1.0 Milestone 1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">August 14, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/data.html"><span class="hashtag">#data</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut Team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the first milestone of <a href="https://github.com/micronaut-projects/micronaut-data">Micronaut Data</a>. The M1 release is just the first of many milestones and release candidates that we will be doing as we progress towards a GA release. We have already had a fantastic amount of feedback and contributions from the community that have allowed us to advance the JDBC implementation in particular.</p>
+<p>Micronaut Data 1.0 M1 includes the following features:</p>
+<ul>
+<li>Precomputed repositories for either <a href="https://micronaut-projects.github.io/micronaut-data/1.0.x/guide/#quickStart">JPA-QL (Hibernate)</a> or <a href="https://micronaut-projects.github.io/micronaut-data/1.0.x/guide/#sql">SQL (JDBC)</a>.</li>
+<li>Support for <a href="https://micronaut-projects.github.io/micronaut-data/1.0.x/guide/#joinQueries">Query joins</a> in either JPA or SQL.</li>
+<li><a href="https://micronaut-projects.github.io/micronaut-data/1.0.x/guide/#dto">Data transfer objects (DTOs)</a> in either JPA or SQL</li>
+<li><a href="https://micronaut-projects.github.io/micronaut-data/1.0.x/guide/#dataUpdates">Batch updates and deletes</a> in either JPA or SQL</li>
+<li>... and a whole bunch more</li>
+</ul>
+<p>We plan to add a whole bunch of new features before the next milestone, including better support for custom types (like Postgres JSON types), improvements to programmatic query construction in JDBC, and better support for mapping different scenarios.</p>
+<p>Thanks to all those who contributed to the release, and we look forward to your feedback!</p>]]></description><guid>2019-08-14-micronaut-data-10-milestone-1-released</guid><pubDate>Wed, 14 Aug 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.2 Released</title><link>https://micronaut.io/blog/2019-08-06-micronaut-12-released.html</link><description><![CDATA[<h1>Micronaut 1.2 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">August 6, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team" title="Groovy, Grails, and Micronaut Team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is excited to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.2.0">Micronaut 1.2</a>. The GA version of the 1.2 line includes the following significant new enhancements:</p>
+<ul>
+<li>Micronaut Security 1.2 with support for <a href="https://micronaut-projects.github.io/micronaut-security/1.2.x/guide/#oauth">OAuth 2.0 and OpenID Connect</a></li>
+<li>Improved validation support with <a href="https://docs.micronaut.io/1.2.x/guide/index.html#beanValidation">native, reflection-free bean validation</a></li>
+<li>Environment detection for <a href="https://cloud.oracle.com/home">Oracle Cloud</a></li>
+<li><a href="https://docs.micronaut.io/1.2.x/guide/index.html#distributedConfigurationVault">Distributed configuration with HashiCorp Vault</a> </li>
+<li>... and <a href="https://docs.micronaut.io/1.2.x/guide/index.html#whatsNew">many more improvements</a></li>
+</ul>
+<p>The most significant new feature is the updated security module, which includes OpenID connect support that works with a variety of providers. Check out the <a href="https://guides.micronaut.io/micronaut-oauth2-okta/guide/index.html">Securing a Micronaut App with Okta guide</a>, which demonstrates how to use <a href="https://www.okta.com">Okta</a> as the OpenID provider.</p>
+<p>Validation also gets a significant upgrade with native support for bean-validation annotations without needing to pull in Hibernate Validator. This has numerous benefits, including reducing the JAR size of a Micronaut application, improving startup time, and eliminating reflection. Plus the new validation module now supports reactive flows! </p>
+<p>Thanks to all those who contributed to the release, and we hope you enjoy Micronaut 1.2!</p>
+<p>Looking to the future, we now shift focus to Micronaut 1.3 which will include the following enhancements:</p>
+<ul>
+<li>Integration with the GA release of <a href="/blog/2019-07-18-unleashing-predator-precomputed-data-repositories.html">Micronaut Data</a></li>
+<li>Improved caching APIs</li>
+<li>Improvements to bean introspections (static factory-method support, interface and enum support, etc.)</li>
+<li>Bean import support to allow importing beans from existing libraries annotated with <code>javax.inject</code> annotations.</li>
+<li>Further performance and memory consumption optimization</li>
+</ul>
+<p>Micronaut 1.3 will be the last release in the 1.x line of releases. We'll shift to Micronaut 2.0 toward the end of the year and focus on significant enhancements to improve support for serverless functions (Google Cloud Function, Azure Functions, and more), as well as adding support for HTTP/2.</p>]]></description><guid>2019-08-06-micronaut-12-released</guid><pubDate>Tue, 06 Aug 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut Predator Renamed Micronaut Data</title><link>https://micronaut.io/blog/2019-07-26-micronaut-predator-renamed-micronaut-data.html</link><description><![CDATA[<h1>Micronaut Predator Renamed Micronaut Data</h1>
+<p><span class="author">By Jeff Scott Brown</span></p>
+<p><span class="date">July 26, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/data.html"><span class="hashtag">#data</span></a></p>
+<p><em>Micronaut co-founder, Jeff Scott Brown, today issued a statement in response to community concern about the word Predator. <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is committed to building inclusive environments that value and respect the individual and group differences within our open source communities. We stand behind this statement, and we hope that you will join us in our mission to innovate courageously through open source software!</em></p>
+<hr />
+<p>The Object Computing team is very proud of our <a href="/blog/2019-07-18-unleashing-predator-precomputed-data-repositories.html">recently announced data access toolkit</a>. The innovations included in the technology are game changers and represent our commitment to open source technology and helping folks be successful with their technology.</p>
+<p>We have heard feedback from the community that the word Predator is a source of anxiety for some.</p>
+<p>Community feedback has been critical to our success over the years, and all of it is welcome and considered. In the interest of addressing those shared concerns, we are abandoning the use of the word Predator with respect to our technology and will refer to our newly announced technology simply as <strong>Micronaut Data</strong>.</p>
+<p>Our focus remains on building and helping our community to build better technology. This is what we do and will continue to do.</p>
+<p>The community is an important part of that journey for us — the most important part of that journey.</p>
+<p>— Jeff Scott Brown, Object Computing Partner</p>]]></description><guid>2019-07-26-micronaut-predator-renamed-micronaut-data</guid><pubDate>Fri, 26 Jul 2019 00:00:00 GMT</pubDate></item><item><title>Announcing Micronaut Data</title><link>https://micronaut.io/blog/2019-07-18-unleashing-predator-precomputed-data-repositories.html</link><description><![CDATA[<h1>Announcing Micronaut Data</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">July 18, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/data.html"><span class="hashtag">#data</span></a></p>
+<p>Today, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) unveiled <a href="https://github.com/micronaut-projects/micronaut-data">Micronaut Data</a> (previously known as Predator), a brand new Open Source project that aims to dramatically improve the runtime and memory performance of data access repository logic for the microservice and serverless era, while also maintaining the productivity benefits of tools like <a href="https://gorm.grails.org">GORM</a> and <a href="https://spring.io/projects/spring-data">Spring Data</a>.</p>
+<h2>History of Data Access Toolkits</h2>
+<p>The data repository pattern can be traced back to 2004, when Ruby on Rails debuted with a feature called ActiveRecord — an API that revolutionized data access from a productivity perspective.</p>
+<p>In 2007, the Grails team brought an ActiveRecord-like API to the JVM for the first time with the creation of GORM (part of Grails). GORM relied on the dynamic nature of the Groovy language to implement finder methods on top of Hibernate and provided the same productivity benefits for JVM users.</p>
+<p>Due to GORM's reliance on the Groovy language, Spring Data was created in 2011 to address the need for Java users, allowing finder methods like <code>findByTitle</code> to be defined in an interface and the query logic to be implemented automatically at runtime.</p>
+<h2>How Data Access Toolkits Work</h2>
+<p>All of these implementations use the same general pattern, which is to construct a meta-model of the entities in a project <em>at runtime</em> that models the relationships between your entity classes. In Spring Data, this is the <a href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/mapping/context/MappingContext.html">MappingContext</a>, and in GORM, this is also called the <a href="http://gorm.grails.org/latest/api/org/grails/datastore/mapping/model/MappingContext.html">MappingContext</a>. They are constructed by scanning entity classes and analyzing the classes via reflection. (The naming similarity here is no coincidence. In 2010, I worked with the Spring Data team to try and fork GORM into something for Java, a project which eventually evolved into what is Spring Data today.)</p>
+<p>This meta-model is then used to translate a finder expression like <code>bookRepository.findByTitle(&quot;The Stand&quot;)</code> into an abstract Query model at runtime using a combination of regular expression pattern matching and custom logic. The abstract Query model is needed, since the target query dialect differs for each database (SQL, JPA-QL, Cypher, Bson etc.).</p>
+<h2>Data Repository Support and Micronaut</h2>
+<p>Since we launched Micronaut just over a year ago, the number one feature users have asked us for is &quot;GORM for Java&quot; or Spring Data Support. So many developers love the productivity experience that these toolkits provide, as well as the ease of simply defining an interface that the framework implements. I would go so far as to say a big part of Grails' and Spring Boot's success can be attributed to GORM and Spring Data respectively.</p>
+<p>For Groovy users of Micronaut, we have had GORM support from day one, which left Java and Kotlin users needing to roll their own repository implementations.</p>
+<p>It would have been technically possible, and frankly easier, to simply add a Micronaut module that configured Spring Data. However, by going down that path, we would have introduced a feature that is implemented in a manner using all the techniques Micronaut has tried to avoid: extensive use of runtime proxies, reflection, and high memory consumption.</p>
+<h2>Introducing Micronaut Data</h2>
+<p>Micronaut Data uses Micronaut's ahead-of-time (AoT) compilation APIs to move the entity meta-model into your compiler and translate a finder expression like <code>findByTitle</code> into the appropriate SQL or JPA-QL query <em>at compilation time</em>. A very thin runtime layer that uses Micronaut's reflection-free compilation-time AOP then only has to execute the query and return the results.</p>
+<p>The result is staggering ... significantly reduced cold starts, astonishingly lean memory consumption, and dramatically improved performance.</p>
+<p>Today, we are open sourcing Micronaut Data under the Apache license, and it comes with two initial implementations (with more planned for the future) for JPA (using Hibernate) and for SQL with JDBC.</p>
+<p>The JDBC implementation is the one I am most excited about, as it completely eliminates reflection, runtime proxies, and dynamic classloading for your persistence layer and results in massive performance gains. The runtime layer is so light that even an equivalent repository method written by hand would not execute faster.</p>
+<h2>Micronaut Data Performance</h2>
+<p>Since Micronaut Data does not have to do any query translation at runtime, the performance gain is significant. In a world of utility cloud computing, where billing models are changing such that you pay for the amount of time your application is running or the execution time of an individual function, developers often overlook the performance of their data access toolkits.</p>
+<p>The following table summarizes the performance difference you can expect for a finder expression, such as <code>findByTitle</code>, when compared to other implementations. All benchmarks were carried out using test hardware of an 8-core Xeon iMac Pro under the same conditions, are Open Source, and can be <a href="https://github.com/micronaut-projects/micronaut-data">found in the repository</a>:</p>
+<p>|Implementation|Operations per Second|
+|Micronaut Data JDBC|225K ops/sec|
+|Micronaut Data JPA|130K ops/sec|
+|Spring Data JPA|90K ops/sec|
+|GORM JPA|50K ops/sec|
+|Spring Data JDBC|Finders Not Supported|</p>
+<p>Yes, you read that right. With Micronaut Data JDBC, you can expect nearly 4X the performance of GORM and 2.5X the performance of Spring Data.</p>
+<p>If you go with Micronaut Data JPA, even then, you can expect more than 2X the performance of GORM and up to 40% better performance than Spring Data JPA.</p>
+<hr />
+<h6>UPDATE SEPTEMBER 2, 2019</h6>
+<p>Since this post was written both Micronaut Data and Spring Data have been further optimized and the latest result data on the same test hardware is as follows (Note the Spring Data JDBC numbers use a hard coded query):</p>
+<p>|Implementation|Operations per Second|
+|Micronaut Data JDBC|430K ops/sec|
+|Micronaut Data JPA|145K ops/sec|
+|Spring Data JPA|140K ops/sec|
+|GORM JPA|50K ops/sec|
+|Spring Data JDBC|275K ops/sec|</p>
+<h6>END UPDATE</h6>
+<hr />
+<p>Micronaut Data is able to achieve such a significant performance jump for a variety of reasons, from the elimination of reflection to the much thinner runtime component. One reason, however, is pretty simple to identify: Stack Traces.</p>
+<p>Take a look at the difference in Stack Trace size when using Micronaut Data compared to the alternatives:</p>
+<h4>Micronaut Data JDBC</h4>
+<p><img src="2019-07-18-img01.png" alt="Micronaut Data JDBC" /></p>
+<h4>Micronaut Data JPA</h4>
+<p><img src="2019-07-18-img02.png" alt="Micronaut Data JPA" /></p>
+<h4>Spring Data JPA</h4>
+<p><img src="2019-07-18-img03.png" alt="Spring Data JPA" /></p>
+<h4>GORM</h4>
+<p><img src="2019-07-18-img04.png" alt="GORM" /></p>
+<p>Micronaut Data JDBC produces only 15 stack frames until your query is actually executed, while Micronaut Data JPA produces 30 (mainly Hibernate frames), compared to 50+ stack frames for Spring Data or GORM, all thanks to Micronaut's reflection-free AOP layer.</p>
+<p>Shorter stack traces also result in easier-to-debug applications. One of the benefits of doing most of the work at compile time is that errors can be detected at compile time, greatly improving the developer experience by providing immediate compilation errors instead of runtime errors for many common mistakes.</p>
+<h2>Micronaut Data Compile-Time Checking</h2>
+<p>Most repository implementations rely exclusively on doing all the computation at runtime. This means that if the user makes any mistakes when defining the repository interface, they are not caught until the application is actually running.</p>
+<p>This removes some of the type checking benefits of Java and provides a poor developer experience. With Micronaut Data, that is not the case. Consider the following example:</p>
+<pre><code class="language-java">@JdbcRepository(dialect = Dialect.H2)
+public interface BookRepository extends CrudRepository&lt;Book, Long&gt; {
+    ==Book findByTile(String t);==
+}
+</code></pre>
+<p>Here the <code>BookRepository</code> is attempting a query on an entity called <code>Book</code> that has a property called <code>title</code>. Unfortunately, the finder has a typo, in that it is <code>findByTile</code> instead of <code>findByTitle</code>. Instead of waiting until runtime to inform the user of this fact, Micronaut Data will fail at compilation time with an informative error message:</p>
+<pre><code class="language-text">Error:(9, 10) java: Unable to implement Repository method: 
+BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-existent property path: tile
+</code></pre>
+<p>Many aspects of Micronaut Data are compilation-time checked whenever possible to ensure that if an error does occur at runtime, it is not due to a typo in a repository definition.</p>
+<h2>Micronaut Data JDBC and GraalVM Substrate</h2>
+<p>Another reason to be excited about Micronaut Data JDBC is that it is compatible out-of-the-box with GraalVM Substrate native images without needing complex, byte-code-mutating build-time enhancement solutions, like those required to get Hibernate operational on GraalVM.</p>
+<p>By completely eliminating all reflection and dynamic proxies from the persistence layer, Micronaut Data hugely simplifies getting applications that access data running on GraalVM.</p>
+<p>The Micronaut Data JDBC example application included in the repository runs without problem in Substrate and produces a significantly smaller native image (25MB smaller!) than what is required to pull in Hibernate, thanks to the much thinner runtime layer.</p>
+<p>We saw the same result when we implemented compilation time computation of bean validation rules for Micronaut 1.2. The native image size dropped by 10MB by removing the dependency on Hibernate Validator and the JAR file size by 2MB.</p>
+<p>The advantage here is clear: By doing more work during compilation and creating leaner runtimes, you produce smaller native images and JAR files, which results in smaller and easier-to-deploy microservices when deployed via Docker images. The future of frameworks for Java is more powerful compilers and smaller, lighter runtimes!</p>
+<h2>Micronaut Data and the Future</h2>
+<p>We are just getting started with Micronaut Data, and we are crazy-excited about the possibilities it opens up.</p>
+<p>Initially, we are launching with support for JPA and SQL, but you can expect support for MongoDB, Neo4j, Reactive SQL, and other databases in the future. Thankfully, doing this work is a lot simpler because much of Micronaut Data is actually based on a fork of the GORM source code, and we will be able to reuse logic from GORM for Neo4j and GORM for MongoDB to get those implementations ready sooner than you may expect.</p>
+<p>Micronaut Data is the culmination of putting together various building blocks in Micronaut Core that made it possible, from the AoT APIs, which are also used to <a href="https://github.com/micronaut-projects/micronaut-openapi">generate Swagger documentation</a>, to the relatively new <a href="https://docs.micronaut.io/latest/guide/index.html#introspection">Bean Introspection support</a>, which allows introspection of beans at runtime without using reflection.</p>
+<p>Micronaut provides the building blocks to do some amazing things. Micronaut Data is one those things, and we are just getting started on delivering on some of the promising foundations delivered in Micronaut 1.0.</p>]]></description><guid>2019-07-18-unleashing-predator-precomputed-data-repositories</guid><pubDate>Thu, 18 Jul 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.2 RC1 Released</title><link>https://micronaut.io/blog/2019-06-05-micronaut-12-rc1-released.html</link><description><![CDATA[<h1>Micronaut 1.2 RC1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">June 5, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is excited to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.2.0.RC1">Micronaut 1.2 RC1</a>. This is the first release candidate of Micronaut's 1.2 line and includes a number of significant new features including:</p>
+<ul>
+<li>Micronaut Security 1.2 with Support for <a href="https://micronaut-projects.github.io/micronaut-security/1.2.x/guide/#oauth">OAuth 2.0 and OpenID Connect</a></li>
+<li>Improved Validation Support with <a href="https://docs.micronaut.io/1.2.x/guide/index.html#beanValidation">Native, Reflection-free Bean Validation</a></li>
+<li>Environment Detection for <a href="https://cloud.oracle.com/home">Oracle Cloud</a></li>
+<li><a href="https://docs.micronaut.io/1.2.x/guide/index.html#distributedConfigurationVault">Distributed Configuration with HashiCorp Vault</a> </li>
+<li>... and <a href="https://docs.micronaut.io/1.2.x/guide/index.html#whatsNew">many more improvements</a></li>
+</ul>
+<p>The most significant new feature is the updated security module, which includes OpenID connect support that works with a variety of providers. Check out the <a href="https://guides.micronaut.io/micronaut-oauth2-okta/guide/index.html">Securing a Micronaut App with Okta guide</a>, which demonstrates how to use <a href="https://www.okta.com">Okta</a> as the OpenID provider.</p>
+<p>Validation also gets a significant upgrade with native support for bean-validation annotations without needing to pull in Hibernate Validator. This has numerous benefits, including reducing the JAR size of a Micronaut application, improving startup time, and eliminating reflection. Plus the new validation module now supports reactive flows! </p>
+<p>Thanks to all those who contributed to the release, and we look forward to your feedback as we progress Micronaut 1.2 toward a GA release.</p>]]></description><guid>2019-06-05-micronaut-12-rc1-released</guid><pubDate>Wed, 05 Jun 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 Released</title><link>https://micronaut.io/blog/2019-04-11-micronaut-11-released.html</link><description><![CDATA[<h1>Micronaut 1.1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">April 11, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>Joining the many exciting announcements happening at <a href="https://cloud.withgoogle.com/next/sf">Google Cloud Next</a>, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut Team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0">Micronaut 1.1</a> GA.</p>
+<p>Micronaut 1.1 includes a number of significant refinements since Micronaut's groundbreaking 1.0 release including:</p>
+<ul>
+<li>Support for <a href="https://grpc.io">GRPC</a></li>
+<li>Support for <a href="https://micronaut-projects.github.io/micronaut-graphql/latest/guide/index.html">GraphQL</a></li>
+<li>Support for <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/guide/">Google Cloud Platform (GCP) and Stackdriver Trace</a> for distributed tracing</li>
+<li><a href="https://micronaut-projects.github.io/micronaut-rabbitmq/latest/guide/">Message-Driven Microservices with RabbitMQ</a></li>
+<li>A new <a href="https://docs.micronaut.io/snapshot/guide/index.html#introspection">BeanIntrospection API</a> for reflection-free Bean introspection</li>
+<li>Support for <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#apiProxy">AWS API Gateway</a> and <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#customRuntimes">GraalVM Custom Runtime </a></li>
+<li><a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#alexa">AWS Alexa Lambda</a> support</li>
+<li>Native File Watch and Fast Server Restart</li>
+<li>New test templates for <a href="https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html">Micronaut Test</a></li>
+<li>Even faster cold start time and performance optimizations</li>
+<li>... and <a href="https://docs.micronaut.io/1.1.x/guide/index.html#whatsNew">many more features and refinements</a></li>
+</ul>
+<p>Micronaut 1.1 makes it even simpler to build efficient, cloud-ready applications that are simultaneously easy to test, easy to containerize, and efficient. </p>
+<p>Micronaut can be deployed to both <a href="https://cloud.google.com/run/">Google Cloud Run</a> and <a href="https://cloud.google.com/appengine/docs/java/">Google App Engine Standard for Java 11</a>, and with Micronaut 1.1, we have dedicated support for <a href="https://cloud.google.com/trace/">Google Stackdriver Trace</a>.</p>
+<p>To help you get started with Google Cloud Run we have prepared a couple of <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples">sample applications</a>: </p>
+<ul>
+<li>A <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples/hello-world-cloud-run">Hello World sample application</a> that is ready to be deployed to Cloud Run using <a href="https://github.com/GoogleContainerTools/jib">Jib</a> and <a href="https://cloud.google.com/container-registry/">Google Container Registry</a>.</li>
+<li>A <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples/hello-world-cloud-run-graal">second application that uses GraalVM native and Google Cloud Build</a> to build and deploy a native image to Google Cloud Run.</li>
+</ul>
+<p>Thank you to all who provided feedback during the extended RC phase of Micronaut 1.1, enjoy the release!</p>]]></description><guid>2019-04-11-micronaut-11-released</guid><pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 RC1 Released</title><link>https://micronaut.io/blog/2019-03-20-micronaut-11-rc-released.html</link><description><![CDATA[<h1>Micronaut 1.1 RC1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">March 20, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut Team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0.RC1">Micronaut 1.1 RC1</a>.</p>
+<p>Micronaut 1.1 includes a number of significant refinements since Micronaut's groundbreaking 1.0 release including:</p>
+<ul>
+<li>Support for <a href="https://grpc.io">GRPC</a></li>
+<li>Support for <a href="https://micronaut-projects.github.io/micronaut-graphql/latest/guide/index.html">GraphQL</a></li>
+<li>Support for <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/guide/">Google Cloud Platform (GCP) and Stackdriver Trace</a> for distributed tracing.</li>
+<li><a href="https://micronaut-projects.github.io/micronaut-rabbitmq/latest/guide/">Message-Driven Microservices with RabbitMQ</a></li>
+<li>A new <a href="https://docs.micronaut.io/snapshot/guide/index.html#introspection">BeanIntrospection API</a> for reflection-free Bean introspection</li>
+<li>Support for <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#apiProxy">AWS API Gateway</a> and <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#customRuntimes">GraalVM Custom Runtime </a></li>
+<li><a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#alexa">AWS Alexa Lambda</a> support</li>
+<li>Native File Watch and Fast Server Restart</li>
+<li>New test templates for <a href="https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html">Micronaut Test</a></li>
+<li>Even faster cold start time and performance optimizations</li>
+<li>... and <a href="https://docs.micronaut.io/1.1.x/guide/index.html#whatsNew">many more features and refinements</a></li>
+</ul>
+<p>In addition, Micronaut 1.1 RC1 includes massive improvements to support creating GraalVM native images including:</p>
+<ul>
+<li><strong>Framework Improvements.</strong> Framework-level dynamic classloading and reflection has been completely removed, making it easier to get applications running on GraalVM <code>native-image</code> and reducing the number of customizations necessary.</li>
+<li><strong>Build Time Reflection Data.</strong> Thanks to the aforementioned feature, the remaining reflective cases needed for third-party libraries have been replaced by build-time generation of <code>reflection-config.json</code> for classes that do require it.</li>
+<li><strong>Simplified Image Generation.</strong> You can now generate a native image with just <code>native-image --class-path myjar.jar</code> without any additional flags; Micronaut now computes the appropriate GraalVM configuration at compilation time.</li>
+</ul>
+<p>I will be talking about Micronaut and these new features at <a href="https://www.greachconf.com">Greach 2019</a> in Madrid, followed by <a href="https://developer.oracle.com/code/rome-april-2019">Oracle Code Rome</a>. See you there!</p>]]></description><guid>2019-03-20-micronaut-11-rc-released</guid><pubDate>Wed, 20 Mar 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 Milestone 2 Released</title><link>https://micronaut.io/blog/2019-02-27-micronaut-11-milestone-2-released.html</link><description><![CDATA[<h1>Micronaut 1.1 Milestone 2 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">February 27, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut Team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0.M2">Micronaut 1.1 Milestone 2</a>. </p>
+<p>Micronaut 1.1 includes a number of significant refinements since Micronaut's groundbreaking 1.0 release including:</p>
+<ul>
+<li>Support for <a href="https://grpc.io">GRPC</a></li>
+<li><a href="https://micronaut-projects.github.io/micronaut-rabbitmq/latest/guide/">Message-Driven Microservices with RabbitMQ</a></li>
+<li>A new <a href="https://docs.micronaut.io/snapshot/guide/index.html#introspection">BeanIntrospection API</a> for reflection-free Bean introspection.</li>
+<li>Support for <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#apiProxy">AWS API Gateway</a> and <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#customRuntimes">GraalVM Custom Runtime </a></li>
+<li><a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#alexa">AWS Alexa Lambda</a> support</li>
+<li>Native File Watch and Fast Server Restart</li>
+<li>New test templates for <a href="https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html">Micronaut Test</a></li>
+<li>Even faster cold start time and performance optimizations</li>
+<li>... and <a href="https://docs.micronaut.io/1.1.x/guide/index.html#whatsNew">many more features and refinements</a></li>
+</ul>
+<p>In the next few weeks leading up to Devnexus 2019, we will be posting additional content covering some of these features in anticipation of the first release candidate of 1.1.</p>
+<p>The next milestone of Micronaut 1.1 will be the first RC!</p>
+<p>Response to the release of Micronaut 1.0 has been outstanding, and we look forward to hearing feedback from early adopters of Micronaut 1.1. See you at <a href="https://devnexus.com">Devnexus 2019</a>!</p>]]></description><guid>2019-02-27-micronaut-11-milestone-2-released</guid><pubDate>Wed, 27 Feb 2019 00:00:00 GMT</pubDate></item><item><title>Uploading Big Files with Micronaut and Elastic Beanstalk</title><link>https://micronaut.io/blog/2019-02-21-uploading-big-files-micronaut-and-elastic-beanstalk.html</link><description><![CDATA[<h1>Uploading Big Files with Micronaut and Elastic Beanstalk</h1>
+<p><span class="author">By Sergio Del Amo Caballero</span></p>
+<p><span class="date">February 21, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a> <a href="https://micronaut.io/blog/tag/elasticbeanstalk.html"><span class="hashtag">#elasticbeanstalk</span></a></p>
+<p>If you want to <a href="https://docs.micronaut.io/1.1.0.M1/guide/index.html#uploads">upload files</a> with Micronaut, you may need to configure maximum request size and the max file size properties:</p>
+<p>Here's how to do that.</p>
+<pre><code>micronaut:
+    server:
+       max-request-size: '100MB'
+       multipart:
+           max-file-size: '100MB'
+</code></pre>
+<p>If you wish to to deploy <a href="https://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a>, an easy-to-use service for deploying and scaling web applications, you may get &quot;413 Request Entity Too Large&quot; errors when posting files larger than 10MB.</p>
+<p>You can allow bigger file uploads by creating a file named <code>src/main/resources/.ebextensions/nginx/conf.d/proxy.conf</code> with content:</p>
+<pre><code>client_max_body_size 100M;
+</code></pre>
+<p>To learn more, read <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-se-nginx.html">Configuring the Reverse Proxy</a> section in the Elastic Beanstalk documentation.</p>]]></description><guid>2019-02-21-uploading-big-files-micronaut-and-elastic-beanstalk</guid><pubDate>Thu, 21 Feb 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 Milestone 1 Released</title><link>https://micronaut.io/blog/2019-02-12-micronaut-11-milestone-1-released.html</link><description><![CDATA[<h1>Micronaut 1.1 Milestone 1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">February 12, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut Team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0.M1">Micronaut 1.1 Milestone 1</a>. </p>
+<p>Micronaut 1.1 includes a number of significant refinements since Micronaut's groundbreaking 1.0 release including:</p>
+<ul>
+<li>Support for <a href="https://grpc.io">GRPC</a></li>
+<li>Support for AWS API Gateway and GraalVM Custom Runtime </li>
+<li>AWS Alexa Lambda Support</li>
+<li>Native File Watch and Fast Server Restart</li>
+<li>New Test Templates for <a href="https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html">Micronaut Test</a></li>
+<li>Even faster cold start time and performance optimizations</li>
+<li>... and <a href="https://docs.micronaut.io/1.1.x/guide/index.html#whatsNew">many more features and refinements</a></li>
+</ul>
+<p>In the next few weeks leading up to Devnexus 2019, we will be posting additional content covering some of these features in anticipation of the first release candidate of 1.1.</p>
+<p>The next and final milestone of Micronaut 1.1 will include support for RabbitMQ and OpenID Connect before release candidates start.</p>
+<p>Response to the release of Micronaut 1.0 has been outstanding, and we look forward to hearing feedback from early adopters of Micronaut 1.1. See you at <a href="https://devnexus.com">Devnexus 2019</a>!</p>]]></description><guid>2019-02-12-micronaut-11-milestone-1-released</guid><pubDate>Tue, 12 Feb 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0.4 Released with Improved Modularity</title><link>https://micronaut.io/blog/2019-01-29-micronaut-104-released-improved-modularity.html</link><description><![CDATA[<h1>Micronaut 1.0.4 Released with Improved Modularity</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">January 29, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The Micronaut team at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.4">Micronaut 1.0.4</a>, which includes improved modularity. Micronaut now has a much <a href="https://github.com/micronaut-projects/micronaut-core/">smaller core</a> and <a href="https://github.com/micronaut-projects/">various subprojects</a> that will evolve and improve independently. </p>
+<p>This increased modularization will allow the Micronaut team to iterate faster and offer more frequent releases of the Micronaut core.</p>
+<p>The <a href="http://micronaut.io/documentation.html">documentation page</a> has been updated with links to all the different modules that come together to make Micronaut so great.</p>
+<p>Stay tuned as Micronaut 1.0.4 will be followed very soon by milestone releases of Grails 4 and Micronaut 1.1.</p>]]></description><guid>2019-01-29-micronaut-104-released-improved-modularity</guid><pubDate>Tue, 29 Jan 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.3 RC1 Released</title><link>https://micronaut.io/blog/2020-01-23-micronaut-13-rc1-released.html</link><description><![CDATA[<h1>Micronaut 1.3 RC1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">January 23, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is excited to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0.RC1">Micronaut 1.3 RC1</a>. This is the first release candidate of Micronaut 1.3, and we anticipate a very short RC cycle, so please undertake testing right away in your existing Micronaut 1.2.x applications.</p>
+<p>For further information on the release and all the new features, see the <a href="https://docs.micronaut.io/1.3.0.RC1/guide/index.html#whatsNew">release notes</a>.</p>
+<p>Thanks to all those who contributed to the release, and we look forward to your feedback as we progress Micronaut 1.3 toward a GA release.</p>]]></description><guid>2020-01-23-micronaut-13-rc1-released</guid><pubDate>Wed, 23 Jan 2019 00:00:00 GMT</pubDate></item><item><title>Spring Boot to Micronaut with Ahead-of-Time Compilation</title><link>https://micronaut.io/blog/2018-11-13-spring-boot-micronaut-ahead-time-compilation.html</link><description><![CDATA[<h1>Spring Boot to Micronaut with Ahead-of-Time Compilation</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">November 13, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/springboot.html"><span class="hashtag">#springboot</span></a></p>
+<p>Along with the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.1">Micronaut 1.0.1</a>, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is excited to announce the release of <a href="https://github.com/micronaut-projects/micronaut-spring">Micronaut for Spring 1.0 M1</a>.</p>
+<p>Micronaut for Spring adds the ability to use the long-established Spring annotation-based programming model to build Micronaut applications and libraries that work with both Micronaut and Spring.</p>
+<p>The provided <a href="https://github.com/micronaut-projects/micronaut-spring/tree/master/examples/greeting-service">example application</a> is at the source level a Spring Boot application. Using ahead-of-time (AOT) compilation, Micronaut is able to compute and interpret the Spring annotation programming model and produce a valid Micronaut application without adding any runtime overhead. The Micronaut application is then executable on GraalVM:</p>
+<p><a href="https://youtu.be/JvzD2SEw0-E" title="Micronaut for Spring"><img src="2018-11-13-img01.gif" alt="Micronaut for Spring" /></a></p>
+<p>The way this works is fairly simple.</p>
+<p>Micronaut has a set of annotations that are used at runtime to implement the framework. Spring has another set that map pretty simply onto Micronaut's annotations. You could consider these annotations as a source-code level Domain Specific Language (DSL).</p>
+<p>At compilation time, the annotation metadata is interpreted and the Spring annotation mapped to the equivalent Micronaut annotation metadata, and just like that, Micronaut can run a Spring application.</p>
+<p>Note that only a subset of Spring is supported, but it's enough to build real applications and libraries that work whether they're included in a Spring Boot application or a Micronaut application.</p>
+<h2>What's In It for Micronaut Developers?</h2>
+<p>Although including Spring in the application dependencies has some downsides for Micronaut developers (notably a JAR size increase from 13MB to 29MB), using the Spring annotation programming model also has some interesting upsides, including:</p>
+<ul>
+<li><strong>Tooling Support.</strong> If you import the application into a Spring-aware IDE, such as IntelliJ IDEA or STS 4.0, the Spring features &quot;just work.&quot; This makes sense because IDEs operate on the source code, so as far as IDEs are concerned, the application is a Spring application, even if at runtime the application is in fact a Micronaut application. The same would be the case for any source-code level tooling in the Spring ecosystem.</li>
+<li><strong>Spring and Grails Compatibility.</strong> By using the Spring annotation programming model, it is possible to build auto-configurations, endpoints, controllers, and libraries that work with Spring Boot, Grails, and Micronaut. </li>
+<li><strong>Easier Migration to Micronaut.</strong> While not every feature of Spring is supported, the vast majority of the important aspects are. This makes it easier to train new developers, migrate existing code, and embrace Micronaut.</li>
+</ul>
+<p>Note that if your source code only references Spring annotations and not Spring interfaces, Spring can actually be a &quot;compile-only&quot; dependency, which would shrink the JAR size back to 13MB and bring all of the benefits mentioned above.</p>
+<h2>What's In It for Spring Developers?</h2>
+<p>For Spring developers, the benefits are numerous too.</p>
+<p>Micronaut has the ability to take the Spring programming model places it was never able to go before, due to performance or memory consumption constraints:</p>
+<ul>
+<li><strong>Internet of Things (IoT).</strong> Micronaut runs great in IoT scenarios, including on the baby Raspberry Pi. This is because the memory profile of a Micronaut application has nothing to do with a Spring or Jakarta EE application, with significant savings to be had.</li>
+<li><strong>GraalVM.</strong> Micronaut is the first framework to bring the true Spring programming model to GraalVM in any kind of realistic way. You can run what is essentially a Spring Boot application at the source code level on GraalVM today and implement lightning-fast functions and low-memory footprint microservices.</li>
+<li><strong>Android.</strong> I remember during the early days of my time at SpringSource, the ambition to get the Spring programming model onto Android. It never actually happened; only small Spring components like RestTemplate ever make it to Android. The Micronaut core container is <a href="https://docs.micronaut.io/latest/guide/index.html#android">already running on Android</a> and has the potential to bring the entire Spring programming model to Android. We have significant ambition for Micronaut on Android.</li>
+<li><strong>AOT Compilation.</strong> Micronaut can be thought of as a framework for AOT, with a complete API for performing many AOT tasks across language implementations. For example, the <a href="https://github.com/micronaut-projects/micronaut-spring/tree/master/examples/greeting-service">referenced example</a> application is able to compute the Swagger API metadata at compile time thanks to Micronaut, even though no Micronaut API is actually referenced.</li>
+<li><strong>Serverless.</strong> With Micronaut's faster cold startup and lower memory costs, it just got a whole lot easier to build efficient applications that use the Spring programming model.</li>
+<li><strong>Library Compatibility.</strong> Projects like JHipster and Spring Boot Admin can now include Micronaut for Spring as a compilation-time annotation processor and be made to work with both Spring Boot and Micronaut. This is huge news for the library ecosystem.</li>
+<li><strong>Micronaut Features in Spring.</strong> Since annotation mapping works in any class, you get a <a href="https://github.com/micronaut-projects/micronaut-spring/blob/master/examples/greeting-service/src/test/java/greeting/example/GreetingClient.java">Spring annotation-based compile-time declarative HTTP client</a> and can use any other Micronaut feature out of the box.</li>
+</ul>
+<p>As mentioned, with Micronaut for Spring, it is also now technically possible to write Spring Boot auto configurations that work across Spring Boot, Micronaut, and Grails. The Spring team at Pivotal could even take this library and make much of <strong>spring-boot-autoconfigure</strong> work with either Spring Boot or Micronaut.</p>
+<p>The way this would work is that Spring Boot computes the auto-configuration at runtime, while if the compilation-time metadata is there, Micronaut loads it automatically without requiring additional runtime computation.</p>
+<p>Since Micronaut can also be used as a parent application context for Spring Boot, the core of Spring Boot could even be updated to use Micronaut for internal wiring and bring GraalVM compatibility to Spring Boot. If the Pivotal developers are interested <a href="https://gitter.im/micronautfw">we are happy to chat</a>.</p>
+<h2>What's In It for Grails Developers?</h2>
+<p>The primary reason we developed Micronaut for Spring is, in fact, for Grails 4.0.</p>
+<p>I have begun working on Grails 4.0, and as part of the planning, we want to enable Grails developers to benefit from the investment we have made in Micronaut over the past year.</p>
+<p>In Grails 4.0, Micronaut will take over as the parent context for Grails applications, and much of the internal wiring of Grails will be based on Micronaut instead of Spring, so that we can reduce memory consumption and improve startup time. This, combined with the improvements the Spring team has already made in Spring Boot 2.1, will result in significant improvements to Grails 4.x applications in terms of memory consumption and startup time.</p>
+<p>Since Micronaut will be the parent context for Grails 4.0 applications, it also means that every feature we develop for Micronaut will be usable in a Grails 4.0 application, from the compile-time clients – like the <a href="https://docs.micronaut.io/latest/guide/index.html#clientAnnotation">HTTP client</a> and <a href="https://docs.micronaut.io/latest/guide/index.html#kafkaClient">Kafka client</a> – to features like service discovery and client-side load balancing.</p>
+<h2>What About MicroProfile?</h2>
+<p>I had the pleasure to chat with some folks involved in <a href="https://microprofile.io" title="MicroProfile">MicroProfile</a>, and while the ambition of the project is interesting, any model that is based on the runtime analysis of annotations via reflection is unfortunately going to suffer from memory consumption issues, hence my doubts regarding current implementations. </p>
+<p>Having said that and having read the specification, Micronaut's ability to support any annotation set at compilation time using AOT means that Micronaut could technically support MicroProfile using the same approach as Micronaut for Spring.</p>
+<p>In other words, there is no reason a JAX-RS / CDI-based implementation of MicroProfile could not be implemented by mapping the annotations and providing a few interface bridges. If the MicroProfile folks are interested in chatting with us about that, <a href="https://gitter.im/micronautfw">we are around and available to chat</a>.</p>
+<h2>Summary</h2>
+<p>When I first introduced Micronaut at Greach earlier this year, I mentioned that Micronaut is far more than just another HTTP server implementation (a new HTTP server written in Java seems to pop up on Github every week!). Micronaut has the potential to revolutionize how applications are built for the JVM by completely changing the runtime characteristics of a typical Spring and/or Jakarta EE application, while retaining largely the same feature set that developers know and love.</p>
+<p>By making AOT accessible to JVM users and bringing compatibility to AOT across languages (Java, Kotlin, and Groovy currently), Micronaut is able to decouple the source code from the runtime environment like no other framework has done before. That, ladies and gentlemen, is <a href="/blog/2018-09-30-micronaut-1-rc1.html">The Power of Ahead of Time Compilation</a>.</p>
+<p>If you want to hear more, I will deliver a <a href="https://objectcomputing.com/resources/events/webinars/introduction-to-micronaut" title="Complimentary Webinar">complimentary webinar</a> on Micronaut on Wednesday, November 14, 2018, and I will be speaking about Micronaut at <a href="https://dvbe18.confinabox.com/talk/BZV-3566/Introduction_to_Micronaut:_Lightweight_Microservices_with_Ahead_of_Time_Compilation">Devoxx Belgium</a> on Thursday, November 15, 2018. See you there!</p>]]></description><guid>2018-11-13-spring-boot-micronaut-ahead-time-compilation</guid><pubDate>Tue, 13 Nov 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0 GA Released</title><link>https://micronaut.io/blog/2018-10-23-micronaut-10-ga-released.html</link><description><![CDATA[<h1>Micronaut 1.0 GA Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">October 23, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>It is with great excitement that the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) announces the <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0">release of Micronaut 1.0 GA</a> today.</p>
+<p><a href="http://www.youtube.com/watch?v=m0s2ZpafEE0" title="Introducing Micronaut"><img src="2018-10-23-img01.gif" alt="Learn more about Micronaut!" /></a></p>
+<p>Over a year in the making, Micronaut 1.0 represents a major leap forward in our mission to enable developers to create efficient, low-memory-footprint microservices and serverless apps for the JVM.</p>
+<p>Micronaut includes <a href="https://docs.micronaut.io">all the tools a modern developer needs</a> to effectively build microservices for the JVM without compromising memory footprint and startup time, including:</p>
+<ul>
+<li>Integrated compile-time dependency injection and AOP</li>
+<li>Cloud-native configuration management</li>
+<li>Service discovery and client-side load balancing</li>
+<li>Integrated HTTP client and server-based Netty</li>
+<li>Sensible defaults and auto configuration</li>
+</ul>
+<p>For insight into the design and development of Micronaut 1.0, check out InfoQ's <a href="https://www.infoq.com/news/2018/10/the-road-to-micronaut-1.0">&quot;Road to Micronaut 1.0&quot;</a> article and my previous posts on <a href="/blog/2018-10-08-micronaut-10-rc2.html">&quot;The Power of Ahead of Time Compilation.&quot;</a></p>
+<p>To find out more about Micronaut in person, come to <a href="https://oracle.rainfocus.com/widget/oracle/oow18/catalogcodeone18?search=Micronaut">my presentation on Thursday</a> at <a href="https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018">Oracle CodeOne 2018</a>, or alternatively next week <a href="https://voxxeddays.com/microservices/2018/10/05/graeme-rocher-on-micronaut/">at Voxxed Days</a> in Paris.</p>
+<p>Thank you to everyone in the community who contributed valuable feedback during the development of this GA release and enjoy Micronaut 1.0!</p>
+<p>– Graeme Rocher</p>]]></description><guid>2018-10-23-micronaut-10-ga-released</guid><pubDate>Tue, 23 Oct 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0 RC3 and Micronaut Test 1.0 RC1 Released</title><link>https://micronaut.io/blog/2018-10-16-micronaut-10-rc3.html</link><description><![CDATA[<h1>Micronaut 1.0 RC3 and Micronaut Test 1.0 RC1 Released</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">October 16, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>With one week to go to <a href="https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018">Oracle Code One 2018</a>, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.RC3">Micronaut 1.0 RC3</a>.</p>
+<p>This is the final RC before we release GA on the 23rd of October.</p>
+<p>With this release, we are pleased to also announce the first RC of <a href="https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html">Micronaut Test</a>: a simple collection of extensions for JUnit 5 and Spock that adds a few niceties that make it simpler to test Micronaut applications.</p>
+<p>Micronaut Test adds the following testing-specific features to Micronaut:</p>
+<ul>
+<li>
+<p>Automatically start and stop the server for the scope of a test suite</p>
+</li>
+<li>
+<p>Use mocks to replace existing beans for the scope of a test suite</p>
+</li>
+<li>
+<p>Allow dependency injection into a test instance</p>
+</li>
+</ul>
+<p>The following is an example test written in Spock:</p>
+<pre><code class="language-groovy">package io.micronaut.test.spock
+
+import io.micronaut.test.annotation.MicronautTest
+import spock.lang.*
+import javax.inject.Inject
+
+@MicronautTest 
+class MathServiceSpec extends Specification {
+
+    @Inject
+    MathService mathService 
+
+    @Unroll
+    void &quot;should compute #num times 4&quot;() { 
+        when:
+        def result = mathService.compute(num)
+
+        then:
+        result == expected
+
+        where:
+        num | expected
+        2   | 8
+        3   | 12
+    }
+}
+</code></pre>
+<p>As you can see from the example above, simply by adding the <code>@MicronautTest</code> annotation to any Spock or JUnit 5 test, the test automatically becomes a candidate for dependency injection.</p>
+<p>Micronaut Test includes many more features, including integration with Spock's mocking framework and Mockito for JUnit 5.</p>
+<p>Thanks to all those who provided feedback during the RC process and to those who plan to attend Oracle Code One 2018 next week in San Francisco - see you there!</p>]]></description><guid>2018-10-16-micronaut-10-rc3</guid><pubDate>Tue, 16 Oct 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0 RC2 and the Power of Ahead-of-Time Compilation</title><link>https://micronaut.io/blog/2018-10-08-micronaut-10-rc2.html</link><description><![CDATA[<h1>Micronaut 1.0 RC2 and the Power of Ahead-of-Time Compilation</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">October 8, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>Following <a href="/blog/2018-09-30-micronaut-1-rc1.html">last week's Micronaut 1.0.0 RC1 release</a>, we are pleased to <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.RC2">announce the availability of Micronaut 1.0.0 RC2</a>, which includes improvements following feedback from the community (thanks to all those who reported issues!).</p>
+<p>This second RC presents a further opportunity to test Micronaut and provide feedback as we build up to the GA release, which is scheduled for the 23rd of October – just in time for <a href="https://objectcomputing.com/index.php?cID=1336" title="Oracle Code One 2018">Oracle Code One 2018</a> in San Francisco where I will be <a href="https://oracle.rainfocus.com/widget/oracle/oow18/catalogcodeone18?search=Micronaut">presenting on Micronaut</a>!</p>
+<p>In addition, if you're in Europe, and San Francisco is little far, consider attending <a href="https://objectcomputing.com/index.php?cID=1343" title="Voxxed Days Microservices Paris">Voxxed Days Paris</a>, where I will be <a href="https://voxxeddays.com/microservices/2018/10/05/graeme-rocher-on-micronaut/">presenting Micronaut on the 30th of October</a>.</p>
+<p>In my previous post, I elaborated on some of the design choices we made with Micronaut with regards to avoiding the use of reflection as much as possible and how that benefits both the developer and the performance of the application.</p>
+<p>In this post, I will elaborate a bit more on the challenges facing traditional Java frameworks and how Micronaut solves those challenges.</p>
+<h2>Java Giveth and Taketh Away</h2>
+<p>Java and the JVM provide a rich platform on which to build frameworks that enhance developer productivity. Features such as annotations, reflection, the ability to create runtime proxies, and so on are the staple of how most Java frameworks work.</p>
+<p>Unfortunately, there are some challenges and limitations framework developers have to deal with that result in compromising either memory consumption or startup time including:</p>
+<ul>
+<li><strong>Type Erasure.</strong> The Java generics system was added later in Java's lifecycle; since backward compatibility was a requirement, the result is type erasure. The amount of runtime logic in existing Java frameworks and tools to deal with type erasure is mind blowing.</li>
+<li><strong>Missing Annotation Metadata.</strong> Java has annotations, but a number of patterns have emerged in Java frameworks for using annotation stereotypes (or meta-annotations) that are, by default, not supported by the Java API. Computing annotation metadata is therefore left to each framework to implement.</li>
+<li><strong>No Parameter Names.</strong> By default, Java and the JVM do not retain parameter name information. It is possible to work around this by adding -parameters flag to the Java compiler, but it is disabled by default.</li>
+</ul>
+<p>Why are these issues a challenge for Java frameworks like Spring and Jakarta EE? Let's take a simple example where you define an interface:</p>
+<pre><code class="language-java">interface HelloOperations&lt;T&gt; {
+    @Get(&quot;/hello/{name}&quot;)
+    T hello(@NotBlank T name);
+
+    @Get(&quot;/hello-many/{names}&quot;)
+    T helloMany(@NotEmpty List&lt;T&gt; names);
+}
+
+@Controller(&quot;/&quot;)
+class HelloController implements HelloOperations&lt;String&gt; {
+
+    @Override
+    String hello(String name)  {
+        // logic here
+    }
+
+    @Override
+    String helloMany(List&lt;String&gt; names)  {
+        // logic here
+    }
+}
+</code></pre>
+<p>Lines 2 and 3 on the <code>HelloOperations</code> interface define a route using annotations, and in addition, define a <code>@NotBlank</code> constraint on the name parameter. (Note that I have used Micronaut annotations, but the same example could be written in Jakarta EE or Spring).</p>
+<p>The <code>HelloController</code> implements the interface and provides the logic. Now, you would think this seemingly simple example would be easy for framework developers to handle, but the tasks involved include:</p>
+<ul>
+<li>Computing the annotation metadata and stereotypes for each method and on the class of the controller</li>
+<li>Traversing the class and interface hierarchy of the <code>HelloController</code> class to figure out the inherited annotations on the name parameter</li>
+<li>Dealing with generics and type erasure requirements that the parameter introduces on the class for both the return type and the argument</li>
+<li>Generating a runtime proxy to validate the <code>@NotBlank</code> constraint, which reflectively calls <code>HelloController</code></li>
+</ul>
+<p>All of this is just for a trivial example. As you add more methods, deeper inheritance hierarchies, more interfaces, and so on, the requirements become more and more complex, and all of these requirements have to be handled at <strong>runtime</strong>. </p>
+<p>In order to support all of these features that Java developers love without adversely impacting runtime performance, traditional Java frameworks cache heavily, which leads to increasing memory consumption, since the two problems are not reconcilable – you have to choose between slow runtime performance or poor memory consumption.</p>
+<h2>The Micronaut Way</h2>
+<p>So how is this situation handled in Micronaut?</p>
+<p>Instead of performing all of this analysis on your classes at runtime, Micronaut computes everything at compilation time using ahead-of-time (AOT) compilation.</p>
+<h3>Generic Type Information</h3>
+<p>All generic type information for beans and method arguments is computed ahead of time. For example, to retrieve the type parameter for List in the <code>helloMany</code> method inside an AOP interceptor, you can simply do the following:</p>
+<pre><code class="language-java">public Object intercept(MethodInvocationContext context) {
+       Map&lt;String, MutableArgumentValue&lt;?&gt;&gt; parameters = context.getParameters();
+       MutableArgumentValue&lt;?&gt; namesArgument = parameters.get(&quot;names&quot;);
+       Argument&lt;?&gt; typeArgument = namesArgument.getFirstTypeVariable().orElse(Argument.OBJECT_ARGUMENT);
+      ....
+}
+</code></pre>
+<p>Notice that the parameter name data is present and has not be erased. Processing at the source code level allows Micronaut to retain parameter name data.</p>
+<p>In addition, Micronaut will also compute type arguments for types and store them in the BeanDefinition, so if you need to compute the type parameters for a type, you don't need to jump through reflective hoops either:</p>
+<pre><code class="language-java">BeanDefinition&lt;HelloController&gt; helloDefinition = 
+                  beanContext.getBeanDefinition(HelloController.class);
+
+List&lt;Argument&lt;?&gt;&gt; typeArguments = 
+                  helloDefinition.getTypeArguments(HelloOperations.class);
+
+// do something with the type arguments
+</code></pre>
+<p>The above example retrieves the <code>BeanDefinition</code> for the <code>HelloController</code> bean and then retrieves the type arguments used for the <code>HelloOperations</code> interface, all without requiring expensive reflective processing.</p>
+<h3>Annotation Metadata</h3>
+<p>The regular Java API makes you jump through hoops to retrieve the annotation metadata on the previous example. You have to traverse through the class and interface hierarchy, reflectively loading each method and potentially dealing with visibility issues to retrieve all of the <code>java.lang.reflect.Method</code> instances that are included the hierarchy.</p>
+<p>You then have to process each method to merge together all the potential annotations by looking at the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Method.html#getParameterAnnotations--"><code>getParameterAnnotations()</code></a> method that returns a multi-dimension array with each parameter indexed by the order they appear in the method. </p>
+<p>All this complexity is not needed with Micronaut, because the annotation metadata has already been computed at compile time:</p>
+<pre><code class="language-java">Map&lt;String, MutableArgumentValue&lt;?&gt;&gt; parameters = context.getParameters();
+MutableArgumentValue&lt;?&gt; namesArgument = parameters.get(&quot;names&quot;);
+if (namesArgument.getAnnotationMetadata().hasStereotype(NotEmpty.class)) {
+     if (CollectionUtils.isEmpty((Collection) namesArgument.getValue())) {
+          throw new IllegalArgumentException(&quot;Named parameter cannot be blank&quot;);
+     }
+ }
+
+</code></pre>
+<h3>Reflection-Free Proxies</h3>
+<p>Finally, Micronaut will also at compile time produce a proxy that is a regular class and not one created via Java's native proxy mechanism, eliminating the need for reflection at the proxy level.</p>
+<p>This has a number of benefits including:</p>
+<ul>
+<li>Less work to do at runtime, improving startup and reducing memory consumption</li>
+<li>Shorter, easier to understand stack traces – since the proxy invokes your code directly, huge framework level stack traces are less of an issue</li>
+<li>Easier for the JIT to optimize – the Java JIT has an easier time of optimizing direct calls than reflective calls</li>
+<li>No need to cache reflection data – reading reflection data is expensive, so most frameworks cache method references, increasing further memory requirements</li>
+<li>Easier compatibility with GraalVM – although proxies are possible on GraalVM native image, these have to be <a href="https://github.com/oracle/graal/blob/master/substratevm/DYNAMIC_PROXY.md">configured ahead of time</a>.</li>
+</ul>
+<p>This may sound complex, but the simplicity it enables for developers is a huge win. For example, if you wish to implement your AOP advice, such as introduction advice, there are only a few steps required.</p>
+<p>As an example, say you want to implement logic from an interface at compilation time. Testing frameworks, for example, often have tools for creating stubs or mocks that return alternative values from interfaces. Let's see how you could implement stubbing in Mironaut. Step 1 is to create an annotation, for example:</p>
+<pre><code class="language-java">@Introduction 
+@Type(StubIntroduction.class) 
+@Bean 
+@Documented
+@Retention(RUNTIME)
+@Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE, ElementType.METHOD})
+public @interface Stub {
+    String value() default &quot;&quot;;
+}
+</code></pre>
+<p>On line 1 the advice is defined as introduction advice and given a type of <code>StubIntroduction</code> on line 2. The <code>StubInroduction</code> type should implement <code>MethodInterceptor</code> interface. The following is a trivial implementation:</p>
+<pre><code class="language-java">@Singleton
+public class StubIntroduction implements MethodInterceptor&lt;Object,Object&gt; { 
+
+    @Override
+    public Object intercept(MethodInvocationContext&lt;Object, Object&gt; context) {
+        return context.getValue( 
+                Stub.class,
+                context.getReturnType().getType()
+        ).orElse(null); 
+    }
+}
+</code></pre>
+<p>On line 6, the implementation tries to convert the value given to the <code>@Stub</code> annotation and return it as the result of the method call, otherwise null is returned. Now you can simply use the <code>@Stub</code> annotation on any interface:</p>
+<pre><code class="language-php">@Stub
+public interface StubExample {
+
+    @Stub(&quot;10&quot;)
+    int getNumber();
+
+    @Stub(&quot;Fred&quot;)
+    String getName();
+}
+</code></pre>
+<p>The <code>getNumber()</code> method will return 10 and the <code>getName()</code> method will return &quot;Fred&quot;. It is that simple. There is no need to rely on a container to add this functionality, or build a <code>ProxyFactoryBean</code> implementation to configure anything at runtime, it just works and it works without using any reflection whatsoever.</p>
+<h2>Summary</h2>
+<p>In addition to being great for microservices, Micronaut is a general-purpose application framework that has huge potential to revolutionize the efficiency of modern Java applications.</p>
+<p>Through AOT compilation, Micronaut is able to pre-compute your application's requirements and do a lot of the heavy lifting before it's up and running. This is a complete departure from how previous generations of Java application frameworks work, and it allows Micronaut to go places traditional Java frameworks don't normally tread.</p>
+<p>Thanks to all those who provided issue reports for RC1, <a href="https://github.com/micronaut-projects/micronaut-core/issues">keep the reports coming</a>!</p>]]></description><guid>2018-10-08-micronaut-10-rc2</guid><pubDate>Mon, 08 Oct 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0 RC1 and the Power of Ahead-of-Time Compilation</title><link>https://micronaut.io/blog/2018-09-30-micronaut-1-rc1.html</link><description><![CDATA[<h1>Micronaut 1.0 RC1 and the Power of Ahead-of-Time Compilation</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">September 30, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/openapi.html"><span class="hashtag">#openapi</span></a> <a href="https://micronaut.io/blog/tag/graalvm.html"><span class="hashtag">#graalvm</span></a></p>
+<p>Today, it is with great pleasure that the team at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) announces the release of Micronaut 1.0 RC1.</p>
+<p>Over a year in the making, Micronaut represents a significant step forward in microservice frameworks for the JVM, by supporting all of the features Java developers know and love, such as dependency injection (DI) and aspect-oriented programming (AOP), without making compromises on startup time, performance, and memory consumption.</p>
+<p>Micronaut 1.0 is now feature complete (see the <a href="https://docs.micronaut.io/1.0.x/guide/index.html#whatsNew">user guide</a> for a summary of what's new in the RC) and, more than any other prior milestone release, this RC demonstrates clearly the advantage Micronaut has when it comes to ahead-of-time (AOT) compilation over traditional Java frameworks. </p>
+<h2>Reflection and Making Java Frameworks More Efficient</h2>
+<p>The Java reflection API has been around a long time and is used extensively by libraries and frameworks throughout the Java ecosystem.</p>
+<p>The majority of modern frameworks use a reflection-based approach to invoke endpoints, create proxies, perform data binding, read configuration, and so on. It is quite remarkable how much dynamic, reflection-based logic exists in a typical modern Java application, given that the language itself is statically typed.</p>
+<p>Unfortunately, using the reflection API comes with some significant costs, both in terms of memory and runtime performance, including the following:</p>
+<ul>
+<li>Because there is no common reflection cache in Java, and reading reflective data is expensive, each library and framework produces a unique reflection cache. In a typical modern Java application, you will find Spring has a unique cache, Groovy has another cache, Jackson another, and so on. This makes it extremely difficult to optimize memory consumption.</li>
+<li>Reflective calls are much more difficult for the JIT to optimize. Efforts such as InvokeDynamic and others try to alleviate this situation, but reflective calls will never be as efficient.</li>
+<li>Most frameworks are not aware of the diverse language eco-ystem on the JVM. Languages such as Groovy and Kotlin produce more methods at the byte code level than Java does to support the additional language features they provide. This difference means that reflection caches are often larger for Groovy- and Kotlin-based classes, since the byte code contains more methods, fields, and so on.</li>
+</ul>
+<p>One of the key goals we set out to achieve when developing Micronaut was to enhance Java's efficiency and make it viable and possible to run applications that contain no compromises in terms of modern framework features but occupy 10s of megabytes of memory instead of 100s of megabytes.</p>
+<p>Although Micronaut has many features that are undeniably beneficial to the creation of microservices, Micronaut is, in fact, a general purpose framework that can be used to build a range of applications, from CLI applications, to functions that run in the cloud, to scheduled jobs that process data from Kafka.</p>
+<p>Micronaut features a custom-built <a href="https://docs.micronaut.io/1.0.x/guide/index.html#ioc">DI</a> and <a href="https://docs.micronaut.io/1.0.x/guide/index.html#aop">AOP model</a> that <em>does not</em> use reflection.</p>
+<p>Instead, an abstraction over the Java annotation processor API (APT) and Groovy AST enable developers to build efficient applications without giving up features they know and love.</p>
+<p>This approach has opened doors to myriad framework features that are more easily achieved with AOT compilation and that are unique to Micronaut.</p>
+<h2>Feature 1: GraalVM Native Image Support</h2>
+<p><a href="https://www.graalvm.org/">GraalVM</a> is a new universal virtual machine from Oracle that includes a polyglot runtime and a unique feature that allows compiling Java applications into a native image.</p>
+<p>Due to Micronaut's compile-time, reflection-free approach to DI and AOP, you can natively compile a Micronaut application into a GraalVM native image, allowing the application to start up in milliseconds while consuming only a fraction of the memory of a regular Java application running on the JVM.</p>
+<p>Check out this little animation demonstrating the feature in action:</p>
+<p><img src="2018-09-30-img01.gif" alt="" /></p>
+<p>With a GraalVM native image, Micronaut's startup time drops from around 1 second to around 20ms, while memory consumption drops from around 60mb (most of which is occupied by the JVM) to around 20mb for the native process.</p>
+<p>Although GraalVM does have ways to activate support for traditional reflection, these are unwieldy and sub-optimal. Micronaut provides out-of-the-box support for building GraalVM-compatible applications without the developer having to have deep knowledge of which classes require reflection and which do not.</p>
+<p>See the section on <a href="https://docs.micronaut.io/1.0.x/guide/index.html#graal">GraalVM and Micronaut</a> in the user guide for more information on this feature. </p>
+<h2>Feature 2: Compilation-Time Support for Swagger (OpenAPI)</h2>
+<p>Micronaut 1.0 includes <a href="https://docs.micronaut.io/snapshot/guide/index.html#openapi">compile-time support for Swagger</a>, the industry standard tool for describing APIs. The majority of frameworks that integrate <a href="https://swagger.io/">Swagger</a> do so at runtime, using extensive reflection-based approaches that are problematic from both a performance and a memory-consumption perspective.</p>
+<p>Micronaut features a <a href="https://docs.micronaut.io/1.0.x/api/io/micronaut/inject/visitor/package-summary.html">comprehensive, language-neutral visitor API</a> that allows developers to perform compile-time analysis without depending directly on Groovy's AST or Java's APT. The Swagger support in Micronaut builds on this feature.</p>
+<p>For example, consider this simple &quot;hello world&quot; example:</p>
+<pre><code>@Controller(&quot;/&quot;)
+@Validated
+public class HelloController {
+    @Get(uri=&quot;/hello/{name}&quot;, produces=&quot;text/plain&quot;)
+    public Single&lt;String&gt; hello(@NotBlank String name) {
+        return Single.just(&quot;Hello &quot; + name + &quot;!&quot;);
+    }
+}
+</code></pre>
+<p>Once configured, Micronaut will at compile time build the appropriate Swagger YAML which can easily be added as a static resource that can then be imported into the <a href="https://github.com/swagger-api/swagger-ui">Swagger UI</a> (a React / Node application) without needing any additional runtime reflection in your Java code:</p>
+<pre><code>paths:
+  /hello/{name}:
+    get:
+      operationId: hello
+      parameters:
+      - name: name
+        in: path
+        required: true
+        explode: false
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            text/plain:
+              schema:
+                type: string
+</code></pre>
+<h2>Feature 3: Compile-Time Validation</h2>
+<p>All modern Java frameworks include a bunch of inherit rules that you as a developer cannot violate, and while languages like Java provide you with compile-time checking mechanisms to confirm that your code is correct, most modern frameworks do not, relying instead on runtime exceptions to inform the user that his or her code is wrong.</p>
+<p>In fact a <a href="https://blog.softwaremill.com/the-case-against-annotations-4b2fb170ed67">common criticism</a> leveled at annotation-based programming models among static-compilation fans is the dynamic references you have to place in the annotations that are not statically checked. </p>
+<p>Although these issues have not prevented annotation-based programming models from becoming the most popular among Java developers, they can lead to a frustrating experience. This was something we wanted to address in the design of Micronaut.</p>
+<p>Let's take an example, consider the following simple route definition:</p>
+<pre><code>@Get(&quot;/hello/{name}&quot;)
+public Single&lt;String&gt; hello(@NotBlank String na) {
+     return Single.just(&quot;Hello &quot; + na + &quot;!&quot;);
+}
+</code></pre>
+<p>Spot the obvious typo?</p>
+<p>The route defines a variable called <code>name</code>, but the method accepts a parameter called <code>na</code>. With the majority of modern frameworks, this will lead to a runtime error.</p>
+<p>But not with Micronaut:</p>
+<pre><code>hello-world-java/src/main/java/example/HelloController.java:34: error: The route declares a uri variable named [name], but no corresponding method argument is present
+    public Single&lt;String&gt; hello(@NotBlank String na) {
+                          ^
+</code></pre>
+<p>This feature is powered by Micronaut's extensive support for compile-time visitors that validate you are using the framework correctly and provide early feedback to obvious framework-related problems in your code.</p>
+<p>In addition, this checking mechanism works whether you are a Java, Kotlin, or Groovy developer. Micronaut's abstraction across language ASTs ensures a consistent experience regardless of which language you choose.</p>
+<h2>Feature 4: Mapping Annotations at Compile Time</h2>
+<p>The approach we took in the design of Micronaut necessitated the creation of a new set of Java annotations enhanced to trigger AOT compilation.</p>
+<p>Unlike traditional Java frameworks, such as Java EE (now Jakarta EE) and Spring, that perform analysis of framework-level annotations at runtime, Micronaut performs this same analysis but at compilation time, allowing startup performance to be faster (particularly as your application grows) and memory consumption to be significantly lower.</p>
+<p>There are, however, a number of excellent specifications and standards in the Java space that developers are already comfortable with; it made sense to support these in Micronaut. Thanks to Micronaut's extensive annotation metadata, you can map the values of any annotation to the values of any other annotations at compile time using an AnnotationMapper.</p>
+<p>What this means in practice is Micronaut can support annotations such as <code>javax.annotation.security.RolesAllowed</code> for security or <code>javax.persistence.PersistenceContext</code> for injecting a JPA <code>EntityManager</code>.</p>
+<p>The API for this is trivial; the following example is taken from <code>RolesAllowedAnnotationMapper</code>:</p>
+<pre><code>public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;RolesAllowed&gt; annotation) {
+    String[] values = annotation.get(&quot;value&quot;, String[].class).orElse(new String[0]);
+
+    List&lt;AnnotationValue&lt;?&gt;&gt; annotationValues = new ArrayList&lt;&gt;(1);
+    annotationValues.add(
+            AnnotationValue.builder(Secured.class)
+                            .values(values)
+                            .build()
+    );
+    return annotationValues;
+}
+</code></pre>
+<p>As you can see, line 1 receives the annotation being mapped and is able to return one or many new annotations that map to an internal framework feature (in this case, security).</p>
+<p>We anticipate supporting more standard Java annotations in the future using this feature.</p>
+<h2>Summary</h2>
+<p>We are extremely excited about Micronaut 1.0 and believe it is at the forefront of the growing movement towards AOT compilation in the Java space.</p>
+<p>AOT compilation is the next big innovation coming to Java frameworks because it allows Java applications to be optimally built for scenarios such as low-memory footprint microservices, IoT (yes Micronaut runs on the Raspberry Pi), serverless, and so on.</p>
+<p>Whether you are building a client or a server, a scheduled job or a stream processing application, Micronaut has a compelling set of features that you can introduce without paying the heavy cost associated with most current Java frameworks.</p>
+<p>The release of 1.0 RC1 is just the start, and we have a lot more coming on the roadmap, including better integration with Grails. The response we have had from the enthusiastic Micronaut user community has been outstanding, and we look forward to hearing feedback as we approach the final GA release in the next few weeks.</p>]]></description><guid>2018-09-30-micronaut-1-rc1</guid><pubDate>Sun, 30 Sep 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0.0.M4 Released</title><link>https://micronaut.io/blog/2018-08-09-micronaut-100m4-released.html</link><description><![CDATA[<h1>Micronaut 1.0.0.M4 Released</h1>
+<p><span class="author">By Sergio Del Amo Caballero</span></p>
+<p><span class="date">August 9, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>1.0.0.M4 release for Micronaut.</p>
+<p>See <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.M4">release notes</a> and <a href="http://docs.micronaut.io/1.0.0.M4/guide/index.html">documentation</a> for this release.</p>]]></description><guid>2018-08-09-micronaut-100m4-released</guid><pubDate>Thu, 09 Aug 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0.0.M3 Released</title><link>https://micronaut.io/blog/2018-07-19-micronaut-100m3-released.html</link><description><![CDATA[<h1>Micronaut 1.0.0.M3 Released</h1>
+<p><span class="author">By Sergio Del Amo Caballero</span></p>
+<p><span class="date">July 19, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>1.0.0.M3 release for Micronaut.</p>
+<p>See <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.M3">release notes</a> and <a href="http://docs.micronaut.io/1.0.0.M3/guide/index.html">documentation</a> for this release.</p>]]></description><guid>2018-07-19-micronaut-100m3-released</guid><pubDate>Thu, 19 Jul 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0.0.M2 Released</title><link>https://micronaut.io/blog/2018-06-28-micronaut-100m2-released.html</link><description><![CDATA[<h1>Micronaut 1.0.0.M2 Released</h1>
+<p><span class="author">By Sergio Del Amo Caballero</span></p>
+<p><span class="date">June 28, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>1.0.0.M2 release for Micronaut.</p>
+<p>See <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.M2">release notes</a> and <a href="http://docs.micronaut.io/1.0.0.M2/guide/index.html">documentation</a> for this release.</p>]]></description><guid>2018-06-28-micronaut-100m2-released</guid><pubDate>Thu, 28 Jun 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0.0.M1 Released</title><link>https://micronaut.io/blog/2018-05-30-micronaut-100m1-released.html</link><description><![CDATA[<h1>Micronaut 1.0.0.M1 Released</h1>
+<p><span class="author">By Sergio Del Amo Caballero</span></p>
+<p><span class="date">May 30, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>1.0.0.M1 release for Micronaut.</p>
+<p>See <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.M1">release notes</a> and <a href="http://docs.micronaut.io/1.0.0.M1/guide/index.html">documentation</a> for this release.</p>]]></description><guid>2018-05-30-micronaut-100m1-released</guid><pubDate>Wed, 30 May 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut Open Sourced</title><link>https://micronaut.io/blog/2018-05-23-micronaut-open-sourced.html</link><description><![CDATA[<h1>Micronaut Open Sourced</h1>
+<p><span class="author">By Graeme Rocher</span></p>
+<p><span class="date">May 23, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
+<p>Today, it is with great pleasure that we <a href="https://github.com/micronaut-projects/micronaut-core">open source Micronaut on Github</a>.</p>
+<p>Micronaut represents a significant advancement in how a range of application types – with a particular focus on microservices – are built for the JVM.</p>
+<p>Micronaut comes to you from <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) and the team that built the <a href="http://grails.org/">Grails framework</a>. <strong>It builds upon over 10 years of experience creating application frameworks for the JVM.</strong></p>
+<p>By leveraging the lessons learned building the Grails framework, we have built a toolkit that encompasses all the modern features developers have come to expect from a framework, including dependency injection, AOP, configuration management, and more.</p>
+<p>With Micronaut, however, we've <strong>eliminated the runtime overhead</strong> – in terms of memory consumption and startup time – found in traditional frameworks. This is achieved through the use of annotation processors that pre-compile all the necessary metadata and information needed to run your application ahead of time, eliminating the need for reflection and cached reflective metadata at the framework level.</p>
+<p>Micronaut also features both an <strong>HTTP client</strong> and an <strong>HTTP server built on Netty</strong>, plus a range of tools to aid deployment into a cloud environment.</p>
+<p>Micronaut supports building applications in <strong>Groovy, Java, and Kotlin</strong>. Its design takes heavy inspiration from Spring and Grails to ensure that it is as simple as possible for developers to become fully proficient with the framework.</p>
+<p>For more about these features, view the comprehensive <a href="http://micronaut.io/documentation.html">Snapshot documentation</a>.</p>
+<p>Next week at <a href="https://gr8conf.eu/">Gr8Conf Europe</a> in Denmark, our team will deliver numerous talks and workshops on Micronaut for those interested in getting a head start using the Framework.</p>
+<p>We will also be releasing the first milestone of Micronaut 1.0 next week, which will be followed quickly with regular milestone releases and ultimately a GA release later this year.</p>
+<p>Over the next few months, we will be working diligently to build out the Framework’s features and capabilities, so please stay tuned and feel free to <a href="https://github.com/micronaut-projects/micronaut-core/issues">submit your ideas and suggestions to us</a>.</p>
+<p>With warm regards, Graeme Rocher</p>]]></description><guid>2018-05-23-micronaut-open-sourced</guid><pubDate>Wed, 23 May 2018 00:00:00 GMT</pubDate></item></channel></rss>

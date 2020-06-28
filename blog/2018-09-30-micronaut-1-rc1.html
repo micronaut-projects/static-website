@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Micronaut 1.0 RC1 and the Power of Ahead-of-Time Compilation</title>
+    <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
+    <meta name="description" content="Micronaut 1.0 release candidate 1 has been released! Discover the key features that make Micronaut stand out among Java frameworks." />
+    <meta name="date" content="September 30, 2018" />
+    <meta name="robots" content="all"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
+    <meta charset='utf-8'/>
+    <link rel='icon' href='https://micronaut.io/images/favicon.ico'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+    <meta name='twitter:card' content='summary_large_image'/>
+    <meta name='twitter:site' content='@micronautfw'/>
+    <meta name='twitter:creator' content='@micronautfw'/>
+    <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
+    <meta property='og:image:width' content='600'/>
+    <meta property='og:image:height' content='300'/>
+    <meta property='og:url' content='https://micronaut.io'/>
+    <meta property='og:title' content='Micronaut: A Modern Microservice Framework for the JVM'/>
+    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
+    <meta property='og:type' content='website'/>
+    <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
+    <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='114x114' href='https://micronaut.io/images/apple-touch-icon-114x114.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='72x72' href='https://micronaut.io/images/apple-touch-icon-72x72.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='144x144' href='https://micronaut.io/images/apple-touch-icon-144x144.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='60x60' href='https://micronaut.io/images/apple-touch-icon-60x60.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='120x120' href='https://micronaut.io/images/apple-touch-icon-120x120.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='76x76' href='https://micronaut.io/images/apple-touch-icon-76x76.png'/>
+    <link rel='pple-touch-icon-precomposed' sizes='152x152' href='https://micronaut.io/images/apple-touch-icon-152x152.png'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-196x196.png' sizes='196x196'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-96x96.png' sizes='96x96'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-32x32.png' sizes='32x32'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-16x16.png' sizes='16x16'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-128.png' sizes='128x128'/>
+    <meta name='application-name' content='&amp;nbsp;'/>
+    <meta name='msapplication-TileColor' content='#FFFFFF'/>
+    <meta name='msapplication-TileImage' content='https://micronaut.io/images/mstile-144x144.png'/>
+    <meta name='msapplication-square70x70logo' content='https://micronaut.io/images/mstile-70x70.png'/>
+    <meta name='msapplication-square150x150logo' content='https://micronaut.io/images/mstile-150x150.png'/>
+    <meta name='msapplication-wide310x150logo' content='https://micronaut.io/images/mstile-310x150.png'/>
+    <meta name='msapplication-square310x310logo' content='https://micronaut.io/images/mstile-310x310.png'/>
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/screen.css'/>
+    <script src='https://micronaut.io/javascripts/navbar_hide_scroll.js'></script>
+    <script src='https://micronaut.io/javascripts/navigation.js'></script>
+    
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
+    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+</head>
+<body class='post'>
+<div class='main'>
+    <nav id='navbar'>
+        <ul class='container'>
+            <li class='align-right tiny'>
+                <a href='#footercircle'>Menu</a>
+            </li>
+            <li class='align-right icon'>
+                <iframe src="https://ghbtns.com/github-btn.html?user=micronaut-projects&repo=micronaut-core&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+            </li>
+            <li class='align-right'><a href='https://micronaut.io/support.html'>Support</a></li>
+            <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+            <li class='align-right'><a href='https://micronaut.io/events.html'>Events</a></li>
+            <li class='align-right'><a href='https://micronaut.io/blog/index.html'>News</a></li>
+            <li class='align-right'><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+            <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+            <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+            <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+            <li class='align-right'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+            <li class='align-right'><a href='https://micronaut.io/launch/'>Launch</a></li>
+            <li class='large align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini_copy_tm.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+            <li class='small align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<article><div class='content container'>
+  <h1>
+    <a href='https://micronaut.io/blog/index.html'>
+      <span>Micronaut</span>
+      <b>Blog</b>
+    </a>
+  </h1>
+  <div class='light'>
+    <div class='largegoldenratio align-left'>
+      <div class='padded'><h1>Micronaut 1.0 RC1 and the Power of Ahead-of-Time Compilation</h1>
+<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="date">September 30, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/openapi.html"><span class="hashtag">#openapi</span></a> <a href="https://micronaut.io/blog/tag/graalvm.html"><span class="hashtag">#graalvm</span></a></p>
+<p>Today, it is with great pleasure that the team at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) announces the release of Micronaut 1.0 RC1.</p>
+<p>Over a year in the making, Micronaut represents a significant step forward in microservice frameworks for the JVM, by supporting all of the features Java developers know and love, such as dependency injection (DI) and aspect-oriented programming (AOP), without making compromises on startup time, performance, and memory consumption.</p>
+<p>Micronaut 1.0 is now feature complete (see the <a href="https://docs.micronaut.io/1.0.x/guide/index.html#whatsNew">user guide</a> for a summary of what's new in the RC) and, more than any other prior milestone release, this RC demonstrates clearly the advantage Micronaut has when it comes to ahead-of-time (AOT) compilation over traditional Java frameworks. </p>
+<h2>Reflection and Making Java Frameworks More Efficient</h2>
+<p>The Java reflection API has been around a long time and is used extensively by libraries and frameworks throughout the Java ecosystem.</p>
+<p>The majority of modern frameworks use a reflection-based approach to invoke endpoints, create proxies, perform data binding, read configuration, and so on. It is quite remarkable how much dynamic, reflection-based logic exists in a typical modern Java application, given that the language itself is statically typed.</p>
+<p>Unfortunately, using the reflection API comes with some significant costs, both in terms of memory and runtime performance, including the following:</p>
+<ul>
+<li>Because there is no common reflection cache in Java, and reading reflective data is expensive, each library and framework produces a unique reflection cache. In a typical modern Java application, you will find Spring has a unique cache, Groovy has another cache, Jackson another, and so on. This makes it extremely difficult to optimize memory consumption.</li>
+<li>Reflective calls are much more difficult for the JIT to optimize. Efforts such as InvokeDynamic and others try to alleviate this situation, but reflective calls will never be as efficient.</li>
+<li>Most frameworks are not aware of the diverse language eco-ystem on the JVM. Languages such as Groovy and Kotlin produce more methods at the byte code level than Java does to support the additional language features they provide. This difference means that reflection caches are often larger for Groovy- and Kotlin-based classes, since the byte code contains more methods, fields, and so on.</li>
+</ul>
+<p>One of the key goals we set out to achieve when developing Micronaut was to enhance Java's efficiency and make it viable and possible to run applications that contain no compromises in terms of modern framework features but occupy 10s of megabytes of memory instead of 100s of megabytes.</p>
+<p>Although Micronaut has many features that are undeniably beneficial to the creation of microservices, Micronaut is, in fact, a general purpose framework that can be used to build a range of applications, from CLI applications, to functions that run in the cloud, to scheduled jobs that process data from Kafka.</p>
+<p>Micronaut features a custom-built <a href="https://docs.micronaut.io/1.0.x/guide/index.html#ioc">DI</a> and <a href="https://docs.micronaut.io/1.0.x/guide/index.html#aop">AOP model</a> that <em>does not</em> use reflection.</p>
+<p>Instead, an abstraction over the Java annotation processor API (APT) and Groovy AST enable developers to build efficient applications without giving up features they know and love.</p>
+<p>This approach has opened doors to myriad framework features that are more easily achieved with AOT compilation and that are unique to Micronaut.</p>
+<h2>Feature 1: GraalVM Native Image Support</h2>
+<p><a href="https://www.graalvm.org/">GraalVM</a> is a new universal virtual machine from Oracle that includes a polyglot runtime and a unique feature that allows compiling Java applications into a native image.</p>
+<p>Due to Micronaut's compile-time, reflection-free approach to DI and AOP, you can natively compile a Micronaut application into a GraalVM native image, allowing the application to start up in milliseconds while consuming only a fraction of the memory of a regular Java application running on the JVM.</p>
+<p>Check out this little animation demonstrating the feature in action:</p>
+<p><img src="2018-09-30-img01.gif" alt="" /></p>
+<p>With a GraalVM native image, Micronaut's startup time drops from around 1 second to around 20ms, while memory consumption drops from around 60mb (most of which is occupied by the JVM) to around 20mb for the native process.</p>
+<p>Although GraalVM does have ways to activate support for traditional reflection, these are unwieldy and sub-optimal. Micronaut provides out-of-the-box support for building GraalVM-compatible applications without the developer having to have deep knowledge of which classes require reflection and which do not.</p>
+<p>See the section on <a href="https://docs.micronaut.io/1.0.x/guide/index.html#graal">GraalVM and Micronaut</a> in the user guide for more information on this feature. </p>
+<h2>Feature 2: Compilation-Time Support for Swagger (OpenAPI)</h2>
+<p>Micronaut 1.0 includes <a href="https://docs.micronaut.io/snapshot/guide/index.html#openapi">compile-time support for Swagger</a>, the industry standard tool for describing APIs. The majority of frameworks that integrate <a href="https://swagger.io/">Swagger</a> do so at runtime, using extensive reflection-based approaches that are problematic from both a performance and a memory-consumption perspective.</p>
+<p>Micronaut features a <a href="https://docs.micronaut.io/1.0.x/api/io/micronaut/inject/visitor/package-summary.html">comprehensive, language-neutral visitor API</a> that allows developers to perform compile-time analysis without depending directly on Groovy's AST or Java's APT. The Swagger support in Micronaut builds on this feature.</p>
+<p>For example, consider this simple &quot;hello world&quot; example:</p>
+<pre><code>@Controller(&quot;/&quot;)
+@Validated
+public class HelloController {
+    @Get(uri=&quot;/hello/{name}&quot;, produces=&quot;text/plain&quot;)
+    public Single&lt;String&gt; hello(@NotBlank String name) {
+        return Single.just(&quot;Hello &quot; + name + &quot;!&quot;);
+    }
+}
+</code></pre>
+<p>Once configured, Micronaut will at compile time build the appropriate Swagger YAML which can easily be added as a static resource that can then be imported into the <a href="https://github.com/swagger-api/swagger-ui">Swagger UI</a> (a React / Node application) without needing any additional runtime reflection in your Java code:</p>
+<pre><code>paths:
+  /hello/{name}:
+    get:
+      operationId: hello
+      parameters:
+      - name: name
+        in: path
+        required: true
+        explode: false
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            text/plain:
+              schema:
+                type: string
+</code></pre>
+<h2>Feature 3: Compile-Time Validation</h2>
+<p>All modern Java frameworks include a bunch of inherit rules that you as a developer cannot violate, and while languages like Java provide you with compile-time checking mechanisms to confirm that your code is correct, most modern frameworks do not, relying instead on runtime exceptions to inform the user that his or her code is wrong.</p>
+<p>In fact a <a href="https://blog.softwaremill.com/the-case-against-annotations-4b2fb170ed67">common criticism</a> leveled at annotation-based programming models among static-compilation fans is the dynamic references you have to place in the annotations that are not statically checked. </p>
+<p>Although these issues have not prevented annotation-based programming models from becoming the most popular among Java developers, they can lead to a frustrating experience. This was something we wanted to address in the design of Micronaut.</p>
+<p>Let's take an example, consider the following simple route definition:</p>
+<pre><code>@Get(&quot;/hello/{name}&quot;)
+public Single&lt;String&gt; hello(@NotBlank String na) {
+     return Single.just(&quot;Hello &quot; + na + &quot;!&quot;);
+}
+</code></pre>
+<p>Spot the obvious typo?</p>
+<p>The route defines a variable called <code>name</code>, but the method accepts a parameter called <code>na</code>. With the majority of modern frameworks, this will lead to a runtime error.</p>
+<p>But not with Micronaut:</p>
+<pre><code>hello-world-java/src/main/java/example/HelloController.java:34: error: The route declares a uri variable named [name], but no corresponding method argument is present
+    public Single&lt;String&gt; hello(@NotBlank String na) {
+                          ^
+</code></pre>
+<p>This feature is powered by Micronaut's extensive support for compile-time visitors that validate you are using the framework correctly and provide early feedback to obvious framework-related problems in your code.</p>
+<p>In addition, this checking mechanism works whether you are a Java, Kotlin, or Groovy developer. Micronaut's abstraction across language ASTs ensures a consistent experience regardless of which language you choose.</p>
+<h2>Feature 4: Mapping Annotations at Compile Time</h2>
+<p>The approach we took in the design of Micronaut necessitated the creation of a new set of Java annotations enhanced to trigger AOT compilation.</p>
+<p>Unlike traditional Java frameworks, such as Java EE (now Jakarta EE) and Spring, that perform analysis of framework-level annotations at runtime, Micronaut performs this same analysis but at compilation time, allowing startup performance to be faster (particularly as your application grows) and memory consumption to be significantly lower.</p>
+<p>There are, however, a number of excellent specifications and standards in the Java space that developers are already comfortable with; it made sense to support these in Micronaut. Thanks to Micronaut's extensive annotation metadata, you can map the values of any annotation to the values of any other annotations at compile time using an AnnotationMapper.</p>
+<p>What this means in practice is Micronaut can support annotations such as <code>javax.annotation.security.RolesAllowed</code> for security or <code>javax.persistence.PersistenceContext</code> for injecting a JPA <code>EntityManager</code>.</p>
+<p>The API for this is trivial; the following example is taken from <code>RolesAllowedAnnotationMapper</code>:</p>
+<pre><code>public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;RolesAllowed&gt; annotation) {
+    String[] values = annotation.get(&quot;value&quot;, String[].class).orElse(new String[0]);
+
+    List&lt;AnnotationValue&lt;?&gt;&gt; annotationValues = new ArrayList&lt;&gt;(1);
+    annotationValues.add(
+            AnnotationValue.builder(Secured.class)
+                            .values(values)
+                            .build()
+    );
+    return annotationValues;
+}
+</code></pre>
+<p>As you can see, line 1 receives the annotation being mapped and is able to return one or many new annotations that map to an internal framework feature (in this case, security).</p>
+<p>We anticipate supporting more standard Java annotations in the future using this feature.</p>
+<h2>Summary</h2>
+<p>We are extremely excited about Micronaut 1.0 and believe it is at the forefront of the growing movement towards AOT compilation in the Java space.</p>
+<p>AOT compilation is the next big innovation coming to Java frameworks because it allows Java applications to be optimally built for scenarios such as low-memory footprint microservices, IoT (yes Micronaut runs on the Raspberry Pi), serverless, and so on.</p>
+<p>Whether you are building a client or a server, a scheduled job or a stream processing application, Micronaut has a compelling set of features that you can introduce without paying the heavy cost associated with most current Java frameworks.</p>
+<p>The release of 1.0 RC1 is just the start, and we have a lot more coming on the roadmap, including better integration with Grails. The response we have had from the enthusiastic Micronaut user community has been outstanding, and we look forward to hearing feedback as we approach the final GA release in the next few weeks.</p></div>
+    </div>
+    <div class='smallgoldenratio align-right'><article class='blogcard' style=''>
+  <a href='https://micronaut.io/blog/2020-06-26-announcing-micronaut-20.html'>
+    <h3>June 26, 2020</h3>
+    <h2>Announcing Micronaut 2.0</h2>
+  </a>
+</article><article class='blogcard' style=''>
+  <a href='https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html'>
+    <h3>June 16, 2020</h3>
+    <h2>Micronaut 2.0 RC1 Released</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-04-30.png)'>
+  <a href='https://micronaut.io/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html'>
+    <h3>Apr 30, 2020</h3>
+    <h2>Micronaut 2.0 M3: A Big Boost for Serverless and Micronaut Launch</h2>
+  </a>
+</article></div>
+  </div>
+</div>&nbsp;</article>
+<div id="footercircle" class="full whitecircleborderseparator"></div>
+<footer>
+    <div class='container'>
+        <div class='mobile'>
+            <nav id='footernav'>
+                <ul class='container'>
+                    <li class='align-right'><a href='https://micronaut.io/launch/'>Launch</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/download.html'>Download</a></li>
+                    <li class='align-right'><a href='https://guides.micronaut.io/index.html'>Guides</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/products/micronaut/resources#on-demand'>Webinars</a></li>
+                    <li class='align-right'><a href='https://objectcomputing.com/services/training/catalog/micronaut-training#catalog'>Training</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/events.html'>Events</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/support.html'>Support</a></li>
+                    <li class='align-right'><a href='https://micronaut.io/faq.html'>FAQ</a></li>
+                    <li class='align-right mobile'><a href='https://micronaut.io/blog/index.html'>News</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p id='blacklogo'>
+            <img src='https://micronaut.io/images/micronautlogo.svg' alt='Micronaut Logo'/>
+        </p>
+        <div class='twocolumns'>
+            <div class='column'>
+                <nav id='socialnetworknav'>
+                    <ul class='container'>
+                        <li>
+                            <a href='https://gitter.im/micronautfw/'>
+                                <img class='' src='https://micronaut.io/images/gitter.svg' alt='Gitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.youtube.com/watch?v=56j_f3OCg6E&amp;list=PLI74De5M9T71c2dUQYy0nCdKUgZE2rrVD'>
+                                <img class='' src='https://micronaut.io/images/youtube.svg' alt='Youtube Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://github.com/micronaut-projects/'>
+                                <img class='' src='https://micronaut.io/images/github.svg' alt='Github Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://twitter.com/micronautfw'>
+                                <img class='' src='https://micronaut.io/images/twitter.svg' alt='Twitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='mailto:info@micronaut.io?subject=Micronaut&amp;amp;body=I%20am%20interested%20in%20Micronaut.'>
+                                <img class='' src='https://micronaut.io/images/mail.svg' alt='Mail Icon'/>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p>
+                    <small>© 2020, Object Computing, Inc. (OCI). All rights reserved</small>
+                </p>
+            </div>
+            <div class='column' style='margin-top: 10px;'>
+                <p>
+                    <a title='Visit OCI Website' href='https://objectcomputing.com'>
+                        <img src='https://micronaut.io/images/oci_logo.svg' alt='Object Computing' style='max-width: 300px'/>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-115754405-1');
+</script>
+<script type="text/javascript">
+    adroll_adv_id = "J4NA4XCFDNFHDGNFUAVMQD";
+    adroll_pix_id = "J4XYMNCOQNBCXJJ4GP744N";
+
+    (function() {
+        var _onload = function() {
+            if (document.readyState && !/loaded|complete/.test(document.readyState)) {
+                setTimeout(_onload, 10);
+                return
+            }
+            if (!window.__adroll_loaded) {
+                __adroll_loaded = true;
+                setTimeout(_onload, 50);
+                return
+            }
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {
+            window.addEventListener('load', _onload, false);
+        }
+        else {
+            window.attachEvent('onload', _onload)
+        }
+    }());
+</script>
+</body>
+</html>
