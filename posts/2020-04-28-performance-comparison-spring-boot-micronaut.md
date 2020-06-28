@@ -68,14 +68,14 @@ To measure start-up time, we created three simple “Hello World” REST service
 
 Micronaut and Spring Boot both report start-up time after initialization, and we used the numbers reported by the frameworks for this measurement. We started each service five times in sequence and recorded the best time for each.
 
-| foo | bar |
-| --- | --- |
-| baz | bim |
-
-
-|Spring Boot 2.2.6| Micronaut 1.3.4 | Micronaut 2.0.0 M2 |
-|:--- |:--- |:---|
-|1997 ms | 955 ms | **813 ms** |
+<table>
+<thead>
+<tr><th>Spring Boot 2.2.6</th><th>Micronaut 1.3.4</th><th>Micronaut 2.0.0 M2</th></tr>
+</thead>
+<tbody>
+<tr><td>1997 ms</td><td>955 ms</td><td><b>813 ms</b></td></tr>
+</tbody>
+</table>
 
 As you can see, Micronaut 1.3.4 started up in a little under half the time of the comparable Spring Boot application, and Micronaut 2.0.0 M2 showed a nearly 15% improvement over 1.3.4!
 
@@ -85,9 +85,14 @@ Once an application has started, it isn’t always ready to start serving reques
 
 To measure time to first response, we included a Node script that started a provided jar file and began issuing HTTP requests to a Hello World endpoint until one succeeded. Just as we did for start-up time, we performed this test against each service five times and recorded the best result.
 
-| Spring Boot 2.2.6 | Micronaut 1.3.4 |  Micronaut 2.0.0 M2 |
-| :--- | :--- | :--- |
-| 2,741 ms | 1,496 ms | **1,295 ms** |
+<table>
+<thead>
+<tr><th>Spring Boot 2.2.6</th><th>Micronaut 1.3.4</th><th>Micronaut 2.0.0 M2</th></tr>
+</thead>
+<tbody>
+<tr><td>2,741 ms</td><td>1,496 ms</td><td><b>1,295 ms</b></td></tr>
+</tbody>
+</table>
 
 Here we see similar results to the start-up time test. Micronaut 1.3.4 saved about 45% of the time required by Spring Boot, and Micronaut 2.0.0 M2 shaved another 200 milliseconds off that!
 
@@ -109,12 +114,17 @@ To simulate load on our sample applications, we created a [Gatling](https://gatl
 
 For each application, we recorded the number of requests completed during the 60 second test, the mean response time of all requests, and the mean requests per second that the application handled. After the load tests were completed, we recorded the amount of RSS memory consumed by the Java process running the application under load.
 
-|  | Spring Boot 2.2.5 | Micronaut 1.3.4 | Micronaut 2.0.0 M2 |
-| :--- | :--- |  :--- |  :--- | 
-| Total Requests in 60s | 111,137 | 132,391 | **153,557** |
-| Mean Response Time | 444 ms | 375 ms |  **323 ms** |
-| Mean Requests/Second | 2020.673 |  2407.109 |  **2791.945** | 
-| RSS Memory After Load Test | 473.328 MB | 435.092 MB | **424.560 MB** |
+<table>
+<thead>
+<tr><th></th><th>Spring Boot 2.2.5</th><th>Micronaut 1.3.4</th><th>Micronaut 2.0.0 M2</th></tr>
+</thead>
+<tbody>
+<tr><td>Total Requests in 60s</td><td>111,137</td><td>132,391</td><td><b>153,557</b></td></tr>
+<tr><td>Mean Response Time</td><td>444 ms</td><td>375 ms</td><td><b>323 ms</b></td></tr>
+<tr><td>Mean Requests/Second</td><td>2020.673</td><td>2407.109</td><td><b>2791.945</b></td></tr>
+<tr><td>RSS Memory After Load Test</td><td>473.328 MB</td><td>435.092 MB</td><td><b>424.560 MB</b></td></tr>
+</tbody>
+</table>
 
 As you can see, under load, Micronaut 1.3.4 was able to process over 20,000 additional requests as the Spring Boot application while utilizing less memory. Micronaut 2.0.0 M2 improved on this further by shaving an additional 50 milliseconds off of the mean response time while consuming less memory than the Micronaut 1.3.4 application.
 
