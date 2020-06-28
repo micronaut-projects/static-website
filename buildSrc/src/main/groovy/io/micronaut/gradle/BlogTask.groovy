@@ -283,6 +283,8 @@ class BlogTask extends DefaultTask {
         File tagFolder = new File(outputDir.absolutePath + "/${TAG}")
         tagFolder.mkdir()
 
+        Map<String, String> resolvedMetadata = RenderSiteTask.processMetadata(metadata)
+
         for (String tag : tags) {
             List<String> tagCards = []
             List<HtmlPost> postsTagged = posts.findAll { it.tags.contains(tag) }
@@ -290,7 +292,7 @@ class BlogTask extends DefaultTask {
                 tagCards << postCard(post)
             }
             File tagFile = new File("${tagFolder.absolutePath}/${tag}.html")
-            renderCards(tagFile, tagCards, metadata, templateText, renderTagTitle(tag))
+            renderCards(tagFile, tagCards, resolvedMetadata, templateText, renderTagTitle(tag))
         }
     }
 
@@ -384,13 +386,14 @@ class BlogTask extends DefaultTask {
         cards.add(2, tagsCard(sitemeta, tags))
         cards.add(5, rssCard(sitemeta['url']))
         //cards.add(8, subscribeCard())
-        renderCards(f, cards, sitemeta, templateText)
+        Map<String, String> resolvedMetadata = RenderSiteTask.processMetadata(sitemeta)
+        renderCards(f, cards, resolvedMetadata, templateText)
     }
 
     @CompileDynamic
     private static void renderCards(File f,
                                     List<String> cards,
-                                    Map<String, String> sitemeta,
+                                    Map<String, String> meta,
                                     String templateText,
                                     String title = null) {
         StringWriter writer = new StringWriter()
@@ -428,8 +431,7 @@ class BlogTask extends DefaultTask {
         }
         String pageHtml = writer.toString()
         f.createNewFile()
-        Map<String, String> resolvedMetadata = RenderSiteTask.processMetadata(sitemeta)
-        f.text = RenderSiteTask.renderHtmlWithTemplateContent(pageHtml, resolvedMetadata, templateText)
+        f.text = RenderSiteTask.renderHtmlWithTemplateContent(pageHtml, meta, templateText)
     }
 
     private static void renderRss(Map<String, String> sitemeta, List<RssItem> rssItems, File outputFile) {
