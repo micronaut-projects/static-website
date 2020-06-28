@@ -83,6 +83,6 @@ The items listed above certainly are not the entirety of the new features, impro
 
 If you haven't given [Micronaut](https://micronaut.io/index.html) a try yet, now is a great time to [get started](https://micronaut.io/launch/)! We can't wait to see what you build.
 
-Please report any issues or ideas for improvement to our [https://github.com/micronaut-projects/micronaut-core/issues](Github issue tracker). We are very excited for Micronaut 2 and the future of Micronaut!
+Please report any issues or ideas for improvement to our [Github issue tracker](https://github.com/micronaut-projects/micronaut-core/issues). We are very excited for Micronaut 2 and the future of Micronaut!
 
 Special thanks to all the tireless contributors to Micronaut who made this release happen and the excellent feedback from the community.
