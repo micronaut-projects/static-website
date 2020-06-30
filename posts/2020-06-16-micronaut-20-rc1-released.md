@@ -2,6 +2,7 @@ title: Micronaut 2.0 RC1 Released
 date: June 16, 2020  
 description: Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.
 author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer), James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)
+image: 2020-06-16.jpg
 ---
 
 # [%title]
