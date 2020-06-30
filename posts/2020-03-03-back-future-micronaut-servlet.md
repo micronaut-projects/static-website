@@ -2,7 +2,7 @@ title: Back to the Future with Micronaut Servlet
 date: March 3, 2020  
 description: Micronaut Servlet Announcement
 author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
-image: 2020-03-03.png
+image: 2020-03-03.jpg
 ---
 
 # [%title]
