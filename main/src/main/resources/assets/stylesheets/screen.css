@@ -804,8 +804,6 @@ footer nav#footernav li {
     width: 33%;
     margin-left: 0;
     margin-right: 0;
-}
-footer nav#footernav li.align-right {
     float: left;
 }
 footer nav#footernav {
