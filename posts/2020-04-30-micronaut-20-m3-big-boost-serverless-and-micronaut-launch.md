@@ -2,7 +2,7 @@ title: Micronaut 2.0 M3: A Big Boost for Serverless and Micronaut Launch
 date: Apr 30, 2020
 description: The Micronaut team is super excited to announce the final milestone on our journey to Micronaut 2.0.
 author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
-image: 2020-04-30.png
+image: 2020-04-30-2.png
 ---
 
 # [%title]
