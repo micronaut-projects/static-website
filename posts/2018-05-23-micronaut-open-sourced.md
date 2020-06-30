@@ -2,7 +2,7 @@ title: Micronaut Open Sourced
 date: May 23, 2018  
 description: We're delighted to announce that Micronaut™ has been open sourced on Github! Watch for the first milestone of Micronaut 1.0 next week!
 author: Graeme Rocher
-image: 2018-05-23.png
+image: 2018-05-23.jpg
 ---
 
 # [%title]
