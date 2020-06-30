@@ -582,8 +582,8 @@ nav li {
         margin: 0;
     }
     .main nav li.align-right {
-        width: 70%;
-        margin: 0 0 0 5%;
+        width: 74%;
+        margin: 0 0 0 1%;
     }
     .main nav li.align-right li {
         display: inline;
@@ -600,7 +600,7 @@ nav li {
         padding: 5px 0;
     }
     .main nav li.align-right ul {
-        margin-top: 5px
+        margin-top: 0px
     }
 }
 @media screen and (min-width: 1268px) {
