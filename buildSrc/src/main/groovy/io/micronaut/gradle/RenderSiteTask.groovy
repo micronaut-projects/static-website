@@ -151,7 +151,7 @@ class RenderSiteTask extends DefaultTask {
     }
 
     static String highlightMenu(String html, Map<String, String> sitemeta, String path) {
-        html.replaceAll("<li class='align-right mobile'><a href='" + sitemeta['url'] + "/"+ path, "<li class='active align-right mobile'><a href='" + sitemeta['url'] + "/"+ path).replaceAll("<li class='align-right desktop'><a href='" + sitemeta['url'] + "/"+ path, "<li class='active align-right desktop'><a href='" + sitemeta['url'] + "/"+ path).replaceAll("<li class='align-right'><a href='" + sitemeta['url'] + "/"+ path, "<li class='active align-right'><a href='" + sitemeta['url'] + "/"+ path)
+        html.replaceAll("<li><a href='" + sitemeta['url'] + path, "<li class='active'><a href='" + sitemeta['url'] + path)
     }
 
     static List<Page> parsePages(File pages) {

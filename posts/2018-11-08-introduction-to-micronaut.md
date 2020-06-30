@@ -3,7 +3,17 @@ description: In this 45-minute talk presented at Voxxed Days Microservices Paris
 slides: https://objectcomputing.com/index.php/download_file/view/2741 
 video: https://www.youtube.com/watch?v=BL9SsY5orkA
 author: Graeme Rocher
+date: Nov 8, 2018
 ---
+
+# [%title]
+
+[%date] 
+
+#webinar
+
+## OVERVIEW
+
 Micronaut is a brand new, open source, JVM-based framework for building full-stack, modular, easily testable microservice and serverless applications.
 
 Unlike reflection-based IoC frameworks which load and cache reflection data for every single field, method, and constructor in your code, with Micronaut, your application startup time and memory consumption are not bound to the size of your codebase.

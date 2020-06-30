@@ -2,8 +2,18 @@ title: Micronaut Testing Best Practices
 description: Save time and boost your productivity with expert testing tips brought to you by Micronaut team member, Iván López!
 code: https://github.com/ilopmar/micronaut-testing-best-practices
 slides: https://objectcomputing.com/index.php/download_file/view/4810
-video: https://www.youtube.com/watch?v=12cLnaLPaRo&feature=emb_title
+video: https://www.youtube.com/watch?v=12cLnaLPaRo
+date: Jun 22, 2020
 ---
+
+# [%title]
+
+[%date] 
+
+#webinar
+
+## OVERVIEW
+
 Check out the [example code](https://github.com/ilopmar/micronaut-testing-best-practices) to view a sample application containing everything Iván covers in this webinar and follow along commit by commit.
 
 We all know that testing is a critical step in the development process, but sometimes just thinking about starting the process is enough to inspire even the most diligent of us to dive headlong into procrastination mode.

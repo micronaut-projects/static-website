@@ -10,6 +10,7 @@ import io.micronaut.MarkdownPost
 import io.micronaut.MarkdownUtil
 import io.micronaut.PostMetadata
 import io.micronaut.PostMetadataAdapter
+import io.micronaut.events.EventsPage
 import io.micronaut.rss.DefaultRssFeedRenderer
 import io.micronaut.rss.RssChannel
 import io.micronaut.rss.RssFeedRenderer
@@ -45,6 +46,7 @@ class BlogTask extends DefaultTask {
     public static final String BLOG = 'blog'
     public static final String TAG = 'tag'
     public static final String INDEX = 'index.html'
+    public static final String YOUTUBE_WATCH = 'https://www.youtube.com/watch?v='
 
     @Input
     final Property<File> template = project.objects.property(File)
@@ -218,9 +220,21 @@ class BlogTask extends DefaultTask {
         markdownPosts.collect { MarkdownPost mdPost ->
                 Map<String, String> metadata = RenderSiteTask.processMetadata(globalMetadata + mdPost.metadata)
             PostMetadata postMetadata = new PostMetadataAdapter(metadata)
-            String contentHtml = wrapTags(metadata, MarkdownUtil.htmlFromMarkdown(mdPost.content))
+            String markdown = mdPost.content
+            if (metadata.containsKey('slides')) {
+                markdown = markdown + "\n\n[Slides](${metadata['slides']})\n\n"
+            }
+            if (metadata.containsKey('code')) {
+                markdown = markdown + "\n\n[Code](${metadata['code']})\n\n"
+            }
+            String contentHtml = wrapTags(metadata, MarkdownUtil.htmlFromMarkdown(markdown))
+            if (metadata.containsKey('video') && metadata['video'].startsWith(YOUTUBE_WATCH)) {
+                String videoId = metadata['video'].substring(YOUTUBE_WATCH.length())
+                contentHtml = contentHtml + "<iframe width=\"100%\" height=\"360\" src=\"https://www.youtube-nocookie.com/embed/"+videoId+"\" frameborder=\"0\"></iframe>"
+            }
             Set<String> postTags = parseTags(contentHtml)
             new HtmlPost(metadata: postMetadata, html: contentHtml, path: mdPost.path, tags: postTags)
+
         }
     }
 
@@ -387,18 +401,29 @@ class BlogTask extends DefaultTask {
         cards.add(5, rssCard(sitemeta['url']))
         //cards.add(8, subscribeCard())
         Map<String, String> resolvedMetadata = RenderSiteTask.processMetadata(sitemeta)
-        renderCards(f, cards, resolvedMetadata, templateText)
+        String html = EventsPage.mainContent(sitemeta['url']) +
+                cardsHtml(cards, resolvedMetadata)
+        html = RenderSiteTask.renderHtmlWithTemplateContent(html, resolvedMetadata, templateText)
+        html = RenderSiteTask.highlightMenu(html, resolvedMetadata, "/" + BLOG + "/" + INDEX)
+        f.createNewFile()
+        f.text = html
     }
 
-    @CompileDynamic
     private static void renderCards(File f,
                                     List<String> cards,
                                     Map<String, String> meta,
                                     String templateText,
                                     String title = null) {
+        String pageHtml = cardsHtml(cards, meta, title)
+        f.createNewFile()
+        f.text = RenderSiteTask.renderHtmlWithTemplateContent(pageHtml, meta, templateText)
+    }
+
+    @CompileDynamic
+    static String cardsHtml(List<String> cards, Map<String, String> meta, String title = null) {
         StringWriter writer = new StringWriter()
         MarkupBuilder mb = new MarkupBuilder(writer)
-        mb.div(class: 'content container') {
+        mb.div(class: 'clear content container') {
             if (title) {
                 mkp.yieldUnescaped(title)
             } else {
@@ -429,9 +454,7 @@ class BlogTask extends DefaultTask {
                 }
             }
         }
-        String pageHtml = writer.toString()
-        f.createNewFile()
-        f.text = RenderSiteTask.renderHtmlWithTemplateContent(pageHtml, meta, templateText)
+        writer.toString()
     }
 
     private static void renderRss(Map<String, String> sitemeta, List<RssItem> rssItems, File outputFile) {

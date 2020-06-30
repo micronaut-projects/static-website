@@ -2,7 +2,15 @@ title: Introduction to Micronaut Testing
 description: In this complimentary on-demand webinar, Sergio del Amo demonstrates how to maximize your productivity when testing Micronaut applications.
 slides: https://objectcomputing.com/index.php/download_file/view/4635
 video: https://www.youtube.com/watch?v=wKF_vq0KsY0  
+date: Mar 9, 2020
 ---
+
+# [%title]
+
+[%date] 
+
+#webinar
+
 Explore multiple testing practices within Micronaut applications, including API testing, bean replacement, security testing, and more! This webinar shows you just how easy it is to test microservice applications using Micronaut's built-in tools.
 
 Functional tests, which test the real application, run in milliseconds, thanks to Micronaut's compile-time dependency injection and AOP. This allows Micronaut developers to more easily build robust and stable applications. 

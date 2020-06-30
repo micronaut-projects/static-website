@@ -34,7 +34,7 @@ class EventsPage
     }
 
     @CompileDynamic
-    static String mainContent(String url, ClassLoader classLoader) {
+    static String mainContent(String url) {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
         String requestFormText = '''
@@ -54,54 +54,47 @@ class EventsPage
                 span 'Events &'
                 b 'Training'
             }
-            div(class: "twocolumns") {
-                div(class: "odd column training") {
-                    String trainigHtml = trainingHtml()
-                    html.div(class: "guidegroup", style: '') {
-                        div(class: "guidegroupheader") {
-                            img src: "${getImageAssetPreffix(url)}training.svg", alt: 'Training'
-                            h2 {
-                                html.mkp.yieldUnescaped 'Training'
-                            }
-                        }
-                        html.mkp.yieldUnescaped trainigHtml
+            div(class: "largegoldenratio align-left") {
+                String eventsHtml = ''
+                try {
+                    String json = new URL("${pwsurl}/events?category=$category").text
+                    def slurper = new JsonSlurper()
+                    def result = slurper.parseText(json)
+                    if (!result) {
+                        eventsHtml += "<p class=\"trainingvoid\"><b>Currently, we don\'t have any Micronaut events available.</p>"
+                    } else {
+                        eventsHtml +=  eventsTable(result);
                     }
-                    if ( requestFormText ) {
-                        html.div(class: 'desktop form') {
-                            mkp.yieldUnescaped requestFormText
-                        }
-                    }
+                } catch(Exception e) {
+                    eventsHtml += '<p class="trainingerror">Something went wrong while retrieving OCI Events.</p>'
                 }
-                div(class: "column training") {
-                    String eventsHtml = ''
-                    try {
-                        String json = new URL("${pwsurl}/events?category=$category").text
-                        def slurper = new JsonSlurper()
-                        def result = slurper.parseText(json)
-                        if (!result) {
-                            eventsHtml += "<p class=\"trainingvoid\"><b>Currently, we don\'t have any Micronaut events available.</p>"
-                        } else {
-                            eventsHtml +=  eventsTable(result);
-                        }
-                    } catch(Exception e) {
-                        eventsHtml += '<p class="trainingerror">Something went wrong while retrieving OCI Events.</p>'
-                    }
 
-                    html.div(class: "guidegroup", style: '') {
-                        div(class: "guidegroupheader") {
-                            img src: "${getImageAssetPreffix(url)}events.svg", alt: 'Events'
-                            h2 {
-                                html.mkp.yieldUnescaped 'Events'
-                            }
-                        }
-                        html.mkp.yieldUnescaped eventsHtml
-                    }
-                    if ( requestFormText ) {
-                        html.div(class: 'mobile') {
-                            mkp.yieldUnescaped requestFormText
+                html.div(class: "guidegroup", style: '') {
+                    div(class: "guidegroupheader") {
+                        img src: "${getImageAssetPreffix(url)}events.svg", alt: 'Events'
+                        h2 {
+                            html.mkp.yieldUnescaped 'Events'
                         }
                     }
+                    html.mkp.yieldUnescaped eventsHtml
+                }
 
+                String trainigHtml = trainingHtml()
+                html.div(class: "guidegroup", style: '') {
+                    div(class: "guidegroupheader") {
+                        img src: "${getImageAssetPreffix(url)}training.svg", alt: 'Training'
+                        h2 {
+                            html.mkp.yieldUnescaped 'Training'
+                        }
+                    }
+                    html.mkp.yieldUnescaped trainigHtml
+                }
+            }
+            div(class: 'smallgoldenratio align-left') {
+                if ( requestFormText ) {
+                    html.div(class: 'desktop form', style: "margin-top: 0;") {
+                        mkp.yieldUnescaped requestFormText
+                    }
                 }
             }
         }

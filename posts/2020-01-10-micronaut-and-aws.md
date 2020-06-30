@@ -2,7 +2,15 @@ title: Combining Micronaut and AWS to superpower your apps
 description: In this complimentary webinar, Sergio del Amo demonstrates how the Micronaut Framework's built-in features enable seamless integration with AWS services.
 video: https://www.youtube.com/watch?v=HhhuX45Y-ZY
 slides: https://objectcomputing.com/index.php/download_file/view/4319
+date: Jan 10, 2020
 ---
+
+# [%title]
+
+[%date] 
+
+#webinar
+
 We often refer to Micronaut as "natively cloud-native," but what does that mean?
 
 In this complimentary webinar, Sergio del Amo Caballero demonstrates how easy it is to deploy a Micronaut app to AWS Elastic Beanstalk and explains how to integrate it with other AWS Services, including AWS Cognito, S3, Lambda, RDS, and Route 53.

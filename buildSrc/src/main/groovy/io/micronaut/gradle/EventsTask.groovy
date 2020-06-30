@@ -1,7 +1,6 @@
 package io.micronaut.gradle
 
 import groovy.transform.CompileStatic
-import io.micronaut.download.DownloadPage
 import io.micronaut.events.EventsPage
 import org.gradle.api.DefaultTask
 import org.gradle.api.provider.Property
@@ -30,6 +29,6 @@ class EventsTask extends DefaultTask {
         File outputFile = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_EVENTS)
         outputFile.createNewFile()
         outputFile.text = "body: events\n---\n" +
-                EventsPage.mainContent(url.get(), classLoader)
+                EventsPage.mainContent(url.get())
     }
 }
