@@ -2,7 +2,7 @@ title: Introducing Micronaut 2.0 Launch
 date: Apr 30, 2020
 description: Micronaut Launch announcement
 author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer), James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)
-image: 2020-04-30-2.png
+image: 2020-04-30.jpg
 ---
 
 # [%title]
