@@ -2,7 +2,7 @@ title: Micronaut Predator Renamed Micronaut Data
 date: July 26, 2019  
 description: We are abandoning the use of the word Predator and will refer to our newly announced technology as Micronaut Data.
 author: Jeff Scott Brown
-image: 2019-07-26.png
+image: 2019-07-26.jpg
 ---
 
 # [%title]
