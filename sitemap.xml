@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
+    <loc>https://micronaut.io/foundation/index.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/events.html</loc>
   </url>
   <url>
@@ -17,6 +20,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2018-07-19-micronaut-100m3-released.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-06-29-micronaut-foundation.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-02-04-micronaut-13-and-micronaut-data-10-ga-released.html</loc>
@@ -158,6 +164,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/intellijidea.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/tag/foundation.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/aop.html</loc>
