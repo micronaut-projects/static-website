@@ -401,8 +401,9 @@ class BlogTask extends DefaultTask {
         cards.add(5, rssCard(sitemeta['url']))
         //cards.add(8, subscribeCard())
         Map<String, String> resolvedMetadata = RenderSiteTask.processMetadata(sitemeta)
-        String html = EventsPage.mainContent(sitemeta['url']) +
-                cardsHtml(cards, resolvedMetadata)
+        // String html = EventsPage.mainContent(sitemeta['url']) +
+        //         cardsHtml(cards, resolvedMetadata)
+        String html = cardsHtml(cards, resolvedMetadata)
         html = RenderSiteTask.renderHtmlWithTemplateContent(html, resolvedMetadata, templateText)
         html = RenderSiteTask.highlightMenu(html, resolvedMetadata, "/" + BLOG + "/" + INDEX)
         f.createNewFile()
