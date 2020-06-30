@@ -41,7 +41,7 @@ class BlogTask extends DefaultTask {
     public static final String IMAGES = 'images'
     final static String HASHTAG_SPAN = "<span class=\"hashtag\">#"
     final static String SPAN_CLOSE = "</span>"
-    public static final int MAX_RELATED_POSTS = 3
+    public static final int MAX_RELATED_POSTS = 2
     public static final String BLOG = 'blog'
     public static final String TAG = 'tag'
     public static final String INDEX = 'index.html'

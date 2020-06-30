@@ -12,6 +12,7 @@ import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
+import static groovy.io.FileType.FILES
 
 import javax.annotation.Nonnull
 import javax.validation.constraints.NotNull
@@ -89,17 +90,32 @@ class RenderSiteTask extends DefaultTask {
 
     static void renderPages(Map<String, String> sitemeta, List<Page> listOfPages, File outputDir, final String templateText) {
         for (Page page : listOfPages) {
-            File pageOutput = new File(outputDir.getAbsolutePath() + "/" + page.path)
-            pageOutput.createNewFile()
-
             Map<String, String> resolvedMetadata = processMetadata(sitemeta + page.metadata)
             String html = renderHtmlWithTemplateContent(page.content, resolvedMetadata, templateText)
             html = highlightMenu(html, sitemeta, page.path)
             if (page.body) {
                 html = html.replace("<body>", "<body class='${page.body}'>")
             }
-            pageOutput.text = html
+            saveHtmlToPath(outputDir, html, page.path)
         }
+    }
+
+    static void saveHtmlToPath(File outputDir, String html, String filepath) {
+        File pageOutput = new File(outputDir.absolutePath)
+        pageOutput.mkdir()
+        String[] paths = filepath.split('/')
+        for (String path : paths) {
+            if (path.endsWith(".html")) {
+                pageOutput = new File(pageOutput.getAbsolutePath() + "/" + path)
+            } else if (path.trim().isEmpty()) {
+                continue
+            } else {
+                pageOutput = new File(pageOutput.getAbsolutePath() + "/" + path)
+                pageOutput.mkdir()
+            }
+        }
+        pageOutput.createNewFile()
+        pageOutput.text = html
     }
 
     static Map<String, String> processMetadata(Map<String, String> sitemeta) {
@@ -140,10 +156,11 @@ class RenderSiteTask extends DefaultTask {
 
     static List<Page> parsePages(File pages) {
         List<Page> listOfPages = []
-        pages.eachFile { file ->
+        pages.eachFileRecurse(FILES) { file ->
             if (file.path.endsWith(".html")) {
                 ContentAndMetadata contentAndMetadata = parseFile(file)
-                listOfPages << new Page(filename: file.name, content: contentAndMetadata.content, metadata: contentAndMetadata.metadata)
+                String filename = file.absolutePath.replace(pages.absolutePath, "")
+                listOfPages << new Page(filename: filename, content: contentAndMetadata.content, metadata: contentAndMetadata.metadata)
             }
         }
         listOfPages
