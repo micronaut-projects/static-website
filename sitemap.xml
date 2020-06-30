@@ -25,6 +25,12 @@
     <loc>https://micronaut.io/blog/2020-06-29-micronaut-foundation.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2019-03-20-micronaut-security.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-05-29-meet-micronaut-data.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/2020-02-04-micronaut-13-and-micronaut-data-10-ga-released.html</loc>
   </url>
   <url>
@@ -37,6 +43,9 @@
     <loc>https://micronaut.io/blog/2019-06-05-micronaut-12-rc1-released.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2020-03-09-introduction-to-micronaut-testing.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/2018-05-30-micronaut-100m1-released.html</loc>
   </url>
   <url>
@@ -46,10 +55,16 @@
     <loc>https://micronaut.io/blog/2020-05-15-micronaut-now-supports-microsoft-azure-functions.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2019-03-05-distributed-tracing-micronaut.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/2019-11-21-micronaut-13-milestone-1-released.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-01-23-micronaut-13-rc1-released.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2018-08-14-galecino-car.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-07-18-unleashing-predator-precomputed-data-repositories.html</loc>
@@ -70,7 +85,13 @@
     <loc>https://micronaut.io/blog/2018-06-28-micronaut-100m2-released.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2020-01-10-micronaut-and-aws.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/index.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-06-15-oracle-cloud-microservices.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-02-12-micronaut-11-milestone-1-released.html</loc>
@@ -82,7 +103,16 @@
     <loc>https://micronaut.io/blog/2020-04-09-micronaut-now-certified-run-amazon-corretto.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2019-04-26-micronaut-and-graalvm.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-06-22-micronaut-testing-best-practices.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/2019-02-27-micronaut-11-milestone-2-released.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2019-08-19-micronaut-multitenancy.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2018-05-23-micronaut-open-sourced.html</loc>
@@ -154,6 +184,9 @@
     <loc>https://micronaut.io/blog/tag/gcp.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/webinar.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/data.html</loc>
   </url>
   <url>
@@ -193,6 +226,9 @@
     <loc>https://micronaut.io/blog/tag/graalvm.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2018-11-08-introduction-to-micronaut.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/2020-04-28-performance-comparison-spring-boot-micronaut.html</loc>
   </url>
   <url>
@@ -202,7 +238,16 @@
     <loc>https://micronaut.io/blog/2019-03-20-micronaut-11-rc-released.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2019-06-06-developing-alexa-skills-with-micronaut.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-04-02-single-page-apps-for-microservice-architecture.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/2020-04-30-introducing-micronaut-launch.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/learn.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/faq.html</loc>

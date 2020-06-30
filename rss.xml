@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 30 Jun 2020 08:15:51 GMT</pubDate><item><title>Micronaut Foundation</title><link>https://micronaut.io/blog/2020-06-29-micronaut-foundation.html</link><description><![CDATA[<h1>Micronaut Foundation</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 30 Jun 2020 11:01:03 GMT</pubDate><item><title>Micronaut Foundation</title><link>https://micronaut.io/blog/2020-06-29-micronaut-foundation.html</link><description><![CDATA[<h1>Micronaut Foundation</h1>
 <p><span class="date">Jun 29, 2020</span></p>
 <p><a href="https://micronaut.io/blog/tag/foundation.html"><span class="hashtag">#foundation</span></a></p>
 <p>Today, we announced the formation of the Micronaut Foundation, a not-for-profit company established to advance innovation and adoption of Micronaut®, a free and open, public-use software development framework used to build modular, easily testable microservice and serverless applications.</p>
@@ -47,7 +47,18 @@
 <p>The items listed above certainly are not the entirety of the new features, improvements, and bug fixes included in this release. For a more detailed description of what you can do with Micronaut 2, please see our <a title="Micronaut Documentation" href="https://micronaut.io/documentation.html" target="_blank">documentation</a>.</p>
 <p>If you haven't given <a href="https://micronaut.io/index.html">Micronaut</a> a try yet, now is a great time to <a href="https://micronaut.io/launch/">get started</a>! We can't wait to see what you build.</p>
 <p>Please report any issues or ideas for improvement to our <a href="https://github.com/micronaut-projects/micronaut-core/issues">Github issue tracker</a>. We are very excited for Micronaut 2 and the future of Micronaut!</p>
-<p>Special thanks to all the tireless contributors to Micronaut who made this release happen and the excellent feedback from the community.</p>]]></description><guid>2020-06-26-announcing-micronaut-20</guid><pubDate>Fri, 26 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 2.0 RC1 Released</title><link>https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html</link><description><![CDATA[<h1>Micronaut 2.0 RC1 Released</h1>
+<p>Special thanks to all the tireless contributors to Micronaut who made this release happen and the excellent feedback from the community.</p>]]></description><guid>2020-06-26-announcing-micronaut-20</guid><pubDate>Fri, 26 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut Testing Best Practices</title><link>https://micronaut.io/blog/2020-06-22-micronaut-testing-best-practices.html</link><description><![CDATA[<h1>Micronaut Testing Best Practices</h1>
+<p><span class="date">Jun 22, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<h2>OVERVIEW</h2>
+<p>Check out the <a href="https://github.com/ilopmar/micronaut-testing-best-practices">example code</a> to view a sample application containing everything Iván covers in this webinar and follow along commit by commit.</p>
+<p>We all know that testing is a critical step in the development process, but sometimes just thinking about starting the process is enough to inspire even the most diligent of us to dive headlong into procrastination mode.</p>
+<p>But wait! If you're building your apps with Micronaut, there's no reason to lose your momentum when testing time comes around!</p>
+<p>Micronaut allows you to execute end-to-end functional tests with an embedded server, making the testing process incredibly fast and easy.</p>
+<p>How do you take advantage of all the time-saving testing features the Micronaut framework provides?</p>
+<p>Watch this <strong>60-minute, on-demand, complimentary webinar</strong> to discover how easy it is to keep everything organized, mock external servers, use different configurations for every test, and many more tasks you're ordinarily tempted to put off until after you've organized your entire workspace and alphabetized your media cabinet.</p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/4810">Slides</a></p>
+<p><a href="https://github.com/ilopmar/micronaut-testing-best-practices">Code</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/12cLnaLPaRo" frameborder="0"></iframe>]]></description><guid>2020-06-22-micronaut-testing-best-practices</guid><pubDate>Mon, 22 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 2.0 RC1 Released</title><link>https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html</link><description><![CDATA[<h1>Micronaut 2.0 RC1 Released</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)<br/> James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)</span></p>
 <p><span class="date">June 16, 2020</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
@@ -88,7 +99,27 @@
 <h2>Micronaut 2 GA</h2>
 <p>The items listed above certainly are not the entirety of the new features, improvements, and bug fixes included in this release. For a more detailed description of what's new, see our <a href="https://docs.micronaut.io/2.0.0.RC1/guide/index.html#whatsNew">documentation</a>.</p>
 <p>With the first release candidate behind us, we look forward to the release of Micronaut 2. This release candidate marks a significant milestone in the progress we have made over the last 6 months. We hope you give this release candidate a try.</p>
-<p>Please report any issues or ideas for improvement to our <a href="https://github.com/micronaut-projects/micronaut-core/issues">Github issue tracker</a>. We are very excited for Micronaut 2 and the future of Micronaut!</p>]]></description><guid>2020-06-16-micronaut-20-rc1-released</guid><pubDate>Tue, 16 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut now supports Microsoft Azure Functions</title><link>https://micronaut.io/blog/2020-05-15-micronaut-now-supports-microsoft-azure-functions.html</link><description><![CDATA[<h1>Micronaut now supports Microsoft Azure Functions</h1>
+<p>Please report any issues or ideas for improvement to our <a href="https://github.com/micronaut-projects/micronaut-core/issues">Github issue tracker</a>. We are very excited for Micronaut 2 and the future of Micronaut!</p>]]></description><guid>2020-06-16-micronaut-20-rc1-released</guid><pubDate>Tue, 16 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Build and Deploy a Cloud Native Microservice to the Oracle Cloud</title><link>https://micronaut.io/blog/2020-06-15-oracle-cloud-microservices.html</link><description><![CDATA[<h1>Build and Deploy a Cloud Native Microservice to the Oracle Cloud</h1>
+<p><span class="date">Jun 15, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<h2>OVERVIEW</h2>
+<p>The brochure says you can build &quot;cloud-native&quot; microservices with Micronaut ...</p>
+<p>... but what does that actually mean?</p>
+<p>While other frameworks may have been retrofitted to accommodate cloud deployment, Micronaut was designed with built-in support for cloud services and hosting.</p>
+<p>Yep. That's right. Micronaut doesn't just allow for the development and deployment of cloud-based applications; Micronaut was actually created from the ground up to simplify the process.</p>
+<p>Join <strong>Oracle Developer Advocate</strong>, Todd Sharp, in this <strong>60-minute, complimentary webinar</strong> to learn how to:</p>
+<p>Create a simple Micronaut app
+Set up CI/CD via GitHub Actions
+Add distributed configuration via Oracle Cloud Vault
+Configure your application
+Add CRUD support
+Todd will also discuss schema migration, testing, and how you can deploy a Micronaut app to the Oracle Cloud absolutely free!</p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/4804">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/OBfUaz1PAEc" frameborder="0"></iframe>]]></description><guid>2020-06-15-oracle-cloud-microservices</guid><pubDate>Mon, 15 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Meet Micronaut Data: This is the data access toolkit you've been looking for</title><link>https://micronaut.io/blog/2020-05-29-meet-micronaut-data.html</link><description><![CDATA[<h1>Meet Micronaut Data: This is the data access toolkit you've been looking for</h1>
+<p><span class="date">May 29, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<p>Micronaut Data is a database access toolkit that uses ahead-of-time (AoT) compilation to pre-compute queries for repository interfaces that are then executed by a thin, lightweight runtime layer. Since Micronaut Data does not do any query translation at runtime, the performance gain is significant.</p>
+<p>Spend an hour with Micronaut co-founder, Graeme Rocher, to learn more about this revolutionary new development tool. Learn what it's capable of and find out how to get started.</p>
+<p>This is a great learning opportunity for Java developers interested in maximizing their productivity, whether they use the Micronaut framework or not. No experience with Micronaut is required; however you will benefit if you're already familiar with the JVM, web development, and data-access strategies in general.</p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/3jZcHQIs8dw" frameborder="0"></iframe>]]></description><guid>2020-05-29-meet-micronaut-data</guid><pubDate>Fri, 29 May 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut now supports Microsoft Azure Functions</title><link>https://micronaut.io/blog/2020-05-15-micronaut-now-supports-microsoft-azure-functions.html</link><description><![CDATA[<h1>Micronaut now supports Microsoft Azure Functions</h1>
 <p><span class="author">By Sergio del Amo (Object Computing Grails &amp; Micronaut Team)</span></p>
 <p><span class="date">May 15, 2020</span></p>
 <p><a href="https://micronaut.io/blog/tag/azure.html"><span class="hashtag">#azure</span></a> <a href="https://micronaut.io/blog/tag/serverless.html"><span class="hashtag">#serverless</span></a></p>
@@ -476,7 +507,21 @@ OpenJDK 64-Bit Server VM Corretto-11.0.6.10.1 (build 11.0.6+10-LTS, mixed mode)
 <p>As you can see, as of today, if you are looking at performance, Quarkus is marginally ahead on time to first response (around 70ms), while the only metric Spring Boot wins is compilation time due to not doing any compilation-time processing.</p>
 <p>With regard to Spring Boot, we were unable to extract reliable request-per-second data because Spring's Netty implementation bizarrely doesn't seem to support keep-alive connections correctly. Of course this may be something that we are doing wrong on our side, so please feel free to leave a comment on the video if any Spring users know the solution.</p>
 <p>The Quarkus team has made bold claims about the memory efficiency of Quarkus, so it was surprising to see such a disparity when actual tests were conducted that seem to disprove these claims. The Micronaut team and I are disappointed that we had to take it upon ourselves to perform these tests and publish the results, not as a simple opportunity to help others improve their processes and applications, but to respond to misinformation that could, theoretically, do the opposite. </p>
-<p>We are all extremely proud of Micronaut, and we know users have been happy with its powerful capabilities. We listen to feedback and work every day on making improvements that we hope will help even more people enhance their productivity and build faster, better apps. That said, I encourage all users to do their own testing and make their own judgments regarding which JVM framework they prefer.</p>]]></description><guid>2020-04-07-micronaut-vs-quarkus-vs-spring-boot-performance-jdk-14</guid><pubDate>Tue, 07 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 2.0 Milestone 2: Massive Maven Improvements</title><link>https://micronaut.io/blog/2020-04-02-micronaut-20-milestone-2-massive-maven-improvements.html</link><description><![CDATA[<h1>Micronaut 2.0 Milestone 2: Massive Maven Improvements</h1>
+<p>We are all extremely proud of Micronaut, and we know users have been happy with its powerful capabilities. We listen to feedback and work every day on making improvements that we hope will help even more people enhance their productivity and build faster, better apps. That said, I encourage all users to do their own testing and make their own judgments regarding which JVM framework they prefer.</p>]]></description><guid>2020-04-07-micronaut-vs-quarkus-vs-spring-boot-performance-jdk-14</guid><pubDate>Tue, 07 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Single Page Apps for a Microservice Architecture</title><link>https://micronaut.io/blog/2020-04-02-single-page-apps-for-microservice-architecture.html</link><description><![CDATA[<h1>Single Page Apps for a Microservice Architecture</h1>
+<p><span class="date">Apr 2, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<p>Single-page applications (SPAs) are typically built as dynamic clients that interact with your web application through REST or some other HTTP-friendly protocol, with the frontend relying on the backend server to handle security, persistence, and business logic. This simple frontend =&gt; backend model works well for many applications, but now that our &quot;backend&quot; might be composed of multiple services, each with its own API and (potentially) security requirements, managing the communication between our frontend UI and our microservices can lead to a multiplication of complexity. Inter-service concerns such as security and multi-tenancy only add to the difficulty.</p>
+<p>In this complimentary, on-demand webinar, Zachary Klein examines some simple patterns that can help simplify your SPAs and demonstrates how to take advantage of several Micronaut features that make it easy to secure and customize the communication among your services, all the way to and from the client.</p>
+<p>The following topics are covered in this webinar:</p>
+<ul>
+<li>Single page apps</li>
+<li>API gateways</li>
+<li>Security</li>
+<li>Multi-tenancy</li>
+<li>Token propagation</li>
+</ul>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/4688">Slides</a></p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/4689">Code</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/cU9doRzJSSY" frameborder="0"></iframe>]]></description><guid>2020-04-02-single-page-apps-for-microservice-architecture</guid><pubDate>Thu, 02 Apr 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 2.0 Milestone 2: Massive Maven Improvements</title><link>https://micronaut.io/blog/2020-04-02-micronaut-20-milestone-2-massive-maven-improvements.html</link><description><![CDATA[<h1>Micronaut 2.0 Milestone 2: Massive Maven Improvements</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
 <p><a href="https://micronaut.io/blog/tag/maven.html"><span class="hashtag">#maven</span></a></p>
 <p><span class="date">April 2, 2020</span> Just two weeks since the last milestone, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.M2">Micronaut 2.0 Milestone 2</a>.</p>
@@ -522,7 +567,35 @@ micronaut:
 <p>There are many more improvements in this release, from support for <a href="https://jdbi.org/">Jdbi</a> to improved support for Cloud Foundry. We recommend you checkout the <a href="https://docs.micronaut.io/2.0.x/guide/index.html#whatsNew">release notes in full</a> for all the details.</p>
 <h2>More to Come</h2>
 <p>Micronaut 2.0 Milestone 1 is just the first milestone on Micronaut's journey towards 2.0. It gives users the opportunity to take important new features like HTTP/2 support out for spin and provide feedback to make the GA release as solid as possible.</p>
-<p>Thanks to the community for your great contributions so far; your input helped make this release happen. Enjoy!</p>]]></description><guid>2020-03-20-micronaut-20-milestone-1-released</guid><pubDate>Fri, 20 Mar 2020 00:00:00 GMT</pubDate></item><item><title>Back to the Future with Micronaut Servlet</title><link>https://micronaut.io/blog/2020-03-03-back-future-micronaut-servlet.html</link><description><![CDATA[<h1>Back to the Future with Micronaut Servlet</h1>
+<p>Thanks to the community for your great contributions so far; your input helped make this release happen. Enjoy!</p>]]></description><guid>2020-03-20-micronaut-20-milestone-1-released</guid><pubDate>Fri, 20 Mar 2020 00:00:00 GMT</pubDate></item><item><title>Introduction to Micronaut Testing</title><link>https://micronaut.io/blog/2020-03-09-introduction-to-micronaut-testing.html</link><description><![CDATA[<h1>Introduction to Micronaut Testing</h1>
+<p><span class="date">Mar 9, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<p>Explore multiple testing practices within Micronaut applications, including API testing, bean replacement, security testing, and more! This webinar shows you just how easy it is to test microservice applications using Micronaut's built-in tools.</p>
+<p>Functional tests, which test the real application, run in milliseconds, thanks to Micronaut's compile-time dependency injection and AOP. This allows Micronaut developers to more easily build robust and stable applications.</p>
+<p>The following topics are covered in this webinar:</p>
+<ul>
+<li>Test environment</li>
+<li>ApplicationContext</li>
+<li>EmbeddedServer</li>
+<li>Testing endpoints with Micronaut HTTP Client</li>
+<li>Create and organize beans in your Test Classpath</li>
+<li>Data validation</li>
+<li>@Clients Fallbacks</li>
+<li>Test-specific configuration</li>
+<li>Testing functions</li>
+<li>Testing frameworks</li>
+</ul>
+<ul>
+<li>Spock</li>
+<li>JUnit</li>
+<li>Spek</li>
+</ul>
+<ul>
+<li>Micronaut Testing framework</li>
+</ul>
+<p>This is a great learning opportunity for Micronaut developers interested in maximizing their productivity with the framework.</p>
+<p>No particular expertise with Micronaut is required; however you will benefit if you're already familiar with Micronaut, Java, and how web applications work in general.</p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/4635">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/wKF_vq0KsY0" frameborder="0"></iframe>]]></description><guid>2020-03-09-introduction-to-micronaut-testing</guid><pubDate>Mon, 09 Mar 2020 00:00:00 GMT</pubDate></item><item><title>Back to the Future with Micronaut Servlet</title><link>https://micronaut.io/blog/2020-03-03-back-future-micronaut-servlet.html</link><description><![CDATA[<h1>Back to the Future with Micronaut Servlet</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
 <p><span class="date">March 3, 2020</span></p>
 <p><a href="https://micronaut.io/blog/tag/servlet.html"><span class="hashtag">#servlet</span></a> <a href="https://micronaut.io/blog/tag/jetty.html"><span class="hashtag">#jetty</span></a> <a href="https://micronaut.io/blog/tag/undertow.html"><span class="hashtag">#undertow</span></a></p>
@@ -551,7 +624,27 @@ micronaut:
 <li>Improvements to serverless support</li>
 <li>New build plugins for Maven and Gradle</li>
 <li>Further performance refinements</li>
-</ul>]]></description><guid>2020-02-04-micronaut-13-and-micronaut-data-10-ga-released</guid><pubDate>Tue, 04 Feb 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.3 Milestone 2 Released</title><link>https://micronaut.io/blog/2019-12-20-micronaut-13-milestone-2-released.html</link><description><![CDATA[<h1>Micronaut 1.3 Milestone 2 Released</h1>
+</ul>]]></description><guid>2020-02-04-micronaut-13-and-micronaut-data-10-ga-released</guid><pubDate>Tue, 04 Feb 2020 00:00:00 GMT</pubDate></item><item><title>Combining Micronaut and AWS to superpower your apps</title><link>https://micronaut.io/blog/2020-01-10-micronaut-and-aws.html</link><description><![CDATA[<h1>Combining Micronaut and AWS to superpower your apps</h1>
+<p><span class="date">Jan 10, 2020</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<p>We often refer to Micronaut as &quot;natively cloud-native,&quot; but what does that mean?</p>
+<p>In this complimentary webinar, Sergio del Amo Caballero demonstrates how easy it is to deploy a Micronaut app to AWS Elastic Beanstalk and explains how to integrate it with other AWS Services, including AWS Cognito, S3, Lambda, RDS, and Route 53.</p>
+<p>The following topics are covered in this webinar:</p>
+<ul>
+<li>Deploying a Micronaut app to AWS Elastic Beanstalk</li>
+<li>Uploading files to AWS S3 from a Micronaut app</li>
+<li>Securing an app with AWS Cognito</li>
+<li>Publishing a Micronaut function to AWS Lambda</li>
+<li>Sending an email from a Micronaut app with AWS SES</li>
+<li>Service discovery with Route 53</li>
+<li>Alexa skill support with Micronaut</li>
+</ul>
+<p>This is a great learning opportunity for JVM developers interested in learning how to combine Micronaut's wide range of capabilities with the power of Amazon Web Services.</p>
+<p>No particular expertise with Micronaut or AWS is required. However, you will benefit if you are already familiar with Micronaut, AWS services, and the AWS SDK.</p>
+<p><strong>WE'RE PROUD TO WELCOME SPECIAL GUEST, STEFANO BULIANI, FROM AMAZON WEB SERVICES</strong></p>
+<p>Stefano Buliani works in the Serverless organization at Amazon Web Services helping AWS customers implement new applications that leverage AWS Lambda and Amazon API Gateway. Stefano has been a professional developer for 15 years, primarily focusing on distributed systems and service-oriented architectures using Java, Go, and Rust.</p>
+<p>Stefano joins Sergio as a guest presenter to help answer questions and provide expert advice from an Amazon perspective throughout the presentation.</p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/4319">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/HhhuX45Y-ZY" frameborder="0"></iframe>]]></description><guid>2020-01-10-micronaut-and-aws</guid><pubDate>Fri, 10 Jan 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.3 Milestone 2 Released</title><link>https://micronaut.io/blog/2019-12-20-micronaut-13-milestone-2-released.html</link><description><![CDATA[<h1>Micronaut 1.3 Milestone 2 Released</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
 <p><span class="date">December 20, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
@@ -873,7 +966,21 @@ public class BookManager {
 <p>The method on line 17 is declared with <a href="https://github.com/micronaut-projects/micronaut-data/blob/master/data-tx/src/main/java/io/micronaut/transaction/annotation/TransactionalEventListener.java">@TransactionalEventListener</a> and for the moment just prints out the event. If the transaction fails for whatever reason, however, the event will never be received and the output never printed.</p>
 <h2>Summary</h2>
 <p>There is a definite lack of information on how compelling the Micronaut AOP implementation is, and I hope this blog post goes some way to resolving that. Micronaut AOP has some really nice features and makes it really simple to define AOP advice without the need to involve complex runtime bytecode generation solutions that create enormous stack traces and place additional memory strain on your application.</p>
-<p>My recent experience using Micronaut AOP to build Micronaut Data further highlighted to me the advances we have made in this area, pushing developers to avoid the use of reflection, which optimizes memory consumption and makes it so much easier to go native with GraalVM substrate.</p>]]></description><guid>2019-10-07-micronaut-aop-awesome-flexibility-without-complexity</guid><pubDate>Mon, 07 Oct 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut Data 1.0 Milestone 1 Released</title><link>https://micronaut.io/blog/2019-08-14-micronaut-data-10-milestone-1-released.html</link><description><![CDATA[<h1>Micronaut Data 1.0 Milestone 1 Released</h1>
+<p>My recent experience using Micronaut AOP to build Micronaut Data further highlighted to me the advances we have made in this area, pushing developers to avoid the use of reflection, which optimizes memory consumption and makes it so much easier to go native with GraalVM substrate.</p>]]></description><guid>2019-10-07-micronaut-aop-awesome-flexibility-without-complexity</guid><pubDate>Mon, 07 Oct 2019 00:00:00 GMT</pubDate></item><item><title>Introduction to Micronaut Multi-tenancy</title><link>https://micronaut.io/blog/2019-08-19-micronaut-multitenancy.html</link><description><![CDATA[<h1>Introduction to Micronaut Multi-tenancy</h1>
+<p><span class="date">Aug 19, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<p>Multi-tenancy, as it relates to software development, is when a single instance of an application is used to service multiple clients (tenants) in such a way that each tenant's data is isolated from the other. Among other things, multi-tenancy enables you to build software as a service (SaaS) applications.</p>
+<p>In this complimentary webinar, JVM developers interested in learning how to integrate multi-tenancy in their Micronaut applications get an introduction to Micronaut's multi-tenancy capabilities, including microservice-specific features, such as tenant propogation, and an in-depth demonstration of how to implement this powerful functionality.</p>
+<h2>OUTLINE</h2>
+<p>The following topics are covered in this webinar.</p>
+<ul>
+<li>Micronaut built-in tenant resolver</li>
+<li>How to build your own tenant resolvers</li>
+<li>How to configure tenant propagation</li>
+<li>How to test multi-tenancy apps</li>
+<li>How to integrate GORM multi-tenancy capabilities with Micronaut’s multi-tenancy offering</li>
+</ul>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/2688">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/S1CfGOecqG4" frameborder="0"></iframe>]]></description><guid>2019-08-19-micronaut-multitenancy</guid><pubDate>Mon, 19 Aug 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut Data 1.0 Milestone 1 Released</title><link>https://micronaut.io/blog/2019-08-14-micronaut-data-10-milestone-1-released.html</link><description><![CDATA[<h1>Micronaut Data 1.0 Milestone 1 Released</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
 <p><span class="date">August 14, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/data.html"><span class="hashtag">#data</span></a></p>
@@ -999,7 +1106,25 @@ BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-ex
 <p>We are just getting started with Micronaut Data, and we are crazy-excited about the possibilities it opens up.</p>
 <p>Initially, we are launching with support for JPA and SQL, but you can expect support for MongoDB, Neo4j, Reactive SQL, and other databases in the future. Thankfully, doing this work is a lot simpler because much of Micronaut Data is actually based on a fork of the GORM source code, and we will be able to reuse logic from GORM for Neo4j and GORM for MongoDB to get those implementations ready sooner than you may expect.</p>
 <p>Micronaut Data is the culmination of putting together various building blocks in Micronaut Core that made it possible, from the AoT APIs, which are also used to <a href="https://github.com/micronaut-projects/micronaut-openapi">generate Swagger documentation</a>, to the relatively new <a href="https://docs.micronaut.io/latest/guide/index.html#introspection">Bean Introspection support</a>, which allows introspection of beans at runtime without using reflection.</p>
-<p>Micronaut provides the building blocks to do some amazing things. Micronaut Data is one those things, and we are just getting started on delivering on some of the promising foundations delivered in Micronaut 1.0.</p>]]></description><guid>2019-07-18-unleashing-predator-precomputed-data-repositories</guid><pubDate>Thu, 18 Jul 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.2 RC1 Released</title><link>https://micronaut.io/blog/2019-06-05-micronaut-12-rc1-released.html</link><description><![CDATA[<h1>Micronaut 1.2 RC1 Released</h1>
+<p>Micronaut provides the building blocks to do some amazing things. Micronaut Data is one those things, and we are just getting started on delivering on some of the promising foundations delivered in Micronaut 1.0.</p>]]></description><guid>2019-07-18-unleashing-predator-precomputed-data-repositories</guid><pubDate>Thu, 18 Jul 2019 00:00:00 GMT</pubDate></item><item><title>Developing Alexa Skills with Micronaut</title><link>https://micronaut.io/blog/2019-06-06-developing-alexa-skills-with-micronaut.html</link><description><![CDATA[<h1>Developing Alexa Skills with Micronaut</h1>
+<p><span class="date">Jun 6, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<h2>OVERVIEW</h2>
+<p>Even if they have yet to incorporate smart technology into their daily routines, most everyone is familiar with voice-activated digital assistants, like Amazon Alexa, Apple Siri, and Google Home. These technical tools come with a variety of built-in skills, but did you know that you can design and develop your own skills to further customize your &quot;smart lifestyle&quot;?</p>
+<p>In this complimentary webinar, Micronaut team member and Amazon Echo user, Ryan Vanderwerf, introduces the basic technology that powers Amazon Alexa and demonstrates how to develop custom skills for your device. Through an exploration of visual templates, audio UI techniques, AWS Lambda, and Micronaut's newest features, Ryan makes it easy to get started with Alexa-skill development.</p>
+<p>Finally, Ryan provides some tips, tricks, and best practices for those interested in publishing their skills to the marketplace.</p>
+<h2>Outline</h2>
+<p>The following topics are covered in this webinar:</p>
+<ul>
+<li>Amazon, Echo, Alexa, and friends</li>
+<li>The evolution of voice UIs and how Alexa works</li>
+<li>Alexa software concepts and components (v2 API)</li>
+<li>Brief Lamba overview</li>
+<li>Micronaut Lamba Groovy app setup</li>
+<li>Walk through Hello World examples</li>
+<li>Advanced Demo: Star Wars Quiz Skill</li>
+</ul>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/3401">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/6-dHLF5HJv8" frameborder="0"></iframe>]]></description><guid>2019-06-06-developing-alexa-skills-with-micronaut</guid><pubDate>Thu, 06 Jun 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.2 RC1 Released</title><link>https://micronaut.io/blog/2019-06-05-micronaut-12-rc1-released.html</link><description><![CDATA[<h1>Micronaut 1.2 RC1 Released</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
 <p><span class="date">June 5, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
@@ -1013,7 +1138,12 @@ BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-ex
 </ul>
 <p>The most significant new feature is the updated security module, which includes OpenID connect support that works with a variety of providers. Check out the <a href="https://guides.micronaut.io/micronaut-oauth2-okta/guide/index.html">Securing a Micronaut App with Okta guide</a>, which demonstrates how to use <a href="https://www.okta.com">Okta</a> as the OpenID provider.</p>
 <p>Validation also gets a significant upgrade with native support for bean-validation annotations without needing to pull in Hibernate Validator. This has numerous benefits, including reducing the JAR size of a Micronaut application, improving startup time, and eliminating reflection. Plus the new validation module now supports reactive flows! </p>
-<p>Thanks to all those who contributed to the release, and we look forward to your feedback as we progress Micronaut 1.2 toward a GA release.</p>]]></description><guid>2019-06-05-micronaut-12-rc1-released</guid><pubDate>Wed, 05 Jun 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 Released</title><link>https://micronaut.io/blog/2019-04-11-micronaut-11-released.html</link><description><![CDATA[<h1>Micronaut 1.1 Released</h1>
+<p>Thanks to all those who contributed to the release, and we look forward to your feedback as we progress Micronaut 1.2 toward a GA release.</p>]]></description><guid>2019-06-05-micronaut-12-rc1-released</guid><pubDate>Wed, 05 Jun 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut and GraalVM: the ultimate recipe for fast, lightweight, powerful apps</title><link>https://micronaut.io/blog/2019-04-26-micronaut-and-graalvm.html</link><description><![CDATA[<h1>Micronaut and GraalVM: the ultimate recipe for fast, lightweight, powerful apps</h1>
+<p><span class="date">Apr 26, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<h2>OVERVIEW</h2>
+<p>This webinar is a great introduction to GraalVM for Micronaut users and other JVM developers interested in converting their applications to GraalVM native images.</p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/3212">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/CLKeqGPaEtc" frameborder="0"></iframe>]]></description><guid>2019-04-26-micronaut-and-graalvm</guid><pubDate>Fri, 26 Apr 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 Released</title><link>https://micronaut.io/blog/2019-04-11-micronaut-11-released.html</link><description><![CDATA[<h1>Micronaut 1.1 Released</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
 <p><span class="date">April 11, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
@@ -1039,7 +1169,12 @@ BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-ex
 <li>A <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples/hello-world-cloud-run">Hello World sample application</a> that is ready to be deployed to Cloud Run using <a href="https://github.com/GoogleContainerTools/jib">Jib</a> and <a href="https://cloud.google.com/container-registry/">Google Container Registry</a>.</li>
 <li>A <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples/hello-world-cloud-run-graal">second application that uses GraalVM native and Google Cloud Build</a> to build and deploy a native image to Google Cloud Run.</li>
 </ul>
-<p>Thank you to all who provided feedback during the extended RC phase of Micronaut 1.1, enjoy the release!</p>]]></description><guid>2019-04-11-micronaut-11-released</guid><pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 RC1 Released</title><link>https://micronaut.io/blog/2019-03-20-micronaut-11-rc-released.html</link><description><![CDATA[<h1>Micronaut 1.1 RC1 Released</h1>
+<p>Thank you to all who provided feedback during the extended RC phase of Micronaut 1.1, enjoy the release!</p>]]></description><guid>2019-04-11-micronaut-11-released</guid><pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate></item><item><title>Defending your cloud apps with Micronaut Security</title><link>https://micronaut.io/blog/2019-03-20-micronaut-security.html</link><description><![CDATA[<h1>Defending your cloud apps with Micronaut Security</h1>
+<p><span class="date">Mar 20, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<h2>OVERVIEW</h2>
+<p>This webinar is a great learning opportunity for JVM developers interested in learning to leverage Micronaut's wide range of capabilities and build secure microservices and serverless apps with the framework.</p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/3142">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/VrnVbAyKSEY" frameborder="0"></iframe>]]></description><guid>2019-03-20-micronaut-security</guid><pubDate>Wed, 20 Mar 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 RC1 Released</title><link>https://micronaut.io/blog/2019-03-20-micronaut-11-rc-released.html</link><description><![CDATA[<h1>Micronaut 1.1 RC1 Released</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
 <p><span class="date">March 20, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
@@ -1064,7 +1199,13 @@ BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-ex
 <li><strong>Build Time Reflection Data.</strong> Thanks to the aforementioned feature, the remaining reflective cases needed for third-party libraries have been replaced by build-time generation of <code>reflection-config.json</code> for classes that do require it.</li>
 <li><strong>Simplified Image Generation.</strong> You can now generate a native image with just <code>native-image --class-path myjar.jar</code> without any additional flags; Micronaut now computes the appropriate GraalVM configuration at compilation time.</li>
 </ul>
-<p>I will be talking about Micronaut and these new features at <a href="https://www.greachconf.com">Greach 2019</a> in Madrid, followed by <a href="https://developer.oracle.com/code/rome-april-2019">Oracle Code Rome</a>. See you there!</p>]]></description><guid>2019-03-20-micronaut-11-rc-released</guid><pubDate>Wed, 20 Mar 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 Milestone 2 Released</title><link>https://micronaut.io/blog/2019-02-27-micronaut-11-milestone-2-released.html</link><description><![CDATA[<h1>Micronaut 1.1 Milestone 2 Released</h1>
+<p>I will be talking about Micronaut and these new features at <a href="https://www.greachconf.com">Greach 2019</a> in Madrid, followed by <a href="https://developer.oracle.com/code/rome-april-2019">Oracle Code Rome</a>. See you there!</p>]]></description><guid>2019-03-20-micronaut-11-rc-released</guid><pubDate>Wed, 20 Mar 2019 00:00:00 GMT</pubDate></item><item><title>Distributed Tracing with Micronaut</title><link>https://micronaut.io/blog/2019-03-05-distributed-tracing-micronaut.html</link><description><![CDATA[<h1>Distributed Tracing with Micronaut</h1>
+<p><span class="date">Mar 5, 2019</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<h2>OVERVIEW</h2>
+<p>This webinar is a great learning opportunity for JVM developers interesting in learning to leverage Micronaut's wide range of capabilities, as well as those interested in distributed tracing in general.</p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/3071">Slides</a></p>
+<p><a href="https://github.com/ZacharyKlein/micronaut-distributed-tracing">Code</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/TmFBDsnLbAY" frameborder="0"></iframe>]]></description><guid>2019-03-05-distributed-tracing-micronaut</guid><pubDate>Tue, 05 Mar 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 Milestone 2 Released</title><link>https://micronaut.io/blog/2019-02-27-micronaut-11-milestone-2-released.html</link><description><![CDATA[<h1>Micronaut 1.1 Milestone 2 Released</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
 <p><span class="date">February 27, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
@@ -1176,7 +1317,15 @@ BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-ex
 <h2>Summary</h2>
 <p>When I first introduced Micronaut at Greach earlier this year, I mentioned that Micronaut is far more than just another HTTP server implementation (a new HTTP server written in Java seems to pop up on Github every week!). Micronaut has the potential to revolutionize how applications are built for the JVM by completely changing the runtime characteristics of a typical Spring and/or Jakarta EE application, while retaining largely the same feature set that developers know and love.</p>
 <p>By making AOT accessible to JVM users and bringing compatibility to AOT across languages (Java, Kotlin, and Groovy currently), Micronaut is able to decouple the source code from the runtime environment like no other framework has done before. That, ladies and gentlemen, is <a href="/blog/2018-09-30-micronaut-1-rc1.html">The Power of Ahead of Time Compilation</a>.</p>
-<p>If you want to hear more, I will deliver a <a href="https://objectcomputing.com/resources/events/webinars/introduction-to-micronaut" title="Complimentary Webinar">complimentary webinar</a> on Micronaut on Wednesday, November 14, 2018, and I will be speaking about Micronaut at <a href="https://dvbe18.confinabox.com/talk/BZV-3566/Introduction_to_Micronaut:_Lightweight_Microservices_with_Ahead_of_Time_Compilation">Devoxx Belgium</a> on Thursday, November 15, 2018. See you there!</p>]]></description><guid>2018-11-13-spring-boot-micronaut-ahead-time-compilation</guid><pubDate>Tue, 13 Nov 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0 GA Released</title><link>https://micronaut.io/blog/2018-10-23-micronaut-10-ga-released.html</link><description><![CDATA[<h1>Micronaut 1.0 GA Released</h1>
+<p>If you want to hear more, I will deliver a <a href="https://objectcomputing.com/resources/events/webinars/introduction-to-micronaut" title="Complimentary Webinar">complimentary webinar</a> on Micronaut on Wednesday, November 14, 2018, and I will be speaking about Micronaut at <a href="https://dvbe18.confinabox.com/talk/BZV-3566/Introduction_to_Micronaut:_Lightweight_Microservices_with_Ahead_of_Time_Compilation">Devoxx Belgium</a> on Thursday, November 15, 2018. See you there!</p>]]></description><guid>2018-11-13-spring-boot-micronaut-ahead-time-compilation</guid><pubDate>Tue, 13 Nov 2018 00:00:00 GMT</pubDate></item><item><title>Introduction to Micronaut: Building ultra-lightweight microservices</title><link>https://micronaut.io/blog/2018-11-08-introduction-to-micronaut.html</link><description><![CDATA[<h1>Introduction to Micronaut: Building ultra-lightweight microservices</h1>
+<p><span class="date">Nov 8, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<h2>OVERVIEW</h2>
+<p>Micronaut is a brand new, open source, JVM-based framework for building full-stack, modular, easily testable microservice and serverless applications.</p>
+<p>Unlike reflection-based IoC frameworks which load and cache reflection data for every single field, method, and constructor in your code, with Micronaut, your application startup time and memory consumption are not bound to the size of your codebase.</p>
+<p>Micronaut's cloud support is built right in, including support for common discovery services, distributed tracing tools, and cloud runtimes.</p>
+<p>In this talk, Micronaut co-founder, Graeme Rocher, introduces the framework and demonstrates how you can take your microservices to the next level with Micronaut's ahead-of-time (AOT) compilation and Oracle's GraalVM to achieve instant startup with an astonishingly lean memory footprint.</p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/2741">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/BL9SsY5orkA" frameborder="0"></iframe>]]></description><guid>2018-11-08-introduction-to-micronaut</guid><pubDate>Thu, 08 Nov 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0 GA Released</title><link>https://micronaut.io/blog/2018-10-23-micronaut-10-ga-released.html</link><description><![CDATA[<h1>Micronaut 1.0 GA Released</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
 <p><span class="date">October 23, 2018</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
@@ -1483,7 +1632,13 @@ public Single&lt;String&gt; hello(@NotBlank String na) {
 <p>We are extremely excited about Micronaut 1.0 and believe it is at the forefront of the growing movement towards AOT compilation in the Java space.</p>
 <p>AOT compilation is the next big innovation coming to Java frameworks because it allows Java applications to be optimally built for scenarios such as low-memory footprint microservices, IoT (yes Micronaut runs on the Raspberry Pi), serverless, and so on.</p>
 <p>Whether you are building a client or a server, a scheduled job or a stream processing application, Micronaut has a compelling set of features that you can introduce without paying the heavy cost associated with most current Java frameworks.</p>
-<p>The release of 1.0 RC1 is just the start, and we have a lot more coming on the roadmap, including better integration with Grails. The response we have had from the enthusiastic Micronaut user community has been outstanding, and we look forward to hearing feedback as we approach the final GA release in the next few weeks.</p>]]></description><guid>2018-09-30-micronaut-1-rc1</guid><pubDate>Sun, 30 Sep 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0.0.M4 Released</title><link>https://micronaut.io/blog/2018-08-09-micronaut-100m4-released.html</link><description><![CDATA[<h1>Micronaut 1.0.0.M4 Released</h1>
+<p>The release of 1.0 RC1 is just the start, and we have a lot more coming on the roadmap, including better integration with Grails. The response we have had from the enthusiastic Micronaut user community has been outstanding, and we look forward to hearing feedback as we approach the final GA release in the next few weeks.</p>]]></description><guid>2018-09-30-micronaut-1-rc1</guid><pubDate>Sun, 30 Sep 2018 00:00:00 GMT</pubDate></item><item><title>Meet Galecinocar: A Micronaut-powered, 1:16 scale self-driving car</title><link>https://micronaut.io/blog/2018-08-14-galecino-car.html</link><description><![CDATA[<h1>Meet Galecinocar: A Micronaut-powered, 1:16 scale self-driving car</h1>
+<p><span class="date">Aug 14, 2018</span></p>
+<p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<h2>OVERVIEW</h2>
+<p>Anyone interested in getting a peek under the hood of a self-driving car will find this webinar interesting.</p>
+<p>Software developers who have been following the evolution of Micronaut will get a chance to see a fun, outside-of-the-box use case for the technology, and those who work with JVM microservice frameworks, hardware, and machine learning may be inspired to try their hands at building their own autonomous vehicles!</p>
+<p><a href="https://objectcomputing.com/index.php/download_file/view/2472">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/9odEvHN3AJM" frameborder="0"></iframe>]]></description><guid>2018-08-14-galecino-car</guid><pubDate>Tue, 14 Aug 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0.0.M4 Released</title><link>https://micronaut.io/blog/2018-08-09-micronaut-100m4-released.html</link><description><![CDATA[<h1>Micronaut 1.0.0.M4 Released</h1>
 <p><span class="author">By Sergio Del Amo Caballero</span></p>
 <p><span class="date">August 9, 2018</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
