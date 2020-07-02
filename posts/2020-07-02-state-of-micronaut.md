@@ -1,14 +1,14 @@
 title: State Of The Micronaut
-date: Jul 06, 2020
+date: Jul 02, 2020
 description: Announcements and updates around Micronaut® and the Micronaut Foundation.
 author: Jeff Scott Brown
 ---
 
 # [%title]
 
-[%date]
+[%author]
 
-#foundation
+[%date]
 
 We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.
 
