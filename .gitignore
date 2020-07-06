@@ -9,3 +9,5 @@ atlassian-ide-plugin.xml
 .DS_Store
 out
 node_modules
+.project
+.settings
