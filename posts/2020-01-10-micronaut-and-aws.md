@@ -3,6 +3,7 @@ description: In this complimentary webinar, Sergio del Amo demonstrates how the 
 video: https://www.youtube.com/watch?v=HhhuX45Y-ZY
 slides: https://objectcomputing.com/index.php/download_file/view/4319
 date: Jan 10, 2020
+image: 2020-01-10.jpg
 ---
 
 # [%title]
