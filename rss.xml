@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 07 Jul 2020 20:03:26 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 07 Jul 2020 22:25:13 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
 <p><span class="author">By Jeff Scott Brown</span></p>
 <p><span class="date">Jul 02, 2020</span></p>
 <p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
@@ -120,12 +120,14 @@
 <p>While other frameworks may have been retrofitted to accommodate cloud deployment, Micronaut was designed with built-in support for cloud services and hosting.</p>
 <p>Yep. That's right. Micronaut doesn't just allow for the development and deployment of cloud-based applications; Micronaut was actually created from the ground up to simplify the process.</p>
 <p>Join <strong>Oracle Developer Advocate</strong>, Todd Sharp, in this <strong>60-minute, complimentary webinar</strong> to learn how to:</p>
-<p>Create a simple Micronaut app
-Set up CI/CD via GitHub Actions
-Add distributed configuration via Oracle Cloud Vault
-Configure your application
-Add CRUD support
-Todd will also discuss schema migration, testing, and how you can deploy a Micronaut app to the Oracle Cloud absolutely free!</p>
+<ul>
+<li>Create a simple Micronaut app</li>
+<li>Set up CI/CD via GitHub Actions</li>
+<li>Add distributed configuration via Oracle Cloud Vault</li>
+<li>Configure your application</li>
+<li>Add CRUD support</li>
+</ul>
+<p>Todd will also discuss schema migration, testing, and how you can deploy a Micronaut app to the Oracle Cloud absolutely free!</p>
 <p><a href="https://objectcomputing.com/index.php/download_file/view/4804">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/OBfUaz1PAEc" frameborder="0"></iframe>]]></description><guid>2020-06-15-oracle-cloud-microservices</guid><pubDate>Mon, 15 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Meet Micronaut Data: This is the data access toolkit you've been looking for</title><link>https://micronaut.io/blog/2020-05-29-meet-micronaut-data.html</link><description><![CDATA[<h1>Meet Micronaut Data: This is the data access toolkit you've been looking for</h1>
 <p><span class="date">May 29, 2020</span></p>
 <p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
