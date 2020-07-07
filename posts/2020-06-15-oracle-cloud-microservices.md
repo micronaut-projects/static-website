@@ -3,6 +3,7 @@ description: We're pleased to welcome guest speaker, Oracle's Todd Sharp, for th
 slides: https://objectcomputing.com/index.php/download_file/view/4804
 video: https://www.youtube.com/watch?v=OBfUaz1PAEc            
 date: Jun 15, 2020
+image: 2020-06-15.png
 ---
 
 # [%title]
