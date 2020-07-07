@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 07 Jul 2020 22:29:25 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 07 Jul 2020 22:41:51 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
 <p><span class="author">By Jeff Scott Brown</span></p>
 <p><span class="date">Jul 02, 2020</span></p>
 <p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
@@ -1217,6 +1217,17 @@ BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-ex
 <p><span class="date">Mar 5, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
 <h2>OVERVIEW</h2>
+<p>Distributed tracing allows developers to better monitor and understand the flow of requests through a microservice architecture with a much more holistic view than is possible through other approaches, such as log-file aggregation or metrics-gathering.</p>
+<p>Micronaut makes it easy to build tracing-aware apps using the standard OpenTracing API and includes special support for Jaeger and Zipkin.</p>
+<p>In this webinar, Micronaut team member, Zachary Klein, demonstrates how Micronaut abstracts the details of adding tracing to interservice requests and shows you how to quickly set up a robust tracing scheme for your own Micronaut-based federation.</p>
+<h2>OUTLINE</h2>
+<p>The following topics are covered in this webinar:</p>
+<ul>
+<li>Introduction to Distributed Tracing</li>
+<li>Introduction to Micronaut</li>
+<li>Micronaut's Tracing Annotations</li>
+<li>Demo Application Using Jaeger</li>
+</ul>
 <p>This webinar is a great learning opportunity for JVM developers interesting in learning to leverage Micronaut's wide range of capabilities, as well as those interested in distributed tracing in general.</p>
 <p><a href="https://objectcomputing.com/index.php/download_file/view/3071">Slides</a></p>
 <p><a href="https://github.com/ZacharyKlein/micronaut-distributed-tracing">Code</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/TmFBDsnLbAY" frameborder="0"></iframe>]]></description><guid>2019-03-05-distributed-tracing-micronaut</guid><pubDate>Tue, 05 Mar 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 Milestone 2 Released</title><link>https://micronaut.io/blog/2019-02-27-micronaut-11-milestone-2-released.html</link><description><![CDATA[<h1>Micronaut 1.1 Milestone 2 Released</h1>
