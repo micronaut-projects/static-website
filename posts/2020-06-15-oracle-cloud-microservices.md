@@ -24,9 +24,10 @@ Yep. That's right. Micronaut doesn't just allow for the development and deployme
 
 Join **Oracle Developer Advocate**, Todd Sharp, in this **60-minute, complimentary webinar** to learn how to:
 
-Create a simple Micronaut app
-Set up CI/CD via GitHub Actions
-Add distributed configuration via Oracle Cloud Vault
-Configure your application
-Add CRUD support
+- Create a simple Micronaut app
+- Set up CI/CD via GitHub Actions
+- Add distributed configuration via Oracle Cloud Vault
+- Configure your application
+- Add CRUD support
+
 Todd will also discuss schema migration, testing, and how you can deploy a Micronaut app to the Oracle Cloud absolutely free!
