@@ -1,8 +1,8 @@
 title: Micronaut AOP: Awesome Flexibility Without the Complexity
 date: October 7, 2019  
 description: Learn more about Micronaut's AOP system and how easy it is to use compared to competitors
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
-image: 2019-10-07.png
+author: Graeme Rocher
+image: 2019-10-07.jpg
 CSS: https://micronaut.io/stylesheets/prismjs.css
 JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 ---
