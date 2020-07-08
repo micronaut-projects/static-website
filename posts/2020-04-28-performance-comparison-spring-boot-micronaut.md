@@ -1,5 +1,5 @@
-title: Practical performance comparison of Spring Boot, Micronaut 1.3, Micronaut 2.0
-date: Apr 28, 2020
+title: Practical Performance Comparison of Spring Boot, Micronaut 1.3, Micronaut 2.0
+date: April 28, 2020
 description: Modern Java frameworks are challenging each other to keep pushing features and performance into previously inconceivable areas. Here are the results of our most recent Spring Boot, Micronaut 1.3, and Micronaut 2.0 comparisons.
 author: Jason Schindler (OCI Partner and Practice Manager of Grails and Micronaut)
 image: 2020-04-28.png
