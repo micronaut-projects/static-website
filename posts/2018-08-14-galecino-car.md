@@ -3,7 +3,7 @@ description: In this 60-minute on-demand webinar, Ryan Vanderwerf presents an ov
 author: Ryan Vanderwerf
 video: https://www.youtube.com/watch?v=9odEvHN3AJM
 slides: https://objectcomputing.com/index.php/download_file/view/2472     
-date: Aug 14, 2018
+date: August 14, 2018
 image: 2018-08-14.jpg
 ---
 
@@ -15,7 +15,7 @@ image: 2018-08-14.jpg
 
 ## OVERVIEW
 
-GalecinoCar is a port of DonkeyCar, a Python-based project using Java and Groovy presented at re:Invent 2017.
+**GalecinoCar is a port of DonkeyCar, a Python-based project using Java and Groovy presented at re:Invent 2017.**
 
 In this complimentary webinar, Ryan Vanderwerf presents an overview of the technology behind GalecinoCar, a 1/16-scale self-driving car built using machine learning, a Raspberry Pi 3, Groovy, Java, and the Grails team’s new microservice framework, Micronaut.
 
