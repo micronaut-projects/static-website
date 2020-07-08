@@ -2,7 +2,8 @@ title: Introduction to Micronaut Multi-tenancy
 description: In this 50-minute, on-demand webinar, Micronaut team member, Sergio del Amo Caballero, demonstrates the multi-tenancy capabilities built into Micronaut.
 video: https://www.youtube.com/watch?v=S1CfGOecqG4              
 slides: https://objectcomputing.com/index.php/download_file/view/2688
-date: Aug 19, 2019
+date: August 19, 2019
+image: 2019-08-19
 ---
 
 # [%title]
