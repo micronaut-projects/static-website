@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 14:56:43 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 15:06:30 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
 <p><span class="author">By Jeff Scott Brown</span></p>
 <p><span class="date">Jul 02, 2020</span></p>
 <p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
@@ -1677,6 +1677,22 @@ public Single&lt;String&gt; hello(@NotBlank String na) {
 <p><span class="date">Aug 14, 2018</span></p>
 <p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
 <h2>OVERVIEW</h2>
+<p>GalecinoCar is a port of DonkeyCar, a Python-based project using Java and Groovy presented at re:Invent 2017.</p>
+<p>In this complimentary webinar, Ryan Vanderwerf presents an overview of the technology behind GalecinoCar, a 1/16-scale self-driving car built using machine learning, a Raspberry Pi 3, Groovy, Java, and the Grails team’s new microservice framework, Micronaut.</p>
+<p>Ryan explains how he and his team built GalecinoCar and demonstrate:</p>
+<ul>
+<li>How you can control a vehicle using a Raspberry Pi and Micronaut to control motors and servos</li>
+<li>How the team integrated the Karas/Tensorflow alongside the JVM for self-driving functions</li>
+<li>How the CNN AI works</li>
+</ul>
+<h2>OUTLINE</h2>
+<p>The following topics are covered in this webinar.</p>
+<ul>
+<li>Overview of the GalecinoCar project</li>
+<li>The hardware that supports the technology</li>
+<li>The software that makes it run</li>
+<li>The future of Micronaut, machine learning, and self-driving vehicles</li>
+</ul>
 <p>Anyone interested in getting a peek under the hood of a self-driving car will find this webinar interesting.</p>
 <p>Software developers who have been following the evolution of Micronaut will get a chance to see a fun, outside-of-the-box use case for the technology, and those who work with JVM microservice frameworks, hardware, and machine learning may be inspired to try their hands at building their own autonomous vehicles!</p>
 <p><a href="https://objectcomputing.com/index.php/download_file/view/2472">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/9odEvHN3AJM" frameborder="0"></iframe>]]></description><guid>2018-08-14-galecino-car</guid><pubDate>Tue, 14 Aug 2018 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.0.0.M4 Released</title><link>https://micronaut.io/blog/2018-08-09-micronaut-100m4-released.html</link><description><![CDATA[<h1>Micronaut 1.0.0.M4 Released</h1>
