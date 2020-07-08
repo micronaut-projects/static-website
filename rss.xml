@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 15:12:59 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 15:15:03 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
 <p><span class="author">By Jeff Scott Brown</span></p>
 <p><span class="date">Jul 02, 2020</span></p>
 <p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
@@ -1679,7 +1679,7 @@ public Single&lt;String&gt; hello(@NotBlank String na) {
 <h2>OVERVIEW</h2>
 <p><strong>GalecinoCar is a port of DonkeyCar, a Python-based project using Java and Groovy presented at re:Invent 2017.</strong></p>
 <p>In this complimentary webinar, Ryan Vanderwerf presents an overview of the technology behind GalecinoCar, a 1/16-scale self-driving car built using machine learning, a Raspberry Pi 3, Groovy, Java, and the Grails team’s new microservice framework, Micronaut.</p>
-<p>Ryan explains how he and his team built GalecinoCar and demonstrate:</p>
+<p>Ryan explains how he and his team built GalecinoCar and demonstrates:</p>
 <ul>
 <li>How you can control a vehicle using a Raspberry Pi and Micronaut to control motors and servos</li>
 <li>How the team integrated the Karas/Tensorflow alongside the JVM for self-driving functions</li>
