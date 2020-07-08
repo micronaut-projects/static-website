@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 15:46:04 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 15:48:06 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
 <p><span class="author">By Jeff Scott Brown</span></p>
 <p><span class="date">Jul 02, 2020</span></p>
 <p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
@@ -638,8 +638,8 @@ micronaut:
 <li>Improvements to serverless support</li>
 <li>New build plugins for Maven and Gradle</li>
 <li>Further performance refinements</li>
-</ul>]]></description><guid>2020-02-04-micronaut-13-and-micronaut-data-10-ga-released</guid><pubDate>Tue, 04 Feb 2020 00:00:00 GMT</pubDate></item><item><title>Combining Micronaut and AWS to superpower your apps</title><link>https://micronaut.io/blog/2020-01-10-micronaut-and-aws.html</link><description><![CDATA[<h1>Combining Micronaut and AWS to superpower your apps</h1>
-<p><span class="date">Jan 10, 2020</span></p>
+</ul>]]></description><guid>2020-02-04-micronaut-13-and-micronaut-data-10-ga-released</guid><pubDate>Tue, 04 Feb 2020 00:00:00 GMT</pubDate></item><item><title>Combining Micronaut and AWS to Superpower Your Apps</title><link>https://micronaut.io/blog/2020-01-10-micronaut-and-aws.html</link><description><![CDATA[<h1>Combining Micronaut and AWS to Superpower Your Apps</h1>
+<p><span class="date">January 10, 2020</span></p>
 <p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
 <p>We often refer to Micronaut as &quot;natively cloud-native,&quot; but what does that mean?</p>
 <p>In this complimentary webinar, Sergio del Amo Caballero demonstrates how easy it is to deploy a Micronaut app to AWS Elastic Beanstalk and explains how to integrate it with other AWS Services, including AWS Cognito, S3, Lambda, RDS, and Route 53.</p>
@@ -684,7 +684,7 @@ micronaut:
 <p>The most significant new feature in this first milestone is the integration of Micronaut Data, so you can easily set up projects that include Micronaut Data using the CLI.</p>
 <p>See the <a href="https://docs.micronaut.io/1.3.0.M1/guide/index.html#whatsNew">release notes</a> for further information.</p>
 <p>Thanks to all those who contributed to the release, and we look forward to your feedback as we progress Micronaut 1.3 toward a GA release.</p>]]></description><guid>2019-11-21-micronaut-13-milestone-1-released</guid><pubDate>Thu, 21 Nov 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut AOP: Awesome Flexibility Without the Complexity</title><link>https://micronaut.io/blog/2019-10-07-micronaut-aop-awesome-flexibility-without-complexity.html</link><description><![CDATA[<h1>Micronaut AOP: Awesome Flexibility Without the Complexity</h1>
-<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="author">By Graeme Rocher</span></p>
 <p><span class="date">October 7, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/aop.html"><span class="hashtag">#aop</span></a></p>
 <p>With the recent release of <a href="https://github.com/micronaut-projects/micronaut-data/releases/tag/v1.0.0.M2">Micronaut Data 1.0 M3</a>, I got to work on a couple of features for Micronaut Data that really highlighted to me what we have achieved with <a href="https://docs.micronaut.io/latest/guide/index.html#aop">Micronaut's aspect-oriented programming (AOP) API</a> and the fantastic simplifications it offers, while at the same time ensuring optimal performance. I thought I would take the time to do a write-up of how Micronaut AOP works and why it is one of my favorite Micronaut features compared to the competitors.</p>
