@@ -1,8 +1,9 @@
-title: Meet Micronaut Data: This is the data access toolkit you've been looking for
+title: Meet Micronaut Data: This Is the Data Access Toolkit You've Been Looking For
 author: Graeme Rocher
 description: In this complimentary, on-demand webinar, Micronaut co-founder, Graeme Rocher, demonstrates how you can use Micronaut Data to achieve significantly reduced cold starts, astonishingly lean memory consumption, and dramatically improved performance.
 video: https://www.youtube.com/watch?v=3jZcHQIs8dw
 date: May 29, 2020
+image: 2020-05-29.jpg
 ---
 
 # [%title]
