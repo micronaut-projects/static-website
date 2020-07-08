@@ -2,7 +2,7 @@ title: Micronaut Is Now Certified to Run on Amazon Corretto
 date: April 9, 2020  
 description: Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.
 author: Álvaro Sánchez-Mariscal
-image: 2020-04-09.png
+image: 2020-04-09.jpg
 CSS: https://micronaut.io/stylesheets/prismjs.css
 JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 ---
