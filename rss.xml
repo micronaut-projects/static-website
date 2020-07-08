@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 16:35:23 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 16:37:23 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
 <p><span class="author">By Jeff Scott Brown</span></p>
 <p><span class="date">July 02, 2020</span></p>
 <p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
@@ -112,7 +112,7 @@
 <p>The items listed above certainly are not the entirety of the new features, improvements, and bug fixes included in this release. For a more detailed description of what's new, see our <a href="https://docs.micronaut.io/2.0.0.RC1/guide/index.html#whatsNew">documentation</a>.</p>
 <p>With the first release candidate behind us, we look forward to the release of Micronaut 2. This release candidate marks a significant milestone in the progress we have made over the last 6 months. We hope you give this release candidate a try.</p>
 <p>Please report any issues or ideas for improvement to our <a href="https://github.com/micronaut-projects/micronaut-core/issues">Github issue tracker</a>. We are very excited for Micronaut 2 and the future of Micronaut!</p>]]></description><guid>2020-06-16-micronaut-20-rc1-released</guid><pubDate>Tue, 16 Jun 2020 00:00:00 GMT</pubDate></item><item><title>Build and Deploy a Cloud Native Microservice to the Oracle Cloud</title><link>https://micronaut.io/blog/2020-06-15-oracle-cloud-microservices.html</link><description><![CDATA[<h1>Build and Deploy a Cloud Native Microservice to the Oracle Cloud</h1>
-<p><span class="date">Jun 15, 2020</span></p>
+<p><span class="date">June 15, 2020</span></p>
 <p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
 <h2>OVERVIEW</h2>
 <p>The brochure says you can build &quot;cloud-native&quot; microservices with Micronaut ...</p>
@@ -232,8 +232,8 @@ public NameController {
 <li>Micronaut is build-tool agnostic. You can write apps with Maven or Gradle. If you write Micronaut Azure Functions with Gradle, you will need to learn how to use the <a href="https://plugins.gradle.org/plugin/com.microsoft.azure.azurefunctions">Azure Gradle Plugin</a>.</li>
 </ul>
 <p>As you'll quickly see, by combining Micronaut and Azure, you don't have to give up the software paradigms that make you productive and keep your code robust when coding Java serverless functions.</p>]]></description><guid>2020-05-15-micronaut-now-supports-microsoft-azure-functions</guid><pubDate>Fri, 15 May 2020 00:00:00 GMT</pubDate></item><item><title>Introducing Micronaut 2.0 Launch</title><link>https://micronaut.io/blog/2020-04-30-introducing-micronaut-launch.html</link><description><![CDATA[<h1>Introducing Micronaut 2.0 Launch</h1>
-<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)<br/> James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)</span></p>
-<p><span class="date">Apr 30, 2020</span></p>
+<p><span class="author">By Graeme Rocher &amp; James Kleeh</span></p>
+<p><span class="date">April 30, 2020</span></p>
 <p><a href="https://micronaut.io/blog/tag/launch.html"><span class="hashtag">#launch</span></a></p>
 <p>With the release of <a href="/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html">Micronaut 2.0 M3</a>, we have gone live with a brand new implementation of the Micronaut command line interface (CLI) and <a href="https://micronaut.io/launch/">Micronaut Launch</a>, an online tool for creating Micronaut applications.</p>
 <h2>A CLI History</h2>
