@@ -3,7 +3,7 @@ description: In this 50-minute, on-demand webinar, Micronaut team member, Sergio
 video: https://www.youtube.com/watch?v=S1CfGOecqG4              
 slides: https://objectcomputing.com/index.php/download_file/view/2688
 date: August 19, 2019
-image: 2019-08-19
+image: 2019-08-19.jpg
 ---
 
 # [%title]
