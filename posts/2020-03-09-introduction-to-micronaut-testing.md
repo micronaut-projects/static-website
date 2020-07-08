@@ -2,7 +2,8 @@ title: Introduction to Micronaut Testing
 description: In this complimentary on-demand webinar, Sergio del Amo demonstrates how to maximize your productivity when testing Micronaut applications.
 slides: https://objectcomputing.com/index.php/download_file/view/4635
 video: https://www.youtube.com/watch?v=wKF_vq0KsY0  
-date: Mar 9, 2020
+date: March 9, 2020
+image: 2020-03-09.jpg
 ---
 
 # [%title]
