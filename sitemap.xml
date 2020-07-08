@@ -61,9 +61,6 @@
     <loc>https://micronaut.io/blog/2019-11-21-micronaut-13-milestone-1-released.html</loc>
   </url>
   <url>
-    <loc>https://micronaut.io/blog/2020-01-23-micronaut-13-rc1-released.html</loc>
-  </url>
-  <url>
     <loc>https://micronaut.io/blog/2018-08-14-galecino-car.html</loc>
   </url>
   <url>
@@ -113,6 +110,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-02-27-micronaut-11-milestone-2-released.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2019-01-23-micronaut-13-rc1-released.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-08-19-micronaut-multitenancy.html</loc>
