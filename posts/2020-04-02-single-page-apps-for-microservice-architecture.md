@@ -4,7 +4,7 @@ video: https://www.youtube.com/watch?v=cU9doRzJSSY
 code: https://objectcomputing.com/index.php/download_file/view/4689 
 slides: https://objectcomputing.com/index.php/download_file/view/4688
 date: April 2, 2020
-image: 2020-04-02.jpg
+image: 2020-04-02-2.jpg
 ---
 
 # [%title]
