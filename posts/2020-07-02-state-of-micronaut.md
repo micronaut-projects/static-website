@@ -1,5 +1,5 @@
 title: State Of The Micronaut
-date: Jul 02, 2020
+date: July 02, 2020
 description: Announcements and updates around Micronaut® and the Micronaut Foundation.
 author: Jeff Scott Brown
 image: 2020-07-02.png
