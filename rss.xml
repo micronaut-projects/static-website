@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 14:50:55 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 08 Jul 2020 14:56:43 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
 <p><span class="author">By Jeff Scott Brown</span></p>
 <p><span class="date">Jul 02, 2020</span></p>
 <p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
@@ -1183,10 +1183,25 @@ BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-ex
 <li>A <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples/hello-world-cloud-run">Hello World sample application</a> that is ready to be deployed to Cloud Run using <a href="https://github.com/GoogleContainerTools/jib">Jib</a> and <a href="https://cloud.google.com/container-registry/">Google Container Registry</a>.</li>
 <li>A <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples/hello-world-cloud-run-graal">second application that uses GraalVM native and Google Cloud Build</a> to build and deploy a native image to Google Cloud Run.</li>
 </ul>
-<p>Thank you to all who provided feedback during the extended RC phase of Micronaut 1.1, enjoy the release!</p>]]></description><guid>2019-04-11-micronaut-11-released</guid><pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate></item><item><title>Defending your cloud apps with Micronaut Security</title><link>https://micronaut.io/blog/2019-03-20-micronaut-security.html</link><description><![CDATA[<h1>Defending your cloud apps with Micronaut Security</h1>
-<p><span class="date">Mar 20, 2019</span></p>
+<p>Thank you to all who provided feedback during the extended RC phase of Micronaut 1.1, enjoy the release!</p>]]></description><guid>2019-04-11-micronaut-11-released</guid><pubDate>Thu, 11 Apr 2019 00:00:00 GMT</pubDate></item><item><title>Defending your Cloud Apps with Micronaut Security</title><link>https://micronaut.io/blog/2019-03-20-micronaut-security.html</link><description><![CDATA[<h1>Defending your Cloud Apps with Micronaut Security</h1>
+<p><span class="date">March 20, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
 <h2>OVERVIEW</h2>
+<p>In this webinar, Micronaut team member, Sergio del Amo, demonstrates Micronaut's built-in security capabilities and explains how specific features of the framework, such as token propagation, are specifically designed to boost productivity and simplify coding when working with microservice security.</p>
+<p>You will learn how to define security for your Micronaut endpoints (@Secured, Intercept URL Map), retrieve the current user, use different authentication flows (basic, ldap, database), and create custom authentication providers.</p>
+<p>Sergio will also discuss Micronaut's out-of-the-box support for JSON web token (JWT) validation, generation, and claims customization, as well as its support for Oauth 2. You'll learn how easy it is to integrate your Micronaut apps with an OpenID connect provider, such as AWS Cognito, Auth0, and Okta.</p>
+<h2>OUTLINE</h2>
+<p>The following topics are covered in this webinar:</p>
+<ul>
+<li>Access authenticated user</li>
+<li>Define security: @Secured, Intercept URL Map</li>
+<li>Basic authentication</li>
+<li>LDAP authentication</li>
+<li>Database authentication</li>
+<li>JSON web token (JWT) validation, generation etc.</li>
+<li>Oauth2: authorization code and password grant flows</li>
+<li>Token propagation</li>
+</ul>
 <p>This webinar is a great learning opportunity for JVM developers interested in learning to leverage Micronaut's wide range of capabilities and build secure microservices and serverless apps with the framework.</p>
 <p><a href="https://objectcomputing.com/index.php/download_file/view/3142">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/VrnVbAyKSEY" frameborder="0"></iframe>]]></description><guid>2019-03-20-micronaut-security</guid><pubDate>Wed, 20 Mar 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 RC1 Released</title><link>https://micronaut.io/blog/2019-03-20-micronaut-11-rc-released.html</link><description><![CDATA[<h1>Micronaut 1.1 RC1 Released</h1>
 <p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
