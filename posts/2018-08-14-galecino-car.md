@@ -19,7 +19,7 @@ image: 2018-08-14.jpg
 
 In this complimentary webinar, Ryan Vanderwerf presents an overview of the technology behind GalecinoCar, a 1/16-scale self-driving car built using machine learning, a Raspberry Pi 3, Groovy, Java, and the Grails team’s new microservice framework, Micronaut.
 
-Ryan explains how he and his team built GalecinoCar and demonstrate:
+Ryan explains how he and his team built GalecinoCar and demonstrates:
 
 - How you can control a vehicle using a Raspberry Pi and Micronaut to control motors and servos
 - How the team integrated the Karas/Tensorflow alongside the JVM for self-driving functions
