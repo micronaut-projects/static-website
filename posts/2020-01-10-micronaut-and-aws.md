@@ -1,8 +1,8 @@
-title: Combining Micronaut and AWS to superpower your apps
+title: Combining Micronaut and AWS to Superpower Your Apps
 description: In this complimentary webinar, Sergio del Amo demonstrates how the Micronaut Framework's built-in features enable seamless integration with AWS services.
 video: https://www.youtube.com/watch?v=HhhuX45Y-ZY
 slides: https://objectcomputing.com/index.php/download_file/view/4319
-date: Jan 10, 2020
+date: January 10, 2020
 image: 2020-01-10.jpg
 ---
 
