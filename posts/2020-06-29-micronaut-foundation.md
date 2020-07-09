@@ -15,4 +15,4 @@ Today, we announced the formation of the Micronaut Foundation, a not-for-profit 
 
 Micronaut Foundation oversees software roadmap and development, best practices and processes, repository control, documentation and support, and fundraising related to the open source framework.  
 
-[Continue Reading on OCI website](https://objectcomputing.com/news/2020/06/29/micronaut-foundation-established)
+[Continue reading on Object Computing, Inc. (OCI) website](https://objectcomputing.com/news/2020/06/29/micronaut-foundation-established)
