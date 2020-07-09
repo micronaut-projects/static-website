@@ -1,7 +1,7 @@
 title: Micronaut Data 1.0 Milestone 1 Released
 date: August 14, 2019  
 description: Micronaut Data 1.0 Milestone 1 release announcement
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2019-08-14.png
 ---
 
