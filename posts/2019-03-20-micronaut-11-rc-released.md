@@ -1,7 +1,7 @@
 title: Micronaut 1.1 RC1 Released
 date: March 20, 2019  
 description: Micronaut 1.1 includes a number of significant refinements! Learn more about the release of Micronaut 1.1 RC1.
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2019-03-20.png
 ---
 
