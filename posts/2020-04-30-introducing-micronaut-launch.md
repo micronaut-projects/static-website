@@ -75,7 +75,7 @@ The API is also accessible via CURL using <a href="https://launch.micronaut.io">
 
 The Micronaut Launch UI is written in [React](https://github.com/micronaut-projects/static-website/tree/master/main/src/main/js/start)</a> and demonstrates the power of the Micronaut community. Our thanks go out to [Francisco Javier Delgado Vallano](https://twitter.com/franvallano), and [Miguel Ángel Quintanilla](https://twitter.com/maq_dev) from [Profile](https://profile.es") in Spain, who built the first version of the UI based on the [OpenAPI specification](https://launch.micronaut.io/swagger/views/swagger-ui/index.html) we provided:
 
-![](2020-04-30-img04.png]
+![](2020-04-30-img04.png)
 
 The Micronaut Launch UI includes some awesome features such as:
 
