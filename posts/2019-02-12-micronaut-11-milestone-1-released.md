@@ -1,7 +1,7 @@
 title: Micronaut 1.1 Milestone 1 Released
 date: February 12, 2019  
 description: Micronaut 1.1 Milestone 1 release announcement
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2019-02-12.png
 ---
 
