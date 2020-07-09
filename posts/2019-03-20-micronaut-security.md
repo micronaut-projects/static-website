@@ -18,7 +18,7 @@ In this webinar, Micronaut team member, Sergio del Amo, demonstrates Micronaut's
 
 You will learn how to define security for your Micronaut endpoints (@Secured, Intercept URL Map), retrieve the current user, use different authentication flows (basic, ldap, database), and create custom authentication providers.
 
-Sergio will also discuss Micronaut's out-of-the-box support for JSON web token (JWT) validation, generation, and claims customization, as well as its support for Oauth 2. You'll learn how easy it is to integrate your Micronaut apps with an OpenID connect provider, such as AWS Cognito, Auth0, and Okta.
+Sergio also discusses Micronaut's out-of-the-box support for JSON web token (JWT) validation, generation, and claims customization, as well as its support for Oauth 2. You'll learn how easy it is to integrate your Micronaut apps with an OpenID connect provider, such as AWS Cognito, Auth0, and Okta.
 
 ## OUTLINE
 
