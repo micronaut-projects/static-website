@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Thu, 09 Jul 2020 13:02:50 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Thu, 09 Jul 2020 13:05:08 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
 <p><span class="author">By Jeff Scott Brown</span></p>
 <p><span class="date">July 02, 2020</span></p>
 <p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
@@ -283,7 +283,7 @@ public NameController {
 <p><img src="2020-04-30-img03.png" alt="" /></p>
 <h2>The Micronaut Launch UI</h2>
 <p>The Micronaut Launch UI is written in <a href="https://github.com/micronaut-projects/static-website/tree/master/main/src/main/js/start">React</a></a> and demonstrates the power of the Micronaut community. Our thanks go out to <a href="https://twitter.com/franvallano">Francisco Javier Delgado Vallano</a>, and <a href="https://twitter.com/maq_dev">Miguel Ángel Quintanilla</a> from <a href="https://profile.es&quot;">Profile</a> in Spain, who built the first version of the UI based on the <a href="https://launch.micronaut.io/swagger/views/swagger-ui/index.html">OpenAPI specification</a> we provided:</p>
-<p>![](2020-04-30-img04.png]</p>
+<p><img src="2020-04-30-img04.png" alt="" /></p>
 <p>The Micronaut Launch UI includes some awesome features such as:</p>
 <ul>
 <li>Support for generating Micronaut applications, functions, CLI applications, and gRPC applications</li>
