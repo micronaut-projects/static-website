@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Thu, 09 Jul 2020 15:35:53 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Thu, 09 Jul 2020 15:38:27 GMT</pubDate><item><title>State Of The Micronaut</title><link>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</link><description><![CDATA[<h1>State Of The Micronaut</h1>
 <p><span class="author">By Jeff Scott Brown</span></p>
 <p><span class="date">July 02, 2020</span></p>
 <p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
@@ -671,7 +671,7 @@ micronaut:
 </ul>
 <p>See the <a href="https://docs.micronaut.io/1.3.0.M2/guide/index.html#whatsNew">release notes</a> for further information.</p>
 <p>Thanks to all those who contributed to the release, and we look forward to your feedback as we progress Micronaut 1.3 toward a GA release.</p>]]></description><guid>2019-12-20-micronaut-13-milestone-2-released</guid><pubDate>Fri, 20 Dec 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.3 Milestone 1 Released</title><link>https://micronaut.io/blog/2019-11-21-micronaut-13-milestone-1-released.html</link><description><![CDATA[<h1>Micronaut 1.3 Milestone 1 Released</h1>
-<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="author">By Graeme Rocher</span></p>
 <p><span class="date">November 21, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
 <p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is excited to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0.M1">Micronaut 1.3 M1</a>. This is the first milestone of Micronaut's 1.3 line, and it includes a number of significant new features, including:</p>
@@ -995,7 +995,7 @@ public class BookManager {
 <li>How to integrate GORM multi-tenancy capabilities with Micronaut’s multi-tenancy offering</li>
 </ul>
 <p><a href="https://objectcomputing.com/index.php/download_file/view/2688">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/S1CfGOecqG4" frameborder="0"></iframe>]]></description><guid>2019-08-19-micronaut-multitenancy</guid><pubDate>Mon, 19 Aug 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut Data 1.0 Milestone 1 Released</title><link>https://micronaut.io/blog/2019-08-14-micronaut-data-10-milestone-1-released.html</link><description><![CDATA[<h1>Micronaut Data 1.0 Milestone 1 Released</h1>
-<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="author">By Graeme Rocher</span></p>
 <p><span class="date">August 14, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/data.html"><span class="hashtag">#data</span></a></p>
 <p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut Team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the first milestone of <a href="https://github.com/micronaut-projects/micronaut-data">Micronaut Data</a>. The M1 release is just the first of many milestones and release candidates that we will be doing as we progress towards a GA release. We have already had a fantastic amount of feedback and contributions from the community that have allowed us to advance the JDBC implementation in particular.</p>
@@ -1009,7 +1009,7 @@ public class BookManager {
 </ul>
 <p>We plan to add a whole bunch of new features before the next milestone, including better support for custom types (like Postgres JSON types), improvements to programmatic query construction in JDBC, and better support for mapping different scenarios.</p>
 <p>Thanks to all those who contributed to the release, and we look forward to your feedback!</p>]]></description><guid>2019-08-14-micronaut-data-10-milestone-1-released</guid><pubDate>Wed, 14 Aug 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.2 Released</title><link>https://micronaut.io/blog/2019-08-06-micronaut-12-released.html</link><description><![CDATA[<h1>Micronaut 1.2 Released</h1>
-<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="author">By Graeme Rocher</span></p>
 <p><span class="date">August 6, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
 <p>The <a href="https://objectcomputing.com/products/2gm-team" title="Groovy, Grails, and Micronaut Team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is excited to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.2.0">Micronaut 1.2</a>. The GA version of the 1.2 line includes the following significant new enhancements:</p>
@@ -1043,7 +1043,7 @@ public class BookManager {
 <p>Our focus remains on building and helping our community to build better technology. This is what we do and will continue to do.</p>
 <p>The community is an important part of that journey for us — the most important part of that journey.</p>
 <p>— Jeff Scott Brown, Object Computing Partner</p>]]></description><guid>2019-07-26-micronaut-predator-renamed-micronaut-data</guid><pubDate>Fri, 26 Jul 2019 00:00:00 GMT</pubDate></item><item><title>Announcing Micronaut Data</title><link>https://micronaut.io/blog/2019-07-18-unleashing-predator-precomputed-data-repositories.html</link><description><![CDATA[<h1>Announcing Micronaut Data</h1>
-<p><span class="author">By Graeme Rocher (OCI Grails &amp; Micronaut Product Lead and Principal Software Engineer)</span></p>
+<p><span class="author">By Graeme Rocher</span></p>
 <p><span class="date">July 18, 2019</span></p>
 <p><a href="https://micronaut.io/blog/tag/data.html"><span class="hashtag">#data</span></a></p>
 <p>Today, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) unveiled <a href="https://github.com/micronaut-projects/micronaut-data">Micronaut Data</a> (previously known as Predator), a brand new Open Source project that aims to dramatically improve the runtime and memory performance of data access repository logic for the microservice and serverless era, while also maintaining the productivity benefits of tools like <a href="https://gorm.grails.org">GORM</a> and <a href="https://spring.io/projects/spring-data">Spring Data</a>.</p>
