@@ -1,7 +1,7 @@
 title: Micronaut 1.3 Milestone 2 Released
 date: December 20, 2019 
 description: The Micronaut team at Object Computing is excited to announce the release of Micronaut 1.3 M2.
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer) 
+author: Graeme Rocher 
 image: 2019-12-20.png
 CSS: https://micronaut.io/stylesheets/prismjs.css
 JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
