@@ -1,5 +1,6 @@
 package io.micronaut.gradle
 
+import edu.umd.cs.findbugs.annotations.Nullable
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
 import groovy.transform.Internal
@@ -46,7 +47,6 @@ class BlogTask extends DefaultTask {
     public static final String BLOG = 'blog'
     public static final String TAG = 'tag'
     public static final String INDEX = 'index.html'
-    public static final String YOUTUBE_WATCH = 'https://www.youtube.com/watch?v='
 
     @Input
     final Property<File> template = project.objects.property(File)
@@ -250,13 +250,12 @@ class BlogTask extends DefaultTask {
                 markdown = markdown + "\n\n[Code](${metadata['code']})\n\n"
             }
             String contentHtml = wrapTags(metadata, MarkdownUtil.htmlFromMarkdown(markdown))
-            if (metadata.containsKey('video') && metadata['video'].startsWith(YOUTUBE_WATCH)) {
-                String videoId = metadata['video'].substring(YOUTUBE_WATCH.length())
-                contentHtml = contentHtml + "<iframe width=\"100%\" height=\"360\" src=\"https://www.youtube-nocookie.com/embed/"+videoId+"\" frameborder=\"0\"></iframe>"
+            String iframe = RenderSiteTask.parseVideoIframe(metadata)
+            if (iframe) {
+                contentHtml = contentHtml + iframe
             }
             Set<String> postTags = parseTags(contentHtml)
             new HtmlPost(metadata: postMetadata, html: contentHtml, path: mdPost.path, tags: postTags)
-
         }
     }
 

@@ -1,5 +1,6 @@
 package io.micronaut.gradle
 
+import edu.umd.cs.findbugs.annotations.Nullable
 import groovy.transform.CompileStatic
 import groovy.transform.Internal
 import io.micronaut.ContentAndMetadata
@@ -22,10 +23,13 @@ import java.text.SimpleDateFormat
 class RenderSiteTask extends DefaultTask {
 
     static final SimpleDateFormat MMM_D_YYYY = new SimpleDateFormat("MMM d, yyyy")
+    public static final String YOUTUBE_WATCH = 'https://www.youtube.com/watch?v='
 
     static final String COLON = ":"
     static final String SEPARATOR = "---"
     public static final String DIST = "dist"
+    public static final int TWITTER_CARD_PLAYER_WIDTH = 560
+    public static final int TWITTER_CARD_PLAYER_HEIGHT = 315
 
     @InputDirectory
     final Property<File> pages = project.objects.property(File)
@@ -147,7 +151,43 @@ class RenderSiteTask extends DefaultTask {
         if (!resolvedMetadata.containsKey("robots")) {
             resolvedMetadata.put('robots', "all")
         }
+        resolvedMetadata.put('twittercard', twitterCard('summary_large_image'))
+        if (resolvedMetadata.containsKey('video')) {
+            String videoId = parseVideoId(resolvedMetadata)
+            if (videoId) {
+                resolvedMetadata.put('twittercard', twitterCard('player') + twitterPlayerHtml(videoId, TWITTER_CARD_PLAYER_WIDTH, TWITTER_CARD_PLAYER_HEIGHT))
+            }
+        }
+        if (resolvedMetadata.containsKey('video') && parseVideoId(resolvedMetadata)) {
+
+        } else {
+
+        }
+
         resolvedMetadata
+    }
+
+    @Nullable
+    static String parseVideoId(Map<String, String> metadata) {
+        metadata.containsKey('video') && metadata['video'].startsWith(YOUTUBE_WATCH) ? metadata['video'].substring(YOUTUBE_WATCH.length()) : null
+    }
+
+    @Nullable
+    static String parseVideoIframe(Map<String, String> metadata) {
+        String videoId = parseVideoId(metadata)
+        videoId ? "<iframe width=\"100%\" height=\"360\" src=\"https://www.youtube-nocookie.com/embed/"+videoId+"\" frameborder=\"0\"></iframe>" : null
+    }
+
+    static String twitterPlayerHtml(String videoId, int width, int height) {
+"""\
+<meta name='twitter:player' content='https://www.youtube.com/embed/${videoId}' />
+<meta name='twitter:player:width' content='${width}' />
+<meta name='twitter:player:height' content='${height}' />
+"""
+    }
+
+    static String twitterCard(String cardType) {
+        "<meta name='twitter:card' content='${cardType}'/>"
     }
 
     static String highlightMenu(String html, Map<String, String> sitemeta, String path) {
