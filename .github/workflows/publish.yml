@@ -25,8 +25,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Build Main Site
+        id: build_site
         run: ./gradlew build
-      - name: Clean
-        run: ./gradlew clean
-      - name: Build Guides site
-        run: ./gradlew buildGuide
+      - name: Echo
+        run: echo "${{ steps.build_site.outputs.value }}"
