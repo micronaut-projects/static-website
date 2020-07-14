@@ -97,7 +97,7 @@
       <div class='padded'><h1>Micronaut AOP: Awesome Flexibility Without the Complexity</h1>
 <p><span class="author">By Graeme Rocher</span></p>
 <p><span class="date">October 7, 2019</span></p>
-<p><a href="https://micronaut.io/blog/tag/aop.html"><span class="hashtag">#aop</span></a></p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/aop.html"><span class="hashtag">#aop</span></a></p>
 <p>With the recent release of <a href="https://github.com/micronaut-projects/micronaut-data/releases/tag/v1.0.0.M2">Micronaut Data 1.0 M3</a>, I got to work on a couple of features for Micronaut Data that really highlighted to me what we have achieved with <a href="https://docs.micronaut.io/latest/guide/index.html#aop">Micronaut's aspect-oriented programming (AOP) API</a> and the fantastic simplifications it offers, while at the same time ensuring optimal performance. I thought I would take the time to do a write-up of how Micronaut AOP works and why it is one of my favorite Micronaut features compared to the competitors.</p>
 <h2>Introduction to AOP</h2>
 <p>For those unfamiliar, AOP has a long history in the Java community, with a variety of different implementations, including a custom Java language extension called <a href="https://www.eclipse.org/aspectj/">AspectJ</a>. The basic idea is that in a Java application, you often want to apply cross-cutting logic to a method invocation. The way you apply this cross-cutting logic could be expressed in a custom language like AspectJ; however most developers are exposed to AOP via annotations, where you explicitly apply AOP &quot;advice&quot; to a method.</p>
