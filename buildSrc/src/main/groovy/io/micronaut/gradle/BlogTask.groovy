@@ -134,13 +134,18 @@ class BlogTask extends DefaultTask {
         })
     }
 
-    static RssItem rssItemWithPage(String title, Date pubDate, String link, String guid, String html) {
+    static RssItem rssItemWithPage(String title,
+                                   Date pubDate,
+                                   String link,
+                                   String guid,
+                                   String html,
+                                   String author) {
         String htmlWithoutTitleAndDate = html
         if (htmlWithoutTitleAndDate.contains('<span class="date">')) {
             htmlWithoutTitleAndDate = htmlWithoutTitleAndDate.substring(htmlWithoutTitleAndDate.indexOf('<span class="date">'))
             htmlWithoutTitleAndDate = htmlWithoutTitleAndDate.substring(htmlWithoutTitleAndDate.indexOf('</span>') + '</span>'.length())
         }
-        RssItem.builder()
+        RssItem.Builder builder = RssItem.builder()
                 .title(title)
                 .pubDate(ZonedDateTime.of(Instant.ofEpochMilli(pubDate.time)
                         .atZone(ZoneId.systemDefault())
@@ -148,7 +153,14 @@ class BlogTask extends DefaultTask {
                 .link(link)
                 .guid(guid)
                 .description(htmlWithoutTitleAndDate)
-                .build()
+        if (author) {
+            builder = builder.author(parseAuthorName(author))
+        }
+        builder.build()
+    }
+
+    static String parseAuthorName(String author) {
+        author.contains(" (") ? author.substring(0, author.indexOf(' (')) : author
     }
 
     @CompileDynamic
@@ -277,7 +289,8 @@ class BlogTask extends DefaultTask {
                     MMM_D_YYYY.parse(htmlPost.metadata.date),
                     postLink,
                     htmlPost.path.replace(".html", ""),
-                    htmlPost.html))
+                    htmlPost.html,
+                    htmlPost.metadata.author))
         }
         Set<Tag> tags = tagsMap.collect { k, v -> new Tag(title: k, ocurrence: v) } as Set<Tag>
         renderArchive(new File(outputDir.absolutePath + "/index.html"), postCards, globalMetadata, templateText, tags)
