@@ -12,7 +12,7 @@ micronaut {
     template = file("templates/Micronaut.iatemplate")
     output = project.buildDir
     title = 'Micronaut Framework'
-    url = System.getenv('TRAVIS') != null ? 'https://micronaut.io' : 'http://localhost:8890'
+    url = System.getenv('GITHUB_RUN_ID') != null ? 'https://micronaut.io' : 'http://localhost:8890'
     description = 'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
     keywords = ['microanut','jvm','framework','groovy','java','kotlin','microservices','graalvm','serverless']
     robots = 'all'
