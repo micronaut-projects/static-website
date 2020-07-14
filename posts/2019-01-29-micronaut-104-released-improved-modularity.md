@@ -11,7 +11,7 @@ image: 2019-01-29.png
 
 [%date] 
 
-#release
+Tags: #release
 
 The Micronaut team at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce the release of [Micronaut 1.0.4](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.4), which includes improved modularity. Micronaut now has a much [smaller core](https://github.com/micronaut-projects/micronaut-core/) and [various subprojects](https://github.com/micronaut-projects/) that will evolve and improve independently. 
 

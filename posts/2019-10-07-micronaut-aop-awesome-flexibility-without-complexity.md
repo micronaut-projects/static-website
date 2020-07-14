@@ -13,7 +13,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-#aop
+Tags: #aop
 
 With the recent release of [Micronaut Data 1.0 M3](https://github.com/micronaut-projects/micronaut-data/releases/tag/v1.0.0.M2), I got to work on a couple of features for Micronaut Data that really highlighted to me what we have achieved with [Micronaut's aspect-oriented programming (AOP) API](https://docs.micronaut.io/latest/guide/index.html#aop) and the fantastic simplifications it offers, while at the same time ensuring optimal performance. I thought I would take the time to do a write-up of how Micronaut AOP works and why it is one of my favorite Micronaut features compared to the competitors.
 

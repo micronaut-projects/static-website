@@ -10,7 +10,7 @@ image:2020-06-26.jpg
 
 [%date]
 
-#release
+Tags: #release
 
 Today, the [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc. (OCI)](https://objectcomputing.com/products/micronaut) is proud to announce the general [release](https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0) of Micronaut 2.0!
 

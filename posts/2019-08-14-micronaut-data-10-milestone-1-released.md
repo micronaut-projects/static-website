@@ -11,7 +11,7 @@ image: 2019-08-14.png
 
 [%date] 
 
-#release #data
+Tags: #release #data
 
 The [Micronaut Team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce the first milestone of [Micronaut Data](https://github.com/micronaut-projects/micronaut-data). The M1 release is just the first of many milestones and release candidates that we will be doing as we progress towards a GA release. We have already had a fantastic amount of feedback and contributions from the community that have allowed us to advance the JDBC implementation in particular.
 

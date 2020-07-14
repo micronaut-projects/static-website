@@ -11,7 +11,7 @@ image: 2018-07-19.jpg
 
 [%date] 
 
-#release
+Tags: #release
 
 1.0.0.M3 release for Micronaut.
 

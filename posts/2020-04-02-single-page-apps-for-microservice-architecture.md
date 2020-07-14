@@ -11,7 +11,7 @@ image: 2020-04-02-2.jpg
 
 [%date] 
 
-#webinar
+Tags: #webinar
 
 Single-page applications (SPAs) are typically built as dynamic clients that interact with your web application through REST or some other HTTP-friendly protocol, with the frontend relying on the backend server to handle security, persistence, and business logic. This simple frontend => backend model works well for many applications, but now that our "backend" might be composed of multiple services, each with its own API and (potentially) security requirements, managing the communication between our frontend UI and our microservices can lead to a multiplication of complexity. Inter-service concerns such as security and multi-tenancy only add to the difficulty. 
 

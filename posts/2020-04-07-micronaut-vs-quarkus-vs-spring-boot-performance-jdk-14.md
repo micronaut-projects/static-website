@@ -11,7 +11,7 @@ image: 2020-04-07.png
 
 [%date] 
 
-#springboot #quarkus #jdk14
+Tags: #springboot #quarkus #jdk14
 
 After the recent releases of Micronaut 2.0 M2 and JDK 14, I decided it would be a good time to see what the state of play is performance wise between Micronaut, Quarkus, and Spring Boot on JDK 14 in 2020.
 

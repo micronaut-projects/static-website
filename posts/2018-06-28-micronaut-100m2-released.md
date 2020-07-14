@@ -11,7 +11,7 @@ image: 2018-06-28.png
 
 [%date] 
 
-#release
+Tags: #release
 
 1.0.0.M2 release for Micronaut.
 

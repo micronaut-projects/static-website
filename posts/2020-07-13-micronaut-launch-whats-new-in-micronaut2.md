@@ -10,7 +10,9 @@ image: 2020-04-30-2.png
 
 [%author]
 
-[%date] #micronaut2 #launch
+[%date]
+ 
+Tags: #micronaut2 #launch
 
 [%description]
 

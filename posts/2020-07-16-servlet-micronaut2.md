@@ -9,7 +9,9 @@ video: https://www.youtube.com/watch?v=39jjK4cY_4U
 
 [%author]
 
-[%date] #micronaut2 #servlet
+[%date] 
+
+Tags: #micronaut2 #servlet
 
 [%description]
 

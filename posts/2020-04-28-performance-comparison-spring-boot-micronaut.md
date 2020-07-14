@@ -11,7 +11,7 @@ image: 2020-04-28.png
 
 [%date] 
 
-#springboot
+Tags: #springboot
 
 Have you taken a look at the Micronaut 2.0 pre-releases yet?
 

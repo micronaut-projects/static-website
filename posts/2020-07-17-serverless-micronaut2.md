@@ -9,7 +9,9 @@ video: https://www.youtube.com/watch?v=djOvkq8Fzak
 
 [%author]
 
-[%date] #micronaut2 #aws #azure #gcp
+[%date] 
+
+Tags: #micronaut2 #aws #azure #gcp
 
 [%description]
 

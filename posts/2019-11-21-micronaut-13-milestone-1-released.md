@@ -13,7 +13,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-#release
+Tags: #release
 
 The [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is excited to announce the release of [Micronaut 1.3 M1](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0.M1). This is the first milestone of Micronaut's 1.3 line, and it includes a number of significant new features, including:
 

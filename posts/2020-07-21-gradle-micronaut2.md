@@ -9,7 +9,9 @@ video: https://www.youtube.com/watch?v=WBUGk1SOoGA
 
 [%author]
 
-[%date] #micronaut2 #gradle
+[%date] 
+
+Tags: #micronaut2 #gradle
 
 [%description]
 

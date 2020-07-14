@@ -10,7 +10,7 @@ image: 2019-08-19.jpg
 
 [%date] 
 
-#webinar
+Tags: #webinar
 
 Multi-tenancy, as it relates to software development, is when a single instance of an application is used to service multiple clients (tenants) in such a way that each tenant's data is isolated from the other. Among other things, multi-tenancy enables you to build software as a service (SaaS) applications.
  

@@ -11,7 +11,7 @@ image: 2020-06-22.jpg
 
 [%date] 
 
-#webinar
+Tags: #webinar
 
 **Check out the [example code](https://github.com/ilopmar/micronaut-testing-best-practices) to view a sample application containing everything Iván covers in this webinar and follow along commit by commit.**
 

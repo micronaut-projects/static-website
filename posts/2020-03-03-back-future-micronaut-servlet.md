@@ -11,7 +11,7 @@ image: 2020-03-03.jpg
 
 [%date] 
 
-#servlet #jetty #undertow
+Tags: #servlet #jetty #undertow
 
 The [Micronaut Team](https://objectcomputing.com/products/2gm-team "Groovy, Grails, and Micronaut Team") at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce the first milestone of [Micronaut Servlet](https://github.com/micronaut-projects/micronaut-servlet), a new implementation of Micronaut that runs on traditional Java servlet containers.
 

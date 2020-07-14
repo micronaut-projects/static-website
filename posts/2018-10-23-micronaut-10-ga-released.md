@@ -11,7 +11,7 @@ image: 2018-10-23.png
 
 [%date] 
 
-#release
+Tags: #release
 
 It is with great excitement that the [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) announces the [release of Micronaut 1.0 GA](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0) today.
 

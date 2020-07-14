@@ -10,7 +10,9 @@ image: 2020-04-02.jpg
 
 [%author]
 
-[%date] #micronaut2 #maven
+[%date] 
+
+Tags: #micronaut2 #maven
 
 [%description]
 

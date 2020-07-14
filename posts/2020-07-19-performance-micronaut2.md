@@ -9,7 +9,9 @@ video: https://www.youtube.com/watch?v=t5KK_wHp2yk
 
 [%author]
 
-[%date] #micronaut2
+[%date] 
+
+Tags: #micronaut2
 
 [%description]
 

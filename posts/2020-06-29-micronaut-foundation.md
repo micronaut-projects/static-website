@@ -9,7 +9,7 @@ image: 2020-06-29.jpg
 
 [%date]
 
-#foundation
+Tags: #foundation
 
 Today, we announced the formation of the Micronaut Foundation, a not-for-profit company established to advance innovation and adoption of Micronaut®, a free and open, public-use software development framework used to build modular, easily testable microservice and serverless applications. 
 

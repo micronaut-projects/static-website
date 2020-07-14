@@ -11,7 +11,7 @@ image: 2020-04-30.jpg
 
 [%date] 
 
-#launch
+Tags: #launch
 
 With the release of [Micronaut 2.0 M3](/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html), we have gone live with a brand new implementation of the Micronaut command line interface (CLI) and [Micronaut Launch](https://micronaut.io/launch/), an online tool for creating Micronaut applications.
 

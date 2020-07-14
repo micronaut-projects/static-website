@@ -10,7 +10,7 @@ image: 2020-03-09.jpg
 
 [%date] 
 
-#webinar
+Tags: #webinar
 
 Explore multiple testing practices within Micronaut applications, including API testing, bean replacement, security testing, and more! This webinar shows you just how easy it is to test microservice applications using Micronaut's built-in tools.
 

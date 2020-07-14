@@ -11,7 +11,7 @@ image: 2019-01-23.jpg
 
 [%date] 
 
-#release
+Tags: #release
 
 The [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is excited to announce the release of [Micronaut 1.3 RC1](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0.RC1). This is the first release candidate of Micronaut 1.3, and we anticipate a very short RC cycle, so please undertake testing right away in your existing Micronaut 1.2.x applications.
 

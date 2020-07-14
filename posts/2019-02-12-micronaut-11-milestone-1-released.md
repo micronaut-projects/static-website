@@ -11,7 +11,7 @@ image: 2019-02-12.png
 
 [%date] 
 
-#release
+Tags: #release
 
 The [Micronaut Team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce the release of [Micronaut 1.1 Milestone 1](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0.M1). 
 

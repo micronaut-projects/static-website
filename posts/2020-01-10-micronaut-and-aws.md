@@ -10,7 +10,7 @@ image: 2020-01-10.jpg
 
 [%date] 
 
-#webinar
+Tags: #webinar
 
 We often refer to Micronaut as "natively cloud-native," but what does that mean?
 

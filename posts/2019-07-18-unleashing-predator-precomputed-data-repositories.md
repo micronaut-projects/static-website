@@ -13,7 +13,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-#data
+Tags: #data
 
 Today, the [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) unveiled [Micronaut Data](https://github.com/micronaut-projects/micronaut-data) (previously known as Predator), a brand new Open Source project that aims to dramatically improve the runtime and memory performance of data access repository logic for the microservice and serverless era, while also maintaining the productivity benefits of tools like [GORM](https://gorm.grails.org) and [Spring Data](https://spring.io/projects/spring-data).
 

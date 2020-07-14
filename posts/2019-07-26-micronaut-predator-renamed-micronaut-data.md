@@ -11,7 +11,7 @@ image: 2019-07-26.jpg
 
 [%date] 
 
-#data
+Tags: #data
 
 *Micronaut co-founder, Jeff Scott Brown, today issued a statement in response to community concern about the word Predator. [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is committed to building inclusive environments that value and respect the individual and group differences within our open source communities. We stand behind this statement, and we hope that you will join us in our mission to innovate courageously through open source software!*
 

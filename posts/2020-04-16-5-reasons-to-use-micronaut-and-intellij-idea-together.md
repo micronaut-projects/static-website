@@ -13,7 +13,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-#intellijidea
+Tags: #intellijidea
 
 I have been using IntelliJ IDEA for the last six or seven years, and I am always eager to experiment with new features when updated versions are released. When I heard a couple of months ago that JetBrains had introduced Micronaut support in IntelliJ IDEA 2020.1 EAP, I didn't think twice; I downloaded it and started using it in my current project.
 

@@ -11,7 +11,7 @@ image: 2020-02-04.png
 
 [%date] 
 
-#release #data
+Tags: #release #data
 
 The [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is thrilled to announce the release of [Micronaut 1.3 GA](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.3.0), which includes the 1.0 GA release of Micronaut Data for JDBC and Hibernate/JPA in addition to the following new features:
 

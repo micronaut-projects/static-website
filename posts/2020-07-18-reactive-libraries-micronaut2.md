@@ -9,7 +9,9 @@ video: https://www.youtube.com/watch?v=tIVCGS4UOwU
 
 [%author]
 
-[%date] #micronaut2 #reactive
+[%date] 
+
+Tags: #micronaut2 #reactive
 
 [%description]
 

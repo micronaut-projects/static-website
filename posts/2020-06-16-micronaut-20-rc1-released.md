@@ -11,7 +11,7 @@ image: 2020-06-16.jpg
 
 [%date]
 
-#release
+Tags: #release
 
 The Micronaut team at Object Computing (OCI) is super excited to announce [the first release candidate](https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.RC1) on our journey to Micronaut 2.0.
 

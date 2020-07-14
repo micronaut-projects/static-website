@@ -11,7 +11,7 @@ image: 2020-04-30-2.png
 
 [%date] 
 
-#gcp #azure #serverless #release
+Tags: #gcp #azure #serverless #release
 
 The Micronaut team at Object Computing is super excited to announce the [final milestone](https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.M2) on our journey to Micronaut 2.0.
 

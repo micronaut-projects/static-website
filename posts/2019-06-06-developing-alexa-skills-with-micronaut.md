@@ -11,7 +11,7 @@ image: 2019-06-06.jpg
 
 [%date] 
 
-#webinar
+Tags: #webinar
 
 ## OVERVIEW
 

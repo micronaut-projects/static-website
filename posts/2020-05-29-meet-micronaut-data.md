@@ -10,7 +10,7 @@ image: 2020-05-29.jpg
 
 [%date] 
 
-#webinar
+Tags: #webinar
 
 Micronaut Data is a database access toolkit that uses ahead-of-time (AoT) compilation to pre-compute queries for repository interfaces that are then executed by a thin, lightweight runtime layer. Since Micronaut Data does not do any query translation at runtime, the performance gain is significant. 
 

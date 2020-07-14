@@ -9,7 +9,9 @@ video: https://www.youtube.com/watch?v=mY4LfFd3jXg
 
 [%author]
 
-[%date] #micronaut2 #cli
+[%date] 
+
+Tags: #micronaut2 #cli
 
 [%description]
 

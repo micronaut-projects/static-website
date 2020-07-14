@@ -13,7 +13,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-#release #openapi #graalvm
+Tags: #release #openapi #graalvm
 
 Today, it is with great pleasure that the team at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) announces the release of Micronaut 1.0 RC1.
 

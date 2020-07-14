@@ -13,7 +13,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-#release
+Tags: #release
 
 The [Micronaut Team](https://objectcomputing.com/products/2gm-team "Groovy, Grails, and Micronaut Team") at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce the [first milestone of Micronaut 2.0](https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.M1)!
 
