@@ -2,6 +2,7 @@ title: Micronaut 2.0 - Servlet Support
 date: Jul 16, 2020
 description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut 2.0 servlet support. 
 author: Sergio del Amo
+image: 2020-07-16.jpg
 video: https://www.youtube.com/watch?v=39jjK4cY_4U
 ---
 
