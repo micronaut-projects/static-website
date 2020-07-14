@@ -91,6 +91,7 @@ class BlogTask extends DefaultTask {
         Map<String, String> m = RenderSiteTask.siteMeta(title.get(), about.get(), url.get(), keywords.get() as List<String>, robots.get())
         copyBackgroundImages()
         List<MarkdownPost> listOfPosts = parsePosts(posts.get())
+        listOfPosts = filterOutFuturePosts(listOfPosts)
         listOfPosts = listOfPosts.sort { a, b ->
             MMM_D_YYYY.parse(a.date).after(MMM_D_YYYY.parse(b.date)) ? -1 : 1
         }
@@ -99,6 +100,10 @@ class BlogTask extends DefaultTask {
         blog.mkdir()
         renderPosts(m, htmlPosts, blog, templateText)
         copyBlogImages()
+    }
+
+    static List<MarkdownPost> filterOutFuturePosts(List<MarkdownPost> posts) {
+        posts.findAll { post -> !MMM_D_YYYY.parse(post.date).after(new Date()) }
     }
 
     void copyBlogImages() {
