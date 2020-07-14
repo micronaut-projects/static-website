@@ -24,8 +24,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: ${{ matrix.java }}
-      - name: Build Main Site
-        id: build_site
-        run: ./gradlew build
-      - name: Echo
-        run: echo "${{ steps.build_site.outputs.value }}"
+      - name: Publish Main Site
+        if: success() && github.eventname == 'push' && matrix.java == '8'
+        run: ./publish.sh
