@@ -135,6 +135,11 @@ class BlogTask extends DefaultTask {
     }
 
     static RssItem rssItemWithPage(String title, Date pubDate, String link, String guid, String html) {
+        String htmlWithoutTitleAndDate = html
+        if (htmlWithoutTitleAndDate.contains('<span class="date">')) {
+            htmlWithoutTitleAndDate = htmlWithoutTitleAndDate.substring(htmlWithoutTitleAndDate.indexOf('<span class="date">'))
+            htmlWithoutTitleAndDate = htmlWithoutTitleAndDate.substring(htmlWithoutTitleAndDate.indexOf('</span>') + '</span>'.length())
+        }
         RssItem.builder()
                 .title(title)
                 .pubDate(ZonedDateTime.of(Instant.ofEpochMilli(pubDate.time)
@@ -142,7 +147,7 @@ class BlogTask extends DefaultTask {
                         .toLocalDateTime(), ZoneId.of("GMT")))
                 .link(link)
                 .guid(guid)
-                .description(html)
+                .description(htmlWithoutTitleAndDate)
                 .build()
     }
 
