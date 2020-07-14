@@ -1,15 +1,16 @@
-title: Micronaut Launch - What's new in Micronaut 2.0
+title: Micronaut Launch - Micronaut 2.0
 date: Jul 13, 2020
 description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut Launch.
 author: Sergio del Amo
 video: https://www.youtube.com/watch?v=ilpvZXiAxOE
+image: 2020-04-30-2.png
 ---
 
 # [%title]
 
 [%author]
 
-[%date] #micronaut2
+[%date] #micronaut2 #launch
 
 [%description]
 
