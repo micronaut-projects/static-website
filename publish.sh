@@ -22,22 +22,21 @@ git config --global user.name "${COMMIT_NAME}"
 git config --global credential.helper "store --file=~/.git-credentials"
 echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
 
-./gradlew build || EXIT_STATUS=$?
+./gradlew clean ${GRADLE_TASK} || EXIT_STATUS=$?
 
 if [[ $EXIT_STATUS -ne 0 ]]; then
     echo "Project Build failed"
     exit $EXIT_STATUS
 fi
 
-# Publish Main site
-git clone https://${GH_TOKEN}@github.com/micronaut-projects/static-website.git -b gh-pages gh-pages --single-branch > /dev/null
+git clone https://${GH_TOKEN}@github.com/${GITHUB_SLUG}.git -b gh-pages gh-pages --single-branch > /dev/null
 cd gh-pages
 cp -r ../build/dist/* .
 if git diff --quiet; then
   echo "No changes in MAIN Website"
 else
   git add -A
-  git commit -a -m "Updating main Micronaut site for Github Actions run:$GITHUB_RUN_ID"
+  git commit -a -m "Updating $GITHUB_SLUG gh-pages branch for Github Actions run:$GITHUB_RUN_ID"
   git push origin HEAD
 fi
 

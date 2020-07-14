@@ -27,4 +27,12 @@ jobs:
       - name: Publish Main Site
         run: ./publish.sh
         env:
+          GITHUB_SLUG: micronaut-projects/static-website
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GRADLE_TASK: build
+      - name: Publish Guides Site
+        run: ./publish.sh
+        env:
+          GITHUB_SLUG: micronaut-projects/micronaut-guides
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GRADLE_TASK: buildGuide
