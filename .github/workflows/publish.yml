@@ -25,5 +25,4 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Publish Main Site
-        if: success() && github.eventname == 'push' && matrix.java == '8'
         run: ./publish.sh
