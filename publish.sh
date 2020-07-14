@@ -1,10 +1,24 @@
 #!/bin/bash
 set -e
 
-EXIT_STATUS=0
+if [ -z "$GH_TOKEN" ]
+then
+  echo "You must provide the action with a GitHub Personal Access Token secret in order to deploy."
+  exit 1
+fi
 
-git config --global user.name "$GIT_NAME"
-git config --global user.email "$GIT_EMAIL"
+if [ -z "$COMMIT_EMAIL" ]
+then
+  COMMIT_EMAIL="${GITHUB_ACTOR}@users.noreply.github.com"
+fi
+
+if [ -z "$COMMIT_NAME" ]
+then
+  COMMIT_NAME="${GITHUB_ACTOR}"
+fi
+
+git config --global user.email "${COMMIT_EMAIL}"
+git config --global user.name "${COMMIT_NAME}"
 git config --global credential.helper "store --file=~/.git-credentials"
 echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
 

@@ -26,3 +26,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Publish Main Site
         run: ./publish.sh
+        env:
+          GITEMAIL: ${{ secrets.GITEMAIL }}
+          GITNAME: ${{ secrets.GITNAME }}
+          GHTOKEN: ${{ secrets.GHTOKEN }}
