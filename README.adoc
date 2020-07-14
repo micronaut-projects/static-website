@@ -1,16 +1,12 @@
 = Micronaut Website
 
-Micronaut is a modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.
+[![Build Status](https://github.com/micronaut-projects/static-website/workflows/Publish/badge.svg)](https://github.com/micronaut-projects/static-website/actions)
+
+This project builds the Micronaut website. A static website build with [Gradle](https://gradle.org).
 
 == What to change when a new release is published.
 
 Please, modify `main/src/resources/releases.yml`
-
-== Sources for the Micronaut website
-
-This project builds the Micronaut website. It is using {gradle}[Gradle] and is fully statically generated.
-
-Build is image:https://travis-ci.org/micronaut-projects/static-website.svg?branch=master["Build Status", link="https://travis-ci.org/micronaut-projects/static-website"].
 
 == Generating the MAIN site
 
@@ -20,7 +16,7 @@ https://micronaut.io[https://micronaut.io]
 ./gradlew build
 ----
 
-The output can be found in the `build` directory.
+The output can be found in the `build/dist` directory.
 
 == Generating the GUIDES site
 
@@ -30,7 +26,7 @@ https://guides.micronaut.io[http://guides.micronaut.io]
 ./gradlew buildGuide
 ----
 
-The output can be found in the `build` directory.
+The output can be found in the `build/dist` directory.
 
 == Generate Micronaut Launch Front end
 
