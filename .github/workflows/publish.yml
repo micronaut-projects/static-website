@@ -27,6 +27,4 @@ jobs:
       - name: Publish Main Site
         run: ./publish.sh
         env:
-          GITEMAIL: ${{ secrets.GITEMAIL }}
-          GITNAME: ${{ secrets.GITNAME }}
-          GHTOKEN: ${{ secrets.GHTOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
