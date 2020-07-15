@@ -22,6 +22,9 @@
     <loc>https://micronaut.io/blog/tag/data.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/http2.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/webinar.html</loc>
   </url>
   <url>
@@ -122,6 +125,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-04-09-micronaut-now-certified-run-amazon-corretto.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-07-15-http2-micronaut2.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-07-02-state-of-micronaut.html</loc>
