@@ -79,6 +79,9 @@
     <loc>https://micronaut.io/blog/tag/aws.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/reactive.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/jetty.html</loc>
   </url>
   <url>
@@ -143,6 +146,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2018-05-23-micronaut-open-sourced.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-07-18-reactive-libraries-micronaut2.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-08-19-micronaut-multitenancy.html</loc>
