@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Micronaut 1.0 RC3 and Micronaut Test 1.0 RC1 Released</title>
+    <title>Micronaut</title>
     <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
-    <meta name="description" content="The final Micronaut RC before release of the GA on October 23rd is out! Find out what's new and what's to come!" />
-    <meta name="date" content="Oct 16, 2018" />
+    <meta name="description" content="A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications." />
+    <meta name="date" content="Jul 20, 2020" />
     <meta name="robots" content="all"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
     <meta charset='utf-8'/>
@@ -12,14 +12,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
     <meta name='twitter:card' content='summary_large_image'/>
     <meta name='twitter:site' content='@micronautfw'/>
-    <meta name='twitter:description' content='The final Micronaut RC before release of the GA on October 23rd is out! Find out what's new and what's to come!'/>
+    <meta name='twitter:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
     <meta name='twitter:creator' content='@micronautfw'/>
     <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
     <meta property='og:image:width' content='600'/>
     <meta property='og:image:height' content='300'/>
     <meta property='og:url' content='https://micronaut.io'/>
-    <meta property='og:title' content='Micronaut 1.0 RC3 and Micronaut Test 1.0 RC1 Released'/>
-    <meta property='og:description' content='The final Micronaut RC before release of the GA on October 23rd is out! Find out what's new and what's to come!'/>
+    <meta property='og:title' content='Micronaut'/>
+    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
     <meta property='og:type' content='website'/>
     <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
     <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
@@ -47,10 +47,10 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
-    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+    <link rel='stylesheet' href=''/>
+    <script src=''></script>
 </head>
-<body class='post'>
+<body>
 <div class='main'>
     <nav id='navbar'>
         <ul class='container'>
@@ -85,75 +85,15 @@
         </ul>
     </nav>
 </div>
-<article><div class='content container'>
-  <h1>
-    <a href='https://micronaut.io/blog/index.html'>
-      <span>Micronaut</span>
-      <b>Blog</b>
-    </a>
-  </h1>
-  <div class='light'>
-    <div class='largegoldenratio align-left'>
-      <div class='padded'><h1>Micronaut 1.0 RC3 and Micronaut Test 1.0 RC1 Released</h1>
-<p><span class="author">By Graeme Rocher</span></p>
-<p><span class="date">Oct 16, 2018</span></p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
-<p>With one week to go to <a href="https://objectcomputing.com/resources/events/conferences/oracle-code-one-2018">Oracle Code One 2018</a>, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.0.RC3">Micronaut 1.0 RC3</a>.</p>
-<p>This is the final RC before we release GA on the 23rd of October.</p>
-<p>With this release, we are pleased to also announce the first RC of <a href="https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html">Micronaut Test</a>: a simple collection of extensions for JUnit 5 and Spock that adds a few niceties that make it simpler to test Micronaut applications.</p>
-<p>Micronaut Test adds the following testing-specific features to Micronaut:</p>
-<ul>
-<li>
-<p>Automatically start and stop the server for the scope of a test suite</p>
-</li>
-<li>
-<p>Use mocks to replace existing beans for the scope of a test suite</p>
-</li>
-<li>
-<p>Allow dependency injection into a test instance</p>
-</li>
-</ul>
-<p>The following is an example test written in Spock:</p>
-<pre><code class="language-groovy">package io.micronaut.test.spock
-
-import io.micronaut.test.annotation.MicronautTest
-import spock.lang.*
-import javax.inject.Inject
-
-@MicronautTest 
-class MathServiceSpec extends Specification {
-
-    @Inject
-    MathService mathService 
-
-    @Unroll
-    void &quot;should compute #num times 4&quot;() { 
-        when:
-        def result = mathService.compute(num)
-
-        then:
-        result == expected
-
-        where:
-        num | expected
-        2   | 8
-        3   | 12
-    }
-}
-</code></pre>
-<p>As you can see from the example above, simply by adding the <code>@MicronautTest</code> annotation to any Spock or JUnit 5 test, the test automatically becomes a candidate for dependency injection.</p>
-<p>Micronaut Test includes many more features, including integration with Spock's mocking framework and Mockito for JUnit 5.</p>
-<p>Thanks to all those who provided feedback during the RC process and to those who plan to attend Oracle Code One 2018 next week in San Francisco - see you there!</p></div>
-    </div>
-    <div class='smallgoldenratio align-right'><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-06-26.jpg)'>
-  <a href='https://micronaut.io/blog/2020-06-26-announcing-micronaut-20.html'>
-    <h3>Jun 26, 2020</h3>
-    <h2>Announcing Micronaut 2.0</h2>
-  </a>
-</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-06-16.jpg)'>
-  <a href='https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html'>
-    <h3>Jun 16, 2020</h3>
-    <h2>Micronaut 2.0 RC1 Released</h2>
+<article><div class='clear content container'><h1>
+  <span>Tag:</span>
+  <b>cli</b>
+</h1>
+  <div class='light'><div class="threecolumns">
+    <div class='column'><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-20.jpg)'>
+  <a href='https://micronaut.io/blog/2020-07-20-cli-micronaut2.html'>
+    <h3>Jul 20, 2020</h3>
+    <h2>Improvements to Command Line Interface - Micronaut 2.0</h2>
   </a>
 </article></div>
   </div>
