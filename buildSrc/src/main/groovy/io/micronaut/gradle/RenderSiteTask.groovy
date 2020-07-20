@@ -8,7 +8,6 @@ import io.micronaut.Page
 import org.gradle.api.DefaultTask
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
-import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.OutputDirectory
@@ -17,12 +16,10 @@ import static groovy.io.FileType.FILES
 
 import javax.annotation.Nonnull
 import javax.validation.constraints.NotNull
-import java.text.SimpleDateFormat
 
 @CompileStatic
 class RenderSiteTask extends DefaultTask {
 
-    static final SimpleDateFormat MMM_D_YYYY = new SimpleDateFormat("MMM d, yyyy")
     public static final String YOUTUBE_WATCH = 'https://www.youtube.com/watch?v='
 
     static final String COLON = ":"
@@ -35,7 +32,7 @@ class RenderSiteTask extends DefaultTask {
     final Property<File> pages = project.objects.property(File)
 
     @Input
-    final Property<File> template = project.objects.property(File)
+    final Property<File> document = project.objects.property(File)
 
     @Input
     final Property<String> title = project.objects.property(String)
@@ -54,10 +51,6 @@ class RenderSiteTask extends DefaultTask {
 
     @OutputDirectory
     final Property<File> output = project.objects.property(File)
-
-    @Internal
-    @Input
-    final Provider<File> document = template.map { new File(it.absolutePath + '/Contents/Resources/document.html') }
 
     @TaskAction
     void renderSite() {
@@ -146,7 +139,7 @@ class RenderSiteTask extends DefaultTask {
             resolvedMetadata.put('description', "")
         }
         if (!resolvedMetadata.containsKey("date")) {
-            resolvedMetadata.put('date', MMM_D_YYYY.format(new Date()))
+            resolvedMetadata.put('date', BlogTask.MMM_D_YYYY_HHMM.format(new Date()))
         }
         if (!resolvedMetadata.containsKey("robots")) {
             resolvedMetadata.put('robots', "all")
@@ -243,10 +236,18 @@ class RenderSiteTask extends DefaultTask {
         result
     }
 
+    static String formatDate(String date) {
+        BlogTask.MMM_D_YYYY.format(BlogTask.parseDate(date))
+    }
+
     static String replaceLineWithMetadata(String line, Map<String, String> metadata) {
-        for (String metadataKey : metadata.keySet()) {
+        Map<String, String> m = new HashMap<>(metadata)
+        if (m.containsKey('date')) {
+            m['date'] = formatDate(m['date'])
+        }
+        for (String metadataKey : m.keySet()) {
             if (line.contains("[%${metadataKey}]".toString())) {
-                String value = metadata[metadataKey]
+                String value = m[metadataKey]
                 if ("[%${metadataKey}]".toString() == '[%author]') {
                     List<String> authors = value.split(",") as List<String>
                     value = '<span class="author">By ' + authors.join("<br/>") + '</span>'

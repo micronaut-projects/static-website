@@ -29,11 +29,14 @@ class MicronautWebsitePlugin implements Plugin<Project> {
     public static final String BUILD_GUIDES = "buildGuides"
     public static final String GROUP_MICRONAUT = 'micronaut'
     public static final String TASK_RENDER_BLOG = 'renderBlog'
+    public static final String TASK_GEN_IA_WRITER_TEMPLATE = "genIaWriterTemplate"
+
 
     @Override
     void apply(Project project) {
         project.getPlugins().apply(BasePlugin.class)
         project.extensions.create(EXTENSION_NAME, SiteExtension)
+
         project.tasks.register(TASK_GEN_DOCS, DocumentationTask, { task ->
             Object extension = project.getExtensions().findByName(EXTENSION_NAME)
             if (extension instanceof SiteExtension) {
@@ -63,7 +66,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 task.setProperty("about", siteExtension.description)
                 task.setProperty("keywords", siteExtension.keywords)
                 task.setProperty("robots", siteExtension.robots)
-                task.setProperty("template", siteExtension.template)
+                task.setProperty("document", siteExtension.template)
                 task.setProperty("output", siteExtension.output)
                 task.setProperty("posts", siteExtension.posts)
                 task.setProperty("assets", siteExtension.assets)
@@ -98,7 +101,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 task.setProperty("about", siteExtension.description)
                 task.setProperty("keywords", siteExtension.keywords)
                 task.setProperty("robots", siteExtension.robots)
-                task.setProperty("template", siteExtension.template)
+                task.setProperty("document", siteExtension.template)
                 task.setProperty("output", siteExtension.output)
             }
             task.setGroup(GROUP_MICRONAUT)
@@ -139,7 +142,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 task.setProperty("about", siteExtension.description)
                 task.setProperty("keywords", siteExtension.keywords)
                 task.setProperty("robots", siteExtension.robots)
-                task.setProperty("template", siteExtension.template)
+                task.setProperty("document", siteExtension.template)
                 task.setProperty("output", siteExtension.output)
                 task.setProperty("pages", siteExtension.pages)
             }

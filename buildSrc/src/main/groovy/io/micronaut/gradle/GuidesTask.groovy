@@ -26,7 +26,7 @@ class GuidesTask extends DefaultTask {
     public static final String TAGS = "tags"
 
     @Input
-    final Property<File> template = project.objects.property(File)
+    final Property<File> document = project.objects.property(File)
 
     @OutputDirectory
     final Property<File> output = project.objects.property(File)
@@ -45,10 +45,6 @@ class GuidesTask extends DefaultTask {
 
     @Input
     final Property<String> robots = project.objects.property(String)
-
-    @Internal
-    @Input
-    final Provider<File> document = template.map { new File(it.absolutePath + '/Contents/Resources/document.html') }
 
     @TaskAction
     void renderGuides() {

@@ -1,9 +1,8 @@
 package io.micronaut.gradle
 
-import edu.umd.cs.findbugs.annotations.Nullable
+
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
-import groovy.transform.Internal
 import groovy.xml.MarkupBuilder
 import io.micronaut.ContentAndMetadata
 import io.micronaut.HtmlPost
@@ -11,7 +10,6 @@ import io.micronaut.MarkdownPost
 import io.micronaut.MarkdownUtil
 import io.micronaut.PostMetadata
 import io.micronaut.PostMetadataAdapter
-import io.micronaut.events.EventsPage
 import io.micronaut.rss.DefaultRssFeedRenderer
 import io.micronaut.rss.RssChannel
 import io.micronaut.rss.RssFeedRenderer
@@ -23,12 +21,13 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.file.CopySpec
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
-import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
+
 import javax.annotation.Nonnull
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.time.Instant
 import java.time.LocalDateTime
@@ -37,7 +36,7 @@ import java.time.ZonedDateTime
 
 @CompileStatic
 class BlogTask extends DefaultTask {
-
+    static final SimpleDateFormat MMM_D_YYYY_HHMM = new SimpleDateFormat("MMM d, yyyy HH:mm")
     static final SimpleDateFormat MMM_D_YYYY = new SimpleDateFormat("MMM d, yyyy")
     public static final String RSS_FILE = 'rss.xml'
     public static final String IMAGES = 'images'
@@ -49,7 +48,7 @@ class BlogTask extends DefaultTask {
     public static final String INDEX = 'index.html'
 
     @Input
-    final Property<File> template = project.objects.property(File)
+    final Property<File> document = project.objects.property(File)
 
     @Input
     final Property<String> title = project.objects.property(String)
@@ -72,10 +71,6 @@ class BlogTask extends DefaultTask {
     @OutputDirectory
     final Property<File> output = project.objects.property(File)
 
-    @Internal
-    @Input
-    final Provider<File> document = template.map { new File(it.absolutePath + '/Contents/Resources/document.html') }
-
     @InputDirectory
     final Property<File> assets = project.objects.property(File)
 
@@ -93,7 +88,7 @@ class BlogTask extends DefaultTask {
         List<MarkdownPost> listOfPosts = parsePosts(posts.get())
         listOfPosts = filterOutFuturePosts(listOfPosts)
         listOfPosts = listOfPosts.sort { a, b ->
-            MMM_D_YYYY.parse(a.date).after(MMM_D_YYYY.parse(b.date)) ? -1 : 1
+            parseDate(a.date).after(parseDate(b.date)) ? -1 : 1
         }
         List<HtmlPost> htmlPosts = processPosts(m, listOfPosts)
         File blog = new File(o.absolutePath + '/' + BLOG)
@@ -103,7 +98,15 @@ class BlogTask extends DefaultTask {
     }
 
     static List<MarkdownPost> filterOutFuturePosts(List<MarkdownPost> posts) {
-        posts.findAll { post -> !MMM_D_YYYY.parse(post.date).after(new Date()) }
+        posts.findAll { post -> !parseDate(post.date).after(new Date()) }
+    }
+
+    static Date parseDate(String date) throws ParseException {
+        try {
+            return MMM_D_YYYY_HHMM.parse(date)
+        } catch(ParseException e) {
+            return MMM_D_YYYY.parse(date)
+        }
     }
 
     void copyBlogImages() {
@@ -234,7 +237,7 @@ class BlogTask extends DefaultTask {
             }
         }
         relatedPosts.subList(0, MAX_RELATED_POSTS).sort { a, b ->
-            MMM_D_YYYY.parse(a.metadata.date).after(MMM_D_YYYY.parse(b.metadata.date)) ? -1 : 1
+            parseDate(a.metadata.date).after(parseDate(b.metadata.date)) ? -1 : 1
         }
     }
 
@@ -285,7 +288,7 @@ class BlogTask extends DefaultTask {
             }
             String postLink = postLink(htmlPost)
             rssItems.add(rssItemWithPage(htmlPost.metadata.title,
-                    MMM_D_YYYY.parse(htmlPost.metadata.date),
+                    parseDate(htmlPost.metadata.date),
                     postLink,
                     htmlPost.path.replace(".html", ""),
                     htmlPost.html,
@@ -344,7 +347,7 @@ class BlogTask extends DefaultTask {
         mb.article(class: 'blogcard', style: imageUrl ? 'background-image: url(' + imageUrl + ')' : '') {
             a(href: postLink(htmlPost)) {
                 h3 {
-                    mkp.yield htmlPost.metadata.date
+                    mkp.yield RenderSiteTask.formatDate(htmlPost.metadata.date)
                 }
                 h2 {
                     mkp.yield htmlPost.metadata.title
