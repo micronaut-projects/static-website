@@ -55,6 +55,9 @@
     <loc>https://micronaut.io/blog/tag/openapi.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/gradle.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/quarkus.html</loc>
   </url>
   <url>
@@ -170,6 +173,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-03-20-micronaut-11-rc-released.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-07-21-gradle-micronaut2.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-02-21-uploading-big-files-micronaut-and-elastic-beanstalk.html</loc>
