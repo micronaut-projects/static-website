@@ -2,7 +2,53 @@
 
 [![Build Status](https://github.com/micronaut-projects/static-website/workflows/Publish/badge.svg)](https://github.com/micronaut-projects/static-website/actions)
 
-This project builds the Micronaut website. A static website build with [Gradle](https://gradle.org).
+This project builds the Micronaut website. A static website build with [Gradle](https://gradle.org). It uses a Gradle Plugin whose sources can be found at `buildSrc`. 
+
+Tasks are groupped with `micronaut`. 
+
+You can get more info by running: 
+
+```
+  % ./gradlew tasks --group=micronaut
+ ...
+ Micronaut tasks
+ ---------------
+ buildGuides - Build guides website - generates guides pages, copies assets and generates a sitemap
+ cleanDocs - Deletes documentation temp page - build/temp/documentation.html
+ cleanDownload - Deletes download temp page - build/temp/download.html
+ cleanEvents - Deletes events temp page - build/temp/events.html
+ cleanFaq - Deletes faq temp page - build/temp/faq.html
+ cleanGuides - Deletes temp Guides page: build/temp/index.html 
+ copyAssets - Copies css, js, fonts and images from the assets folder to the dist folder
+ genDocs - Generates documentation HTML page - build/temp/documentation.html
+ genDownload - Generates download HTML page - build/temp/download.html
+ genEvents - Generates events HTML page - build/temp/events.html
+ genFaq - Generates FAQ HTML - build/temp/faq.html 
+ genGuides - Generates guides home, tags and categories HTML pages - build/temp/index.html
+ genSitemap - Generates build/dist/sitemap.xml with every page in the site
+ renderBlog - Renders Markdown posts (posts/*.md) into HTML pages (dist/blog/*.html). It generates tag pages. Generates RSS feed. Posts with future dates are not generated.
+ renderSite - Build Micronaut website - generates pages with HTML entries in pages and build/temp, renders blog and RSS feed, copies assets and generates a sitemap 
+```
+
+## Generating the MAIN site
+
+[https://micronaut.io](https://micronaut.io)
+
+```bash
+./gradlew build --console=plain
+```
+
+The output can be found in the `build/dist` directory.
+
+## Generating the GUIDES site
+
+[https://guides.micronaut.io](http://guides.micronaut.io)
+
+```bash
+./gradlew buildGuide --console=plain
+
+```
+The output can be found in the `build/dist` directory.
 
 ## Blog Posts
 
@@ -78,6 +124,8 @@ date: April 9, 2020 09:00
 
 ```
 
+**To Schedule tasks use a date in the future. Github Action is triggered daily and will publish scheduled posts.**
+
 #### Blog post background
 
 For Blog post background images usage image metadata. 
@@ -135,25 +183,6 @@ Assets used in the website can be found under `assets`.
 
 Please, modify `conf/releases.yml`
 
-## Generating the MAIN site
-
-[https://micronaut.io](https://micronaut.io)
-
-```bash
-./gradlew build
-```
-
-The output can be found in the `build/dist` directory.
-
-# Generating the GUIDES site
-
-[https://guides.micronaut.io](http://guides.micronaut.io)
-
-```bash
-./gradlew buildGuide
-```
-
-The output can be found in the `build/dist` directory.
 
 ## Generate Micronaut Launch Front end
 
