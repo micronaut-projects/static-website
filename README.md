@@ -92,6 +92,13 @@ Tags: #aws #correto
 One practice used by the [Micronaut development team](https://objectcomputing.com/products/2gm-team "Groovy, Grails, and Micronaut Team") is continuous integration (CI). In support of this, the [Micronaut framework](https://micronaut.io/ "Learn more about the Micronaut Framework")'s core has an extensive test suite executed via [GitHub Actions](https://github.com/features/actions), and since the beginning of 2020, tests have also been executed with [Amazon Corretto](https://aws.amazon.com/corretto/) 8 and 11.
 ```
 
+#### Text Expander snippets
+
+If you write often to Micronaut's blog, we recommend you to create a [Text Expander](https://textexpander.com) snippet:
+
+ ![](docs/textexpander.png)
+
+
 #### Title Metadata
 
 `title` tag is used as the window title, the card title, blog post main header and also in twitter cards.
