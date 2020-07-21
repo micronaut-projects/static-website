@@ -50,6 +50,14 @@ The output can be found in the `build/dist` directory.
 ```
 The output can be found in the `build/dist` directory.
 
+## Running the website locally
+
+The easiest way to work locally is to generate the site and setup your Webserver to serve build/dist. 
+
+For example with [MAMP](https://www.mamp.info/en/mamp/): 
+
+![](docs/mamp.png)
+
 ## Blog Posts
 
 ### Posts Location
