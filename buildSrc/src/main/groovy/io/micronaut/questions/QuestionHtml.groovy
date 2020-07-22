@@ -22,7 +22,9 @@ trait QuestionHtml implements PageElement {
             h2 {
                 html.mkp.yieldUnescaped title
             }
-            html.mkp.yieldUnescaped(MarkdownUtil.htmlFromMarkdown(answer))
+            String text = MarkdownUtil.htmlFromMarkdown(answer)
+            text = text.replaceAll("\\\\n","<br/>")
+            html.mkp.yieldUnescaped(text)
         }
         writer.toString()
     }

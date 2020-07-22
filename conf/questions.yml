@@ -46,7 +46,7 @@ questions:
   -
     slug: 'question_docs'
     title: 'Can I contribute to the documentation?'
-    answer: 'Absolutely! The Micronaut project includes a few forms of documentation: \n\n- The [reference documentation](http://docs.micronaut.io/snapshot/guide/index.html) contains language specification, user guides, a getting started tutorial, and more.
+    answer: 'Absolutely! The Micronaut project includes a few forms of documentation: \n- The [reference documentation](http://docs.micronaut.io/snapshot/guide/index.html) contains language specification, user guides, a getting started tutorial, and more.
 \n- The [JavaDoc APIs](http://docs.micronaut.io/snapshot/api/) documents the classes of the Micronaut code base<
 \n- [GitHub](https://github.com/micronaut-projects/static-website) allows users to contribute to this website.\n Contributing to the Micronaut documentation is fairly easy. Create a GitHub account or sign in with an existing account, browse to the [Latest Guide](http://docs.micronaut.io/snapshot/guide/index.html) and click the <Improve this doc> button at the top of the section you wish to edit. Please don''t hesitate to help us make improvements, fix typos or broken language, clarify complicated sections, add new material, and anything else you feel will be helpful to other Micronaut users. And thank you!'
   -
