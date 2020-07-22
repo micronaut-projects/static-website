@@ -33,7 +33,7 @@ class EventsPage {
         String msg = '''\
 <table>
 <thead>
-<tr><th>Name</th><th>Date(s)</th><th>Location</th><th>Speakers</th></tr>
+<tr><th>Event</th><th>Date(s)</th><th>Location</th><th>Speakers</th></tr>
 </thead>
 <tbody>
 '''
