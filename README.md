@@ -189,6 +189,33 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 ```
 
+#### Video
+
+Use the `video` metadata to embed a Video. 
+
+Currently, the plugin supports youtube videos. Use a link which starts with `https://www.youtube.com/watch?v=` such as `https://www.youtube.com/watch?v=RtjSqRZ_md4`
+
+Example: 
+
+```markdown
+title: GOTO 2019 - Introduction to Micronaut    
+date:  Jul 21, 2020 09:04
+description: Graeme Rocher, Micronaut framework co-founder, introduction to Micronaut at GOTO 2019 Conference.
+author: Sergio del Amo
+video: https://www.youtube.com/watch?v=RtjSqRZ_md4
+---
+
+# [%title]
+
+[%author]
+
+[%date] 
+
+Tags: 
+
+[%description]
+```
+
 
 ## Assets (Fonts, Stylesheets, Images, Javascripts)
 
