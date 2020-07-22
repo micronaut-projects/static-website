@@ -21,6 +21,9 @@ class MicronautAirtable {
     public static final String TABLE_PRACTICE_AREAS = 'Practice Areas'
     public static final String TABLE_FOCUS = 'Focus'
     public static final String TABLE_SMES = 'SMEs'
+    public static final String FIELD_STATUS = 'status'
+    public static final String STATUS_SCHEDULED = 'scheduled'
+    public static final String FIELD_EVENTS = 'events'
 
     AirtableBaseApi api
 
@@ -46,7 +49,9 @@ class MicronautAirtable {
                 null,
                 null).blockingGet().records
         records.findAll { Record record ->
-            (record.fields[FIELD_PRACTICE_AREA] && (record.fields[FIELD_PRACTICE_AREA] as List<String>).contains(practiceId))
+            (record.fields[FIELD_PRACTICE_AREA] && (record.fields[FIELD_PRACTICE_AREA] as List<String>).contains(practiceId)) &&
+                    (record.fields[FIELD_STATUS] == STATUS_SCHEDULED) &&
+                    (record.fields[FIELD_EVENTS] as boolean)
         }.collect { Record record ->
             String d = record.fields[FIELD_DATE]
             Event e = new Event()
