@@ -216,16 +216,6 @@ Tags:
 [%description]
 ```
 
-# [%title]
-
-[%author]
-
-[%date] 
-
-Tags: #micronaut2 #aws #azure #gcp
-
-[%description]
-
 
 ## Assets (Fonts, Stylesheets, Images, Javascripts)
 
