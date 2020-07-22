@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>5 Reasons You'll ❤️ Using Micronaut and IntelliJ IDEA to Boost Your Productivity</title>
+    <title>GraalVM Native Image Generation Improvements – Micronaut 2.0</title>
     <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
-    <meta name="description" content="Here are five specific features that make the Micronaut IntelliJ IDEA combo a terrific tool for any developer looking to boost his or her productivity." />
-    <meta name="date" content="Apr 16, 2020" />
+    <meta name="description" content="Graeme Rocher, Micronaut framework co-founder, talks about improvements to GraalVM Native Image generation in Micronaut 2.0." />
+    <meta name="date" content="Jul 22, 2020" />
     <meta name="robots" content="all"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
     <meta charset='utf-8'/>
     <link rel='icon' href='https://micronaut.io/images/favicon.ico'/>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
-    <meta name='twitter:card' content='summary_large_image'/>
+    <meta name='twitter:card' content='player'/><meta name='twitter:player' content='https://www.youtube.com/embed/1qrQv_CHTOg' />
+<meta name='twitter:player:width' content='560' />
+<meta name='twitter:player:height' content='315' />
+
     <meta name='twitter:site' content='@micronautfw'/>
-    <meta name='twitter:description' content='Here are five specific features that make the Micronaut IntelliJ IDEA combo a terrific tool for any developer looking to boost his or her productivity.'/>
+    <meta name='twitter:description' content='Graeme Rocher, Micronaut framework co-founder, talks about improvements to GraalVM Native Image generation in Micronaut 2.0.'/>
     <meta name='twitter:creator' content='@micronautfw'/>
     <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
     <meta property='og:image:width' content='600'/>
     <meta property='og:image:height' content='300'/>
     <meta property='og:url' content='https://micronaut.io'/>
-    <meta property='og:title' content='5 Reasons You'll ❤️ Using Micronaut and IntelliJ IDEA to Boost Your Productivity'/>
-    <meta property='og:description' content='Here are five specific features that make the Micronaut IntelliJ IDEA combo a terrific tool for any developer looking to boost his or her productivity.'/>
+    <meta property='og:title' content='GraalVM Native Image Generation Improvements – Micronaut 2.0'/>
+    <meta property='og:description' content='Graeme Rocher, Micronaut framework co-founder, talks about improvements to GraalVM Native Image generation in Micronaut 2.0.'/>
     <meta property='og:type' content='website'/>
     <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
     <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
@@ -47,8 +50,8 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
-    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+    
+    
 </head>
 <body class='post'>
 <div class='main'>
@@ -94,75 +97,22 @@
   </h1>
   <div class='light'>
     <div class='largegoldenratio align-left'>
-      <div class='padded'><h1>5 Reasons You'll ❤️ Using Micronaut and IntelliJ IDEA to Boost Your Productivity</h1>
-<p><span class="author">By Iván López</span></p>
-<p><span class="date">Apr 16, 2020</span></p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/intellijidea.html"><span class="hashtag">#intellijidea</span></a></p>
-<p>I have been using IntelliJ IDEA for the last six or seven years, and I am always eager to experiment with new features when updated versions are released. When I heard a couple of months ago that JetBrains had introduced Micronaut support in IntelliJ IDEA 2020.1 EAP, I didn't think twice; I downloaded it and started using it in my current project.</p>
-<p>In this blog post, I'll share the five features I like most and how they can help you improve your productivity when building Micronaut applications with IntelliJ IDEA.</p>
-<h2>1. Configuration Auto-Completion</h2>
-<p>Micronaut has published files containing the meta information for the configuration properties since 1.0. This file is generated automatically at compile time for any class annotated with <code>@ConfigurationProperties</code> or <code>@EachProperty</code>.</p>
-<p>With this feature, you get auto-completion of the configuration properties in <code>application.yml</code>.</p>
-<p>This works not only for Micronaut itself, but for any configuration that you define in your own application.</p>
-<p>For example, with the following <a href="https://docs.micronaut.io/latest/guide/index.html#immutableConfig">immutable configuration</a> in your project ...</p>
-<pre><code class="language-java">@ConfigurationProperties(&quot;my.engine&quot;)
-public interface EngineConfig {
-
-    /**
-     * @return The manufacturer name.
-     */
-    @Bindable(defaultValue = &quot;Ford&quot;)
-    @NotBlank
-    String getManufacturer();
-
-    @Min(1L)
-    int getCylinders();
-
-    @NotNull
-    CrankShaft getCrankShaft();
-
-    @ConfigurationProperties(&quot;crank-shaft&quot;)
-    interface CrankShaft {
-        Optional&lt;Double&gt; getRodLength();
-    }
-}
-</code></pre>
-<p>… you get these auto-completions.</p>
-<p>Even the default values for the properties and the javadoc comments are displayed.</p>
-<p><img src="2020-04-16-img01.png" alt="configuration auto-completion" /></p>
-<h2>2. Endpoints Discovery</h2>
-<p>You're likely to find it really helpful to have a clear picture of all the endpoints in your application. You can click on the “Endpoint” button at the bottom of the screen to activate it. </p>
-<p>There are a few configuration options to display exactly what you would like to see. These options include showing the endpoints from the framework (like management endpoints if you have them), grouping by client/server, and much more! </p>
-<p>Additionally, if you double-click on an endpoint, the controller method is opened in the editor.</p>
-<p><img src="2020-04-16-img02.png" alt="Endpoints Discovery" /></p>
-<h2>3. Controllers and HTTP Requests</h2>
-<p>When interacting with our Micronaut applications, sometimes we use tools like <code>curl</code> to send HTTP requests. This is fine, but it means we must go &quot;out&quot; of our IDE, and we lose some of the features and shortcuts we're used to.</p>
-<p>Let's imagine we have an encryption-service that receives some text and encrypts it. To make things simple, the encryption logic in the <code>EncryptionService</code> just reverses the string:</p>
-<p><img src="2020-04-16-img03.png" alt="Controllers and HTTP Requests" /></p>
-<p>If we click on the icon in the gutter, IntelliJ IDEA automatically generates an &quot;http-requests&quot; file with the endpoint set and ready to send a test request:</p>
-<p><img src="2020-04-16-img04.png" alt="HTTP Requests File" /></p>
-<p>Take a look at the examples to see how to customize the requests, define authentication, and other useful tasks.</p>
-<h2>4. Event Publishing and Listeners</h2>
-<p>Sometimes we publish an event in our applications when something happens, and then we subscribe for that event in other parts of the code. But you may find it tricky to know exactly when that happens.</p>
-<p>Not anymore! </p>
-<p>Clicking on this new icon in the gutter navigates to the listener:</p>
-<p><img src="2020-04-16-img05.png" alt="Event Publishing and Listeners Image 1" /></p>
-<p><img src="2020-04-16-img06.png" alt="Event Publishing and Listeners Image 2" /></p>
-<h2>5. Miscellaneous</h2>
-<p>Besides the things I've already highlighted, other new features include new icons in the gutter, navigation to services injected as constructor arguments, and more.</p>
-<h2>Looking Ahead</h2>
-<p>The Micronaut team has been extremely pleased with the superb efforts JetBrains has made in incorporating support for Micronaut into IntelliJ IDEA.</p>
-<p>I'm really looking forward to <a href="https://youtrack.jetbrains.com/issue/IDEA-222224">support for Micronaut Data</a> in a future IntelliJ IDEA release.</p></div>
+      <div class='padded'><h1>GraalVM Native Image Generation Improvements – Micronaut 2.0</h1>
+<p><span class="author">By Sergio del Amo</span></p>
+<p><span class="date">Jul 22, 2020</span></p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/micronaut2.html"><span class="hashtag">#micronaut2</span></a> <a href="https://micronaut.io/blog/tag/gradle.html"><span class="hashtag">#gradle</span></a></p>
+<p>Graeme Rocher, Micronaut framework co-founder, talks about improvements to GraalVM Native Image generation in Micronaut 2.0.</p>
+<p>This is an excerpt of Graeme Rocher's presentation at <a href="https://www.madridgug.com/2020/07/micronaut-2.html">Madrid Groovy User Group</a>.</p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/1qrQv_CHTOg" frameborder="0"></iframe></div>
     </div>
-    <div class='smallgoldenratio align-right'><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-22.jpg)'>
-  <a href='https://micronaut.io/blog/2020-07-22-graalvm-micronaut2.html'>
-    <h3>Jul 22, 2020</h3>
-    <h2>GraalVM Native Image Generation Improvements – Micronaut 2.0</h2>
-  </a>
-</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-21.jpg)'>
+    <div class='smallgoldenratio align-right'><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-21.jpg)'>
   <a href='https://micronaut.io/blog/2020-07-21-gradle-micronaut2.html'>
     <h3>Jul 21, 2020</h3>
     <h2>Support for Gradle 6.5 Incremental Compilation - Micronaut 2.0</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-20.jpg)'>
+  <a href='https://micronaut.io/blog/2020-07-20-cli-micronaut2.html'>
+    <h3>Jul 20, 2020</h3>
+    <h2>Improvements to Command Line Interface - Micronaut 2.0</h2>
   </a>
 </article></div>
   </div>
