@@ -86,6 +86,10 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             task.setGroup(GROUP_MICRONAUT)
         })
         project.tasks.register(TASK_GEN_EVENTS, EventsTask, { task ->
+            task.setOnlyIf {
+                System.getenv("AIRTABLE_API_KEY") != null &&
+                System.getenv("AIRTABLE_BASE_ID") != null
+            }
             Object extension = project.getExtensions().findByName(EXTENSION_NAME)
             if (extension instanceof SiteExtension) {
                 SiteExtension siteExtension = ((SiteExtension) extension)
