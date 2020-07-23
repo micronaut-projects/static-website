@@ -1,4 +1,11 @@
 modules:
+  discoveryclient:
+    category: 'Cloud'
+    image: 'discoveryclient.svg'
+    label: 'Micronaut Discovery Client'
+    version: 'latest'
+    githubslug: 'micronaut-discovery-client'
+    legend: 'Integration with Service Discovery systems such as Eureka and Consul.'
   micronautdata:
     category: 'Data Access'
     image: 'dataaccess-micronautdata.svg'
