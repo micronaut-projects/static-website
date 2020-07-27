@@ -64,6 +64,18 @@ table {
 }
 
 @font-face {
+    font-family: 'firasansregular';
+    src: url('../fonts/FiraSans-SemiBold.eot');
+    src: url('../fonts/FiraSans-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FiraSans-SemiBold.woff2') format('woff2'),
+    url('../fonts/FiraSans-SemiBold.woff') format('woff'),
+    url('../fonts/FiraSans-SemiBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@font-face {
     font-family: 'firasansbold';
     src: url('../fonts/FiraSans-Bold.eot');
     src: url('../fonts/FiraSans-Bold.eot?#iefix') format('embedded-opentype'),
@@ -98,6 +110,12 @@ body.home #calltoaction {
 body.post .largegoldenratio img {
     width: 100%;
 }
+
+body.post h3 {
+    font-family: 'firasansregular', serif;
+    font-weight: 700;
+}
+
 .smallgoldenratio h1,
 .largegoldenratio h1 {
     font-weight: bold;
