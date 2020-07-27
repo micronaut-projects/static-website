@@ -28,12 +28,12 @@ jobs:
         env:
           GITHUB_SLUG: micronaut-projects/static-website
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
           GRADLE_TASK: build
       - name: Publish Guides Site
         run: ./publish.sh
         env:
           GITHUB_SLUG: micronaut-projects/micronaut-guides
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
-          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
           GRADLE_TASK: buildGuide
