@@ -138,6 +138,11 @@ body.post .largegoldenratio img {
 .light .blogcard {
 	color: #231F20;
 }
+
+.related-posts .blogcard:first-of-type {
+    margin-top: 1rem !important;
+}
+
 @media screen and (min-width: 961px) {
     .light .blogcard {
 	    background-color: #000000;
@@ -718,11 +723,63 @@ nav li {
 	padding: 20px;
     overflow: auto;
 }
+.padded-x {
+	padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
+}
+.padded-y {
+	padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: auto;
+}
+.padded-t {
+	padding-top: 20px;
+    overflow: auto;
+}
+.padded-b {
+    padding-bottom: 20px;
+    overflow: auto;
+}
+.padded-r {
+	padding-right: 20px;
+    overflow: auto;
+}
+.padded-l {
+    padding-left: 20px;
+    overflow: auto;
+}
+
 @media screen and (min-width: 961px) {
 	.padded {
 		padding: 50px;
 	}
+    .padded-x {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .padded-y {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .padded-t {
+        padding-top: 50px;
+        overflow: auto;
+    }
+    .padded-b {
+        padding-bottom: 50px;
+        overflow: auto;
+    }
+    .padded-r {
+        padding-right: 50px;
+        overflow: auto;
+    }
+    .padded-l {
+        padding-left: 50px;
+        overflow: auto;
+    }
 }
+
 /* START - SEARCH */
 div.search {
     overflow: hidden;
