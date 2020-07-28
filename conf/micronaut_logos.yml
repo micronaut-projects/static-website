@@ -1,0 +1,41 @@
+logos:
+  -
+    asset: 'logo_micronaut_horizontal_black.png'
+    label: 'Micronaut Horizontal - Black'
+    background: 'white'
+  -
+    asset: 'logo_micronaut_horizontal_white.png'
+    label: 'Micronaut Horizontal - White'
+    background: 'black'
+  -
+    asset: 'logo_micronaut_vertical_black.png'
+    label: 'Micronaut Vertical - Black'
+    background: 'white'
+  -
+    asset: 'logo_micronaut_vertical_white.png'
+    label: 'Micronaut Vertical - White'
+    background: 'black'
+  -
+    asset: 'logo_micronaut_horizontal_heavy_text_black.png'
+    label: 'Micronaut Heavy Text - Black'
+    background: 'white'
+  -
+    asset: 'logo_micronaut_horizontal_heavy_text_white.png'
+    label: 'Micronaut Heavy Text - White'
+    background: 'black'
+  -
+    asset: 'logo_micronaut_horizontal_swirl-o_black.png'
+    label: 'Micronaut Heavy Text - Black'
+    background: 'white'
+  -
+    asset: 'logo_micronaut_horizontal_swirl-o_white.png'
+    label: 'Micronaut Heavy Text - White'
+    background: 'black'
+  -
+    asset: 'logo_micronaut_data_black.png'
+    label: 'Micronaut Data - Black'
+    background: 'white'
+  -
+    asset: 'logo_micronaut_data_white.png'
+    label: 'Micronaut Data - White'
+    background: 'black'

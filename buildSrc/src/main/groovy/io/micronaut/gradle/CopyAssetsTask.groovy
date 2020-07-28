@@ -15,7 +15,7 @@ class CopyAssetsTask extends DefaultTask {
     static final String[] FONT_EXTENSIONS = ["*.eot", "*.ttf", "*.woff", "*.woff2"] as String[]
     static final String[] JAVASCRIPT_EXTENSIONS = ["*.js"] as String[]
     static final String[] CSS_EXTENSIONS = ["*.css"] as String[]
-    static final String[] IMAGE_EXTENSIONS = ["*.png", "*.svg", "*.jpg", "*.jpeg", "*.gif"] as String[]
+    static final List<String> IMAGE_EXTENSIONS = ["*.png", "*.svg", "*.jpg", "*.jpeg", "*.gif"]
 
     @InputDirectory
     final Property<File> assets = project.objects.property(File)
@@ -39,12 +39,17 @@ class CopyAssetsTask extends DefaultTask {
         File images = new File(assets.get().absolutePath + '/images')
         File outputImages = new File(dist().absolutePath + '/images')
         outputImages.mkdir()
+
+        ArrayList<String> recursive = new ArrayList<String>(IMAGE_EXTENSIONS)
+        IMAGE_EXTENSIONS.each { recursive.add("**/"+it) }
+
         project.copy(new Action<CopySpec>() {
             @Override
             void execute(CopySpec copySpec) {
                 copySpec.from(images)
                 copySpec.into(outputImages)
-                copySpec.include(IMAGE_EXTENSIONS)
+                copySpec.include(recursive as String[])
+                copySpec.setIncludeEmptyDirs(false)
             }
         })
     }
