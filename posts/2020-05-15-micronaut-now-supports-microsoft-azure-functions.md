@@ -23,7 +23,7 @@ Micronaut's Azure-friendly features include support for using [dependency inject
 
 Micronaut offers two modules to help you with the development of Azure Functions:
 
-- **Simple Azure Functions**.[io.micronaut.azure:micronaut-azure-function](https://micronaut-projects.github.io/micronaut-azure/snapshot/guide/index.html#simpleAzureFunctions)
+- **Simple Azure Functions**. [io.micronaut.azure:micronaut-azure-function](https://micronaut-projects.github.io/micronaut-azure/snapshot/guide/index.html#simpleAzureFunctions)
 - **Azure HTTP Functions**. [io.micronaut.azure:micronaut-azure-function-http](https://micronaut-projects.github.io/micronaut-azure/snapshot/guide/index.html#azureHttpFunctions)
 
 ### Micronaut Simple Azure Functions

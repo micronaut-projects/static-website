@@ -23,9 +23,22 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
+/** Mobile First Sizing **/
+/* XS Mobile First */
 body {
+    font-size: 12px;
     line-height: 1;
 }
+/* SM and Up */
+@media (min-width: 374px) {
+    body {
+        font-size: 14px;
+    }
+}
+/* End Mobile First Sizing */
+
+
 ol, ul {
     list-style: none;
 }
@@ -74,13 +87,15 @@ table {
     font-style: normal;
 }
 
+
+
 body {
     color: #ffffff;
     background: #000000 url('../images/micronaut_vertbk.jpg') repeat-x center top;
     font-family: 'firasansregular', serif;
-    font-size: 14px;
     line-height: 18px;
 }
+
 
 .light {
     background-color: #FFFFFF;
@@ -95,9 +110,21 @@ body.home {
 body.home #calltoaction {
     color: #FFFFFF;
 }
+
+
 body.post .largegoldenratio img {
     width: 100%;
 }
+
+body.post .largegoldenratio {
+    max-width: 100%;
+}
+
+body.post .largegoldenratio pre {
+    max-width: 100%;
+    overflow-x: scroll;
+}
+
 .smallgoldenratio h1,
 .largegoldenratio h1 {
     font-weight: bold;
