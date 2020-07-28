@@ -91,7 +91,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             Object extension = project.getExtensions().findByName(EXTENSION_NAME)
             if (extension instanceof SiteExtension) {
                 SiteExtension siteExtension = ((SiteExtension) extension)
-                task.setProperty("logos", siteExtension.logos)
+                task.setProperty("logos", siteExtension.micronautLogos)
                 task.setProperty("output", siteExtension.output)
             }
             task.setDescription("Generates FAQ HTML - build/temp/mn-logos.html ")
