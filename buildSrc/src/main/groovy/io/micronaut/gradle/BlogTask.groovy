@@ -187,9 +187,12 @@ class BlogTask extends DefaultTask {
                         mkp.yieldUnescaped(htmlPost.html)
                     }
                 }
-                div(class: 'smallgoldenratio align-right') {
-                    for (HtmlPost post : relatedPosts(htmlPost, posts)) {
-                        mkp.yieldUnescaped(postCard(post))
+                div(class: 'smallgoldenratio align-right padded-t related-posts') {
+                    h2 "You might also like ..."
+                    div {
+                        for (HtmlPost post : relatedPosts(htmlPost, posts)) {
+                            mkp.yieldUnescaped(postCard(post))
+                        }
                     }
                 }
             }
