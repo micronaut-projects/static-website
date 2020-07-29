@@ -24,8 +24,9 @@ class MicronautLogosPage {
                 div(class: 'heading') {
                     h2 "WELCOME TO THE MICRONAUT LOGO GALLERY"
                     p {
-                        span "In all new productions and printings of your products and related marketing materials, use the logo that correctly represents your product’s qualification. Any use of this logo on websites and/or marketing materials must be authorized by the Micronaut brand team. Contact us by emailing"
-                        a("info@micronaut.io", href:"mailto:info@micronaut.io")
+                        span "Micronaut logos and design marks are proprietary assets owned by Object Computing, Inc. We ask that you refrain from using Micronaut logos, including the Micronaut swirl icon and Micronaut astronaut (\"Sally\"), unless you are specifically licensed or authorized to use them by the Micronaut brand team. Please contact us by emailing"
+                        a("info@micronaut.io", href:"mailto:info@micronaut.io?subject=Micronaut Logo Usage Request")
+                        span "for more information or to request authorization."
                     }
                 }
                 div(class: 'logos') {
