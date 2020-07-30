@@ -14,12 +14,12 @@ class MicronautLogo implements MicronautLogoHtml {
     }
 
     String getDownload() {
-        def fileName = NameUtils.filename(asset)
+        String fileName = NameUtils.filename(asset)
         src.replace(fileName, fileName +"-full")
     }
 
     String getSvg() {
-        def extension = NameUtils.filename(asset)
+        String extension = NameUtils.filename(asset)
         src.replace("." + extension, ".svg")
     }
 }
