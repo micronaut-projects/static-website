@@ -20,7 +20,7 @@ class MicronautLogosTask extends DefaultTask {
     final Property<File> output = project.objects.property(File)
 
     @TaskAction
-    void renderDocsPage() {
+    void renderLogosPage() {
         File build = output.get()
         File temp = new File(build.absolutePath + "/" + DocumentationTask.TEMP)
         temp.mkdir()
