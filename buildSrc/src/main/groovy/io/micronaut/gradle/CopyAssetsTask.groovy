@@ -32,12 +32,12 @@ class CopyAssetsTask extends DefaultTask {
     }
 
     File dist() {
-        new File(output.get().absolutePath + "/" + RenderSiteTask.DIST)
+        new File("${output.get().absolutePath}/${RenderSiteTask.DIST}")
     }
 
     void copyImages() {
-        File images = new File(assets.get().absolutePath + '/images')
-        File outputImages = new File(dist().absolutePath + '/images')
+        File images = new File("${assets.get().absolutePath}/images")
+        File outputImages = new File("${dist().absolutePath}/images")
         outputImages.mkdir()
         project.copy(new Action<CopySpec>() {
             @Override
@@ -50,8 +50,8 @@ class CopyAssetsTask extends DefaultTask {
     }
 
     void copyCss() {
-        File stylesheets = new File(assets.get().absolutePath + '/stylesheets')
-        File outputStylesheets = new File(dist().absolutePath + '/stylesheets')
+        File stylesheets = new File("${assets.get().absolutePath}/stylesheets")
+        File outputStylesheets = new File("${dist().absolutePath}/stylesheets")
         outputStylesheets.mkdir()
         project.copy(new Action<CopySpec>() {
             @Override
@@ -64,9 +64,9 @@ class CopyAssetsTask extends DefaultTask {
     }
 
     void copyFonts() {
-        File outputFonts = new File(dist().absolutePath + '/fonts')
+        File outputFonts = new File("${dist().absolutePath}/fonts")
         outputFonts.mkdir()
-        File fonts = new File(assets.get().absolutePath + '/fonts')
+        File fonts = new File("${assets.get().absolutePath}/fonts")
         project.copy(new Action<CopySpec>() {
             @Override
             void execute(CopySpec copySpec) {
@@ -78,9 +78,9 @@ class CopyAssetsTask extends DefaultTask {
     }
 
     void copyJavascripts() {
-        File outputJavascripts = new File(dist().absolutePath + '/javascripts')
+        File outputJavascripts = new File("${dist().absolutePath}/javascripts")
         outputJavascripts.mkdir()
-        File javascripts = new File(assets.get().absolutePath + '/javascripts')
+        File javascripts = new File("${assets.get().absolutePath}/javascripts")
         project.copy(new Action<CopySpec>() {
             @Override
             void execute(CopySpec copySpec) {
