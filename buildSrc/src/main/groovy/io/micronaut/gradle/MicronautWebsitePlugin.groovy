@@ -270,6 +270,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 task.dependsOn(TASK_CLEAN_DOCS)
                 task.dependsOn(TASK_CLEAN_DOWNLOAD)
                 task.dependsOn(TASK_CLEAN_EVENTS)
+                task.dependsOn(TASK_CLEAN_MN_LOGOS)
             }
         })
     }
