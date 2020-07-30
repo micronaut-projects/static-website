@@ -15,11 +15,11 @@ class MicronautLogo implements MicronautLogoHtml {
 
     String getDownload() {
         def fileName = NameUtils.filename(asset)
-        return src.replace(fileName, fileName+"-full")
+        src.replace(fileName, fileName +"-full")
     }
 
     String getSvg() {
         def extension = NameUtils.filename(asset)
-        return src.replace("." + extension, ".svg")
+        src.replace("." + extension, ".svg")
     }
 }
