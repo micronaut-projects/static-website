@@ -12,16 +12,16 @@ class MicronautLogo implements MicronautLogoHtml {
     String background
 
     String getSrc() {
-        IMAGE_PATH + asset
+        "$IMAGE_PATH$asset"
     }
 
     String getDownload() {
         String fileName = NameUtils.filename(asset)
-        src.replace(fileName, fileName +"-full")
+        src.replace(fileName, "${fileName}-full")
     }
 
     String getSvg() {
         String extension = NameUtils.filename(asset)
-        src.replace("." + extension, ".svg")
+        src.replace(".$extension", ".svg")
     }
 }

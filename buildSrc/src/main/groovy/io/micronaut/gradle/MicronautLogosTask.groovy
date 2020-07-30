@@ -22,10 +22,10 @@ class MicronautLogosTask extends DefaultTask {
     @TaskAction
     void renderLogosPage() {
         File build = output.get()
-        File temp = new File(build.absolutePath + "/" + DocumentationTask.TEMP)
+        File temp = new File("${build.absolutePath}/$DocumentationTask.TEMP")
         temp.mkdir()
 
-        File output = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_MN_LOGOS)
+        File output = new File("${temp.absolutePath}/$PAGE_NAME_MN_LOGOS")
         output.createNewFile()
         output.text = "body: logos\n---\n" +
                 MicronautLogosPage.mainContent(logos.get())
