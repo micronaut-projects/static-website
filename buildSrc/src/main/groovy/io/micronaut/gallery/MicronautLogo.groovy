@@ -1,7 +1,9 @@
 package io.micronaut.gallery
 
+import groovy.transform.CompileStatic
 import io.micronaut.core.naming.NameUtils
 
+@CompileStatic
 class MicronautLogo implements MicronautLogoHtml {
     static final String IMAGE_PATH = '/images/micronaut-logos/'
 
