@@ -9,7 +9,7 @@ import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
 
 @CompileStatic
-class MicronautLogosTask extends DefaultTask {
+class LogosTask extends DefaultTask {
 
     static final String PAGE_NAME_MN_LOGOS = "micronaut-logos.html"
 

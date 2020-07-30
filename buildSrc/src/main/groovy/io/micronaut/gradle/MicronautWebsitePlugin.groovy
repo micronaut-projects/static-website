@@ -87,7 +87,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             task.setDescription("Generates FAQ HTML - build/temp/faq.html ")
             task.setGroup(GROUP_MICRONAUT)
         })
-        project.tasks.register(TASK_GEN_MN_LOGOS, MicronautLogosTask, { task ->
+        project.tasks.register(TASK_GEN_MN_LOGOS, LogosTask, { task ->
             Object extension = project.getExtensions().findByName(EXTENSION_NAME)
             if (extension instanceof SiteExtension) {
                 SiteExtension siteExtension = ((SiteExtension) extension)
@@ -227,7 +227,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 Object extension = project.getExtensions().findByName(EXTENSION_NAME)
                 if (extension instanceof SiteExtension) {
                     SiteExtension siteExtension = ((SiteExtension) extension)
-                    File f = new File(siteExtension.pages.get().getAbsolutePath() + "/" + MicronautLogosTask.PAGE_NAME_MN_LOGOS)
+                    File f = new File(siteExtension.pages.get().getAbsolutePath() + "/" + LogosTask.PAGE_NAME_MN_LOGOS)
                     f.delete()
                 }
             }
