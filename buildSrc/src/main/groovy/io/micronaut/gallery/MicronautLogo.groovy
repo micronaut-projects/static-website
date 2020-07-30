@@ -7,7 +7,7 @@ class MicronautLogo implements MicronautLogoHtml {
 
     String asset
     String label
-    String background;
+    String background
 
     String getSrc() {
         return IMAGE_PATH + asset
