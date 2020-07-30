@@ -3,7 +3,7 @@ package io.micronaut.gallery
 import io.micronaut.core.naming.NameUtils
 
 class MicronautLogo implements MicronautLogoHtml {
-    static final IMAGE_PATH = '/images/micronaut-logos/'
+    static final String IMAGE_PATH = '/images/micronaut-logos/'
 
     String asset
     String label
