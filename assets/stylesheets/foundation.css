@@ -33,6 +33,20 @@ section.foundation-description a {
 	font-weight: 700;
 }
 
+section.foundation-description a.button {
+	display: inline-block;
+	font-size: 1.1em;
+	padding: 10px 30px;
+	background: #2559A7;
+	color: white;
+	border-color: #2559A7;
+	border-radius: 8px;
+	border-style: solid;
+	position: relative;
+	cursor: pointer;
+	text-decoration: none;
+}
+
 section.foundation-description .emphasis {
 	text-transform: uppercase;
 	font-weight: bold;
@@ -46,6 +60,11 @@ section.foundation-boards {
 
 section.foundation-boards .foundation-logo {
 	padding: 17% 17% 5% 17%;
+}
+
+.foundation-logo img {
+	width: 100%;
+	height: 100%;
 }
 
 section.foundation-boards .foundation-board-content {
@@ -77,4 +96,10 @@ section.foundation-boards .foundation-board-content h2 {
 /* this is temporary */
 .nested-list li {
 	font-size: 1.0em;
+}
+
+.contact-modal-iframe-wrapper {
+	display: block;
+	overflow: auto;
+	height: 100vh;
 }

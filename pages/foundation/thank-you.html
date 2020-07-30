@@ -1,0 +1,25 @@
+<div class="content container foundation-donations-thank-you">
+    <h1>
+        <span>Micronaut </span>
+        <b>Foundation</b>
+    </h1>
+    <div class="light padded" style="min-height: 50vh;">
+        <h2>Thank you for your support</h2>
+        <p>Your contribution <span id='support-level'></span> is appreciated.</p>
+        <p>We will reach out to you shortly so we can find the best way to get you your rewards.</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    (function(argument) {
+        let supportLevel;
+        try {
+            supportLevel = JSON.parse(window.sessionStorage.getItem("FOUNDATION_SUPPORT_LEVEL"))
+        } catch(error){
+            supportLevel = {}
+        }
+
+        const levelSpan = document.getElementById("support-level")
+        levelSpan.innerText = supportLevel.title ? "at the " + supportLevel.title + " level" : ""
+    })()
+</script>

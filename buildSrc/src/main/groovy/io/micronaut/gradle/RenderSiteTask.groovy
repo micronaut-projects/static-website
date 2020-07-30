@@ -5,6 +5,7 @@ import groovy.transform.CompileStatic
 import groovy.transform.Internal
 import io.micronaut.ContentAndMetadata
 import io.micronaut.Page
+import io.micronaut.YamlConfToJson
 import org.gradle.api.DefaultTask
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
@@ -27,6 +28,9 @@ class RenderSiteTask extends DefaultTask {
     public static final String DIST = "dist"
     public static final int TWITTER_CARD_PLAYER_WIDTH = 560
     public static final int TWITTER_CARD_PLAYER_HEIGHT = 315
+
+    @InputDirectory
+    final Property<File> conf = project.objects.property(File)
 
     @InputDirectory
     final Property<File> pages = project.objects.property(File)
@@ -57,11 +61,12 @@ class RenderSiteTask extends DefaultTask {
         File template = document.get()
         final String templateText = template.text
         File o = output.get()
+        File config = conf.get()
         Map<String, String> m = siteMeta(title.get(), about.get(), url.get(), keywords.get() as List<String>, robots.get())
         List<Page> listOfPages = parsePages(pages.get())
         listOfPages.addAll(parsePages(new File(o.absolutePath + "/" + DocumentationTask.TEMP)))
         File dist = new File(o.absolutePath + "/" + DIST)
-        renderPages(m, listOfPages, dist, templateText)
+        renderPages(m, listOfPages, dist, templateText, config)
     }
 
     static Map<String, String> siteMeta(String title,
@@ -87,8 +92,12 @@ class RenderSiteTask extends DefaultTask {
     }
 
     static void renderPages(Map<String, String> sitemeta, List<Page> listOfPages, File outputDir, final String templateText) {
+        renderPages(sitemeta, listOfPages, outputDir, templateText, null)
+    }
+
+    static void renderPages(Map<String, String> sitemeta, List<Page> listOfPages, File outputDir, final String templateText, File configDir) {
         for (Page page : listOfPages) {
-            Map<String, String> resolvedMetadata = processMetadata(sitemeta + page.metadata)
+            Map<String, String> resolvedMetadata = processMetadata(sitemeta + page.metadata, configDir)
             String html = renderHtmlWithTemplateContent(page.content, resolvedMetadata, templateText)
             html = highlightMenu(html, sitemeta, page.path)
             if (page.body) {
@@ -117,17 +126,32 @@ class RenderSiteTask extends DefaultTask {
     }
 
     static Map<String, String> processMetadata(Map<String, String> sitemeta) {
+        processMetadata(sitemeta, null)
+    }
+
+    static Map<String, String> processMetadata(Map<String, String> sitemeta, File config) {
         Map<String, String> resolvedMetadata = sitemeta
         if (resolvedMetadata.containsKey("CSS")) {
-            resolvedMetadata.put("CSS", resolvedMetadata['CSS'].split(" ").collect{"<link rel='stylesheet' href='${it.trim()}'/>"}.join('\n'))
+            String resolved = resolvedMetadata['CSS'].split(" ").collect{"<link rel='stylesheet' href='${it.trim()}'/>"}.join('\n')
+            resolvedMetadata.put("CSS", resolved)
         } else {
             resolvedMetadata.put("CSS", "")
         }
 
         if (resolvedMetadata.containsKey("JAVASCRIPT")) {
-            resolvedMetadata.put("JAVASCRIPT", resolvedMetadata['JAVASCRIPT'].split(" ").collect{"<script src='${it.trim()}'></script>"}.join('\n'))
+            String resolved = resolvedMetadata['JAVASCRIPT'].split(" ").collect{"<script src='${it.trim()}'></script>"}.join('\n')
+            resolvedMetadata.put("JAVASCRIPT", resolved)
         } else {
             resolvedMetadata.put("JAVASCRIPT", "")
+        }
+
+        if (config && resolvedMetadata.containsKey("YAML_CONF_TO_JS")) {
+            String pathname = "${config.absolutePath}/${resolvedMetadata['YAML_CONF_TO_JS']}"
+            File file = new File(pathname)
+            YamlConfToJson converter = new YamlConfToJson(file)
+            resolvedMetadata.put("YAML_CONF_TO_JS", converter.toScriptTag())
+        } else {
+            resolvedMetadata.put("YAML_CONF_TO_JS", "")
         }
 
         if (!resolvedMetadata.containsKey("HTML header")) {

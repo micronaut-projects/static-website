@@ -1,0 +1,413 @@
+/*Foundation Donations */
+
+/*Drawer Active Overrides for Body */
+body.drawer-active {
+    overflow: hidden;
+}
+body.drawer-active .donations-segmented-control {
+    bottom: -100px !important;
+}
+
+body.foundation.donation {
+    background-color: black;
+}
+
+body.foundation .full.whitecircleborderseparator {
+    background-image: url(../images/circle_white.png);
+    background-color: black;
+}
+
+body.foundation footer {
+    color: black;
+    background: none;
+    background-color: white;
+}
+
+.foundation-donations .donations-content {
+    background-color: white;
+    margin-top: -45px;
+    padding-top: 15px;
+}
+
+.foundation-donations p {
+    font-size: 1em;
+}
+
+h2.sponsorship-heading {
+    text-align: center;
+    line-height: 1.3em !important;
+    font-size: 24px !important;
+    font-family: 'firasanslight', serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2.sponsorship-heading strong {
+    font-family: 'firasansregular', serif;
+    font-weight: bold;
+    font-size: 25px !important;
+}
+
+.donations-content article {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.donations-content article a {
+    color: #2559A7;
+    font-weight: bold;
+}
+
+.donations-content article h3 {
+    font-size: 18px;
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+
+article.two-column {
+    column-count: 1;
+}
+
+@media(min-width: 600px) {
+    article.two-column {
+        column-count: 2;
+        column-gap: 2em;
+    }
+}
+
+#donations-outro {
+    margin-top: 2em;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    text-align: center;
+}
+
+#donations-outro .outro-content {
+    display: inline-block;
+    max-width: 650px;
+}
+
+#donations-outro p {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+#donations-outro button {
+    font-size: 1.4em;
+    font-weight: 600;
+    background-color: #2559A7;
+    color: white;
+    border-color: #2559A7;
+    border-radius: 8px;
+    border-style: solid;
+    position: relative;
+    min-height: 2.4em;
+    min-width: 10em;
+    cursor: pointer;
+}
+
+/* Contact Us Form */
+.contact-modal {
+    background: white;
+    padding: 40px;
+    padding-bottom: 200px;
+    position: fixed;
+    top: -200vh;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    overflow-y: scroll;
+    z-index: 2000;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: .7s all linear;
+}
+
+.contact-modal.active {
+    top: 0;
+}
+
+.contact-modal .contact-us-close {
+    font-size: 1.4em;
+    height: 2em;
+    width: 2em;
+    border-radius: 9999px;
+    border-color: rgba(0,0,0, 0.2);
+    color: rgba(0,0,0, 0.3);
+    background-color: transparent;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.contact-modal iframe {
+    width: 100% !important;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+/*End contact form */
+
+
+/*Donations Table*/
+.donations-table {
+    margin-top: 1em;
+    width: 100%;
+    font-size: 12px;
+    position: relative;
+    border-collapse: collapse;
+}
+
+.donations-table tr td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.donations-table tr td.donation-level {
+    font-size: 1.4em;
+    padding: 6px;
+}
+
+.donations-table tr td.donation-level.ambassador {
+    font-size: 1.2em;
+    padding: 6px;
+}
+
+.donations-table th:nth-child(n+2) {
+    background: black;
+    padding: 5px;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.donations-table th:nth-child(1) {
+    background: none;
+}
+
+.donations-table th {
+    border-bottom: 1px rgb(212, 212, 212) solid;
+}
+
+/* Put size limits on the first column of the table. */
+.donations-table tr td.reward-title {
+    width: 13em;
+    min-width: 13em;
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: normal;
+    line-height: 1.3em;
+    padding-right: 5px;
+}
+
+.donations-table tbody tr:nth-child(1) {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.donations-table tbody tr td:nth-child(1) {
+    border-left: 0;
+}
+
+.donations-table tbody tr td {
+    border-left: 1px rgb(212, 212, 212) solid;
+}
+
+.donations-table tbody {
+    font-weight: bolder;
+}
+
+.donations-table tbody td {
+    padding: 20px;
+    height: 40px;
+}
+
+.donations-table tbody tr:nth-child(even) /* Stripe The Table */ {
+    background: rgb(235,235,235);
+}
+.donations-table tbody tr:nth-child(odd) /* Stripe The Table */ {
+    background: white;
+}
+
+.donations-table tfoot .footer-button-row {
+    background-color: black;
+    color: white;
+    height: 90px;
+}
+
+.donations-table tfoot td {
+    padding-top: 4px;
+}
+.donations-table tfoot .donation-level {
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.donations-table tfoot tr.donations-table-cta-row td {
+    line-height: 1em;
+    font-size: 12px;
+    padding-bottom: 1em;
+}
+
+.donations-table .reward-dot {
+    width: .7em;
+    height: .7em;
+    border-radius: 9999px;
+    background: #2559A7;
+    margin: auto;
+}
+
+.donations-table button {
+    position: relative;
+    padding: 6px 11px;
+    background: #2559A7;
+    color: white;
+    border-color: transparent;
+    border-radius: 8px;
+    border-style: none;
+    position: relative;
+    height: 2.75em;
+    width: 10em;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.donations-table button:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    top: -12px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #2559A7;
+    clear: both;
+}
+/*End Donations Table*/
+
+/*Donations Segmented Control*/
+.donations-segmented-control {
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    transition: bottom .5s ease;
+    box-shadow: 0px 7px 16px 6px rgba(0, 0, 0, 0.3);
+    background: white;
+}
+.donations-segmented-control.hidden {
+    bottom: -100px;
+}
+
+.donations-segmented-control button:focus {
+    outline: 0;
+}
+
+.donations-segmented-control button {
+    flex: 1;
+    margin: 0;
+    min-width: 25%;
+    background: white;
+    color: #2559A7;
+    padding: 10px 10px;
+    border-style: none;
+    border-left: 1px solid rgba(0,0,0, .2);
+    border-top: 1px solid rgba(0,0,0, .2);
+    text-transform: capitalize;
+}
+
+.donations-segmented-control.ambassador button.ambassador,
+.donations-segmented-control.platinum button.platinum,
+.donations-segmented-control.gold button.gold,
+.donations-segmented-control.silver button.silver,
+.donations-segmented-control.bronze button.bronze,
+.donations-segmented-control.community_vip button.community_vip,
+.donations-segmented-control.community_super_fan button.community_super_fan,
+.donations-segmented-control.community_champion button.community_champion {
+    background: #2559A7;
+    color: white;
+}
+/* End Segmented Control */
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+    .donation-level button {
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .donations-segmented-control {
+        bottom: 0;
+    }
+    th {
+        min-height: 31px;
+    }
+    th.ambassador,
+    th.platinum,
+    th.gold,
+    th.silver,
+    th.bronze,
+    th.community_vip,
+    th.community_super_fan,
+    th.community_champion,
+    td.ambassador,
+    td.platinum,
+    td.gold,
+    td.silver,
+    td.bronze,
+    td.community_vip,
+    td.community_super_fan,
+    td.community_champion {
+        display: none;
+    }
+
+    table.ambassador th.ambassador,
+    table.ambassador td.ambassador {
+        display: table-cell !important;
+    }
+
+    table.platinum th.platinum,
+    table.platinum td.platinum {
+        display: table-cell !important;
+    }
+
+    table.gold th.gold,
+    table.gold td.gold {
+        display: table-cell !important;
+    }
+
+    table.silver th.silver,
+    table.silver td.silver {
+        display: table-cell !important;
+    }
+
+    table.bronze th.bronze,
+    table.bronze td.bronze {
+        display: table-cell !important;
+    }
+
+    table.community_vip th.community_vip,
+    table.community_vip td.community_vip {
+        display: table-cell !important;
+    }
+
+    table.community_super_fan th.community_super_fan,
+    table.community_super_fan td.community_super_fan {
+        display: table-cell !important;
+    }
+
+    table.community_champion th.community_champion,
+    table.community_champion td.community_champion {
+        display: table-cell !important;
+    }
+}
+/* End Media Queries */

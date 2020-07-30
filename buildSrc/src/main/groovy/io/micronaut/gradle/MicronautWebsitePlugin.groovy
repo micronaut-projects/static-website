@@ -168,6 +168,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 task.setProperty("document", siteExtension.template)
                 task.setProperty("output", siteExtension.output)
                 task.setProperty("pages", siteExtension.pages)
+                task.setProperty("conf", siteExtension.conf)
             }
             task.setGroup(GROUP_MICRONAUT)
             task.dependsOn(TASK_COPY_ASSETS)
