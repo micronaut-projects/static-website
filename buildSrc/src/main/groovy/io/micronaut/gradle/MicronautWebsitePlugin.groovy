@@ -94,7 +94,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 task.setProperty("logos", siteExtension.micronautLogos)
                 task.setProperty("output", siteExtension.output)
             }
-            task.setDescription("Generates page with Micronaut Logos - build/temp/mn-logos.html ")
+            task.setDescription("Generates page with Micronaut Logos - build/temp/micronaut-logos.html ")
             task.setGroup(GROUP_MICRONAUT)
         })
         project.tasks.register(TASK_GEN_EVENTS, EventsTask, { task ->
