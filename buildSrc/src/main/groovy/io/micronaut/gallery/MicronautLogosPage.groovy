@@ -6,11 +6,11 @@ import org.yaml.snakeyaml.Yaml
 
 class MicronautLogosPage {
     @CompileDynamic
-    static String mainContent(File questions) {
+    static String mainContent(File logosYaml) {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
         Yaml yaml = new Yaml()
-        Map model = yaml.load(questions.newDataInputStream())
+        Map model = yaml.load(logosYaml.newDataInputStream())
         List<MicronautLogo> logos = model['logos'].collect {
             new MicronautLogo(label: it['label'], asset: it['asset'], background: it['background'])
         }
