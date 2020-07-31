@@ -167,3 +167,6 @@ releases:
     -
       version: 1.3.7
       publicationDate: Jul 10, 2020
+    - 
+      version: 2.0.1
+      publicationDate: Jul 28, 2020 
