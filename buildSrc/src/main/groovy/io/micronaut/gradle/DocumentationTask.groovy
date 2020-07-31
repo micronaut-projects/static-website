@@ -35,7 +35,7 @@ class DocumentationTask extends DefaultTask {
 
         File output = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_DOCS)
         output.createNewFile()
-        output.text = "body: docs\n---\n" +
+        output.text = "title: Documentation | Micronaut Framework\nbody: docs\n---\n" +
                 DocumentationPage.mainContent(releases.get(), modules.get(), url.get())
     }
 }
