@@ -15,8 +15,10 @@ class MicronautWebsitePlugin implements Plugin<Project> {
     public static final String TASK_GEN_DOWNLOAD = "genDownload"
     public static final String TASK_GEN_GUIDES = "genGuides"
     public static final String TASK_GEN_FAQ = "genFaq"
+    public static final String TASK_GEN_MN_LOGOS = "genMicronautLogos"
     public static final String TASK_CLEAN_DOCS = "cleanDocs"
     public static final String TASK_CLEAN_FAQ = "cleanFaq"
+    public static final String TASK_CLEAN_MN_LOGOS = "cleanMicronautLogos"
     public static final String TASK_CLEAN_EVENTS = "cleanEvents"
     public static final String TASK_CLEAN_GUIDES = "cleanGuides"
     public static final String TASK_CLEAN_DOWNLOAD = "cleanDownload"
@@ -83,6 +85,16 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 task.setProperty("output", siteExtension.output)
             }
             task.setDescription("Generates FAQ HTML - build/temp/faq.html ")
+            task.setGroup(GROUP_MICRONAUT)
+        })
+        project.tasks.register(TASK_GEN_MN_LOGOS, LogosTask, { task ->
+            Object extension = project.getExtensions().findByName(EXTENSION_NAME)
+            if (extension instanceof SiteExtension) {
+                SiteExtension siteExtension = ((SiteExtension) extension)
+                task.setProperty("logos", siteExtension.micronautLogos)
+                task.setProperty("output", siteExtension.output)
+            }
+            task.setDescription("Generates page with Micronaut Logos - build/temp/micronaut-logos.html ")
             task.setGroup(GROUP_MICRONAUT)
         })
         project.tasks.register(TASK_GEN_EVENTS, EventsTask, { task ->
@@ -160,6 +172,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             task.dependsOn(TASK_COPY_ASSETS)
             task.dependsOn(TASK_GEN_DOCS)
             task.dependsOn(TASK_GEN_FAQ)
+            task.dependsOn(TASK_GEN_MN_LOGOS)
             task.dependsOn(TASK_GEN_DOWNLOAD)
             task.dependsOn(TASK_GEN_EVENTS)
             task.finalizedBy(TASK_RENDER_BLOG)
@@ -207,6 +220,18 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 }
             }
         })
+        project.tasks.register(TASK_CLEAN_MN_LOGOS, { task ->
+            task.setGroup(GROUP_MICRONAUT)
+            task.setDescription("Deletes mn logos page - build/temp/mn-logos.html")
+            task.doLast {
+                Object extension = project.getExtensions().findByName(EXTENSION_NAME)
+                if (extension instanceof SiteExtension) {
+                    SiteExtension siteExtension = ((SiteExtension) extension)
+                    File f = new File(siteExtension.pages.get().getAbsolutePath() + "/" + LogosTask.PAGE_NAME_MN_LOGOS)
+                    f.delete()
+                }
+            }
+        })
         project.tasks.register(TASK_CLEAN_EVENTS, { task ->
             task.setGroup(GROUP_MICRONAUT)
             task.setDescription("Deletes events temp page - build/temp/events.html")
@@ -245,6 +270,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
                 task.dependsOn(TASK_CLEAN_DOCS)
                 task.dependsOn(TASK_CLEAN_DOWNLOAD)
                 task.dependsOn(TASK_CLEAN_EVENTS)
+                task.dependsOn(TASK_CLEAN_MN_LOGOS)
             }
         })
     }
