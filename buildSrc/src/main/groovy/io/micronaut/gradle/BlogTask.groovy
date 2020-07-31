@@ -336,6 +336,7 @@ class BlogTask extends DefaultTask {
                 tagCards << postCard(post)
             }
             File tagFile = new File("${tagFolder.absolutePath}/${tag}.html")
+            resolvedMetadata['title'] = "${tag.toUpperCase()} | Blog | Micronaut Framework".toString()
             renderCards(tagFile, tagCards, resolvedMetadata, templateText, renderTagTitle(tag))
         }
     }
@@ -434,7 +435,9 @@ class BlogTask extends DefaultTask {
         // String html = EventsPage.mainContent(sitemeta['url']) +
         //         cardsHtml(cards, resolvedMetadata)
         String html = cardsHtml(cards, resolvedMetadata)
+        resolvedMetadata['title'] = 'Blog | Micronaut Framework'
         html = RenderSiteTask.renderHtmlWithTemplateContent(html, resolvedMetadata, templateText)
+
         html = RenderSiteTask.highlightMenu(html, resolvedMetadata, "/" + BLOG + "/" + INDEX)
         f.createNewFile()
         f.text = html

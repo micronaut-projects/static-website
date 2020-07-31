@@ -41,7 +41,7 @@ class EventsTask extends DefaultTask {
 
         File outputFile = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_EVENTS)
         outputFile.createNewFile()
-        outputFile.text = "body: events\n---\n" +
+        outputFile.text = "title: Events | Micronaut Framework\nbody: events\n---\n" +
                 EventsPage.mainContent(events)
     }
 }

@@ -100,7 +100,7 @@ class GuidesTask extends DefaultTask {
 
         File pageOutput = new File(pages.getAbsolutePath() + "/" + PAGE_NAME_GUIDES)
         pageOutput.createNewFile()
-        pageOutput.text = "body: guides\nJAVASCRIPT: ${url}/javascripts/search.js\n---\n" +
+        pageOutput.text = "title: Guides | Micronaut Framework\nbody: guides\nJAVASCRIPT: ${url}/javascripts/search.js\n---\n" +
                 GuidesPage.mainContent(url, guides, tags)
 
         File tagsDir = new File(pages.getAbsolutePath() + "/" + TAGS)
@@ -109,7 +109,7 @@ class GuidesTask extends DefaultTask {
             String slug = "${tag.slug.toLowerCase()}.html"
             pageOutput = new File(tagsDir.getAbsolutePath() + "/" + slug)
             pageOutput.createNewFile()
-            pageOutput.text = "body: guides---\n" +
+            pageOutput.text = "title: Guides with tag: ${tag} | Micronaut Framework\nbody: guides---\n" +
                     GuidesPage.mainContent(url, guides, tags, null, tag)
         }
         File categoriesDir = new File(pages.getAbsolutePath() + "/" + CATEGORIES)
@@ -118,7 +118,7 @@ class GuidesTask extends DefaultTask {
             String slug = "${category.slug.toLowerCase()}.html"
             pageOutput = new File(categoriesDir.getAbsolutePath() + "/" + slug)
             pageOutput.createNewFile()
-            pageOutput.text = "body: guides---\n" +
+            pageOutput.text = "title: Guides at category ${category} | Micronaut Framework\nbody: guides---\n" +
                     GuidesPage.mainContent(url, guides, tags, category, null)
         }
     }
