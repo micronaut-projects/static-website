@@ -35,7 +35,7 @@ class LogosTask extends DefaultTask {
         verifyLogosExist(absolutePath, logos)
         File output = new File("${temp.absolutePath}/${PAGE_NAME_MN_LOGOS}")
         output.createNewFile()
-        output.text = "body: logos\n---\n" +
+        output.text = "title: Logos | Micronaut Framework\n---\n" +
                 MicronautLogosPage.mainContent(logos)
     }
 
