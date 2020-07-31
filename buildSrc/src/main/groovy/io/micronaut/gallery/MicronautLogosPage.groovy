@@ -10,7 +10,9 @@ class MicronautLogosPage {
         MarkupBuilder html = new MarkupBuilder(writer)
         html.div(class:'content container') {
             h1 {
-                span 'Micronaut'
+                span {
+                    mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                }
                 b 'Logos'
             }
             div(class: 'light padded') {

@@ -16,7 +16,9 @@ class EventsPage {
 
         html.div(class:'content container') {
             h1 {
-                span 'Micronaut'
+                span {
+                    mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                }
                 b 'Events'
             }
             div(class: 'light') {

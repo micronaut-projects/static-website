@@ -176,7 +176,9 @@ class BlogTask extends DefaultTask {
         mb.div(class: 'content container') {
             h1 {
                 a(href: '[%url]' + "/" + BLOG + "/" + INDEX) {
-                    span 'Micronaut'
+                    span {
+                        mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                    }
                     b 'Blog'
                 }
 
@@ -459,7 +461,9 @@ class BlogTask extends DefaultTask {
 
                 h1 {
                     a(href: '[%url]' + "/" + BLOG + "/" + INDEX) {
-                        span 'Micronaut'
+                        span {
+                            mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                        }
                         b 'Blog'
                     }
                 }
