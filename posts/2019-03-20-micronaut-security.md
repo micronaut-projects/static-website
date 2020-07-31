@@ -2,7 +2,7 @@ title: Defending your Cloud Apps with Micronaut Security
 description: In this 1-hour on-demand webinar, Sergio del Amo demonstrates how to get the most out of the security capabilities at your disposal when building Micronaut applications.
 slides: https://objectcomputing.com/index.php/download_file/view/3142
 video: https://www.youtube.com/watch?v=VrnVbAyKSEY
-date: March 20, 2019
+date: Mar 20, 2019
 image: 2019-03-20.jpg
 ---
 

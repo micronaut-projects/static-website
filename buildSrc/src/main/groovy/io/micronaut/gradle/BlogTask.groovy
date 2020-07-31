@@ -18,6 +18,7 @@ import io.micronaut.tags.Tag
 import io.micronaut.tags.TagCloud
 import org.gradle.api.Action
 import org.gradle.api.DefaultTask
+import org.gradle.api.GradleException
 import org.gradle.api.file.CopySpec
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
@@ -38,6 +39,7 @@ import java.time.ZonedDateTime
 class BlogTask extends DefaultTask {
     static final SimpleDateFormat MMM_D_YYYY_HHMM = new SimpleDateFormat("MMM d, yyyy HH:mm")
     static final SimpleDateFormat MMM_D_YYYY = new SimpleDateFormat("MMM d, yyyy")
+    static final SimpleDateFormat MMMM_D_YYYY = new SimpleDateFormat("MMMM d, yyyy")
     public static final String RSS_FILE = 'rss.xml'
     public static final String IMAGES = 'images'
     final static String HASHTAG_SPAN = "<span class=\"hashtag\">#"
@@ -102,10 +104,15 @@ class BlogTask extends DefaultTask {
     }
 
     static Date parseDate(String date) throws ParseException {
+
         try {
             return MMM_D_YYYY_HHMM.parse(date)
         } catch(ParseException e) {
-            return MMM_D_YYYY.parse(date)
+            try {
+                return MMM_D_YYYY.parse(date)
+            } catch(ParseException ex) {
+                throw new GradleException("Could not parse date $date")
+            }
         }
     }
 

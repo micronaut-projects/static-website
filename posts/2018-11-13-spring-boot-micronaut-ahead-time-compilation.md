@@ -1,5 +1,5 @@
 title: Spring Boot to Micronaut with Ahead-of-Time Compilation
-date: November 13, 2018  
+date: Nov 13, 2018  
 description: Demonstrates how to turn a Spring Boot application into a Micronaut application at compilation time and run the application on GraalVM
 author: Graeme Rocher
 image: 2018-11-13.png

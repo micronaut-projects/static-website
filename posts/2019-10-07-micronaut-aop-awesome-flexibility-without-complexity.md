@@ -1,5 +1,5 @@
 title: Micronaut AOP: Awesome Flexibility Without the Complexity
-date: October 7, 2019  
+date: Oct 7, 2019  
 description: Learn more about Micronaut's AOP system and how easy it is to use compared to competitors
 author: Graeme Rocher
 image: 2019-10-07.jpg

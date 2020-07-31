@@ -3,7 +3,7 @@ description: In this 45-minute webinar, Zachary Klein demonstrates how to build 
 slides: https://objectcomputing.com/index.php/download_file/view/3071
 code: https://github.com/ZacharyKlein/micronaut-distributed-tracing
 video: https://www.youtube.com/watch?v=TmFBDsnLbAY
-date: March 5, 2019
+date: Mar 5, 2019
 image: 2019-03-05.jpg
 ---
 

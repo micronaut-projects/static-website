@@ -3,7 +3,7 @@ description: In this 45-minute talk presented at Voxxed Days Microservices Paris
 slides: https://objectcomputing.com/index.php/download_file/view/2741 
 video: https://www.youtube.com/watch?v=BL9SsY5orkA
 author: Graeme Rocher
-date: November 8, 2018
+date: Nov 8, 2018
 image: 2018-11-08.jpg
 ---
 

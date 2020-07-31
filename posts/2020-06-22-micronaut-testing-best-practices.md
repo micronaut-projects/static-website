@@ -3,7 +3,7 @@ description: Save time and boost your productivity with expert testing tips brou
 code: https://github.com/ilopmar/micronaut-testing-best-practices
 slides: https://objectcomputing.com/index.php/download_file/view/4810
 video: https://www.youtube.com/watch?v=12cLnaLPaRo
-date: June 22, 2020
+date: Jun 22, 2020
 image: 2020-06-22.jpg
 ---
 

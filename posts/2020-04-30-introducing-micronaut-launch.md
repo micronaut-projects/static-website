@@ -1,5 +1,5 @@
 title: Introducing Micronaut 2.0 Launch
-date: April 30, 2020
+date: Apr 30, 2020
 description: Micronaut Launch announcement
 author: Graeme Rocher & James Kleeh
 image: 2020-04-30.jpg
