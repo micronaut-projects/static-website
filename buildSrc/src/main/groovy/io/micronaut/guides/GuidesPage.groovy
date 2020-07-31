@@ -192,7 +192,9 @@ class GuidesPage {
         html.article {
             div(class: 'content container') {
                 h1 {
-                    span 'Micronaut'
+                    span {
+                        mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                    }
                     b 'Guides'
                 }
                 setOmitEmptyAttributes(true)
