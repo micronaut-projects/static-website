@@ -358,6 +358,24 @@ body.post .largegoldenratio pre {
     display: block;
 }
 
+.logo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.logo img {
+    width: 100%;
+    object-fit: contain;
+    max-height: 20em;
+    padding: 3px;
+}
+
+.logo .logo-wrapper {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: .5em;
+    border-radius: 15px;
+}
 
 strong, b {
     font-weight: bold;
