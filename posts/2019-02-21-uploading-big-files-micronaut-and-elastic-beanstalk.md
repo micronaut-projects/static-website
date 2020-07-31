@@ -1,5 +1,5 @@
 title: Uploading Big Files with Micronaut and Elastic Beanstalk
-date: February 21, 2019 
+date: Feb 21, 2019 
 description: If you want to upload files with Micronaut, you may need to configure maximum request size and the max file size properties. Here's how to do that.
 author: Sergio Del Amo Caballero
 image: 2019-02-21.jpg

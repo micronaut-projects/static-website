@@ -3,7 +3,7 @@ description: Watch this 1-hour on-demand webinar to discover how the combined po
 author: Iván López
 slides: https://objectcomputing.com/index.php/download_file/view/3212
 video: https://www.youtube.com/watch?v=CLKeqGPaEtc
-date: April 26, 2019
+date: Apr 26, 2019
 image: 2019-04-26.jpg
 ---
 

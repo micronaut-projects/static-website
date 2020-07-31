@@ -3,7 +3,7 @@ description: Watch this 1-hour on-demand webinar to learn how to design apps for
 slides: https://objectcomputing.com/index.php/download_file/view/3401
 author: Ryan Vanderwerf
 video: https://www.youtube.com/watch?v=6-dHLF5HJv8
-date: June 6, 2019
+date: Jun 6, 2019
 image: 2019-06-06.jpg
 ---
 
