@@ -20,7 +20,9 @@ class DocumentationPage {
         GuideGroup preRelease = preReleaseDocumentationGuideGroup(releases, url)
         html.div(class:"content container") {
             h1 {
-                span 'Micronaut'
+                span {
+                    mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                }
                 b 'Documentation'
             }
             div(class: "twocolumns mobile") {
