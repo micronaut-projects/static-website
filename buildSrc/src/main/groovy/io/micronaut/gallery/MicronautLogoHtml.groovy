@@ -7,12 +7,11 @@ import io.micronaut.PageElement
 
 @CompileStatic
 trait MicronautLogoHtml implements PageElement {
-
-    abstract String getSrc()
-    abstract String getDownload()
+    abstract String getThumb()
+    abstract String getSvg()
+    abstract String getPng()
     abstract String getLabel()
     abstract String getBackground();
-    abstract String getAsset()
 
     @CompileDynamic
     @Override
@@ -20,10 +19,20 @@ trait MicronautLogoHtml implements PageElement {
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
         html.div(class: 'logo') {
-            div(class: 'logo-wrapper', style: "background-color: ${background};" ) {
-                    img(src: src, alt: label)
+            if (thumb) {
+                div(class: 'logo-wrapper', style: "background-color: ${background};" ) {
+                    img(src: thumb, alt: label)
                 }
-            a href: download, 'Get the full resolution version here.', download: asset
+            }
+            if (png || svg) {
+                span 'Full Resolution: '
+                if (png) {
+                    a href: png, 'PNG'
+                }
+                if (svg) {
+                    a href: svg, 'SVG'
+                }
+            }
         }
         writer.toString()
     }

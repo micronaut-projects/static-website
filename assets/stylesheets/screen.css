@@ -358,45 +358,23 @@ body.post .largegoldenratio pre {
     display: block;
 }
 
-#micronaut-logos-page .logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-#micronaut-logos-page .logo {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    flex-basis: 100%;
+.logo {
     text-align: center;
-    padding-bottom: 2em;
+    margin-bottom: 50px;
 }
 
-
-#micronaut-logos-page .logo-wrapper img {
-    object-fit: contain;
+.logo img {
     width: 100%;
+    object-fit: contain;
     max-height: 20em;
     padding: 3px;
 }
 
-@media screen and (min-width: 600px) {
-    #micronaut-logos-page .logo {
-        flex-basis: 49%;
-    }
-}
-
-#micronaut-logos-page .logo .logo-wrapper {
-    border: 1px solid;
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    padding: 3px;
+.logo .logo-wrapper {
+    border: 1px solid black;
+    padding: 10px;
     margin-bottom: .5em;
+    border-radius: 15px;
 }
 
 strong, b {
