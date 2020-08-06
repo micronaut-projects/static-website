@@ -3,13 +3,14 @@ description: In this complimentary on-demand webinar, Sergio del Amo demonstrate
 slides: https://objectcomputing.com/index.php/download_file/view/4635
 video: https://www.youtube.com/watch?v=wKF_vq0KsY0  
 date: Mar 9, 2020
+image: 2020-03-09.jpg
 ---
 
 # [%title]
 
 [%date] 
 
-#webinar
+Tags: #webinar
 
 Explore multiple testing practices within Micronaut applications, including API testing, bean replacement, security testing, and more! This webinar shows you just how easy it is to test microservice applications using Micronaut's built-in tools.
 

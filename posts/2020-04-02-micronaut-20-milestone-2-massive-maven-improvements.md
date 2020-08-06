@@ -1,7 +1,7 @@
 title: Micronaut 2.0 Milestone 2: Massive Maven Improvements
-date: April 2, 2020  
+date: Apr 2, 2020  
 description: Micronaut 2.0 Milestone 2 release announcement
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2020-04-02.jpg
 ---
 
@@ -9,7 +9,7 @@ image: 2020-04-02.jpg
 
 [%author]
 
-#maven
+Tags: #maven
 
 [%date] Just two weeks since the last milestone, the [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce [Micronaut 2.0 Milestone 2](https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.M2).
 

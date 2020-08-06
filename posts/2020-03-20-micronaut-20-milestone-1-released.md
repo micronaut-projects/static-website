@@ -1,5 +1,5 @@
 title: Micronaut 2.0 Milestone 1 Released
-date: March 20, 2020  
+date: Mar 20, 2020  
 description: Micronaut 2.0 Milestone 1 release announcement
 author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
 image: 2020-03-20.png
@@ -13,7 +13,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-#release
+Tags: #release
 
 The [Micronaut Team](https://objectcomputing.com/products/2gm-team "Groovy, Grails, and Micronaut Team") at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce the [first milestone of Micronaut 2.0](https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0.M1)!
 

@@ -1,5 +1,6 @@
 package io.micronaut.gradle
 
+import edu.umd.cs.findbugs.annotations.Nullable
 import groovy.transform.CompileStatic
 import groovy.transform.Internal
 import io.micronaut.ContentAndMetadata
@@ -7,7 +8,6 @@ import io.micronaut.Page
 import org.gradle.api.DefaultTask
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
-import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.OutputDirectory
@@ -16,22 +16,23 @@ import static groovy.io.FileType.FILES
 
 import javax.annotation.Nonnull
 import javax.validation.constraints.NotNull
-import java.text.SimpleDateFormat
 
 @CompileStatic
 class RenderSiteTask extends DefaultTask {
 
-    static final SimpleDateFormat MMM_D_YYYY = new SimpleDateFormat("MMM d, yyyy")
+    public static final String YOUTUBE_WATCH = 'https://www.youtube.com/watch?v='
 
     static final String COLON = ":"
     static final String SEPARATOR = "---"
     public static final String DIST = "dist"
+    public static final int TWITTER_CARD_PLAYER_WIDTH = 560
+    public static final int TWITTER_CARD_PLAYER_HEIGHT = 315
 
     @InputDirectory
     final Property<File> pages = project.objects.property(File)
 
     @Input
-    final Property<File> template = project.objects.property(File)
+    final Property<File> document = project.objects.property(File)
 
     @Input
     final Property<String> title = project.objects.property(String)
@@ -50,10 +51,6 @@ class RenderSiteTask extends DefaultTask {
 
     @OutputDirectory
     final Property<File> output = project.objects.property(File)
-
-    @Internal
-    @Input
-    final Provider<File> document = template.map { new File(it.absolutePath + '/Contents/Resources/document.html') }
 
     @TaskAction
     void renderSite() {
@@ -142,12 +139,48 @@ class RenderSiteTask extends DefaultTask {
             resolvedMetadata.put('description', "")
         }
         if (!resolvedMetadata.containsKey("date")) {
-            resolvedMetadata.put('date', MMM_D_YYYY.format(new Date()))
+            resolvedMetadata.put('date', BlogTask.MMM_D_YYYY_HHMM.format(new Date()))
         }
         if (!resolvedMetadata.containsKey("robots")) {
             resolvedMetadata.put('robots', "all")
         }
+        resolvedMetadata.put('twittercard', twitterCard('summary_large_image'))
+        if (resolvedMetadata.containsKey('video')) {
+            String videoId = parseVideoId(resolvedMetadata)
+            if (videoId) {
+                resolvedMetadata.put('twittercard', twitterCard('player') + twitterPlayerHtml(videoId, TWITTER_CARD_PLAYER_WIDTH, TWITTER_CARD_PLAYER_HEIGHT))
+            }
+        }
+        if (resolvedMetadata.containsKey('video') && parseVideoId(resolvedMetadata)) {
+
+        } else {
+
+        }
+
         resolvedMetadata
+    }
+
+    @Nullable
+    static String parseVideoId(Map<String, String> metadata) {
+        metadata.containsKey('video') && metadata['video'].startsWith(YOUTUBE_WATCH) ? metadata['video'].substring(YOUTUBE_WATCH.length()) : null
+    }
+
+    @Nullable
+    static String parseVideoIframe(Map<String, String> metadata) {
+        String videoId = parseVideoId(metadata)
+        videoId ? "<iframe width=\"100%\" height=\"360\" src=\"https://www.youtube-nocookie.com/embed/"+videoId+"\" frameborder=\"0\"></iframe>" : null
+    }
+
+    static String twitterPlayerHtml(String videoId, int width, int height) {
+"""\
+<meta name='twitter:player' content='https://www.youtube.com/embed/${videoId}' />
+<meta name='twitter:player:width' content='${width}' />
+<meta name='twitter:player:height' content='${height}' />
+"""
+    }
+
+    static String twitterCard(String cardType) {
+        "<meta name='twitter:card' content='${cardType}'/>"
     }
 
     static String highlightMenu(String html, Map<String, String> sitemeta, String path) {
@@ -203,10 +236,18 @@ class RenderSiteTask extends DefaultTask {
         result
     }
 
+    static String formatDate(String date) {
+        BlogTask.MMMM_D_YYYY.format(BlogTask.parseDate(date))
+    }
+
     static String replaceLineWithMetadata(String line, Map<String, String> metadata) {
-        for (String metadataKey : metadata.keySet()) {
+        Map<String, String> m = new HashMap<>(metadata)
+        if (m.containsKey('date')) {
+            m['date'] = formatDate(m['date'])
+        }
+        for (String metadataKey : m.keySet()) {
             if (line.contains("[%${metadataKey}]".toString())) {
-                String value = metadata[metadataKey]
+                String value = m[metadataKey]
                 if ("[%${metadataKey}]".toString() == '[%author]') {
                     List<String> authors = value.split(",") as List<String>
                     value = '<span class="author">By ' + authors.join("<br/>") + '</span>'

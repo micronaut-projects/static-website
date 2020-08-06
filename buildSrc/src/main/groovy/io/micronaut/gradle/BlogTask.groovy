@@ -1,8 +1,8 @@
 package io.micronaut.gradle
 
+
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
-import groovy.transform.Internal
 import groovy.xml.MarkupBuilder
 import io.micronaut.ContentAndMetadata
 import io.micronaut.HtmlPost
@@ -10,7 +10,6 @@ import io.micronaut.MarkdownPost
 import io.micronaut.MarkdownUtil
 import io.micronaut.PostMetadata
 import io.micronaut.PostMetadataAdapter
-import io.micronaut.events.EventsPage
 import io.micronaut.rss.DefaultRssFeedRenderer
 import io.micronaut.rss.RssChannel
 import io.micronaut.rss.RssFeedRenderer
@@ -19,15 +18,17 @@ import io.micronaut.tags.Tag
 import io.micronaut.tags.TagCloud
 import org.gradle.api.Action
 import org.gradle.api.DefaultTask
+import org.gradle.api.GradleException
 import org.gradle.api.file.CopySpec
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
-import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
+
 import javax.annotation.Nonnull
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.time.Instant
 import java.time.LocalDateTime
@@ -36,8 +37,9 @@ import java.time.ZonedDateTime
 
 @CompileStatic
 class BlogTask extends DefaultTask {
-
+    static final SimpleDateFormat MMM_D_YYYY_HHMM = new SimpleDateFormat("MMM d, yyyy HH:mm")
     static final SimpleDateFormat MMM_D_YYYY = new SimpleDateFormat("MMM d, yyyy")
+    static final SimpleDateFormat MMMM_D_YYYY = new SimpleDateFormat("MMMM d, yyyy")
     public static final String RSS_FILE = 'rss.xml'
     public static final String IMAGES = 'images'
     final static String HASHTAG_SPAN = "<span class=\"hashtag\">#"
@@ -46,10 +48,9 @@ class BlogTask extends DefaultTask {
     public static final String BLOG = 'blog'
     public static final String TAG = 'tag'
     public static final String INDEX = 'index.html'
-    public static final String YOUTUBE_WATCH = 'https://www.youtube.com/watch?v='
 
     @Input
-    final Property<File> template = project.objects.property(File)
+    final Property<File> document = project.objects.property(File)
 
     @Input
     final Property<String> title = project.objects.property(String)
@@ -72,10 +73,6 @@ class BlogTask extends DefaultTask {
     @OutputDirectory
     final Property<File> output = project.objects.property(File)
 
-    @Internal
-    @Input
-    final Provider<File> document = template.map { new File(it.absolutePath + '/Contents/Resources/document.html') }
-
     @InputDirectory
     final Property<File> assets = project.objects.property(File)
 
@@ -91,14 +88,32 @@ class BlogTask extends DefaultTask {
         Map<String, String> m = RenderSiteTask.siteMeta(title.get(), about.get(), url.get(), keywords.get() as List<String>, robots.get())
         copyBackgroundImages()
         List<MarkdownPost> listOfPosts = parsePosts(posts.get())
+        listOfPosts = filterOutFuturePosts(listOfPosts)
         listOfPosts = listOfPosts.sort { a, b ->
-            MMM_D_YYYY.parse(a.date).after(MMM_D_YYYY.parse(b.date)) ? -1 : 1
+            parseDate(a.date).after(parseDate(b.date)) ? -1 : 1
         }
         List<HtmlPost> htmlPosts = processPosts(m, listOfPosts)
         File blog = new File(o.absolutePath + '/' + BLOG)
         blog.mkdir()
         renderPosts(m, htmlPosts, blog, templateText)
         copyBlogImages()
+    }
+
+    static List<MarkdownPost> filterOutFuturePosts(List<MarkdownPost> posts) {
+        posts.findAll { post -> !parseDate(post.date).after(new Date()) }
+    }
+
+    static Date parseDate(String date) throws ParseException {
+
+        try {
+            return MMM_D_YYYY_HHMM.parse(date)
+        } catch(ParseException e) {
+            try {
+                return MMM_D_YYYY.parse(date)
+            } catch(ParseException ex) {
+                throw new GradleException("Could not parse date $date")
+            }
+        }
     }
 
     void copyBlogImages() {
@@ -129,16 +144,33 @@ class BlogTask extends DefaultTask {
         })
     }
 
-    static RssItem rssItemWithPage(String title, Date pubDate, String link, String guid, String html) {
-        RssItem.builder()
+    static RssItem rssItemWithPage(String title,
+                                   Date pubDate,
+                                   String link,
+                                   String guid,
+                                   String html,
+                                   String author) {
+        String htmlWithoutTitleAndDate = html
+        if (htmlWithoutTitleAndDate.contains('<span class="date">')) {
+            htmlWithoutTitleAndDate = htmlWithoutTitleAndDate.substring(htmlWithoutTitleAndDate.indexOf('<span class="date">'))
+            htmlWithoutTitleAndDate = htmlWithoutTitleAndDate.substring(htmlWithoutTitleAndDate.indexOf('</span>') + '</span>'.length())
+        }
+        RssItem.Builder builder = RssItem.builder()
                 .title(title)
                 .pubDate(ZonedDateTime.of(Instant.ofEpochMilli(pubDate.time)
                         .atZone(ZoneId.systemDefault())
                         .toLocalDateTime(), ZoneId.of("GMT")))
                 .link(link)
                 .guid(guid)
-                .description(html)
-                .build()
+                .description(htmlWithoutTitleAndDate)
+        if (author) {
+            builder = builder.author(parseAuthorName(author))
+        }
+        builder.build()
+    }
+
+    static String parseAuthorName(String author) {
+        author.contains(" (") ? author.substring(0, author.indexOf(' (')) : author
     }
 
     @CompileDynamic
@@ -151,7 +183,9 @@ class BlogTask extends DefaultTask {
         mb.div(class: 'content container') {
             h1 {
                 a(href: '[%url]' + "/" + BLOG + "/" + INDEX) {
-                    span 'Micronaut'
+                    span {
+                        mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                    }
                     b 'Blog'
                 }
 
@@ -162,9 +196,12 @@ class BlogTask extends DefaultTask {
                         mkp.yieldUnescaped(htmlPost.html)
                     }
                 }
-                div(class: 'smallgoldenratio align-right') {
-                    for (HtmlPost post : relatedPosts(htmlPost, posts)) {
-                        mkp.yieldUnescaped(postCard(post))
+                div(class: 'smallgoldenratio align-right padded-t related-posts') {
+                    h2 "You might also like ..."
+                    div {
+                        for (HtmlPost post : relatedPosts(htmlPost, posts)) {
+                            mkp.yieldUnescaped(postCard(post))
+                        }
                     }
                 }
             }
@@ -212,7 +249,7 @@ class BlogTask extends DefaultTask {
             }
         }
         relatedPosts.subList(0, MAX_RELATED_POSTS).sort { a, b ->
-            MMM_D_YYYY.parse(a.metadata.date).after(MMM_D_YYYY.parse(b.metadata.date)) ? -1 : 1
+            parseDate(a.metadata.date).after(parseDate(b.metadata.date)) ? -1 : 1
         }
     }
 
@@ -228,13 +265,12 @@ class BlogTask extends DefaultTask {
                 markdown = markdown + "\n\n[Code](${metadata['code']})\n\n"
             }
             String contentHtml = wrapTags(metadata, MarkdownUtil.htmlFromMarkdown(markdown))
-            if (metadata.containsKey('video') && metadata['video'].startsWith(YOUTUBE_WATCH)) {
-                String videoId = metadata['video'].substring(YOUTUBE_WATCH.length())
-                contentHtml = contentHtml + "<iframe width=\"100%\" height=\"360\" src=\"https://www.youtube-nocookie.com/embed/"+videoId+"\" frameborder=\"0\"></iframe>"
+            String iframe = RenderSiteTask.parseVideoIframe(metadata)
+            if (iframe) {
+                contentHtml = contentHtml + iframe
             }
             Set<String> postTags = parseTags(contentHtml)
             new HtmlPost(metadata: postMetadata, html: contentHtml, path: mdPost.path, tags: postTags)
-
         }
     }
 
@@ -264,10 +300,11 @@ class BlogTask extends DefaultTask {
             }
             String postLink = postLink(htmlPost)
             rssItems.add(rssItemWithPage(htmlPost.metadata.title,
-                    MMM_D_YYYY.parse(htmlPost.metadata.date),
+                    parseDate(htmlPost.metadata.date),
                     postLink,
                     htmlPost.path.replace(".html", ""),
-                    htmlPost.html))
+                    htmlPost.html,
+                    htmlPost.metadata.author))
         }
         Set<Tag> tags = tagsMap.collect { k, v -> new Tag(title: k, ocurrence: v) } as Set<Tag>
         renderArchive(new File(outputDir.absolutePath + "/index.html"), postCards, globalMetadata, templateText, tags)
@@ -306,6 +343,7 @@ class BlogTask extends DefaultTask {
                 tagCards << postCard(post)
             }
             File tagFile = new File("${tagFolder.absolutePath}/${tag}.html")
+            resolvedMetadata['title'] = "${tag.toUpperCase()} | Blog | Micronaut Framework".toString()
             renderCards(tagFile, tagCards, resolvedMetadata, templateText, renderTagTitle(tag))
         }
     }
@@ -322,7 +360,7 @@ class BlogTask extends DefaultTask {
         mb.article(class: 'blogcard', style: imageUrl ? 'background-image: url(' + imageUrl + ')' : '') {
             a(href: postLink(htmlPost)) {
                 h3 {
-                    mkp.yield htmlPost.metadata.date
+                    mkp.yield RenderSiteTask.formatDate(htmlPost.metadata.date)
                 }
                 h2 {
                     mkp.yield htmlPost.metadata.title
@@ -404,7 +442,9 @@ class BlogTask extends DefaultTask {
         // String html = EventsPage.mainContent(sitemeta['url']) +
         //         cardsHtml(cards, resolvedMetadata)
         String html = cardsHtml(cards, resolvedMetadata)
+        resolvedMetadata['title'] = 'Blog | Micronaut Framework'
         html = RenderSiteTask.renderHtmlWithTemplateContent(html, resolvedMetadata, templateText)
+
         html = RenderSiteTask.highlightMenu(html, resolvedMetadata, "/" + BLOG + "/" + INDEX)
         f.createNewFile()
         f.text = html
@@ -431,7 +471,9 @@ class BlogTask extends DefaultTask {
 
                 h1 {
                     a(href: '[%url]' + "/" + BLOG + "/" + INDEX) {
-                        span 'Micronaut'
+                        span {
+                            mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                        }
                         b 'Blog'
                     }
                 }

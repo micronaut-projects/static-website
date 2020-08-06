@@ -1,8 +1,8 @@
 title: Micronaut 1.0.0.M3 Released
-date: July 19, 2018  
+date: Jul 19, 2018  
 description: Announcing the release of Micronaut 1.0.0.M3
 author: Sergio Del Amo Caballero
-image: 2018-07-19.png
+image: 2018-07-19.jpg
 ---
 
 # [%title]
@@ -11,7 +11,7 @@ image: 2018-07-19.png
 
 [%date] 
 
-#release
+Tags: #release
 
 1.0.0.M3 release for Micronaut.
 

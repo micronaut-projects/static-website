@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="95px" height="95px" viewBox="0 0 95 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>discoveryclient</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="discoveryclient" transform="translate(2.000000, 2.000000)">
+            <circle id="Oval" stroke="#4CAFDE" stroke-width="2.8347" cx="45.374" cy="45.374" r="45.374"></circle>
+            <g id="Group" transform="translate(19.000000, 18.000000)" fill="#4CAFDE">
+                <rect id="Rectangle" x="1" y="0.5" width="52" height="14"></rect>
+                <g id="service-A" transform="translate(0.000000, 17.000000)">
+                    <path id="Line" d="M9,0.111111111 L12.25,7.11111111 L9.25,7.111 L9.25,17.75 L8.75,17.75 L8.75,7.111 L5.75,7.11111111 L9,0.111111111 Z" fill-rule="nonzero"></path>
+                    <polygon id="Polygon" points="9 19.5 16.7942286 24 16.7942286 33 9 37.5 1.20577137 33 1.20577137 24"></polygon>
+                </g>
+                <g id="service-C" transform="translate(36.000000, 17.000000)">
+                    <path id="Line" d="M8,0.111111111 L11.25,7.11111111 L8.25,7.111 L8.25,17.75 L7.75,17.75 L7.75,7.111 L4.75,7.11111111 L8,0.111111111 Z" fill-rule="nonzero"></path>
+                    <polygon id="Polygon" points="9 19.5 16.7942286 24 16.7942286 33 9 37.5 1.20577137 33 1.20577137 24"></polygon>
+                </g>
+                <g id="service-B" transform="translate(18.000000, 17.000000)">
+                    <path id="Line" d="M8,0.111111111 L11.25,7.11111111 L8.25,7.111 L8.25,17.75 L7.75,17.75 L7.75,7.111 L4.75,7.11111111 L8,0.111111111 Z" fill-rule="nonzero"></path>
+                    <polygon id="Polygon" points="9 19.5 16.7942286 24 16.7942286 33 9 37.5 1.20577137 33 1.20577137 24"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

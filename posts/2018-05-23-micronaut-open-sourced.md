@@ -11,7 +11,7 @@ image: 2018-05-23.jpg
 
 [%date] 
 
-#release
+Tags: #release
 
 Today, it is with great pleasure that we [open source Micronaut on Github](https://github.com/micronaut-projects/micronaut-core).
 

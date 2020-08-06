@@ -1,6 +1,6 @@
 title: Announcing Micronaut 2.0
-date: June 26, 2020  
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer), James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)
+date: Jun 26, 2020  
+author: Graeme Rocher & James Kleeh
 image:2020-06-26.jpg
 ---
 
@@ -10,7 +10,7 @@ image:2020-06-26.jpg
 
 [%date]
 
-#release
+Tags: #release
 
 Today, the [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc. (OCI)](https://objectcomputing.com/products/micronaut) is proud to announce the general [release](https://github.com/micronaut-projects/micronaut-core/releases/tag/v2.0.0) of Micronaut 2.0!
 

@@ -20,14 +20,14 @@ class QuestionsTask extends DefaultTask {
     final Property<File> output = project.objects.property(File)
 
     @TaskAction
-    void renderDocsPage() {
+    void renderQuestionsPage() {
         File build = output.get()
         File temp = new File(build.absolutePath + "/" + DocumentationTask.TEMP)
         temp.mkdir()
 
         File output = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_QUESTIONS)
         output.createNewFile()
-        output.text = "body: faq\n---\n" +
+        output.text = "title: Frequently Asked Questions | Micronaut Framework\nbody: faq\n---\n" +
                 QuestionsPage.mainContent(questions.get())
     }
 

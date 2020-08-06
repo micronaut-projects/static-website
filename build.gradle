@@ -3,16 +3,17 @@ import io.micronaut.gradle.MicronautWebsitePlugin
 apply plugin: MicronautWebsitePlugin
 
 micronaut {
-    assets = file("main/src/main/resources/assets")
-    modules = file("main/src/main/resources/modules.yml")
-    releases = file("main/src/main/resources/releases.yml")
-    questions = file("questions.yml")
+    assets = file("assets")
+    modules = file("conf/modules.yml")
+    releases = file("conf/releases.yml")
+    questions = file("conf/questions.yml")
+    micronautLogos = file("conf/logos.yml")
     posts = file("posts")
     pages = file("pages")
-    template = file("templates/Micronaut.iatemplate")
+    template = file("templates/document.html")
     output = project.buildDir
-    title = 'Micronaut Framework'
-    url = System.getenv('TRAVIS') != null ? 'https://micronaut.io' : 'http://localhost:8890'
+    title = 'Micronaut'
+    url = System.getenv('GITHUB_RUN_ID') != null ? 'https://micronaut.io' : ''
     description = 'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
     keywords = ['microanut','jvm','framework','groovy','java','kotlin','microservices','graalvm','serverless']
     robots = 'all'

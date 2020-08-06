@@ -29,7 +29,7 @@ class DownloadTask extends DefaultTask {
 
         File outputFile = new File(temp.getAbsolutePath() + "/" + PAGE_NAME_DOWNLOAD)
         outputFile.createNewFile()
-        outputFile.text = "body: download\n---\n" +
+        outputFile.text = "title: Download | Micronaut Framework\nbody: download\n---\n" +
                 DownloadPage.mainContent(releases.get(), url.get())
     }
 }

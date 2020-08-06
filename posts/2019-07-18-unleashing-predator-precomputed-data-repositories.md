@@ -1,7 +1,7 @@
 title: Announcing Micronaut Data
-date: July 18, 2019  
+date: Jul 18, 2019  
 description: Today, the Micronaut team at Object Computing, Inc. unveiled Micronaut Data, a brand new Open Source project that aims to dramatically improve the runtime and memory performance of data access repository logic for the microservice and serverless era, while also maintaining the productivity benefits of tools like GORM and Spring Data.
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2019-07-18.jpg
 CSS: https://micronaut.io/stylesheets/prismjs.css
 JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
@@ -13,7 +13,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-#data
+Tags: #data
 
 Today, the [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) unveiled [Micronaut Data](https://github.com/micronaut-projects/micronaut-data) (previously known as Predator), a brand new Open Source project that aims to dramatically improve the runtime and memory performance of data access repository logic for the microservice and serverless era, while also maintaining the productivity benefits of tools like [GORM](https://gorm.grails.org) and [Spring Data](https://spring.io/projects/spring-data).
 

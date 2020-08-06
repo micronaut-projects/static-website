@@ -1,7 +1,7 @@
 title: Micronaut Data 1.0 Milestone 1 Released
-date: August 14, 2019  
+date: Aug 14, 2019  
 description: Micronaut Data 1.0 Milestone 1 release announcement
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2019-08-14.png
 ---
 
@@ -11,7 +11,7 @@ image: 2019-08-14.png
 
 [%date] 
 
-#release #data
+Tags: #release #data
 
 The [Micronaut Team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce the first milestone of [Micronaut Data](https://github.com/micronaut-projects/micronaut-data). The M1 release is just the first of many milestones and release candidates that we will be doing as we progress towards a GA release. We have already had a fantastic amount of feedback and contributions from the community that have allowed us to advance the JDBC implementation in particular.
 

@@ -1,7 +1,7 @@
 title: Spring Boot to Micronaut with Ahead-of-Time Compilation
-date: November 13, 2018  
+date: Nov 13, 2018  
 description: Demonstrates how to turn a Spring Boot application into a Micronaut application at compilation time and run the application on GraalVM
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2018-11-13.png
 ---
 
@@ -11,7 +11,7 @@ image: 2018-11-13.png
 
 [%date] 
 
-#springboot
+Tags: #springboot
 
 Along with the release of [Micronaut 1.0.1](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.0.1), the [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is excited to announce the release of [Micronaut for Spring 1.0 M1](https://github.com/micronaut-projects/micronaut-spring).
 

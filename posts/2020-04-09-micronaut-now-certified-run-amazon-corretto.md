@@ -1,8 +1,8 @@
 title: Micronaut Is Now Certified to Run on Amazon Corretto
-date: April 9, 2020  
+date: Apr 9, 2020  
 description: Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.
 author: Álvaro Sánchez-Mariscal
-image: 2020-04-09.png
+image: 2020-04-09.jpg
 CSS: https://micronaut.io/stylesheets/prismjs.css
 JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 ---
@@ -13,7 +13,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-#aws #correto
+Tags: #aws #correto
 
 One practice used by the [Micronaut development team](https://objectcomputing.com/products/2gm-team "Groovy, Grails, and Micronaut Team") is continuous integration (CI). In support of this, the [Micronaut framework](https://micronaut.io/ "Learn more about the Micronaut Framework")'s core has an extensive test suite executed via [GitHub Actions](https://github.com/features/actions), and since the beginning of 2020, tests have also been executed with [Amazon Corretto](https://aws.amazon.com/corretto/) 8 and 11.
 

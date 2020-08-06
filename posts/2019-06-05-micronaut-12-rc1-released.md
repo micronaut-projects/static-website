@@ -1,7 +1,7 @@
 title: Micronaut 1.2 RC1 Released
-date: June 5, 2019 
+date: Jun 5, 2019 
 description: Micronaut 1.2 release announcement
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2019-06-05.png
 ---
 
@@ -11,7 +11,7 @@ image: 2019-06-05.png
 
 [%date] 
 
-#release
+Tags: #release
 
 The [Micronaut team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is excited to announce the release of [Micronaut 1.2 RC1](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.2.0.RC1). This is the first release candidate of Micronaut's 1.2 line and includes a number of significant new features including:
 

@@ -1,7 +1,7 @@
 title: Micronaut 1.1 Released
-date: April 11, 2019  
+date: Apr 11, 2019  
 description: Micronaut 1.1 Release Announcement
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2019-04-11.jpg
 ---
 
@@ -11,7 +11,7 @@ image: 2019-04-11.jpg
 
 [%date] 
 
-#release
+Tags: #release
 
 Joining the many exciting announcements happening at [Google Cloud Next](https://cloud.withgoogle.com/next/sf), the [Micronaut Team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce the release of [Micronaut 1.1](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0) GA.
 

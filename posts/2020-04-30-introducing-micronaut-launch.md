@@ -1,7 +1,7 @@
 title: Introducing Micronaut 2.0 Launch
 date: Apr 30, 2020
 description: Micronaut Launch announcement
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer), James Kleeh (OCI Micronaut Development Lead and Principal Software Engineer)
+author: Graeme Rocher & James Kleeh
 image: 2020-04-30.jpg
 ---
 
@@ -11,7 +11,7 @@ image: 2020-04-30.jpg
 
 [%date] 
 
-#launch
+Tags: #launch
 
 With the release of [Micronaut 2.0 M3](/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html), we have gone live with a brand new implementation of the Micronaut command line interface (CLI) and [Micronaut Launch](https://micronaut.io/launch/), an online tool for creating Micronaut applications.
 
@@ -75,7 +75,7 @@ The API is also accessible via CURL using <a href="https://launch.micronaut.io">
 
 The Micronaut Launch UI is written in [React](https://github.com/micronaut-projects/static-website/tree/master/main/src/main/js/start)</a> and demonstrates the power of the Micronaut community. Our thanks go out to [Francisco Javier Delgado Vallano](https://twitter.com/franvallano), and [Miguel Ángel Quintanilla](https://twitter.com/maq_dev) from [Profile](https://profile.es") in Spain, who built the first version of the UI based on the [OpenAPI specification](https://launch.micronaut.io/swagger/views/swagger-ui/index.html) we provided:
 
-![](./2020-04-30-img04.png]
+![](2020-04-30-img04.png)
 
 The Micronaut Launch UI includes some awesome features such as:
 

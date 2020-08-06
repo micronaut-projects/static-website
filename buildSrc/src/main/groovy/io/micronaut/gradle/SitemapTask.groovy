@@ -6,7 +6,6 @@ import groovy.xml.MarkupBuilder
 import org.gradle.api.DefaultTask
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
-import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
 import static groovy.io.FileType.FILES
@@ -35,7 +34,6 @@ class SitemapTask extends DefaultTask {
         File outputFile = new File(inputFile.absolutePath + "/" + FILE_SITEMAP)
         outputFile.createNewFile()
         outputFile.text = sitemapContent(urls)
-
     }
 
     @CompileDynamic

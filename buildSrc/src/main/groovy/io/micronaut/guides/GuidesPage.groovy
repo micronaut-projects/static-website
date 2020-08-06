@@ -13,6 +13,7 @@ class GuidesPage {
 
     public static final Integer NUMBER_OF_LATEST_GUIDES = 5
     private static final Integer MARGIN_TOP = 50
+    public static final String GUIDES_URL = "https://guides.micronaut.io"
 
     @CompileDynamic
     static String renderGuide(Guide guide, String query = null) {
@@ -175,18 +176,25 @@ class GuidesPage {
         writer.toString()
     }
 
+    static String guidesUrl(String url) {
+        url == 'https://micronaut.io' ? GUIDES_URL : url
+    }
+
     @CompileDynamic
-    static String mainContent(String url,
+    static String mainContent(String mainUrl,
                               List<Guide> guides,
                               Set<Tag> tags,
                               Category category = null,
                               Tag tag = null) {
+        String url = guidesUrl(mainUrl)
         StringWriter writer = new StringWriter()
         MarkupBuilder html = new MarkupBuilder(writer)
         html.article {
             div(class: 'content container') {
                 h1 {
-                    span 'Micronaut'
+                    span {
+                        mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                    }
                     b 'Guides'
                 }
                 setOmitEmptyAttributes(true)
@@ -212,7 +220,6 @@ class GuidesPage {
                             mkp.yieldUnescaped guideGroupByCategory(url, categories().messaging, guides, true, guideGroupCss)
                             mkp.yieldUnescaped guideGroupByCategory(url, categories().security, guides, true, guideGroupCss)
                         }
-
                     }
                     div(class: 'column') {
                         if ( !(tag || category) ) {

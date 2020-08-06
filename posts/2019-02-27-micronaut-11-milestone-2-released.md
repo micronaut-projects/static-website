@@ -1,7 +1,7 @@
 title: Micronaut 1.1 Milestone 2 Released
-date: February 27, 2019 
+date: Feb 27, 2019 
 description: Micronaut 1.1 M2 release announcement
-author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
+author: Graeme Rocher
 image: 2019-02-27.png
 ---
 
@@ -11,7 +11,7 @@ image: 2019-02-27.png
 
 [%date] 
 
-#release
+Tags: #release
 
 The [Micronaut Team](https://objectcomputing.com/products/2gm-team) at [Object Computing, Inc.](https://objectcomputing.com/) (OCI) is pleased to announce the release of [Micronaut 1.1 Milestone 2](https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0.M2). 
 
