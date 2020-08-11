@@ -58,6 +58,12 @@ For example with [MAMP](https://www.mamp.info/en/mamp/):
 
 ![](docs/mamp.png)
 
+You can also use Python to serve the directory:
+
+```
+python3 -m http.server 8080 --directory build/dist
+```
+
 ## Blog Posts
 
 ### Posts Location
