@@ -4,6 +4,7 @@ slides: https://speakerdeck.com/glaforge/serverless-micronaut-on-google-cloud-pl
 video: https://www.youtube.com/watch?v=Caz0gfNJUkU  
 author: Sergio del Amo  
 date: Aug 3, 2020
+image: 2020-08-03.jpg
 ---
 
 # [%title]
