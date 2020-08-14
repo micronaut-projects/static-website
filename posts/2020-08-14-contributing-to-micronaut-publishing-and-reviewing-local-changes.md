@@ -1,9 +1,9 @@
-title: Contributing to Micronaut - Publishing and Reviewing Local Changes
+title: Contributing to Micronaut: Publishing and Reviewing Local Changes
 date:  Aug 14, 2020 16:46
-description: In this video, Iván López shows how to contribute to Micronaut and test your changes locally before submitting a PR.
+description: In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.
 author: Sergio del Amo
 video: https://www.youtube.com/watch?v=r5tQC6HP_rE
-image: 2020-07-21.jpg
+image: 2020-08-14.jpg
 ---
 
 # [%title]
@@ -18,14 +18,13 @@ Tags: #gradle #contribute #intellijidea
 
 #micronaut #gradle #intellijidea
 
-This video is for developers that want to contribute code to Micronaut. It expects that you are familiar with concepts like snapshot versions, publishing to local and the command line.
+We recommend that developers who want to contribute code to Micronaut review this short video to learn how to: 
 
-You will learn: 
+- Use the Micronaut Launch data-jdbc feature to create a test application
+- Make modifications in micronaut-sql and publish the changes to Maven Local
+- Use the snapshot version on the test application
+- Force Gradle to use a specific version
+- Check that the changes made in micronaut-sql are visible on the test application
+- Make another change again in micronaut-sql, publish to Local, and see that IntelliJ automatically reloads the snapshot changes
 
-- How to create a test application with data-jdbc feature with Micronaut Launch.
-- Do modifications in micronaut-sql and publish the changes to Maven Local
-- Use the snapshot version on the test application.
-- Explain how to force Gradle to use a specific version.
-- Check that the changes done in micronaut-sql are visible on the test application.
-- Do another change again in micronaut-sql, publish to Local and see that IntelliJ automatically reloads the snapshot changes.
-
+In putting together the content in this video, we assumed viewers were already familiar with concepts like snapshot versions, publishing to Local, and the command line.
