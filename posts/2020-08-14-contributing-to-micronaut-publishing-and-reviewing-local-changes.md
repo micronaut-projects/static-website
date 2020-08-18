@@ -1,8 +1,8 @@
 title: Contributing to Micronaut: Publishing and Reviewing Local Changes
-date:  Aug 14, 2020 16:46
+date:  Aug 18, 2020 16:46
 description: In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.
 author: Sergio del Amo
-video: https://www.youtube.com/watch?v=r5tQC6HP_rE
+video: https://youtu.be/jNT0jZ14ilM
 image: 2020-08-14.jpg
 ---
 
@@ -12,11 +12,9 @@ image: 2020-08-14.jpg
 
 [%date] 
 
-Tags: #gradle #contribute #intellijidea
+Tags: #microcast #gradle #contribute #intellijidea
 
 [%description]
-
-#micronaut #gradle #intellijidea
 
 We recommend that developers who want to contribute code to Micronaut review this short video to learn how to: 
 
