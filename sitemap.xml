@@ -217,6 +217,9 @@
     <loc>https://micronaut.io/blog/2020-03-20-micronaut-20-milestone-1-released.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2020-08-18-contributing-to-micronaut-publishing-and-reviewing-local-changes.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/2020-04-02-single-page-apps-for-microservice-architecture.html</loc>
   </url>
   <url>
@@ -293,9 +296,6 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html</loc>
-  </url>
-  <url>
-    <loc>https://micronaut.io/blog/2020-08-14-contributing-to-micronaut-publishing-and-reviewing-local-changes.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-07-13-micronaut-launch-whats-new-in-micronaut2.html</loc>
