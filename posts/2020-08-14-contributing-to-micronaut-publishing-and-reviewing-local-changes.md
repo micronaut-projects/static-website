@@ -3,7 +3,7 @@ date:  Aug 18, 2020 16:46
 description: In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.
 author: Sergio del Amo
 video: https://youtu.be/jNT0jZ14ilM
-image: 2020-08-14.jpg
+image: 2020-08-18.jpg
 ---
 
 # [%title]
