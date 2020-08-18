@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>State Of The Micronaut</title>
+    <title>Contributing to Micronaut: Publishing and Reviewing Local Changes</title>
     <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
-    <meta name="description" content="Announcements and updates around Micronaut® and the Micronaut Foundation." />
-    <meta name="date" content="July 2, 2020" />
+    <meta name="description" content="In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR." />
+    <meta name="date" content="August 18, 2020" />
     <meta name="robots" content="all"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
     <meta charset='utf-8'/>
@@ -12,14 +12,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
     <meta name='twitter:card' content='summary_large_image'/>
     <meta name='twitter:site' content='@micronautfw'/>
-    <meta name='twitter:description' content='Announcements and updates around Micronaut® and the Micronaut Foundation.'/>
+    <meta name='twitter:description' content='In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.'/>
     <meta name='twitter:creator' content='@micronautfw'/>
     <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
     <meta property='og:image:width' content='600'/>
     <meta property='og:image:height' content='300'/>
     <meta property='og:url' content='https://micronaut.io'/>
-    <meta property='og:title' content='State Of The Micronaut'/>
-    <meta property='og:description' content='Announcements and updates around Micronaut® and the Micronaut Foundation.'/>
+    <meta property='og:title' content='Contributing to Micronaut: Publishing and Reviewing Local Changes'/>
+    <meta property='og:description' content='In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.'/>
     <meta property='og:type' content='website'/>
     <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
     <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
@@ -94,31 +94,33 @@
   </h1>
   <div class='light'>
     <div class='largegoldenratio align-left'>
-      <div class='padded'><h1>State Of The Micronaut</h1>
-<p><span class="author">By Jeff Scott Brown</span></p>
-<p><span class="date">July 2, 2020</span></p>
-<p>We at Object Computing and the Micronaut Foundation, led by Graeme and myself, remain committed to our growing community and continuing to advance what we have built here. Our focus continues to be building and helping our community create better technology.  This is what we do and will continue to do. The community is an important part of this journey for us — the most important part of the journey. Our commitment to honor and serve this community continues to grow.</p>
-<p>In May of 2018 Object Computing was very happy to release Micronaut® to the open source community.  We grew the framework from that first milestone release, to a 1.0 release, and through a series of 1.x point releases.  Micronaut 1 has been a true game changer: the way that enterprises build microservices has changed; the way frameworks are implemented has changed; some perceptions about the JVM have even changed.</p>
-<p>Micronaut 1 was truly groundbreaking.  In June of 2020 we released Micronaut 2.0, upgrading the framework to support even more integrations with cloud services, further improving performance which was already great, adding more serverless capabilities, etc.  Micronaut 2 is yet another significant leap forward.</p>
-<p>Micronaut has upended how developers approach framework design in server-side Java. By shifting framework infrastructure into a compiler feature, Micronaut rewrites the book on how frameworks should be built in the post-Java EE world. Micronaut eliminates the need to use complex runtime Java container technologies to obtain features like AOP, transaction management, caching, and more. Micronaut has demonstrated that the future is intelligent compilers and smaller, faster runtimes.</p>
-<p>Since inception, Micronaut has enjoyed massive enthusiasm, engagement, and adoption within the JVM community.  For example, Micronaut core has 3.8k stars on GitHub and more than 200 contributors. Micronaut is being used in production at Alibaba, Target, Minecraft, Boeing, and many other organizations.</p>
-<p>We recently announced <a href="https://objectcomputing.com/news/2020/06/29/micronaut-foundation-established">The Micronaut Foundation</a>.  The foundation is supported by a Technology Advisory Board, which includes technology leaders from a number of organizations around the world and diverse segments of industry.</p>
-<p>Object Computing has committed the initial funding of USD &#36;2M to fund development and evangelism of the framework through the foundation.</p>
-<p>Over the past several months, we have received great enthusiasm from several technology (in particular cloud) vendors, and Oracle is among them. To support key advocates of Micronaut within Oracle, and to demonstrate the viability and stability of doubling down on Micronaut as a core component of the Oracle stack, Graeme Rocher has made the decision to join Oracle Labs, to help drive adoption and advancement of Micronaut within Oracle.</p>
-<p>The Micronaut Foundation is the next step in the evolution of the framework and, we believe, of the way that software is created in the JVM ecosystem.  Through the shared insights, perspectives, and experiences of our Foundation’s Technology Advisory Board, Micronaut will be able to support more environments, more features, more developers, and more use cases than previously imagined.</p>
-<p>Hopefully we will also continue to see more organizations like Object Computing invest in the future of the core framework as it continues to grow and evolve. All of us is better than any one of us.</p></div>
+      <div class='padded'><h1>Contributing to Micronaut: Publishing and Reviewing Local Changes</h1>
+<p><span class="author">By Sergio del Amo</span></p>
+<p><span class="date">August 18, 2020</span></p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/microcast.html"><span class="hashtag">#microcast</span></a> <a href="https://micronaut.io/blog/tag/gradle.html"><span class="hashtag">#gradle</span></a> <a href="https://micronaut.io/blog/tag/contribute.html"><span class="hashtag">#contribute</span></a> <a href="https://micronaut.io/blog/tag/intellijidea.html"><span class="hashtag">#intellijidea</span></a></p>
+<p>In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.</p>
+<p>We recommend that developers who want to contribute code to Micronaut review this short video to learn how to:</p>
+<ul>
+<li>Use the Micronaut Launch data-jdbc feature to create a test application</li>
+<li>Make modifications in micronaut-sql and publish the changes to Maven Local</li>
+<li>Use the snapshot version on the test application</li>
+<li>Force Gradle to use a specific version</li>
+<li>Check that the changes made in micronaut-sql are visible on the test application</li>
+<li>Make another change again in micronaut-sql, publish to Local, and see that IntelliJ automatically reloads the snapshot changes</li>
+</ul>
+<p>In putting together the content in this video, we assumed viewers were already familiar with concepts like snapshot versions, publishing to Local, and the command line.</p></div>
     </div>
     <div class='smallgoldenratio align-right padded-t related-posts'>
       <h2>You might also like ...</h2>
-      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-08-18.jpg)'>
-  <a href='https://micronaut.io/blog/2020-08-14-contributing-to-micronaut-publishing-and-reviewing-local-changes.html'>
-    <h3>August 18, 2020</h3>
-    <h2>Contributing to Micronaut: Publishing and Reviewing Local Changes</h2>
+      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-22.jpg)'>
+  <a href='https://micronaut.io/blog/2020-07-22-graalvm-micronaut2.html'>
+    <h3>July 22, 2020</h3>
+    <h2>GraalVM Native Image Generation Improvements – Micronaut 2.0</h2>
   </a>
-</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-08-11.jpg)'>
-  <a href='https://micronaut.io/blog/2020-08-11-deploy-friday-micronaut.html'>
-    <h3>August 11, 2020</h3>
-    <h2>Deploy Friday Webinar: Episode 16 Micronaut</h2>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-21.jpg)'>
+  <a href='https://micronaut.io/blog/2020-07-21-gradle-micronaut2.html'>
+    <h3>July 21, 2020</h3>
+    <h2>Support for Gradle 6.5 Incremental Compilation - Micronaut 2.0</h2>
   </a>
 </article></div>
     </div>

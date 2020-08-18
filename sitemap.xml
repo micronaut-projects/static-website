@@ -124,6 +124,9 @@
     <loc>https://micronaut.io/blog/tag/servlet.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/microcast.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/jdk14.html</loc>
   </url>
   <url>
@@ -143,6 +146,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/release.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/tag/contribute.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/video.html</loc>
@@ -287,6 +293,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-08-14-contributing-to-micronaut-publishing-and-reviewing-local-changes.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-07-13-micronaut-launch-whats-new-in-micronaut2.html</loc>
