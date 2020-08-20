@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 19 Aug 2020 10:00:34 GMT</pubDate><item><title>Contributing to Micronaut: Publishing and Reviewing Local Changes</title><link>https://micronaut.io/blog/2020-08-18-contributing-to-micronaut-publishing-and-reviewing-local-changes.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Thu, 20 Aug 2020 08:37:47 GMT</pubDate><item><title>Contributing to Micronaut: Publishing and Reviewing Local Changes</title><link>https://micronaut.io/blog/2020-08-18-contributing-to-micronaut-publishing-and-reviewing-local-changes.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/microcast.html"><span class="hashtag">#microcast</span></a> <a href="https://micronaut.io/blog/tag/gradle.html"><span class="hashtag">#gradle</span></a> <a href="https://micronaut.io/blog/tag/contribute.html"><span class="hashtag">#contribute</span></a> <a href="https://micronaut.io/blog/tag/intellijidea.html"><span class="hashtag">#intellijidea</span></a></p>
 <p>In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.</p>
 <p>We recommend that developers who want to contribute code to Micronaut review this short video to learn how to:</p>
@@ -1082,23 +1082,35 @@ public class BookManager {
 <h2>Micronaut Data Performance</h2>
 <p>Since Micronaut Data does not have to do any query translation at runtime, the performance gain is significant. In a world of utility cloud computing, where billing models are changing such that you pay for the amount of time your application is running or the execution time of an individual function, developers often overlook the performance of their data access toolkits.</p>
 <p>The following table summarizes the performance difference you can expect for a finder expression, such as <code>findByTitle</code>, when compared to other implementations. All benchmarks were carried out using test hardware of an 8-core Xeon iMac Pro under the same conditions, are Open Source, and can be <a href="https://github.com/micronaut-projects/micronaut-data">found in the repository</a>:</p>
-<p>|Implementation|Operations per Second|
-|Micronaut Data JDBC|225K ops/sec|
-|Micronaut Data JPA|130K ops/sec|
-|Spring Data JPA|90K ops/sec|
-|GORM JPA|50K ops/sec|
-|Spring Data JDBC|Finders Not Supported|</p>
+<table>
+<thead>
+<tr><th>Implementation</th><th>Operations per Second</th></tr>
+</thead>
+<tbody>
+<tr><td>Micronaut Data JDBC</td><td>225K ops/sec</td></tr>
+<tr><td>Micronaut Data JPA</td><td>130K ops/sec</td></tr>
+<tr><td>Spring Data JPA</td><td>90K ops/sec</td></tr>
+<tr><td>GORM JPA</td><td>50K ops/sec</td></tr>
+<tr><td>Spring Data JDBC</td><td>Finders Not Supported</td></tr>
+</tbody>
+</table>
 <p>Yes, you read that right. With Micronaut Data JDBC, you can expect nearly 4X the performance of GORM and 2.5X the performance of Spring Data.</p>
 <p>If you go with Micronaut Data JPA, even then, you can expect more than 2X the performance of GORM and up to 40% better performance than Spring Data JPA.</p>
 <hr />
 <h6>UPDATE SEPTEMBER 2, 2019</h6>
 <p>Since this post was written both Micronaut Data and Spring Data have been further optimized and the latest result data on the same test hardware is as follows (Note the Spring Data JDBC numbers use a hard coded query):</p>
-<p>|Implementation|Operations per Second|
-|Micronaut Data JDBC|430K ops/sec|
-|Micronaut Data JPA|145K ops/sec|
-|Spring Data JPA|140K ops/sec|
-|GORM JPA|50K ops/sec|
-|Spring Data JDBC|275K ops/sec|</p>
+<table>
+<thead>
+<tr><th>Implementation</th><th>Operations per Second</th></tr>
+</thead>
+<tbody>
+<tr><td>Micronaut Data JDBC</td><td>430K ops/sec</td></tr>
+<tr><td>Micronaut Data JPA</td><td>145K ops/sec</td></tr>
+<tr><td>Spring Data JPA</td><td>140K ops/sec</td></tr>
+<tr><td>GORM JPA</td><td>50K ops/sec</td></tr>
+<tr><td>Spring Data JDBC</td><td>275K ops/sec</td></tr>
+</tbody>
+</table>
 <h6>END UPDATE</h6>
 <hr />
 <p>Micronaut Data is able to achieve such a significant performance jump for a variety of reasons, from the elimination of reflection to the much thinner runtime component. One reason, however, is pretty simple to identify: Stack Traces.</p>
