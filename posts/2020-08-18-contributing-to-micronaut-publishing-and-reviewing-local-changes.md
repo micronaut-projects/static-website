@@ -2,7 +2,7 @@ title: Contributing to Micronaut: Publishing and Reviewing Local Changes
 date:  Aug 18, 2020 16:46
 description: In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.
 author: Sergio del Amo
-video: https://www.youtube.com/watch?v=jNT0jZ14ilM
+video: https://www.youtube.com/watch?v=E1XsAoYwBrE
 image: 2020-08-18.jpg
 ---
 
