@@ -3,7 +3,7 @@ description: In this 60-minute on-demand webinar, Ryan Vanderwerf presents an ov
 author: Ryan Vanderwerf
 video: https://www.youtube.com/watch?v=9odEvHN3AJM
 slides: https://objectcomputing.com/index.php/download_file/view/2472     
-date: August 14, 2018
+date: Aug 14, 2018
 image: 2018-08-14.jpg
 ---
 

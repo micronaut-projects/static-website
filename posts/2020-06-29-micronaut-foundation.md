@@ -1,5 +1,5 @@
 title: Micronaut Foundation Announced
-date: June 29, 2020
+date: Jun 29, 2020
 description: Today, we announced the formation of the Micronaut Foundation, a not-for-profit company established to advance innovation and adoption of Micronaut®.
 author: Jason Schindler (OCI Partner and Practice Manager of Grails and Micronaut)
 image: 2020-06-29.jpg

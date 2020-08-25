@@ -237,7 +237,7 @@ class RenderSiteTask extends DefaultTask {
     }
 
     static String formatDate(String date) {
-        BlogTask.MMM_D_YYYY.format(BlogTask.parseDate(date))
+        BlogTask.MMMM_D_YYYY.format(BlogTask.parseDate(date))
     }
 
     static String replaceLineWithMetadata(String line, Map<String, String> metadata) {

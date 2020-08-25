@@ -1,5 +1,5 @@
 title: Micronaut vs Quarkus vs Spring Boot Performance on JDK 14
-date: April 7, 2020  
+date: Apr 7, 2020  
 description: Micronaut vs Quarkus vs Spring Boot Performance on JDK 14
 author: Graeme Rocher
 image: 2020-04-07.png

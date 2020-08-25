@@ -44,7 +44,9 @@ class DownloadPage {
         html.div(class: 'content container') {
             h1 {
                 span 'Download'
-                b 'Micronaut'
+                b {
+                    mkp.yieldUnescaped 'Micronaut<sup>&reg;</sup>'
+                }
             }
             div(class: 'twocolumns') {
                 div(class: "odd column") {
