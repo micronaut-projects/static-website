@@ -147,11 +147,13 @@ body.post .largegoldenratio pre {
     font-family: 'firasansbold', serif;
     text-transform: uppercase;
 }
+.light h2,
 .smallgoldenratio h2,
 .largegoldenratio h2 {
     font-family: 'firasansbold', serif;
     text-transform: uppercase;
 }
+.light h3,
 .smallgoldenratio h3,
 .largegoldenratio h3 {
     font-family: 'firasansregular', serif;
@@ -526,8 +528,8 @@ ul, ol, p, pre {
     margin-bottom: 20px;
 }
 li {
-    margin-left: 48px;
-    list-style-type: circle;
+    margin-left: 18px;
+    list-style-type: disc;
     margin-bottom: 10px;
 }
 
@@ -579,6 +581,21 @@ td, th {
 }
 .desktop {
     display: none;
+}
+
+.icon {
+    height: 25px;
+    margin-right: 10px;
+}
+
+.package {
+    margin-bottom: 50px;
+    /*overflow: auto;*/
+}
+
+.package h3 {
+    font-family: 'firasansbold', sans-serif;
+    margin-bottom: 25px;
 }
 
 @media screen and (min-width: 961px) {
@@ -1145,6 +1162,7 @@ body.guides .columnheader {
     margin: 0;
 }
 
+.radius,
 .form,
 .guidegroup {
     /* Safari 3-4, iOS 1-3.2, Android 1.6- */
