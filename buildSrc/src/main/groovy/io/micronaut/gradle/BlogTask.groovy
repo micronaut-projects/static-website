@@ -34,6 +34,7 @@ import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.ZonedDateTime
+import java.util.stream.Collectors
 
 @CompileStatic
 class BlogTask extends DefaultTask {
@@ -48,6 +49,22 @@ class BlogTask extends DefaultTask {
     public static final String BLOG = 'blog'
     public static final String TAG = 'tag'
     public static final String INDEX = 'index.html'
+
+    public static List<String> ALLOWED_TAG_PREFIXES = new ArrayList<>()
+    static {
+        List<String> characters = 'A'..'Z'
+        List<Integer> digits = [0,1,2,3,4,5,6,7,8,9]
+        List<String> l = characters.stream()
+                .map({str -> "#${str}".toString()})
+                .collect(Collectors.toList())
+        l.addAll(characters.stream()
+                .map({str -> "#${str.toLowerCase()}".toString()})
+                .collect(Collectors.toList()))
+        l.addAll(digits.stream()
+                .map({digit -> "#${digit}".toString()})
+                .collect(Collectors.toList()))
+        ALLOWED_TAG_PREFIXES = l
+    }
 
     @Input
     final Property<File> document = project.objects.property(File)
@@ -517,6 +534,10 @@ class BlogTask extends DefaultTask {
         writer.close()
     }
 
+    static boolean isTag(String word) {
+        ALLOWED_TAG_PREFIXES.any {word.startsWith(it) }
+    }
+
     @Nonnull
     static String wrapTags(Map<String, String> metadata, @Nonnull String html) {
         html.split("\n")
@@ -526,7 +547,7 @@ class BlogTask extends DefaultTask {
                                 .replaceAll("</p>", "")
                         String[] words = lineWithoutParagraphs.split(" ")
                         lineWithoutParagraphs = words.collect { word ->
-                            if (word.startsWith("#")) {
+                            if (isTag(word)) {
                                 String tag = word
                                 if (word.contains("<")) {
                                     tag = word.substring(0, word.indexOf("<"))
