@@ -23,7 +23,7 @@ Tags: #conference #oci
 ⏳2:45 PM - 4:45 PM. Pacific Daylight Time (PT)  
 📍Online  
 
-## Outline
+## Outline
 
 > 1. Creating a new Micronaut
 > 2. Setting up an IDE for development
