@@ -1,7 +1,7 @@
 title: Micronaut 2: Launching the Technology of the Future
 description: In this complimentary, 60-minute webinar, Jeff Scott Brown and James Kleeh host a relaxed Q&A session to introduce the new features and improvements in Micronaut 2.
-slides:     
-video:   
+slides: https://objectcomputing.com/files/5315/9804/8111/Slide_Deck_Micronaut_2.0_Webinar.pdf     
+video: https://www.youtube.com/watch?v=jqs2_5LglhU   
 author: Jeff Brown and James Kleeh  
 date: Aug 21, 2020
 image: 2020-08-21.jpg
