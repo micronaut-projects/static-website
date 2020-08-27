@@ -46,6 +46,9 @@
     <loc>https://micronaut.io/blog/2020-07-30-intellij-idea-new-project-micronaut.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2020-08-25-hands-on-lab-building-java-cloud-native-applications-with-micronaut-and-oci.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/2020-07-14-micronaut-maven-support-micronaut2.html</loc>
   </url>
   <url>
@@ -74,6 +77,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/openapi.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/tag/oci.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/undertow.html</loc>
@@ -164,6 +170,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/serverless.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/tag/conference.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2018-11-08-introduction-to-micronaut.html</loc>
