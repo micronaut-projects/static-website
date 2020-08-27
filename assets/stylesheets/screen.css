@@ -1550,13 +1550,15 @@ body.home pre {
     background-color: #4CAFDE;
 }
 
-#calltoactionbuttons {
+body.home .calltoactionbuttons {
+    width: 289px;
+}
+.calltoactionbuttons {
     text-align: center;
     margin: 50px auto 0;
     overflow: auto;
-    width: 289px;
 }
-#calltoactionbuttons a {
+.calltoactionbuttons a {
     display: block;
     padding: 10px 30px;
     border: 2px solid #ffffff;
@@ -1566,18 +1568,18 @@ body.home pre {
     max-width: 210px;
     margin: 20px 0;
 }
-#calltoactionbuttons a:first-child,
-#calltoactionbuttons a:last-child {
+.calltoactionbuttons a:first-child,
+.calltoactionbuttons a:last-child {
     margin: 0;
 }
-#calltoactionbuttons a:hover {
+.calltoactionbuttons a:hover {
     text-decoration: underline;
 }
 @media screen and (min-width: 961px) {
-    #calltoactionbuttons {
+    body.home .calltoactionbuttons {
         width: 865px;
     }
-    #calltoactionbuttons a {
+    .calltoactionbuttons a {
         width: 210px;
         float: left;
         margin-top: 0;
