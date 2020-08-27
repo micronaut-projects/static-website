@@ -1,4 +1,5 @@
-title: GraalVM Native Image Generation Improvements – Micronaut 2.0 
+---
+title: GraalVM Native Image Generation Improvements – Micronaut 2.0
 date: Jul 22, 2020
 description: Graeme Rocher, Micronaut framework co-founder, talks about improvements to GraalVM Native Image generation in Micronaut 2.0. 
 author: Sergio del Amo

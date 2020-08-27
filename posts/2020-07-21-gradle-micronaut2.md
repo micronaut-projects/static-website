@@ -1,3 +1,4 @@
+---
 title: Support for Gradle 6.5 Incremental Compilation - Micronaut 2.0
 date: Jul 21, 2020
 description: Graeme Rocher, Micronaut framework co-founder, talks about Gradle incremental compilation support in Micronaut 2.0. 

@@ -1,3 +1,4 @@
+---
 title: Micronaut 1.0 RC1 and the Power of Ahead-of-Time Compilation
 date: Sep 30, 2018 
 description: Micronaut 1.0 release candidate 1 has been released! Discover the key features that make Micronaut stand out among Java frameworks.

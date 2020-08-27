@@ -1,3 +1,4 @@
+---
 title: Micronaut 1.3 and Micronaut Data 1.0 GA Released
 date: Feb 4, 2020  
 description: The Micronaut team at Object Computing is thrilled to announce the release of Micronaut 1.3 GA, which includes the 1.0 GA release of Micronaut Data for JDBC and Hibernate/JPA.

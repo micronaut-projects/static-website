@@ -1,3 +1,4 @@
+---
 title: Introduction to Micronaut: Building ultra-lightweight microservices
 description: In this 45-minute talk presented at Voxxed Days Microservices Paris in October 2018, Micronaut co-founder, Graeme Rocher, introduces the framework and demonstrates how you can take your microservices to the next level with Micronaut's ahead-of-time (AOT) compilation and Oracle's GraalVM to achieve instant startup and low memory footprint.
 slides: https://objectcomputing.com/index.php/download_file/view/2741 

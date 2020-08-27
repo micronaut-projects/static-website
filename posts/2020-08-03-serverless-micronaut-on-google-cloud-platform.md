@@ -1,3 +1,4 @@
+---
 title: Serverless Micronaut on Google Cloud Platform
 description: In this complimentary, 60-minute webinar, Guillaume demonstrates the options you have to deploy your Micronaut applications and services on Google Cloud without spending all your time on infrastructure.
 slides: https://speakerdeck.com/glaforge/serverless-micronaut-on-google-cloud-platform    

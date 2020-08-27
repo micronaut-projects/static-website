@@ -1,3 +1,4 @@
+---
 title: Micronaut 1.0.0.M4 Released
 date: Aug 9, 2018  
 description: Announcing the release of Micronaut 1.0.0.M4

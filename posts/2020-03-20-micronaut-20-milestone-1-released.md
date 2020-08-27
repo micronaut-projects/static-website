@@ -1,3 +1,4 @@
+---
 title: Micronaut 2.0 Milestone 1 Released
 date: Mar 20, 2020  
 description: Micronaut 2.0 Milestone 1 release announcement
