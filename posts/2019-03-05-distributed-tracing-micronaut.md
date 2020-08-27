@@ -1,3 +1,4 @@
+---
 title: Distributed Tracing with Micronaut
 description: In this 45-minute webinar, Zachary Klein demonstrates how to build tracing-aware apps with the Micronaut Framework using the standard OpenTracing API.
 slides: https://objectcomputing.com/index.php/download_file/view/3071

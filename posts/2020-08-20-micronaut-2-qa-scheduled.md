@@ -1,4 +1,5 @@
-title: Virtual Micronaut 2 Q&A Session Coming Soon 
+---
+title: Virtual Micronaut 2 Q&A Session Coming Soon
 date: Aug 20, 2020 
 author: Kristin Kroeger
 description: Micronaut co-founder, Jeff Scott Brown, and Product Development Lead, James Kleeh, host a complimentary, virtual Q&A session tomorrow.

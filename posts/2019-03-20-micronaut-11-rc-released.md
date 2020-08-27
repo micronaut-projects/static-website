@@ -1,3 +1,4 @@
+---
 title: Micronaut 1.1 RC1 Released
 date: Mar 20, 2019  
 description: Micronaut 1.1 includes a number of significant refinements! Learn more about the release of Micronaut 1.1 RC1.

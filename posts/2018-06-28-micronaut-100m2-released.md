@@ -1,3 +1,4 @@
+---
 title: Micronaut 1.0.0.M2 Released
 date: Jun 28, 2018 
 description: Announcing the release of Micronaut 1.0.0.M2

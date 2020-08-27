@@ -1,3 +1,4 @@
+---
 title: Meet Galecinocar: A Micronaut-powered, 1:16 scale self-driving car
 description: In this 60-minute on-demand webinar, Ryan Vanderwerf presents an overview of the technology behind GalecinoCar, a 1/16-scale self-driving car built using machine learning, a Raspberry Pi 3, Groovy, Java, and the new microservice Framework, Micronaut.
 author: Ryan Vanderwerf

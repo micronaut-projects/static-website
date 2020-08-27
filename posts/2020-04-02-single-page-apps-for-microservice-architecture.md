@@ -1,3 +1,4 @@
+---
 title: Single Page Apps for a Microservice Architecture
 description: Single-page applications (SPAs) don't have to be incompatible with microservice architectures. In this complimentary, on-demand webinar, Zachary Klein demonstrates how to use Micronaut to simplify gateways, security, and multi-tenancy when building SPAs for microservices.
 video: https://www.youtube.com/watch?v=cU9doRzJSSY

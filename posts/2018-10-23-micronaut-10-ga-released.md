@@ -1,3 +1,4 @@
+---
 title: Micronaut 1.0 GA Released
 date: Oct 23, 2018  
 description: Micronaut 1.0 release announcement

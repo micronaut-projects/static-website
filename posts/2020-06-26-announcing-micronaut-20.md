@@ -1,3 +1,4 @@
+---
 title: Announcing Micronaut 2.0
 date: Jun 26, 2020  
 author: Graeme Rocher & James Kleeh

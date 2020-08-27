@@ -1,3 +1,4 @@
+---
 title: Micronaut 2.0 Milestone 2: Massive Maven Improvements
 date: Apr 2, 2020  
 description: Micronaut 2.0 Milestone 2 release announcement

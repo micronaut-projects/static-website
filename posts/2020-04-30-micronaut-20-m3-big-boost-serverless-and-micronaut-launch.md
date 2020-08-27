@@ -1,3 +1,4 @@
+---
 title: Micronaut 2.0 M3: A Big Boost for Serverless, Plus Micronaut Launch
 date: Apr 30, 2020
 description: The Micronaut team is super excited to announce the final milestone on our journey to Micronaut 2.0.

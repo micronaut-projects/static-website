@@ -1,3 +1,4 @@
+---
 title: Announcing Micronaut Data
 date: Jul 18, 2019  
 description: Today, the Micronaut team at Object Computing, Inc. unveiled Micronaut Data, a brand new Open Source project that aims to dramatically improve the runtime and memory performance of data access repository logic for the microservice and serverless era, while also maintaining the productivity benefits of tools like GORM and Spring Data.

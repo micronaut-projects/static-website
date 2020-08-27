@@ -1,3 +1,4 @@
+---
 title: Introducing Micronaut 2.0 Launch
 date: Apr 30, 2020
 description: Micronaut Launch announcement

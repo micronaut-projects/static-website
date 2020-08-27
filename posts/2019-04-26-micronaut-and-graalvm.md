@@ -1,3 +1,4 @@
+---
 title: Micronaut and GraalVM: The Ultimate Recipe for Fast, Lightweight, Powerful Apps
 description: Watch this 1-hour on-demand webinar to discover how the combined power of GraalVM and Micronaut results in even faster, more lightweight applications than you can build using each tool on its own.
 author: Iván López

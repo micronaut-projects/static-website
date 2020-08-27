@@ -1,3 +1,4 @@
+---
 title: Reactive Libraries - Micronaut 2.0
 date: Jul 18, 2020
 description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut 2.0 reactive libraries (RxJava ...) support. 

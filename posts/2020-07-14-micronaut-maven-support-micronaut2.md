@@ -1,3 +1,4 @@
+---
 title: Maven Support - Micronaut 2.0
 date: Jul 14, 2020
 description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut 2.0 Maven support improvements. 

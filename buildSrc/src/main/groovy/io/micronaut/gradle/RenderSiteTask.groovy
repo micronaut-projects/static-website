@@ -204,8 +204,13 @@ class RenderSiteTask extends DefaultTask {
         List<String> lines = []
         Map<String, String> metadata = [:]
         boolean metadataProcessed = false
+        int lineCount = 0
         file.withReader { reader ->
             while ((line = reader.readLine()) != null) {
+                if (lineCount == 0 && line.contains(SEPARATOR)) {
+                    continue
+                }
+                lineCount++
                 if (line.contains(SEPARATOR)) {
                     metadataProcessed = true
                     continue

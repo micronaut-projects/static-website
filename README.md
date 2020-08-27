@@ -81,6 +81,7 @@ You can use the metadata in the text by putting it in brackets adding a % sign.
 A typical blog post will look like: 
 
 ```markdown
+---
 title: Micronaut Is Now Certified to Run on Amazon Corretto
 date: April 9, 2020  
 description: Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.
@@ -126,6 +127,7 @@ Date is used to for publication date. It is used to order to blog posts. It is d
 Date can be expressed in `MMM d, yyyy`
 
 ```markdown
+---
 ...
 ..
 .
@@ -137,6 +139,7 @@ date: April 9, 2020
 or `MMM d, yyyy HH:mm`
  
 ```markdown
+---
 ...
 ..
 .
@@ -152,6 +155,7 @@ date: April 9, 2020 09:00
 For Blog post background images usage image metadata. 
 
 ```markdown
+---
 ...
 ..
 .
@@ -184,6 +188,7 @@ Check the [list of tags](https://micronaut.io/blog/index.html) and try to reuse 
 If your blog post, contains code samples add the following metadata:
 
 ```markdown
+---
 ...
 ..
 .
@@ -204,6 +209,7 @@ Currently, the plugin supports youtube videos. Use a link which starts with `htt
 Example: 
 
 ```markdown
+---
 title: GOTO 2019 - Introduction to Micronaut    
 date:  Jul 21, 2020 09:04
 description: Graeme Rocher, Micronaut framework co-founder, introduction to Micronaut at GOTO 2019 Conference.

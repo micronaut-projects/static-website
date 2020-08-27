@@ -1,3 +1,4 @@
+---
 title: Micronaut Data 1.0 Milestone 1 Released
 date: Aug 14, 2019  
 description: Micronaut Data 1.0 Milestone 1 release announcement

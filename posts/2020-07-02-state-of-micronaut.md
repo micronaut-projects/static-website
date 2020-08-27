@@ -1,3 +1,4 @@
+---
 title: State Of The Micronaut
 date: Jul 02, 2020
 description: Announcements and updates around Micronaut® and the Micronaut Foundation.

@@ -1,3 +1,4 @@
+---
 title: Micronaut 2.0 RC1 Released
 date: Jun 16, 2020  
 description: Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.
