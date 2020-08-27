@@ -1,11 +1,12 @@
-title: Hands-on Lab: Building Java Cloud Native Applications with Micronaut and OCI
+title: Hands-on Lab: Building Java Cloud-Native Applications with Micronaut and OCI
 date:  Aug 25, 2020 15:12
-description: Graeme Rocher, Micronaut co-founder, will host a Hands on Lab at Oracle Developer Live-Java. to demonstrate how you can use Micronaut to build modern Cloud Native Applications on Oracle Cloud Infrastructure (OCI) that are easy to test, fast to execute and can be deployed to the cloud in a few simple steps.
+description: Micronaut co-founder, Graeme Rocher, will host a hands-on lab at Oracle Developer Live—Java to demonstrate how you can use Micronaut to build modern cloud-native applications on Oracle Cloud Infrastructure (OCI) that are easy to test, fast to execute, and can be deployed to the cloud in a few simple steps.
 author: Sergio del Amo
 eventName: Oracle Developer Live—Java
 eventDate: Sep 15, 2020 2:45
 eventTimeZone: Pacific Daylight Time (PT)
 eventLocation: online
+image: 2020-08-25.jpg
 ---
 
 # [%title]
@@ -32,4 +33,4 @@ Tags: #conference #oci
 > 6. Integration Testing
 > 7. Deployment to the Cloud
 
-More info at the [Oracle Developer Live—Java](https://developer.oracle.com/developer-live/java/)
+More info at [Oracle Developer Live—Java](https://developer.oracle.com/developer-live/java/)
