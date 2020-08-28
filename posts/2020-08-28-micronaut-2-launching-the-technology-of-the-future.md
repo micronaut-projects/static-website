@@ -20,7 +20,7 @@ Tags: #webinar #micronaut2
 
 ## OVERVIEW
 
-Micronaut 2.0 was released on June 26, 2020 with a ton of exciting new features and improvements.
+Micronaut 2.0 was released on June 26, 2020, with a ton of exciting new features and improvements.
 
 Whether you're new to Micronaut or you've been following the framework since it dramatically transformed the JVM landscape in 2017, you'll find much to celebrate in the latest iteration of the technology, including expanded native image support, more reactive library support modules, an improved threading model, and even more service deployment options.
 
