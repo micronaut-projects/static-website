@@ -256,6 +256,7 @@ class BlogTask extends DefaultTask {
         if (relatedPosts.size() < MAX_RELATED_POSTS) {
             for (HtmlPost p : posts) {
                 List<String> paths = relatedPosts*.path
+                paths.add(htmlPost.path)
                 if (paths.contains(p.path)) {
                     continue
                 }
