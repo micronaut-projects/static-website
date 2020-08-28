@@ -15,7 +15,7 @@ image: 2020-08-25.jpg
 
 [%date] 
 
-Tags: #conference #oci
+Tags: #conference #oci #oracle
 
 [%description]
 
