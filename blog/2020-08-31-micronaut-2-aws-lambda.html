@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Micronaut 2: AWS Lambda Functions</title>
+    <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
+    <meta name="description" content="Micronaut 2 includes many improvements to help you write Micronaut applications and serverless functions and deploy them to AWS Lambda." />
+    <meta name="date" content="August 31, 2020" />
+    <meta name="robots" content="all"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
+    <meta charset='utf-8'/>
+    <link rel='icon' href='https://micronaut.io/images/favicon.ico'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+    <meta name='twitter:card' content='summary_large_image'/>
+    <meta name='twitter:site' content='@micronautfw'/>
+    <meta name='twitter:description' content='Micronaut 2 includes many improvements to help you write Micronaut applications and serverless functions and deploy them to AWS Lambda.'/>
+    <meta name='twitter:creator' content='@micronautfw'/>
+    <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
+    <meta property='og:image:width' content='600'/>
+    <meta property='og:image:height' content='300'/>
+    <meta property='og:url' content='https://micronaut.io'/>
+    <meta property='og:title' content='Micronaut 2: AWS Lambda Functions'/>
+    <meta property='og:description' content='Micronaut 2 includes many improvements to help you write Micronaut applications and serverless functions and deploy them to AWS Lambda.'/>
+    <meta property='og:type' content='website'/>
+    <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
+    <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='114x114' href='https://micronaut.io/images/apple-touch-icon-114x114.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='72x72' href='https://micronaut.io/images/apple-touch-icon-72x72.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='144x144' href='https://micronaut.io/images/apple-touch-icon-144x144.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='60x60' href='https://micronaut.io/images/apple-touch-icon-60x60.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='120x120' href='https://micronaut.io/images/apple-touch-icon-120x120.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='76x76' href='https://micronaut.io/images/apple-touch-icon-76x76.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='152x152' href='https://micronaut.io/images/apple-touch-icon-152x152.png'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-196x196.png' sizes='196x196'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-96x96.png' sizes='96x96'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-32x32.png' sizes='32x32'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-16x16.png' sizes='16x16'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-128.png' sizes='128x128'/>
+    <meta name='application-name' content='&amp;nbsp;'/>
+    <meta name='msapplication-TileColor' content='#FFFFFF'/>
+    <meta name='msapplication-TileImage' content='https://micronaut.io/images/mstile-144x144.png'/>
+    <meta name='msapplication-square70x70logo' content='https://micronaut.io/images/mstile-70x70.png'/>
+    <meta name='msapplication-square150x150logo' content='https://micronaut.io/images/mstile-150x150.png'/>
+    <meta name='msapplication-wide310x150logo' content='https://micronaut.io/images/mstile-310x150.png'/>
+    <meta name='msapplication-square310x310logo' content='https://micronaut.io/images/mstile-310x310.png'/>
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/screen.css'/>
+    <script src='https://micronaut.io/javascripts/navbar_hide_scroll.js'></script>
+    <script src='https://micronaut.io/javascripts/navigation.js'></script>
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
+    
+    
+    
+</head>
+<body class='post'>
+<div class='main'>
+    <nav id='navbar'>
+        <ul class='container'>
+            <li class='align-right tiny'>
+                <a href='#footercircle'>Menu</a>
+            </li>
+            <li class="align-right">
+                <ul>
+                    <li class='icon'>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=micronaut-projects&repo=micronaut-core&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+                    </li>
+                    <li><a href='https://micronaut.io/support.html'>Support</a></li>
+                    <li><a href='https://micronaut.io/foundation/index.html'>Foundation</a></li>
+                    <li><a href='https://micronaut.io/events.html'>Events</a></li>
+                    <li><a href='https://micronaut.io/blog/index.html'>Blog</a></li>
+                    <li><a href='https://micronaut.io/learn.html'>Learn</a></li>
+                    <li><a href='https://micronaut.io/download.html'>Download</a></li>
+                    <li><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+                    <li><a href='https://micronaut.io/launch/'>Launch</a></li>
+                </ul>
+            </li>
+            <li class='large align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini_copy_tm.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+            <li class='small align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<article><div class='content container'>
+  <h1>
+    <a href='https://micronaut.io/blog/index.html'>
+      <span>Micronaut<sup>&reg;</sup></span>
+      <b>Blog</b>
+    </a>
+  </h1>
+  <div class='light'>
+    <div class='largegoldenratio align-left'>
+      <div class='padded'><h1>Micronaut 2: AWS Lambda Functions</h1>
+<p><span class="author">By Sergio del Amo</span></p>
+<p><span class="date">August 31, 2020</span></p>
+<p>Tags:  <a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a> <a href="https://micronaut.io/blog/tag/micronaut2.html"><span class="hashtag">#micronaut2</span></a></p>
+<p>Micronaut 2 includes many improvements to help you write Micronaut applications and serverless functions and deploy them to AWS Lambda.</p>
+<h2>Micronaut Application Types for AWS Lambda Functions</h2>
+<p>In <a href="https://launch.micronaut.io">Micronaut Launch</a>, you can select the feature <code>aws-lambda</code> for applications of type <code>Application</code> or <code>Serverless Function</code>. Those application types have their CLI-equivalent commands.</p>
+<table>
+<thead>
+<tr><th>Application Type</th><th>CLI Command</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Application</code></td><td><code>create-app</code></td></tr>
+<tr><td><code>Serverless Function</code></td><td><code>create-function-app</code></td></tr>
+</tbody>
+</table>
+<h2>AWS Lambda Considerations</h2>
+<p>To deploy an AWS Lambda function, you have to:</p>
+<ul>
+<li>Select a runtime</li>
+<li>Choose how your Lambda is triggered</li>
+<li>Specify your Hhandler</li>
+<li>Upload your code</li>
+</ul>
+<p>The above decisions influence the type of Micronaut application you choose.</p>
+<h2>Select a Runtime</h2>
+<p>To deploy a Micronaut function to AWS Lambda, choose an <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">AWS Lambda Runtime</a>. For Micronaut functions, select a Java (8 or 11) or custom runtime. To deploy your Micronaut function as a <a href="https://www.graalvm.org/reference-manual/native-image/">GraalVM Native Image</a>, select a custom runtime.</p>
+<p><img src="2020-08-31-aws-lambda-runtime-java11.png" alt="Select Java 11 Corretto Runtime" /></p>
+<p><img src="2020-08-31-aws-lambda-runtime-custom.png" alt="Select Custom Runtime" /></p>
+<h2>Application Type, Runtime, and Dependencies</h2>
+<p>Depending on your application type and runtime, you need different dependencies:</p>
+<table>
+<thead>
+<tr><th>Application Type</th><th>AWS Lambda Runtime</th><th>ArtifactId</th></tr>
+</thead>
+<tbody>
+<tr><td>Application</td><td>Java 8/11</td><td><code>micronaut-function-aws-api-proxy</code></td></tr>
+<tr><td>Application</td><td>GraalVM Native Image in a AWS Lambda Custom Runtime</td><td><code>micronaut-function-aws-api-proxy</code>, <code>micronaut-function-aws-custom-runtime</code></td></tr>
+<tr><td>Serverless Function</td><td>Java 8/ 11</td><td><code>micronaut-function-aws</code></td></tr>
+<tr><td>Serverless Function</td><td>GraalVM Native Image in a AWS Lambda Custom Runtime</td><td><code>micronaut-function-aws</code>, <code>micronaut-function-aws-custom-runtime</code></td></tr>
+</tbody>
+</table>
+<p><code>micronaut-function-aws-api-proxy</code> has a transitive dependency to <code>micronaut-function-aws</code>.</p>
+<p>The previous set of artifacts has a group id of <code>io.micronaut.aws</code>.</p>
+<p>Micronaut CLI or Launch will include the necessary dependencies when you select the <code>aws-lambda</code> feature or both <code>aws-lambda</code> and <code>graalvm</code> features.</p>
+<h2>Choose How Your Lambda Is Triggered</h2>
+<p><a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html">AWS Lambda integrates with other AWS services</a> to invoke functions. The Micronaut application type you select depends on the triggers you want to support. To respond to incoming HTTP requests (e.g. <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html">AWS Lambda Proxy integrations in API Gateway</a>), you can choose either <code>Application</code> or <code>Serverless Function</code>. For other triggers, such as consuming events from a queue or running on a schedule, choose <code>Serverless Function</code>.</p>
+<table>
+<thead>
+<tr><th>Application Type</th><th>Trigger type</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Application</code> or <code>Serverless Function</code></td><td>HTTP requests to a single endpoint</td></tr>
+<tr><td><code>Application</code></td><td>HTTP requests to multiple endpoints</td></tr>
+<tr><td><code>Serverless Function</code></td><td>S3 events, events for a queue, schedule triggers etc.</td></tr>
+</tbody>
+</table>
+<p>On the one hand, if you need to support a single endpoint, a <code>Serverless Function</code> gives you a function with less code (which translates to a faster cold startup).</p>
+<p>Functions written as an application of type <code>Application</code> allow you to code with a more familiar paradigm — classes annotated with <code>@Controller</code>. This is possible because, through the <code>micronaut-function-aws-api-proxy</code> dependency, Micronaut integrates with the <a href="https://github.com/awslabs/aws-serverless-java-container">AWS Serverless Java Container</a> project.</p>
+<h2>Handlers</h2>
+<p><a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">AWS Lambda Function Handler</a></p>
+<blockquote>
+<p>Your Lambda function's handler is the method in your function code that processes events. When your function is invoked, Lambda runs the handler method. When the handler exits or returns a response, it becomes available to handle another event.</p>
+</blockquote>
+<p>The <a href="https://github.com/aws/aws-lambda-java-libs/tree/master/aws-lambda-java-core">aws-lambda-java-core</a> library defines two interfaces for handler methods. When coding your functions with Micronaut, you don't implement those interfaces directly. Instead, you extend or use its Micronaut equivalents:</p>
+<table>
+<thead>
+<tr><th>Application Type</th><th>AWS Handler Interface</th><th>Micronaut Handler Class</th></tr>
+</thead>
+<tbody>
+<tr><td>Serverless Function</td><td><a href="https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-core/src/main/java/com/amazonaws/services/lambda/runtime/RequestHandler.java">RequestHandler</a></td><td><a href="https://micronaut-projects.github.io/micronaut-aws/latest/api/io/micronaut/function/aws/MicronautRequestHandler.html">MicronautRequestHandler</a></td></tr>
+<tr><td>Serverless Function</td><td><a href="https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-core/src/main/java/com/amazonaws/services/lambda/runtime/RequestStreamHandler.java">RequestStreamHandler</a></td><td><a href="https://micronaut-projects.github.io/micronaut-aws/latest/api/io/micronaut/function/aws/MicronautRequestStreamHandler.html">MicronautRequestStreamHandler</a></td></tr>
+<tr><td>Application</td><td><code>RequestStreamHandler &lt; AwsProxyRequest , AwsProxyResponse &gt;</code></td><td><a href="https://micronaut-projects.github.io/micronaut-aws/latest/api/io/micronaut/function/aws/proxy/MicronautLambdaHandler.html">MicronautLambdaHandler</a></td></tr>
+</tbody>
+</table>
+<p>For functions of type <code>Application</code>, use the handler <a href="https://micronaut-projects.github.io/micronaut-aws/latest/api/io/micronaut/function/aws/proxy/MicronautLambdaHandler.html">io.micronaut.function.aws.proxy.MicronautLambdaHandler</a>.</p>
+<p>To resolve that class, add the <code>micronaut-function-aws-api-proxy</code> dependency to your build.</p>
+<p>For Serverless Functions, the decision to use one <code>MicronautRequestHandler</code> or <code>MicronautRequestStreamHandler</code> depends on how you want to handle the input and output types.</p>
+<p>To resolve those classes, add the <code>micronaut-function-aws</code> dependency to your build.</p>
+<p>With <a href="https://micronaut-projects.github.io/micronaut-aws/latest/api/io/micronaut/function/aws/MicronautRequestHandler.html">MicronautRequestHandler</a>, it is expected that you supply generic types with the input and the output types. If you wish to work with raw streams, then subclass <a href="https://micronaut-projects.github.io/micronaut-aws/latest/api/io/micronaut/function/aws/MicronautRequestStreamHandler.html">MicronautRequestStreamHandler</a> instead.</p>
+<table>
+<thead>
+<tr><th>Input / Output Types</th><th>Handler</th></tr>
+</thead>
+<tbody>
+<tr><td>Supply generic types with the input and output</td><td>Class which extends <a href="https://micronaut-projects.github.io/micronaut-aws/latest/api/io/micronaut/function/aws/MicronautRequestHandler.html">MicronautRequestHandler</a></td></tr>
+<tr><td>Raw streams</td><td><a href="https://micronaut-projects.github.io/micronaut-aws/latest/api/io/micronaut/function/aws/MicronautRequestStreamHandler.html">MicronautRequestStreamHandler</a></td></tr>
+</tbody>
+</table>
+<h2>Cold Startups</h2>
+<p>Instances of Lambdas are added and removed dynamically.
+When a new instance handles its first request, the response time increases, which is called a cold start. After that request is processed, the instance stays alive (≈10 m) to be reused for subsequent requests.</p>
+<p>Lambdas execution has different phases (initialization, invocation ...).</p>
+<p>During the initialization phase:</p>
+<ul>
+<li>AWS Lambda starts a JVM.</li>
+<li>Java runtime loads and initializes handler class.</li>
+<li>Lambda calls the handler method.</li>
+</ul>
+<p>The intialization phase has access to more CPU; because of that, Micronaut starts the application context and eagerly inits singletons during the intialization of the handler class.</p>
+<h2>GraalVM and AWS Custom Runtimes</h2>
+<p><a href="https://www.graalvm.org/">GraalVM</a> is a universal virtual machine that allows you to compile Java programs to <a href="https://www.graalvm.org/reference-manual/native-image/">native executables</a>.</p>
+<p>The introduction of <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-custom.html">AWS Lambda custom runtimes</a> enables cold startup improvements for Java applications running in AWS Lambda.</p>
+<blockquote>
+<p>A runtime is a program that runs a Lambda function's handler method when the function is invoked. You can include a runtime in your function's deployment package in the form of an executable file named bootstrap.</p>
+</blockquote>
+<p>Micronaut's dependency <code>micronaut-function-aws-custom-runtime</code> eases the creation of AWS Lambda Custom runtime to execute a Micronaut function.</p>
+<p>The main API you will interact with is <a href="https://micronaut-projects.github.io/micronaut-aws/latest/api/io/micronaut/function/aws/runtime/AbstractMicronautLambdaRuntime.html">AbstractMicronautLambdaRuntime</a>. An abstract class that you can extend to create your custom runtime is <code>mainClass</code>. That class includes the necessary code to perform the <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-custom.html#runtimes-custom-build">Processing Tasks</a> described in the Custom Runtime documentation.</p>
+<p>When you generate a project with Micronaut CLI or <a href="https://launch.micronaut.io">Micronaut Launch</a> with <code>aws-lambda</code> and <code>graalvm</code> features, the output includes the necessary files to generate a ZIP file to distribute your functions as a GraalVM Native Image executed from a AWS Lambda custom runtime.</p>
+<h2>Next Steps</h2>
+<p>We have written several step-by-step tutorials to get you started:</p>
+<table>
+<thead>
+<tr><th>Application Type</th><th>Runtime</th><th>Tutorial</th></tr>
+</thead>
+<tbody>
+<tr><td>Application</td><td>Java 11</td><td>Deploy a Micronaut application to AWS Lambda Java 11 Runtime <a href="https://guides.micronaut.io/mn-application-aws-lambda-java11/guide/index.html">JAVA</a> <a href="https://guides.micronaut.io/mn-application-aws-lambda-java11-kotlin/guide/index.html">KOTLIN</a> <a href="https://guides.micronaut.io/mn-application-aws-lambda-java11-groovy/guide/index.html">GROOVY</a></td></tr>
+<tr><td>Application</td><td>GraalVM Native Image Custom Runtime</td><td>Deploy a Micronaut application as a GraalVM Native Image to AWS Lambda <a href="https://guides.micronaut.io/mn-application-aws-lambda-graalvm/guide/index.html">JAVA</a> <a href="https://guides.micronaut.io/mn-application-aws-lambda-graalvm-kotlin/guide/index.html">KOTLIN</a></td></tr>
+<tr><td>Serverless Function</td><td>Java 11</td><td>Deploy a Serverless Micronaut function to AWS Lambda Java 11 Runtime <a href="https://guides.micronaut.io/mn-serverless-function-aws-lambda/guide/index.html">JAVA</a> <a href="https://guides.micronaut.io/mn-serverless-function-aws-lambda-kotlin/guide/index.html">KOTLIN</a> <a href="https://guides.micronaut.io/mn-serverless-function-aws-lambda-groovy/guide/index.html">GROOVY</a></td></tr>
+<tr><td>Serverless Function</td><td>GraalVM Native Image Custom Runtime</td><td>Deploy a Serverless Micronaut function as a GraalVM Native Image to AWS Lambda <a href="https://guides.micronaut.io/mn-serverless-function-aws-lambda-graalvm/guide/index.html">JAVA</a></td></tr>
+</tbody>
+</table>
+<p>Check the <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/index.html#apiProxy">Micronaut AWS documentation</a> to learn more.</p></div>
+    </div>
+    <div class='smallgoldenratio align-right padded-t related-posts'>
+      <h2>You might also like ...</h2>
+      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-17.jpg)'>
+  <a href='https://micronaut.io/blog/2020-07-17-serverless-micronaut2.html'>
+    <h3>July 17, 2020</h3>
+    <h2>Easier to go Serverless (Azure, AWS, GCP) - Micronaut 2.0</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-04-09.jpg)'>
+  <a href='https://micronaut.io/blog/2020-04-09-micronaut-now-certified-run-amazon-corretto.html'>
+    <h3>April 9, 2020</h3>
+    <h2>Micronaut Is Now Certified to Run on Amazon Corretto</h2>
+  </a>
+</article></div>
+    </div>
+  </div>
+</div>&nbsp;</article>
+<div id="footercircle" class="full whitecircleborderseparator"></div>
+<footer>
+    <div class='container'>
+        <div class='mobile'>
+            <nav id='footernav'>
+                <ul class='container'>
+                    <li><a href='https://micronaut.io/launch/'>Launch</a></li>
+                    <li><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+                    <li><a href='https://micronaut.io/download.html'>Download</a></li>
+                    <li><a href='https://micronaut.io/learn.html'>Learn</a></li>
+                    <li><a href='https://micronaut.io/blog/index.html'>Blog</a></li>
+                    <li><a href='https://micronaut.io/support.html'>Support</a></li>
+                    <li><a href='https://micronaut.io/foundation/index.html'>Foundation</a></li>
+                    <li><a href='https://micronaut.io/events.html'>Events</a></li>
+                    <li><a href='https://micronaut.io/blog/index.html'>Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p id='blacklogo'>
+            <img src='https://micronaut.io/images/micronautlogo.svg' alt='Micronaut Logo'/>
+        </p>
+        <div class='twocolumns'>
+            <div class='column'>
+                <nav id='socialnetworknav'>
+                    <ul class='container'>
+                        <li>
+                            <a href='https://gitter.im/micronautfw/'>
+                                <img class='' src='https://micronaut.io/images/gitter.svg' alt='Gitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.youtube.com/playlist?list=PLI74De5M9T72YshO4Sc90wtGr286nM8Yu'>
+                                <img class='' src='https://micronaut.io/images/youtube.svg' alt='Youtube Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://github.com/micronaut-projects/'>
+                                <img class='' src='https://micronaut.io/images/github.svg' alt='Github Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://twitter.com/micronautfw'>
+                                <img class='' src='https://micronaut.io/images/twitter.svg' alt='Twitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='mailto:info@micronaut.io?subject=Micronaut&amp;amp;body=I%20am%20interested%20in%20Micronaut.'>
+                                <img class='' src='https://micronaut.io/images/mail.svg' alt='Mail Icon'/>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p>
+                    <small>© 2020, Object Computing, Inc. (OCI). All rights reserved</small>
+                </p>
+            </div>
+            <div class='column' style='margin-top: 10px;'>
+                <p>
+                    <a title='Visit OCI Website' href='https://objectcomputing.com'>
+                        <img src='https://micronaut.io/images/oci_logo.svg' alt='Object Computing' style='max-width: 300px'/>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-115754405-1');
+</script>
+<script type="text/javascript">
+    adroll_adv_id = "J4NA4XCFDNFHDGNFUAVMQD";
+    adroll_pix_id = "J4XYMNCOQNBCXJJ4GP744N";
+
+    (function() {
+        var _onload = function() {
+            if (document.readyState && !/loaded|complete/.test(document.readyState)) {
+                setTimeout(_onload, 10);
+                return
+            }
+            if (!window.__adroll_loaded) {
+                __adroll_loaded = true;
+                setTimeout(_onload, 50);
+                return
+            }
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {
+            window.addEventListener('load', _onload, false);
+        }
+        else {
+            window.attachEvent('onload', _onload)
+        }
+    }());
+</script>
+</body>
+</html>
