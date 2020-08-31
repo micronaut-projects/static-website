@@ -7,7 +7,7 @@ import groovy.xml.MarkupBuilder
 import io.micronaut.ContentAndMetadata
 import io.micronaut.HtmlPost
 import io.micronaut.MarkdownPost
-import io.micronaut.MarkdownUtil
+import io.micronaut.markdown.MarkdownUtil
 import io.micronaut.PostMetadata
 import io.micronaut.PostMetadataAdapter
 import io.micronaut.rss.DefaultRssFeedRenderer
@@ -282,7 +282,8 @@ class BlogTask extends DefaultTask {
             if (metadata.containsKey('code')) {
                 markdown = markdown + "\n\n[Code](${metadata['code']})\n\n"
             }
-            String contentHtml = wrapTags(metadata, MarkdownUtil.htmlFromMarkdown(markdown))
+            String html = MarkdownUtil.htmlFromMarkdown(markdown)
+            String contentHtml = wrapTags(metadata, html)
             String iframe = RenderSiteTask.parseVideoIframe(metadata)
             if (iframe) {
                 contentHtml = contentHtml + iframe
