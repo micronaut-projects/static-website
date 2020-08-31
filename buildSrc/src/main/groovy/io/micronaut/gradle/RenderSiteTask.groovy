@@ -207,11 +207,11 @@ class RenderSiteTask extends DefaultTask {
         int lineCount = 0
         file.withReader { reader ->
             while ((line = reader.readLine()) != null) {
-                if (lineCount == 0 && line.contains(SEPARATOR)) {
+                if (lineCount == 0 && line.startsWith(SEPARATOR)) {
                     continue
                 }
                 lineCount++
-                if (line.contains(SEPARATOR)) {
+                if (line.startsWith(SEPARATOR)) {
                     metadataProcessed = true
                     continue
                 }

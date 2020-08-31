@@ -3,7 +3,7 @@ package io.micronaut.questions
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic
 import groovy.xml.MarkupBuilder
-import io.micronaut.MarkdownUtil
+import io.micronaut.markdown.MarkdownUtil
 import io.micronaut.PageElement
 
 @CompileStatic
