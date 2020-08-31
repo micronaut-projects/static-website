@@ -56,18 +56,13 @@ Since Micronaut Data does not have to do any query translation at runtime, the p
 
 The following table summarizes the performance difference you can expect for a finder expression, such as `findByTitle`, when compared to other implementations. All benchmarks were carried out using test hardware of an 8-core Xeon iMac Pro under the same conditions, are Open Source, and can be [found in the repository](https://github.com/micronaut-projects/micronaut-data):
 
-<table>
-<thead>
-<tr><th>Implementation</th><th>Operations per Second</th></tr>
-</thead>
-<tbody>
-<tr><td>Micronaut Data JDBC</td><td>225K ops/sec</td></tr>
-<tr><td>Micronaut Data JPA</td><td>130K ops/sec</td></tr>
-<tr><td>Spring Data JPA</td><td>90K ops/sec</td></tr>
-<tr><td>GORM JPA</td><td>50K ops/sec</td></tr>
-<tr><td>Spring Data JDBC</td><td>Finders Not Supported</td></tr>
-</tbody>
-</table>
+|Implementation|Operations per Second|
+|--- |--- |
+|Micronaut Data JDBC|225K ops/sec|
+|Micronaut Data JPA|130K ops/sec|
+|Spring Data JPA|90K ops/sec|
+|GORM JPA|50K ops/sec|
+|Spring Data JDBC|Finders Not Supported|
 
 Yes, you read that right. With Micronaut Data JDBC, you can expect nearly 4X the performance of GORM and 2.5X the performance of Spring Data.
 
@@ -79,19 +74,13 @@ If you go with Micronaut Data JPA, even then, you can expect more than 2X the pe
 
 Since this post was written both Micronaut Data and Spring Data have been further optimized and the latest result data on the same test hardware is as follows (Note the Spring Data JDBC numbers use a hard coded query):
 
-
-<table>
-<thead>
-<tr><th>Implementation</th><th>Operations per Second</th></tr>
-</thead>
-<tbody>
-<tr><td>Micronaut Data JDBC</td><td>430K ops/sec</td></tr>
-<tr><td>Micronaut Data JPA</td><td>145K ops/sec</td></tr>
-<tr><td>Spring Data JPA</td><td>140K ops/sec</td></tr>
-<tr><td>GORM JPA</td><td>50K ops/sec</td></tr>
-<tr><td>Spring Data JDBC</td><td>275K ops/sec</td></tr>
-</tbody>
-</table>
+|Implementation|Operations per Second|
+|--- |--- |
+|Micronaut Data JDBC|430K ops/sec|
+|Micronaut Data JPA|145K ops/sec|
+|Spring Data JPA|140K ops/sec|
+|GORM JPA|50K ops/sec|
+|Spring Data JDBC|275K ops/sec|
 
 ###### END UPDATE
 
