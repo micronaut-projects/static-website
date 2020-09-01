@@ -211,7 +211,7 @@ class RenderSiteTask extends DefaultTask {
                     continue
                 }
                 lineCount++
-                if (line.startsWith(SEPARATOR)) {
+                if (!metadataProcessed && line.startsWith(SEPARATOR)) {
                     metadataProcessed = true
                     continue
                 }
