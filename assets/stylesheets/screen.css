@@ -634,6 +634,7 @@ nav li {
     width: 100%;
     transition: top 0.5s;
     height: 75px;
+    overflow: hidden;
 }
 
 .main nav li {
