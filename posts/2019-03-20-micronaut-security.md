@@ -9,11 +9,11 @@ image: 2019-03-20.jpg
 
 # [%title]
 
-[%date] 
+[%date]
 
 Tags: #webinar
 
-## OVERVIEW 
+## OVERVIEW
 
 In this webinar, Micronaut team member, Sergio del Amo, demonstrates Micronaut's built-in security capabilities and explains how specific features of the framework, such as token propagation, are specifically designed to boost productivity and simplify coding when working with microservice security.
 
@@ -36,5 +36,5 @@ The following topics are covered in this webinar:
 
 This webinar is a great learning opportunity for JVM developers interested in learning to leverage Micronaut's wide range of capabilities and build secure microservices and serverless apps with the framework.
 
-             
- 
+
+

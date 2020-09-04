@@ -12,9 +12,9 @@ image: 2020-07-13.jpg
 [%author]
 
 [%date]
- 
+
 Tags: #micronaut2 #launch
 
 [%description]
 
-This is an excerpt of Graeme Rocher's presentation at [Madrid Groovy User Group](https://www.madridgug.com/2020/07/micronaut-2.html). 
+This is an excerpt of Graeme Rocher's presentation at [Madrid Groovy User Group](https://www.madridgug.com/2020/07/micronaut-2.html).
