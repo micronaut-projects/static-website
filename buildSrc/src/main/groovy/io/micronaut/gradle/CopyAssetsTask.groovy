@@ -15,7 +15,7 @@ class CopyAssetsTask extends DefaultTask {
     static final String[] FONT_EXTENSIONS = ["*.eot", "*.ttf", "*.woff", "*.woff2"] as String[]
     static final String[] JAVASCRIPT_EXTENSIONS = ["*.js"] as String[]
     static final String[] CSS_EXTENSIONS = ["*.css"] as String[]
-    static final String[] IMAGE_EXTENSIONS = ["*.png", "*.svg", "*.jpg", "*.jpeg", "*.gif"]
+    static final String[] IMAGE_EXTENSIONS = ["*.ico", "*.png", "*.svg", "*.jpg", "*.jpeg", "*.gif"]
 
     @InputDirectory
     final Property<File> assets = project.objects.property(File)
