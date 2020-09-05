@@ -10,7 +10,7 @@ image: 2020-04-28.png
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #springboot
 
@@ -48,7 +48,7 @@ We are, of course, a bit biased towards our framework, so we would like to invit
 ## Performance Measurements
 
 ----
-###### UPDATE 05/29/2020 
+###### UPDATE 05/29/2020
 
 A community member [pointed out](https://github.com/micronaut-projects/micronaut-comparisons/issues/1) that the configurations for the Spring Boot JHipster Sample application and the Micronaut JHipster Sample application differed in two ways, which put Spring Boot at a disadvantage. First, the Spring Boot application had a logging level of DEBUG, causing a lot more messages to be logged. Second, the Spring Boot application was writing audit records to the database in addition to the records being created as part of the load test. We have [changed the configurations](https://github.com/micronaut-projects/micronaut-comparisons/pull/2) and, as expected, observed an improvement in the performance of the Spring Boot application. This blog post has been updated to reflect these observations. Thank you for your feedback Christian!
 

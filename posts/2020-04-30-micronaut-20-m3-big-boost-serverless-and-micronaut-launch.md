@@ -10,7 +10,7 @@ image: 2020-04-30-2.png
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #gcp #azure #serverless #release
 

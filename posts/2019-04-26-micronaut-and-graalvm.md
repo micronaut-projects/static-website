@@ -10,7 +10,7 @@ image: 2019-04-26.jpg
 
 # [%title]
 
-[%date] 
+[%date]
 
 Tags: #webinar
 

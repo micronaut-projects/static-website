@@ -1,7 +1,7 @@
 ---
 title: Improvements to Command Line Interface - Micronaut 2.0
 date: Jul 20, 2020
-description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut 2.0 command line interface improvements. 
+description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut 2.0 command line interface improvements.
 author: Sergio del Amo
 image: 2020-07-20.jpg
 video: https://www.youtube.com/watch?v=mY4LfFd3jXg
@@ -11,7 +11,7 @@ video: https://www.youtube.com/watch?v=mY4LfFd3jXg
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #micronaut2 #cli
 

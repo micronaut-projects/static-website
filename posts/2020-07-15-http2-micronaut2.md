@@ -1,7 +1,7 @@
 ---
 title: HTTP/2 - Micronaut 2.0
 date: Jul 15, 2020
-description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut 2.0 HTTP/2 support. 
+description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut 2.0 HTTP/2 support.
 author: Sergio del Amo
 image: 2020-07-15.jpg
 video: https://www.youtube.com/watch?v=jw3iq94GMDE
@@ -11,10 +11,10 @@ video: https://www.youtube.com/watch?v=jw3iq94GMDE
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #micronaut2 #http2
 
 [%description]
 
-This is an excerpt of Graeme Rocher's presentation at [Madrid Groovy User Group](https://www.madridgug.com/2020/07/micronaut-2.html). 
+This is an excerpt of Graeme Rocher's presentation at [Madrid Groovy User Group](https://www.madridgug.com/2020/07/micronaut-2.html).

@@ -2,11 +2,11 @@
 
 [![Build Status](https://github.com/micronaut-projects/static-website/workflows/Publish/badge.svg)](https://github.com/micronaut-projects/static-website/actions)
 
-This project builds the Micronaut website. A static website build with [Gradle](https://gradle.org). It uses a Gradle Plugin whose sources can be found at `buildSrc`. 
+This project builds the Micronaut website. A static website build with [Gradle](https://gradle.org). It uses a Gradle Plugin whose sources can be found at `buildSrc`.
 
-Tasks are groupped with `micronaut`. 
+Tasks are groupped with `micronaut`.
 
-You can get more info by running: 
+You can get more info by running:
 
 ```
   % ./gradlew tasks --group=micronaut
@@ -18,16 +18,16 @@ You can get more info by running:
  cleanDownload - Deletes download temp page - build/temp/download.html
  cleanEvents - Deletes events temp page - build/temp/events.html
  cleanFaq - Deletes faq temp page - build/temp/faq.html
- cleanGuides - Deletes temp Guides page: build/temp/index.html 
+ cleanGuides - Deletes temp Guides page: build/temp/index.html
  copyAssets - Copies css, js, fonts and images from the assets folder to the dist folder
  genDocs - Generates documentation HTML page - build/temp/documentation.html
  genDownload - Generates download HTML page - build/temp/download.html
  genEvents - Generates events HTML page - build/temp/events.html
- genFaq - Generates FAQ HTML - build/temp/faq.html 
+ genFaq - Generates FAQ HTML - build/temp/faq.html
  genGuides - Generates guides home, tags and categories HTML pages - build/temp/index.html
  genSitemap - Generates build/dist/sitemap.xml with every page in the site
  renderBlog - Renders Markdown posts (posts/*.md) into HTML pages (dist/blog/*.html). It generates tag pages. Generates RSS feed. Posts with future dates are not generated.
- renderSite - Build Micronaut website - generates pages with HTML entries in pages and build/temp, renders blog and RSS feed, copies assets and generates a sitemap 
+ renderSite - Build Micronaut website - generates pages with HTML entries in pages and build/temp, renders blog and RSS feed, copies assets and generates a sitemap
 ```
 
 ## Generating the MAIN site
@@ -52,9 +52,9 @@ The output can be found in the `build/dist` directory.
 
 ## Running the website locally
 
-The easiest way to work locally is to generate the site and setup your Webserver to serve build/dist. 
+The easiest way to work locally is to generate the site and setup your Webserver to serve build/dist.
 
-For example with [MAMP](https://www.mamp.info/en/mamp/): 
+For example with [MAMP](https://www.mamp.info/en/mamp/):
 
 ![](docs/mamp.png)
 
@@ -72,18 +72,18 @@ Write blog posts in markdown at `posts` folder.
 
 ### Blog post Metadata
 
-A post supports metadata at the beginning of the document. You can use it store information (title, description, publication date) about your blog posts. 
+A post supports metadata at the beginning of the document. You can use it store information (title, description, publication date) about your blog posts.
 
 Metadata must be separated from the rest of the document by three dashes.
 
 You can use the metadata in the text by putting it in brackets adding a % sign.
 
-A typical blog post will look like: 
+A typical blog post will look like:
 
 ```markdown
 ---
 title: Micronaut Is Now Certified to Run on Amazon Corretto
-date: April 9, 2020  
+date: April 9, 2020
 description: Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.
 author: Álvaro Sánchez-Mariscal
 ---
@@ -92,7 +92,7 @@ author: Álvaro Sánchez-Mariscal
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #aws #correto
 
@@ -131,13 +131,13 @@ Date can be expressed in `MMM d, yyyy`
 ...
 ..
 .
-date: April 9, 2020  
+date: April 9, 2020
 ---
 
 ```
 
 or `MMM d, yyyy HH:mm`
- 
+
 ```markdown
 ---
 ...
@@ -152,7 +152,7 @@ date: April 9, 2020 09:00
 
 #### Blog post background
 
-For Blog post background images usage image metadata. 
+For Blog post background images usage image metadata.
 
 ```markdown
 ---
@@ -179,7 +179,7 @@ Tags: #aws #correto
 
 **Webinars on-demand recordings should be tagged with `webinar`**
 
-Release announcements should be tagged with `release`. 
+Release announcements should be tagged with `release`.
 
 Check the [list of tags](https://micronaut.io/blog/index.html) and try to reuse them. Technology (e.g. GraalVM, Maven, Gradle), Programming concepts (AOP, Serverless, Servlet), Cloud Providers (AWS, GCP, Azure) or frameworks (SpringBoot, Quarkus) are good tags.
 
@@ -202,15 +202,15 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 #### Video
 
-Use the `video` metadata to embed a Video. 
+Use the `video` metadata to embed a Video.
 
 Currently, the plugin supports youtube videos. Use a link which starts with `https://www.youtube.com/watch?v=` such as `https://www.youtube.com/watch?v=RtjSqRZ_md4`
 
-Example: 
+Example:
 
 ```markdown
 ---
-title: GOTO 2019 - Introduction to Micronaut    
+title: GOTO 2019 - Introduction to Micronaut
 date:  Jul 21, 2020 09:04
 description: Graeme Rocher, Micronaut framework co-founder, introduction to Micronaut at GOTO 2019 Conference.
 author: Sergio del Amo
@@ -221,9 +221,9 @@ video: https://www.youtube.com/watch?v=RtjSqRZ_md4
 
 [%author]
 
-[%date] 
+[%date]
 
-Tags: 
+Tags:
 
 [%description]
 ```
@@ -231,7 +231,7 @@ Tags:
 
 ## Assets (Fonts, Stylesheets, Images, Javascripts)
 
-Assets used in the website can be found under `assets`. 
+Assets used in the website can be found under `assets`.
 
 ## What to change when a new release is published.
 

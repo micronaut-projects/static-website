@@ -1,7 +1,7 @@
 ---
 title: New Micronaut Project IntelliJ IDEA Ultimate 2020.2
 date: Jul 30, 2020 19:54
-description: Since 2020.2, IntelliJ IDEA Ultimate adds the possibility to create new Micronaut projects directly from the wizard. 
+description: Since 2020.2, IntelliJ IDEA Ultimate adds the possibility to create new Micronaut projects directly from the wizard.
 author: Sergio del Amo
 image: 2020-07-30.jpg
 ---
@@ -10,7 +10,7 @@ image: 2020-07-30.jpg
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #intellijidea
 

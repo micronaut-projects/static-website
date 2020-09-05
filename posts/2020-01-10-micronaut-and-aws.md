@@ -9,7 +9,7 @@ image: 2020-01-10.jpg
 
 # [%title]
 
-[%date] 
+[%date]
 
 Tags: #webinar
 

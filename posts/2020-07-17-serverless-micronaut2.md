@@ -1,7 +1,7 @@
 ---
 title: Easier to go Serverless (Azure, AWS, GCP) - Micronaut 2.0
 date: Jul 17, 2020
-description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut 2.0 serverless support (AWS, Azure, GCP) improvements. 
+description: Graeme Rocher, Micronaut framework co-founder, talks about Micronaut 2.0 serverless support (AWS, Azure, GCP) improvements.
 author: Sergio del Amo
 image: 2020-07-17.jpg
 video: https://www.youtube.com/watch?v=djOvkq8Fzak
@@ -11,7 +11,7 @@ video: https://www.youtube.com/watch?v=djOvkq8Fzak
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #micronaut2 #aws #azure #gcp
 
