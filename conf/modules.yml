@@ -1,4 +1,11 @@
 modules:
+  ignite:
+    category: 'Misc'
+    image: 'ignite.svg'
+    label: 'Micronaut Ignite'
+    version: 'snapshot'
+    githubslug: 'micronaut-ignite'
+    legend: 'Integration with Apache Ignite.'
   discoveryclient:
     category: 'Cloud'
     image: 'discoveryclient.svg'
