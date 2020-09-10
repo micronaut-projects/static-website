@@ -1,4 +1,12 @@
 modules:
+  gradle:
+    category: 'Build'
+    image: 'gradle.svg'
+    label: 'Micronaut Gradle Plugin'
+    version: 'snapshot'
+    githubslug: 'micronaut-gradle-plugin'
+    readme: true
+    legend: 'Gradle Plugin for Micronaut that configures the Micronaut BOM and sets up annotation processing'
   ignite:
     category: 'Misc'
     image: 'ignite.svg'
@@ -252,7 +260,7 @@ modules:
     githubslug: 'micronaut-cache'
     legend: 'Additional cache implementations (Redis, Hazelcast...).'
   mavenplugin:
-    category: 'Misc'
+    category: 'Build'
     image: 'maven.svg'
     label: 'Micronaut Maven Plugin'
     version: 'latest'

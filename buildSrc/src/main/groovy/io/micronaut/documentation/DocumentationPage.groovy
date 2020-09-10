@@ -47,7 +47,9 @@ class DocumentationPage {
             div(class: "twocolumns") {
                 List<GuideGroupItem> links = extraLinksItems(modules, url)
                 div(class: "odd column") {
+                    mkp.yieldUnescaped documentationGuideGroup('Build', links.findAll { it.category == 'Build' }, url,  'build.svg').renderAsHtml()
                     mkp.yieldUnescaped documentationGuideGroup('Misc', links.findAll { it.category == 'Misc' }, url,  'micronautaprrentice.svg').renderAsHtml()
+
                     mkp.yieldUnescaped documentationGuideGroup('Messaging', links.findAll { it.category == 'Messaging' }, url,  "messaging.svg").renderAsHtml()
                     mkp.yieldUnescaped documentationGuideGroup('Cloud', links.findAll { it.category == 'Cloud' }, url,  "cloud.svg").renderAsHtml()
                     mkp.yieldUnescaped documentationGuideGroup('API', links.findAll { it.category == 'API' }, url,  'api.svg').renderAsHtml()
@@ -120,7 +122,12 @@ class DocumentationPage {
         Yaml yaml = new Yaml()
         Map model = yaml.load(modules.newDataInputStream())
         model['modules'].collect { k, v ->
-            final String url = "https://micronaut-projects.github.io/${v.githubslug}/${v.version}${v.githubslug == 'micronaut-maven-plugin' ? '' : '/guide'}/index.html"
+            String url
+            if (v.readme) {
+                url = "https://github.com/micronaut-projects/${v.githubslug}/blob/master/README.md"
+            } else {
+                url = "https://micronaut-projects.github.io/${v.githubslug}/${v.version}${v.githubslug == 'micronaut-maven-plugin' ? '' : '/guide'}/index.html"
+            }
             final String title = "${v.label}${v.version.equalsIgnoreCase('snapshot') ? ' (SNAPSHOT)' : ''}"
             new GuideGroupItem(href: url, title: title, legend: v.legend ?: '', image: getImageAssetPreffix(siteUrl) + v.image, category: v.category)
         }.sort { a, b ->
