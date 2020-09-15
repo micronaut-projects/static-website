@@ -19,4 +19,4 @@ Google Cloud provides a powerful and highly scalable platform for delivering mic
 
 The Micronaut framework was designed from the ground up to simplify the architectural development and deployment of microservices, and it comes with built-in support for GCP services and hosting. 
 
-In this session presented at Google Cloud Next '19, Micronaut co-founder, [Jeff Scott Brown](https://objectcomputing.com/products/2gm-team#brown) demonstrate in real time how to build a suite of lightweight microservices, wire them together in support of the intended architecture, and deploy the solution to GCP with minimal complexity and effort.
+In this session presented at Google Cloud Next '19, Micronaut co-founder, [Jeff Scott Brown](https://objectcomputing.com/products/2gm-team#brown) demonstrates in real time how to build a suite of lightweight microservices, wire them together in support of the intended architecture, and deploy the solution to GCP with minimal complexity and effort.
