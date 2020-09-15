@@ -4,7 +4,7 @@ date:  Apr 16, 2019 15:27
 description: Micronaut co-founder, Jeff Scott Brown, demonstrates how to use Micronaut to build a simple suite of microservices and deploy them to GCP with minimal complexity and effort.
 author: Jeff Scott Brown
 image: 2019-04-16.jpg
-video: https://www.youtube/watch?v=RdemnsW6sOQ
+video: https://www.youtube.com/watch?v=RdemnsW6sOQ
 ---
 
 # [%title]
