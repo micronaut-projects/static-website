@@ -218,7 +218,11 @@ class GuidesPage {
                             mkp.yieldUnescaped TagCloud.tagCloud(url + "/tags/", tags)
                             mkp.yieldUnescaped guideGroupByCategory(url, categories().cache, guides, true, guideGroupCss)
                             mkp.yieldUnescaped guideGroupByCategory(url, categories().messaging, guides, true, guideGroupCss)
-                            mkp.yieldUnescaped guideGroupByCategory(url, categories().security, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(url, categories().aws, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(url, categories().oracle, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(url, categories().azure, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(url, categories().googlecloud, guides, true, guideGroupCss)
+
                         }
                     }
                     div(class: 'column') {
@@ -236,9 +240,7 @@ class GuidesPage {
                         }
                         if ( !(tag || category) ) {
                             mkp.yieldUnescaped guideGroupByCategory(url, categories().apprentice, guides, true, guideGroupCss)
-                            mkp.yieldUnescaped guideGroupByCategory(url, categories().aws, guides, true, guideGroupCss)
-                            mkp.yieldUnescaped guideGroupByCategory(url, categories().azure, guides, true, guideGroupCss)
-                            mkp.yieldUnescaped guideGroupByCategory(url, categories().googlecloud, guides, true, guideGroupCss)
+                            mkp.yieldUnescaped guideGroupByCategory(url, categories().security, guides, true, guideGroupCss)
                             mkp.yieldUnescaped guideGroupByCategory(url, categories().tracing, guides, true, guideGroupCss)
                             mkp.yieldUnescaped guideGroupByCategory(url, categories().servicediscovery, guides, true, guideGroupCss)
                             mkp.yieldUnescaped guideGroupByCategory(url, categories().cloudservices, guides, true, guideGroupCss)
@@ -257,6 +259,7 @@ class GuidesPage {
                 tracing: new Category(name: "Distributed Tracing", image: 'tracing.svg'),
                 messaging: new Category(name: "Messaging", image: 'messaging.svg'),
                 aws: new Category(name: "Micronaut + AWS", image: 'aws.svg'),
+                oracle: new Category(name: "Micronaut + Oracle", image: 'oracle.svg'),
                 azure: new Category(name: "Micronaut + Microsoft Azure", image: 'azure.svg'),
                 googlecloud: new Category(name: "Micronaut + Google Cloud", image: 'googlecloud.svg'),
                 android: new Category(name: "Micronaut Android", image: 'micronaut_android.svg'),
