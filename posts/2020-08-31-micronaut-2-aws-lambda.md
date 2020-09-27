@@ -30,7 +30,7 @@ In [Micronaut Launch](https://launch.micronaut.io), you can select the feature `
 To deploy an AWS Lambda function, you have to: 
 - Select a runtime
 - Choose how your Lambda is triggered
-- Specify your Hhandler
+- Specify your Handler
 - Upload your code 
 
 The above decisions influence the type of Micronaut application you choose. 
@@ -56,7 +56,7 @@ Depending on your application type and runtime, you need different dependencies:
 
 `micronaut-function-aws-api-proxy` has a transitive dependency to `micronaut-function-aws`.
 
-The previous set of artifacts has a group id of `io.micronaut.aws`. 
+The previous set of artifacts have a group id of `io.micronaut.aws`. 
 
 Micronaut CLI or Launch will include the necessary dependencies when you select the `aws-lambda` feature or both `aws-lambda` and `graalvm` features.
 
