@@ -233,6 +233,21 @@ Tags:
 
 Assets used in the website can be found under `assets`.
 
+## Page Metadata
+
+ You may also define the meta in Pages. To include multiple js/css files use a single space to separate the file names.
+
+```markdown
+---
+...
+..
+.
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js /javascripts/other.js
+---
+<div>...</div>
+```
+
 ## What to change when a new release is published.
 
 Please, modify `conf/releases.yml`
