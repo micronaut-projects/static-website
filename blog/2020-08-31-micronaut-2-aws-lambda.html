@@ -115,7 +115,7 @@
 <ul>
 <li>Select a runtime</li>
 <li>Choose how your Lambda is triggered</li>
-<li>Specify your Hhandler</li>
+<li>Specify your Handler</li>
 <li>Upload your code</li>
 </ul>
 <p>The above decisions influence the type of Micronaut application you choose.</p>
@@ -137,7 +137,7 @@
 </tbody>
 </table>
 <p><code>micronaut-function-aws-api-proxy</code> has a transitive dependency to <code>micronaut-function-aws</code>.</p>
-<p>The previous set of artifacts has a group id of <code>io.micronaut.aws</code>.</p>
+<p>The previous set of artifacts have a group id of <code>io.micronaut.aws</code>.</p>
 <p>Micronaut CLI or Launch will include the necessary dependencies when you select the <code>aws-lambda</code> feature or both <code>aws-lambda</code> and <code>graalvm</code> features.</p>
 <h2>Choose How Your Lambda Is Triggered</h2>
 <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html">AWS Lambda integrates with other AWS services</a> to invoke functions. The Micronaut application type you select depends on the triggers you want to support. To respond to incoming HTTP requests (e.g. <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html">AWS Lambda Proxy integrations in API Gateway</a>), you can choose either <code>Application</code> or <code>Serverless Function</code>. For other triggers, such as consuming events from a queue or running on a schedule, choose <code>Serverless Function</code>.</p>
