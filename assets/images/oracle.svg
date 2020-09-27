@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="95px" height="95px" viewBox="0 0 95 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>oracle</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="oracle" transform="translate(2.000000, 2.000000)">
+            <circle id="Oval" stroke="#4CAFDE" stroke-width="2.8347" cx="45.374" cy="45.374" r="45.374"></circle>
+            <path d="M35.3933975,63 C25.7917563,63 18,55.1787717 18,45.5139727 C18,35.8491514 25.7917563,28 35.3933975,28 L55.609487,28 C65.213789,28 73,35.8491514 73,45.5139727 C73,55.1787717 65.213789,63 55.609487,63 L35.3933975,63 L35.3933975,63 Z M54.6973844,57 C60.942299,57 66,52.0900027 66,46.0135674 C66,39.9371062 60.942299,35 54.6973844,35 L35.30262,35 C29.0606013,35 24,39.9371062 24,46.0135674 C24,52.0900027 29.0606013,57 35.30262,57 L54.6973844,57 L54.6973844,57 Z" id="Shape" fill="#4CAFDE"></path>
+        </g>
+    </g>
+</svg>
