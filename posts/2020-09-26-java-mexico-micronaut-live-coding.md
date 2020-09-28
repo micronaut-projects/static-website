@@ -1,10 +1,10 @@
 ---
-title: [Spanish] Micronaut live coding session
+title: [Spanish] Micronaut Live Coding Session at javaMéxico
 date:  Sep 26, 2020 18:00
-description: Micronaut live coding sesion at Java Mexico.
+description: In this coding session, streamed live on September 26, 2020, Micronaut team member Iván López demonstrates the main features of Micronaut.
 author: Iván López
 video: https://www.youtube.com/watch?v=zGy8SFXDdW4
-image: xxxxxxx
+image: 2020-09-26.jpg
 ---
 
 # [%title]
@@ -16,4 +16,6 @@ image: xxxxxxx
 Tags: #meetup #video
 
 [%description]
+
+See first-hand how to create a Micronaut app from scratch. Iván covers dependency injection, tests, scaling, security, data persistence, GraalVM native images, and more.
 
