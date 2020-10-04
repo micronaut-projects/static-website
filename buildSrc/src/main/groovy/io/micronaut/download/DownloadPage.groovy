@@ -29,11 +29,9 @@ class DownloadPage {
         new GuideGroup(title: "Install",
                 image: "${getImageAssetPreffix(url)}download.svg",
                 items: [
-                        new GuideGroupItem(href: "https://docs.micronaut.io/latest/guide/index.html#installSdkman", title: 'Install with SDKman'),
-                        new GuideGroupItem(href: "https://docs.micronaut.io/latest/guide/index.html#installHomebrew", title: 'Install with Homebrew'),
-                        new GuideGroupItem(href: "https://docs.micronaut.io/latest/guide/index.html#installMacPorts", title: 'Install with MacPorts'),
-                        new GuideGroupItem(href: "https://docs.micronaut.io/latest/guide/index.html#installWindows", title: 'Install through Binary on Windows'),
-                        new GuideGroupItem(href: "https://docs.micronaut.io/latest/guide/index.html#buildSource", title: 'Building from Source'),
+                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-starter/latest/guide/index.html#installSdkman", title: 'Install with SDKman'),
+                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-starter/latest/guide/index.html#installHomebrew", title: 'Install with Homebrew'),
+                        new GuideGroupItem(href: "https://micronaut-projects.github.io/micronaut-starter/latest/guide/index.html#installChocolatey", title: 'Install with Chocolatey'),
                 ])
     }
 
