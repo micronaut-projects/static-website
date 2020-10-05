@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Microcast #1: Contributing to Micronaut – Publishing and Reviewing Local Changes</title>
+    <title>Micronaut 2.1 Released!</title>
     <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
-    <meta name="description" content="In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR." />
-    <meta name="date" content="August 18, 2020" />
+    <meta name="description" content="A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications." />
+    <meta name="date" content="October 5, 2020" />
     <meta name="robots" content="all"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
     <meta charset='utf-8'/>
     <link rel='icon' href='https://micronaut.io/images/favicon.ico'/>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
-    <meta name='twitter:card' content='player'/><meta name='twitter:player' content='https://www.youtube.com/embed/E1XsAoYwBrE' />
-<meta name='twitter:player:width' content='560' />
-<meta name='twitter:player:height' content='315' />
-
+    <meta name='twitter:card' content='summary_large_image'/>
     <meta name='twitter:site' content='@micronautfw'/>
-    <meta name='twitter:description' content='In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.'/>
+    <meta name='twitter:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
     <meta name='twitter:creator' content='@micronautfw'/>
     <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
     <meta property='og:image:width' content='600'/>
     <meta property='og:image:height' content='300'/>
     <meta property='og:url' content='https://micronaut.io'/>
-    <meta property='og:title' content='Microcast #1: Contributing to Micronaut – Publishing and Reviewing Local Changes'/>
-    <meta property='og:description' content='In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.'/>
+    <meta property='og:title' content='Micronaut 2.1 Released!'/>
+    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
     <meta property='og:type' content='website'/>
     <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
     <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
@@ -97,33 +94,66 @@
   </h1>
   <div class='light'>
     <div class='largegoldenratio align-left'>
-      <div class='padded'><h1>Microcast #1: Contributing to Micronaut – Publishing and Reviewing Local Changes</h1>
-<p><span class="author">By Iván López</span></p>
-<p><span class="date">August 18, 2020</span></p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/microcast.html"><span class="hashtag">#microcast</span></a> <a href="https://micronaut.io/blog/tag/gradle.html"><span class="hashtag">#gradle</span></a> <a href="https://micronaut.io/blog/tag/contribute.html"><span class="hashtag">#contribute</span></a> <a href="https://micronaut.io/blog/tag/intellijidea.html"><span class="hashtag">#intellijidea</span></a></p>
-<p>In this video, Iván López demonstrates how to contribute to Micronaut and test your changes locally before submitting a PR.</p>
-<p>We recommend that developers who want to contribute code to Micronaut review this short video to learn how to:</p>
-<ul>
-<li>Use the Micronaut Launch data-jdbc feature to create a test application</li>
-<li>Make modifications in micronaut-sql and publish the changes to Maven Local</li>
-<li>Use the snapshot version on the test application</li>
-<li>Force Gradle to use a specific version</li>
-<li>Check that the changes made in micronaut-sql are visible on the test application</li>
-<li>Make another change again in micronaut-sql, publish to Local, and see that IntelliJ automatically reloads the snapshot changes</li>
-</ul>
-<p>In putting together the content in this video, we assumed viewers were already familiar with concepts like snapshot versions, publishing to Local, and the command line.</p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/E1XsAoYwBrE" frameborder="0"></iframe></div>
+      <div class='padded'><h1>Micronaut 2.1 Released!</h1>
+<p><span class="author">By Jason Schindler</span></p>
+<p><span class="date">October 5, 2020</span></p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/micronaut2.html"><span class="hashtag">#micronaut2</span></a> <a href="https://micronaut.io/blog/tag/gradle.html"><span class="hashtag">#gradle</span></a> <a href="https://micronaut.io/blog/tag/gcp.html"><span class="hashtag">#gcp</span></a> <a href="https://micronaut.io/blog/tag/oracle.html"><span class="hashtag">#oracle</span></a> <a href="https://micronaut.io/blog/tag/kotlin.html"><span class="hashtag">#kotlin</span></a> <a href="https://micronaut.io/blog/tag/docker.html"><span class="hashtag">#docker</span></a> <a href="https://micronaut.io/blog/tag/graalvm.html"><span class="hashtag">#graalvm</span></a></p>
+<p>We are pleased to announce the release of <a href="https://docs.micronaut.io/2.1.0/guide/index.html">Micronaut 2.1</a>!
+It includes support for Kotlin 1.4, KoTest, Oracle Cloud Functions, Google Pub/Sub, and a <a href="https://docs.micronaut.io/2.1.0/guide/index.html#whatsNew">number of other enhancements</a>.  This release also includes a brand-new Gradle plugin with a host of features for building Docker and GraalVM Native Images!</p>
+<h2>New Gradle Plugin</h2>
+<p>Micronaut's new <a href="https://github.com/micronaut-projects/micronaut-gradle-plugin">Gradle plugin</a> includes first-class support for Docker and GraalVM Native Images.  It also makes it easy to configure your Micronaut runtime environment and build your application as a layered JAR.</p>
+<p>Here is a sample configuration:</p>
+<pre><code class="language-groovy">plugins {
+     id 'io.micronaut.application' version '{version}'
+}
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+micronaut {
+    version = &quot;2.1.0&quot; // The Micronaut Version
+    runtime &quot;netty&quot; // Using the Netty runtime
+}
+mainClassName = &quot;example.Application&quot; // Your main class
+</code></pre>
+<p>This application will be built with dependencies for the Netty runtime.  Other runtime configurations are available including Tomcat, Jetty, Google Cloud Function, and Oracle Cloud Function.</p>
+<p>The Gradle plugin integrates with the <a href="https://bmuschko.github.io/gradle-docker-plugin">Gradle Docker Plugin</a>, and you can build a Docker image using a layered jar by running:</p>
+<p><code>./gradlew dockerBuild</code></p>
+<p>If you would like to build a Docker image using a GraalVM Native Image, you can run:</p>
+<p><code>./gradlew dockerBuildNative</code></p>
+<p>For a full list of supported runtimes and tasks, see the <a href="https://github.com/micronaut-projects/micronaut-gradle-plugin/blob/master/README.md">documentation</a>.</p>
+<h2>New Cloud Features</h2>
+<p>Micronaut 2.1 adds improvements for Oracle Cloud and Google Cloud Platform.</p>
+<h3>Oracle Functions</h3>
+<p>With Micronaut 2.1, you can create Oracle Function projects by adding the <code>oracle-function</code> feature to a new project in <a href="https://micronaut.io/launch/">Micronaut Launch</a> or by passing it to the Micronaut CLI:</p>
+<p><code>mn create-function-app myfunction --features oracle-function</code></p>
+<p>After some configuration updates, you can push your application image to the Oracle Container Registry using <code>./gradlew dockerPush</code> or <code>./gradlew dockerPushNative</code>.</p>
+<p>See the <a href="https://micronaut-projects.github.io/micronaut-oracle-cloud/latest/guide/#functions">Micronaut Oracle Cloud Guide</a> for more details.</p>
+<h3>Google Cloud Platform Enhancements</h3>
+<p>Thanks to some amazing contributions from <a href="https://github.com/viniciusccarvalho">Vinicius Carvalho</a>, our Google Cloud Platform (GCP) support has received some enhancements.</p>
+<p>First, the Micronaut GCP configuration now includes <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/guide/#logging">Logging Support</a> with the new <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/api/io/micronaut/gcp/logging/StackdriverJsonLayout.html">StackdriverJsonLayout</a> class that formats log output to use the Stackdriver structured format.  When used with <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/guide/#tracing">Stackdriver Trace</a>, entries include a <code>traceId</code> to correlate traces to log entries.</p>
+<p>Micronaut 2.1 also includes support for <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/guide/#pubsub">Google Cloud Pub/Sub</a> messaging!  Once you have configured your Topics and Subscriptions in GCP, you can use them from your Micronaut applications by using the <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/api/io/micronaut/configuration/gcp/pubsub/annotation/PubSubClient.html">@PubSubClient</a> annotation on an interface to create a publisher, and the <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/api/io/micronaut/configuration/gcp/pubsub/annotation/PubSubListener.html">@PubSubListener</a> annotation on a class to set up subscriptions.</p>
+<p>For more information about Micronaut's GCP support, see the <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/guide/">Micronaut GCP Guide</a>.</p>
+<h2>Give it a Try!</h2>
+<p>The easiest way to create a new Micronaut 2.1 application is with <a href="https://micronaut.io/launch/">Micronaut Launch</a>.  Just select the application type, build, and features you would like to use and generate a new Micronaut application configured just for you!  You can also use the <a href="https://micronaut-projects.github.io/micronaut-starter/latest/guide/index.html">Micronaut CLI</a> to create and manage your Micronaut applications.  For more information and installation options, please see the <a href="https://micronaut.io/download.html">Download</a> page.</p>
+<p>For Micronaut Documentation, Guides, and API information see the <a href="https://micronaut.io/documentation.html">Documentation</a>.</p>
+<p>To learn more about using Micronaut, check out <a href="https://micronaut.io/learn.html">these learning resources</a>!</p>
+<h2>Thank You!</h2>
+<p>This release would not have been possible without the contributions and support of the amazing Micronaut community!  Thank you to all that have contributed time, effort, and energy to making Micronaut a world-class framework for developing applications on the JVM.</p>
+<p>We would also like to thank the Technical Advisory Board, Board of Directors, and Contributing Members of the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a>.  The Micronaut Foundation is a not-for-profit organization that exists to support and collectively lead the open source Micronaut project.  In particular, we would like to thank <a href="https://objectcomputing.com/">Object Computing</a> for its significant sponsorship and continued stewardship of the Micronaut Framework.</p></div>
     </div>
     <div class='smallgoldenratio align-right padded-t related-posts'>
       <h2>You might also like ...</h2>
-      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-05.jpg)'>
-  <a href='https://micronaut.io/blog/2020-10-05-micronaut-21-released.html'>
-    <h3>October 5, 2020</h3>
-    <h2>Micronaut 2.1 Released!</h2>
+      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-06-26.jpg)'>
+  <a href='https://micronaut.io/blog/2020-06-26-announcing-micronaut-20.html'>
+    <h3>June 26, 2020</h3>
+    <h2>Announcing Micronaut 2.0</h2>
   </a>
-</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-22.jpg)'>
-  <a href='https://micronaut.io/blog/2020-07-22-graalvm-micronaut2.html'>
-    <h3>July 22, 2020</h3>
-    <h2>GraalVM Native Image Generation Improvements – Micronaut 2.0</h2>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-06-16.jpg)'>
+  <a href='https://micronaut.io/blog/2020-06-16-micronaut-20-rc1-released.html'>
+    <h3>June 16, 2020</h3>
+    <h2>Micronaut 2.0 RC1 Released</h2>
   </a>
 </article></div>
     </div>
