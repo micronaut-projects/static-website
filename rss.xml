@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 06 Oct 2020 14:55:35 GMT</pubDate><item><title>Micronaut 2.1 Released!</title><link>https://micronaut.io/blog/2020-10-05-micronaut-21-released.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 06 Oct 2020 16:57:35 GMT</pubDate><item><title>Micronaut 2.1 Released!</title><link>https://micronaut.io/blog/2020-10-05-micronaut-21-released.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/micronaut2.html"><span class="hashtag">#micronaut2</span></a> <a href="https://micronaut.io/blog/tag/gradle.html"><span class="hashtag">#gradle</span></a> <a href="https://micronaut.io/blog/tag/gcp.html"><span class="hashtag">#gcp</span></a> <a href="https://micronaut.io/blog/tag/oracle.html"><span class="hashtag">#oracle</span></a> <a href="https://micronaut.io/blog/tag/kotlin.html"><span class="hashtag">#kotlin</span></a> <a href="https://micronaut.io/blog/tag/docker.html"><span class="hashtag">#docker</span></a> <a href="https://micronaut.io/blog/tag/graalvm.html"><span class="hashtag">#graalvm</span></a></p>
 <p>We are pleased to announce the release of <a href="https://docs.micronaut.io/2.1.0/guide/index.html">Micronaut 2.1</a>!
 It includes support for Kotlin 1.4, KoTest, Oracle Cloud Functions, Google Pub/Sub, and a <a href="https://docs.micronaut.io/2.1.0/guide/index.html#whatsNew">number of other enhancements</a>.  This release also includes a brand-new Gradle plugin with a host of features for building Docker and GraalVM Native Images!</p>
@@ -43,7 +43,36 @@ mainClassName = &quot;example.Application&quot; // Your main class
 <p>To learn more about using Micronaut, check out <a href="https://micronaut.io/learn.html">these learning resources</a>!</p>
 <h2>Thank You!</h2>
 <p>This release would not have been possible without the contributions and support of the amazing Micronaut community!  Thank you to all that have contributed time, effort, and energy to making Micronaut a world-class framework for developing applications on the JVM.</p>
-<p>We would also like to thank the Technical Advisory Board, Board of Directors, and Contributing Members of the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a>.  The Micronaut Foundation is a not-for-profit organization that exists to support and collectively lead the open source Micronaut project.  In particular, we would like to thank <a href="https://objectcomputing.com/">Object Computing</a> for its significant sponsorship and continued stewardship of the Micronaut Framework.</p>]]></description><author>Jason Schindler</author><guid>2020-10-05-micronaut-21-released</guid><pubDate>Mon, 05 Oct 2020 00:00:00 GMT</pubDate></item><item><title>[Spanish] Micronaut Live Coding Session at javaMéxico</title><link>https://micronaut.io/blog/2020-09-26-java-mexico-micronaut-live-coding.html</link><description><![CDATA[</p>
+<p>We would also like to thank the Technical Advisory Board, Board of Directors, and Contributing Members of the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a>.  The Micronaut Foundation is a not-for-profit organization that exists to support and collectively lead the open source Micronaut project.  In particular, we would like to thank <a href="https://objectcomputing.com/">Object Computing</a> for its significant sponsorship and continued stewardship of the Micronaut Framework.</p>]]></description><author>Jason Schindler</author><guid>2020-10-05-micronaut-21-released</guid><pubDate>Mon, 05 Oct 2020 00:00:00 GMT</pubDate></item><item><title>Webinar: Develop and Deploy Azure Functions with Micronaut</title><link>https://micronaut.io/blog/2020-10-02-micronaut-azure-webinar.html</link><description><![CDATA[</p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a> <a href="https://micronaut.io/blog/tag/azure.html"><span class="hashtag">#azure</span></a></p>
+<p>Micronaut functions and Azure are a productive, end-to-end development experience: build, debug, deploy, and monitor functions seamlessly.</p>
+<p>Join Microsoft's <a href="https://www.julien-dubois.com/bio.html">Julien Dubois</a> and 2GM (Groovy, Grails, and Micronaut) team member, <a href="https://objectcomputing.com/products/2gm-team#caballero">Sergio del Amo</a>, for an introduction to the Azure functions programming model, a model based on triggers and bindings that assist with responding to events and seamlessly connecting to services.</p>
+<p>Participants will gain a solid understanding of Azure functions and witness first-hand how and why they'll benefit from developing them with Micronaut.</p>
+<p>Topics covered include:</p>
+<ul>
+<li>Azure Functions
+<ul>
+<li>Triggers</li>
+<li>Hosting options</li>
+<li>Common use cases</li>
+</ul>
+</li>
+<li>Micronaut Azure Functions
+<ul>
+<li>Micronaut Azure HTTP Functions</li>
+</ul>
+</li>
+<li>Functions Development
+<ul>
+<li>Build</li>
+<li>Testing</li>
+<li>Deployment</li>
+<li>Monitoring</li>
+</ul>
+</li>
+</ul>
+<p>No particular expertise with Micronaut or Azure is required; however, you will benefit if you are already familiar with both technologies.</p>
+<p><a href="https://objectcomputing.com/files/2616/0200/3203/slide_deck_Micronaut_Azure_Functions_webinar.pdf">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/lyHVcDpFcjE" frameborder="0"></iframe>]]></description><author>Sergio del Amo</author><guid>2020-10-02-micronaut-azure-webinar</guid><pubDate>Fri, 02 Oct 2020 00:00:00 GMT</pubDate></item><item><title>[Spanish] Micronaut Live Coding Session at javaMéxico</title><link>https://micronaut.io/blog/2020-09-26-java-mexico-micronaut-live-coding.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/meetup.html"><span class="hashtag">#meetup</span></a> <a href="https://micronaut.io/blog/tag/video.html"><span class="hashtag">#video</span></a></p>
 <p>In this coding session, streamed live on September 26, 2020, Micronaut team member Iván López demonstrates the main features of Micronaut.</p>
 <p>See first-hand how to create a Micronaut app from scratch. Iván covers dependency injection, tests, scaling, security, data persistence, GraalVM native images, and more.</p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/zGy8SFXDdW4" frameborder="0"></iframe>]]></description><author>Iván López</author><guid>2020-09-26-java-mexico-micronaut-live-coding</guid><pubDate>Sat, 26 Sep 2020 18:00:00 GMT</pubDate></item><item><title>Webinar: Developing Micronaut Applications with IntelliJ IDEA</title><link>https://micronaut.io/blog/2020-09-18-micronaut-and-intellij-idea.html</link><description><![CDATA[</p>
