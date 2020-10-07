@@ -1,0 +1,75 @@
+body.foundation {
+	background: none;
+	background-color: white;
+}
+
+body.foundation .content > h1 {
+	background: black;
+}
+
+body.foundation .content > h1 .title-text {
+	margin-top: -50px;
+	padding-top: 50px;
+	min-height: 100px;
+}
+
+body.foundation .full.whitecircleborderseparator {
+	background-image: url(../images/circle_black.png);
+	background-color: #FFFFFF;
+}
+
+body.foundation footer {
+	color: #FFFFFF;
+	background: none;
+	background-color: black;
+}
+
+section.foundation-description h2 {
+	margin: 5% 0 3% 0;
+}
+
+section.foundation-description a {
+	color: #2559A7;
+	font-weight: 700;
+}
+
+section.foundation-description .emphasis {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+section.foundation-boards {
+	/* padding: 100px; */
+	background-color: black;
+	color: white;
+}
+
+section.foundation-boards .foundation-logo {
+	padding: 17% 17% 5% 17%;
+}
+
+section.foundation-boards .foundation-board-content {
+	padding: 0 15%;
+}
+
+section.foundation-boards .foundation-board-content h2 {
+	margin: 10% 0;
+}
+
+.person {
+	margin-bottom: 7%;
+}
+
+.person .name {
+	display: block;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	line-height: 1.5em;
+	font-weight: 600;
+}
+
+.person .title {
+	display: block;
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
