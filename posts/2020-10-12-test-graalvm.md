@@ -2,7 +2,7 @@
 title: How do we test Micronaut and GraalVM integration?
 date: Oct 12, 2020
 author: Iván López
-image: xxxxxxx
+image: 2020-10-12.jpg
 ---
 
 # [%title]
@@ -15,13 +15,13 @@ Tags: #micronaut #graalvm #test #gitlabci
 
 Micronaut and [GraalVM](https://www.graalvm.org) go way back. Ever since our 1.0 release back in October of 2018, Micronaut has proudly included out-of-the-box support for GraalVM and was one of the first large Java frameworks to do so.
 
-I still remember the _early days_ when our integration would work exceptionally for GraalVM 1.0-RC6, but then something would change in 1.0-RC7 and things would break.  A while later, 1.0-RC8 would be released and everything would work great again... until it didn't.
+I still remember the _early days_ when our integration would work exceptionally for GraalVM 1.0-RC6, but then something would change in 1.0-RC7 and things would break. A while later, 1.0-RC8 would be released and everything would work great again ... until it didn't.
 
-We needed to make sure we were able to test our integration before the GraalVM team released a new version.  By testing early, any issues and regressions we discover could be reported and fixed before the next release.
+We needed to make sure we were able to test our integration before the GraalVM team released a new version. By testing early, any issues and regressions we discovered could be reported and fixed before the next release.
 
-It was January 2019 (less than three months after we [released Micronaut 1.0](https://micronaut.io/blog/2018-10-23-micronaut-10-ga-released.html))
+It was January 2019 (fewer than three months after we [released Micronaut 1.0](https://micronaut.io/blog/2018-10-23-micronaut-10-ga-released.html)),
 and we were still using Travis CI for testing Micronaut. Travis had a lot of constraints that didn't fit well with
-GraalVM.  Specifically, a really low memory limit, prohibitive options for creating complex CI workflows, and no support for creating artifacts for use in later CI pipeline jobs.  We needed another way.
+GraalVM. Specifically, a really low memory limit, prohibitive options for creating complex CI workflows, and no support for creating artifacts for use in later CI pipeline jobs.  We needed another way.
 
 ## Introducing Gitlab CI
 
@@ -31,7 +31,7 @@ The idea was to create a CI pipeline with the following objectives in mind:
 
 - It should execute periodically instead of at each commit.
 - It should only run if there are changes in either Micronaut or GraalVM.
-- It should compile GraalVM from `master` branch, so we could detect any issue or regression as soon before the next GraalVM release.
+- It should compile GraalVM from `master` branch, so we could detect any issue or regression as soon as possible before the next GraalVM release.
 - It should be able to test different Micronaut applications easily.
 - It should support different CI stages and jobs with some dependencies between them.
 
@@ -51,38 +51,35 @@ in the previous stage. The native images are saved again as artifacts, so they c
 These tests are `curl` requests to different endpoints and we check the response.
 
 
-For keeping track of new commits in Micronaut and GraalVM, and running the scheduled jobs, we have
-[another companion project](https://gitlab.com/micronaut-projects/micronaut-graal-tests-scheduler) in which we store the
- latest commit for both projects and decide if we should trigger the CI in the main repository.
+For keeping track of new commits in Micronaut and GraalVM and running the scheduled jobs, we have
+[another companion project](https://gitlab.com/micronaut-projects/micronaut-graal-tests-scheduler) in which we store the latest commit for both projects and decide if we should trigger the CI in the main repository.
 
 
-## Test applications
+## Test Applications
 
-Since our original pipeline, a lot of things have changed.  Our two initial applications have become 26 test applications with 39
-different jobs. This is because some of them test the same things, but with different options. For example in the
+Since our original pipeline, a lot of things have changed. Our two initial applications have become 26 test applications with 39
+different jobs. This is because some of them test the same things but with different options. For example in the
 [Micronaut JDBC](https://github.com/micronaut-graal-tests/micronaut-data-jdbc-graal) test application, there are branches
-for the all the databases supported: H2, Postgres, Oracle, MariaDB, SQL Server, and MySQL.
+for all the databases supported: H2, Postgres, Oracle, MariaDB, SQL Server, and MySQL.
 
-Also, the number of jobs have been multiplied by four because we now test GraalVM for JDK 8 and JDK 11, and we also test
- against two Micronaut versions (currently `2.0.x` and `2.1.x`). This is how the CI pipeline looks like today:
+Also, the number of jobs has been multiplied by four because we now test GraalVM for JDK 8 and JDK 11, and we also test against two Micronaut versions (currently `2.0.x` and `2.1.x`). This is how the CI pipeline looks today:
 
 
 ![CI pipeline today](2020-10-12-ci-pipeline-today.png)
 
-Very long an beautiful list, right? ;-)
+Very long and beautiful list, right? ;-)
 
 The list includes test applications for RabbitMQ, gRPC, Service Discovery with Consul and Eureka, Security, Micronaut
 Data, Flyway, Elasticsearch, Redis, and many more. We are increasing the list with new applications, and we are
-committed to have more and more things supported in every release.
+committed to support more and more things in every release.
 
 
-## Own runners on AWS
+## Own Runners on AWS
 
 Some months ago, we hit a limit on the Gitlab CI shared runners. A few jobs were failing when building the native
-images because of an out of memory exception. Basically, they didn't have enough memory to build the native image and the
- process failed.
+images because of an out-of-memory exception. Basically, they didn't have enough memory to build the native image, and the process failed.
 
-Gitlab CI provides a way to use [your own runners](https://docs.gitlab.com/runner/) so we setup an
+Gitlab CI provides a way to use [your own runners](https://docs.gitlab.com/runner/), so we set up an
 [auto-scaling runner](https://docs.gitlab.com/runner/configuration/runner_autoscale_aws/) infrastructure on AWS for
 the jobs that required additional memory.
 
@@ -94,11 +91,11 @@ In order to choose the right instance type, I did some tests without limiting th
 | c5.2xlarge | 8 CPUs - 16 GB RAM | 13 mins | 30-40% |
 | c5.24xlarge | 96 CPUs - 192 GB RAM | 43 mins | 10% |
 
-You may wonder why using a huge instance like `c5.24xlarge` takes almost 3 times longer to run the CI pipeline than
-the others. The answer is you can only allocate up the 512 CPUs on AWS without asking AWS support for an increase, so choosing the biggest instance only allowed us to run 5 of them in parallel.
+You may wonder why using a huge instance like `c5.24xlarge` takes almost three times longer to run the CI pipeline than
+the others. The answer is you can only allocate up to 512 CPUs on AWS without asking AWS support for an increase, so choosing the biggest instance allowed us to run only five of them in parallel.
 
-With those numbers it felt right to choose `c5.xlarge` because the time difference with `c5.2xlarge` was minimal, and
-the former maximized the cpu usage and costs half of the latter.
+With those numbers, it felt right to choose `c5.xlarge` because the time difference with `c5.2xlarge` was minimal, and
+the former maximized the CPU usage and costs by half of the latter.
 
 ![EC2 instances auto-scaling](2020-10-12-auto-scaling.png)
 
@@ -122,38 +119,37 @@ a specific job is running on our own runners.
 ![Runners tags](2020-10-12-runners-tag.png)
 
 
-## Test dev-release versions
+## Test dev-release Versions
 
 Some time ago the GraalVM team started to publish [dev-releases](https://github.com/graalvm/graalvm-ce-dev-builds/releases)
-every few days for the community to test against so you wouldn't have to compile everything from source yourself. They asked
+every few days for the community to test against, so you wouldn't have to compile everything from source yourself. They asked
 us if we could verify that Micronaut was working with the latest _dev-release_ just a few days before releasing a final
 GraalVM version.
 As we have a very granular and flexible CI pipeline, it was easy for us to add a new branch and automate the tests for
 those _dev-releases_.
-Now, we have a scheduled job that is executed every 2 or 3 days that automatically downloads the latest _dev-release_ available
+Now, we have a scheduled job that is executed every two or three days that automatically downloads the latest _dev-release_ available
 and runs all the tests with it.
-For the curious, everything remains the same, and the only change is in the [GraalVM build script](https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/blob/2.1.x_dev-preview/build-graalvm.sh#L9)
- that now downloads the latest _dev-release_ version.
+For the curious, everything remains the same, and the only change is in the [GraalVM build script](https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/blob/2.1.x_dev-preview/build-graalvm.sh#L9) that now downloads the latest _dev-release_ version.
 
 
-## Was it worth the effort?
+## Was It Worth the Effort?
 
 What started as a small thing has evolved a lot in the past 21 months. Time has proved that it was really worth the effort
-we put into this. For example, just a few days ago the [gRPC test application failed](https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/jobs/774292619)
+we put into this. For example, just a few days ago, the [gRPC test application failed](https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/jobs/774292619),
 and I was able to track down the commit that broke the build and [report an issue](https://github.com/oracle/graal/issues/2896)
-to the GraalVM team. Then, just a few days later they fixed the issue and our build [is back to green](https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/pipelines/199942162) :-)
+to the GraalVM team. Then, just a few days later, they fixed the issue and our build [is back to green](https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/pipelines/199942162). :-)
 
-Speaking about reporting issues, we have been working together with them to improve the GraalVM support in Micronaut,
+Speaking about reporting issues, we have been working together with GraalVM to improve the GraalVM support in Micronaut,
 and I've reported a lot of issues to make GraalVM better.
 
 ![Tweet Thomas Wuerthinger](2020-10-12-tweet-thomas.png)
 
 
-We, the Micronaut team at Object Computing, will continue to improve our GraalVM integration in every Micronaut release.  We will also do everything we can to make integrating your Micronaut applications with GraalVM as easy as possible.
+We, [the Micronaut team at Object Computing](https://objectcomputing.com/products/2gm-team), will continue to improve our GraalVM integration in every Micronaut release. We will also do everything we can to make integrating your Micronaut applications with GraalVM as easy as possible.
 
 Our support has improved a lot in Micronaut 2.1 with the new [Micronaut Gradle plugin](https://github.com/micronaut-projects/micronaut-gradle-plugin).
 Take a look at [this video](https://micronaut.io/blog/2020-10-08-micronaut-gradle-plugin.html) in which Graeme Rocher
 does a demo of it.
 
-For Micronaut 2.2 we also plan to release an improved version of our current [Micronaut Maven plugin](https://github.com/micronaut-projects/micronaut-maven-plugin)
+For Micronaut 2.2, we also plan to release an improved version of our current [Micronaut Maven plugin](https://github.com/micronaut-projects/micronaut-maven-plugin),
 which will include these new features as well.
