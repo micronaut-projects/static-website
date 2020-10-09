@@ -8,6 +8,11 @@ questions:
     title: 'What is the Export Control Classification Number (ECCN) for Micronaut?'
     answer: 'Micronaut is an open source technology that is not on the Commerce Control List, and is therefore classified with the general purpose classification of EAR 99.'
   -
+    slug: 'cla'
+    title: 'Do you have a Contributor License Agreement?'
+    answer: 'Yes, please read the [Micronaut Framework Individual CLA](https://cla-assistant.io/micronaut-projects/micronaut-core).'
+
+  -
     slug: 'question_learn'
     title: 'What is the best way to get started learning Micronaut?'
     answer: 'The definitive guide to developing with Micronaut is the [User Guide](http://docs.micronaut.io/snapshot/guide/index.html). In addition, step-by-step tutorials for solving common scenarios can be found at [Micronaut Guides](https://guides.micronaut.io).'
