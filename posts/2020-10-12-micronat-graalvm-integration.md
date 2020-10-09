@@ -1,5 +1,5 @@
 ---
-title: How do we test Micronaut and GraalVM integration?
+title: Micronaut and GraalVM: An Integration Story
 date: Oct 12, 2020
 author: Iván López
 image: 2020-10-12.jpg
