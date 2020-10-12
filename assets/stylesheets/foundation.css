@@ -73,3 +73,8 @@ section.foundation-boards .foundation-board-content h2 {
 	font-size: 1.2em;
 	line-height: 1.4em;
 }
+
+/* this is temporary */
+.nested-list li {
+	font-size: 1.0em;
+}
