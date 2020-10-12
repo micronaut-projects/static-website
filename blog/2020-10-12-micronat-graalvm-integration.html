@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Micronaut and GraalVM: An Integration Story</title>
+    <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
+    <meta name="description" content="A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications." />
+    <meta name="date" content="October 12, 2020" />
+    <meta name="robots" content="all"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
+    <meta charset='utf-8'/>
+    <link rel='icon' href='https://micronaut.io/images/favicon.ico'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+    <meta name='twitter:card' content='summary_large_image'/>
+    <meta name='twitter:site' content='@micronautfw'/>
+    <meta name='twitter:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
+    <meta name='twitter:creator' content='@micronautfw'/>
+    <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
+    <meta property='og:image:width' content='600'/>
+    <meta property='og:image:height' content='300'/>
+    <meta property='og:url' content='https://micronaut.io'/>
+    <meta property='og:title' content='Micronaut and GraalVM: An Integration Story'/>
+    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
+    <meta property='og:type' content='website'/>
+    <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
+    <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='114x114' href='https://micronaut.io/images/apple-touch-icon-114x114.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='72x72' href='https://micronaut.io/images/apple-touch-icon-72x72.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='144x144' href='https://micronaut.io/images/apple-touch-icon-144x144.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='60x60' href='https://micronaut.io/images/apple-touch-icon-60x60.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='120x120' href='https://micronaut.io/images/apple-touch-icon-120x120.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='76x76' href='https://micronaut.io/images/apple-touch-icon-76x76.png'/>
+    <link rel='apple-touch-icon-precomposed' sizes='152x152' href='https://micronaut.io/images/apple-touch-icon-152x152.png'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-196x196.png' sizes='196x196'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-96x96.png' sizes='96x96'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-32x32.png' sizes='32x32'/>
+    <link rel='con" type="image/png' href='https://micronaut.io/images/favicon-16x16.png' sizes='16x16'/>
+    <link rel='icon" type="image/png' href='https://micronaut.io/images/favicon-128.png' sizes='128x128'/>
+    <meta name='application-name' content='&amp;nbsp;'/>
+    <meta name='msapplication-TileColor' content='#FFFFFF'/>
+    <meta name='msapplication-TileImage' content='https://micronaut.io/images/mstile-144x144.png'/>
+    <meta name='msapplication-square70x70logo' content='https://micronaut.io/images/mstile-70x70.png'/>
+    <meta name='msapplication-square150x150logo' content='https://micronaut.io/images/mstile-150x150.png'/>
+    <meta name='msapplication-wide310x150logo' content='https://micronaut.io/images/mstile-310x150.png'/>
+    <meta name='msapplication-square310x310logo' content='https://micronaut.io/images/mstile-310x310.png'/>
+    <link rel='stylesheet' href='https://micronaut.io/stylesheets/screen.css'/>
+    <script src='https://micronaut.io/javascripts/navbar_hide_scroll.js'></script>
+    <script src='https://micronaut.io/javascripts/navigation.js'></script>
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
+    
+    
+    
+</head>
+<body class='post'>
+<div class='main'>
+    <nav id='navbar'>
+        <ul class='container'>
+            <li class='align-right tiny'>
+                <a href='#footercircle'>Menu</a>
+            </li>
+            <li class="align-right">
+                <ul>
+                    <li class='icon'>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=micronaut-projects&repo=micronaut-core&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+                    </li>
+                    <li><a href='https://micronaut.io/support.html'>Support</a></li>
+                    <li><a href='https://micronaut.io/foundation/index.html'>Foundation</a></li>
+                    <li><a href='https://micronaut.io/events.html'>Events</a></li>
+                    <li><a href='https://micronaut.io/blog/index.html'>Blog</a></li>
+                    <li><a href='https://micronaut.io/learn.html'>Learn</a></li>
+                    <li><a href='https://micronaut.io/download.html'>Download</a></li>
+                    <li><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+                    <li><a href='https://micronaut.io/launch/'>Launch</a></li>
+                </ul>
+            </li>
+            <li class='large align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini_copy_tm.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+            <li class='small align-left'>
+                <a href='https://micronaut.io/index.html'>
+                    <img class='' src='https://micronaut.io/images/micronaut_mini.svg' alt='Micronaut Icon'/>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<article><div class='content container'>
+  <h1>
+    <a href='https://micronaut.io/blog/index.html'>
+      <span>Micronaut<sup>&reg;</sup></span>
+      <b>Blog</b>
+    </a>
+  </h1>
+  <div class='light'>
+    <div class='largegoldenratio align-left'>
+      <div class='padded'><h1>Micronaut and GraalVM: An Integration Story</h1>
+<p><span class="author">By Iván López</span></p>
+<p><span class="date">October 12, 2020</span></p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/micronaut.html"><span class="hashtag">#micronaut</span></a> <a href="https://micronaut.io/blog/tag/graalvm.html"><span class="hashtag">#graalvm</span></a> <a href="https://micronaut.io/blog/tag/test.html"><span class="hashtag">#test</span></a> <a href="https://micronaut.io/blog/tag/gitlabci.html"><span class="hashtag">#gitlabci</span></a></p>
+<p>Micronaut and <a href="https://www.graalvm.org">GraalVM</a> go way back. Ever since our 1.0 release back in October of 2018, Micronaut has proudly included out-of-the-box support for GraalVM and was one of the first large Java frameworks to do so.</p>
+<p>I still remember the <em>early days</em> when our integration would work exceptionally for GraalVM 1.0-RC6, but then something would change in 1.0-RC7 and things would break. A while later, 1.0-RC8 would be released and everything would work great again ... until it didn't.</p>
+<p>We needed to make sure we were able to test our integration before the GraalVM team released a new version. By testing early, any issues and regressions we discovered could be reported and fixed before the next release.</p>
+<p>It was January 2019 (fewer than three months after we <a href="https://micronaut.io/blog/2018-10-23-micronaut-10-ga-released.html">released Micronaut 1.0</a>),
+and we were still using Travis CI for testing Micronaut. Travis had a lot of constraints that didn't fit well with
+GraalVM. Specifically, a really low memory limit, prohibitive options for creating complex CI workflows, and no support for creating artifacts for use in later CI pipeline jobs.  We needed another way.</p>
+<h2>Introducing Gitlab CI</h2>
+<p><a href="https://docs.gitlab.com/ee/ci/">Gitlab CI</a> is part of <a href="https://about.gitlab.com/">Gitlab</a> (although you don't need to use GitLab proper to use the CI). GitLab CI was an easy choice for me because I used it a lot in a previous job, and I really love working with it.</p>
+<p>The idea was to create a CI pipeline with the following objectives in mind:</p>
+<ul>
+<li>It should execute periodically instead of at each commit.</li>
+<li>It should only run if there are changes in either Micronaut or GraalVM.</li>
+<li>It should compile GraalVM from <code>master</code> branch, so we could detect any issue or regression as soon as possible before the next GraalVM release.</li>
+<li>It should be able to test different Micronaut applications easily.</li>
+<li>It should support different CI stages and jobs with some dependencies between them.</li>
+</ul>
+<p>After experimenting with a few different approaches in <a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests">a new repository</a>, we were able to get a passing build using this <a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/pipelines/43802345">CI pipeline</a>:</p>
+<p><img src="2020-10-12-first-ci-pipeline.png" alt="First CI pipeline" /></p>
+<p>It has four stages that we still use:</p>
+<ul>
+<li><strong>Log-commits</strong>: Saves the commits that triggered the build for both Micronaut and GraalVM. If the build fails, we can
+check those commits and see why.</li>
+<li><strong>Build-graal</strong>: Clones the GraalVM repository and builds it from <code>master</code> branch. The GraalVM JDK distribution generated in
+this stage is saved as an <em>artifact</em> for use in the next stage.</li>
+<li><strong>Micronaut</strong>: Clones various Micronaut test applications and builds a native image using the GraalVM distribution created
+in the previous stage. The native images are saved again as artifacts, so they can be used for the tests.</li>
+<li><strong>Test</strong>: Starts the native images generated in the previous stage and runs some tests to make sure everything works as expected.
+These tests are <code>curl</code> requests to different endpoints and we check the response.</li>
+</ul>
+<p>For keeping track of new commits in Micronaut and GraalVM and running the scheduled jobs, we have
+<a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests-scheduler">another companion project</a> in which we store the latest commit for both projects and decide if we should trigger the CI in the main repository.</p>
+<h2>Test Applications</h2>
+<p>Since our original pipeline, a lot of things have changed. Our two initial applications have become 26 test applications with 39
+different jobs. This is because some of them test the same things but with different options. For example in the
+<a href="https://github.com/micronaut-graal-tests/micronaut-data-jdbc-graal">Micronaut JDBC</a> test application, there are branches
+for all the databases supported: H2, Postgres, Oracle, MariaDB, SQL Server, and MySQL.</p>
+<p>Also, the number of jobs has been multiplied by four because we now test GraalVM for JDK 8 and JDK 11, and we also test against two Micronaut versions (currently <code>2.0.x</code> and <code>2.1.x</code>). This is how the CI pipeline looks today:</p>
+<p><img src="2020-10-12-ci-pipeline-today.png" alt="CI pipeline today" /></p>
+<p>Very long and beautiful list, right? ;-)</p>
+<p>The list includes test applications for RabbitMQ, gRPC, Service Discovery with Consul and Eureka, Security, Micronaut
+Data, Flyway, Elasticsearch, Redis, and many more. We are increasing the list with new applications, and we are
+committed to support more and more things in every release.</p>
+<h2>Own Runners on AWS</h2>
+<p>Some months ago, we hit a limit on the Gitlab CI shared runners. A few jobs were failing when building the native
+images because of an out-of-memory exception. Basically, they didn't have enough memory to build the native image, and the process failed.</p>
+<p>Gitlab CI provides a way to use <a href="https://docs.gitlab.com/runner/">your own runners</a>, so we set up an
+<a href="https://docs.gitlab.com/runner/configuration/runner_autoscale_aws/">auto-scaling runner</a> infrastructure on AWS for
+the jobs that required additional memory.</p>
+<p>In order to choose the right instance type, I did some tests without limiting the number of instances launched during the auto-scale.</p>
+<table>
+<thead>
+<tr><th>Instance</th><th>Specs</th><th>Time to run pipeline</th><th>CPU usage</th></tr>
+</thead>
+<tbody>
+<tr><td>c5.xlarge</td><td>4 CPUs - 8 GB RAM</td><td>17 mins</td><td>60-70%</td></tr>
+<tr><td>c5.2xlarge</td><td>8 CPUs - 16 GB RAM</td><td>13 mins</td><td>30-40%</td></tr>
+<tr><td>c5.24xlarge</td><td>96 CPUs - 192 GB RAM</td><td>43 mins</td><td>10%</td></tr>
+</tbody>
+</table>
+<p>You may wonder why using a huge instance like <code>c5.24xlarge</code> takes almost three times longer to run the CI pipeline than
+the others. The answer is you can only allocate up to 512 CPUs on AWS without asking AWS support for an increase, so choosing the biggest instance allowed us to run only five of them in parallel.</p>
+<p>With those numbers, it felt right to choose <code>c5.xlarge</code> because the time difference with <code>c5.2xlarge</code> was minimal, and
+the former maximized the CPU usage and costs by half of the latter.</p>
+<p><img src="2020-10-12-auto-scaling.png" alt="EC2 instances auto-scaling" /></p>
+<p>Eventually, I moved some other jobs to run on our AWS runners because of the native image build time.
+The AWS runners are so fast compared to the shared runners that they can build almost three native images in the time the shared runners
+build one. With the current mix of shared and dedicated runners, the build takes around 35-40 minutes to finish.</p>
+<p>Here are some of the time improvements we witnessed:</p>
+<table>
+<thead>
+<tr><th>App</th><th>Shared runners</th><th>Own runners</th></tr>
+</thead>
+<tbody>
+<tr><td>GraalVM</td><td><a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/jobs/548418789">23 min</a></td><td><a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/jobs/561601061">7 min 29 sec</a></td></tr>
+<tr><td>MS SQL</td><td><a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/jobs/568011290">14 min 18 sec</a></td><td><a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/jobs/569072355">5 min 33 sec</a></td></tr>
+<tr><td>gRPC (server + client)</td><td><a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/jobs/686515921">35 min</a></td><td><a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/jobs/686618254">7 min 3 sec</a></td></tr>
+</tbody>
+</table>
+<p>Configuring a job to run on our own runner is pretty simple with Gitlab. It's a matter of tagging it with <code>aws</code>, <code>memory</code>, or <code>speed</code>. I use tag combinations like <code>aws</code> + <code>memory</code>, or <code>aws</code> + <code>speed</code> as a way to document why
+a specific job is running on our own runners.</p>
+<p><img src="2020-10-12-runners-tag.png" alt="Runners tags" /></p>
+<h2>Test dev-release Versions</h2>
+<p>Some time ago the GraalVM team started to publish <a href="https://github.com/graalvm/graalvm-ce-dev-builds/releases">dev-releases</a>
+every few days for the community to test against, so you wouldn't have to compile everything from source yourself. They asked
+us if we could verify that Micronaut was working with the latest <em>dev-release</em> just a few days before releasing a final
+GraalVM version.
+As we have a very granular and flexible CI pipeline, it was easy for us to add a new branch and automate the tests for
+those <em>dev-releases</em>.
+Now, we have a scheduled job that is executed every two or three days that automatically downloads the latest <em>dev-release</em> available
+and runs all the tests with it.
+For the curious, everything remains the same, and the only change is in the <a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/blob/2.1.x_dev-preview/build-graalvm.sh#L9">GraalVM build script</a> that now downloads the latest <em>dev-release</em> version.</p>
+<h2>Was It Worth the Effort?</h2>
+<p>What started as a small thing has evolved a lot in the past 21 months. Time has proved that it was really worth the effort
+we put into this. For example, just a few days ago, the <a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/jobs/774292619">gRPC test application failed</a>,
+and I was able to track down the commit that broke the build and <a href="https://github.com/oracle/graal/issues/2896">report an issue</a>
+to the GraalVM team. Then, just a few days later, they fixed the issue and our build <a href="https://gitlab.com/micronaut-projects/micronaut-graal-tests/-/pipelines/199942162">is back to green</a>. :-)</p>
+<p>Speaking about reporting issues, we have been working together with GraalVM to improve the GraalVM support in Micronaut,
+and I've reported a lot of issues to make GraalVM better.</p>
+<p><img src="2020-10-12-tweet-thomas.png" alt="Tweet Thomas Wuerthinger" /></p>
+<p>We, <a href="https://objectcomputing.com/products/2gm-team">the Micronaut team at Object Computing</a>, will continue to improve our GraalVM integration in every Micronaut release. We will also do everything we can to make integrating your Micronaut applications with GraalVM as easy as possible.</p>
+<p>Our support has improved a lot in Micronaut 2.1 with the new <a href="https://github.com/micronaut-projects/micronaut-gradle-plugin">Micronaut Gradle plugin</a>.
+Take a look at <a href="https://micronaut.io/blog/2020-10-08-micronaut-gradle-plugin.html">this video</a> in which Graeme Rocher
+does a demo of it.</p>
+<p>For Micronaut 2.2, we also plan to release an improved version of our current <a href="https://github.com/micronaut-projects/micronaut-maven-plugin">Micronaut Maven plugin</a>,
+which will include these new features as well.</p></div>
+    </div>
+    <div class='smallgoldenratio align-right padded-t related-posts'>
+      <h2>You might also like ...</h2>
+      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-08.jpg)'>
+  <a href='https://micronaut.io/blog/2020-10-08-micronaut-gradle-plugin.html'>
+    <h3>October 8, 2020</h3>
+    <h2>Micronaut Gradle Plugin</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-05.jpg)'>
+  <a href='https://micronaut.io/blog/2020-10-05-micronaut-21-released.html'>
+    <h3>October 5, 2020</h3>
+    <h2>Micronaut 2.1 Released!</h2>
+  </a>
+</article></div>
+    </div>
+  </div>
+</div>&nbsp;</article>
+<div id="footercircle" class="full whitecircleborderseparator"></div>
+<footer>
+    <div class='container'>
+        <div class='mobile'>
+            <nav id='footernav'>
+                <ul class='container'>
+                    <li><a href='https://micronaut.io/launch/'>Launch</a></li>
+                    <li><a href='https://micronaut.io/documentation.html'>Docs</a></li>
+                    <li><a href='https://micronaut.io/download.html'>Download</a></li>
+                    <li><a href='https://micronaut.io/learn.html'>Learn</a></li>
+                    <li><a href='https://micronaut.io/blog/index.html'>Blog</a></li>
+                    <li><a href='https://micronaut.io/support.html'>Support</a></li>
+                    <li><a href='https://micronaut.io/foundation/index.html'>Foundation</a></li>
+                    <li><a href='https://micronaut.io/events.html'>Events</a></li>
+                    <li><a href='https://micronaut.io/blog/index.html'>Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p id='blacklogo'>
+            <img src='https://micronaut.io/images/micronautlogo.svg' alt='Micronaut Logo'/>
+        </p>
+        <div class='twocolumns'>
+            <div class='column'>
+                <nav id='socialnetworknav'>
+                    <ul class='container'>
+                        <li>
+                            <a href='https://gitter.im/micronautfw/'>
+                                <img class='' src='https://micronaut.io/images/gitter.svg' alt='Gitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.youtube.com/playlist?list=PLI74De5M9T72YshO4Sc90wtGr286nM8Yu'>
+                                <img class='' src='https://micronaut.io/images/youtube.svg' alt='Youtube Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://github.com/micronaut-projects/'>
+                                <img class='' src='https://micronaut.io/images/github.svg' alt='Github Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://twitter.com/micronautfw'>
+                                <img class='' src='https://micronaut.io/images/twitter.svg' alt='Twitter Icon'/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='mailto:info@micronaut.io?subject=Micronaut&amp;amp;body=I%20am%20interested%20in%20Micronaut.'>
+                                <img class='' src='https://micronaut.io/images/mail.svg' alt='Mail Icon'/>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p>
+                    <small>© 2020, Object Computing, Inc. (OCI). All rights reserved</small>
+                </p>
+            </div>
+            <div class='column' style='margin-top: 10px;'>
+                <p>
+                    <a title='Visit OCI Website' href='https://objectcomputing.com'>
+                        <img src='https://micronaut.io/images/oci_logo.svg' alt='Object Computing' style='max-width: 300px'/>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115754405-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-115754405-1');
+</script>
+<script type="text/javascript">
+    adroll_adv_id = "J4NA4XCFDNFHDGNFUAVMQD";
+    adroll_pix_id = "J4XYMNCOQNBCXJJ4GP744N";
+
+    (function() {
+        var _onload = function() {
+            if (document.readyState && !/loaded|complete/.test(document.readyState)) {
+                setTimeout(_onload, 10);
+                return
+            }
+            if (!window.__adroll_loaded) {
+                __adroll_loaded = true;
+                setTimeout(_onload, 50);
+                return
+            }
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {
+            window.addEventListener('load', _onload, false);
+        }
+        else {
+            window.attachEvent('onload', _onload)
+        }
+    }());
+</script>
+</body>
+</html>

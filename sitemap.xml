@@ -145,6 +145,9 @@
     <loc>https://micronaut.io/blog/tag/cli.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/micronaut.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/correto.html</loc>
   </url>
   <url>
@@ -167,6 +170,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/reactive.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/tag/test.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/servlet.html</loc>
@@ -224,6 +230,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/foundation.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/tag/gitlabci.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/maven.html</loc>
@@ -317,6 +326,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-04-16-google-cloud-next-jsb-presentation.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-10-12-micronat-graalvm-integration.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-02-27-micronaut-11-milestone-2-released.html</loc>
