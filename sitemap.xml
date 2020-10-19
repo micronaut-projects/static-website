@@ -181,6 +181,9 @@
     <loc>https://micronaut.io/blog/tag/test.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/townhall.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/servlet.html</loc>
   </url>
   <url>
@@ -335,6 +338,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-04-16-google-cloud-next-jsb-presentation.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-10-01-2gm-town-hall.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-10-12-micronat-graalvm-integration.html</loc>
