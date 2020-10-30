@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Micronaut at JCON 2020</title>
+    <title>Micronaut Launch: A Look Back at the First Six Months</title>
     <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
-    <meta name="description" content="A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications." />
-    <meta name="date" content="October 16, 2020" />
+    <meta name="description" content="We look back over the first six months of Micronaut Launch." />
+    <meta name="date" content="October 30, 2020" />
     <meta name="robots" content="all"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
     <meta charset='utf-8'/>
@@ -12,14 +12,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
     <meta name='twitter:card' content='summary_large_image'/>
     <meta name='twitter:site' content='@micronautfw'/>
-    <meta name='twitter:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
+    <meta name='twitter:description' content='We look back over the first six months of Micronaut Launch.'/>
     <meta name='twitter:creator' content='@micronautfw'/>
     <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
     <meta property='og:image:width' content='600'/>
     <meta property='og:image:height' content='300'/>
     <meta property='og:url' content='https://micronaut.io'/>
-    <meta property='og:title' content='Micronaut at JCON 2020'/>
-    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
+    <meta property='og:title' content='Micronaut Launch: A Look Back at the First Six Months'/>
+    <meta property='og:description' content='We look back over the first six months of Micronaut Launch.'/>
     <meta property='og:type' content='website'/>
     <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
     <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
@@ -94,36 +94,41 @@
   </h1>
   <div class='light'>
     <div class='largegoldenratio align-left'>
-      <div class='padded'><h1>Micronaut at JCON 2020</h1>
-<p><span class="author">By Jason Schindler</span></p>
-<p><span class="date">October 16, 2020</span></p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/micronaut.html"><span class="hashtag">#micronaut</span></a> <a href="https://micronaut.io/blog/tag/jcon2020.html"><span class="hashtag">#jcon2020</span></a> <a href="https://micronaut.io/blog/tag/giveaway.html"><span class="hashtag">#giveaway</span></a></p>
-<p>Have you registered for <a href="https://jcon.one">JCON 2020</a> yet?  No?  You should hurry because it is right around the corner!
-This year, JCON is from October 27th through the 30th and it is entirely online.</p>
-<p>If you haven't registered yet, you're in luck!
-Thanks to the folks at JCON-Online, if you are one of the first 50 people to use the ticket code <strong>JCON-MICRONAUT</strong> you will get a 3-day conference ticket for free!</p>
-<p>That's full access to 150+ live sessions and recorded talks when you use the code <strong>JCON-MICRONAUT</strong> to book a 3-day conference ticket to JCON 2020!</p>
-<p>While you're there, be sure to check out these talks:</p>
-<ul>
-<li>Introduction to Micronaut 2.0 - <a href="https://twitter.com/graemerocher">Graeme Rocher</a></li>
-<li>Micronaut in Production - Carlos Barragan</li>
-<li>Monitoring your Spring Boot and Micronaut microservices with Micrometer - <a href="https://twitter.com/KoTurk77">Ko Turk</a></li>
-<li>Easier Microservice Persistence With Micronaut Data - <a href="https://twitter.com/recursivecodes">Todd Sharp</a></li>
-</ul>
-<p>If you would like to familiarize yourself with Micronaut in preparation for the conference, please see visit our <a href="https://micronaut.io/learn.html">learning resources</a>.  Additionally, you can starting experimenting with Micronaut in a matter of seconds by creating your first project right now with <a href="https://micronaut.io/launch/">Micronaut Launch</a>!</p>
-<p>Claim your free ticket before they're gone, and enjoy JCON 2020!</p></div>
+      <div class='padded'><h1>Micronaut Launch: A Look Back at the First Six Months</h1>
+<p><span class="author">By James Kleeh and Jen Wiese</span></p>
+<p><span class="date">October 30, 2020</span></p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/launch.html"><span class="hashtag">#launch</span></a></p>
+<p>Back in April with the release of Micronaut 2.0 M3, we went live with a brand new implementation of the Micronaut command line interface (CLI) and <a href="https://micronaut.io/launch/">Micronaut Launch</a>, an online tool for creating Micronaut applications. Micronaut Launch features a core written in Micronaut itself and a <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-cli">micronaut-cli module that targets the user's command line</a> and uses <a href="https://picocli.info/">PicoCLI</a>.</p>
+<p>Micronaut Launch has been helping you get your Micronaut apps off the ground for six months now, and we've found the data related to its use pretty interesting.</p>
+<p>So, to begin, a total of 21,367 apps have been created using Micronaut Launch since its introduction on April 30th! That's about 3,561 apps a month and approximately 116 apps per day!</p>
+<p>Currently, Micronaut supports JDK 8 through JDK 15. As you can see, a vast majority of you are building your Micronaut applications with JDK 11, which is the default option in the launch website.</p>
+<p><img src="2020-10-30-img01.png" alt="JDKs" /></p>
+<p>Micronaut Launch provides maximum flexibility to run your own version of Launch for internal teams and choose the platform (serverless or not) that best suits your needs. As a testament to Micronaut 2.0's flexibility, you can take the same application and run it across a variety of serverless platforms (<a href="https://aws.amazon.com/lambda/">AWS Lambda</a>, <a href="https://cloud.google.com/functions">Google Cloud Functions</a>, <a href="https://azure.microsoft.com/en-us/services/functions/">Microsoft Azure Functions</a>, and <a href="https://www.oracle.com/cloud-native/functions/">Oracle Cloud Functions</a>). You can also build a regular <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-web-netty">Netty</a> or Servlet application from the same codebase.</p>
+<p>Below you can see which cloud deployment platforms are configured most often. AWS Lambda is the hands-down favorite.</p>
+<p><img src="2020-10-30-img02.png" alt="Cloud Providers" /></p>
+<p>The Micronaut Launch UI also includes support for a ton of popular features. Of all the features available, the two selected most often are <a href="https://micronaut-projects.github.io/micronaut-data/latest/guide/">Micronaut Data</a> and <a href="https://micronaut-projects.github.io/micronaut-security/latest/guide/">Micronaut Security</a>.</p>
+<p>Of the build tools available through Micronaut Launch, Gradle shows 2:1 more popular than Maven. Gradle is the default build tool on the launch website.</p>
+<p><img src="2020-10-30-img03.png" alt="Build Tools" /></p>
+<p>As for test frameworks, JUnit is preferred by more than three quarters of users.</p>
+<p><img src="2020-10-30-img04.png" alt="Test Frameworks" /></p>
+<p>Finally, Micronaut apps can currently be built using Java, Kotlin, and Groovy (with Scala on the roadmap!). More than half of you prefer Java. Both Java and JUnit are the default options in the launch website.</p>
+<p><img src="2020-10-30-img05.png" alt="Languages" /></p>
+<p>Micronaut Launch is a fantastic example of modern application development using Micronaut. The launch application itself is a <a href="https://www.graalvm.org/reference-manual/native-image/">GraalVM Native Image</a> deployed as a serverless function. The new CLI build pipeline creates GraalVM native images for Linux, macOS, and Windows. The native images are then published to SDKMAN and other package managers to make installation easy. GraalVM has changed the JVM landscape for the better, and we are happy to benefit from and contribute to its success.</p>
+<p>Micronaut Launch has also given us more insight into the features the Micronaut community finds most valuable and would like to see added in the future. A big thanks to everyone who has submitted issues to the launch repo to request new features, report bugs, and provide valuable feedback.</p>
+<p>Keep an eye out for Kotlin DSL for Gradle support, coming in November!</p>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/issues">Let us know what you think about Micronaut Launch!</a></p></div>
     </div>
     <div class='smallgoldenratio align-right padded-t related-posts'>
       <h2>You might also like ...</h2>
-      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-30.jpg)'>
-  <a href='https://micronaut.io/blog/2020-10-30-micronaut-launch-first-6-months.html'>
-    <h3>October 30, 2020</h3>
-    <h2>Micronaut Launch: A Look Back at the First Six Months</h2>
+      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-07-13.jpg)'>
+  <a href='https://micronaut.io/blog/2020-07-13-micronaut-launch-whats-new-in-micronaut2.html'>
+    <h3>July 13, 2020</h3>
+    <h2>Micronaut Launch - Micronaut 2.0</h2>
   </a>
-</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-12.jpg)'>
-  <a href='https://micronaut.io/blog/2020-10-12-micronat-graalvm-integration.html'>
-    <h3>October 12, 2020</h3>
-    <h2>Micronaut and GraalVM: An Integration Story</h2>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-04-30.jpg)'>
+  <a href='https://micronaut.io/blog/2020-04-30-introducing-micronaut-launch.html'>
+    <h3>April 30, 2020</h3>
+    <h2>Introducing Micronaut 2.0 Launch</h2>
   </a>
 </article></div>
     </div>
