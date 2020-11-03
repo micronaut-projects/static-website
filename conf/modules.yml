@@ -3,7 +3,7 @@ modules:
     category: 'Build'
     image: 'gradle.svg'
     label: 'Micronaut Gradle Plugin'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-gradle-plugin'
     readme: true
     legend: 'Gradle Plugin for Micronaut that configures the Micronaut BOM and sets up annotation processing'
