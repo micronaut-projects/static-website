@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Thu, 05 Nov 2020 10:02:00 GMT</pubDate><item><title>Micronaut Launch: A Look Back at the First Six Months</title><link>https://micronaut.io/blog/2020-10-30-micronaut-launch-first-6-months.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Thu, 05 Nov 2020 16:33:37 GMT</pubDate><item><title>Webinar: REDUCING LATENCIES WITH MICRONAUT AND AMAZON CORRETTO</title><link>https://micronaut.io/blog/2020-10-30-micronaut-corretto-webinar.html</link><description><![CDATA[</p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a> <a href="https://micronaut.io/blog/tag/corretto.html"><span class="hashtag">#corretto</span></a> <a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a></p>
+<p>When a millisecond delay can mean all the difference, the right tools are critical.</p>
+<p>Join 2GM (Groovy, Grails, and Micronaut) team member, Álvaro Sánchez-Mariscal, and Amazon Software Development Manager, Azeem Jiva, for a live tutorial demonstrating the most effective ways to reduce latencies with Micronaut and Amazon Corretto.</p>
+<p>Topics covered include:</p>
+<ul>
+<li>Micronaut Overview
+<ul>
+<li>AWS</li>
+<li>Lambda</li>
+<li>JRE</li>
+</ul>
+</li>
+<li>Corretto Overview</li>
+<li>Shenandoah</li>
+<li>Latencies</li>
+<li>Demo</li>
+<li>Q&amp;A</li>
+</ul>
+<p>No particular expertise with Micronaut or Corretto is required; however, you will benefit if you are already familiar with both technologies.</p>
+<p><a href="https://objectcomputing.com/files/1816/0407/5271/Slide_Deck_Micronaut_Corretto_Webinar.pdf">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/EmWTBSp7fNc" frameborder="0"></iframe>]]></description><author>Álvaro Sánchez-Mariscal</author><guid>2020-10-30-micronaut-corretto-webinar</guid><pubDate>Fri, 30 Oct 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut Launch: A Look Back at the First Six Months</title><link>https://micronaut.io/blog/2020-10-30-micronaut-launch-first-6-months.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/launch.html"><span class="hashtag">#launch</span></a></p>
 <p>Back in April with the release of Micronaut 2.0 M3, we went live with a brand new implementation of the Micronaut command line interface (CLI) and <a href="https://micronaut.io/launch/">Micronaut Launch</a>, an online tool for creating Micronaut applications. Micronaut Launch features a core written in Micronaut itself and a <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-cli">micronaut-cli module that targets the user's command line</a> and uses <a href="https://picocli.info/">PicoCLI</a>.</p>
 <p>Micronaut Launch has been helping you get your Micronaut apps off the ground for six months now, and we've found the data related to its use pretty interesting.</p>

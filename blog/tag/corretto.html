@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Micronaut Is Now Certified to Run on Amazon Corretto</title>
+    <title>CORRETTO | Blog | Micronaut Framework</title>
     <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
-    <meta name="description" content="Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production." />
-    <meta name="date" content="April 9, 2020" />
+    <meta name="description" content="A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications." />
+    <meta name="date" content="November 5, 2020" />
     <meta name="robots" content="all"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
     <meta charset='utf-8'/>
@@ -12,14 +12,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
     <meta name='twitter:card' content='summary_large_image'/>
     <meta name='twitter:site' content='@micronautfw'/>
-    <meta name='twitter:description' content='Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.'/>
+    <meta name='twitter:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
     <meta name='twitter:creator' content='@micronautfw'/>
     <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
     <meta property='og:image:width' content='600'/>
     <meta property='og:image:height' content='300'/>
     <meta property='og:url' content='https://micronaut.io'/>
-    <meta property='og:title' content='Micronaut Is Now Certified to Run on Amazon Corretto'/>
-    <meta property='og:description' content='Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.'/>
+    <meta property='og:title' content='CORRETTO | Blog | Micronaut Framework'/>
+    <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
     <meta property='og:type' content='website'/>
     <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
     <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
@@ -47,10 +47,10 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
-    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+    <link rel='stylesheet' href=''/>
+    <script src=''></script>
 </head>
-<body class='post'>
+<body>
 <div class='main'>
     <nav id='navbar'>
         <ul class='container'>
@@ -85,65 +85,17 @@
         </ul>
     </nav>
 </div>
-<article><div class='content container'>
-  <h1>
-    <a href='https://micronaut.io/blog/index.html'>
-      <span>Micronaut<sup>&reg;</sup></span>
-      <b>Blog</b>
-    </a>
-  </h1>
-  <div class='light'>
-    <div class='largegoldenratio align-left'>
-      <div class='padded'><h1>Micronaut Is Now Certified to Run on Amazon Corretto</h1>
-<p><span class="author">By Álvaro Sánchez-Mariscal</span></p>
-<p><span class="date">April 9, 2020</span></p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a> <a href="https://micronaut.io/blog/tag/correto.html"><span class="hashtag">#correto</span></a></p>
-<p>One practice used by the <a href="https://objectcomputing.com/products/2gm-team" title="Groovy, Grails, and Micronaut Team">Micronaut development team</a> is continuous integration (CI). In support of this, the <a href="https://micronaut.io/" title="Learn more about the Micronaut Framework">Micronaut framework</a>'s core has an extensive test suite executed via <a href="https://github.com/features/actions">GitHub Actions</a>, and since the beginning of 2020, tests have also been executed with <a href="https://aws.amazon.com/corretto/">Amazon Corretto</a> 8 and 11.</p>
-<p>Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.</p>
-<p>Amazon Corretto is an OpenJDK distribution that provides free, long-term support with no pay-gated features or restrictions on how it's used in production. Corretto is used by thousands of Amazon workloads; for example, it's the JDK used by the <a href="https://aws.amazon.com/blogs/compute/java-11-runtime-now-available-in-aws-lambda/">AWS Lambda <code>java11</code> runtime</a>, which provides insights Amazon uses to push improvements upstream.</p>
-<p>Since Micronaut offers <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide">first-class support for AWS</a>, particularly for Lambda functions, we thought it prudent to include a specific workflow to run Micronaut core tests with Corretto. We are also making sure that tests are run within an Amazon Linux 2 base image, which is the environment users will find in a java11 runtime-based Lambda.</p>
-<p>To enable the Micronaut team to continuously test and support Micronaut running on Corretto, we use the official <code>amazoncorretto:8</code> and <code>amazoncorreto:11</code> Docker images, which are built on top of <code>amazonlinux:2</code>.</p>
-<p>With the exception of some environment variables (which may be specific to the use case of running within GitHub Actions and within a Docker image), Corretto has proven to be a drop-in replacement for other OpenJDK distributions. It has not produced any difference compared to the main CI workflow, which is run with GitHub Actions' default Zulu Community distribution of OpenJDK. You can check the whole workflow file <a href="https://github.com/micronaut-projects/micronaut-core/blob/master/.github/workflows/corretto.yml">here</a>.</p>
-<h2>Choosing Corretto</h2>
-<p>If you wish to use Corretto locally as your OpenJDK distribution, you can download it from <a href="https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html">Amazon's downloads page</a>. Alternatively, installation can be greatly simplified using <a href="https://sdkman.io/">SDKMAN!</a>, which makes the process of switching between Java distributions and versions a piece of cake.</p>
-<p>Once you have SDKMAN! Installed, you can install and use Corretto 11 by simply typing:</p>
-<pre><code>&amp;#36; sdk install java 11.0.6-amzn
-&amp;#36; sdk use java 11.0.6-amzn
-</code></pre>
-<p>Then, check the version used:</p>
-<pre><code>&amp;#36; java -version
-openjdk version &quot;11.0.6&quot; 2020-01-14 LTS
-OpenJDK Runtime Environment Corretto-11.0.6.10.1 (build 11.0.6+10-LTS)
-OpenJDK 64-Bit Server VM Corretto-11.0.6.10.1 (build 11.0.6+10-LTS, mixed mode)
-</code></pre>
-<p>And you’re done!</p>
-<h2>Looking Ahead</h2>
-<p>The Micronaut team is continually looking at ways to improve and validate the Micronaut framework against production cloud environments like Amazon Web Services.</p>
-<p>While Amazon Corretto is not strictly a user-facing feature, users can forge ahead with Micronaut and AWS with the assurance that the technologies are certified to work together.</p>
-<h3>Explore Further</h3>
-<p>Stefano Buliani (Amazon Web Services) and Sergio del Amo (Object Computing) recently hosted a webinar and demonstrated how the Micronaut Framework's built-in features enable seamless integration with AWS services. </p>
-<p><a href="https://objectcomputing.com/products/micronaut/resources/micronaut-and-aws" title="Combining Micronaut and AWS to Superpower Your Apps">View Webinar</a></p>
-<h3>Expand Your Expertise</h3>
-<p>The team regularly publishes <a href="https://guides.micronaut.io/" title="Micronaut Guides">Micronaut Guides</a>, tutorials that enable developers to take their skills to the next level and get the most out of the framework.</p>
-<h3>Relevant Guides</h3>
-<p><a href="https://guides.micronaut.io/micronaut-function-graalvm-aws-lambda-gateway/guide/index.html">Micronaut Functions in GraalVM Native Images Deployed to AWS Lambda</a></p>
-<p><a href="https://guides.micronaut.io/micronaut-elasticbeanstalk/guide/index.html">Deploy to AWS ElasticBeanstalk</a></p>
-<p><a href="https://guides.micronaut.io/micronaut-function-aws-lambda/guide/index.html">Micronaut Functions Deployed in AWS Lambda</a></p></div>
-    </div>
-    <div class='smallgoldenratio align-right padded-t related-posts'>
-      <h2>You might also like ...</h2>
-      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-30-2.jpg)'>
+<article><div class='clear content container'><h1>
+  <span>Tag:</span>
+  <b>corretto</b>
+</h1>
+  <div class='light'><div class="threecolumns">
+    <div class='column'><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-30-2.jpg)'>
   <a href='https://micronaut.io/blog/2020-10-30-micronaut-corretto-webinar.html'>
     <h3>October 30, 2020</h3>
     <h2>Webinar: REDUCING LATENCIES WITH MICRONAUT AND AMAZON CORRETTO</h2>
   </a>
-</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-08-31.jpg)'>
-  <a href='https://micronaut.io/blog/2020-08-31-micronaut-2-aws-lambda.html'>
-    <h3>August 31, 2020</h3>
-    <h2>Micronaut 2: AWS Lambda Functions</h2>
-  </a>
 </article></div>
-    </div>
   </div>
 </div>&nbsp;</article>
 <div id="footercircle" class="full whitecircleborderseparator"></div>

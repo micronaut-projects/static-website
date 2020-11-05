@@ -184,6 +184,9 @@
     <loc>https://micronaut.io/blog/tag/docker.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/corretto.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/maven.html</loc>
   </url>
   <url>
@@ -218,6 +221,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-07-18-unleashing-predator-precomputed-data-repositories.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-10-30-micronaut-corretto-webinar.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-05-15-micronaut-now-supports-microsoft-azure-functions.html</loc>
