@@ -938,7 +938,7 @@ footer nav#footernav {
     margin: 0 auto 50px;
 }
 #socialnetworknav {
-    max-width: 350px;
+    max-width: 420px;
     margin: 0 auto 10px;
 }
 #socialnetworknav li {
@@ -1568,6 +1568,9 @@ body.home .calltoactionbuttons {
     }
 }
 
-
+.socialicon {
+    height: 45px;
+    width: 45px;
+}
 
 
