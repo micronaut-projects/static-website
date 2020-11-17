@@ -236,14 +236,23 @@ body.post .largegoldenratio pre {
 }
 .light .blogcard a,
 .light .blogcard a:visited,
-.light .blogcard a:hover {
+.light .blogcard a:hover,
+.light.learn-grid a,
+.light.learn-grid a:visited,
+.light.learn-grid a:hover {
     color: #231F20;
 }
 @media screen and (min-width: 961px) {
     .light .blogcard a,
     .light .blogcard a:visited,
-    .light .blogcard a:hover {
-       color: #FFFFFF;
+    .light .blogcard a:hover,
+    .light.learn-grid a,
+    .light.learn-grid a:visited,
+    .light.learn-grid a:hover {
+        color: #FFFFFF;
+    }
+    .light.article-grid.learn-grid h2 {
+        padding-top: 30%;
     }
 }
 
@@ -273,10 +282,12 @@ body.post .largegoldenratio pre {
     line-height: 1.4em !important;
 }
 
-.blogcard a, .blogcard a:visited {
+.blogcard a, .blogcard a:visited,
+.learn-grid a, .learn-grid a:visited {
     text-decoration: none !important;
 }
-.blogcard a:hover {
+.blogcard a:hover,
+.learn-grid a:hover {
     text-decoration: underline !important;
 }
 
@@ -763,6 +774,15 @@ nav li {
     }
     .smallgoldenratio {
         width: 38.1966011%;
+    }
+    .container .smallgoldenratio .blogcard {
+        margin-left: 0;
+        margin-right: 11.22754491%; /* 50 / (1336 * 1/3) */
+        margin-top: 9.585%;
+        margin-bottom: 0;
+    }
+    .container .smallgoldenratio .blogcard:last-child {
+        margin-bottom: 9.585%;
     }
 }
 .padded {
