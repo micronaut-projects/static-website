@@ -14,7 +14,7 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date] 
 
-Tags: #aws #correto
+Tags: #aws #corretto
 
 One practice used by the [Micronaut development team](https://objectcomputing.com/products/2gm-team "Groovy, Grails, and Micronaut Team") is continuous integration (CI). In support of this, the [Micronaut framework](https://micronaut.io/ "Learn more about the Micronaut Framework")'s core has an extensive test suite executed via [GitHub Actions](https://github.com/features/actions), and since the beginning of 2020, tests have also been executed with [Amazon Corretto](https://aws.amazon.com/corretto/) 8 and 11.
 

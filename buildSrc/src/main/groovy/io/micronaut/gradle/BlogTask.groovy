@@ -455,7 +455,7 @@ class BlogTask extends DefaultTask {
         List<String> cards = []
         cards.addAll(postCards)
         cards.add(2, tagsCard(sitemeta, tags))
-        cards.add(5, rssCard(sitemeta['url']))
+//        cards.add(5, rssCard(sitemeta['url']))
         //cards.add(8, subscribeCard())
         Map<String, String> resolvedMetadata = RenderSiteTask.processMetadata(sitemeta)
         // String html = EventsPage.mainContent(sitemeta['url']) +
@@ -498,21 +498,9 @@ class BlogTask extends DefaultTask {
                 }
             }
 
-            div(class: 'light') {
+            div(class: 'light article-grid') {
                 for (int i = 0; i < cards.size(); i++) {
-                    if (i == 0) {
-                        mkp.yieldUnescaped('<div class="threecolumns">')
-                    }
-                    div(class: 'column') {
-                        mkp.yieldUnescaped(cards[i])
-                    }
-
-                    if ( i != 0 && ((i + 1 ) % 3 == 0)) {
-                        mkp.yieldUnescaped('</div>')
-                        if (i != (cards.size() - 1)) {
-                            mkp.yieldUnescaped('<div class="threecolumns">')
-                        }
-                    }
+                    mkp.yieldUnescaped(cards[i])
                 }
             }
         }
