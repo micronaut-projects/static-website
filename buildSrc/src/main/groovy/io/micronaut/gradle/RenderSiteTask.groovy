@@ -80,6 +80,7 @@ class RenderSiteTask extends DefaultTask {
                 github: 'github.svg',
                 twitter: 'twitter.svg',
                 mail: 'mail.svg',
+                rssSocial: 'rss_social.svg',
                 micronautlogo: 'micronautlogo.svg',
                 ocilogo: 'oci_logo.svg'
         ] as Map<String, String>
