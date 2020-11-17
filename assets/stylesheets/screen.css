@@ -204,7 +204,7 @@ body.post .largegoldenratio pre {
     article.tagcloud {
         grid-column: 3;
         grid-row: 1/ span 2;
-        padding-bottom: 193%
+        padding-bottom: 210%
     }
 
     .light .blogcard {
@@ -316,7 +316,7 @@ body.post .largegoldenratio pre {
 
     .blogcard {
 		height: 0;
-		padding-bottom: 88.77245509%;
+		padding-bottom: 100%;
     }
 }
 
