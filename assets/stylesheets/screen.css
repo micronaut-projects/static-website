@@ -26,13 +26,13 @@ footer, header, hgroup, menu, nav, section {
 
 /** Mobile First Sizing **/
 /* XS Mobile First */
-body {
+html {
     font-size: 12px;
     line-height: 1;
 }
 /* SM and Up */
 @media (min-width: 374px) {
-    body {
+    html {
         font-size: 14px;
     }
 }
@@ -486,6 +486,11 @@ li,
 p {
     font-size: 1.25em; /* 40 / 32 */
     line-height: 1.6em; /* 48px;	/ 38px; */
+}
+
+li {
+    font-size: 1.25rem;
+    line-height: 1.6rem;
 }
 
 li p {
