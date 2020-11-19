@@ -119,6 +119,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-netflix'
     legend: 'Integration between Micronaut and Netflix OSS'
+  multitenancy:
+    category: 'Misc'
+    image: 'multitenancy.svg'
+    label: 'Micronaut Multitenancy'
+    version: 'snapshot'
+    githubslug: 'micronaut-multitenancy'
+    legend: 'Support for Multi-tenancy aware applications'
   kafka:
     category: 'Messaging'
     image: 'kafka.svg'
