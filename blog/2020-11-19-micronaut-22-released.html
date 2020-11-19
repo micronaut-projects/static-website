@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Micronaut at JCON 2020</title>
+    <title>Micronaut 2.2 Released!</title>
     <meta name="keywords" content="microanut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
     <meta name="description" content="A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications." />
-    <meta name="date" content="October 16, 2020" />
+    <meta name="date" content="November 19, 2020" />
     <meta name="robots" content="all"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
     <meta charset='utf-8'/>
@@ -18,7 +18,7 @@
     <meta property='og:image:width' content='600'/>
     <meta property='og:image:height' content='300'/>
     <meta property='og:url' content='https://micronaut.io'/>
-    <meta property='og:title' content='Micronaut at JCON 2020'/>
+    <meta property='og:title' content='Micronaut 2.2 Released!'/>
     <meta property='og:description' content='A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'/>
     <meta property='og:type' content='website'/>
     <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
@@ -94,36 +94,105 @@
   </h1>
   <div class='light'>
     <div class='largegoldenratio align-left'>
-      <div class='padded'><h1>Micronaut at JCON 2020</h1>
+      <div class='padded'><h1>Micronaut 2.2 Released!</h1>
 <p><span class="author">By Jason Schindler</span></p>
-<p><span class="date">October 16, 2020</span></p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/micronaut.html"><span class="hashtag">#micronaut</span></a> <a href="https://micronaut.io/blog/tag/jcon2020.html"><span class="hashtag">#jcon2020</span></a> <a href="https://micronaut.io/blog/tag/giveaway.html"><span class="hashtag">#giveaway</span></a></p>
-<p>Have you registered for <a href="https://jcon.one">JCON 2020</a> yet?  No?  You should hurry because it is right around the corner!
-This year, JCON is from October 27th through the 30th and it is entirely online.</p>
-<p>If you haven't registered yet, you're in luck!
-Thanks to the folks at JCON-Online, if you are one of the first 50 people to use the ticket code <strong>JCON-MICRONAUT</strong> you will get a 3-day conference ticket for free!</p>
-<p>That's full access to 150+ live sessions and recorded talks when you use the code <strong>JCON-MICRONAUT</strong> to book a 3-day conference ticket to JCON 2020!</p>
-<p>While you're there, be sure to check out these talks:</p>
+<p><span class="date">November 19, 2020</span></p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/micronaut2.html"><span class="hashtag">#micronaut2</span></a> <a href="https://micronaut.io/blog/tag/maven.html"><span class="hashtag">#maven</span></a> <a href="https://micronaut.io/blog/tag/launch.html"><span class="hashtag">#launch</span></a> <a href="https://micronaut.io/blog/tag/github.html"><span class="hashtag">#github</span></a> <a href="https://micronaut.io/blog/tag/mqtt.html"><span class="hashtag">#mqtt</span></a> <a href="https://micronaut.io/blog/tag/r2dbc.html"><span class="hashtag">#r2dbc</span></a> <a href="https://micronaut.io/blog/tag/security.html"><span class="hashtag">#security</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> is excited to announce the release of <a href="https://docs.micronaut.io/2.2.0/guide/index.html">Micronaut 2.2!</a>
+This release features MQTT support, packaging and configuration enhancements for the <a href="https://micronaut-projects.github.io/micronaut-maven-plugin/1.1.0/">Micronaut Maven Plugin</a>, pushing a new project directly to <a href="https://github.com">GitHub</a> from <a href="https://micronaut.io/launch/">Micronaut Launch</a>, a preview of R2DBC support with <a href="https://micronaut-projects.github.io/micronaut-data/latest/guide/index.html">Micronaut Data</a>, and a bunch of <a href="https://docs.micronaut.io/2.2.0/guide/index.html#whatsNew">other enhancements</a>!</p>
+<h2>MQTT</h2>
+<p>Micronaut 2.2 includes a brand new configuration for <a href="https://micronaut-projects.github.io/micronaut-mqtt/latest/guide/">MQTT</a> support!
+Similar to our existing <a href="https://micronaut-projects.github.io/micronaut-kafka/latest/guide/">Kafka</a> and <a href="https://micronaut-projects.github.io/micronaut-rabbitmq/latest/guide/">RabbitMQ</a> configurations, Micronaut MQTT provides support for using annotations to publish and consume data from topics that use MQTT version 3 or 5.</p>
+<p>Here is an example interface that will create a MQTT publisher for a topic called <code>product</code>:</p>
+<pre><code class="language-java">import io.micronaut.mqtt.annotation.Topic;
+import io.micronaut.mqtt.v5.annotation.MqttPublisher;
+
+@MqttPublisher
+public interface ProductClient {
+
+    @Topic(&quot;product&quot;)
+    void send(byte[] data);
+}
+</code></pre>
+<p>You can build a subscriber for this topic using the <a href="https://micronaut-projects.github.io/micronaut-mqtt/latest/api/io/micronaut/mqtt/annotation/MqttSubscriber.html">@MqttSubscriber</a> annotation:</p>
+<pre><code class="language-java">import io.micronaut.mqtt.annotation.MqttSubscriber;
+import io.micronaut.mqtt.annotation.Topic;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+@MqttSubscriber
+public class ProductListener {
+
+    List&lt;String&gt; messageLengths = Collections.synchronizedList(new ArrayList&lt;&gt;());
+
+    @Topic(&quot;product&quot;)
+    public void receive(byte[] data) {
+        messageLengths.add(new String(data));
+        System.out.println(&quot;Java received &quot; + data.length + &quot; bytes from MQTT&quot;);
+    }
+}
+</code></pre>
+<p>For more information and configuration options, please see the <a href="https://micronaut-projects.github.io/micronaut-mqtt/latest/guide/">Micronaut MQTT Guide</a>!</p>
+<h2>Native Image and Docker support in Maven Plugin</h2>
+<p>The latest <a href="https://micronaut-projects.github.io/micronaut-maven-plugin/1.1.0/">Micronaut Maven Plugin</a> includes first-class support for a number of packaging options including:</p>
 <ul>
-<li>Introduction to Micronaut 2.0 - <a href="https://twitter.com/graemerocher">Graeme Rocher</a></li>
-<li>Micronaut in Production - Carlos Barragan</li>
-<li>Monitoring your Spring Boot and Micronaut microservices with Micrometer - <a href="https://twitter.com/KoTurk77">Ko Turk</a></li>
-<li>Easier Microservice Persistence With Micronaut Data - <a href="https://twitter.com/recursivecodes">Todd Sharp</a></li>
+<li>Runnable fat Jars</li>
+<li>Docker Images</li>
+<li>GraalVM Nate Images</li>
 </ul>
-<p>If you would like to familiarize yourself with Micronaut in preparation for the conference, please see visit our <a href="https://micronaut.io/learn.html">learning resources</a>.  Additionally, you can starting experimenting with Micronaut in a matter of seconds by creating your first project right now with <a href="https://micronaut.io/launch/">Micronaut Launch</a>!</p>
-<p>Claim your free ticket before they're gone, and enjoy JCON 2020!</p></div>
+<p>To configure your project's runtime and preferred package, you can declare the following properties:</p>
+<pre><code class="language-xml">&lt;project&gt;
+    &lt;packaging&gt;&amp;#36;{packaging}&lt;/packaging&gt;
+    &lt;properties&gt;
+        &lt;!-- ... --&gt;
+        &lt;packaging&gt;jar&lt;/packaging&gt;
+        &lt;micronaut.runtime&gt;netty&lt;/micronaut.runtime&gt;
+    &lt;/properties&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;!-- ... --&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;io.micronaut.build&lt;/groupId&gt;
+                &lt;artifactId&gt;micronaut-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+<p>Now, running <code>mvn package</code> will package your Micronaut project into a runnable jar that includes the Netty runtime!
+To package your application as a GraalVM native image or a Docker image, you can set your <code>packaging</code> property to <code>native-image</code> or <code>docker</code>.
+For a Docker image that contains a GraalVM native image, use <code>docker-native</code>.</p>
+<p><code>mvn package -Dpackaging=native-image</code></p>
+<p>For a full list of options and features, please see the <a href="https://micronaut-projects.github.io/micronaut-maven-plugin/1.1.0/">Micronaut Maven Plugin documentation</a>.</p>
+<h2>Push to GitHub</h2>
+<p><a href="https://micronaut.io/launch/">Micronaut Launch</a> learned a new trick!  Starting with version 2.2.0, you can push new Micronaut projects directly to GitHub!</p>
+<p>First, select the options and features that you would like for your new Micronaut project.  Now, when you select &quot;Generate Project&quot;, pick the &quot;Push to GitHub&quot; option:</p>
+<p><img src="2020-11-19-push-to-gh.png" alt="Push to GitHub menu option" /></p>
+<p>After authenticating with GitHub, your new project will be available to you as a brand new repository:</p>
+<p><img src="2020-11-19-push-to-gh2.png" alt="Push to GitHub result" /></p>
+<p>Congratulations!  Now you can <code>git clone ...</code> and go!</p>
+<h2>Try it out!</h2>
+<p>Create a new Micronaut 2.2 application with <a href="https://micronaut.io/launch/">Micronaut Launch</a>, or visit our <a href="https://micronaut.io/download.html">Download</a> page for other options to get started including installing the latest <a href="https://micronaut-projects.github.io/micronaut-starter/latest/guide/#introduction">Micronaut CLI</a>.</p>
+<p>This is just a sampling of the enhancements that come with Micronaut 2.2.  This release also includes <a href="https://www.jsonfeed.org/">JSON Feed</a> support, <a href="https://micronaut-projects.github.io/micronaut-security/latest/guide/">Micronaut Security</a> now supports <a href="https://tools.ietf.org/html/rfc6749#section-4.4">Client Credentials Grant</a>, and the <a href="https://github.com/micronaut-projects/micronaut-gradle-plugin">Gradle plugin</a> received an improvement to allow for testing with native images.  For a full description of this release, please see the <a href="https://docs.micronaut.io/2.2.0/guide/index.html#whatsNew">What's New</a> section of the <a href="https://docs.micronaut.io/2.2.0/guide/index.html">guide</a>.</p>
+<p>For Micronaut Documentation, Guides, and API information see our <a href="https://micronaut.io/documentation.html">Documentation</a> page.</p>
+<p>To learn more about using Micronaut, check out <a href="https://micronaut.io/learn.html">these learning resources</a>.</p>
+<h2>Thank You!</h2>
+<p>This release would not have been possible without the contributions and support of the amazing Micronaut community!  Thank you to all that have contributed time, effort, and energy to making Micronaut a world-class framework for developing applications on the JVM.</p>
+<p>We would also like to thank the Technical Advisory Board, Board of Directors, and Contributing Members of the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a>.  The Micronaut Foundation is a not-for-profit organization that exists to support and collectively lead the open source Micronaut project.  To learn more about the Micronaut Foundation including how you can help support the continued growth and enhancement of the Micronaut framework, please visit the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a> or reach out to <a href="mailto:foundation@micronaut.io">foundation@micronaut.io</a>.</p></div>
     </div>
     <div class='smallgoldenratio align-right padded-t related-posts'>
       <h2>You might also like ...</h2>
-      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-11-19.jpg)'>
-  <a href='https://micronaut.io/blog/2020-11-19-micronaut-22-released.html'>
-    <h3>November 19, 2020</h3>
-    <h2>Micronaut 2.2 Released!</h2>
+      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-05.jpg)'>
+  <a href='https://micronaut.io/blog/2020-10-05-micronaut-21-released.html'>
+    <h3>October 5, 2020</h3>
+    <h2>Micronaut 2.1 Released!</h2>
   </a>
-</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-12.jpg)'>
-  <a href='https://micronaut.io/blog/2020-10-12-micronat-graalvm-integration.html'>
-    <h3>October 12, 2020</h3>
-    <h2>Micronaut and GraalVM: An Integration Story</h2>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-06-26.jpg)'>
+  <a href='https://micronaut.io/blog/2020-06-26-announcing-micronaut-20.html'>
+    <h3>June 26, 2020</h3>
+    <h2>Announcing Micronaut 2.0</h2>
   </a>
 </article></div>
     </div>

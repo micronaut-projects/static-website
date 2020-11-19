@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Thu, 19 Nov 2020 21:33:38 GMT</pubDate><item><title>Webinar: REDUCING LATENCIES WITH MICRONAUT AND AMAZON CORRETTO</title><link>https://micronaut.io/blog/2020-10-30-micronaut-corretto-webinar.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Thu, 19 Nov 2020 23:32:35 GMT</pubDate><item><title>Micronaut 2.2 Released!</title><link>https://micronaut.io/blog/2020-11-19-micronaut-22-released.html</link><description><![CDATA[</p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/micronaut2.html"><span class="hashtag">#micronaut2</span></a> <a href="https://micronaut.io/blog/tag/maven.html"><span class="hashtag">#maven</span></a> <a href="https://micronaut.io/blog/tag/launch.html"><span class="hashtag">#launch</span></a> <a href="https://micronaut.io/blog/tag/github.html"><span class="hashtag">#github</span></a> <a href="https://micronaut.io/blog/tag/mqtt.html"><span class="hashtag">#mqtt</span></a> <a href="https://micronaut.io/blog/tag/r2dbc.html"><span class="hashtag">#r2dbc</span></a> <a href="https://micronaut.io/blog/tag/security.html"><span class="hashtag">#security</span></a></p>
+<p>The <a href="https://objectcomputing.com/products/2gm-team">Micronaut team</a> is excited to announce the release of <a href="https://docs.micronaut.io/2.2.0/guide/index.html">Micronaut 2.2!</a>
+This release features MQTT support, packaging and configuration enhancements for the <a href="https://micronaut-projects.github.io/micronaut-maven-plugin/1.1.0/">Micronaut Maven Plugin</a>, pushing a new project directly to <a href="https://github.com">GitHub</a> from <a href="https://micronaut.io/launch/">Micronaut Launch</a>, a preview of R2DBC support with <a href="https://micronaut-projects.github.io/micronaut-data/latest/guide/index.html">Micronaut Data</a>, and a bunch of <a href="https://docs.micronaut.io/2.2.0/guide/index.html#whatsNew">other enhancements</a>!</p>
+<h2>MQTT</h2>
+<p>Micronaut 2.2 includes a brand new configuration for <a href="https://micronaut-projects.github.io/micronaut-mqtt/latest/guide/">MQTT</a> support!
+Similar to our existing <a href="https://micronaut-projects.github.io/micronaut-kafka/latest/guide/">Kafka</a> and <a href="https://micronaut-projects.github.io/micronaut-rabbitmq/latest/guide/">RabbitMQ</a> configurations, Micronaut MQTT provides support for using annotations to publish and consume data from topics that use MQTT version 3 or 5.</p>
+<p>Here is an example interface that will create a MQTT publisher for a topic called <code>product</code>:</p>
+<pre><code class="language-java">import io.micronaut.mqtt.annotation.Topic;
+import io.micronaut.mqtt.v5.annotation.MqttPublisher;
+
+@MqttPublisher
+public interface ProductClient {
+
+    @Topic(&quot;product&quot;)
+    void send(byte[] data);
+}
+</code></pre>
+<p>You can build a subscriber for this topic using the <a href="https://micronaut-projects.github.io/micronaut-mqtt/latest/api/io/micronaut/mqtt/annotation/MqttSubscriber.html">@MqttSubscriber</a> annotation:</p>
+<pre><code class="language-java">import io.micronaut.mqtt.annotation.MqttSubscriber;
+import io.micronaut.mqtt.annotation.Topic;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+@MqttSubscriber
+public class ProductListener {
+
+    List&lt;String&gt; messageLengths = Collections.synchronizedList(new ArrayList&lt;&gt;());
+
+    @Topic(&quot;product&quot;)
+    public void receive(byte[] data) {
+        messageLengths.add(new String(data));
+        System.out.println(&quot;Java received &quot; + data.length + &quot; bytes from MQTT&quot;);
+    }
+}
+</code></pre>
+<p>For more information and configuration options, please see the <a href="https://micronaut-projects.github.io/micronaut-mqtt/latest/guide/">Micronaut MQTT Guide</a>!</p>
+<h2>Native Image and Docker support in Maven Plugin</h2>
+<p>The latest <a href="https://micronaut-projects.github.io/micronaut-maven-plugin/1.1.0/">Micronaut Maven Plugin</a> includes first-class support for a number of packaging options including:</p>
+<ul>
+<li>Runnable fat Jars</li>
+<li>Docker Images</li>
+<li>GraalVM Nate Images</li>
+</ul>
+<p>To configure your project's runtime and preferred package, you can declare the following properties:</p>
+<pre><code class="language-xml">&lt;project&gt;
+    &lt;packaging&gt;&amp;#36;{packaging}&lt;/packaging&gt;
+    &lt;properties&gt;
+        &lt;!-- ... --&gt;
+        &lt;packaging&gt;jar&lt;/packaging&gt;
+        &lt;micronaut.runtime&gt;netty&lt;/micronaut.runtime&gt;
+    &lt;/properties&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;!-- ... --&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;io.micronaut.build&lt;/groupId&gt;
+                &lt;artifactId&gt;micronaut-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+<p>Now, running <code>mvn package</code> will package your Micronaut project into a runnable jar that includes the Netty runtime!
+To package your application as a GraalVM native image or a Docker image, you can set your <code>packaging</code> property to <code>native-image</code> or <code>docker</code>.
+For a Docker image that contains a GraalVM native image, use <code>docker-native</code>.</p>
+<p><code>mvn package -Dpackaging=native-image</code></p>
+<p>For a full list of options and features, please see the <a href="https://micronaut-projects.github.io/micronaut-maven-plugin/1.1.0/">Micronaut Maven Plugin documentation</a>.</p>
+<h2>Push to GitHub</h2>
+<p><a href="https://micronaut.io/launch/">Micronaut Launch</a> learned a new trick!  Starting with version 2.2.0, you can push new Micronaut projects directly to GitHub!</p>
+<p>First, select the options and features that you would like for your new Micronaut project.  Now, when you select &quot;Generate Project&quot;, pick the &quot;Push to GitHub&quot; option:</p>
+<p><img src="2020-11-19-push-to-gh.png" alt="Push to GitHub menu option" /></p>
+<p>After authenticating with GitHub, your new project will be available to you as a brand new repository:</p>
+<p><img src="2020-11-19-push-to-gh2.png" alt="Push to GitHub result" /></p>
+<p>Congratulations!  Now you can <code>git clone ...</code> and go!</p>
+<h2>Try it out!</h2>
+<p>Create a new Micronaut 2.2 application with <a href="https://micronaut.io/launch/">Micronaut Launch</a>, or visit our <a href="https://micronaut.io/download.html">Download</a> page for other options to get started including installing the latest <a href="https://micronaut-projects.github.io/micronaut-starter/latest/guide/#introduction">Micronaut CLI</a>.</p>
+<p>This is just a sampling of the enhancements that come with Micronaut 2.2.  This release also includes <a href="https://www.jsonfeed.org/">JSON Feed</a> support, <a href="https://micronaut-projects.github.io/micronaut-security/latest/guide/">Micronaut Security</a> now supports <a href="https://tools.ietf.org/html/rfc6749#section-4.4">Client Credentials Grant</a>, and the <a href="https://github.com/micronaut-projects/micronaut-gradle-plugin">Gradle plugin</a> received an improvement to allow for testing with native images.  For a full description of this release, please see the <a href="https://docs.micronaut.io/2.2.0/guide/index.html#whatsNew">What's New</a> section of the <a href="https://docs.micronaut.io/2.2.0/guide/index.html">guide</a>.</p>
+<p>For Micronaut Documentation, Guides, and API information see our <a href="https://micronaut.io/documentation.html">Documentation</a> page.</p>
+<p>To learn more about using Micronaut, check out <a href="https://micronaut.io/learn.html">these learning resources</a>.</p>
+<h2>Thank You!</h2>
+<p>This release would not have been possible without the contributions and support of the amazing Micronaut community!  Thank you to all that have contributed time, effort, and energy to making Micronaut a world-class framework for developing applications on the JVM.</p>
+<p>We would also like to thank the Technical Advisory Board, Board of Directors, and Contributing Members of the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a>.  The Micronaut Foundation is a not-for-profit organization that exists to support and collectively lead the open source Micronaut project.  To learn more about the Micronaut Foundation including how you can help support the continued growth and enhancement of the Micronaut framework, please visit the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a> or reach out to <a href="mailto:foundation@micronaut.io">foundation@micronaut.io</a>.</p>]]></description><author>Jason Schindler</author><guid>2020-11-19-micronaut-22-released</guid><pubDate>Thu, 19 Nov 2020 00:00:00 GMT</pubDate></item><item><title>Webinar: REDUCING LATENCIES WITH MICRONAUT AND AMAZON CORRETTO</title><link>https://micronaut.io/blog/2020-10-30-micronaut-corretto-webinar.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a> <a href="https://micronaut.io/blog/tag/corretto.html"><span class="hashtag">#corretto</span></a> <a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a></p>
 <p>When a millisecond delay can mean all the difference, the right tools are critical.</p>
 <p>Join 2GM (Groovy, Grails, and Micronaut) team member, Álvaro Sánchez-Mariscal, and Amazon Software Development Manager, Azeem Jiva, for a live tutorial demonstrating the most effective ways to reduce latencies with Micronaut and Amazon Corretto.</p>
