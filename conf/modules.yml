@@ -126,6 +126,13 @@ modules:
     version: 'snapshot'
     githubslug: 'micronaut-multitenancy'
     legend: 'Support for Multi-tenancy aware applications'
+  mqtt:
+    category: 'Messaging'
+    image: 'mqtt.svg'
+    label: 'Micronaut MQTT'
+    version: 'snapshot'
+    githubslug: 'micronaut-mqtt'
+    legend: 'Integration between Micronaut and MQTT through Eclipse Paho'
   kafka:
     category: 'Messaging'
     image: 'kafka.svg'
