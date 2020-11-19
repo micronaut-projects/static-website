@@ -130,7 +130,7 @@ modules:
     category: 'Messaging'
     image: 'mqtt.svg'
     label: 'Micronaut MQTT'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-mqtt'
     legend: 'Integration between Micronaut and MQTT through Eclipse Paho'
   kafka:
