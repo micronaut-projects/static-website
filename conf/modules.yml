@@ -119,6 +119,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-netflix'
     legend: 'Integration between Micronaut and Netflix OSS'
+  mqtt:
+    category: 'Messaging'
+    image: 'mqtt.svg'
+    label: 'Micronaut MQTT'
+    version: 'snapshot'
+    githubslug: 'micronaut-mqtt'
+    legend: 'Integration between Micronaut and MQTT through Eclipse Paho'
   kafka:
     category: 'Messaging'
     image: 'kafka.svg'
