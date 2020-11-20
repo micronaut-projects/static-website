@@ -66,7 +66,7 @@ The latest [Micronaut Maven Plugin](https://micronaut-projects.github.io/microna
 
 + Runnable fat Jars
 + Docker Images
-+ GraalVM Nate Images
++ GraalVM Native Images
 
 To configure your project's runtime and preferred package, you can declare the following properties:
 
