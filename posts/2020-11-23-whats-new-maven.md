@@ -1,8 +1,8 @@
 ---
 title: What's new for Maven users in Micronaut 2.2
-date: Nov 20, 2020
+date: Nov 23, 2020
 author: Álvaro Sánchez-Mariscal
-image: 2020-07-14.jpg
+image: 2020-11-23.png
 ---
 
 # [%title]
