@@ -1,18 +1,18 @@
 ---
 title: Micronaut 1.0 RC1 and the Power of Ahead-of-Time Compilation
-date: Sep 30, 2018 
+date: Sep 30, 2018
 description: Micronaut 1.0 release candidate 1 has been released! Discover the key features that make Micronaut stand out among Java frameworks.
 author: Graeme Rocher
 image: 2018-09-30.jpg
-CSS: https://micronaut.io/stylesheets/prismjs.css
-JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #release #openapi #graalvm
 
@@ -68,7 +68,7 @@ Micronaut features a [comprehensive, language-neutral visitor API](https://docs
 
 For example, consider this simple "hello world" example:
 
-```
+```java
 @Controller("/")
 @Validated
 public class HelloController {
@@ -81,7 +81,7 @@ public class HelloController {
 
 Once configured, Micronaut will at compile time build the appropriate Swagger YAML which can easily be added as a static resource that can then be imported into the [Swagger UI](https://github.com/swagger-api/swagger-ui) (a React / Node application) without needing any additional runtime reflection in your Java code:
 
-```
+```yaml
 paths:
   /hello/{name}:
     get:
@@ -111,7 +111,7 @@ Although these issues have not prevented annotation-based programming models fro
 
 Let's take an example, consider the following simple route definition:
 
-```
+```java
 @Get("/hello/{name}")
 public Single<String> hello(@NotBlank String na) {
      return Single.just("Hello " + na + "!");
@@ -124,7 +124,7 @@ The route defines a variable called `name`, but the method accepts a parameter 
 
 But not with Micronaut:
 
-```
+```javastacktrace
 hello-world-java/src/main/java/example/HelloController.java:34: error: The route declares a uri variable named [name], but no corresponding method argument is present
     public Single<String> hello(@NotBlank String na) {
                           ^
@@ -146,7 +146,7 @@ What this means in practice is Micronaut can support annotations such as `javax.
 
 The API for this is trivial; the following example is taken from `RolesAllowedAnnotationMapper`:
 
-```
+```java
 public List<AnnotationValue<?>> map(AnnotationValue<RolesAllowed> annotation) {
     String[] values = annotation.get("value", String[].class).orElse(new String[0]);
 

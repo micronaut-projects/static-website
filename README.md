@@ -192,8 +192,8 @@ If your blog post, contains code samples add the following metadata:
 ...
 ..
 .
-CSS: https://micronaut.io/stylesheets/prismjs.css
-JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]

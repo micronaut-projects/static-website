@@ -1,18 +1,18 @@
 ---
 title: 5 Reasons You'll ❤️ Using Micronaut and IntelliJ IDEA to Boost Your Productivity
-date: Apr 16, 2020 
+date: Apr 16, 2020
 description: Here are five specific features that make the Micronaut IntelliJ IDEA combo a terrific tool for any developer looking to boost his or her productivity.
 author: Iván López
 image: 2020-04-16.png
-CSS: https://micronaut.io/stylesheets/prismjs.css
-JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #intellijidea
 

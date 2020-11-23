@@ -138,7 +138,7 @@ body.post .largegoldenratio {
 
 body.post .largegoldenratio pre {
     max-width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .smallgoldenratio h1,

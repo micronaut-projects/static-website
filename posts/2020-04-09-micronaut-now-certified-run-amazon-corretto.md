@@ -1,18 +1,18 @@
 ---
 title: Micronaut Is Now Certified to Run on Amazon Corretto
-date: Apr 9, 2020  
+date: Apr 9, 2020
 description: Users can now be assured that Micronaut is certified to run on Amazon Corretto, and we will continue our partnership with Amazon to ensure users don't run into any issues in production.
 author: Álvaro Sánchez-Mariscal
 image: 2020-04-09.jpg
-CSS: https://micronaut.io/stylesheets/prismjs.css
-JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #aws #corretto
 
@@ -34,14 +34,14 @@ If you wish to use Corretto locally as your OpenJDK distribution, you can downlo
 
 Once you have SDKMAN! Installed, you can install and use Corretto 11 by simply typing:
 
-```
+```bash
 $ sdk install java 11.0.6-amzn
 $ sdk use java 11.0.6-amzn
 ```
 
 Then, check the version used:
 
-```
+```bash
 $ java -version
 openjdk version "11.0.6" 2020-01-14 LTS
 OpenJDK Runtime Environment Corretto-11.0.6.10.1 (build 11.0.6+10-LTS)
