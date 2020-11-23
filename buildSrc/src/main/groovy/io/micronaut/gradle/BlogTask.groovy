@@ -532,6 +532,7 @@ class BlogTask extends DefaultTask {
     static String wrapTags(Map<String, String> metadata, @Nonnull String html) {
         html.split("\n")
                 .collect { line ->
+                    line = line.replaceAll('\\$', '&#36;')
                     if (line.startsWith("<p>") && line.endsWith("</p>")) {
                         String lineWithoutParagraphs = line.replaceAll("<p>", "")
                                 .replaceAll("</p>", "")
