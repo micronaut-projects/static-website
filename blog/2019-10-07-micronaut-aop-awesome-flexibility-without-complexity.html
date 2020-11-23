@@ -115,8 +115,8 @@
 <p>Micronaut AOP is incredibly simple to use when compared to other implementations out there. It is literally just a compiler feature. There is no need to set up complex ProxyFactoryBean implementations or rely on a runtime container. The minimum set of requirements to get going with Micronaut AOP is to add the Micronaut annotation processors and declare a dependency on micronaut-aop in your build.</p>
 <p>The following is the Gradle configuration required:</p>
 <pre><code class="language-groovy">dependencies {
-     annotationProcessor &quot;io.micronaut:micronaut-inject-java:&amp;#36;micronautVersion&quot;
-     compile &quot;io.micronaut:micronaut-aop:&amp;#36;micronautVersion&quot;
+     annotationProcessor &quot;io.micronaut:micronaut-inject-java:&#36;micronautVersion&quot;
+     compile &quot;io.micronaut:micronaut-aop:&#36;micronautVersion&quot;
 }
 </code></pre>
 <p>And the equivalent Maven config:</p>
@@ -125,7 +125,7 @@
       &lt;groupId&gt;io.micronaut&lt;/groupId&gt;
       &lt;artifactId&gt;micronaut-aop&lt;/artifactId&gt;
       &lt;scope&gt;compile&lt;/scope&gt;
-      &lt;version&gt;&amp;#36;{micronaut.version}&lt;/version&gt;
+      &lt;version&gt;&#36;{micronaut.version}&lt;/version&gt;
     &lt;/dependency&gt;
 ....
     &lt;pluginManagement&gt;
@@ -135,8 +135,8 @@
           &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
           &lt;version&gt;3.7.0&lt;/version&gt;
           &lt;configuration&gt;
-            &lt;source&gt;&amp;#36;{jdk.version}&lt;/source&gt;
-            &lt;target&gt;&amp;#36;{jdk.version}&lt;/target&gt;
+            &lt;source&gt;&#36;{jdk.version}&lt;/source&gt;
+            &lt;target&gt;&#36;{jdk.version}&lt;/target&gt;
             &lt;encoding&gt;UTF-8&lt;/encoding&gt;
             &lt;compilerArgs&gt;
               &lt;arg&gt;-parameters&lt;/arg&gt;
@@ -145,7 +145,7 @@
                   &lt;path&gt;
                     &lt;groupId&gt;io.micronaut&lt;/groupId&gt;
                     &lt;artifactId&gt;micronaut-inject-java&lt;/artifactId&gt;
-                    &lt;version&gt;&amp;#36;{micronaut.version}&lt;/version&gt;
+                    &lt;version&gt;&#36;{micronaut.version}&lt;/version&gt;
                   &lt;/path&gt;
             &lt;/annotationProcessorPaths&gt;
 </code></pre>
@@ -395,15 +395,15 @@ public class BookManager {
     </div>
     <div class='smallgoldenratio align-right padded-t related-posts'>
       <h2>You might also like ...</h2>
-      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-11-19.jpg)'>
+      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-11-23.png)'>
+  <a href='https://micronaut.io/blog/2020-11-23-whats-new-maven.html'>
+    <h3>November 23, 2020</h3>
+    <h2>What's new for Maven users in Micronaut 2.2</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-11-19.jpg)'>
   <a href='https://micronaut.io/blog/2020-11-19-micronaut-22-released.html'>
     <h3>November 19, 2020</h3>
     <h2>Micronaut 2.2 Released!</h2>
-  </a>
-</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-10-30-2.jpg)'>
-  <a href='https://micronaut.io/blog/2020-10-30-micronaut-corretto-webinar.html'>
-    <h3>October 30, 2020</h3>
-    <h2>Webinar: REDUCING LATENCIES WITH MICRONAUT AND AMAZON CORRETTO</h2>
   </a>
 </article></div>
     </div>
