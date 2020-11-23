@@ -47,8 +47,8 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
-    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+    <link rel='stylesheet' href='/stylesheets/prismjs.css'/>
+    <script src='/javascripts/prismjs.js'></script>
 </head>
 <body class='post'>
 <div class='main'>
@@ -100,7 +100,7 @@
 <p>Tags: <a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a> <a href="https://micronaut.io/blog/tag/elasticbeanstalk.html"><span class="hashtag">#elasticbeanstalk</span></a></p>
 <p>If you want to <a href="https://docs.micronaut.io/1.1.0.M1/guide/index.html#uploads">upload files</a> with Micronaut, you may need to configure maximum request size and the max file size properties:</p>
 <p>Here's how to do that.</p>
-<pre><code>micronaut:
+<pre><code class="language-yaml">micronaut:
     server:
        max-request-size: '100MB'
        multipart:
@@ -108,7 +108,7 @@
 </code></pre>
 <p>If you wish to to deploy <a href="https://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a>, an easy-to-use service for deploying and scaling web applications, you may get &quot;413 Request Entity Too Large&quot; errors when posting files larger than 10MB.</p>
 <p>You can allow bigger file uploads by creating a file named <code>src/main/resources/.ebextensions/nginx/conf.d/proxy.conf</code> with content:</p>
-<pre><code>client_max_body_size 100M;
+<pre><code class="language-text">client_max_body_size 100M;
 </code></pre>
 <p>To learn more, read <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-se-nginx.html">Configuring the Reverse Proxy</a> section in the Elastic Beanstalk documentation.</p></div>
     </div>

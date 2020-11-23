@@ -47,8 +47,8 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    
-    
+    <link rel='stylesheet' href='/stylesheets/prismjs.css'/>
+    <script src='/javascripts/prismjs.js'></script>
 </head>
 <body class='post'>
 <div class='main'>
@@ -119,16 +119,21 @@ mainClassName = &quot;example.Application&quot; // Your main class
 </code></pre>
 <p>This application will be built with dependencies for the Netty runtime.  Other runtime configurations are available including Tomcat, Jetty, Google Cloud Function, and Oracle Cloud Function.</p>
 <p>The Gradle plugin integrates with the <a href="https://bmuschko.github.io/gradle-docker-plugin">Gradle Docker Plugin</a>, and you can build a Docker image using a layered jar by running:</p>
-<p><code>./gradlew dockerBuild</code></p>
+<pre><code class="language-bash">./gradlew dockerBuild
+</code></pre>
 <p>If you would like to build a Docker image using a GraalVM Native Image, you can run:</p>
-<p><code>./gradlew dockerBuildNative</code></p>
+<pre><code class="language-bash">./gradlew dockerBuildNative
+</code></pre>
 <p>For a full list of supported runtimes and tasks, see the <a href="https://github.com/micronaut-projects/micronaut-gradle-plugin/blob/master/README.md">documentation</a>.</p>
 <h2>New Cloud Features</h2>
 <p>Micronaut 2.1 adds improvements for Oracle Cloud and Google Cloud Platform.</p>
 <h3>Oracle Functions</h3>
 <p>With Micronaut 2.1, you can create Oracle Function projects by adding the <code>oracle-function</code> feature to a new project in <a href="https://micronaut.io/launch/">Micronaut Launch</a> or by passing it to the Micronaut CLI:</p>
-<p><code>mn create-function-app myfunction --features oracle-function</code></p>
-<p>After some configuration updates, you can push your application image to the Oracle Container Registry using <code>./gradlew dockerPush</code> or <code>./gradlew dockerPushNative</code>.</p>
+<pre><code class="language-bash">mn create-function-app myfunction --features oracle-function
+</code></pre>
+<p>After some configuration updates, you can push your application image to the Oracle Container Registry using:</p>
+<pre><code class="language-bash">./gradlew dockerPush` or `./gradlew dockerPushNative
+</code></pre>
 <p>See the <a href="https://micronaut-projects.github.io/micronaut-oracle-cloud/latest/guide/#functions">Micronaut Oracle Cloud Guide</a> for more details.</p>
 <h3>Google Cloud Platform Enhancements</h3>
 <p>Thanks to some amazing contributions from <a href="https://github.com/viniciusccarvalho">Vinicius Carvalho</a>, our Google Cloud Platform (GCP) support has received some enhancements.</p>

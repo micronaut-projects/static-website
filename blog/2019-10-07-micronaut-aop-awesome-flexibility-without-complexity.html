@@ -47,8 +47,8 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
-    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+    <link rel='stylesheet' href='/stylesheets/prismjs.css'/>
+    <script src='/javascripts/prismjs.js'></script>
 </head>
 <body class='post'>
 <div class='main'>
@@ -166,8 +166,8 @@ public @interface TransactionalAdvice {
      * @see #transactionManager
      */
     String value() default &quot;&quot;;
-    
-    // Remaining members omitted for clarity 
+
+    // Remaining members omitted for clarity
 
 }
 </code></pre>
@@ -182,7 +182,7 @@ public @interface TransactionalAdvice {
 
     @Override
     public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;Annotation&gt; annotation, VisitorContext visitorContext) {
-       
+
         AnnotationValueBuilder&lt;Annotation&gt; builder =
                 AnnotationValue.builder(&quot;io.micronaut.transaction.interceptor.annotation.TransactionalAdvice&quot;);
 
@@ -299,7 +299,7 @@ void insertWithTransaction() throws Exception {
 <pre><code class="language-java">@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Adapter(ApplicationEventListener.class) 
+@Adapter(ApplicationEventListener.class)
 @TransactionalEventAdvice
 public @interface TransactionalEventListener {
     TransactionPhase value() default TransactionPhase.AFTER_COMMIT;
@@ -377,7 +377,7 @@ public class BookManager {
     void saveBook(String title, int pages) {
         final Book book = new Book(title, pages);
         bookRepository.save(book);
-        eventPublisher.publishEvent(new NewBookEvent(book)); 
+        eventPublisher.publishEvent(new NewBookEvent(book));
     }
 
     @TransactionalEventListener

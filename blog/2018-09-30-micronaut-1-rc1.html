@@ -47,8 +47,8 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
-    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+    <link rel='stylesheet' href='/stylesheets/prismjs.css'/>
+    <script src='/javascripts/prismjs.js'></script>
 </head>
 <body class='post'>
 <div class='main'>
@@ -127,7 +127,7 @@
 <p>Micronaut 1.0 includes <a href="https://docs.micronaut.io/snapshot/guide/index.html#openapi">compile-time support for Swagger</a>, the industry standard tool for describing APIs. The majority of frameworks that integrate <a href="https://swagger.io/">Swagger</a> do so at runtime, using extensive reflection-based approaches that are problematic from both a performance and a memory-consumption perspective.</p>
 <p>Micronaut features a <a href="https://docs.micronaut.io/1.0.x/api/io/micronaut/inject/visitor/package-summary.html">comprehensive, language-neutral visitor API</a> that allows developers to perform compile-time analysis without depending directly on Groovy's AST or Java's APT. The Swagger support in Micronaut builds on this feature.</p>
 <p>For example, consider this simple &quot;hello world&quot; example:</p>
-<pre><code>@Controller(&quot;/&quot;)
+<pre><code class="language-java">@Controller(&quot;/&quot;)
 @Validated
 public class HelloController {
     @Get(uri=&quot;/hello/{name}&quot;, produces=&quot;text/plain&quot;)
@@ -137,7 +137,7 @@ public class HelloController {
 }
 </code></pre>
 <p>Once configured, Micronaut will at compile time build the appropriate Swagger YAML which can easily be added as a static resource that can then be imported into the <a href="https://github.com/swagger-api/swagger-ui">Swagger UI</a> (a React / Node application) without needing any additional runtime reflection in your Java code:</p>
-<pre><code>paths:
+<pre><code class="language-yaml">paths:
   /hello/{name}:
     get:
       operationId: hello
@@ -160,7 +160,7 @@ public class HelloController {
 <p>In fact a <a href="https://blog.softwaremill.com/the-case-against-annotations-4b2fb170ed67">common criticism</a> leveled at annotation-based programming models among static-compilation fans is the dynamic references you have to place in the annotations that are not statically checked. </p>
 <p>Although these issues have not prevented annotation-based programming models from becoming the most popular among Java developers, they can lead to a frustrating experience. This was something we wanted to address in the design of Micronaut.</p>
 <p>Let's take an example, consider the following simple route definition:</p>
-<pre><code>@Get(&quot;/hello/{name}&quot;)
+<pre><code class="language-java">@Get(&quot;/hello/{name}&quot;)
 public Single&lt;String&gt; hello(@NotBlank String na) {
      return Single.just(&quot;Hello &quot; + na + &quot;!&quot;);
 }
@@ -168,7 +168,7 @@ public Single&lt;String&gt; hello(@NotBlank String na) {
 <p>Spot the obvious typo?</p>
 <p>The route defines a variable called <code>name</code>, but the method accepts a parameter called <code>na</code>. With the majority of modern frameworks, this will lead to a runtime error.</p>
 <p>But not with Micronaut:</p>
-<pre><code>hello-world-java/src/main/java/example/HelloController.java:34: error: The route declares a uri variable named [name], but no corresponding method argument is present
+<pre><code class="language-javastacktrace">hello-world-java/src/main/java/example/HelloController.java:34: error: The route declares a uri variable named [name], but no corresponding method argument is present
     public Single&lt;String&gt; hello(@NotBlank String na) {
                           ^
 </code></pre>
@@ -180,7 +180,7 @@ public Single&lt;String&gt; hello(@NotBlank String na) {
 <p>There are, however, a number of excellent specifications and standards in the Java space that developers are already comfortable with; it made sense to support these in Micronaut. Thanks to Micronaut's extensive annotation metadata, you can map the values of any annotation to the values of any other annotations at compile time using an AnnotationMapper.</p>
 <p>What this means in practice is Micronaut can support annotations such as <code>javax.annotation.security.RolesAllowed</code> for security or <code>javax.persistence.PersistenceContext</code> for injecting a JPA <code>EntityManager</code>.</p>
 <p>The API for this is trivial; the following example is taken from <code>RolesAllowedAnnotationMapper</code>:</p>
-<pre><code>public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;RolesAllowed&gt; annotation) {
+<pre><code class="language-java">public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;RolesAllowed&gt; annotation) {
     String[] values = annotation.get(&quot;value&quot;, String[].class).orElse(new String[0]);
 
     List&lt;AnnotationValue&lt;?&gt;&gt; annotationValues = new ArrayList&lt;&gt;(1);

@@ -47,8 +47,8 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
-    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+    <link rel='stylesheet' href='/stylesheets/prismjs.css'/>
+    <script src='/javascripts/prismjs.js'></script>
 </head>
 <body class='post'>
 <div class='main'>
@@ -114,56 +114,56 @@
    @NonNull
    String transform(@NonNull @NotBlank String name);
 }
- 
+
 @Singleton
 public CapitalizeNameTransformer implements NameTransformer {
   @Override
   @NonNull
   public String transform(@NonNull @NotBlank String name) {
       return StringUtils.capitalize(name);
-  } 
+  }
 }
- 
+
 public class NameTransformFunction extends AzureFunction {
     @Inject // 1️⃣
     NameTransformer nameTransformer
- 
+
     public String echo(
-          @HttpTrigger(name = &quot;req&quot;, 
-                       methods = HttpMethod.GET, 
-                       authLevel = AuthorizationLevel.ANONYMOUS) 
-           HttpRequestMessage&lt;Optional&lt;String&gt;&gt; request, 
+          @HttpTrigger(name = &quot;req&quot;,
+                       methods = HttpMethod.GET,
+                       authLevel = AuthorizationLevel.ANONYMOUS)
+           HttpRequestMessage&lt;Optional&lt;String&gt;&gt; request,
            ExecutionContext context) {
         try {
             String name = request.getQueryParameters().get(&quot;name&quot;);
             return nameTransformer.transform(name);
         } catch(ConstraintViolationException e) { // 2️⃣
-            return &quot;The supplied name must be not blank&quot;; 
+            return &quot;The supplied name must be not blank&quot;;
         }
     }
 }
 </code></pre>
-<p>1️⃣ User can dependency inject fields with <code>@Inject</code>.<br />
+<p>1️⃣ User can dependency inject fields with <code>@Inject</code>.
 2️⃣ <code>Name::transformer</code> parameter constraints are enforced.</p>
 <h3>Micronaut Azure Http Functions</h3>
 <p>If your function needs to respond to multiple HTTP endpoints, or if you want to write regular Micronaut controllers and have them executed using an Azure Function, you can choose Azure HTTP Functions.</p>
 <p>With the Micronaut Azure HTTP Functions module, for the previous example, instead of NameTransformFunction, you will have a controller:</p>
 <pre><code class="language-java">@Controller(&quot;/&quot;)
 public NameController {
- 
+
     private final NameTransformer transformer;
- 
+
     public NameController(NameTransformer transformer) { // 1️⃣
         this.transformer = transformer;
     }
- 
+
     @Produces(MediaType.TEXT_PLAIN)
     @Get
     public String index(@Nullable String name) {
         try {
             return transformer.transform(name);
         } catch(ConstraintViolationException e) {
-            return &quot;The supplied name must be not blank&quot;; 
+            return &quot;The supplied name must be not blank&quot;;
         }
     }
 }
@@ -171,7 +171,7 @@ public NameController {
 <p>1️⃣ Micronaut supports constructor based injection as well.</p>
 <p>In addition, testing Micronaut Azure Functions is easy. The next test shows how to test the previous controller:</p>
 <pre><code class="language-java">public class NameControllerTest {
- 
+
     @Test
     public void testNameSupplied() throws Exception {
         try (Function function = new Function()) {

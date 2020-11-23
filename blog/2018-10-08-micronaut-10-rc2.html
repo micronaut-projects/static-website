@@ -47,8 +47,8 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
-    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+    <link rel='stylesheet' href='/stylesheets/prismjs.css'/>
+    <script src='/javascripts/prismjs.js'></script>
 </head>
 <body class='post'>
 <div class='main'>
@@ -158,10 +158,10 @@ class HelloController implements HelloOperations&lt;String&gt; {
 </code></pre>
 <p>Notice that the parameter name data is present and has not be erased. Processing at the source code level allows Micronaut to retain parameter name data.</p>
 <p>In addition, Micronaut will also compute type arguments for types and store them in the BeanDefinition, so if you need to compute the type parameters for a type, you don't need to jump through reflective hoops either:</p>
-<pre><code class="language-java">BeanDefinition&lt;HelloController&gt; helloDefinition = 
+<pre><code class="language-java">BeanDefinition&lt;HelloController&gt; helloDefinition =
                   beanContext.getBeanDefinition(HelloController.class);
 
-List&lt;Argument&lt;?&gt;&gt; typeArguments = 
+List&lt;Argument&lt;?&gt;&gt; typeArguments =
                   helloDefinition.getTypeArguments(HelloOperations.class);
 
 // do something with the type arguments
@@ -192,9 +192,9 @@ if (namesArgument.getAnnotationMetadata().hasStereotype(NotEmpty.class)) {
 </ul>
 <p>This may sound complex, but the simplicity it enables for developers is a huge win. For example, if you wish to implement your AOP advice, such as introduction advice, there are only a few steps required.</p>
 <p>As an example, say you want to implement logic from an interface at compilation time. Testing frameworks, for example, often have tools for creating stubs or mocks that return alternative values from interfaces. Let's see how you could implement stubbing in Mironaut. Step 1 is to create an annotation, for example:</p>
-<pre><code class="language-java">@Introduction 
-@Type(StubIntroduction.class) 
-@Bean 
+<pre><code class="language-java">@Introduction
+@Type(StubIntroduction.class)
+@Bean
 @Documented
 @Retention(RUNTIME)
 @Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE, ElementType.METHOD})
@@ -204,14 +204,14 @@ public @interface Stub {
 </code></pre>
 <p>On line 1 the advice is defined as introduction advice and given a type of <code>StubIntroduction</code> on line 2. The <code>StubInroduction</code> type should implement <code>MethodInterceptor</code> interface. The following is a trivial implementation:</p>
 <pre><code class="language-java">@Singleton
-public class StubIntroduction implements MethodInterceptor&lt;Object,Object&gt; { 
+public class StubIntroduction implements MethodInterceptor&lt;Object,Object&gt; {
 
     @Override
     public Object intercept(MethodInvocationContext&lt;Object, Object&gt; context) {
-        return context.getValue( 
+        return context.getValue(
                 Stub.class,
                 context.getReturnType().getType()
-        ).orElse(null); 
+        ).orElse(null);
     }
 }
 </code></pre>

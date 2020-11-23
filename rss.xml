@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Mon, 23 Nov 2020 20:58:10 GMT</pubDate><item><title>What's new for Maven users in Micronaut 2.2</title><link>https://micronaut.io/blog/2020-11-23-whats-new-maven.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Mon, 23 Nov 2020 22:04:42 GMT</pubDate><item><title>What's new for Maven users in Micronaut 2.2</title><link>https://micronaut.io/blog/2020-11-23-whats-new-maven.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/maven.html"><span class="hashtag">#maven</span></a> <a href="https://micronaut.io/blog/tag/docker.html"><span class="hashtag">#docker</span></a> <a href="https://micronaut.io/blog/tag/graalvm.html"><span class="hashtag">#graalvm</span></a></p>
 <p>The Micronaut 2.2 release includes version 1.1 of the
 <a href="https://github.com/micronaut-projects/micronaut-maven-plugin">Micronaut Maven Plugin</a>.
@@ -373,16 +373,21 @@ mainClassName = &quot;example.Application&quot; // Your main class
 </code></pre>
 <p>This application will be built with dependencies for the Netty runtime.  Other runtime configurations are available including Tomcat, Jetty, Google Cloud Function, and Oracle Cloud Function.</p>
 <p>The Gradle plugin integrates with the <a href="https://bmuschko.github.io/gradle-docker-plugin">Gradle Docker Plugin</a>, and you can build a Docker image using a layered jar by running:</p>
-<p><code>./gradlew dockerBuild</code></p>
+<pre><code class="language-bash">./gradlew dockerBuild
+</code></pre>
 <p>If you would like to build a Docker image using a GraalVM Native Image, you can run:</p>
-<p><code>./gradlew dockerBuildNative</code></p>
+<pre><code class="language-bash">./gradlew dockerBuildNative
+</code></pre>
 <p>For a full list of supported runtimes and tasks, see the <a href="https://github.com/micronaut-projects/micronaut-gradle-plugin/blob/master/README.md">documentation</a>.</p>
 <h2>New Cloud Features</h2>
 <p>Micronaut 2.1 adds improvements for Oracle Cloud and Google Cloud Platform.</p>
 <h3>Oracle Functions</h3>
 <p>With Micronaut 2.1, you can create Oracle Function projects by adding the <code>oracle-function</code> feature to a new project in <a href="https://micronaut.io/launch/">Micronaut Launch</a> or by passing it to the Micronaut CLI:</p>
-<p><code>mn create-function-app myfunction --features oracle-function</code></p>
-<p>After some configuration updates, you can push your application image to the Oracle Container Registry using <code>./gradlew dockerPush</code> or <code>./gradlew dockerPushNative</code>.</p>
+<pre><code class="language-bash">mn create-function-app myfunction --features oracle-function
+</code></pre>
+<p>After some configuration updates, you can push your application image to the Oracle Container Registry using:</p>
+<pre><code class="language-bash">./gradlew dockerPush` or `./gradlew dockerPushNative
+</code></pre>
 <p>See the <a href="https://micronaut-projects.github.io/micronaut-oracle-cloud/latest/guide/#functions">Micronaut Oracle Cloud Guide</a> for more details.</p>
 <h3>Google Cloud Platform Enhancements</h3>
 <p>Thanks to some amazing contributions from <a href="https://github.com/viniciusccarvalho">Vinicius Carvalho</a>, our Google Cloud Platform (GCP) support has received some enhancements.</p>
@@ -813,56 +818,56 @@ When a new instance handles its first request, the response time increases, whic
    @NonNull
    String transform(@NonNull @NotBlank String name);
 }
- 
+
 @Singleton
 public CapitalizeNameTransformer implements NameTransformer {
   @Override
   @NonNull
   public String transform(@NonNull @NotBlank String name) {
       return StringUtils.capitalize(name);
-  } 
+  }
 }
- 
+
 public class NameTransformFunction extends AzureFunction {
     @Inject // 1️⃣
     NameTransformer nameTransformer
- 
+
     public String echo(
-          @HttpTrigger(name = &quot;req&quot;, 
-                       methods = HttpMethod.GET, 
-                       authLevel = AuthorizationLevel.ANONYMOUS) 
-           HttpRequestMessage&lt;Optional&lt;String&gt;&gt; request, 
+          @HttpTrigger(name = &quot;req&quot;,
+                       methods = HttpMethod.GET,
+                       authLevel = AuthorizationLevel.ANONYMOUS)
+           HttpRequestMessage&lt;Optional&lt;String&gt;&gt; request,
            ExecutionContext context) {
         try {
             String name = request.getQueryParameters().get(&quot;name&quot;);
             return nameTransformer.transform(name);
         } catch(ConstraintViolationException e) { // 2️⃣
-            return &quot;The supplied name must be not blank&quot;; 
+            return &quot;The supplied name must be not blank&quot;;
         }
     }
 }
 </code></pre>
-<p>1️⃣ User can dependency inject fields with <code>@Inject</code>.<br />
+<p>1️⃣ User can dependency inject fields with <code>@Inject</code>.
 2️⃣ <code>Name::transformer</code> parameter constraints are enforced.</p>
 <h3>Micronaut Azure Http Functions</h3>
 <p>If your function needs to respond to multiple HTTP endpoints, or if you want to write regular Micronaut controllers and have them executed using an Azure Function, you can choose Azure HTTP Functions.</p>
 <p>With the Micronaut Azure HTTP Functions module, for the previous example, instead of NameTransformFunction, you will have a controller:</p>
 <pre><code class="language-java">@Controller(&quot;/&quot;)
 public NameController {
- 
+
     private final NameTransformer transformer;
- 
+
     public NameController(NameTransformer transformer) { // 1️⃣
         this.transformer = transformer;
     }
- 
+
     @Produces(MediaType.TEXT_PLAIN)
     @Get
     public String index(@Nullable String name) {
         try {
             return transformer.transform(name);
         } catch(ConstraintViolationException e) {
-            return &quot;The supplied name must be not blank&quot;; 
+            return &quot;The supplied name must be not blank&quot;;
         }
     }
 }
@@ -870,7 +875,7 @@ public NameController {
 <p>1️⃣ Micronaut supports constructor based injection as well.</p>
 <p>In addition, testing Micronaut Azure Functions is easy. The next test shows how to test the previous controller:</p>
 <pre><code class="language-java">public class NameControllerTest {
- 
+
     @Test
     public void testNameSupplied() throws Exception {
         try (Function function = new Function()) {
@@ -1129,11 +1134,11 @@ that the open source model enables. We are all incredibly happy and proud of the
 <h2>Choosing Corretto</h2>
 <p>If you wish to use Corretto locally as your OpenJDK distribution, you can download it from <a href="https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html">Amazon's downloads page</a>. Alternatively, installation can be greatly simplified using <a href="https://sdkman.io/">SDKMAN!</a>, which makes the process of switching between Java distributions and versions a piece of cake.</p>
 <p>Once you have SDKMAN! Installed, you can install and use Corretto 11 by simply typing:</p>
-<pre><code>&#36; sdk install java 11.0.6-amzn
+<pre><code class="language-bash">&#36; sdk install java 11.0.6-amzn
 &#36; sdk use java 11.0.6-amzn
 </code></pre>
 <p>Then, check the version used:</p>
-<pre><code>&#36; java -version
+<pre><code class="language-bash">&#36; java -version
 openjdk version &quot;11.0.6&quot; 2020-01-14 LTS
 OpenJDK Runtime Environment Corretto-11.0.6.10.1 (build 11.0.6+10-LTS)
 OpenJDK 64-Bit Server VM Corretto-11.0.6.10.1 (build 11.0.6+10-LTS, mixed mode)
@@ -1383,8 +1388,8 @@ public @interface TransactionalAdvice {
      * @see #transactionManager
      */
     String value() default &quot;&quot;;
-    
-    // Remaining members omitted for clarity 
+
+    // Remaining members omitted for clarity
 
 }
 </code></pre>
@@ -1399,7 +1404,7 @@ public @interface TransactionalAdvice {
 
     @Override
     public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;Annotation&gt; annotation, VisitorContext visitorContext) {
-       
+
         AnnotationValueBuilder&lt;Annotation&gt; builder =
                 AnnotationValue.builder(&quot;io.micronaut.transaction.interceptor.annotation.TransactionalAdvice&quot;);
 
@@ -1516,7 +1521,7 @@ void insertWithTransaction() throws Exception {
 <pre><code class="language-java">@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Adapter(ApplicationEventListener.class) 
+@Adapter(ApplicationEventListener.class)
 @TransactionalEventAdvice
 public @interface TransactionalEventListener {
     TransactionPhase value() default TransactionPhase.AFTER_COMMIT;
@@ -1594,7 +1599,7 @@ public class BookManager {
     void saveBook(String title, int pages) {
         final Book book = new Book(title, pages);
         bookRepository.save(book);
-        eventPublisher.publishEvent(new NewBookEvent(book)); 
+        eventPublisher.publishEvent(new NewBookEvent(book));
     }
 
     @TransactionalEventListener
@@ -1737,7 +1742,7 @@ public interface BookRepository extends CrudRepository&lt;Book, Long&gt; {
 }
 </code></pre>
 <p>Here the <code>BookRepository</code> is attempting a query on an entity called <code>Book</code> that has a property called <code>title</code>. Unfortunately, the finder has a typo, in that it is <code>findByTile</code> instead of <code>findByTitle</code>. Instead of waiting until runtime to inform the user of this fact, Micronaut Data will fail at compilation time with an informative error message:</p>
-<pre><code class="language-text">Error:(9, 10) java: Unable to implement Repository method: 
+<pre><code class="language-text">Error:(9, 10) java: Unable to implement Repository method:
 BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-existent property path: tile
 </code></pre>
 <p>Many aspects of Micronaut Data are compilation-time checked whenever possible to ensure that if an error does occur at runtime, it is not due to a typo in a repository definition.</p>
@@ -1903,7 +1908,7 @@ BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-ex
 <p>Tags: <a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a> <a href="https://micronaut.io/blog/tag/elasticbeanstalk.html"><span class="hashtag">#elasticbeanstalk</span></a></p>
 <p>If you want to <a href="https://docs.micronaut.io/1.1.0.M1/guide/index.html#uploads">upload files</a> with Micronaut, you may need to configure maximum request size and the max file size properties:</p>
 <p>Here's how to do that.</p>
-<pre><code>micronaut:
+<pre><code class="language-yaml">micronaut:
     server:
        max-request-size: '100MB'
        multipart:
@@ -1911,7 +1916,7 @@ BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-ex
 </code></pre>
 <p>If you wish to to deploy <a href="https://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a>, an easy-to-use service for deploying and scaling web applications, you may get &quot;413 Request Entity Too Large&quot; errors when posting files larger than 10MB.</p>
 <p>You can allow bigger file uploads by creating a file named <code>src/main/resources/.ebextensions/nginx/conf.d/proxy.conf</code> with content:</p>
-<pre><code>client_max_body_size 100M;
+<pre><code class="language-text">client_max_body_size 100M;
 </code></pre>
 <p>To learn more, read <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-se-nginx.html">Configuring the Reverse Proxy</a> section in the Elastic Beanstalk documentation.</p>]]></description><author>Sergio Del Amo Caballero</author><guid>2019-02-21-uploading-big-files-micronaut-and-elastic-beanstalk</guid><pubDate>Thu, 21 Feb 2019 00:00:00 GMT</pubDate></item><item><title>Micronaut 1.1 Milestone 1 Released</title><link>https://micronaut.io/blog/2019-02-12-micronaut-11-milestone-1-released.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
@@ -2030,14 +2035,14 @@ import io.micronaut.test.annotation.MicronautTest
 import spock.lang.*
 import javax.inject.Inject
 
-@MicronautTest 
+@MicronautTest
 class MathServiceSpec extends Specification {
 
     @Inject
-    MathService mathService 
+    MathService mathService
 
     @Unroll
-    void &quot;should compute #num times 4&quot;() { 
+    void &quot;should compute #num times 4&quot;() {
         when:
         def result = mathService.compute(num)
 
@@ -2115,10 +2120,10 @@ class HelloController implements HelloOperations&lt;String&gt; {
 </code></pre>
 <p>Notice that the parameter name data is present and has not be erased. Processing at the source code level allows Micronaut to retain parameter name data.</p>
 <p>In addition, Micronaut will also compute type arguments for types and store them in the BeanDefinition, so if you need to compute the type parameters for a type, you don't need to jump through reflective hoops either:</p>
-<pre><code class="language-java">BeanDefinition&lt;HelloController&gt; helloDefinition = 
+<pre><code class="language-java">BeanDefinition&lt;HelloController&gt; helloDefinition =
                   beanContext.getBeanDefinition(HelloController.class);
 
-List&lt;Argument&lt;?&gt;&gt; typeArguments = 
+List&lt;Argument&lt;?&gt;&gt; typeArguments =
                   helloDefinition.getTypeArguments(HelloOperations.class);
 
 // do something with the type arguments
@@ -2149,9 +2154,9 @@ if (namesArgument.getAnnotationMetadata().hasStereotype(NotEmpty.class)) {
 </ul>
 <p>This may sound complex, but the simplicity it enables for developers is a huge win. For example, if you wish to implement your AOP advice, such as introduction advice, there are only a few steps required.</p>
 <p>As an example, say you want to implement logic from an interface at compilation time. Testing frameworks, for example, often have tools for creating stubs or mocks that return alternative values from interfaces. Let's see how you could implement stubbing in Mironaut. Step 1 is to create an annotation, for example:</p>
-<pre><code class="language-java">@Introduction 
-@Type(StubIntroduction.class) 
-@Bean 
+<pre><code class="language-java">@Introduction
+@Type(StubIntroduction.class)
+@Bean
 @Documented
 @Retention(RUNTIME)
 @Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE, ElementType.METHOD})
@@ -2161,14 +2166,14 @@ public @interface Stub {
 </code></pre>
 <p>On line 1 the advice is defined as introduction advice and given a type of <code>StubIntroduction</code> on line 2. The <code>StubInroduction</code> type should implement <code>MethodInterceptor</code> interface. The following is a trivial implementation:</p>
 <pre><code class="language-java">@Singleton
-public class StubIntroduction implements MethodInterceptor&lt;Object,Object&gt; { 
+public class StubIntroduction implements MethodInterceptor&lt;Object,Object&gt; {
 
     @Override
     public Object intercept(MethodInvocationContext&lt;Object, Object&gt; context) {
-        return context.getValue( 
+        return context.getValue(
                 Stub.class,
                 context.getReturnType().getType()
-        ).orElse(null); 
+        ).orElse(null);
     }
 }
 </code></pre>
@@ -2218,7 +2223,7 @@ public interface StubExample {
 <p>Micronaut 1.0 includes <a href="https://docs.micronaut.io/snapshot/guide/index.html#openapi">compile-time support for Swagger</a>, the industry standard tool for describing APIs. The majority of frameworks that integrate <a href="https://swagger.io/">Swagger</a> do so at runtime, using extensive reflection-based approaches that are problematic from both a performance and a memory-consumption perspective.</p>
 <p>Micronaut features a <a href="https://docs.micronaut.io/1.0.x/api/io/micronaut/inject/visitor/package-summary.html">comprehensive, language-neutral visitor API</a> that allows developers to perform compile-time analysis without depending directly on Groovy's AST or Java's APT. The Swagger support in Micronaut builds on this feature.</p>
 <p>For example, consider this simple &quot;hello world&quot; example:</p>
-<pre><code>@Controller(&quot;/&quot;)
+<pre><code class="language-java">@Controller(&quot;/&quot;)
 @Validated
 public class HelloController {
     @Get(uri=&quot;/hello/{name}&quot;, produces=&quot;text/plain&quot;)
@@ -2228,7 +2233,7 @@ public class HelloController {
 }
 </code></pre>
 <p>Once configured, Micronaut will at compile time build the appropriate Swagger YAML which can easily be added as a static resource that can then be imported into the <a href="https://github.com/swagger-api/swagger-ui">Swagger UI</a> (a React / Node application) without needing any additional runtime reflection in your Java code:</p>
-<pre><code>paths:
+<pre><code class="language-yaml">paths:
   /hello/{name}:
     get:
       operationId: hello
@@ -2251,7 +2256,7 @@ public class HelloController {
 <p>In fact a <a href="https://blog.softwaremill.com/the-case-against-annotations-4b2fb170ed67">common criticism</a> leveled at annotation-based programming models among static-compilation fans is the dynamic references you have to place in the annotations that are not statically checked. </p>
 <p>Although these issues have not prevented annotation-based programming models from becoming the most popular among Java developers, they can lead to a frustrating experience. This was something we wanted to address in the design of Micronaut.</p>
 <p>Let's take an example, consider the following simple route definition:</p>
-<pre><code>@Get(&quot;/hello/{name}&quot;)
+<pre><code class="language-java">@Get(&quot;/hello/{name}&quot;)
 public Single&lt;String&gt; hello(@NotBlank String na) {
      return Single.just(&quot;Hello &quot; + na + &quot;!&quot;);
 }
@@ -2259,7 +2264,7 @@ public Single&lt;String&gt; hello(@NotBlank String na) {
 <p>Spot the obvious typo?</p>
 <p>The route defines a variable called <code>name</code>, but the method accepts a parameter called <code>na</code>. With the majority of modern frameworks, this will lead to a runtime error.</p>
 <p>But not with Micronaut:</p>
-<pre><code>hello-world-java/src/main/java/example/HelloController.java:34: error: The route declares a uri variable named [name], but no corresponding method argument is present
+<pre><code class="language-javastacktrace">hello-world-java/src/main/java/example/HelloController.java:34: error: The route declares a uri variable named [name], but no corresponding method argument is present
     public Single&lt;String&gt; hello(@NotBlank String na) {
                           ^
 </code></pre>
@@ -2271,7 +2276,7 @@ public Single&lt;String&gt; hello(@NotBlank String na) {
 <p>There are, however, a number of excellent specifications and standards in the Java space that developers are already comfortable with; it made sense to support these in Micronaut. Thanks to Micronaut's extensive annotation metadata, you can map the values of any annotation to the values of any other annotations at compile time using an AnnotationMapper.</p>
 <p>What this means in practice is Micronaut can support annotations such as <code>javax.annotation.security.RolesAllowed</code> for security or <code>javax.persistence.PersistenceContext</code> for injecting a JPA <code>EntityManager</code>.</p>
 <p>The API for this is trivial; the following example is taken from <code>RolesAllowedAnnotationMapper</code>:</p>
-<pre><code>public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;RolesAllowed&gt; annotation) {
+<pre><code class="language-java">public List&lt;AnnotationValue&lt;?&gt;&gt; map(AnnotationValue&lt;RolesAllowed&gt; annotation) {
     String[] values = annotation.get(&quot;value&quot;, String[].class).orElse(new String[0]);
 
     List&lt;AnnotationValue&lt;?&gt;&gt; annotationValues = new ArrayList&lt;&gt;(1);

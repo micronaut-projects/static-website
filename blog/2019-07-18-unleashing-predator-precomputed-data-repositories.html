@@ -47,8 +47,8 @@
     <script src='https://micronaut.io/javascripts/navigation.js'></script>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4547412.js"></script>
     
-    <link rel='stylesheet' href='https://micronaut.io/stylesheets/prismjs.css'/>
-    <script src='https://micronaut.io/javascripts/prismjs.js'></script>
+    <link rel='stylesheet' href='/stylesheets/prismjs.css'/>
+    <script src='/javascripts/prismjs.js'></script>
 </head>
 <body class='post'>
 <div class='main'>
@@ -170,7 +170,7 @@ public interface BookRepository extends CrudRepository&lt;Book, Long&gt; {
 }
 </code></pre>
 <p>Here the <code>BookRepository</code> is attempting a query on an entity called <code>Book</code> that has a property called <code>title</code>. Unfortunately, the finder has a typo, in that it is <code>findByTile</code> instead of <code>findByTitle</code>. Instead of waiting until runtime to inform the user of this fact, Micronaut Data will fail at compilation time with an informative error message:</p>
-<pre><code class="language-text">Error:(9, 10) java: Unable to implement Repository method: 
+<pre><code class="language-text">Error:(9, 10) java: Unable to implement Repository method:
 BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-existent property path: tile
 </code></pre>
 <p>Many aspects of Micronaut Data are compilation-time checked whenever possible to ensure that if an error does occur at runtime, it is not due to a typo in a repository definition.</p>
