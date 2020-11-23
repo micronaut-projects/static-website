@@ -3,6 +3,8 @@ title: Micronaut 2.2 Released!
 date: Nov 19, 2020
 author: Jason Schindler
 image: 2020-11-19.jpg
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]

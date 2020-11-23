@@ -1,18 +1,18 @@
 ---
 title: Micronaut 2.0 Milestone 1 Released
-date: Mar 20, 2020  
+date: Mar 20, 2020
 description: Micronaut 2.0 Milestone 1 release announcement
 author: Graeme Rocher (OCI Grails & Micronaut Product Lead and Principal Software Engineer)
 image: 2020-03-20.png
-CSS: https://micronaut.io/stylesheets/prismjs.css
-JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #release
 

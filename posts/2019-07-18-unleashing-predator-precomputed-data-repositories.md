@@ -1,18 +1,18 @@
 ---
 title: Announcing Micronaut Data
-date: Jul 18, 2019  
+date: Jul 18, 2019
 description: Today, the Micronaut team at Object Computing, Inc. unveiled Micronaut Data, a brand new Open Source project that aims to dramatically improve the runtime and memory performance of data access repository logic for the microservice and serverless era, while also maintaining the productivity benefits of tools like GORM and Spring Data.
 author: Graeme Rocher
 image: 2019-07-18.jpg
-CSS: https://micronaut.io/stylesheets/prismjs.css
-JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #data
 
@@ -124,7 +124,7 @@ public interface BookRepository extends CrudRepository<Book, Long> {
 Here the `BookRepository` is attempting a query on an entity called `Book` that has a property called `title`. Unfortunately, the finder has a typo, in that it is `findByTile` instead of `findByTitle`. Instead of waiting until runtime to inform the user of this fact, Micronaut Data will fail at compilation time with an informative error message:
 
 ```text {.line-numbers}
-Error:(9, 10) java: Unable to implement Repository method: 
+Error:(9, 10) java: Unable to implement Repository method:
 BookRepository.findByTile(String title). Cannot use [Equals] criterion on non-existent property path: tile
 ```
 

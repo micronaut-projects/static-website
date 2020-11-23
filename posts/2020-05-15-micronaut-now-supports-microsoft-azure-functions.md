@@ -4,8 +4,8 @@ date: May 15, 2020
 description: The Micronaut team at Object Computing is pleased to announce that Micronaut 2.0.0.M3 now features support for developing serverless applications with Azure Functions.
 author: Sergio del Amo (Object Computing Grails & Micronaut Team)
 image: 2020-05-15.jpg
-CSS: https://micronaut.io/stylesheets/prismjs.css
-JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]
@@ -14,11 +14,11 @@ JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
 
 [%date]
 
-Tags: #azure #serverless 
+Tags: #azure #serverless
 
-The [Micronaut team](https://objectcomputing.com/products/2gm-team) at Object Computing is pleased to announce that [Micronaut 2.0.0.M3](/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html) now features support for developing serverless applications with [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). If you want to develop [Azure Functions with Java](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java), you'll find that you can dramatically improve your productivity and build incredibly fast and lightweight applications with the Micronaut framework.  
+The [Micronaut team](https://objectcomputing.com/products/2gm-team) at Object Computing is pleased to announce that [Micronaut 2.0.0.M3](/blog/2020-04-30-micronaut-20-m3-big-boost-serverless-and-micronaut-launch.html) now features support for developing serverless applications with [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). If you want to develop [Azure Functions with Java](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java), you'll find that you can dramatically improve your productivity and build incredibly fast and lightweight applications with the Micronaut framework.
 
-Micronaut's Azure-friendly features include support for using [dependency injection](https://docs.micronaut.io/latest/guide/index.html#ioc), validation, and [AOP annotations](https://docs.micronaut.io/latest/guide/index.html#aop) within your serverless code. 
+Micronaut's Azure-friendly features include support for using [dependency injection](https://docs.micronaut.io/latest/guide/index.html#ioc), validation, and [AOP annotations](https://docs.micronaut.io/latest/guide/index.html#aop) within your serverless code.
 
 ## Two Micronaut Azure Modules
 
@@ -40,37 +40,37 @@ public interface NameTransformer {
    @NonNull
    String transform(@NonNull @NotBlank String name);
 }
- 
+
 @Singleton
 public CapitalizeNameTransformer implements NameTransformer {
   @Override
   @NonNull
   public String transform(@NonNull @NotBlank String name) {
       return StringUtils.capitalize(name);
-  } 
+  }
 }
- 
+
 public class NameTransformFunction extends AzureFunction {
     @Inject // 1️⃣
     NameTransformer nameTransformer
- 
+
     public String echo(
-          @HttpTrigger(name = "req", 
-                       methods = HttpMethod.GET, 
-                       authLevel = AuthorizationLevel.ANONYMOUS) 
-           HttpRequestMessage<Optional<String>> request, 
+          @HttpTrigger(name = "req",
+                       methods = HttpMethod.GET,
+                       authLevel = AuthorizationLevel.ANONYMOUS)
+           HttpRequestMessage<Optional<String>> request,
            ExecutionContext context) {
         try {
             String name = request.getQueryParameters().get("name");
             return nameTransformer.transform(name);
         } catch(ConstraintViolationException e) { // 2️⃣
-            return "The supplied name must be not blank"; 
+            return "The supplied name must be not blank";
         }
     }
 }
 ```
 
-1️⃣ User can dependency inject fields with `@Inject`.  
+1️⃣ User can dependency inject fields with `@Inject`.
 2️⃣ `Name::transformer` parameter constraints are enforced.
 
 ### Micronaut Azure Http Functions
@@ -82,33 +82,33 @@ With the Micronaut Azure HTTP Functions module, for the previous example, instea
 ```java
 @Controller("/")
 public NameController {
- 
+
     private final NameTransformer transformer;
- 
+
     public NameController(NameTransformer transformer) { // 1️⃣
         this.transformer = transformer;
     }
- 
+
     @Produces(MediaType.TEXT_PLAIN)
     @Get
     public String index(@Nullable String name) {
         try {
             return transformer.transform(name);
         } catch(ConstraintViolationException e) {
-            return "The supplied name must be not blank"; 
+            return "The supplied name must be not blank";
         }
     }
 }
 ```
 
-1️⃣ Micronaut supports constructor based injection as well. 
+1️⃣ Micronaut supports constructor based injection as well.
 
 In addition, testing Micronaut Azure Functions is easy. The next test shows how to test the previous controller:
 
 
 ```java
 public class NameControllerTest {
- 
+
     @Test
     public void testNameSupplied() throws Exception {
         try (Function function = new Function()) {

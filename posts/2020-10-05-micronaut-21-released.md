@@ -3,6 +3,8 @@ title: Micronaut 2.1 Released!
 date: Oct 05, 2020
 author: Jason Schindler
 image: 2020-10-05.jpg
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]
@@ -42,11 +44,15 @@ This application will be built with dependencies for the Netty runtime.  Other r
 
 The Gradle plugin integrates with the [Gradle Docker Plugin](https://bmuschko.github.io/gradle-docker-plugin), and you can build a Docker image using a layered jar by running:
 
-`./gradlew dockerBuild`
+```bash
+./gradlew dockerBuild
+```
 
 If you would like to build a Docker image using a GraalVM Native Image, you can run:
 
-`./gradlew dockerBuildNative`
+```bash
+./gradlew dockerBuildNative
+```
 
 For a full list of supported runtimes and tasks, see the [documentation](https://github.com/micronaut-projects/micronaut-gradle-plugin/blob/master/README.md).
 
@@ -58,9 +64,15 @@ Micronaut 2.1 adds improvements for Oracle Cloud and Google Cloud Platform.
 
 With Micronaut 2.1, you can create Oracle Function projects by adding the `oracle-function` feature to a new project in [Micronaut Launch](https://micronaut.io/launch/) or by passing it to the Micronaut CLI:
 
-`mn create-function-app myfunction --features oracle-function`
+```bash
+mn create-function-app myfunction --features oracle-function
+```
 
-After some configuration updates, you can push your application image to the Oracle Container Registry using `./gradlew dockerPush` or `./gradlew dockerPushNative`.
+After some configuration updates, you can push your application image to the Oracle Container Registry using:
+
+```bash
+./gradlew dockerPush` or `./gradlew dockerPushNative
+```
 
 See the [Micronaut Oracle Cloud Guide](https://micronaut-projects.github.io/micronaut-oracle-cloud/latest/guide/#functions) for more details.
 

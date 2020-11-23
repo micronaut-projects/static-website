@@ -1,18 +1,18 @@
 ---
 title: Micronaut AOP: Awesome Flexibility Without the Complexity
-date: Oct 7, 2019  
+date: Oct 7, 2019
 description: Learn more about Micronaut's AOP system and how easy it is to use compared to competitors
 author: Graeme Rocher
 image: 2019-10-07.jpg
-CSS: https://micronaut.io/stylesheets/prismjs.css
-JAVASCRIPT: https://micronaut.io/javascripts/prismjs.js
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]
 
 [%author]
 
-[%date] 
+[%date]
 
 Tags: #aop
 
@@ -104,8 +104,8 @@ public @interface TransactionalAdvice {
      * @see #transactionManager
      */
     String value() default "";
-    
-    // Remaining members omitted for clarity 
+
+    // Remaining members omitted for clarity
 
 }
 ```
@@ -124,7 +124,7 @@ public class JtaTransactionalMapper implements NamedAnnotationMapper {
 
     @Override
     public List<AnnotationValue<?>> map(AnnotationValue<Annotation> annotation, VisitorContext visitorContext) {
-       
+
         AnnotationValueBuilder<Annotation> builder =
                 AnnotationValue.builder("io.micronaut.transaction.interceptor.annotation.TransactionalAdvice");
 
@@ -278,7 +278,7 @@ The first step was defining a [@TransactionalEventListener](https://github.com/m
 @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Adapter(ApplicationEventListener.class) 
+@Adapter(ApplicationEventListener.class)
 @TransactionalEventAdvice
 public @interface TransactionalEventListener {
     TransactionPhase value() default TransactionPhase.AFTER_COMMIT;
@@ -371,7 +371,7 @@ public class BookManager {
     void saveBook(String title, int pages) {
         final Book book = new Book(title, pages);
         bookRepository.save(book);
-        eventPublisher.publishEvent(new NewBookEvent(book)); 
+        eventPublisher.publishEvent(new NewBookEvent(book));
     }
 
     @TransactionalEventListener

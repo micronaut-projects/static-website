@@ -3,6 +3,8 @@ title: What's new for Maven users in Micronaut 2.2
 date: Nov 23, 2020
 author: Álvaro Sánchez-Mariscal
 image: 2020-11-23.png
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js
 ---
 
 # [%title]
