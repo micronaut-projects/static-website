@@ -609,6 +609,7 @@ nav li {
     transition: top 0.5s;
     height: 75px;
     overflow: hidden;
+    z-index: 1001;
 }
 
 .main nav li {
@@ -1577,5 +1578,4 @@ body.home .calltoactionbuttons {
     height: 45px;
     width: 45px;
 }
-
 
