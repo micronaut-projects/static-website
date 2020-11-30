@@ -1,0 +1,16 @@
+stripe:
+  publishableKey: "pk_live_51HMxCnAdio0y30LTv9S4fLlYVaBdZN5ihurBPL6kJ8fQNbN3jRj6JwJQNXeL7PhZTQvuGcmWOdoyIUsuqXaop8OK00qddh873V"
+  priceIds:
+    AMBASSADOR : null
+    PLATINUM : "price_1HmoDMAdio0y30LTVzAAToaq"
+    GOLD : "price_1HmoDWAdio0y30LTpnW7UPTr"
+    SILVER : "price_1HmoD5Adio0y30LTjlF48s7v"
+    BRONZE : "price_1HmoD0Adio0y30LTjUJU7jTK"
+    COMMUNITY_VIP : "price_1HmoCtAdio0y30LTUWs6VICf"
+    COMMUNITY_SUPER_FAN : "price_1HmoCnAdio0y30LT9REZt0tY"
+    COMMUNITY_CHAMPION : "price_1HmoCdAdio0y30LTlnrYvjyS"
+hubspot:
+  portalId: 4547412
+  formIds:
+    AMBASSADOR: "969916f8-21e3-47d1-bb4c-bde90c19bfd2"
+    GENERAL: "32a23be2-9198-4405-bbb9-c4fc67684b8e"

@@ -248,6 +248,38 @@ JAVASCRIPT: /javascripts/prismjs.js /javascripts/other.js
 <div>...</div>
 ```
 
+## Page Metadata
+
+You may also define the meta in Pages. To include multiple js/css files use a single space to separate the file names.
+
+```markdown
+...
+..
+.
+CSS: /stylesheets/prismjs.css
+JAVASCRIPT: /javascripts/prismjs.js /javascripts/other.js
+---
+<div>...</div>
+```
+
+If you want to convert a YML file from the `/conf` folder into a JS object that is injected into the head you may add it similar to how `JAVASCRIPT` is added
+
+```markdown
+...
+..
+.
+YAML_CONF_TO_JS: donations.yml 
+---
+<div>...</div>
+```
+
+Then the file is available in the other script tags via a underscored cased version of the file name with a `CONF_` prefix
+
+```
+var config = window['CONF_DONATIONS']
+```
+
+
 ## What to change when a new release is published.
 
 Please, modify `conf/releases.yml`

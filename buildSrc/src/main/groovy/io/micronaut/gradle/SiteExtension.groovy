@@ -18,6 +18,8 @@ class SiteExtension {
 
     final Property<File> micronautLogos
 
+    final Property<File> conf
+
     final Property<File> pages
 
     final Property<File> posts
@@ -45,6 +47,7 @@ class SiteExtension {
         assets = objects.property(File)
         questions = objects.property(File)
         pages = objects.property(File)
+        conf = objects.property(File)
         posts = objects.property(File)
         template = objects.property(File)
         output = objects.property(File)

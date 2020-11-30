@@ -10,6 +10,7 @@ micronaut {
     micronautLogos = file("conf/logos.yml")
     posts = file("posts")
     pages = file("pages")
+    conf = file("conf")
     template = file("templates/document.html")
     output = project.buildDir
     title = 'Micronaut'
