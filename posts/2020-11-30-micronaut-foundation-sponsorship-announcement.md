@@ -3,7 +3,7 @@ title: Micronaut Foundation Sponsorship Now Available!
 date:  Nov 30, 2020 
 description: We are excited to announce two new sponsorship programs: the Corporate Sponsorship Program and the Community Member Sponsorship Program.
 author: Jen Wiese
-image: 2020-11-30.jpg
+image: 2020-11-30.png
 ---
 
 # [%title]
