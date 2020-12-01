@@ -235,6 +235,9 @@
     <loc>https://micronaut.io/blog/tag/cli.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/casestudy.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/oracle.html</loc>
   </url>
   <url>
@@ -377,6 +380,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-06-15-oracle-cloud-microservices.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2020-12-01-smartthings-case-study.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-07-21-gradle-micronaut2.html</loc>
