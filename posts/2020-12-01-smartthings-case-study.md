@@ -22,4 +22,4 @@ By replacing its monolith architecture with a more flexible microservice-based s
 
 To learn more about this real-life use case, [check out the full case study](https://objectcomputing.com/case-studies/case-study-from-monolith-to-microservices-with-micronaut).
 
-Want us to feature your Micronaut use case in our blog? Contact us at info@micronaut.io, and let's talk!
+Want us to feature your Micronaut use case in our blog? Contact us at <info@micronaut.io>, and let's talk!
