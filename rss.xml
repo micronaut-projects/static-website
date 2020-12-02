@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 01 Dec 2020 15:27:47 GMT</pubDate><item><title>From Monolith to Microservices with Micronaut</title><link>https://micronaut.io/blog/2020-12-01-smartthings-case-study.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 02 Dec 2020 08:54:25 GMT</pubDate><item><title>Webinar: Micronaut for Microservices with Kotlin</title><link>https://micronaut.io/blog/2020-12-02-micronaut-kotlin.html</link><description><![CDATA[</p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/kotlin.html"><span class="hashtag">#kotlin</span></a> <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<blockquote>
+<p>In this 90-minute, complimentary webinar, you’ll learn how to create and test Micronaut applications using Kotlin. Join Agile guru, Dr. <a href="https://twitter.com/venkat_s">Venkat Subramaniam</a> for a lively and informative tutorial that will prepare you to:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>Develop with Micronaut and deploy on the cloud</li>
+<li>Quickly build both the server sides and the client sides</li>
+<li>Program for high availability and make use of circuit breakers</li>
+<li>Make use of Reactive APIs</li>
+<li>Create automated tests for your microservices</li>
+</ul>
+</blockquote>
+<p>📅 December 3, 2020</p>
+<p>⌛️ 10:00 a.m. CST</p>
+<p><a href="https://objectcomputing.com/products/micronaut/resources/micronaut-for-microservices-with-kotlin">Reserve your spot</a></p>]]></description><author>Sergio del Amo</author><guid>2020-12-02-micronaut-kotlin</guid><pubDate>Wed, 02 Dec 2020 00:00:00 GMT</pubDate></item><item><title>From Monolith to Microservices with Micronaut</title><link>https://micronaut.io/blog/2020-12-01-smartthings-case-study.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/casestudy.html"><span class="hashtag">#casestudy</span></a></p>
 <p>We're always excited to see how organizations use the Micronaut framework to enhance their operations.</p>
 <p>For example, when <a href="https://www.smartthings.com/">SmartThings</a>, a subsidiary of Samsung Electronics, had a legacy system that couldn't keep up with the requirements of its popular smart-home devices, the company's engineers turned to the Micronaut framework to build a solution.</p>
