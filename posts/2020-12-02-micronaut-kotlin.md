@@ -1,5 +1,5 @@
 ---
-title: Webinar: Micronaut for Microservices with Kotlin
+title: Micronaut for Microservices with Kotlin Webinar Tomorrow
 date: December 2, 2020
 description: Venkat Subramaniam webinar about creating and testing Micronaut applications using Kotlin 
 author: Sergio del Amo
