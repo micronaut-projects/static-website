@@ -103,3 +103,50 @@ section.foundation-boards .foundation-board-content h2 {
 	overflow: auto;
 	height: 100vh;
 }
+
+.sponsor-container hr {
+	margin-bottom: 30px;
+}
+
+.sponsor-container h2 {
+	margin-bottom: 20px;
+}
+
+.ambassador-list {
+	columns: 1;
+	-webkit-columns: 1;
+	-moz-columns: 1;
+}
+
+.ambassador-list li {
+	list-style: none;
+}
+
+.sponsor-list {
+	columns: 4;
+	-webkit-columns: 4;
+	-moz-columns: 4;
+}
+
+.sponsor-list li {
+	list-style: none;
+}
+
+.all-star-list {
+	columns: 6;
+	-webkit-columns: 6;
+	-moz-columns: 6;
+}
+
+.all-star-list li {
+	list-style: none;
+	font-weight: bold;
+}
+
+.ambassador-logo {
+	max-height: 250px;
+}
+
+.sponsor-logo {
+	max-height: 150px; /* maybe titanium vs plat vs ??? get progressively smaller? */
+}
