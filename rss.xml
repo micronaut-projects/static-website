@@ -1,30 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Sat, 12 Dec 2020 00:02:23 GMT</pubDate><item><title>Webinar: Micronaut for Microservices with Kotlin</title><link>https://micronaut.io/blog/2020-12-03-micronaut-with-kotlin-webinar.html</link><description><![CDATA[</p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/kotlin.html"><span class="hashtag">#kotlin</span></a> <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
-<p>Both development speed and execution speed are highly critical in today’s market. The Micronaut framework is built around conventions that not only simplify and accelerate development, they make use of compile-time metaprogramming to offer fast startup and runtime performance.</p>
-<p>In this 90-minute, complimentary webinar, you’ll learn how to create and test Micronaut applications using Kotlin. Join Agile guru, Dr. Venkat Subramaniam for a lively and informative tutorial that will prepare you to:</p>
-<ul>
-<li>Develop with Micronaut and deploy on the cloud</li>
-<li>Quickly build both the server sides and the client sides</li>
-<li>Program for high availability and make use of circuit breakers</li>
-<li>Make use of Reactive APIs</li>
-<li>Create automated tests for your microservices</li>
-</ul>
-<p>Topics covered in this webinar include:</p>
-<ul>
-<li>The power of Micronaut</li>
-<li>Creating microservices</li>
-<li>Compile-time dependency injection</li>
-<li>Deploying to the cloud</li>
-<li>Service discovery and load balancing</li>
-<li>Dealing with failures</li>
-<li>Building Reactive services and clients</li>
-</ul>
-<p>Experience with Kotlin is not necessary to gain value from this webinar; the presentation prepares attendees to readily apply lessons to their applications using any of the supported languages.</p>
-<h2>Meet the Speaker</h2>
-<p>Dr. Venkat Subramaniam is an award-winning author, founder of Agile Developer, Inc., creator of agilelearner.com, co-founder of the devdotnext software conference, and an instructional professor at the University of Houston.</p>
-<p>Venkat has trained and mentored thousands of software developers in the U.S., Canada, Europe, and Asia and is regularly invited to speak at international conferences. Venkat helps his clients effectively apply and succeed with sustainable agile practices.</p>
-<p>Venkat is a (co)author of numerous technical books, including the 2007 Jolt Productivity award winning book, Practices of an Agile Developer. You can find a list of his books at agiledeveloper.com.</p>
-<p>You can reach Venkat by email at venkats@agiledeveloper.com or on twitter at <a href="https://twitter.com/venkat_s">@venkat_s</a>.</p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/pZvGluyjrLI" frameborder="0"></iframe>]]></description><author>Jen Wiese</author><guid>2020-12-03-micronaut-with-kotlin-webinar</guid><pubDate>Thu, 03 Dec 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut for Microservices with Kotlin Webinar Tomorrow</title><link>https://micronaut.io/blog/2020-12-02-micronaut-kotlin.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Sat, 12 Dec 2020 00:11:48 GMT</pubDate><item><title>Micronaut for Microservices with Kotlin Webinar Tomorrow</title><link>https://micronaut.io/blog/2020-12-02-micronaut-kotlin.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/kotlin.html"><span class="hashtag">#kotlin</span></a> <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
 <blockquote>
 <p>In this 90-minute, complimentary webinar, you’ll learn how to create and test Micronaut applications using Kotlin. Join Agile guru, Dr. <a href="https://twitter.com/venkat_s">Venkat Subramaniam</a> for a lively and informative tutorial that will prepare you to:</p>
