@@ -4,7 +4,7 @@ date: Dec 3, 2020
 description: In this 90-minute, complimentary, on-demand webinar, you’ll learn how to create and test Micronaut applications using Kotlin. 
 author: Jen Wiese
 image: 2020-12-03.jpg
-video:https://www.youtube.com/watch?v=pZvGluyjrLI
+video: https://www.youtube.com/watch?v=pZvGluyjrLI
 ---
 
 # [%title]
