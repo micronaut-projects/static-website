@@ -5,6 +5,7 @@ description: In this complimentary webinar, you'll get a look at the Micronaut 
 author: Jen Wiese
 image: 2020-12-11.jpg
 video: https://www.youtube.com/watch?v=uWLbzzV4ZS8
+slides: https://objectcomputing.com/download_file/5025
 ---
 
 # [%title]
