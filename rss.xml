@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Mon, 21 Dec 2020 10:32:38 GMT</pubDate><item><title>Webinar: Micronaut in Action: A Live Case Study</title><link>https://micronaut.io/blog/2020-12-11-micronaut-in-action-webinar.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Mon, 21 Dec 2020 21:54:49 GMT</pubDate><item><title>Webinar: Flexible Frontend, Robust Backend: SPAs with Svelte and Micronaut®</title><link>https://micronaut.io/blog/2020-12-18-spas-with-svelte-and-micronaut-webinar.html</link><description><![CDATA[</p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a></p>
+<p>When building single-page applications, choosing the right tools can have a significant impact on both your productivity and your finished product.</p>
+<p>In this 60-minute, complimentary webinar, web development guru, Mark Volkmann, and Micronaut team member, Sergio del Amo Caballero, demonstrate how to combine a UI built with Svelte and a backend built with the Micronaut framework to create fast, powerful, and user-friendly SPAs.</p>
+<p>If you've never used Svelte, this is a great opportunity to see how easy it is to use, and Micronaut users will gain a blueprint for how to solve many common concerns regarding API documentation, security, and versioning. </p>
+<p>Frontend topics include:</p>
+<ul>
+<li>Top features of  Svelte</li>
+<li>Starting a new Svelte app</li>
+<li>Example Svelte components</li>
+<li>The Svelte REPL</li>
+<li>Svelte stores</li>
+<li>Svelte tools and resources</li>
+</ul>
+<p>Backend topics include:</p>
+<ul>
+<li>OAuth 2.0 Authentication Provider</li>
+<li>OpenApi documentation generation</li>
+<li>API versioning</li>
+</ul>
+<p><a href="https://objectcomputing.com/download_file/5028">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/n_ylrgl84cQ" frameborder="0"></iframe>]]></description><author>Jen Wiese</author><guid>2020-12-18-spas-with-svelte-and-micronaut-webinar</guid><pubDate>Fri, 18 Dec 2020 00:00:00 GMT</pubDate></item><item><title>Webinar: Micronaut in Action: A Live Case Study</title><link>https://micronaut.io/blog/2020-12-11-micronaut-in-action-webinar.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a> <a href="https://micronaut.io/blog/tag/casestudy.html"><span class="hashtag">#casestudy</span></a></p>
 <p>Many &quot;Hello World&quot; examples confirm that the Micronaut framework is capable of delivering reduced memory consumption and faster start-up times, but what about Micronaut applications outside the confines of test scenarios?</p>
 <p>In this field report, guest speakers, Carlos Barragan and Silvio D'Alessandro from Novatec join Object Computing's Sergio del Amo and Jen Wiese to explore the development of a Micronaut application from conception to go-live.</p>
