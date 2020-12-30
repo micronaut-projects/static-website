@@ -4,7 +4,7 @@
 
 This project builds the Micronaut website. A static website build with [Gradle](https://gradle.org). It uses a Gradle Plugin whose sources can be found at `buildSrc`.
 
-Tasks are groupped with `micronaut`.
+Tasks are grouped with `micronaut`.
 
 You can get more info by running:
 
@@ -268,7 +268,7 @@ If you want to convert a YML file from the `/conf` folder into a JS object that 
 ...
 ..
 .
-YAML_CONF_TO_JS: donations.yml 
+YAML_CONF_TO_JS: donations.yml
 ---
 <div>...</div>
 ```
