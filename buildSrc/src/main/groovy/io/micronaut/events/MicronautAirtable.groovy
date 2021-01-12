@@ -34,7 +34,7 @@ class MicronautAirtable {
     }
 
     List<Event> fetchMicronautEvents() {
-        String micronautPracticeAreaId = practiceId('Micronaut')
+        String micronautPracticeAreaId = practiceId('2GM')
         fetchEvents(micronautPracticeAreaId)
     }
 
