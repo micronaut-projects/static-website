@@ -143,14 +143,39 @@ section.foundation-boards .foundation-board-content h2 {
 }
 
 .all-star-list {
-	columns: 6;
-	-webkit-columns: 6;
-	-moz-columns: 6;
+	columns: 1;
+	-webkit-columns: 1;
+	-moz-columns: 1;
+}
+
+@media(min-width: 600px) {
+	.all-star-list {
+		columns: 2;
+		-webkit-columns: 2;
+		-moz-columns: 2;
+	}
+}
+
+@media(min-width: 800px) {
+	.all-star-list {
+		columns: 3;
+		-webkit-columns: 3;
+		-moz-columns: 3;
+	}
+}
+
+@media(min-width: 1200px) {
+	.all-star-list {
+		columns: 6;
+		-webkit-columns: 6;
+		-moz-columns: 6;
+	}
 }
 
 .all-star-list li {
 	list-style: none;
 	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .ambassador-logo {
@@ -166,4 +191,22 @@ section.foundation-boards .foundation-board-content h2 {
 	width: 25%;
 	background-color: #CCC;
 	margin: auto;
+}
+
+.align-right {
+	align-items: right;
+}
+
+.sponsor-container a.button {
+	display: inline-block;
+	font-size: 1.3em;
+	padding: 10px 40px;
+	background: #2559A7;
+	color: white;
+	border-color: #2559A7;
+	border-radius: 8px;
+	border-style: solid;
+	position: relative;
+	cursor: pointer;
+	text-decoration: none;
 }
