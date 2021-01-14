@@ -103,3 +103,102 @@ section.foundation-boards .foundation-board-content h2 {
 	overflow: auto;
 	height: 100vh;
 }
+
+.sponsor-container hr {
+	margin-bottom: 30px;
+}
+
+.sponsor-container h2 {
+	margin-bottom: 20px;
+}
+
+.ambassador-list {
+	columns: 1;
+	-webkit-columns: 1;
+	-moz-columns: 1;
+}
+
+.ambassador-list li {
+	list-style: none;
+}
+
+.sponsor-list {
+	columns: 4;
+	-webkit-columns: 4;
+	-moz-columns: 4;
+}
+
+.sponsor-list li {
+	list-style: none;
+}
+
+.placeholder-list {
+	columns: 1;
+	-webkit-columns: 1;
+	-moz-columns: 1;
+}
+
+.placeholder-list li {
+	list-style: none;
+}
+
+.all-star-list {
+	columns: 1;
+	-webkit-columns: 1;
+	-moz-columns: 1;
+}
+
+@media(min-width: 800px) {
+	.all-star-list {
+		columns: 2;
+		-webkit-columns: 2;
+		-moz-columns: 2;
+	}
+}
+
+@media(min-width: 1200px) {
+	.all-star-list {
+		columns: 4;
+		-webkit-columns: 4;
+		-moz-columns: 4;
+	}
+}
+
+.all-star-list li {
+	list-style: none;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.ambassador-logo {
+	max-height: 250px;
+}
+
+.sponsor-logo {
+	max-height: 150px; /* maybe titanium vs plat vs ??? get progressively smaller? */
+}
+
+.placeholder-logo {
+	height: 50px;
+	width: 25%;
+	background-color: #CCC;
+	margin: auto;
+}
+
+.align-right {
+	align-items: right;
+}
+
+.sponsor-container a.button {
+	display: inline-block;
+	font-size: 1.3em;
+	padding: 10px 40px;
+	background: #2559A7;
+	color: white;
+	border-color: #2559A7;
+	border-radius: 8px;
+	border-style: solid;
+	position: relative;
+	cursor: pointer;
+	text-decoration: none;
+}
