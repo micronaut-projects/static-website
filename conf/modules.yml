@@ -123,7 +123,7 @@ modules:
     category: 'Misc'
     image: 'multitenancy.svg'
     label: 'Micronaut Multitenancy'
-    version: 'snapshot'
+    version: 'latest'
     githubslug: 'micronaut-multitenancy'
     legend: 'Support for Multi-tenancy aware applications'
   mqtt:
