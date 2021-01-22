@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Fri, 22 Jan 2021 21:18:59 GMT</pubDate><item><title>Microcast #2: Micronaut Launch Push to GitHub</title><link>https://micronaut.io/blog/2021-01-18-microcast-2.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Fri, 22 Jan 2021 21:46:40 GMT</pubDate><item><title>Micronaut 2.3 Released!</title><link>https://micronaut.io/blog/2021-01-22-2-dot-3-release.html</link><description><![CDATA[</p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/micronaut2.html"><span class="hashtag">#micronaut2</span></a> <a href="https://micronaut.io/blog/tag/jms.html"><span class="hashtag">#jms</span></a> <a href="https://micronaut.io/blog/tag/locale.html"><span class="hashtag">#locale</span></a> <a href="https://micronaut.io/blog/tag/introspection.html"><span class="hashtag">#introspection</span></a></p>
+<p>The Micronaut team is excited to announce the release of Micronaut 2.3! This release features improvements to introspections and locale resolution support, support for JMS, many incremental improvements to many modules, and a startup banner!</p>
+<h1>JMS</h1>
+<p>Micronaut 2.3 includes a milestone version of support for JMS. Similar to our other messaging solutions, Micronaut JMS makes it easy to publish and subscribe to queues with activemq artemis, activemq classic, or Amazon SQS.</p>
+<p>Simply define an interface, and it will be implemented for you to do the work of publishing the message.</p>
+<pre><code>@JMSProducer(&quot;activeMqConnectionFactory&quot;)
+public interface TextProducer {
+
+    @Queue(&quot;queue_text&quot;)
+    void send(@Body String body);
+}
+</code></pre>
+<p>Create a class annotated with <code>JMSListener</code>, and the work to listen to the queue will be done for you, and your method will be called when a message arrives.</p>
+<pre><code>@JMSListener(activeMqConnectionFactory)
+public class TextConsumer {
+
+    List&lt;String&gt; messages = Collections.synchronizedList(new ArrayList&lt;&gt;());
+
+    @Queue(value = &quot;queue_text&quot;, concurrency = &quot;1-5&quot;)
+    public void receive(@Body String body) {
+        messages.add(body);
+    }
+}
+</code></pre>
+<p>See the <a href="https://github.com/micronaut-projects/micronaut-jms">Github repository</a> for more information. Special thanks to <a href="https://github.com/elliottpope">Elliott Pope</a> for his major contributions to this area.</p>
+<h1>Locale Resolution</h1>
+<p>Advanced support for resolving the locale from a request has been added, and it is now possible to simply inject a <code>Locale</code> argument into controller methods. It is now possible to customize where the locale information is retrieved from. See the <a href="https://docs.micronaut.io/latest/guide/index.html#localeResolution">documentation</a> for the available configuration options.</p>
+<h1>Introspections</h1>
+<p>Many improvements have been made to our introspection functionality to add support for executable methods and annotation metadata on generics. This will serve as the foundation of future work to add support for the current bean validation standard and improvements to Micronaut Data.</p>
+<h1>Banner</h1>
+<p>A Micronaut banner will now greet you by default for applications using Micronaut 2.3. It can be customized and turned off. See the <a href="https://docs.micronaut.io/latest/guide/index.html#_micronaut_banner">documentation</a> for more information.</p>
+<p><img src="2021-01-22-micronaut-banner.png" alt="The new Micronaut banner" /></p>]]></description><author>James Kleeh</author><guid>2021-01-22-2-dot-3-release</guid><pubDate>Fri, 22 Jan 2021 00:00:00 GMT</pubDate></item><item><title>Microcast #2: Micronaut Launch Push to GitHub</title><link>https://micronaut.io/blog/2021-01-18-microcast-2.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/microcast.html"><span class="hashtag">#microcast</span></a> <a href="https://micronaut.io/blog/tag/launch.html"><span class="hashtag">#launch</span></a></p>
 <p>In this short video, Sergio del Amo demonstrates one of the latest features in Micronaut Launch: How to push your Micronaut application directly to GitHub.</p>
 <p>Micronaut® Microcasts provide bite-sized tips and tutorials to help you maximize your productivity with the Micronaut framework and confidently contribute to the ecosystem.</p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/X4AKGf1TlXM" frameborder="0"></iframe>]]></description><author>Sergio del Amo</author><guid>2021-01-18-microcast-2</guid><pubDate>Mon, 18 Jan 2021 00:00:00 GMT</pubDate></item><item><title>Webinar: Flexible Frontend, Robust Backend: SPAs with Svelte and Micronaut®</title><link>https://micronaut.io/blog/2020-12-18-spas-with-svelte-and-micronaut-webinar.html</link><description><![CDATA[</p>

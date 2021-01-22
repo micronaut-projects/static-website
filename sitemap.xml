@@ -169,6 +169,9 @@
     <loc>https://micronaut.io/blog/2019-03-05-distributed-tracing-micronaut.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/2021-01-22-2-dot-3-release.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/index.html</loc>
   </url>
   <url>
@@ -280,6 +283,9 @@
     <loc>https://micronaut.io/blog/tag/graalvm.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/introspection.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/release.html</loc>
   </url>
   <url>
@@ -325,6 +331,9 @@
     <loc>https://micronaut.io/blog/tag/maven.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/jms.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/springboot.html</loc>
   </url>
   <url>
@@ -356,6 +365,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/gcp.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/tag/locale.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/kotlin.html</loc>
