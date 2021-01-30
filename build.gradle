@@ -16,6 +16,6 @@ micronaut {
     title = 'Micronaut'
     url = System.getenv('GITHUB_RUN_ID') != null ? 'https://micronaut.io' : System.getenv("MNWS_URL") ?: ''
     description = 'A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.'
-    keywords = ['microanut','jvm','framework','groovy','java','kotlin','microservices','graalvm','serverless']
+    keywords = ['micronaut','jvm','framework','groovy','java','kotlin','microservices','graalvm','serverless']
     robots = 'all'
 }
