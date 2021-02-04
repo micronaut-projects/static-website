@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/launch/static/css/main.c1888ab1.chunk.css",
-    "main.js": "/launch/static/js/main.de65b180.chunk.js",
-    "main.js.map": "/launch/static/js/main.de65b180.chunk.js.map",
+    "main.css": "/launch/static/css/main.a8ea0020.chunk.css",
+    "main.js": "/launch/static/js/main.b9beeff6.chunk.js",
+    "main.js.map": "/launch/static/js/main.b9beeff6.chunk.js.map",
     "runtime-main.js": "/launch/static/js/runtime-main.ac23779b.js",
     "runtime-main.js.map": "/launch/static/js/runtime-main.ac23779b.js.map",
-    "static/js/2.e7485f99.chunk.js": "/launch/static/js/2.e7485f99.chunk.js",
-    "static/js/2.e7485f99.chunk.js.map": "/launch/static/js/2.e7485f99.chunk.js.map",
+    "static/js/2.b0735570.chunk.js": "/launch/static/js/2.b0735570.chunk.js",
+    "static/js/2.b0735570.chunk.js.map": "/launch/static/js/2.b0735570.chunk.js.map",
     "index.html": "/launch/index.html",
-    "precache-manifest.39de80189d8e59d610b3d90ef7106863.js": "/launch/precache-manifest.39de80189d8e59d610b3d90ef7106863.js",
+    "precache-manifest.51fd96736d26192b23ff953ad5b86bbf.js": "/launch/precache-manifest.51fd96736d26192b23ff953ad5b86bbf.js",
     "service-worker.js": "/launch/service-worker.js",
-    "static/css/main.c1888ab1.chunk.css.map": "/launch/static/css/main.c1888ab1.chunk.css.map",
-    "static/js/2.e7485f99.chunk.js.LICENSE.txt": "/launch/static/js/2.e7485f99.chunk.js.LICENSE.txt",
-    "static/media/micronaut-launch.a19c6382.svg": "/launch/static/media/micronaut-launch.a19c6382.svg",
-    "static/media/micronaut-white-icon.png": "/launch/static/media/micronaut-white-icon.6d5a6522.png"
+    "static/css/main.a8ea0020.chunk.css.map": "/launch/static/css/main.a8ea0020.chunk.css.map",
+    "static/js/2.b0735570.chunk.js.LICENSE.txt": "/launch/static/js/2.b0735570.chunk.js.LICENSE.txt",
+    "static/media/micronaut-launch.15f938e9.svg": "/launch/static/media/micronaut-launch.15f938e9.svg",
+    "static/media/micronaut-white-icon.png": "/launch/static/media/micronaut-white-icon.6d5a6522.png",
+    "static/media/oci-logo.a41f3c8f.svg": "/launch/static/media/oci-logo.a41f3c8f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ac23779b.js",
-    "static/js/2.e7485f99.chunk.js",
-    "static/css/main.c1888ab1.chunk.css",
-    "static/js/main.de65b180.chunk.js"
+    "static/js/2.b0735570.chunk.js",
+    "static/css/main.a8ea0020.chunk.css",
+    "static/js/main.b9beeff6.chunk.js"
   ]
 }
