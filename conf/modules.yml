@@ -196,6 +196,13 @@ modules:
     version: 'latest'
     githubslug: 'micronaut-aws'
     legend: 'Configuration to integrate Micronaut and Amazon Web Services (AWS)'
+  oraclecloud:
+    category: 'Cloud'
+    image: 'oracle-cloud-docs.png'
+    label: 'Micronaut Oracle Cloud'
+    version: 'latest'
+    githubslug: 'micronaut-oracle-cloud'
+    legend: 'Configuration to integrate Micronaut and Oracle Cloud Infrastructure'    
   rabbitmq:
     category: 'Messaging'
     image: 'rabbitmq.svg'
