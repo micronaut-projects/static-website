@@ -187,6 +187,9 @@
     <loc>https://micronaut.io/blog/tag/data.html</loc>
   </url>
   <url>
+    <loc>https://micronaut.io/blog/tag/datascience.html</loc>
+  </url>
+  <url>
     <loc>https://micronaut.io/blog/tag/http2.html</loc>
   </url>
   <url>
@@ -257,6 +260,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/foundation.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/tag/Jupyter.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/tag/aop.html</loc>
@@ -350,6 +356,9 @@
   </url>
   <url>
     <loc>https://micronaut.io/blog/2020-12-18-spas-with-svelte-and-micronaut-webinar.html</loc>
+  </url>
+  <url>
+    <loc>https://micronaut.io/blog/2021-02-23-micronaut-and-jupyter-for-data-science.html</loc>
   </url>
   <url>
     <loc>https://micronaut.io/blog/2019-04-11-micronaut-11-released.html</loc>
