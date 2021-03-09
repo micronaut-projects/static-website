@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Micronaut 1.1 Released</title>
+    <title>Micronaut 2.4 Released!</title>
     <meta name="keywords" content="micronaut,jvm,framework,groovy,java,kotlin,microservices,graalvm,serverless" />
-    <meta name="description" content="Micronaut 1.1 Release Announcement" />
-    <meta name="date" content="April 11, 2019" />
+    <meta name="description" content="We're pleased to announce the release of Micronaut 2.4." />
+    <meta name="date" content="March 9, 2021" />
     <meta name="robots" content="all"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://micronaut.io/rss.xml" />
     <meta charset='utf-8'/>
@@ -12,14 +12,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
     <meta name='twitter:card' content='summary_large_image'/>
     <meta name='twitter:site' content='@micronautfw'/>
-    <meta name='twitter:description' content='Micronaut 1.1 Release Announcement'/>
+    <meta name='twitter:description' content='We're pleased to announce the release of Micronaut 2.4.'/>
     <meta name='twitter:creator' content='@micronautfw'/>
     <meta property='og:image' content='https://micronaut.io/images/Micronaut_OG_Logo.png'/>
     <meta property='og:image:width' content='600'/>
     <meta property='og:image:height' content='300'/>
     <meta property='og:url' content='https://micronaut.io'/>
-    <meta property='og:title' content='Micronaut 1.1 Released'/>
-    <meta property='og:description' content='Micronaut 1.1 Release Announcement'/>
+    <meta property='og:title' content='Micronaut 2.4 Released!'/>
+    <meta property='og:description' content='We're pleased to announce the release of Micronaut 2.4.'/>
     <meta property='og:type' content='website'/>
     <link rel='mask-icon' href='https://micronaut.io/images/website_icon.svg'/>
     <link rel='apple-touch-icon-precomposed' sizes='57x57' href='https://micronaut.io/images/apple-touch-icon-57x57.png'/>
@@ -99,45 +99,49 @@
   </h1>
   <div class='light'>
     <div class='largegoldenratio align-left'>
-      <div class='padded'><h1>Micronaut 1.1 Released</h1>
-<p><span class="author">By Graeme Rocher</span></p>
-<p><span class="date">April 11, 2019</span></p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a></p>
-<p>Joining the many exciting announcements happening at <a href="https://cloud.withgoogle.com/next/sf">Google Cloud Next</a>, the <a href="https://objectcomputing.com/products/2gm-team">Micronaut Team</a> at <a href="https://objectcomputing.com/">Object Computing, Inc.</a> (OCI) is pleased to announce the release of <a href="https://github.com/micronaut-projects/micronaut-core/releases/tag/v1.1.0">Micronaut 1.1</a> GA.</p>
-<p>Micronaut 1.1 includes a number of significant refinements since Micronaut's groundbreaking 1.0 release including:</p>
+      <div class='padded'><h1>Micronaut 2.4 Released!</h1>
+<p><span class="author">By James Kleeh</span></p>
+<p><span class="date">March 9, 2021</span></p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/micronaut2.html"><span class="hashtag">#micronaut2</span></a></p>
+<p>The Micronaut team is excited to announce the release of Micronaut 2.4! This release features support for Jakarta inject annotations, improvements for AOP interceptor declarations, easier control over error responses, Micronaut Data improvements, and more!</p>
+<h2>Jakarta Inject</h2>
+<p>The Micronaut framework now supports using 'jakarta.inject' annotations as an alternative to 'javax.inject'. The javax annotations still come with the Micronaut framework by default, so in order to use the Jakarta annotations a dependency will need to be added to the build for the 'jakarta.inject-api'.</p>
+<p>Future versions of the Micronaut framework will stop including javax annotations by default, and the Jakarta annotations will be included by default instead. Both annotations will continue to be supported, however.</p>
+<h2>Nullability Annotations</h2>
+<p>With Micronaut 2.4, we've introduced our own nullability annotations. Due to several problems with findbugs and spotbugs, no external dependency with nullable annotations will ship with future versions of the Micronaut framework. We recommend using our annotations or adding an explicit dependency on a library of your choosing for '@NonNull' and '@Nullable' annotations.</p>
+<h2>Interceptor Bindings</h2>
+<p>In previous versions of the Micronaut framework, an AOP annotation was responsible for declaring which interceptor should apply to it. That style of declaration is still possible with 2.4; however it is now deprecated. The new way is to allow the interceptor to define which annotations it should apply to. This has the benefit of being able to apply to multiple annotations and to annotations which may not be under your control to add the Micronaut specific AOP advice to. See the documentation on <a href="https://docs.micronaut.io/2.4.0/guide/index.html#aop">@InterceptorBean</a> for more information.</p>
+<h2>Error Responses</h2>
+<p>Micronaut 2.4 makes it much easier to control responses for errors. Currently all errors are rendered as 'vnd.error' by default. If you want to use <a href="https://jsonapi.org/format/#errors">JSON API</a> or <a href="https://tools.ietf.org/html/rfc7807">Problem</a>, it is now much easier to implement that support. Future versions of the Micronaut framework may add integrations for those formats or others.</p>
+<p>A common interface <a href="https://docs.micronaut.io/2.4.0/api/io/micronaut/http/server/exceptions/response/ErrorResponseProcessor.html">ErrorResponseProcessor</a> is now responsible for creating response bodies for all provided exception handlers. See the documentation on <a href="https://docs.micronaut.io/2.4.0/guide/index.html#errorHandling">error handling</a> for all of the details.</p>
+<h2>Micronaut Data Improvements</h2>
+<p>Micronaut Data now supports JDK 14+ records and persistence event methods on entities.</p>
+<h2>Oracle Coherence CE</h2>
+<p>Micronaut 2.4 comes with the first milestone release of Micronaut integration with Oracle Coherence Community Edition, which makes implementation of Micronaut applications with a Coherence back end a breeze. This integration comes with a ton of features including:</p>
 <ul>
-<li>Support for <a href="https://grpc.io">GRPC</a></li>
-<li>Support for <a href="https://micronaut-projects.github.io/micronaut-graphql/latest/guide/index.html">GraphQL</a></li>
-<li>Support for <a href="https://micronaut-projects.github.io/micronaut-gcp/latest/guide/">Google Cloud Platform (GCP) and Stackdriver Trace</a> for distributed tracing</li>
-<li><a href="https://micronaut-projects.github.io/micronaut-rabbitmq/latest/guide/">Message-Driven Microservices with RabbitMQ</a></li>
-<li>A new <a href="https://docs.micronaut.io/snapshot/guide/index.html#introspection">BeanIntrospection API</a> for reflection-free Bean introspection</li>
-<li>Support for <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#apiProxy">AWS API Gateway</a> and <a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#customRuntimes">GraalVM Custom Runtime </a></li>
-<li><a href="https://micronaut-projects.github.io/micronaut-aws/latest/guide/#alexa">AWS Alexa Lambda</a> support</li>
-<li>Native File Watch and Fast Server Restart</li>
-<li>New test templates for <a href="https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html">Micronaut Test</a></li>
-<li>Even faster cold start time and performance optimizations</li>
-<li>... and <a href="https://docs.micronaut.io/1.1.x/guide/index.html#whatsNew">many more features and refinements</a></li>
+<li>Micronaut Data support</li>
+<li>Dependency injection of Coherence-managed objects</li>
+<li>Listeners for Coherence events</li>
+<li>Messaging with Coherence topics</li>
+<li>Caching support</li>
+<li>Distributed configuration</li>
+<li>HTTP sessions support</li>
 </ul>
-<p>Micronaut 1.1 makes it even simpler to build efficient, cloud-ready applications that are simultaneously easy to test, easy to containerize, and efficient. </p>
-<p>Micronaut can be deployed to both <a href="https://cloud.google.com/run/">Google Cloud Run</a> and <a href="https://cloud.google.com/appengine/docs/java/">Google App Engine Standard for Java 11</a>, and with Micronaut 1.1, we have dedicated support for <a href="https://cloud.google.com/trace/">Google Stackdriver Trace</a>.</p>
-<p>To help you get started with Google Cloud Run we have prepared a couple of <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples">sample applications</a>: </p>
-<ul>
-<li>A <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples/hello-world-cloud-run">Hello World sample application</a> that is ready to be deployed to Cloud Run using <a href="https://github.com/GoogleContainerTools/jib">Jib</a> and <a href="https://cloud.google.com/container-registry/">Google Container Registry</a>.</li>
-<li>A <a href="https://github.com/micronaut-projects/micronaut-gcp/tree/master/examples/hello-world-cloud-run-graal">second application that uses GraalVM native and Google Cloud Build</a> to build and deploy a native image to Google Cloud Run.</li>
-</ul>
-<p>Thank you to all who provided feedback during the extended RC phase of Micronaut 1.1, enjoy the release!</p></div>
+<h2>Many Others</h2>
+<p>This list does not represent the full extent of changes, updates, and improvements. Visit the <a href="https://docs.micronaut.io/2.4.0/guide/index.html#whatsNew">whats new</a> section of our docs for more information.</p>
+<p>We're proud of the 2.4 release, and we can't wait for everyone to start using these exciting features. As always, if you encounter any problems, please create an issue in our <a href="https://github.com/micronaut-projects/micronaut-core">Github</a>.</p></div>
     </div>
     <div class='smallgoldenratio align-right padded-t related-posts'>
       <h2>You might also like ...</h2>
-      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2021-03-09.jpg)'>
-  <a href='https://micronaut.io/blog/2021-03-09-micronaut-2-4-release.html'>
-    <h3>March 9, 2021</h3>
-    <h2>Micronaut 2.4 Released!</h2>
-  </a>
-</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2021-01-22.jpg)'>
+      <div><article class='blogcard' style='background-image: url(https://micronaut.io/images/2021-01-22.jpg)'>
   <a href='https://micronaut.io/blog/2021-01-22-2-dot-3-release.html'>
     <h3>January 22, 2021</h3>
     <h2>Micronaut 2.3 Released!</h2>
+  </a>
+</article><article class='blogcard' style='background-image: url(https://micronaut.io/images/2020-11-19.jpg)'>
+  <a href='https://micronaut.io/blog/2020-11-19-micronaut-22-released.html'>
+    <h3>November 19, 2020</h3>
+    <h2>Micronaut 2.2 Released!</h2>
   </a>
 </article></div>
     </div>
