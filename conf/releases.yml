@@ -217,4 +217,7 @@ releases:
       publicationDate: Feb 22, 2021               
     - 
       version: 2.3.4
-      publicationDate: Mar 02, 2021         
+      publicationDate: Mar 02, 2021               
+    - 
+      version: 2.4.0
+      publicationDate: Mar 09, 2021         
