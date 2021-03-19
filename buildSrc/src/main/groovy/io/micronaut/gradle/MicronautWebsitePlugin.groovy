@@ -29,6 +29,7 @@ class MicronautWebsitePlugin implements Plugin<Project> {
     public static final String TASK_GEN_EVENTS = "genEvents"
     public static final String TASK_COPY_ASSETS = "copyAssets"
     public static final String BUILD_GUIDES = "buildGuides"
+    public static final String BUILD_GUIDES_REDIRECT = "buildGuidesRedirect"
     public static final String GROUP_MICRONAUT = 'micronaut'
     public static final String TASK_RENDER_BLOG = 'renderBlog'
 
@@ -147,6 +148,16 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             }
             task.setDescription('Copies css, js, fonts and images from the assets folder to the dist folder')
             task.setGroup(GROUP_MICRONAUT)
+        })
+
+        project.tasks.register(BUILD_GUIDES_REDIRECT, BuildGuidesRedirectTask, { task ->
+            Object extension = project.getExtensions().findByName(EXTENSION_NAME)
+            if (extension instanceof SiteExtension) {
+                SiteExtension siteExtension = ((SiteExtension) extension)
+                task.setProperty("output", siteExtension.output)
+            }
+            task.setGroup(GROUP_MICRONAUT)
+            task.setDescription('Build guides index.html which redirects to https://micronaut.io/guides/')
         })
 
         project.tasks.register(BUILD_GUIDES, BuildGuidesTask, { task ->
