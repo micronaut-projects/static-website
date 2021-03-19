@@ -37,4 +37,4 @@ jobs:
         env:
           GITHUB_SLUG: micronaut-projects/micronaut-guides
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GRADLE_TASK: buildGuide
+          GRADLE_TASK: buildGuidesRedirect

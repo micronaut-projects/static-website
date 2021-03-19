@@ -52,9 +52,7 @@ class GuidesTask extends DefaultTask {
         pagesDir.mkdir()
         generateGuidesPages(pagesDir, url.get())
         File template = document.get()
-        File indexTemplate = project.file("templates/guides-template.html")
         final String templateText = template.text
-        final String indexTemplateText = indexTemplate.text
         File o = new File(output.get().absolutePath + "/" + RenderSiteTask.DIST)
         o.mkdir()
         Map<String, String> m = RenderSiteTask.siteMeta(title.get(), about.get(), url.get(), keywords.get() as List<String>, robots.get())
@@ -62,7 +60,7 @@ class GuidesTask extends DefaultTask {
         File f = new File(pagesDir.absolutePath + "/" + GuidesTask.PAGE_NAME_GUIDES)
         Page page = pageWithFile(f)
         page.filename = 'index.html'
-        RenderSiteTask.renderPages(m, [page], o, indexTemplateText)
+        RenderSiteTask.renderPages(m, [page], o, templateText)
 
         List<Page> listOfPages = parseCategoryPages(pagesDir)
         File categoriesOutput = new File(o.absolutePath + "/" + CATEGORIES)
