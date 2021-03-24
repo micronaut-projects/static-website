@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Tue, 23 Mar 2021 10:21:00 GMT</pubDate><item><title>Micronaut 2.4 Released!</title><link>https://micronaut.io/blog/2021-03-09-micronaut-2-4-release.html</link><description><![CDATA[</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog | Micronaut Framework</title><link>https://micronaut.io</link><description>A modern, JVM-based, full-stack framework for building modular, easily testable microservice and serverless applications.</description><pubDate>Wed, 24 Mar 2021 09:17:40 GMT</pubDate><item><title>Micronaut 2.4 Released!</title><link>https://micronaut.io/blog/2021-03-09-micronaut-2-4-release.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/release.html"><span class="hashtag">#release</span></a> <a href="https://micronaut.io/blog/tag/micronaut2.html"><span class="hashtag">#micronaut2</span></a></p>
 <p>The Micronaut team is excited to announce the release of Micronaut 2.4! This release features support for Jakarta inject annotations, improvements for AOP interceptor declarations, easier control over error responses, Micronaut Data improvements, and more!</p>
 <h2>Jakarta Inject</h2>
@@ -322,27 +322,7 @@ For a Docker image that contains a GraalVM native image, use <code>docker-native
 <p>To learn more about using Micronaut, check out <a href="https://micronaut.io/learn.html">these learning resources</a>.</p>
 <h2>Thank You!</h2>
 <p>This release would not have been possible without the contributions and support of the amazing Micronaut community!  Thank you to all that have contributed time, effort, and energy to making Micronaut a world-class framework for developing applications on the JVM.</p>
-<p>We would also like to thank the Technical Advisory Board, Board of Directors, and Contributing Members of the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a>.  The Micronaut Foundation is a not-for-profit organization that exists to support and collectively lead the open source Micronaut project.  To learn more about the Micronaut Foundation including how you can help support the continued growth and enhancement of the Micronaut framework, please visit the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a> or reach out to <a href="mailto:foundation@micronaut.io">foundation@micronaut.io</a>.</p>]]></description><author>Jason Schindler</author><guid>2020-11-19-micronaut-22-released</guid><pubDate>Thu, 19 Nov 2020 00:00:00 GMT</pubDate></item><item><title>Webinar: REDUCING LATENCIES WITH MICRONAUT AND AMAZON CORRETTO</title><link>https://micronaut.io/blog/2020-10-30-micronaut-corretto-webinar.html</link><description><![CDATA[</p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a> <a href="https://micronaut.io/blog/tag/corretto.html"><span class="hashtag">#corretto</span></a> <a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a></p>
-<p>When a millisecond delay can mean all the difference, the right tools are critical.</p>
-<p>Join 2GM (Groovy, Grails, and Micronaut) team member, Álvaro Sánchez-Mariscal, and Amazon Software Development Manager, Azeem Jiva, for a live tutorial demonstrating the most effective ways to reduce latencies with Micronaut and Amazon Corretto.</p>
-<p>Topics covered include:</p>
-<ul>
-<li>Micronaut Overview
-<ul>
-<li>AWS</li>
-<li>Lambda</li>
-<li>JRE</li>
-</ul>
-</li>
-<li>Corretto Overview</li>
-<li>Shenandoah</li>
-<li>Latencies</li>
-<li>Demo</li>
-<li>Q&amp;A</li>
-</ul>
-<p>No particular expertise with Micronaut or Corretto is required; however, you will benefit if you are already familiar with both technologies.</p>
-<p><a href="https://objectcomputing.com/download_file/4982">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/EmWTBSp7fNc" frameborder="0"></iframe>]]></description><author>Álvaro Sánchez-Mariscal</author><guid>2020-10-30-micronaut-corretto-webinar</guid><pubDate>Fri, 30 Oct 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut Launch: A Look Back at the First Six Months</title><link>https://micronaut.io/blog/2020-10-30-micronaut-launch-first-6-months.html</link><description><![CDATA[</p>
+<p>We would also like to thank the Technical Advisory Board, Board of Directors, and Contributing Members of the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a>.  The Micronaut Foundation is a not-for-profit organization that exists to support and collectively lead the open source Micronaut project.  To learn more about the Micronaut Foundation including how you can help support the continued growth and enhancement of the Micronaut framework, please visit the <a href="https://micronaut.io/foundation/">Micronaut Foundation</a> or reach out to <a href="mailto:foundation@micronaut.io">foundation@micronaut.io</a>.</p>]]></description><author>Jason Schindler</author><guid>2020-11-19-micronaut-22-released</guid><pubDate>Thu, 19 Nov 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut Launch: A Look Back at the First Six Months</title><link>https://micronaut.io/blog/2020-10-30-micronaut-launch-first-6-months.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/launch.html"><span class="hashtag">#launch</span></a></p>
 <p>Back in April with the release of Micronaut 2.0 M3, we went live with a brand new implementation of the Micronaut command line interface (CLI) and <a href="https://micronaut.io/launch/">Micronaut Launch</a>, an online tool for creating Micronaut applications. Micronaut Launch features a core written in Micronaut itself and a <a href="https://github.com/micronaut-projects/micronaut-starter/tree/master/starter-cli">micronaut-cli module that targets the user's command line</a> and uses <a href="https://picocli.info/">PicoCLI</a>.</p>
 <p>Micronaut Launch has been helping you get your Micronaut apps off the ground for six months now, and we've found the data related to its use pretty interesting.</p>
@@ -362,22 +342,27 @@ For a Docker image that contains a GraalVM native image, use <code>docker-native
 <p>Micronaut Launch is a fantastic example of modern application development using Micronaut. The launch application itself is a <a href="https://www.graalvm.org/reference-manual/native-image/">GraalVM Native Image</a> deployed as a serverless function. The new CLI build pipeline creates GraalVM native images for Linux, macOS, and Windows. The native images are then published to SDKMAN and other package managers to make installation easy. GraalVM has changed the JVM landscape for the better, and we are happy to benefit from and contribute to its success.</p>
 <p>Micronaut Launch has also given us more insight into the features the Micronaut community finds most valuable and would like to see added in the future. A big thanks to everyone who has submitted issues to the launch repo to request new features, report bugs, and provide valuable feedback.</p>
 <p>Keep an eye out for Kotlin DSL for Gradle support, coming in November!</p>
-<p><a href="https://github.com/micronaut-projects/micronaut-starter/issues">Let us know what you think about Micronaut Launch!</a></p>]]></description><author>James Kleeh and Jen Wiese</author><guid>2020-10-30-micronaut-launch-first-6-months</guid><pubDate>Fri, 30 Oct 2020 00:00:00 GMT</pubDate></item><item><title>2GM Town Hall Meeting: 2020 Q4</title><link>https://micronaut.io/blog/2020-10-16-2gm-town-hall-2020-q4.html</link><description><![CDATA[</p>
-<p>Tags: <a href="https://micronaut.io/blog/tag/townhall.html"><span class="hashtag">#townhall</span></a></p>
-<p>A big thanks to everyone who joined us for our inaugural 2GM Town Hall webinar. We had a great time and learned about several exciting goings on within the Groovy, Grails, and Micronaut communities. For those of you who missed the live event, the recording is embedded below.</p>
-<p>I would like to take this opportunity to thank our fantastic panel of experts:</p>
+<p><a href="https://github.com/micronaut-projects/micronaut-starter/issues">Let us know what you think about Micronaut Launch!</a></p>]]></description><author>James Kleeh and Jen Wiese</author><guid>2020-10-30-micronaut-launch-first-6-months</guid><pubDate>Fri, 30 Oct 2020 00:00:00 GMT</pubDate></item><item><title>Webinar: REDUCING LATENCIES WITH MICRONAUT AND AMAZON CORRETTO</title><link>https://micronaut.io/blog/2020-10-30-micronaut-corretto-webinar.html</link><description><![CDATA[</p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/webinar.html"><span class="hashtag">#webinar</span></a> <a href="https://micronaut.io/blog/tag/corretto.html"><span class="hashtag">#corretto</span></a> <a href="https://micronaut.io/blog/tag/aws.html"><span class="hashtag">#aws</span></a></p>
+<p>When a millisecond delay can mean all the difference, the right tools are critical.</p>
+<p>Join 2GM (Groovy, Grails, and Micronaut) team member, Álvaro Sánchez-Mariscal, and Amazon Software Development Manager, Azeem Jiva, for a live tutorial demonstrating the most effective ways to reduce latencies with Micronaut and Amazon Corretto.</p>
+<p>Topics covered include:</p>
 <ul>
-<li>James Kleeh, Micronaut Development Lead</li>
-<li>Puneet Behl, Grails Development Lead</li>
-<li>Jeff Scott Brown, Micronaut and Grails Practice Lead and Object Computing Partner</li>
-<li>Plus, our guest panelist, David Estes</li>
+<li>Micronaut Overview
+<ul>
+<li>AWS</li>
+<li>Lambda</li>
+<li>JRE</li>
 </ul>
-<p>David is the co-founder and VP of Engineering at Morpheus Data and also the creator of the Grails Asset-Pipeline, which is broadly used by many developers in the Grails community.
-David has contributed to so many plugins over the years, he has lost count! Which is one of the many reasons that we were thrilled to present him with the 2020 Grails Community Rock Star Award! Congratulations, David!</p>
-<p>Stay tuned for details about our next 2GM Town Hall meeting, where Object Computing Groovy Development Lead, Paul King, will share the latest on Groovy 4.0, and we'll welcome a surprise special guest.</p>
-<p>— Jen Wiese</p>
-<p>2GM Product Evangelist</p>
-<p><a href="https://objectcomputing.com/files/3716/0331/1496/2GM_Town_Hall_Deck.pdf">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/yfY2SBtagYs" frameborder="0"></iframe>]]></description><author>Jen Wiese</author><guid>2020-10-16-2gm-town-hall-2020-q4</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut at JCON 2020</title><link>https://micronaut.io/blog/2020-10-16-jcon-tickets.html</link><description><![CDATA[</p>
+</li>
+<li>Corretto Overview</li>
+<li>Shenandoah</li>
+<li>Latencies</li>
+<li>Demo</li>
+<li>Q&amp;A</li>
+</ul>
+<p>No particular expertise with Micronaut or Corretto is required; however, you will benefit if you are already familiar with both technologies.</p>
+<p><a href="https://objectcomputing.com/download_file/4982">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/EmWTBSp7fNc" frameborder="0"></iframe>]]></description><author>Álvaro Sánchez-Mariscal</author><guid>2020-10-30-micronaut-corretto-webinar</guid><pubDate>Fri, 30 Oct 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut at JCON 2020</title><link>https://micronaut.io/blog/2020-10-16-jcon-tickets.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/micronaut.html"><span class="hashtag">#micronaut</span></a> <a href="https://micronaut.io/blog/tag/jcon2020.html"><span class="hashtag">#jcon2020</span></a> <a href="https://micronaut.io/blog/tag/giveaway.html"><span class="hashtag">#giveaway</span></a></p>
 <p>Have you registered for <a href="https://jcon.one">JCON 2020</a> yet?  No?  You should hurry because it is right around the corner!
 This year, JCON is from October 27th through the 30th and it is entirely online.</p>
@@ -392,7 +377,22 @@ Thanks to the folks at JCON-Online, if you are one of the first 50 people to use
 <li>Easier Microservice Persistence With Micronaut Data - <a href="https://twitter.com/recursivecodes">Todd Sharp</a></li>
 </ul>
 <p>If you would like to familiarize yourself with Micronaut in preparation for the conference, please see visit our <a href="https://micronaut.io/learn.html">learning resources</a>.  Additionally, you can starting experimenting with Micronaut in a matter of seconds by creating your first project right now with <a href="https://micronaut.io/launch/">Micronaut Launch</a>!</p>
-<p>Claim your free ticket before they're gone, and enjoy JCON 2020!</p>]]></description><author>Jason Schindler</author><guid>2020-10-16-jcon-tickets</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut and GraalVM: An Integration Story</title><link>https://micronaut.io/blog/2020-10-12-micronat-graalvm-integration.html</link><description><![CDATA[</p>
+<p>Claim your free ticket before they're gone, and enjoy JCON 2020!</p>]]></description><author>Jason Schindler</author><guid>2020-10-16-jcon-tickets</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate></item><item><title>2GM Town Hall Meeting: 2020 Q4</title><link>https://micronaut.io/blog/2020-10-16-2gm-town-hall-2020-q4.html</link><description><![CDATA[</p>
+<p>Tags: <a href="https://micronaut.io/blog/tag/townhall.html"><span class="hashtag">#townhall</span></a></p>
+<p>A big thanks to everyone who joined us for our inaugural 2GM Town Hall webinar. We had a great time and learned about several exciting goings on within the Groovy, Grails, and Micronaut communities. For those of you who missed the live event, the recording is embedded below.</p>
+<p>I would like to take this opportunity to thank our fantastic panel of experts:</p>
+<ul>
+<li>James Kleeh, Micronaut Development Lead</li>
+<li>Puneet Behl, Grails Development Lead</li>
+<li>Jeff Scott Brown, Micronaut and Grails Practice Lead and Object Computing Partner</li>
+<li>Plus, our guest panelist, David Estes</li>
+</ul>
+<p>David is the co-founder and VP of Engineering at Morpheus Data and also the creator of the Grails Asset-Pipeline, which is broadly used by many developers in the Grails community.
+David has contributed to so many plugins over the years, he has lost count! Which is one of the many reasons that we were thrilled to present him with the 2020 Grails Community Rock Star Award! Congratulations, David!</p>
+<p>Stay tuned for details about our next 2GM Town Hall meeting, where Object Computing Groovy Development Lead, Paul King, will share the latest on Groovy 4.0, and we'll welcome a surprise special guest.</p>
+<p>— Jen Wiese</p>
+<p>2GM Product Evangelist</p>
+<p><a href="https://objectcomputing.com/files/3716/0331/1496/2GM_Town_Hall_Deck.pdf">Slides</a></p><iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/yfY2SBtagYs" frameborder="0"></iframe>]]></description><author>Jen Wiese</author><guid>2020-10-16-2gm-town-hall-2020-q4</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate></item><item><title>Micronaut and GraalVM: An Integration Story</title><link>https://micronaut.io/blog/2020-10-12-micronat-graalvm-integration.html</link><description><![CDATA[</p>
 <p>Tags: <a href="https://micronaut.io/blog/tag/micronaut.html"><span class="hashtag">#micronaut</span></a> <a href="https://micronaut.io/blog/tag/graalvm.html"><span class="hashtag">#graalvm</span></a> <a href="https://micronaut.io/blog/tag/test.html"><span class="hashtag">#test</span></a> <a href="https://micronaut.io/blog/tag/gitlabci.html"><span class="hashtag">#gitlabci</span></a></p>
 <p>Micronaut and <a href="https://www.graalvm.org">GraalVM</a> go way back. Ever since our 1.0 release back in October of 2018, Micronaut has proudly included out-of-the-box support for GraalVM and was one of the first large Java frameworks to do so.</p>
 <p>I still remember the <em>early days</em> when our integration would work exceptionally for GraalVM 1.0-RC6, but then something would change in 1.0-RC7 and things would break. A while later, 1.0-RC8 would be released and everything would work great again ... until it didn't.</p>
