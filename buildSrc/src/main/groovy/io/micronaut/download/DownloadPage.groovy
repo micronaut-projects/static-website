@@ -21,7 +21,7 @@ class DownloadPage {
                 image: "${getImageAssetPreffix(url)}download.svg",
                 items: [
                         new GuideGroupItem(href: "https://github.com/micronaut-projects/micronaut-core/releases/tag/v${latestVersion}", title: 'Release Notes'),
-                        new GuideGroupItem(href: "https://github.com/micronaut-projects/micronaut-starter/releases/download/v${latestVersion}/micronaut-cli-${latestVersion}.zip", title: 'Binary'),
+                        new GuideGroupItem(href: "https://github.com/micronaut-projects/micronaut-starter/releases/tag/v${latestVersion}", title: 'Binaries'),
                 ])
     }
 
