@@ -13,14 +13,12 @@ class MicronautWebsitePlugin implements Plugin<Project> {
     public static final String EXTENSION_NAME = "micronaut"
     public static final String TASK_GEN_DOCS = "genDocs"
     public static final String TASK_GEN_DOWNLOAD = "genDownload"
-    public static final String TASK_GEN_GUIDES = "genGuides"
     public static final String TASK_GEN_FAQ = "genFaq"
     public static final String TASK_GEN_MN_LOGOS = "genMicronautLogos"
     public static final String TASK_CLEAN_DOCS = "cleanDocs"
     public static final String TASK_CLEAN_FAQ = "cleanFaq"
     public static final String TASK_CLEAN_MN_LOGOS = "cleanMicronautLogos"
     public static final String TASK_CLEAN_EVENTS = "cleanEvents"
-    public static final String TASK_CLEAN_GUIDES = "cleanGuides"
     public static final String TASK_CLEAN_DOWNLOAD = "cleanDownload"
     public static final String TASK_BUILD = "build"
     public static final String TASK_GEN_SITE = "renderSite"
@@ -28,7 +26,6 @@ class MicronautWebsitePlugin implements Plugin<Project> {
     public static final String CLEAN = "clean"
     public static final String TASK_GEN_EVENTS = "genEvents"
     public static final String TASK_COPY_ASSETS = "copyAssets"
-    public static final String BUILD_GUIDES = "buildGuides"
     public static final String BUILD_GUIDES_REDIRECT = "buildGuidesRedirect"
     public static final String GROUP_MICRONAUT = 'micronaut'
     public static final String TASK_RENDER_BLOG = 'renderBlog'
@@ -113,21 +110,6 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             task.setDescription('Generates events HTML page - build/temp/events.html')
             task.setGroup(GROUP_MICRONAUT)
         })
-        project.tasks.register(TASK_GEN_GUIDES, GuidesTask, { task ->
-            Object extension = project.getExtensions().findByName(EXTENSION_NAME)
-            if (extension instanceof SiteExtension) {
-                SiteExtension siteExtension = ((SiteExtension) extension)
-                task.setProperty("url", siteExtension.url)
-                task.setProperty("title", siteExtension.title)
-                task.setProperty("about", siteExtension.description)
-                task.setProperty("keywords", siteExtension.keywords)
-                task.setProperty("robots", siteExtension.robots)
-                task.setProperty("document", siteExtension.template)
-                task.setProperty("output", siteExtension.output)
-            }
-            task.setDescription('Generates guides home, tags and categories HTML pages - build/temp/index.html')
-            task.setGroup(GROUP_MICRONAUT)
-        })
         project.tasks.register(TASK_GEN_DOWNLOAD, DownloadTask, { task ->
             Object extension = project.getExtensions().findByName(EXTENSION_NAME)
             if (extension instanceof SiteExtension) {
@@ -160,13 +142,6 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             task.setDescription('Build guides index.html which redirects to https://micronaut.io/guides/')
         })
 
-        project.tasks.register(BUILD_GUIDES, BuildGuidesTask, { task ->
-            task.dependsOn(TASK_COPY_ASSETS)
-            task.dependsOn(TASK_GEN_GUIDES)
-            task.setGroup(GROUP_MICRONAUT)
-            task.finalizedBy(TASK_GEN_SITEMAP)
-            task.setDescription('Build guides website - generates guides pages, copies assets and generates a sitemap')
-        })
         project.tasks.register(TASK_GEN_SITE, RenderSiteTask, { task ->
             Object extension = project.getExtensions().findByName(EXTENSION_NAME)
             if (extension instanceof SiteExtension) {
@@ -192,22 +167,6 @@ class MicronautWebsitePlugin implements Plugin<Project> {
             task.finalizedBy(TASK_GEN_SITEMAP)
             task.setDescription('Build Micronaut website - generates pages with HTML entries in pages and build/temp, renders blog and RSS feed, copies assets and generates a sitemap')
 
-        })
-        project.tasks.register(TASK_CLEAN_GUIDES, { task ->
-            task.setDescription('Deletes temp Guides page: build/temp/index.html ')
-            task.setGroup(GROUP_MICRONAUT)
-            task.doLast {
-                Object extension = project.getExtensions().findByName(EXTENSION_NAME)
-                if (extension instanceof SiteExtension) {
-                    SiteExtension siteExtension = ((SiteExtension) extension)
-                    File f = new File(siteExtension.pages.get().getAbsolutePath() + "/" + GuidesTask.PAGE_NAME_GUIDES )
-                    f.delete()
-                    f = new File(siteExtension.pages.get().getAbsolutePath() + "/" + GuidesTask.CATEGORIES)
-                    f.deleteDir()
-                    f = new File(siteExtension.pages.get().getAbsolutePath() + "/" + GuidesTask.TAGS)
-                    f.deleteDir()
-                }
-            }
         })
         project.tasks.register(TASK_CLEAN_DOCS, { task ->
             task.setGroup(GROUP_MICRONAUT)
@@ -278,7 +237,6 @@ class MicronautWebsitePlugin implements Plugin<Project> {
         project.tasks.named(CLEAN).configure(new Action<Task>() {
             @Override
             void execute(Task task) {
-                task.dependsOn(TASK_CLEAN_GUIDES)
                 task.dependsOn(TASK_CLEAN_FAQ)
                 task.dependsOn(TASK_CLEAN_DOCS)
                 task.dependsOn(TASK_CLEAN_DOWNLOAD)

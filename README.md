@@ -13,18 +13,15 @@ You can get more info by running:
  ...
  Micronaut tasks
  ---------------
- buildGuides - Build guides website - generates guides pages, copies assets and generates a sitemap
  cleanDocs - Deletes documentation temp page - build/temp/documentation.html
  cleanDownload - Deletes download temp page - build/temp/download.html
  cleanEvents - Deletes events temp page - build/temp/events.html
  cleanFaq - Deletes faq temp page - build/temp/faq.html
- cleanGuides - Deletes temp Guides page: build/temp/index.html
  copyAssets - Copies css, js, fonts and images from the assets folder to the dist folder
  genDocs - Generates documentation HTML page - build/temp/documentation.html
  genDownload - Generates download HTML page - build/temp/download.html
  genEvents - Generates events HTML page - build/temp/events.html
  genFaq - Generates FAQ HTML - build/temp/faq.html
- genGuides - Generates guides home, tags and categories HTML pages - build/temp/index.html
  genSitemap - Generates build/dist/sitemap.xml with every page in the site
  renderBlog - Renders Markdown posts (posts/*.md) into HTML pages (dist/blog/*.html). It generates tag pages. Generates RSS feed. Posts with future dates are not generated.
  renderSite - Build Micronaut website - generates pages with HTML entries in pages and build/temp, renders blog and RSS feed, copies assets and generates a sitemap
@@ -38,16 +35,6 @@ You can get more info by running:
 ./gradlew build --console=plain
 ```
 
-The output can be found in the `build/dist` directory.
-
-## Generating the GUIDES site
-
-[https://guides.micronaut.io](http://guides.micronaut.io)
-
-```bash
-./gradlew buildGuide --console=plain
-
-```
 The output can be found in the `build/dist` directory.
 
 ## Running the website locally
